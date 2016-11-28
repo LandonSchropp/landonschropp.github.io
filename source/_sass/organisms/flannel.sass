@@ -1,0 +1,42 @@
+.flannel
+
+  // Due to the specifc nature of this component, these variable values are carefully tuned.
+  $base-font-size: 10vw
+  $subhead-ratio: 0.444
+  $nav-ratio: 0.434
+  $line-height: 0.82
+  $underline-ratio: 0.06
+
+  // Given what's possible with CSS, attempt to size the content so it fills the width of the
+  // container
+  text-transform: uppercase
+  text-align: justify
+  text-align-last: justify
+  text-justify: distribute
+
+  @supports (background-clip: text) or (-webkit-background-clip: text)
+    background: linear-gradient(red, blue)
+    -webkit-background-clip: text
+    background-clip: text
+    color: transparent
+
+  &__text
+    line-height: $line-height
+    margin: $base-font-size * $line-height * 0.2 0
+    font-size: $base-font-size
+
+    &--subhead
+      font-size: $base-font-size * $subhead-ratio
+
+    &--nav
+      font-size: $base-font-size * $nav-ratio
+
+  &__link
+    color: inherit
+    text-decoration: none
+
+    &:hover
+
+      // HACK: We have to use a box shadow for the underlining since the text is hidden and the
+      // background-clip property doesn't work with text decorations
+      box-shadow: inset 0 (-$base-font-size * $underline-ratio) transparentize(#aaa, 0.75)
