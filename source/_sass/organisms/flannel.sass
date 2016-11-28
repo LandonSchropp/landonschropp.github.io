@@ -36,10 +36,10 @@
       font-size: $base-font-size * $nav-ratio
 
   &__link
-    @mixin box-shadow($color)
-      box-shadow: inset 0 (-$base-font-size * $underline-ratio / 2) white, inset 0 (-$base-font-size * $underline-ratio * 1.5) $color
+    @mixin link-box-shadow($color)
+      box-shadow: inset 0 (-$base-font-size * $underline-ratio / 2) $white, inset 0 (-$base-font-size * $underline-ratio * 1.5) $color
 
-    +box-shadow(transparentize(#aaa, 0.75))
+    +link-box-shadow($gallery)
     color: inherit
     text-decoration: none
 
@@ -47,5 +47,5 @@
     // background-clip property doesn't work with text decorations
 
     &:hover
-      +box-shadow(#627ff6)
-      color: #627ff6
+      +link-box-shadow($cornflower-blue)
+      color: $cornflower-blue
