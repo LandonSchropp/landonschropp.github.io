@@ -4,10 +4,19 @@
 
   // These values values have been carefully tuned.
   $base-font-size: 14vw
-  $subhead-ratio: 0.444
-  $nav-ratio: 0.434
-  $line-height: 0.82
-  $underline-ratio: 0.06
+  $subhead-ratio--landscape: 0.444
+  $nav-ratio--landscape: 0.434
+  $line-height--landscape: 0.82
+  $underline-ratio--landscape: 0.06
+
+  $header-start-ratio--portrait: 2.29
+  $header-end-ratio--portrait: 1.93
+  $subhead-start-ratio--portrait: 0.68
+  $subhead-end-ratio--portrait: 1.36
+  $nav-start-ratio--portrait: 0.837
+  $nav-end-ratio--portrait: 1.03
+
+  $leading: $base-font-size * $line-height--landscape * 0.2
 
   // Attempt to size the content so it fills the width of the container. This doesn't work in all
   // browsers.
@@ -17,15 +26,40 @@
   text-justify: distribute
 
   &__text
-    line-height: $line-height
-    margin: $base-font-size * $line-height * 0.2 0
+    line-height: $line-height--landscape
+    margin: $leading 0
     font-size: $base-font-size
 
     &--subhead
-      font-size: $base-font-size * $subhead-ratio
+      font-size: $base-font-size * $subhead-ratio--landscape
 
     &--nav
-      font-size: $base-font-size * $nav-ratio
+      font-size: $base-font-size * $nav-ratio--landscape
 
-  &__link
-    text-decoration: none
+    +portrait
+
+      &--header-start, &--header-end, &--subhead-start, &--subhead-end, &--nav-start, &--nav-end
+        display: block
+        margin: $leading * 2 0
+
+      &--header-start
+        font-size: $base-font-size * $header-start-ratio--portrait
+
+      &--header-end
+        font-size: $base-font-size * $header-end-ratio--portrait
+
+      &--subhead-start
+        font-size: $base-font-size * $subhead-start-ratio--portrait
+
+      &--subhead-end
+        font-size: $base-font-size * $subhead-end-ratio--portrait
+
+      &--nav-start
+        font-size: $base-font-size * $nav-start-ratio--portrait
+
+      &--nav-end
+        font-size: $base-font-size * $nav-end-ratio--portrait
+
+      // Hide the bullet on the next line
+      &--middle-bullet
+        display: none
