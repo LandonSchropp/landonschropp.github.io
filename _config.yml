@@ -1,0 +1,18 @@
+source: source
+destination: build
+
+gems:
+  - octopress-autoprefixer
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
