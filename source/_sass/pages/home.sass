@@ -1,0 +1,31 @@
+// These styles are specific to the typography on the home page. They will break if the type or font
+// changes in any way.
+.home
+
+  // These values values have been carefully tuned.
+  $base-font-size: 14vw
+  $subhead-ratio: 0.444
+  $nav-ratio: 0.434
+  $line-height: 0.82
+  $underline-ratio: 0.06
+
+  // Attempt to size the content so it fills the width of the container. This doesn't work in all
+  // browsers.
+  text-transform: uppercase
+  text-align: justify
+  text-align-last: justify
+  text-justify: distribute
+
+  &__text
+    line-height: $line-height
+    margin: $base-font-size * $line-height * 0.2 0
+    font-size: $base-font-size
+
+    &--subhead
+      font-size: $base-font-size * $subhead-ratio
+
+    &--nav
+      font-size: $base-font-size * $nav-ratio
+
+  &__link
+    text-decoration: none
