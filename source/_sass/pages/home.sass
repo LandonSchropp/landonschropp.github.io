@@ -10,10 +10,10 @@
 
   $header-start-ratio--portrait: 2.29
   $header-end-ratio--portrait: 1.93
-  $subhead-start-ratio--portrait: 0.68
-  $subhead-end-ratio--portrait: 1.36
-  $nav-start-ratio--portrait: 0.837
-  $nav-end-ratio--portrait: 0.7
+  $subhead-start-ratio--portrait: 1.182
+  $subhead-end-ratio--portrait: 0.762
+  $nav-start-ratio--portrait: 0.6
+  $nav-end-ratio--portrait: 0.75
 
   $leading: $base-font-size * $line-height--landscape * 0.25
 
@@ -59,6 +59,6 @@
       &--nav-end
         font-size: $base-font-size * $nav-end-ratio--portrait
 
-      // Hide the bullet on the next line
-      &--middle-bullet
+      // Hide the bullet and comma in portrait
+      &--middle-bullet, &--comma
         display: none
