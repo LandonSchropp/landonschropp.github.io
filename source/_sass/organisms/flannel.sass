@@ -20,14 +20,10 @@
       background-size: 10%
 
   &__link
-    +link-box-shadow($gallery)
-
     color: inherit
     text-decoration: none
 
     // HACK: We have to use a box shadow for the underlining since the text is hidden and the
     // background-clip property doesn't work with text decorations
-
     &:hover
-      +link-box-shadow($cornflower-blue)
       color: $cornflower-blue
