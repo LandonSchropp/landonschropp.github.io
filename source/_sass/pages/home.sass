@@ -7,6 +7,7 @@
   $subhead-ratio--landscape: 0.444
   $nav-ratio--landscape: 0.434
   $line-height--landscape: 0.82
+  $animation-delay: 0.1s
 
   $header-start-ratio--portrait: 2.29
   $header-end-ratio--portrait: 1.93
@@ -16,6 +17,14 @@
   $nav-end-ratio--portrait: 0.8
 
   $leading: $base-font-size * $line-height--landscape * 0.25
+
+  =fade-in($order)
+    transition: transform 0.25s ease-in, opacity 0.25s ease-in
+    transition-delay: $order * 0.2s
+
+    .home:not(.home--ready) &
+      transform: translate3d(0, 5vh, 0)
+      opacity: 0
 
   // Attempt to size the content so it fills the width of the container. This doesn't work in all
   // browsers.
@@ -38,6 +47,19 @@
     &--nav
       font-size: $base-font-size * $nav-ratio--landscape
 
+    &--header-start, &--header-end, &--subhead-start, &--subhead-end, &--nav-start,
+    &--middle-bullet, &--nav-end
+      display: inline-block
+
+    &--header-start, &--header-end
+      +fade-in(0)
+
+    &--subhead-start, &--subhead-end
+      +fade-in(1)
+
+    &--nav-start, &--middle-bullet, &--nav-end
+      +fade-in(2)
+
     +portrait
 
       &--header-start, &--header-end, &--subhead-start, &--subhead-end, &--nav-start, &--nav-end
@@ -45,21 +67,27 @@
         margin: $leading * 2 0
 
       &--header-start
+        +fade-in(0)
         font-size: $base-font-size * $header-start-ratio--portrait
 
       &--header-end
+        +fade-in(1)
         font-size: $base-font-size * $header-end-ratio--portrait
 
       &--subhead-start
+        +fade-in(2)
         font-size: $base-font-size * $subhead-start-ratio--portrait
 
       &--subhead-end
+        +fade-in(3)
         font-size: $base-font-size * $subhead-end-ratio--portrait
 
       &--nav-start
+        +fade-in(4)
         font-size: $base-font-size * $nav-start-ratio--portrait
 
       &--nav-end
+        +fade-in(5)
         font-size: $base-font-size * $nav-end-ratio--portrait
 
       // Hide the bullet and comma in portrait
