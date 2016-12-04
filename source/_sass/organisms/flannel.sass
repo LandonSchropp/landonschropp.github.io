@@ -1,29 +1,43 @@
 .flannel
-  @mixin link-box-shadow($color)
-    box-shadow: inset 0 -0.1em $white, inset 0 -0.2em $color
 
-  // Use this as a fallback
+  // Use this as a fallback if mix-blend-mode isn't supported
   color: $cornflower-blue
 
-  // Style the flannel background if the browser supports the background-clip property
-  @supports (background-clip: text) or (-webkit-background-clip: text)
-    background: url(/images/flannel.png)
-    background-repeat: repeat
-    background-size: 5%
-    -webkit-background-clip: text
-    background-clip: text
-    background-position: 0 50%
+  @supports (mix-blend-mode: screen) and (mix-blend-mode: multiply)
+    position: relative
 
-    color: transparent
+    // Use multiply to ensure the content on perfectly covers the area
+    // https://css-tricks.com/how-to-do-knockout-text/#article-header-id-4
+    color: black
+    background: white
 
-    +portrait
-      background-size: 10%
+    &::after
+      content: ""
+
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+
+      background: url(/images/flannel.png)
+      background-repeat: repeat
+      background-size: 5%
+      background-position: 0 50%
+
+      mix-blend-mode: screen
+      pointer-events: none
+
+      +portrait
+        background-size: 10%
 
   &__link
     color: inherit
     text-decoration: none
 
-    // HACK: We have to use a box shadow for the underlining since the text is hidden and the
-    // background-clip property doesn't work with text decorations
     &:hover
       color: $cornflower-blue
+
+      // HACK: Use positioning to place the element above the others, avoiding the mix-blend-mode.
+      position: relative
+      z-index: 100
