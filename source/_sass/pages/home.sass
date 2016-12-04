@@ -5,24 +5,27 @@
   // These values values have been carefully tuned.
   $base-font-size: 14vw
   $subhead-ratio--landscape: 0.444
-  $nav-ratio--landscape: 0.361
+  $nav-ratio--landscape: 0.438
   $line-height--landscape: 0.82
 
   $header-start-ratio--portrait: 2.29
   $header-end-ratio--portrait: 1.93
   $subhead-start-ratio--portrait: 1.182
   $subhead-end-ratio--portrait: 0.762
-  $nav-start-ratio--portrait: 0.6
-  $nav-end-ratio--portrait: 0.75
+  $nav-start-ratio--portrait: 0.84
+  $nav-end-ratio--portrait: 0.8
 
   $leading: $base-font-size * $line-height--landscape * 0.25
 
   // Attempt to size the content so it fills the width of the container. This doesn't work in all
   // browsers.
   text-transform: uppercase
-  text-align: justify
-  text-align-last: justify
-  text-justify: distribute
+  text-align: center
+
+  @supports (text-justify: distribute) or (text-align-last: justify)
+    text-align: justify
+    text-align-last: justify
+    text-justify: distribute
 
   &__text
     line-height: $line-height--landscape
