@@ -1,6 +1,10 @@
 html
   font-family: 'Anton', sans-serif
 
+  // BUG FIX: Fix font sizing issues in iOS
+  text-rendering: geometricPrecision
+  -webkit-text-size-adjust: 100%
+
   ::selection
     background: $cornflower-blue
     color: $white
