@@ -1,7 +1,7 @@
 source: source
 destination: build
 
-gems:
+plugins:
   - octopress-autoprefixer
   - jekyll-sitemap
   - jekyll-last-modified-at
