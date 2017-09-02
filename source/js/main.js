@@ -1,36 +1,24 @@
-// Returns a promise that resolves when the document has loaded.
-function onLoad() {
-  return new Promise(function(resolve) {
-    window.addEventListener('load', resolve);
-  });
+const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 3/4)";
+const LANDSCAPE_VIEW_BOX = "0 0 1296 445";
+const PORTRAIT_VIEW_BOX = "0 0 400 445";
+
+function mediaQueryMatches(mediaQuery) {
+  return window.matchMedia(mediaQuery).matches;
 }
 
-// Returns a promise that resolves when the background image for the element with the provided
-// selector has loaded.
-// NOTE: This is a one-off function to fufill a specific use case. It will not work for
-// general-purpose use cases.
-function onBackgroundImageLoad(selector) {
-  let elements = [].slice.call(document.querySelectorAll(selector));
-
-  let promises = elements.map((element) => {
-    return new Promise((resolve) => {
-      let backgroundUrl = window
-        .getComputedStyle(element, '::after')
-        .getPropertyValue('background-image')
-        .match(/url\(['"]?([^)'"]+)['"]?\)/i)[1];
-
-      // http://stackoverflow.com/a/22788887/262125
-      let image = new Image();
-      image.addEventListener('load', resolve);
-      image.src = backgroundUrl;
-      if (image.complete) resolve();
-    });
-  });
-
-  return Promise.all(promises);
+function viewBox() {
+  return mediaQueryMatches(PORTRAIT_MEDIA_QUERY) ? PORTRAIT_VIEW_BOX : LANDSCAPE_VIEW_BOX;
 }
 
-// Kick off the animation after all of the assets have loaded
-onLoad()
-  .then(() => onBackgroundImageLoad('.flannel'))
-  .then(() => document.querySelector('.home').classList.add('home--ready'));
+function setViewBox() {
+  document
+    .querySelector(".main")
+    .setAttribute("viewBox", viewBox());
+}
+
+// Set the view box right away. We don't need a ready even because we know the structure of the DOM,
+// and that this script is loaded after the main SVG.
+setViewBox();
+
+// Whenever the window size changes, update the viewBox.
+window.addEventListener('resize', setViewBox);
