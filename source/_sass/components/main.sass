@@ -3,5 +3,29 @@
   width: calc(100% - #{ $spacing })
   height: calc(100% - #{ $spacing })
 
+  =transform($landscape-x, $landscape-y, $landscape-width, $portrait-x, $portrait-y, $portrait-width)
+    +portrait
+      transform-origin: top left
+      transform: translate(#{ $portrait-x - $landscape-x }px, #{ $portrait-y - $landscape-y }px) scale(#{ $portrait-width / $landscape-width })
+
   &__link
     pointer-events: bounding-box
+
+  &__schropp
+    +transform(624.77, 0, 671.07, 0, 222.72, 564.85)
+
+  &__entrepreneur
+    +transform(0.03, 223.46, 461.83, 0, 417.31, 564.83)
+
+  &__comma
+    +portrait
+      display: none
+
+  &__designer-and-developer
+    +transform(510.85, 222.72, 785.05, 0, 560.9, 564.86)
+
+  &__links
+    +transform(0, 350, 607.46, 0, 664.57, 564.31)
+
+  &__social
+    +transform(653.28, 345, 641.56, 0, 793.94, 564.49)
