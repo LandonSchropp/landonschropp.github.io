@@ -1,6 +1,6 @@
 const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 3/4)";
 const LANDSCAPE_VIEW_BOX = "0 0 1296 445";
-const PORTRAIT_VIEW_BOX = "0 0 565 871";
+const PORTRAIT_VIEW_BOX = "0 0 565 861";
 
 function mediaQueryMatches(mediaQuery) {
   return window.matchMedia(mediaQuery).matches;
