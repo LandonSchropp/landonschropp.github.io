@@ -9,8 +9,17 @@
 
   =transform($landscape-x, $landscape-y, $landscape-width, $portrait-x, $portrait-y, $portrait-width)
     +portrait
+
+      // BUG FIX: Firefox's default transform box behavior is different than that of Chrome. As of
+      // Firefox 55, the transform-box style can be used to fix this behavior.
+      transform-box: fill-box
       transform-origin: top left
-      transform: translate(#{ $portrait-x - $landscape-x }px, #{ $portrait-y - $landscape-y }px) scale(#{ $portrait-width / $landscape-width })
+
+      $translate-x: $portrait-x - $landscape-x
+      $translate-y: $portrait-y - $landscape-y
+      $scale: $portrait-width / $landscape-width
+
+      transform: translate(#{ $translate-x }px, #{ $translate-y }px) scale(#{ $scale })
 
   &__link
     pointer-events: bounding-box
