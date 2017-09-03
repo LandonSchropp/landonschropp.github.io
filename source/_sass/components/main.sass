@@ -1,7 +1,11 @@
 .main
   display: block
-  width: calc(100% - #{ $spacing })
-  height: calc(100% - #{ $spacing })
+  width: calc(100% - 6vw)
+  height: calc(100% - 6vw)
+
+  +portrait
+    width: calc(100% - 8vh)
+    height: calc(100% - 8vh)
 
   =transform($landscape-x, $landscape-y, $landscape-width, $portrait-x, $portrait-y, $portrait-width)
     +portrait
