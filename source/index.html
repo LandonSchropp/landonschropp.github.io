@@ -1,6 +1,14 @@
 ---
 ---
 
+<template id="landscape">
+  {% include landscape.html %}
+</template>
+
+<template id="portrait">
+  {% include portrait.html %}
+</template>
+
 <svg
   class="main"
   viewBox="0 0 1296 445"
@@ -12,82 +20,72 @@
     </pattern>
   </defs>
 
-  <path
-    class="main__item main__landon"
-    d="{% include landon_path.html %}"></path>
-  <path
-    class="main__item main__schropp"
-    d="{% include schropp_path.html %}"></path>
-  <path
-    class="main__item main__entrepreneur"
-    d="{% include entrepreneur_path.html %}"></path>
-  <path
-    class="main__item main__comma"
-    d="{% include comma_path.html %}"></path>
-  <path
-    class="main__item main__designer-and-developer"
-    d="{% include developer_and_designer_path.html %}"></path>
+  <path id="landon" class="main__item" d=""></path>
+  <path id="schropp" class="main__item" d=""></path>
+  <path id="entrepreneur" class="main__item" d=""></path>
+  <polygon id="comma" class="main__item main__comma" points=""></polygon>
+  <path id="developer-and-designer" class="main__item" d=""></path>
 
   <a
     class="main__link"
     xlink:href="https://medium.com/@LandonSchropp">
     <title>Blog</title>
-    <path class="main__item main__blog" d="{% include blog_path.html %}"></path>
+    <path id="blog" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://unravelingflexbox.com">
     <title>Book</title>
-    <path class="main__item main__book" d="{% include book_path.html %}"></path>
+    <path id="book" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://notes.landonschropp.com">
     <title>Notes</title>
-    <path class="main__item main__notes" d="{% include notes_path.html %}"></path>
+    <path id="notes" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://twitter.com/LandonSchropp">
     <title>Twitter</title>
-    <path class="main__item main__twitter" d="{% include twitter_path.html %}"></path>
+    <path id="twitter" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://github.com/LandonSchropp">
     <title>GitHub</title>
-    <path class="main__item main__github" d="{% include github_path.html %}"></path>
+    <path id="github" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://www.goodreads.com/landonschropp">
     <title>Goodreads</title>
-    <path class="main__item main__goodreads" d="{% include goodreads_path.html %}"></path>
+    <path id="goodreads" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="mainto:schroppl@gmail.com">
     <title>schroppl@gmail.com</title>
-    <path class="main__item main__email" d="{% include email_path.html %}"></path>
+    <path id="email" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://codepen.io/LandonSchropp/">
     <title>CodePen</title>
-    <path class="main__item main__codepen" d="{% include codepen_path.html %}"></path>
+    <path id="codepen" class="main__item" d=""></path>
   </a>
 
   <a
     class="main__link"
     xlink:href="https://www.linkedin.com/in/landonschropp">
     <title>LinkedIn</title>
-    <path class="main__item main__linkedin" d="{% include linkedin_path.html %}"></path>
+    <path id="linkedin" class="main__item" d=""></path>
   </a>
 </svg>

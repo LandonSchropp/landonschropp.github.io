@@ -1,25 +1,12 @@
 .main
   display: block
+
   width: calc(100% - 6vw)
   height: calc(100% - 6vw)
 
   +portrait
     width: calc(100% - 8vh)
     height: calc(100% - 8vh)
-
-  =transform($landscape-x, $landscape-y, $landscape-width, $portrait-x, $portrait-y, $portrait-width)
-    +portrait
-
-      // BUG FIX: Firefox's default transform box behavior is different than that of Chrome. As of
-      // Firefox 55, the transform-box style can be used to fix this behavior.
-      transform-box: fill-box
-      transform-origin: top left
-
-      $translate-x: $portrait-x - $landscape-x
-      $translate-y: $portrait-y - $landscape-y
-      $scale: $portrait-width / $landscape-width
-
-      transform: translate(#{ $translate-x }px, #{ $translate-y }px) scale(#{ $scale })
 
   &__item
     fill: url(#flannel)
@@ -33,42 +20,6 @@
     &:hover .main__item
       fill: $cornflower-blue
 
-  &__schropp
-    +transform(624.77, 0, 671.07, 0, 222.72, 564.85)
-
-  &__entrepreneur
-    +transform(0.03, 223.46, 461.83, 0, 417.31, 564.83)
-
   &__comma
     +portrait
       display: none
-
-  &__designer-and-developer
-    +transform(510.85, 222.72, 785.05, 0, 560.9, 564.86)
-
-  &__blog
-    +transform(0, 350, 156.36, 0, 664.57, 145.25)
-
-  &__book
-    +transform(202.18, 350, 166.41, 187.82, 664.57, 154.59)
-
-  &__notes
-    +transform(414.4, 350, 193.06, 384.97, 664.57, 179.34)
-
-  &__twitter
-    +transform(653.28, 358, 73.05, 0, 802.38, 64.27)
-
-  &__github
-    +transform(772.14, 351, 74.81, 104.58, 796.22, 65.82)
-
-  &__goodreads
-    +transform(892.77, 352, 47.78, 210.72, 797.1, 42.04)
-
-  &__email
-    +transform(986.37, 361, 73.06, 293.08, 805.02, 64.28)
-
-  &__codepen
-    +transform(1105.24, 351, 72.94, 397.67, 796.22, 64.18)
-
-  &__linkedin
-    +transform(1224, 345, 70.84, 502.16, 790.94, 62.33)

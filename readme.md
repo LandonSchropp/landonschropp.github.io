@@ -27,3 +27,12 @@ also out.
 
 In the end, I arrivated at an imperfect solution. It's not pretty, but it works and it's easy to
 maintain. Â¯\_(ãƒ„)_/Â¯
+
+## Vim Cleanup Macro
+
+Rather than muck around with manually cleaning up the files, here's a quick Vim macro that does it
+for you:
+
+```
+ddjdd...dd.Gkkdd.ggVG=/widthdf ./versionhdt .dt>:% s/ fill="[]€kl^"€kr*"//g
+```
