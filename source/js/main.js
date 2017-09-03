@@ -2,7 +2,7 @@
 layout: null
 ---
 
-const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 3/4)";
+const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1/1)";
 const PORTRAIT_TEMPLATE_ID = "portrait";
 const LANDSCAPE_TEMPLATE_ID = "landscape";
 
