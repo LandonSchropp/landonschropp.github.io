@@ -34,7 +34,9 @@ Rather than muck around with manually cleaning up the files, here's a quick Vim 
 for you:
 
 ```
-ddjdd...dd.Gkkdd.ggVG=/widthdf ./versionhdt .dt>
-:% s/ fill="[]€kl^"€kr*"//g
+ddjdd...dd.Gkkdd.ggVG=/width
+df ./version
+hdt .dt>
+:% s/ fill="[]â‚¬kl^"â‚¬kr*"//g
 :% s/id=/data-id=/
 ```
