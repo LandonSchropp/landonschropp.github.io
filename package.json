@@ -5,6 +5,7 @@
   "author": "Landon Schropp <schroppl@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "lint": "eslint --max-warnings=0 .",
     "build": "parcel build source/*.html --out-dir build --detailed-report",
     "serve": "parcel serve source/*.html --out-dir build --port $PORT",
     "clean": "rm -rf build"
@@ -13,6 +14,9 @@
     "parcel-bundler": "^1.10.3"
   },
   "devDependencies": {
+    "@landonschropp/eslint-config": "^0.4.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.7.0",
     "sass": "^1.14.2"
   }
 }
