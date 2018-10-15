@@ -3,5 +3,16 @@
   "description": "My personal website",
   "repository": "https://github.com/LandonSchropp/landonschropp.com",
   "author": "Landon Schropp <schroppl@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build source/*.html --out-dir build --detailed-report",
+    "serve": "parcel serve source/*.html --out-dir build --port $PORT",
+    "clean": "rm -rf build"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.10.3"
+  },
+  "devDependencies": {
+    "sass": "^1.14.2"
+  }
 }
