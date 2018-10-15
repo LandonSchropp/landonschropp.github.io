@@ -6,11 +6,11 @@ const LANDSCAPE_TEMPLATE_ID = "landscape";
 function runWhenFirstArgumentChanges(func) {
   let last = {};
 
-  return function(value) {
-    if (value == last) { return; }
+  return (value) => {
+    if (value === last) { return; }
     last = value;
     func(value);
-  }
+  };
 }
 
 function mediaQueryMatches(mediaQuery) {
@@ -50,10 +50,10 @@ function updateElements(template, elements) {
 }
 
 function update(template) {
-  let main = document.querySelector(".main")
-  let paths = main.querySelectorAll("path[id], polygon[id]")
+  let main = document.querySelector(".main");
+  let paths = main.querySelectorAll("path[id], polygon[id]");
 
-  updateViewBox(template, main)
+  updateViewBox(template, main);
   updateElements(template, paths);
 }
 
@@ -62,10 +62,9 @@ function update(template) {
 const updateWhenTemplateChanged = runWhenFirstArgumentChanges(update);
 const updateWithCurrentTemplate = () => updateWhenTemplateChanged(currentTemplate());
 
-// Update the main SVG right away. We don't need a ready even because we know the structure of the
-// DOM, and that this script is loaded after the main SVG.
+// Update the main SVG right away. We don't need a ready even because this script is loaded after
+// the main SVG.
 updateWithCurrentTemplate();
-
 
 // Whenever the window size changes, update the viewBox.
 window.addEventListener('resize', updateWithCurrentTemplate);
