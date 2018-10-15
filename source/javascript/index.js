@@ -1,17 +1,13 @@
----
-layout: null
----
-
-const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1/1)";
+const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 const PORTRAIT_TEMPLATE_ID = "portrait";
 const LANDSCAPE_TEMPLATE_ID = "landscape";
 
-// This is like memoize, except it forgets the old value as soon as the value changes.
-function whenArgumentChanged(func) {
+// This function will run the provided function when its first argument changes.
+function runWhenFirstArgumentChanges(func) {
   let last = {};
 
   return function(value) {
-    if (value == last) { return }
+    if (value == last) { return; }
     last = value;
     func(value);
   }
@@ -63,7 +59,7 @@ function update(template) {
 
 // This function only updates the DOM when the provided template *changes*. Otherwise, it has no
 // effect.
-const updateWhenTemplateChanged = whenArgumentChanged(update);
+const updateWhenTemplateChanged = runWhenFirstArgumentChanges(update);
 const updateWithCurrentTemplate = () => updateWhenTemplateChanged(currentTemplate());
 
 // Update the main SVG right away. We don't need a ready even because we know the structure of the
