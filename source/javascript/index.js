@@ -1,70 +1,31 @@
-const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
-const PORTRAIT_TEMPLATE_ID = "portrait";
-const LANDSCAPE_TEMPLATE_ID = "landscape";
-
-// This function will run the provided function when its first argument changes.
-function runWhenFirstArgumentChanges(func) {
-  let last = {};
-
-  return (value) => {
-    if (value === last) { return; }
-    last = value;
-    func(value);
-  };
-}
-
-function mediaQueryMatches(mediaQuery) {
-  return window.matchMedia(mediaQuery).matches;
-}
+import { updateViewBox, updateElements } from './dom';
 
 function currentTemplate() {
-  return mediaQueryMatches(PORTRAIT_MEDIA_QUERY)
-    ? PORTRAIT_TEMPLATE_ID
-    : LANDSCAPE_TEMPLATE_ID;
+  return window.matchMedia("(max-aspect-ratio: 1 / 1)").matches
+    ? "portrait"
+    : "landscape";
 }
 
-function templateFragment(template) {
-  return document.getElementById(template).content;
-}
+let lastTemplate = null;
 
-function templateViewBox(template) {
-  return templateFragment(template).children[0].getAttribute("viewBox");
-}
+function update() {
+  let template = currentTemplate();
 
-function updateViewBox(template, element) {
-  element.setAttribute("viewBox", templateViewBox(template));
-}
+  if (template === lastTemplate) {
+    return;
+  }
 
-function templateAttribute(template, id, attribute) {
-  let element = templateFragment(template).querySelector(`[data-id="${ id }"]`);
-  return element && element.getAttribute(attribute);
-}
-
-function updateElement(template, element) {
-  let attribute = /path/.test(element.nodeName) ? "d" : "points";
-  element.setAttribute(attribute, templateAttribute(template, element.id, attribute) || "");
-}
-
-function updateElements(template, elements) {
-  elements.forEach(element => updateElement(template, element));
-}
-
-function update(template) {
   let main = document.querySelector(".main");
   let paths = main.querySelectorAll("path[id], polygon[id]");
 
+  lastTemplate = template;
   updateViewBox(template, main);
   updateElements(template, paths);
 }
 
-// This function only updates the DOM when the provided template *changes*. Otherwise, it has no
-// effect.
-const updateWhenTemplateChanged = runWhenFirstArgumentChanges(update);
-const updateWithCurrentTemplate = () => updateWhenTemplateChanged(currentTemplate());
-
 // Update the main SVG right away. We don't need a ready even because this script is loaded after
 // the main SVG.
-updateWithCurrentTemplate();
+update();
 
 // Whenever the window size changes, update the viewBox.
-window.addEventListener('resize', updateWithCurrentTemplate);
+window.addEventListener('resize', update);
