@@ -1,0 +1,10 @@
+{
+  "plugins": {
+    "posthtml-extend": {
+      "root": "./source"
+    },
+    "posthtml-include": {
+      "root": "./source"
+    }
+  }
+}
