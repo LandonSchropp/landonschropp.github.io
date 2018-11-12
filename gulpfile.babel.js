@@ -1,10 +1,10 @@
 import connect from 'gulp-connect';
 import del from 'del';
-import ejs from 'gulp-ejs';
 import githubPages from 'gulp-gh-pages';
 import gulp from 'gulp';
 import gulpIf from 'gulp-if';
 import imagemin from 'gulp-imagemin';
+import nunjucksRender from 'gulp-nunjucks-render';
 import plumber from 'gulp-plumber';
 import postcss from 'gulp-postcss';
 import rename from 'gulp-rename';
@@ -12,7 +12,6 @@ import sass from 'gulp-sass';
 import sassGlob from 'gulp-sass-glob';
 import sitemap from 'gulp-sitemap';
 import sourcemaps from 'gulp-sourcemaps';
-import util from 'gulp-util';
 import webpack from 'webpack';
 import webpackConfig from './webpack.config.babel.js';
 import webpackStream from 'webpack-stream';
@@ -43,8 +42,7 @@ gulp.task('copy', () => {
 gulp.task('html', () => {
   return gulp.src('source/pages/**')
     .pipe(plumber())
-    .pipe(ejs({ path: [ "source" ] }).on('error', util.log))
-    .pipe(ejs({}, {}, { ext: '.html' }))
+    .pipe(nunjucksRender({ path: [ "source" ] }))
     .pipe(rename(path => {
       if (path.basename === 'index' || path.basename === '') { return; }
       path.dirname += `/${ path.basename }`;
