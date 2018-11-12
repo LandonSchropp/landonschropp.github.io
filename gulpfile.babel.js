@@ -40,9 +40,9 @@ gulp.task('copy', () => {
 });
 
 gulp.task('html', () => {
-  return gulp.src('source/pages/**')
+  return gulp.src('source/html/pages/**')
     .pipe(plumber())
-    .pipe(nunjucksRender({ path: [ "source" ] }))
+    .pipe(nunjucksRender({ path: [ "source/html" ] }))
     .pipe(rename(path => {
       if (path.basename === 'index' || path.basename === '') { return; }
       path.dirname += `/${ path.basename }`;
