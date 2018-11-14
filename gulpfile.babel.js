@@ -60,7 +60,7 @@ gulp.task('html', () => {
     })))
     .pipe(rename(path => path.basename = path.basename.replace(/(\d{4}-\d{2}-\d{2})-/, '')))
     .pipe(markdown())
-    .pipe(insert.wrap("{% extends 'layouts/layout.njk' %}{% block content %}", "{% endblock %}"));
+    .pipe(insert.wrap("{% extends 'layouts/note.njk' %}{% block article %}", "{% endblock %}"));
 
   let html = gulp.src('source/html/pages/**');
 
