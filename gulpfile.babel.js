@@ -26,20 +26,12 @@ if (!process.env.URL || !process.env.NODE_ENV || !process.env.PORT) {
   process.exit(1);
 }
 
-const COPY_GLOBS = [
-  'source/**',
-  '!source/pages/**',
-  '!source/javascript/**',
-  '!source/stylesheets/**',
-  '!source/images/**'
-];
-
 gulp.task('clean', () => {
   return del([ 'build' ]);
 });
 
-gulp.task('copy', () => {
-  return gulp.src(COPY_GLOBS)
+gulp.task('static', () => {
+  return gulp.src("source/static/**")
     .pipe(gulp.dest('build'))
     .pipe(connect.reload());
 });
@@ -112,7 +104,7 @@ gulp.task('images', () => {
 gulp.task('build', gulp.series(
   'clean',
   gulp.parallel(
-    'copy',
+    'static',
     'html',
     'stylesheets',
     'javascript',
@@ -121,8 +113,8 @@ gulp.task('build', gulp.series(
 ));
 
 gulp.task('watch', gulp.series('build', () => {
-  gulp.watch(COPY_GLOBS, gulp.series('copy'));
-  gulp.watch('source/', gulp.series('html'));
+  gulp.watch("source/static/**", gulp.series('static'));
+  gulp.watch('source/html/**', gulp.series('html'));
   gulp.watch('source/stylesheets/**', gulp.series('stylesheets'));
   gulp.watch('source/javascript/**', gulp.series('javascript'));
   gulp.watch('source/images/**', gulp.series('images'));
