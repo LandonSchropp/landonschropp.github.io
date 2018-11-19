@@ -12,6 +12,7 @@ import rename from 'gulp-rename';
 import sitemap from 'gulp-sitemap';
 
 import extractData from '../transforms/extract-data';
+import directoryIndices from '../transforms/directory-indices';
 
 // Rather than creating separate tasks and duplicating steps, or creating temporary files, this task
 // separately creates the notes and regular HTML streams. It then merged the streams together for
@@ -39,11 +40,7 @@ gulp.task('html', () => {
   return merge(notes, notesIndex, html)
     .pipe(plumber())
     .pipe(nunjucksRender({ path: [ "source/html" ] }))
-    .pipe(rename(path => {
-      if (path.basename === 'index' || path.basename === '') { return; }
-      path.dirname += `/${ path.basename }`;
-      path.basename = 'index';
-    }))
+    .pipe(directoryIndices())
     .pipe(gulp.dest('build'))
     .pipe(sitemap({ siteUrl: process.env.URL }))
     .pipe(gulp.dest('./build'))
