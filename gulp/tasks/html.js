@@ -11,6 +11,8 @@ import plumber from 'gulp-plumber';
 import rename from 'gulp-rename';
 import sitemap from 'gulp-sitemap';
 
+import extractData from '../transforms/extract-data';
+
 // Rather than creating separate tasks and duplicating steps, or creating temporary files, this task
 // separately creates the notes and regular HTML streams. It then merged the streams together for
 // the final processing. This seems to be the recommended appraoch in the Gulp documentation.
@@ -29,8 +31,12 @@ gulp.task('html', () => {
     .pipe(header("{% extends 'layouts/note.njk' %}{% block article %}"))
     .pipe(footer("{% endblock %}"));
 
+  let notesIndex = gulp.src('source/html/notes.njk')
+    .pipe(extractData('notes', notes));
+
   let html = gulp.src('source/html/pages/**');
-  return merge(notes, html)
+
+  return merge(notes, notesIndex, html)
     .pipe(plumber())
     .pipe(nunjucksRender({ path: [ "source/html" ] }))
     .pipe(rename(path => {
