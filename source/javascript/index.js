@@ -15,16 +15,16 @@ function update() {
     return;
   }
 
-  let main = document.querySelector(".main");
-  let paths = main.querySelectorAll("path[id], polygon[id]");
+  let landing = document.querySelector(".landing");
+  let paths = landing.querySelectorAll("path[id], polygon[id]");
 
   lastTemplate = template;
-  updateViewBox(template, main);
+  updateViewBox(template, landing);
   updateElements(template, paths);
 }
 
-// Update the main SVG right away. We don't need a ready even because this script is loaded after
-// the main SVG.
+// Update the landing SVG right away. We don't need a ready even because this script is loaded after
+// the landing SVG.
 update();
 
 // Whenever the window size changes, update the viewBox.
