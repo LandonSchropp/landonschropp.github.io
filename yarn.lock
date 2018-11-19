@@ -3100,7 +3100,7 @@ duplexer2@0.0.2:
   dependencies:
     readable-stream "~1.1.9"
 
-duplexer2@~0.1.4:
+duplexer2@^0.1.2, duplexer2@~0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
   integrity sha1-ixLauHjA1p4+eJEFFmKjL8a93ME=
@@ -6349,6 +6349,14 @@ multipipe@^0.1.2:
   integrity sha1-Ko8t33Du1WTf8tV/HhoTfZ8FB4s=
   dependencies:
     duplexer2 "0.0.2"
+
+multipipe@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/multipipe/-/multipipe-2.0.3.tgz#2305ecf8f69cc67737f507c460e6aec0a41eacfb"
+  integrity sha512-OtUaPHj/mrk2dh+34+uw7RGGg7rhOcV7UVjhyHM3zk/yvUq7580G5XNEw9elzjR2N92GmB+YxgS/b0+xo8zHPQ==
+  dependencies:
+    duplexer2 "^0.1.2"
+    object-assign "^4.1.0"
 
 mute-stdout@^1.0.0:
   version "1.0.1"
