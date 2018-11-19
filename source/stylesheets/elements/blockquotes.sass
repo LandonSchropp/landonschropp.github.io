@@ -1,0 +1,10 @@
+blockquote
+  margin: $spacing 0
+
+  // Prevent child content from displaying as a block
+  *
+    display: inline
+
+  // Use the inner paragraph for the quotations, since they're automatically added by Redcarpet
+  p
+    @extend q
