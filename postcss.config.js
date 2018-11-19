@@ -1,9 +1,9 @@
 const autoprefixer = require('autoprefixer');
-const postcssImport = require('postcss-import');
+const postcssEasyImport = require('postcss-easy-import');
 
 module.exports = {
   plugins: [
     autoprefixer('last 2 versions'),
-    postcssImport
+    postcssEasyImport
   ]
 };
