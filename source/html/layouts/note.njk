@@ -1,13 +1,23 @@
 {% extends 'layouts/layout.njk' %}
 
-{% set title = "Landon Schropp" %}
-{% set description = "Landon Schropp is an entrepreneur, developer and designer based in Seattle." %}
 {% set mainClass = "content" %}
 
 {% block content %}
   <article class="note">
+
+    <header class="note__header header">
+      <h1 class="header__header">
+        <a class="header__link" href="{{ link }}">{{ title }}</a>
+      </h1>
+
+      {% if author %}
+        <p class="header__byline">By {{ author }}</p>
+      {% endif %}
+    </header>
+
     <section class="note__content">
       {% block article %}{% endblock %}
     </section>
+
   </article>
 {% endblock %}
