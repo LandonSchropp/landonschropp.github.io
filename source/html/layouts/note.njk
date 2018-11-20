@@ -5,7 +5,9 @@
 {% set mainClass = "content" %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-
-  {% block article %}{% endblock %}
+  <article class="note">
+    <section class="note__content">
+      {% block article %}{% endblock %}
+    </section>
+  </article>
 {% endblock %}
