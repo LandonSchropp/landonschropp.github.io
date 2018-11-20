@@ -5,6 +5,16 @@
 {% set mainClass = "content" %}
 
 {% block content %}
+  <header class="header">
+    <h1 class="header__header">
+      Entrepreneurship Notes
+    </h1>
+    <p class="header__subhead">
+      A collection of notes on blog posts, talks, podcasts and books by
+      <a href="http://landonschropp.com">Landon&nbsp;Schropp</a>
+    </p>
+  </header>
+
   <section class="note-cards">
     {% for note in notes %}
       <a class="note-card" href="{{ note.url }}">
