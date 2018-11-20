@@ -1,0 +1,29 @@
+.note-cards
+  margin-bottom: $spacing--xlarge
+
+.note-card
+  display: block
+
+  // NOTE: I'm using padding instead of margins so there are no gaps in the hovers when moving the
+  // mouse between links.
+  padding: $spacing--small
+  margin-left: -$spacing--small
+  margin-right: -$spacing--small
+
+  text-decoration: none
+
+  // Compensate for the padding.
+  &:first-of-type
+    margin-top: -$spacing--small
+
+  &:last-of-type
+    margin-bottom: -$spacing--small
+
+  &:hover
+    background-color: $alabaster
+
+  &__title, &__author
+    margin: 0
+
+  &__title
+    font-style: italic
