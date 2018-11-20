@@ -23,9 +23,13 @@ function update() {
   updateElements(template, paths);
 }
 
-// Update the landing SVG right away. We don't need a ready even because this script is loaded after
-// the landing SVG.
-update();
+// If we're not on the landing page, don't do anything
+if (window.location.pathname === '/') {
 
-// Whenever the window size changes, update the viewBox.
-window.addEventListener('resize', update);
+  // Update the landing SVG right away. We don't need a ready even because this script is loaded
+  // after the landing SVG.
+  update();
+
+  // Whenever the window size changes, update the viewBox.
+  window.addEventListener('resize', update);
+}
