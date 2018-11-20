@@ -25,6 +25,10 @@ export default function blogPostMetadata() {
       ...file.data,
       date: new Date(file.path.match(/(\d{4}-\d{2}-\d{2})/)[1])
     })),
-    rename(path => path.basename = path.basename.replace(/(\d{4}-\d{2}-\d{2})-/, ''))
+    rename(path => path.basename = path.basename.replace(/(\d{4}-\d{2}-\d{2})-/, '')),
+    data(file => ({
+      ...file.data,
+      url: `/${ file.relative.replace('.md', '') }`
+    })),
   );
 }
