@@ -1,0 +1,24 @@
+{% extends 'layouts/layout.njk' %}
+
+{% set title = "Landon Schropp - Notes" %}
+{% set description = "A collection of notes on blog posts, talks, podcasts and books by Landon Schropp." %}
+{% set mainClass = "content" %}
+
+{% block content %}
+  <section class="note-cards">
+    {% for note in notes %}
+      <a class="note-card" href="{{ note.url }}">
+        <h2 class="note-card__title">
+          {{ note.title }}
+        </h2>
+        <p class="note-card__author">
+          {% if note.author %}
+            {{ note.author }}
+          {% elif note.location %}
+            {{ note.location }}
+          {% endif %}
+        </p>
+      </a>
+    {% endfor %}
+  </section>
+{% endblock %}
