@@ -12,6 +12,8 @@ import extractData from '../transforms/extract-data';
 import directoryIndices from '../transforms/directory-indices';
 import blogPostMetadata from '../transforms/blog-post-metadata';
 
+import blogPosts from '../external/blog-posts';
+
 // Rather than creating separate tasks and duplicating steps, or creating temporary files, this task
 // separately creates the notes and regular HTML streams. It then merged the streams together for
 // the final processing. This seems to be the recommended appraoch in the Gulp documentation.
