@@ -2,12 +2,13 @@ import _ from 'lodash';
 import fs from 'fs';
 import glob from 'glob';
 import yaml from 'js-yaml';
+import marked from 'marked';
 
 const YAML_REGEX = /^---(.*)?---/ms;
 
-function extractFileData(source, content) {
+function extractFileData(source, body) {
   let pathMatch = source.match(/([^/]+)\/(\d{4}-\d{2}-\d{2})-(.*)\.md/);
-  let frontMatterMatch = content.match(YAML_REGEX);
+  let frontMatterMatch = body.match(YAML_REGEX);
 
   if (_.isNil(pathMatch)) {
     throw new Error(`The file ${ source } must be in the following format: YYYY-MM-DD-<slug>.md.`);
@@ -24,12 +25,17 @@ function extractFileData(source, content) {
   };
 }
 
-function filePathToFileData(source) {
-  let content = fs.readFileSync(source, 'utf8');
+function extractFileContent(content) {
+  return marked(content.replace(YAML_REGEX, '').trim());
+}
 
-  let data = extractFileData(source, content);
+function transformFile(source) {
+  let body = fs.readFileSync(source, 'utf8');
 
-  return data;
+  let data = extractFileData(source, body);
+  let content = extractFileContent(body);
+
+  return { data, content };
 }
 
 /**
@@ -42,7 +48,5 @@ function filePathToFileData(source) {
  * to move forward with development.
  */
 export default function blogPosts(source) {
-  return glob.sync(source).map(filePathToFileData);
+  return glob.sync(source).map(transformFile);
 }
-
-console.log(blogPosts('source/html/notes/*'));
