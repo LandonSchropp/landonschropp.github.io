@@ -1,3 +1,15 @@
 @mixin portrait
   @media screen and (max-aspect-ratio: 1/1)
     @content
+
+@mixin viewport--medium
+  @media only screen and (min-width: $viewport-width--medium)
+    @content
+
+@mixin viewport--large
+  @media only screen and (min-width: $viewport-width--large)
+    @content
+
+@mixin print
+  @media print
+    @content
