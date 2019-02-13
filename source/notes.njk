@@ -16,16 +16,16 @@
   </header>
 
   <section class="note-cards">
-    {% for note in notes %}
+    {% for note in collections.note %}
       <a class="note-card" href="{{ note.url }}">
         <h2 class="note-card__title">
-          {{ note.title }}
+          {{ note.data.title }}
         </h2>
         <p class="note-card__author">
-          {% if note.author %}
-            {{ note.author }}
-          {% elif note.location %}
-            {{ note.location }}
+          {% if note.data.author %}
+            {{ note.data.author }}
+          {% elif note.data.location %}
+            {{ note.data.location }}
           {% endif %}
         </p>
       </a>
