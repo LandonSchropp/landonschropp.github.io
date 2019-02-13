@@ -20,7 +20,7 @@
 
   <body>
     <main class="{{ mainClass }}">
-      {% block content %}{% endblock %}
+      {{ content | safe }}
     </main>
 
     <script src="/javascript/index.js"></script>

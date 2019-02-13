@@ -1,23 +1,22 @@
-{% extends 'layouts/default.njk' %}
+---
+layout: layouts/default.njk
+mainClass: content
+---
 
-{% set mainClass = "content" %}
+<article class="note">
 
-{% block content %}
-  <article class="note">
+  <header class="note__header header">
+    <h1 class="header__header">
+      <a class="header__link" href="{{ link }}">{{ title }}</a>
+    </h1>
 
-    <header class="note__header header">
-      <h1 class="header__header">
-        <a class="header__link" href="{{ link }}">{{ title }}</a>
-      </h1>
+    {% if author %}
+      <p class="header__byline">By {{ author }}</p>
+    {% endif %}
+  </header>
 
-      {% if author %}
-        <p class="header__byline">By {{ author }}</p>
-      {% endif %}
-    </header>
+  <section class="note__content">
+    {{ content | safe }}
+  </section>
 
-    <section class="note__content">
-      {{ content | safe }}
-    </section>
-
-  </article>
-{% endblock %}
+</article>
