@@ -16,7 +16,7 @@
     </header>
 
     <section class="note__content">
-      {% block article %}{% endblock %}
+      {{ content | safe }}
     </section>
 
   </article>
