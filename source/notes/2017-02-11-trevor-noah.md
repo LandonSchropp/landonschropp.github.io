@@ -1,10 +1,9 @@
 ---
-title: Trevor Noah Has a Lot to Say
-link: http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast011117.mp3
-site: Freakonomics
-embedURL: http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast011117.mp3
-author: Stephen Dubner
 type: podcast
+title: Trevor Noah Has a Lot to Say
+author: Stephen Dubner
+sourceName: Freakonomics
+sourceURL: http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast011117.mp3
 ---
 
 > Maybe it’s because of the world I grew up in, where anger and strategy had to be balanced. In

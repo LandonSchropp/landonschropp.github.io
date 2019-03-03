@@ -1,10 +1,10 @@
 ---
+type: talk
 title: Math is the hidden secret to understanding the world
 author: Roger Antonsen
-link: http://www.ted.com/talks/roger_antonsen_math_is_the_hidden_secret_to_understanding_the_world
-embedURL: http://www.ted.com/talks/roger_antonsen_math_is_the_hidden_secret_to_understanding_the_world
-site: TED
-type: talk
+sourceName: TED
+sourceURL: http://www.ted.com/talks/roger_antonsen_math_is_the_hidden_secret_to_understanding_the_world
+live: false
 ---
 
 > You understand something if you have the ability to view it from different perspectives.

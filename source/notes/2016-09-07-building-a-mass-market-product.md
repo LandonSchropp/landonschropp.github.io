@@ -1,10 +1,11 @@
 ---
-title: Building a Mass-Market Product
-link: https://blog.intercom.io/trellos-michael-pryor-building-horizontal-product/
-site: Intercom
-embedURL: https://soundcloud.com/intercom/michael-pryor-ceo-at-trello
-author: Des Traynor and Michael Pryor
 type: podcast
+title: Building a Mass-Market Product
+author:
+  - Des Traynor
+  - Michael Pryor
+sourceName: Intercom
+sourceURL: https://blog.intercom.io/trellos-michael-pryor-building-horizontal-product/
 ---
 
 Trello is different because it’s *horizontal*. The goal of the product isn’t to dictate a mental

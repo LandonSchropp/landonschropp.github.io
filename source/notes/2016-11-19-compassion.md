@@ -1,8 +1,9 @@
 ---
+type: talk
 title: Compassion
 author: Tim Dawes
-type: liveTalk
-location: TEDxSeattle
+sourceName: TEDxSeattle
+live: true
 ---
 
 **Compassion can be a powerful catalyst.**

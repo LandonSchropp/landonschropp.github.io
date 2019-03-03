@@ -1,10 +1,11 @@
 ---
-title: Here’s How To Get More People To Care About Your Stuff
-link: https://seekingwisdom.io/heres-how-to-get-more-people-to-care-about-your-stuff-c3df37d52fcc
-site: Seeking Wisdom
-embedURL: https://soundcloud.com/seekingwisdom/get-people-to-care
-author: David Cancel and Dave Gerhardt
 type: podcast
+title: Here’s How To Get More People To Care About Your Stuff
+author:
+  - David Cancel
+  - Dave Gerhardt
+sourceName: Seeking Wisdom
+sourceURL: https://seekingwisdom.io/heres-how-to-get-more-people-to-care-about-your-stuff-c3df37d52fcc
 ---
 
 1. Realize people don't care about your product.

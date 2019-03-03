@@ -1,10 +1,10 @@
 ---
-title: The New American Dream
-link: http://www.ted.com/talks/courtney_martin_the_new_american_dream
-site: TED
-embedURL: http://www.ted.com/talks/courtney_martin_the_new_american_dream
-author: Courtney Martin
 type: talk
+title: The New American Dream
+author: Courtney Martin
+sourceName: TED
+sourceURL: http://www.ted.com/talks/courtney_martin_the_new_american_dream
+live: false
 ---
 
 > If necessity is the mother of invention, then I’ve come to believe recession can be the father of

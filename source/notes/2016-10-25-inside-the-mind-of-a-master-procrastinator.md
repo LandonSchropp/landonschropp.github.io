@@ -1,10 +1,10 @@
 ---
-title: Inside the Mind of a Master Procrastinator
-link: https://www.ted.com/talks/tim_urban_inside_the_mind_of_a_master_procrastinator?language=en#t-750566
-site: TED
-embedURL: https://www.ted.com/talks/tim_urban_inside_the_mind_of_a_master_procrastinator?language=en#t-750566
-author: Tim Urban
 type: talk
+title: Inside the Mind of a Master Procrastinator
+author: Tim Urban
+sourceName: TED
+sourceURL: https://www.ted.com/talks/tim_urban_inside_the_mind_of_a_master_procrastinator?language=en#t-750566
+live: false
 ---
 
 There are two kinds of procrastination:

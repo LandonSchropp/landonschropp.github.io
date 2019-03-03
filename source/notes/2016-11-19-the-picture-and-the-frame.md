@@ -1,8 +1,9 @@
 ---
+type: talk
 title: The Picture and the Frame
 author: Nikkita Oliver
-type: liveTalk
-location: TEDxSeattle
+sourceName: TEDxSeattle
+live: true
 ---
 
 When we look at a photo, we miss what happens outside of it. Rosa Parks may have refused to sit

@@ -1,9 +1,9 @@
 ---
-title: Stoicism Reveals 4 Rituals That Will Make You Mentally Strong
-link: http://www.bakadesuyo.com/2016/12/mentally-strong/
-site: Barking Up the Wrong Tree
-author: Erik Barker
 type: article
+title: Stoicism Reveals 4 Rituals That Will Make You Mentally Strong
+author: Erik Barker
+sourceName: Barking Up the Wrong Tree
+sourceURL: http://www.bakadesuyo.com/2016/12/mentally-strong/
 ---
 
 There are two important ideas in stoicism:

@@ -1,10 +1,10 @@
 ---
-title: How to Validate Your Idea and Launch to $7k in Recurring Revenue
-link: https://vimeo.com/96267945
-site: Vimeo
-embedURL: https://vimeo.com/96267945
-author: Rob Walling
 type: talk
+title: How to Validate Your Idea and Launch to $7k in Recurring Revenue
+author: Rob Walling
+sourceName: Microconf
+sourceURL: https://vimeo.com/96267945
+live: false
 ---
 
 Email people and ask if they could take the time to quickly give you feedback on an idea. If they

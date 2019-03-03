@@ -1,10 +1,11 @@
 ---
-title: How to Manage Your Fear of Failure
-link: http://thestartupchat.com/ep154/
-site: The Startup Chat
-embedURL: http://traffic.libsyn.com/startup/TheStartupChatep154.mp3
-author: Hiten Shah and Steli Efti
 type: podcast
+title: How to Manage Your Fear of Failure
+author:
+  - Hiten Shah
+  - Steli Efti
+sourceName: The Startup Chat
+sourceURL: http://thestartupchat.com/ep154/
 ---
 
 > You don’t get to what’s next if you stay in that fear zone and don’t activity.

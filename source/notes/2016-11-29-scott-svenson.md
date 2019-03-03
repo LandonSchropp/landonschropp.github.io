@@ -1,8 +1,9 @@
 ---
+type: talk
 title: A Fireside Chat with Scott Svenson
-type: liveTalk
 author: Scott Svenson
-location: Startup Grind Seattle
+sourceName: Startup Grind Seattle
+live: true
 ---
 
 Start a company because it's needed. The business is about much more than just the product. You get

@@ -1,10 +1,10 @@
 ---
-title: 'Jobs to be Done: From Doubter to Believer'
-link: https://vimeo.com/167029277
-site: Vimeo
-embedURL: https://vimeo.com/167029277
-author: Sian Townsend
 type: talk
+title: 'Jobs to be Done: From Doubter to Believer'
+author: Sian Townsend
+sourceName: Vimeo
+sourceURL: https://vimeo.com/167029277
+live: false
 ---
 
 > People don’t want a quarter inch drill, they want a quarter inch hole.

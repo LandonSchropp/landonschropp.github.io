@@ -1,10 +1,11 @@
 ---
-title: How to Conduct Great Customer Development Interviews
-link: http://thestartupchat.com/ep152/
-site: The Startup Chat
-embedURL: http://traffic.libsyn.com/startup/TheStartupChatep152.mp3
-author: Hiten Shaw and Steli Efti
 type: podcast
+title: How to Conduct Great Customer Development Interviews
+author:
+  - Hiten Shaw
+  - Steli Efti
+sourceName: The Startup Chat
+sourceURL: http://thestartupchat.com/ep152/
 ---
 
 > When it comes to competition, whoever understands the customer the best will eventually have the

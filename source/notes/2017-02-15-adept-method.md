@@ -1,9 +1,9 @@
 ---
-title: Learn Difficult Concepts with the ADEPT Method
-link: https://youtu.be/g202QmfzpFo
-site: Better Explained
-author: Kalid Azad
 type: article
+title: Learn Difficult Concepts with the ADEPT Method
+author: Kalid Azad
+sourceName: Better Explained
+sourceURL: https://youtu.be/g202QmfzpFo
 ---
 
 Kalid gives a nice overview of learning difficult topics with the ADEPT method. I think this applies

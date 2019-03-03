@@ -1,10 +1,11 @@
 ---
-title: Overcoming Laziness – How to Stop Avoiding Crucial Tasks
-link: http://thestartupchat.com/ep145/
-site: The Startup Chat
-embedURL: http://traffic.libsyn.com/startup/TheStartupChatep145.mp3
-author: Hiten Shah and Steli Efti
 type: podcast
+title: Overcoming Laziness – How to Stop Avoiding Crucial Tasks
+author:
+  - Hiten Shah
+  - Steli Efti
+sourceName: The Startup Chat
+sourceURL: http://thestartupchat.com/ep145/
 ---
 
 A sense of urgency matters. This doesn't mean moving faster; it means what you're doing is

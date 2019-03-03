@@ -1,10 +1,11 @@
 ---
-title: Cold Calling 101 for Founders
-link: http://thestartupchat.com/ep150/
-site: The Startup Chat
-embedURL: http://traffic.libsyn.com/startup/TheStartupChatep150.mp3
-author: Hiten Shaw and Steli Efti
 type: podcast
+title: Cold Calling 101 for Founders
+author:
+  - Hiten Shaw
+  - Steli Efti
+sourceName: The Startup Chat
+sourceURL: http://thestartupchat.com/ep150/
 ---
 
 The number one reason founders don’t cold call is they have anxiety about doing it. You have to

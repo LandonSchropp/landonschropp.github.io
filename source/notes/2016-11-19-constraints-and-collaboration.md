@@ -1,8 +1,9 @@
 ---
+type: talk
 title: Collaboration and Constraints
 author: Alexis Kaushansky
-type: liveTalk
-location: TEDxSeattle
+sourceName: TEDxSeattle
+live: true
 ---
 
 If we try to throw ourselves open to any information, where do we start? One of the great aspects of

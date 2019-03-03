@@ -1,8 +1,9 @@
 ---
+type: talk
 title: How to Have a Better Conversation
 author: Celeste Headlee
-type: liveTalk
-location: TEDxSeattle
+sourceName: TEDxSeattle
+live: true
 ---
 
 How do you have a conversation with somebody you don't agree with?

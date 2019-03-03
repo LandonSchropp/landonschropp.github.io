@@ -1,10 +1,9 @@
 ---
-title: In Praise of Incrementalism
-link: http://freakonomics.com/podcast/in-praise-of-incrementalism/
-site: Freakonomics
-embedURL: http://audio.wnyc.org/freakonomics_podcast/freakonomics_podcast102616.mp3
-author: Stephen J. Dubner
 type: podcast
+title: In Praise of Incrementalism
+author: Stephen J. Dubner
+sourceName: Freakonomics
+sourceURL: http://freakonomics.com/podcast/in-praise-of-incrementalism/
 ---
 
 **Marginal gains principle:** Small increments, over time, add up to big gains.

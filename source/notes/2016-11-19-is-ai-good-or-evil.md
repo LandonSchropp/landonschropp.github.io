@@ -1,8 +1,9 @@
 ---
+type: talk
 title: Is AI Good or Evil?
 author: Oren Etzioni
-type: liveTalk
-location: TEDxSeattle
+sourceName: TEDxSeattle
+live: true
 ---
 
 AI isn't inherently good or evil. It's a *tool* for people to use. When used correctly, it has the

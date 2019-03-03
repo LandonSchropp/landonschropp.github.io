@@ -1,8 +1,9 @@
 ---
+type: talk
 title: Biophilia and Our Environment
 author: Scott Wyatt
-type: liveTalk
-location: TEDxSeattle
+sourceName: TEDxSeattle
+live: true
 ---
 
 The design of the environments we inhabit affect how we think.

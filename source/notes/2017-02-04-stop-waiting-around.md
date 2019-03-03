@@ -1,10 +1,9 @@
 ---
-title: Stop Waiting For That Amazing Business Idea
-link: https://soundcloud.com/seekingwisdom/the-biggest-lie
-site: Seeking Wisdom
-embedURL: https://soundcloud.com/seekingwisdom/the-biggest-lie
-author: David Cancel and Dave Gerhardt
 type: podcast
+title: Stop Waiting For That Amazing Business Idea
+author: David Cancel and Dave Gerhardt
+sourceName: Seeking Wisdom
+sourceURL: https://soundcloud.com/seekingwisdom/the-biggest-lie
 ---
 
 You don need an idea to start a business The age old version of the story of having a brilliant idea

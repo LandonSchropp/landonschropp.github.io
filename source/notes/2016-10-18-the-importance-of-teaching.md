@@ -1,10 +1,11 @@
 ---
-title: The Importance of Teaching
-link: http://thestartupchat.com/ep141/
-site: The Startup Chat
-embedURL: http://traffic.libsyn.com/startup/TheStartupChatep141.mp3
-author: Hiten Shah and Steli Efti
 type: podcast
+title: The Importance of Teaching
+author:
+  - Hiten Shah
+  - Steli Efti
+sourceName: The Startup Chat
+sourceURL: http://thestartupchat.com/ep141/
 ---
 
 Teaching is a way of depth ending your knowledge about a topic Try to think about marketing as

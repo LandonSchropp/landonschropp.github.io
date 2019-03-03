@@ -1,9 +1,9 @@
 ---
-title: My 8 Rules Of Great Products
-link: https://medium.com/@mitchellharper/my-8-rules-of-great-products-1aaa30487058#.yut38gdrt
-site: Medium
-author: Mitchell Harper
 type: article
+title: My 8 Rules Of Great Products
+author: Mitchell Harper
+sourceName: Medium
+sourceURL: https://medium.com/@mitchellharper/my-8-rules-of-great-products-1aaa30487058
 ---
 
 Don’t make wedding cakes, make cupcakes. Building out full implementations of products as MVPs takes

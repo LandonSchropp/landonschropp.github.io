@@ -1,9 +1,9 @@
 ---
-title: The Top Three Ways People Fail (and How to Avoid Them)
-link: https://taylorpearson.me/archive/
-author: Taylor Pearson
-site: taylorpearson.me
 type: article
+title: The Top Three Ways People Fail (and How to Avoid Them)
+author: Taylor Pearson
+sourceName: taylorpearson.me
+sourceURL: https://taylorpearson.me/archive/
 ---
 
 * **Set a deadline.** Without some pressure to finish, you simply won’t work as hard.

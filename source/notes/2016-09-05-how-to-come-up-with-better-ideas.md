@@ -1,10 +1,9 @@
 ---
-title: How to Come Up with Better Ideas
-link: https://seekingwisdom.io/28-how-to-come-up-with-better-ideas-81535d4b35ff
-site: Seeking Wisdom
-embedURL: https://www.youtube.com/watch?v=lHFxQ37J0Rw
-author: David Cancel and Dave Gerhardt
 type: podcast
+title: How to Come Up with Better Ideas
+author: David Cancel and Dave Gerhardt
+sourceName: Seeking Wisdom
+sourceURL: https://seekingwisdom.io/28-how-to-come-up-with-better-ideas-81535d4b35ff
 ---
 
 **Read more.** Investing in yourself is the best ROI, and books are the cheapest and easiest way to

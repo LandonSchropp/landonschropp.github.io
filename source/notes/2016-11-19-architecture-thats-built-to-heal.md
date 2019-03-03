@@ -1,10 +1,10 @@
 ---
-title: Architecture That's Built to Heal
-link: https://www.ted.com/talks/michael_murphy_architecture_that_s_built_to_heal
-site: TED
-embedURL: https://www.ted.com/talks/michael_murphy_architecture_that_s_built_to_heal
-author: Michael Murphy
 type: talk
+title: Architecture That's Built to Heal
+author: Michael Murphy
+sourceName: TED
+sourceURL: https://www.ted.com/talks/michael_murphy_architecture_that_s_built_to_heal
+live: false
 ---
 
 **Every design decision is an opportunity.**

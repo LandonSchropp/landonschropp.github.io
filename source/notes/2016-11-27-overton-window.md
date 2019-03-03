@@ -1,9 +1,9 @@
 ---
-title: The Overton Window and How Creative Business Ideas Arise
-link: https://taylorpearson.me/overton/
-site: taylorpearson.me
-author: Taylor Pearson
 type: article
+title: The Overton Window and How Creative Business Ideas Arise
+author: Taylor Pearson
+sourceName: taylorpearson.me
+sourceURL: https://taylorpearson.me/overton/
 ---
 
 > The Overton Window is the range of ideas that the public will accept. It’s primarily used in

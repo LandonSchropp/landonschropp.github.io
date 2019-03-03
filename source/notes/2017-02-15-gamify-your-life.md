@@ -1,9 +1,9 @@
 ---
-title: How to Gamify Your Life to Quickly Accomplish Big Goals
-link: https://medium.com/the-mission/how-to-gamify-your-life-to-quickly-accomplish-big-goals-b81721299912
-site: Medium
-author: Benjamin P. Hardy
 type: article
+title: How to Gamify Your Life to Quickly Accomplish Big Goals
+author: Benjamin P. Hardy
+sourceName: Medium
+sourceURL: https://medium.com/the-mission/how-to-gamify-your-life-to-quickly-accomplish-big-goals-b81721299912
 ---
 
 * **Compete with people way ahead of you.** Practice with people who are better than you.

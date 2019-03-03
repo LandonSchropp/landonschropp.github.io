@@ -1,10 +1,10 @@
 ---
-title: How to Master Any Skill by Deconstructing It
-link: http://startuptalks.tv/videos/tim-ferriss-shares-master-skill-deconstructing-next-web/
-site: Startup Talks
-embedURL: https://youtu.be/DSq9uGs_z0E
-author: Tim Ferriss
 type: talk
+title: How to Master Any Skill by Deconstructing It
+author: Tim Ferriss
+sourceName: Startup Talks
+sourceURL: http://startuptalks.tv/videos/tim-ferriss-shares-master-skill-deconstructing-next-web/
+live: false
 ---
 
 **Always question the obvious.**
