@@ -19,9 +19,9 @@ mainClass: content
   <section class="note-summaries">
     {% for note in collections.notes | reverse %}
       <a class="note-summary" href="{{ note.url }}" data-type="{{ note.data.type }}">
-        <h2 class="note-summary__title">
+        <h3 class="note-summary__title">
           {{ note.data.title }}
-        </h2>
+        </h3>
         <p class="note-summary__author">
           {{ note.data.author | listify }}
         </p>
