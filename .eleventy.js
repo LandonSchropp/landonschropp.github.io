@@ -1,4 +1,7 @@
+const voca = require('voca');
+
 const embedly = require('./source/utilities/embedly');
+const listify = require('./source/utilities/listify');
 const validateNote = require('./source/utilities/validate-note')
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
@@ -8,6 +11,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("note", "layouts/note.njk");
 
   eleventyConfig.addNunjucksTag("embedly", embedly);
+
+  eleventyConfig.addFilter("titleCase", voca.titleCase);
+  eleventyConfig.addFilter("listify", listify);
 
   eleventyConfig.addCollection("notes", (collection) => {
 
