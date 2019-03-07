@@ -1,0 +1,36 @@
+<header class="note-header">
+  <p class="note-header__suphead">
+    My personal notes for
+  </p>
+
+  <h1 class="note-header__header">
+    {% if sourceURL %}
+      <a class="note-header__link" href="{{ sourceURL }}">{{ title }}</a>
+    {% else%}
+      {{ title }}
+    {% endif %}
+  </h1>
+
+  <p class="note-header__subhead">
+    {% if type == "talk" and live %}
+      A talk by {{ author | listify }} I attended at {{ sourceName }}
+    {% elif type == "podcast" %}
+      From
+      <a href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>,
+      a podcast by {{ author | listify }}
+    {% elif type == "article" %}
+      An {{ type }} by {{ author | listify }} from
+      <a href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
+    {% elif type == "video" or type == "talk" %}
+      A {{ type }} by {{ author | listify }} on
+      <a href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
+    {% elif type == "book" %}
+      A {{ type }} by {{ author | listify }}
+    {% endif %}
+  </p>
+
+  {# TODO: Move the tag into a partial. #}
+  <span class="tag" data-type="{{ type }}">
+    {{ type | titleCase }}
+  </span>
+</header>

@@ -5,39 +5,11 @@ mainClass: content
 
 <article class="note">
 
-  <header class="note__header header">
-    <h1 class="header__header">
-      <a class="header__link" href="{{ link }}">{{ title }}</a>
-    </h1>
-
-    {% if author %}
-      <p class="header__byline">By {{ author }}</p>
-    {% endif %}
-  </header>
+  {% include "partials/note-header.njk" %}
 
   {% if embedURL %}
     {% embedly embedURL %}
   {% endif %}
-
-  <aside class="disclaimer">
-    These are my personal notes from
-
-    {% if link %}
-      <a href="{{ link }}">{{ title }}</a>,
-    {% else%}
-      {{ title }},
-    {% endif %}
-
-    {% if type == "liveTalk" %}
-      a talk
-      {% if author %}by {{ author }}{% endif %}
-      I attended at {{ location }}.
-    {% elif type == "podcast" %}
-      an episode of {{ site }}, a podcast by {{ author }}.
-    {% else %}
-      a {{ type }} by {{ author }} on {{ site }}.
-    {% endif %}
-  </aside>
 
   <section class="note__content">
     {{ content | safe }}
