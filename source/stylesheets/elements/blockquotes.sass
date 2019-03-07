@@ -5,6 +5,25 @@ blockquote
   *
     display: inline
 
-  // Use the inner paragraph for the quotations, since they're automatically added by Redcarpet
+  // Use the inner paragraph for the quotations so there's no gap between them and the text.
   p
     @extend q
+
+    &::before, &::after
+
+      // Make the quotes really big
+      font-size: 2em
+
+      // TODO: Use the current theme style
+      color: $orange
+
+      // HACK: In order to make the quote line up with the rest of the content, these properties
+      // have been added.
+      line-height: 0
+      vertical-align: text-bottom
+
+    &::before
+      margin-right: $spacing--xxsmall
+
+    &::after
+      margin-left: $spacing--xxsmall
