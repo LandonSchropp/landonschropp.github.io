@@ -1,5 +1,5 @@
-const embedly = require('./lib/embedly');
-const validateNote = require('./lib/validate-note')
+const embedly = require('./source/utilities/embedly');
+const validateNote = require('./source/utilities/validate-note')
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
 module.exports = function(eleventyConfig) {
