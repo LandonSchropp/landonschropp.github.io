@@ -8,7 +8,7 @@ live: true
 
 Start a company because it's needed. The business is about much more than just the product. You get
 to choose what you want to care about and change. <q>The world does not need another pizza
-restaurant.</q> He found passion not in the pizza, but in *how he could use it as a platform to
+restaurant.</q> Scott found passion not in the pizza, but in *how he could use it as a platform to
 drive social change.*
 
 In order to build a successful company, you have to do something that's different. Really meditate
