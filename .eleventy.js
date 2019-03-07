@@ -1,5 +1,6 @@
 const voca = require('voca');
 
+const baseURL = require('./source/utilities/base-url');
 const embedly = require('./source/utilities/embedly');
 const listify = require('./source/utilities/listify');
 const validateNote = require('./source/utilities/validate-note')
@@ -14,6 +15,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addFilter("titleCase", voca.titleCase);
   eleventyConfig.addFilter("listify", listify);
+  eleventyConfig.addFilter("baseURL", baseURL);
 
   eleventyConfig.addCollection("notes", (collection) => {
 
