@@ -1,29 +1,29 @@
-<header class="note-header">
-  <p class="note-header__suphead">
+<header class="header">
+  <p class="header__suphead">
     My personal notes for
   </p>
 
-  <h1 class="note-header__header">
+  <h1 class="header__header">
     {% if sourceURL %}
-      <a class="note-header__link" href="{{ sourceURL }}">{{ title }}</a>
+      <a class="header__link" href="{{ sourceURL }}">{{ title }}</a>
     {% else%}
       {{ title }}
     {% endif %}
   </h1>
 
-  <p class="note-header__subhead">
+  <p class="header__subhead">
     {% if type == "talk" and live %}
       A talk by {{ author | listify }} I attended at {{ sourceName }}
     {% elif type == "podcast" %}
       From
-      <a class="note-header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>,
+      <a class="header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>,
       a podcast by {{ author | listify }}
     {% elif type == "article" %}
       An {{ type }} by {{ author | listify }} from
-      <a class="note-header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
+      <a class="header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
     {% elif type == "video" or type == "talk" %}
       A {{ type }} by {{ author | listify }} on
-      <a class="note-header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
+      <a class="header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
     {% elif type == "book" %}
       A {{ type }} by {{ author | listify }}
     {% endif %}
