@@ -1,0 +1,18 @@
+// This allows a property to be styled with the correct tag color. It's based on the element having
+// a `data-type` attribute.
+@mixin tag-color($property)
+
+  &[data-type="article"]
+    #{ $property }: $cornflower-blue
+
+  &[data-type="video"]
+    #{ $property }: $purple
+
+  &[data-type="book"]
+    #{ $property }: $bittersweet
+
+  &[data-type="podcast"]
+    #{ $property }: $orange
+
+  &[data-type="talk"]
+    #{ $property }: $yellow

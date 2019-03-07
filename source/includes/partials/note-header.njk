@@ -16,14 +16,14 @@
       A talk by {{ author | listify }} I attended at {{ sourceName }}
     {% elif type == "podcast" %}
       From
-      <a href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>,
+      <a class="note-header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>,
       a podcast by {{ author | listify }}
     {% elif type == "article" %}
       An {{ type }} by {{ author | listify }} from
-      <a href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
+      <a class="note-header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
     {% elif type == "video" or type == "talk" %}
       A {{ type }} by {{ author | listify }} on
-      <a href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
+      <a class="note-header__link" href="{{ sourceURL | baseURL }}">{{ sourceName }}</a>
     {% elif type == "book" %}
       A {{ type }} by {{ author | listify }}
     {% endif %}
