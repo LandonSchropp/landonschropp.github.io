@@ -5,6 +5,8 @@ description: A collection of notes on blog posts, talks, podcasts and books by L
 mainClass: content
 ---
 
+{% from "macros/tag.njk" import tag %}
+
 {% block content %}
   <header class="header">
     <h1 class="header__header">
@@ -14,6 +16,14 @@ mainClass: content
     <p class="header__subhead">
       This is my personal collection of notes on entrepreneurship, development and design.
     </p>
+
+    <div class="header__tags">
+      {{ tag("article") }}
+      {{ tag("video") }}
+      {{ tag("book") }}
+      {{ tag("talk") }}
+      {{ tag("podcast") }}
+    </div>
   </header>
 
   <section class="note-summaries">
