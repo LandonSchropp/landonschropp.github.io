@@ -1,5 +1,5 @@
 {% macro tag(type) %}
-  <span class="tag" data-type="{{ type }}">
+  <a href="/notes/?types={{ type }}" class="tag" data-type="{{ type }}">
     {{ type | titleCase }}
-  </span>
+  </a>
 {% endmacro %}

@@ -1,8 +1,9 @@
 .tag
   +tag-color(background-color)
+  +tag-color(border-color)
 
   display: inline-block
-  padding: $spacing--xxsmall $spacing--small
+  padding: calc(#{ $spacing--xxsmall } - 1px) calc(#{ $spacing--small } - 1px)
 
   color: $white
 
@@ -13,3 +14,29 @@
   border-radius: $spacing
   letter-spacing: 0.05em
   text-decoration: none
+
+  // Note: The tags use borders so they're not resized when the selected state is used.
+  border-width: 1px
+  border-style: solid
+
+  &.tag.tag--deselected
+    +tag-color(border-color)
+    +tag-color(color)
+
+    background-color: transparent
+
+    // &[data-type="article"]
+    //   box-shadow:
+    //   #{ $property }: $cornflower-blue
+
+    // &[data-type="video"]
+    //   #{ $property }: $purple
+    //
+    // &[data-type="book"]
+    //   #{ $property }: $bittersweet
+    //
+    // &[data-type="talk"]
+    //   #{ $property }: $orange
+    //
+    // &[data-type="podcast"]
+    //   #{ $property }: $yellow
