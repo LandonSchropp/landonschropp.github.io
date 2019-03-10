@@ -23,7 +23,7 @@ mainClass: content
           {{ note.data.title }}
         </h3>
         <p class="note-summary__author">
-          {{ note.data.author | listify }}
+          {{ note.data.author | listify }} ∙ {{ note.data.sourceName }}
         </p>
       </a>
     {% endfor %}
