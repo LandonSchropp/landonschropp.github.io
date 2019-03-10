@@ -34,8 +34,9 @@ remove things before trying to add things.
 
 ## Takeaways
 
-* The first step is to be very confident. You have to have optimism that you can achieve what goes
-* beyond your limitations. You need to establish a baseline so you can see progress. The 80/20 rule
-* can also be applied to equipment and gear. The worst time to learn something is when you’re under
-* pressure. Find a way to take the pressure away. For example, to learn to chop with a chef's knife,
-* try practicing with a lettuce knife.
+* The first step is to be very confident. You have to have optimism that you can achieve beyond your
+  personal limitations.
+* You need to establish a baseline so you can see progress.
+* The 80/20 rule can also be applied to equipment and gear.
+* The worst time to learn something is when you’re under pressure. Find a way to take the pressure
+  away. For example, to learn to chop with a chef's knife, try practicing with a lettuce knife.
