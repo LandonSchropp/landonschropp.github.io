@@ -1,3 +1,5 @@
+{% from "macros/tag.njk" import tag %}
+
 <header class="header">
   <p class="header__suphead">
     My personal notes for
@@ -29,8 +31,5 @@
     {% endif %}
   </p>
 
-  {# TODO: Move the tag into a partial. #}
-  <span class="tag" data-type="{{ type }}">
-    {{ type | titleCase }}
-  </span>
+  {{ tag(type) }}
 </header>
