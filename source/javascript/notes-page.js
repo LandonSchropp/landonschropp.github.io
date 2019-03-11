@@ -1,53 +1,34 @@
 import createHistory from 'history/createBrowserHistory';
 const history = createHistory();
 
-const TYPES_QUERY_REGEX = /types=([^&]+)/;
-
-function allTypes() {
-  return Array.from(document.querySelectorAll('.tag')).map(tag => tag.dataset.type);
+// TODO: Replace this function with a simple library that allows manipulation of the query string.
+function querySelectedType() {
+  let match = window.location.search.match(/type=([^&]+)/);
+  return match ? match[1] : null;
 }
 
 // TODO: Replace this function with a simple library that allows manipulation of the query string.
-function queryNoteTypes() {
-  let match = window.location.search.match(TYPES_QUERY_REGEX);
-  if (match === null) { return allTypes(); }
-  return match[1] === "none" ? [] : match[1].split(',');
-}
-
-// TODO: Replace this function with a simple library that allows manipulation of the query string.
-function setQueryNoteTypes(types) {
-  let search;
-
-  if (types.length === allTypes().length) {
-    search = "";
-  }
-  else if (types.length === 0) {
-    search = "?types=none";
-  }
-  else {
-    search = `?types=${ types.join(",") }`;
-  }
+function setQuerySelectedType(type) {
+  let search = type ? `?type=${ type }` : "";
 
   // TODO: Replace  this with a native browser implementation
   history.replace(`${ window.location.pathname }${ search }`);
 }
 
-function visibleNoteTypes() {
-  return Array.from(document.querySelectorAll('.tag'))
-    .filter(tag => !tag.classList.contains('tag--deselected'))
-    .map(tag => tag.dataset.type);
+function isDeselected(element, selectedType) {
+  return selectedType !== null && element.dataset.type !== selectedType;
 }
 
-function toggleTagAndNoteSelections(noteTypes) {
+function toggleTagAndNoteSelections(selectedType) {
 
-  // Mark the tags as selected or deselected
+  // Mark the tags as selected
   document.querySelectorAll('.tag').forEach(tag => {
-    tag.classList.toggle('tag--deselected', !noteTypes.includes(tag.dataset.type));
+    tag.classList.toggle('tag--deselected', isDeselected(tag, selectedType));
   });
 
   // Show and hide the notes
   document.querySelectorAll('.note-summary').forEach(note => {
-    note.classList.toggle('note-summary--hidden', !noteTypes.includes(note.dataset.type));
+    note.classList.toggle('note-summary--hidden', isDeselected(note, selectedType));
   });
 }
 
@@ -57,13 +38,13 @@ function onAnchorClick(event) {
   event.stopPropagation();
   event.preventDefault();
 
-  // Mark the tag as deselected
-  event.target.classList.toggle('tag--deselected');
+  // Update the tags and notes with the new selected type
+  let selectedType = querySelectedType() === event.target.dataset.type
+    ? null
+    : event.target.dataset.type;
 
-  // Update the tags and notes
-  let types = visibleNoteTypes();
-  toggleTagAndNoteSelections(types);
-  setQueryNoteTypes(types);
+  toggleTagAndNoteSelections(selectedType);
+  setQuerySelectedType(selectedType);
 }
 
 export default function notesPage() {
@@ -74,5 +55,5 @@ export default function notesPage() {
   });
 
   // Handle the initial query on page load
-  toggleTagAndNoteSelections(queryNoteTypes());
+  toggleTagAndNoteSelections(querySelectedType());
 }
