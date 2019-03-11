@@ -7,10 +7,6 @@ mainClass: content
 
   {% include "partials/note-header.njk" %}
 
-  {% if embedURL %}
-    {% embedly embedURL %}
-  {% endif %}
-
   <section class="note__content">
     {{ content | safe }}
   </section>
