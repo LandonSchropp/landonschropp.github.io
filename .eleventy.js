@@ -3,6 +3,7 @@ const voca = require('voca');
 const baseURL = require('./source/utilities/base-url');
 const listify = require('./source/utilities/listify');
 const validateNote = require('./source/utilities/validate-note')
+const inspect = require('./source/utilities/inspect');
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
 module.exports = function(eleventyConfig) {
@@ -13,6 +14,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("titleCase", voca.titleCase);
   eleventyConfig.addFilter("listify", listify);
   eleventyConfig.addFilter("baseURL", baseURL);
+
+  eleventyConfig.addShortcode("inspect", inspect)
 
   eleventyConfig.addCollection("notes", (collection) => {
 
