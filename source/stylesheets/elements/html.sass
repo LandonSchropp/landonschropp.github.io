@@ -1,4 +1,6 @@
 html
+  height: 100%
+
   font-family: $font-family--serif
   font-size: 18px
   font-weight: 400
@@ -11,12 +13,3 @@ html
 
   +viewport--large
     font-size: 20px
-
-html, body
-  height: 100%
-
-body
-
-  // HACK: This is a quick hack to prevent margins from collapsing outside of the body.
-  display: flex
-  flex-direction: column
