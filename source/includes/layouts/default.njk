@@ -23,6 +23,9 @@
   </head>
 
   <body>
+    {# TODO: Don't show this on the index page. #}
+    {% include "partials/main-header.njk" %}
+
     <main class="{{ mainClass }}">
       {{ content | safe }}
     </main>
