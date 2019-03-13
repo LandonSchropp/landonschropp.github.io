@@ -1,7 +1,13 @@
 {# TODO: Add a selected state for the current item. #}
 <header class="main-header">
+  {% set isNotes = r/^\/notes/.test(page.url) %}
+
   <a class="main-header__title-link" href="/">Landon Schropp</a>
-  <a class="main-header__link" href="/notes">Notes</a>
+
+  <a class="main-header__link {% if isNotes %}main-header__link--selected{% endif %}" href="/notes">
+    Notes
+  </a>
+
   <a class="main-header__link" href="https://medium.com/@LandonSchropp">Blog</a>
   <a class="main-header__link" href="https://unravelingflexbox.com">Book</a>
 </header>
