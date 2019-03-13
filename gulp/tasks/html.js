@@ -36,6 +36,11 @@ gulp.task('html', (callback) => {
     .reject(_.isNil)
     .value();
 
+  if (_.isEmpty(files)) {
+    console.log("No files were generated."); // eslint-disable-line no-console
+    return callback();
+  }
+
   return gulp.src(files)
     .pipe(sitemap({ siteUrl: process.env.URL }))
     .pipe(gulp.dest('./build'))
