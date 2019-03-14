@@ -3,6 +3,7 @@ import connect from 'gulp-connect';
 import gulp from 'gulp';
 import sitemap from 'gulp-sitemap';
 import { execSync } from 'child_process';
+const WRITING_REGEX = /Writing (.*?) from/;
 
 // Rather than creating separate tasks and duplicating steps, or creating temporary files, this task
 // separately creates the notes and regular HTML streams. It then merged the streams together for
@@ -29,6 +30,19 @@ gulp.task('html', (callback) => {
     return callback();
   }
 
+  // Capture any output that's not directly from Eleventy and print it out.
+  let output = stdout
+    .split('\n')
+    .filter(line => !WRITING_REGEX.test(line))
+    .filter(line => !/Processed \d+ files in/.test(line))
+    .join('\n')
+    .trim();
+
+  if (output !== "") {
+    console.log(output); // eslint-disable-line no-console
+  }
+
+  // Convert the outupt into a stream of files that can be processed by Gulp.
   let files = _.chain(stdout)
     .split('\n')
     .map(line => line.match(/Writing (.*?) from/))
