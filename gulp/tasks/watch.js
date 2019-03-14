@@ -7,7 +7,7 @@ gulp.task('watch', gulp.series('build', () => {
     'source/**/*.njk',
     '.eleventy.js',
     'source/notes/*',
-    'lib/*'
+    'source/utilities/*'
   ], gulp.series('html'));
   gulp.watch('source/stylesheets/**', gulp.series('stylesheets'));
   gulp.watch('source/javascript/**', gulp.series('javascript'));
