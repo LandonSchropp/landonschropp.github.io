@@ -1,0 +1,27 @@
+{# TODO: Add a selected state for the current item. #}
+<nav class="main-navigation">
+  {% set isNotes = r/^\/notes/.test(page.url) %}
+
+  <div class="main-navigation__primary">
+
+    <a class="main-navigation__link" href="/">
+      <b class="main-navigation__title-text--long">
+        Landon Schropp
+      </b>
+      <b class="main-navigation__title-text--short">
+        Home
+      </b>
+    </a>
+
+    {# TODO: Write a helper for this to make it more concise. #}
+    <a
+      class="main-navigation__link {% if isNotes %}main-navigation__link--selected{% endif %}"
+      href="/notes"
+    >
+      Notes
+    </a>
+
+    <a class="main-navigation__link" href="https://medium.com/@LandonSchropp">Blog</a>
+    <a class="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
+  </div>
+</nav>
