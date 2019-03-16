@@ -10,6 +10,10 @@
   @media only screen and (min-width: $viewport-width--large)
     @content
 
+@mixin viewport--max-medium
+  @media only screen and (max-width: #{ $viewport-width--medium - 1px })
+    @content
+
 @mixin print
   @media print
     @content

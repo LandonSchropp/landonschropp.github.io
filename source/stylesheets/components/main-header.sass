@@ -1,13 +1,30 @@
 .main-header
-  display: flex
   margin: $spacing * 0.75 0
   font-size: $font-size--small
 
-  &__link, &__title-link
+  +viewport--medium
+    padding: 0 $spacing--small
+
+  &__title-text
+
+    +viewport--max-medium
+      &--long
+        display: none
+
+    +viewport--medium
+      &--short
+        display: none
+
+  &__primary
+    display: flex
+    justify-content: center
+
+  &__link
     font-family: $font-family--sans-serif
     text-decoration: none
     display: block
     color: $gray
+    margin: 0 $spacing--small
 
     &:hover
       color: inherit
@@ -15,9 +32,6 @@
     &:hover, &--selected
       box-shadow: 0 3px $cornflower-blue
 
-  &__title-link
-    margin-left: $spacing
-    margin-right: auto
-
-  &__link
-    margin-right: $spacing
+    +media--medium
+      &:first-of-type
+        margin-right: auto

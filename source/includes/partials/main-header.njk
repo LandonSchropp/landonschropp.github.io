@@ -2,12 +2,26 @@
 <header class="main-header">
   {% set isNotes = r/^\/notes/.test(page.url) %}
 
-  <a class="main-header__title-link" href="/">Landon Schropp</a>
+  <nav class="main-header__primary">
 
-  <a class="main-header__link {% if isNotes %}main-header__link--selected{% endif %}" href="/notes">
-    Notes
-  </a>
+    <a class="main-header__link" href="/">
+      <b class="main-header__title-text--long">
+        Landon Schropp
+      </b>
+      <b class="main-header__title-text--short">
+        Home
+      </b>
+    </a>
 
-  <a class="main-header__link" href="https://medium.com/@LandonSchropp">Blog</a>
-  <a class="main-header__link" href="https://unravelingflexbox.com">Book</a>
+    {# TODO: Write a helper for this to make it more concise. #}
+    <a
+      class="main-header__link {% if isNotes %}main-header__link--selected{% endif %}"
+      href="/notes"
+    >
+      Notes
+    </a>
+
+    <a class="main-header__link" href="https://medium.com/@LandonSchropp">Blog</a>
+    <a class="main-header__link" href="https://unravelingflexbox.com">Book</a>
+  </nav>
 </header>
