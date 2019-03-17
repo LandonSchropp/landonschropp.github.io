@@ -7,7 +7,7 @@ export function templateViewBox(template) {
 }
 
 export function templateAttribute(template, id, attribute) {
-  let element = templateFragment(template).querySelector(`[data-id="${ id }"]`);
+  let element = templateFragment(template).getElementById(id);
   return element && element.getAttribute(attribute);
 }
 
