@@ -4,6 +4,7 @@ const baseURL = require('./source/utilities/base-url');
 const listify = require('./source/utilities/listify');
 const validateNote = require('./source/utilities/validate-note')
 const inspect = require('./source/utilities/inspect');
+const includeLandingPageSVG = require('./source/utilities/include-landing-page-svg');
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
 module.exports = function(eleventyConfig) {
@@ -16,6 +17,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("baseURL", baseURL);
 
   eleventyConfig.addShortcode("inspect", inspect)
+  eleventyConfig.addShortcode("includeLandingPageSVG", includeLandingPageSVG)
 
   eleventyConfig.addCollection("notes", (collection) => {
 
