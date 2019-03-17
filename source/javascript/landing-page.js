@@ -15,7 +15,7 @@ function update() {
     return;
   }
 
-  let landing = document.querySelector(".landing");
+  let landing = document.querySelector(".landing__svg");
   let paths = landing.querySelectorAll("path[id], polygon[id]");
 
   lastTemplate = template;
