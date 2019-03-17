@@ -35,6 +35,7 @@
     "normalize.css": "^8.0.1",
     "postcss-easy-import": "^3.0.0",
     "sass": "^1.15.2",
+    "svgo": "^1.2.0",
     "voca": "^1.4.0",
     "webpack": "^4.27.1",
     "webpack-stream": "^5.2.1"
