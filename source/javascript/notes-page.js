@@ -1,6 +1,3 @@
-import createHistory from 'history/createBrowserHistory';
-const history = createHistory();
-
 // TODO: Replace this function with a simple library that allows manipulation of the query string.
 function querySelectedType() {
   let match = window.location.search.match(/type=([^&]+)/);
@@ -12,7 +9,11 @@ function setQuerySelectedType(type) {
   let search = type ? `?type=${ type }` : "";
 
   // TODO: Replace  this with a native browser implementation
-  history.replace(`${ window.location.pathname }${ search }`);
+  history.replaceState(
+    {},
+    document.title,
+    `${ window.location.pathname }${ search }`
+  );
 }
 
 function isDeselected(element, selectedType) {
