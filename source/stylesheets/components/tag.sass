@@ -8,35 +8,22 @@
   color: $white
 
   font-family: $font-family--sans-serif
-  font-size: $font-size--xxsmall
+  font-size: $font-size--xsmall
   font-weight: normal
   text-transform: uppercase
   border-radius: $spacing
   letter-spacing: 0.05em
   text-decoration: none
 
-  // Note: The tags use borders so they're not resized when the selected state is used.
+  // NOTE: The tags use borders so they're not resized when the selected state is used.
   border-width: 1px
   border-style: solid
+
+  +viewport--medium
+    font-size: $font-size--xxsmall
 
   &.tag.tag--deselected
     +tag-color(border-color)
     +tag-color(color)
 
     background-color: transparent
-
-    // &[data-type="article"]
-    //   box-shadow:
-    //   #{ $property }: $cornflower-blue
-
-    // &[data-type="video"]
-    //   #{ $property }: $purple
-    //
-    // &[data-type="book"]
-    //   #{ $property }: $bittersweet
-    //
-    // &[data-type="talk"]
-    //   #{ $property }: $orange
-    //
-    // &[data-type="podcast"]
-    //   #{ $property }: $yellow
