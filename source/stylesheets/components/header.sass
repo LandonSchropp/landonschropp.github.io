@@ -30,11 +30,10 @@
     justify-content: center
     flex-wrap: wrap
 
+  // HACK: The tag groups exist to allow the tags to wrap in a grouped fasion. This prevents one
+  // "lone tag" from sitting on the next line on standard mobile sizes.
+  &__tag-group
+    display: flex
+
     *
       margin: $spacing--small $spacing--xsmall 0
-
-    *:first-of-type
-      margin-left: 0
-
-    *:last-of-type
-      margin-right: 0

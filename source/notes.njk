@@ -18,11 +18,15 @@ mainClass: content
     </p>
 
     <div class="header__tags">
-      {{ tag("article") }}
-      {{ tag("video") }}
-      {{ tag("book") }}
-      {{ tag("talk") }}
-      {{ tag("podcast") }}
+      <span class="header__tag-group">
+        {{ tag("article") }}
+        {{ tag("video") }}
+        {{ tag("book") }}
+      </span>
+      <span class="header__tag-group">
+        {{ tag("talk") }}
+        {{ tag("podcast") }}
+      </span>
     </div>
   </header>
 
