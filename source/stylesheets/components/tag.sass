@@ -19,6 +19,11 @@
   border-width: 1px
   border-style: solid
 
+  transition: box-shadow $transition-time--small ease-in
+
+  &:hover
+    box-shadow: 0 $spacing--xxsmall $spacing--xsmall $indigo
+
   +viewport--medium
     font-size: $font-size--xxsmall
 
