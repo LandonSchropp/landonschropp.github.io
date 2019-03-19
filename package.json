@@ -5,10 +5,11 @@
   "author": "Landon Schropp <schroppl@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "clean": "gulp clean",
-    "lint": "eslint --max-warnings=0 .",
     "build": "gulp build",
+    "clean": "gulp clean",
     "deploy": "gulp deploy",
+    "lint": "eslint --max-warnings=0 .",
+    "todo": "leasot --exit-nicely --tags 'hack,bug fix,fix me' 'source/**/*.{njk,sass,js,md}'",
     "watch": "gulp watch"
   },
   "dependencies": {
@@ -44,6 +45,7 @@
     "@babel/register": "^7.0.0",
     "@landonschropp/eslint-config": "^0.4.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.10.0"
+    "eslint": "^5.10.0",
+    "leasot": "^7.3.4"
   }
 }
