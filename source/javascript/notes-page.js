@@ -1,14 +1,16 @@
-// TODO: Replace this function with a simple library that allows manipulation of the query string.
-function querySelectedType() {
-  let match = window.location.search.match(/type=([^&]+)/);
-  return match ? match[1] : null;
+import queryString from 'query-string';
+
+function query() {
+  return queryString.parse(window.location.search);
 }
 
-// TODO: Replace this function with a simple library that allows manipulation of the query string.
-function setQuerySelectedType(type) {
-  let search = type ? `?type=${ type }` : "";
+function querySelectedType() {
+  return query().type || null;
+}
 
-  // TODO: Replace  this with a native browser implementation
+function setQuerySelectedType(type) {
+  let search = type ? `?${ queryString.stringify({ ...query(), type }) }` : "";
+
   history.replaceState(
     {},
     document.title,
