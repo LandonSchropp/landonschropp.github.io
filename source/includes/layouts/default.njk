@@ -4,7 +4,7 @@
     {% include 'partials/google-analytics.njk' %}
 
     <meta charset="utf-8">
-    <title>{{ title }}</title>
+    <title>{{ title | required }}</title>
 
     {# TODO: When eleventy supports interpolation inside of front matter, this can be removed. #}
     {# https://github.com/11ty/11ty.io/issues/33 #}
