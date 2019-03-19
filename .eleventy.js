@@ -1,11 +1,11 @@
 const voca = require('voca');
 
-const baseURL = require('./source/eleventy/base-url');
-const listify = require('./source/eleventy/listify');
-const validateNote = require('./source/eleventy/validate-note')
-const inspect = require('./source/eleventy/inspect');
-const includeLandingPageSVG = require('./source/eleventy/include-landing-page-svg');
 const addNunjucksPromiseTag = require('./source/eleventy/add-nunjucks-promise-tag');
+const baseURL = require('./source/eleventy/base-url');
+const includeLandingPageSVG = require('./source/eleventy/include-landing-page-svg');
+const inspect = require('./source/eleventy/inspect');
+const listify = require('./source/eleventy/listify');
+const notesCollection = require('./source/eleventy/notes-collection');
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
 module.exports = function(eleventyConfig) {
@@ -21,17 +21,7 @@ module.exports = function(eleventyConfig) {
 
   addNunjucksPromiseTag(eleventyConfig, "includeLandingPageSVG", includeLandingPageSVG);
 
-  eleventyConfig.addCollection("notes", (collection) => {
-
-    // Grab all of the notes
-    let notes = collection.getFilteredByGlob("source/notes/**/*");
-
-    // Validate all of the notes to make sure I didn't accidentally leave something out.
-    notes.forEach(validateNote);
-
-    // Return the notes
-    return notes;
-  });
+  eleventyConfig.addCollection("notes", notesCollection);
 
   return {
     dir: {
