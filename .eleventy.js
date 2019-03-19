@@ -1,11 +1,11 @@
 const voca = require('voca');
 
-const baseURL = require('./source/utilities/base-url');
-const listify = require('./source/utilities/listify');
-const validateNote = require('./source/utilities/validate-note')
-const inspect = require('./source/utilities/inspect');
-const includeLandingPageSVG = require('./source/utilities/include-landing-page-svg');
-const addNunjucksPromiseTag = require('./source/utilities/add-nunjucks-promise-tag');
+const baseURL = require('./source/eleventy/base-url');
+const listify = require('./source/eleventy/listify');
+const validateNote = require('./source/eleventy/validate-note')
+const inspect = require('./source/eleventy/inspect');
+const includeLandingPageSVG = require('./source/eleventy/include-landing-page-svg');
+const addNunjucksPromiseTag = require('./source/eleventy/add-nunjucks-promise-tag');
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
 module.exports = function(eleventyConfig) {
