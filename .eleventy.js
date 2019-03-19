@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("note", "layouts/note.njk");
 
   eleventyConfig.addFilter("titleCase", voca.titleCase);
+  eleventyConfig.addFilter("trim", voca.trim);
   eleventyConfig.addFilter("listify", listify);
   eleventyConfig.addFilter("required", required);
   eleventyConfig.addFilter("baseURL", baseURL);
