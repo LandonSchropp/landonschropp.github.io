@@ -6,7 +6,17 @@
     <meta charset="utf-8">
     <title>{{ title }}</title>
 
-    <meta name="description" content="{{ description | required }}">
+    {# TODO: When eleventy supports interpolation inside of front matter, this can be removed. #}
+    {# https://github.com/11ty/11ty.io/issues/33 #}
+    {% set description %}
+      {% if r/^\/notes\/./.test(page.url) %}
+        These are my personal notes for {{ title }} by {{ author | listify }}.
+      {% else %}
+        {{ description }}
+      {% endif %}
+    {% endset %}
+
+    <meta name="description" content="{{ description | trim | required }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/images/flannel.png">
 
