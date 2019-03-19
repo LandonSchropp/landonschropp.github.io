@@ -36,8 +36,14 @@ mainClass: content
         <h3 class="note-summary__title">
           {{ note.data.title }}
         </h3>
-        <p class="note-summary__author">
-          {{ note.data.author | listify }} ∙ {{ note.data.sourceName }}
+        <p class="note-summary__about">
+          <span class="note-summary__author">
+            {{ note.data.author | listify }}
+          </span>
+          <b class="note-summary__separator">∙</b>
+          <span class="note-summary__source">
+            {{ note.data.sourceName }}
+          </span>
         </p>
       </a>
     {% endfor %}

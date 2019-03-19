@@ -33,5 +33,16 @@
   &--hidden
     display: none
 
-  &__title, &__author
+  &__title, &__about
     margin: 0
+
+  +viewport--max-medium
+
+    &__author, &__about
+      display: block
+
+    &__source
+      font-style: italic
+
+    &__separator
+      display: none
