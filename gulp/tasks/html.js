@@ -55,7 +55,7 @@ gulp.task('html', (callback) => {
     return callback();
   }
 
-  return gulp.src(files)
+  return gulp.src("build/**/*.html")
     .pipe(sitemap({ siteUrl: process.env.URL }))
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload());
