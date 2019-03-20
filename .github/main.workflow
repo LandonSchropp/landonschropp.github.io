@@ -22,14 +22,22 @@ action "Master" {
   args = "branch master"
 }
 
-action "Publish" {
+action "Build" {
   needs = "Master"
   uses = "docker://node:11"
   runs = "yarn"
-  args = "deploy"
+  args = "build"
   env = {
     NODE_ENV = "production"
     PORT = "80"
     URL = "https://landonschropp.com"
+  }
+}
+
+action "Publish" {
+  needs = "Build"
+  uses = "maxheld83/ghpages@v0.2.1"
+  env = {
+    BUILD_DIR = "build"
   }
 }
