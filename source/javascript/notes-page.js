@@ -1,4 +1,5 @@
 import queryString from 'query-string';
+import titleCase from 'voca/title_case';
 
 function query() {
   return queryString.parse(window.location.search);
@@ -10,12 +11,15 @@ function querySelectedType() {
 
 function setQuerySelectedType(type) {
   let search = type ? `?${ queryString.stringify({ ...query(), type }) }` : "";
+  let title = `Landon Schropp - Notes ${ type ? `- ${ titleCase(type) }s` : "" }`;
 
   history.replaceState(
     {},
-    document.title,
+    title,
     `${ window.location.pathname }${ search }`
   );
+
+  document.title = title;
 }
 
 function isDeselected(element, selectedType) {
