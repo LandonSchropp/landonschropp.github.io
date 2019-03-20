@@ -1,4 +1,4 @@
-const validateNote = require('./validate-note')
+const validateNote = require('./validate-note');
 
 module.exports = function notesCollection(collection) {
 
