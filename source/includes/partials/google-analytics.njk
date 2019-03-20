@@ -1,9 +1,11 @@
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-40132520-6"></script>
+{% if env.NODE_ENV == "production" %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-40132520-6"></script>
 
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'UA-40132520-6');
-</script>
+    gtag('config', 'UA-40132520-6');
+  </script>
+{% endif %}
