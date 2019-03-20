@@ -40,4 +40,5 @@ action "Publish" {
   env = {
     BUILD_DIR = "build"
   }
+  secrets = ["GITHUB_TOKEN"]
 }
