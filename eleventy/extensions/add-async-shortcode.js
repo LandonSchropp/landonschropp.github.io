@@ -1,8 +1,8 @@
 // This is a utility function that takes a shortcode in Eleventy's default format. This returns an
 // array that can be destructured and passed into the function. It's currently only been tested with
 // Nunjucks.
-module.exports = function addNunjucksPromiseTag(eleventyConfig, tag, shortcodeFunction) {
-  return eleventyConfig.addNunjucksTag(
+export default function addSyncShortcode(tag, shortcodeFunction) {
+  return this.addNunjucksTag(
     tag,
     (nunjucksEngine) => {
 
@@ -25,4 +25,4 @@ module.exports = function addNunjucksPromiseTag(eleventyConfig, tag, shortcodeFu
       };
     }
   );
-};
+}

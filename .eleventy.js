@@ -1,37 +1,3 @@
-const voca = require('voca');
+require('@babel/register');
 
-const addNunjucksPromiseTag = require('./source/eleventy/add-nunjucks-promise-tag');
-const baseURL = require('./source/eleventy/base-url');
-const includeLandingPageSVG = require('./source/eleventy/include-landing-page-svg');
-const inspect = require('./source/eleventy/inspect');
-const listify = require('./source/eleventy/listify');
-const notesCollection = require('./source/eleventy/notes-collection');
-const required = require('./source/eleventy/required');
-
-// TODO: Figure out how to move the root pages into a separate `pages` directory.
-module.exports = function(eleventyConfig) {
-
-  eleventyConfig.addLayoutAlias("default", "layouts/layout.njk");
-  eleventyConfig.addLayoutAlias("note", "layouts/note.njk");
-
-  eleventyConfig.addFilter("titleCase", voca.titleCase);
-  eleventyConfig.addFilter("trim", voca.trim);
-  eleventyConfig.addFilter("listify", listify);
-  eleventyConfig.addFilter("required", required);
-  eleventyConfig.addFilter("baseURL", baseURL);
-
-  eleventyConfig.addShortcode("inspect", inspect);
-
-  addNunjucksPromiseTag(eleventyConfig, "includeLandingPageSVG", includeLandingPageSVG);
-
-  eleventyConfig.addCollection("notes", notesCollection);
-
-  return {
-    dir: {
-      input: "source",
-      output: "build",
-      includes: "includes",
-      data: "data"
-    },
-  };
-};
+module.exports = require('./eleventy/index.js').default;

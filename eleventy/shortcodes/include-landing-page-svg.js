@@ -1,10 +1,10 @@
-const SVGO = require('svgo');
-const fs = require('fs');
+import SVGO from 'svgo';
+import fs from 'fs';
 
-module.exports = function includeLandingPageSVG(path) {
+export default function includeLandingPageSVG(path) {
 
   // Read the image from the file
-  let svg = fs.readFileSync(`${ __dirname }/../images/${ path }`, 'utf8');
+  let svg = fs.readFileSync(`${ __dirname }/../../source/images/${ path }`, 'utf8');
 
   // Clean up the unneeded metadata for the image
   //
@@ -25,4 +25,4 @@ module.exports = function includeLandingPageSVG(path) {
   });
 
   return svgo.optimize(svg).then(({ data }) => data);
-};
+}

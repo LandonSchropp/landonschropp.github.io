@@ -1,4 +1,4 @@
-const Joi = require('joi');
+import Joi from 'joi';
 
 let schema = Joi
   .object({
@@ -28,7 +28,7 @@ let schema = Joi
   })
   .unknown();
 
-module.exports = function validateNote({ inputPath, data }) {
+export default function validateNote({ inputPath, data }) {
 
   let { error } = Joi.validate(data, schema);
 
@@ -37,4 +37,4 @@ module.exports = function validateNote({ inputPath, data }) {
       `An error occurred when validating the note ${ inputPath }: ${ error.message }`
     );
   }
-};
+}

@@ -1,6 +1,6 @@
-const validateNote = require('./validate-note');
+import validateNote from './validate-note';
 
-module.exports = function notesCollection(collection) {
+export default function notesCollection(collection) {
 
   // Grab all of the notes
   let notes = collection.getFilteredByGlob("source/notes/**/*");
@@ -10,4 +10,4 @@ module.exports = function notesCollection(collection) {
 
   // Return the notes
   return notes;
-};
+}

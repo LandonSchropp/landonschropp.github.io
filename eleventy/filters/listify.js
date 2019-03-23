@@ -1,7 +1,7 @@
-const _ = require('lodash');
+import _ from 'lodash';
 
 // Converts an array of strings into a connected list of strings.
-module.exports = function listify(items) {
+export default function listify(items) {
   if (_.isString(items)) {
     return items;
   }
@@ -11,4 +11,4 @@ module.exports = function listify(items) {
   }
 
   return `${ _.initial(items).join(", ") } and ${ _.last(items) }`;
-};
+}
