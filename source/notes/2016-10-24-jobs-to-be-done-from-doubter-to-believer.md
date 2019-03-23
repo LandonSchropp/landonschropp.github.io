@@ -11,8 +11,7 @@ live: false
 
 Replace a *user story* with a *job story*.
 
-> Personas are a collection of attributes. They don’t explain causality. <cite>Clayton
-> Christensen</cite>
+> Personas are a collection of attributes. They don’t explain causality. --Clayton Christensen
 
 * **User story:** As a (persona), I want to (action), so that (expected outcome).
 * **Job story:** When (situation), I want to (motivation), so I can (expected outcome).

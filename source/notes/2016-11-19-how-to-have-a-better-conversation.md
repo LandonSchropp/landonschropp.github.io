@@ -17,7 +17,7 @@ How do you have a conversation with somebody you don't agree with?
 Ask "what am I afraid of?" Then, ask "what are they afraid of?"
 
 > You will learn nothing from what you say today. You can only learn from other people.
-> <cite>Paraphrased from Larry King</cite>
+> --Paraphrased from Larry King
 
 Four ways to have better conversations:
 

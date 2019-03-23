@@ -10,13 +10,14 @@ live: false
 **Always question the obvious.**
 
 > Whenever you find yourself on the site of the majority, it’s time to pause and reflect.
-> <cite>Mark Twain</cite>
+> --Mark Twain
 
 > When you learn to think creatively about one thing, you start to think creatively about everything
 > else.
 
 > Perfection is achieved not when there is nothing more to add, but when there’s nothing more to
-> take away. <cite>Antoine de Saint Exupéry</cite>
+> take away.
+> --Antoine de Saint Exupéry
 
 ## The DiSSS Method
 
