@@ -15,10 +15,6 @@ export default function configureEleventy(eleventyConfig) {
   // TODO: Remove this when Eleventy adds official support for promises in shortcodes.
   eleventyConfig.addAsyncShortcode = addAsyncShortcode;
 
-  // Set the layout aliases
-  eleventyConfig.addLayoutAlias("default", "layouts/layout.njk");
-  eleventyConfig.addLayoutAlias("note", "layouts/note.njk");
-
   // Add the custom filters
   eleventyConfig.addFilter("titleCase", voca.titleCase);
   eleventyConfig.addFilter("trim", voca.trim);
