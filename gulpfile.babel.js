@@ -17,4 +17,3 @@ import './gulp/tasks/stylesheets';
 import './gulp/tasks/javascript';
 import './gulp/tasks/build';
 import './gulp/tasks/watch';
-import './gulp/tasks/deploy';
