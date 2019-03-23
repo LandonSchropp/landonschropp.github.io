@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+def failure(type, text)
+  if type == "error"
+    "\e[31m#{text}\e[0m"
+  else
+    "\e[33m#{text}\e[0m"
+  end
+end
+
+def success(text)
+  "\e[32m#{text}\e[0m"
+end
+
+def validate(path)
+  response = `curl \
+    --silent \
+    --show-error \
+    --fail \
+    -X POST \
+    "https://validator.w3.org/nu/?out=json" \
+    -H "Content-Type: text/html; charset=utf-8" \
+    --data-binary "@#{ path }"`
+
+  JSON.parse(response)["messages"]
+end
+
+# Validate the build files using the W3 validation API
+Dir["build/**/*.html"].each do |path|
+  messages = validate(path)
+
+  # Move on if there were no errors.
+  next if messages.empty?
+
+  puts "The following file failed to validate with #{ messages.count } issues: #{ path }:\n\n"
+
+  messages.each do |message|
+    line = message["firstLine"] || message["lastLine"]
+    type = message["type"] == "info" ? message["subType"] : message["type"]
+    puts failure(type, "#{ type.capitalize } on line #{ line }: #{ message["message"] }")
+  end
+
+  exit 1
+end

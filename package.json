@@ -7,9 +7,9 @@
   "scripts": {
     "build": "gulp build",
     "clean": "gulp clean",
-    "deploy": "gulp deploy",
     "lint": "eslint --max-warnings=0 .",
     "todo": "leasot --exit-nicely --tags 'hack,bug fix,fix me' 'source/**/*.{njk,sass,js,md}'",
+    "validate-html": "bin/validate-html",
     "watch": "gulp watch"
   },
   "dependencies": {
