@@ -6,6 +6,9 @@ export default function includeLandingPageSVG(path) {
   // Read the image from the file
   let svg = fs.readFileSync(`${ __dirname }/../../source/images/${ path }`, 'utf8');
 
+  // Remove the IDs from the image
+  svg = svg.replace(/id="([^"]+)"/ig, (match, id) => `data-id="${ id }"`);
+
   // Clean up the unneeded metadata for the image
   //
   // * Remove the <?xml?> tag
