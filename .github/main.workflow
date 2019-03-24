@@ -34,8 +34,15 @@ action "Build" {
   }
 }
 
-action "Publish" {
+action "Validate HTML" {
   needs = "Build"
+  uses = "docker://node:11"
+  runs = "yarn"
+  args = "validate-html"
+}
+
+action "Publish" {
+  needs = "Validate HTML"
   uses = "maxheld83/ghpages@v0.2.1"
   env = {
     BUILD_DIR = "build"
