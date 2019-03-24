@@ -27,6 +27,8 @@ def validate(path)
   JSON.parse(response)["messages"]
 end
 
+validation_failed = false
+
 # Validate the build files using the W3 validation API
 Dir["build/**/*.html"].each do |path|
   messages = validate(path)
@@ -34,7 +36,7 @@ Dir["build/**/*.html"].each do |path|
   # Move on if there were no errors.
   next if messages.empty?
 
-  puts "The following file failed to validate with #{ messages.count } issues: #{ path }:\n\n"
+  puts "Validation failed for #{ path } (#{ messages.count } issues):\n\n"
 
   messages.each do |message|
     line = message["firstLine"] || message["lastLine"]
@@ -42,5 +44,8 @@ Dir["build/**/*.html"].each do |path|
     puts failure(type, "#{ type.capitalize } on line #{ line }: #{ message["message"] }")
   end
 
-  exit 1
+  puts
+  validation_failed = true
 end
+
+exit 1 if validation_failed
