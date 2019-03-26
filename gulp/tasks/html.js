@@ -1,8 +1,10 @@
 import _ from 'lodash';
 import connect from 'gulp-connect';
 import gulp from 'gulp';
+import htmlmin from 'gulp-htmlmin';
 import sitemap from 'gulp-sitemap';
 import { execSync } from 'child_process';
+
 const WRITING_REGEX = /Writing (.*?) from/;
 
 // Rather than creating separate tasks and duplicating steps, or creating temporary files, this task
@@ -57,6 +59,7 @@ gulp.task('html', (callback) => {
 
   return gulp.src("build/**/*.html")
     .pipe(sitemap({ siteUrl: process.env.URL }))
+    .pipe(htmlmin())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload());
 });
