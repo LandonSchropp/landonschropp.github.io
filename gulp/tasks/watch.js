@@ -12,6 +12,7 @@ gulp.task('watch', gulp.series('build', () => {
   ], gulp.series('html'));
   gulp.watch('source/stylesheets/**', gulp.series('stylesheets'));
   gulp.watch('source/javascript/**', gulp.series('javascript'));
+  gulp.watch('source/images/icons/**', gulp.series('icons'));
   gulp.watch('source/images/**', gulp.series('images'));
 
   connect.server({

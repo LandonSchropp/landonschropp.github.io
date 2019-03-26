@@ -12,6 +12,7 @@ if (!process.env.URL || !process.env.NODE_ENV || !process.env.PORT) {
 import './gulp/tasks/clean';
 import './gulp/tasks/static';
 import './gulp/tasks/html';
+import './gulp/tasks/icons';
 import './gulp/tasks/images';
 import './gulp/tasks/stylesheets';
 import './gulp/tasks/javascript';

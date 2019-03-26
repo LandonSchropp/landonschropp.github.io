@@ -4,9 +4,10 @@ gulp.task('build', gulp.series(
   'clean',
   gulp.parallel(
     'static',
-    'html',
     'stylesheets',
     'javascript',
+    'icons',
+    'html',
     'images'
   )
 ));
