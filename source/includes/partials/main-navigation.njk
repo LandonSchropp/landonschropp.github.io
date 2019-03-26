@@ -2,7 +2,6 @@
   {% set isNotes = r/^\/notes/.test(page.url) %}
 
   <div class="main-navigation__primary">
-
     <a class="main-navigation__link" href="/">
       <b class="main-navigation__title-text--long">
         Landon Schropp
@@ -22,5 +21,31 @@
 
     <a class="main-navigation__link" href="https://medium.com/@LandonSchropp">Blog</a>
     <a class="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
+  </div>
+
+  <div class="main-navigation__secondary">
+    <a class="main-navigation__icon" href="https://twitter.com/LandonSchropp">
+      {% icon "twitter", "Twitter" %}
+    </a>
+
+    <a class="main-navigation__icon" href="https://github.com/LandonSchropp">
+      {% icon "github", "GitHub" %}
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.goodreads.com/landonschropp">
+      {% icon "goodreads", "Goodreads" %}
+    </a>
+
+    <a class="main-navigation__icon" href="mailto:schroppl@gmail.com">
+      {% icon "email", "Email" %}
+    </a>
+
+    <a class="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
+      {% icon "codepen", "CodePen" %}
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
+      {% icon "linkedin", "LinkedIn" %}
+    </a>
   </div>
 </nav>

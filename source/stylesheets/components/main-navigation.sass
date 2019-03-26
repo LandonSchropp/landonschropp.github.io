@@ -2,8 +2,21 @@
   margin: $spacing * 0.75 0
   font-size: $font-size--small
 
-  +viewport--medium
+  +viewport--large
+    display: flex
+    justify-content: center
     padding: 0 $spacing--small
+
+  &__primary, &__secondary
+    display: flex
+    justify-content: center
+
+  &__secondary
+    +viewport--large
+      margin-left: auto
+
+    +viewport--max-large
+      margin-top: $spacing * 0.75
 
   &__title-text
 
@@ -15,24 +28,33 @@
       &--short
         display: none
 
-  &__primary
-    display: flex
-    justify-content: center
+  &__link, &__icon
+    display: block
+    margin: 0 $spacing--small
 
   &__link
     font-family: $font-family--sans-serif
     text-decoration: none
-    display: block
     color: $gray
-    margin: 0 $spacing--small
     transition: color $transition-time--xsmall ease, box-shadow $transition-time--xsmall ease-in
 
     &:hover
       color: inherit
 
-    &:hover, &--selected
+    &:hover
       box-shadow: 0 3px $cornflower-blue
 
-    +viewport--medium
-      &:first-of-type
-        margin-right: auto
+    &--selected
+      box-shadow: 0 1.5px $gray
+
+    &:nth-child(n + 5)
+      order: 1
+
+  &__icon
+    color: lighten($gray, 12%)
+
+    &:hover
+      color: $cornflower-blue
+
+    svg
+      transition: fill $transition-time--xsmall ease

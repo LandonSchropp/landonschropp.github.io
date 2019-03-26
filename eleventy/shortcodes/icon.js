@@ -1,9 +1,7 @@
-import voca from 'voca';
-
-export default function icon(name) {
+export default function icon(name, title) {
   return `
     <svg class="icon">
-      <title>${ voca.titleCase(name) }</title>
+      <title>${ title }</title>
       <use xlink:href="/images/icons.svg#${ name }" />
     </svg>
   `;
