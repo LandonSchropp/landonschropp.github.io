@@ -2,6 +2,7 @@ import voca from 'voca';
 
 import addAsyncShortcode from './extensions/add-async-shortcode';
 import baseURL from './filters/base-url';
+import icon from './shortcodes/icon';
 import includeLandingPageSVG from './shortcodes/include-landing-page-svg';
 import listify from './filters/listify';
 import log from './shortcodes/log';
@@ -24,6 +25,7 @@ export default function configureEleventy(eleventyConfig) {
 
   // Add the custom shortcodes
   eleventyConfig.addShortcode("log", log);
+  eleventyConfig.addShortcode("icon", icon);
   eleventyConfig.addAsyncShortcode("includeLandingPageSVG", includeLandingPageSVG);
 
   // Override the markdown renderer
