@@ -23,13 +23,13 @@
 
   @each $type, $color in $tag-colors
     &[data-type="#{ $type }"]:hover
-      box-shadow: 0 0 0 $spacing--xxsmall * 0.5 $color
+      box-shadow: 0 0 0 $spacing--xxsmall * 0.5 lighten($color, 10%)
 
   +viewport--medium
     font-size: $font-size--xxsmall
 
-  &.tag.tag--deselected
-    +tag-color(border-color)
-    +tag-color(color)
+  &.tag.tag--selected
 
-    background-color: transparent
+    @each $type, $color in $tag-colors
+      &[data-type="#{ $type }"]
+        box-shadow: 0 0 0 $spacing--xxsmall lighten($color, 10%)

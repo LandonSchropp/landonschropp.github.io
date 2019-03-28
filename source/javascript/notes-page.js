@@ -22,20 +22,24 @@ function setQuerySelectedType(type) {
   document.title = title;
 }
 
-function isDeselected(element, selectedType) {
-  return selectedType !== null && element.dataset.type !== selectedType;
+function isSelected(element, selectedType) {
+  return element.dataset.type === selectedType;
+}
+
+function isVisible(element, selectedType) {
+  return selectedType == null || isSelected(element, selectedType);
 }
 
 function toggleTagAndNoteSelections(selectedType) {
 
   // Mark the tags as selected
   document.querySelectorAll('.tag').forEach(tag => {
-    tag.classList.toggle('tag--deselected', isDeselected(tag, selectedType));
+    tag.classList.toggle('tag--selected', isSelected(tag, selectedType));
   });
 
   // Show and hide the notes
   document.querySelectorAll('.note-summary').forEach(note => {
-    note.classList.toggle('note-summary--hidden', isDeselected(note, selectedType));
+    note.classList.toggle('note-summary--hidden', !isVisible(note, selectedType));
   });
 }
 
