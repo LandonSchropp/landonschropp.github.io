@@ -1,18 +1,6 @@
 // This allows a property to be styled with the correct tag color. It's based on the element having
 // a `data-type` attribute.
 @mixin tag-color($property)
-
-  &[data-type="article"]
-    #{ $property }: $cornflower-blue
-
-  &[data-type="video"]
-    #{ $property }: $amethyst
-
-  &[data-type="book"]
-    #{ $property }: $bittersweet
-
-  &[data-type="talk"]
-    #{ $property }: $atomic-tangerine
-
-  &[data-type="podcast"]
-    #{ $property }: $goldenrod
+  @each $type, $color in $tag-colors
+    &[data-type="#{ $type }"]
+      #{ $property }: $color

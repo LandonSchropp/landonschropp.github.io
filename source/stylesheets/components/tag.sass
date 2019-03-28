@@ -21,15 +21,9 @@
 
   transition: box-shadow $transition-time--xsmall ease-in
 
-  @mixin grow-shadow($type, $color)
+  @each $type, $color in $tag-colors
     &[data-type="#{ $type }"]:hover
       box-shadow: 0 0 0 $spacing--xxsmall * 0.5 $color
-
-  +grow-shadow("article", $cornflower-blue)
-  +grow-shadow("video", $amethyst)
-  +grow-shadow("book", $bittersweet)
-  +grow-shadow("talk", $atomic-tangerine)
-  +grow-shadow("podcast", $goldenrod)
 
   +viewport--medium
     font-size: $font-size--xxsmall
