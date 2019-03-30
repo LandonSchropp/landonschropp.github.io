@@ -10,7 +10,7 @@
     {# https://github.com/11ty/11ty.io/issues/33 #}
     {% set description %}
       {% if r/^\/notes\/./.test(page.url) %}
-        These are my personal notes for {{ title }} by {{ author | listify }}.
+        These are my personal notes for {{ title }} by {{ authors | listify }}.
       {% else %}
         {{ description }}
       {% endif %}

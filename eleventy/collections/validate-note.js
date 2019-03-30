@@ -7,7 +7,7 @@ let schema = Joi
     title: Joi.string().required(),
 
     // The author can be a string or non-empty array of strings
-    author: Joi.alternatives([
+    authors: Joi.alternatives([
       Joi.string(),
       Joi.array().items(Joi.string()).min(1)
     ]).required(),
