@@ -22,8 +22,16 @@ action "Master" {
   args = "branch master"
 }
 
-action "Build" {
+action "Download Content" {
   needs = "Master"
+  uses = "docker://node:11"
+  runs = "yarn"
+  args = "download-content"
+  secrets = ["CONTENTFUL_SPACE_ID", "CONTENT_ACCESS_TOKEN"]
+}
+
+action "Build" {
+  needs = "Download Content"
   uses = "docker://node:11"
   runs = "yarn"
   args = "build"
