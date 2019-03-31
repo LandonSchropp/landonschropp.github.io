@@ -25,10 +25,9 @@ gulp.task('html', (callback) => {
 
   try {
     // TODO: Make this asynchronous.
-    stdout = execSync('yarn run eleventy').toString();
+    stdout = execSync('yarn run eleventy', { stdio: 'inherit' }).toString();
   }
   catch (error) {
-    console.error(error.message); // eslint-disable-line no-console
     return callback();
   }
 
