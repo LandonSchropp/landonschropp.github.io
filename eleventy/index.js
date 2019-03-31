@@ -39,7 +39,7 @@ export default function configureEleventy(eleventyConfig) {
       input: "source",
       output: "build",
       includes: "includes",
-      data: "data"
+      data: "../data"
     }
   };
 }
