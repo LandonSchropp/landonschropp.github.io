@@ -6,8 +6,6 @@ import icon from './shortcodes/icon';
 import includeLandingPageSVG from './shortcodes/include-landing-page-svg';
 import listify from './filters/listify';
 import log from './shortcodes/log';
-import markdown from './engines/markdown';
-import notesCollection from './collections/notes-collection';
 import required from './filters/required';
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
@@ -27,12 +25,6 @@ export default function configureEleventy(eleventyConfig) {
   eleventyConfig.addShortcode("log", log);
   eleventyConfig.addShortcode("icon", icon);
   eleventyConfig.addAsyncShortcode("includeLandingPageSVG", includeLandingPageSVG);
-
-  // Override the markdown renderer
-  eleventyConfig.setLibrary("md", markdown);
-
-  // Add the custom collecitons
-  eleventyConfig.addCollection("notes", notesCollection);
 
   return {
     dir: {
