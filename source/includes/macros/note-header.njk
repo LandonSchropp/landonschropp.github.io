@@ -1,0 +1,45 @@
+{% from "macros/tag.njk" import tag %}
+
+{% macro noteHeaderText(note) %}
+  {% if note.sourceURL %}
+    <a class="header__title-link" href="{{ note.sourceURL }}">{{ note.title }}</a>
+  {% else %}
+    {{ note.title }}
+  {% endif %}
+{% endmacro %}
+
+{% macro noteSubheadText(note) %}
+  {% if note.type == "talk" and note.live %}
+    A talk by {{ note.authors | listify }} I attended at {{ note.sourceName }}
+  {% elif note.type == "podcast" %}
+    From
+    <a class="header__link" href="{{ note.sourceURL | baseURL }}">{{ note.sourceName }}</a>,
+    a podcast by {{ note.authors | listify }}
+  {% elif note.type == "article" %}
+    An {{ note.type }} by {{ note.authors | listify }} from
+    <a class="header__link" href="{{ note.sourceURL | baseURL }}">{{ note.sourceName }}</a>
+  {% elif note.type == "video" or note.type == "talk" %}
+    A {{ note.type }} by {{ note.authors | listify }} on
+    <a class="header__link" href="{{ note.sourceURL | baseURL }}">{{ note.sourceName }}</a>
+  {% elif note.type == "book" %}
+    A {{ note.type }} by {{ note.authors | listify }}
+  {% endif %}
+{% endmacro %}
+
+{% macro noteHeader(note) %}
+  <header class="header">
+    <p class="header__suphead">
+      My personal notes for
+    </p>
+
+    <h1 class="header__header">
+      {{ noteHeaderText(note) }}
+    </h1>
+
+    <p class="header__subhead">
+      {{ noteSubheadText(note) }}
+    </p>
+
+    {{ tag(note.type) }}
+  </header>
+{% endmacro %}
