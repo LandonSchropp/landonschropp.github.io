@@ -47,9 +47,8 @@ action "Build" {
 
 action "Validate HTML" {
   needs = "Build"
-  uses = "docker://node:11"
-  runs = "yarn"
-  args = "validate-html"
+  uses = "docker://ruby"
+  runs = "bin/validate-html"
 }
 
 action "Publish" {
