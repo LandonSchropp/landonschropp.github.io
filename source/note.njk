@@ -1,0 +1,14 @@
+---
+pagination:
+  size: 1
+  data: notes
+  alias: data
+permalink: "notes/{{ pagination.items[0].slug }}/index.html"
+---
+
+{% from "macros/note-header.njk" import noteHeader %}
+
+<article class="note" data-type="{{ data.type }}">
+  {{ noteHeader(data) }}
+  {{ data.content | safe}}
+</article>
