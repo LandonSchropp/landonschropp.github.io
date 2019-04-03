@@ -21,7 +21,7 @@ let client = createClient({
 });
 
 (async () => {
-  let entries = (await client.getEntries()).items.map(transformContentfulEntry);
+  let entries = _.sortBy((await client.getEntries()).items.map(transformContentfulEntry), "date");
 
   // Write the data to the file.
   await fs.mkdirp(path.join(__dirname, '../data'));
