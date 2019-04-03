@@ -30,18 +30,18 @@ description: A collection of notes on blog posts, talks, podcasts and books by L
   </header>
 
   <section class="note-summaries">
-    {% for note in collections.notes | reverse %}
-      <a class="note-summary" href="{{ note.url }}" data-type="{{ note.data.type }}">
+    {% for note in notes | reverse %}
+      <a class="note-summary" href="{{ note.url }}" data-type="{{ note.type }}">
         <h3 class="note-summary__title">
-          {{ note.data.title }}
+          {{ note.title }}
         </h3>
         <p class="note-summary__about">
           <span class="note-summary__authors">
-            {{ note.data.authors | listify }}
+            {{ note.authors | listify }}
           </span>
           <b class="note-summary__separator">∙</b>
           <span class="note-summary__source">
-            {{ note.data.sourceName }}
+            {{ note.sourceName }}
           </span>
         </p>
       </a>
