@@ -2,13 +2,14 @@
 pagination:
   size: 1
   data: notes
-  alias: data
+  alias: note
 permalink: "notes/{{ pagination.items[0].slug }}/index.html"
+layout: layouts/default.njk
 ---
 
 {% from "macros/note-header.njk" import noteHeader %}
 
-<article class="note" data-type="{{ data.type }}">
-  {{ noteHeader(data) }}
-  {{ data.content | safe}}
+<article class="note" data-type="{{ note.type }}">
+  {{ noteHeader(note) }}
+  {{ note.content | safe}}
 </article>

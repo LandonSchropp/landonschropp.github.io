@@ -4,19 +4,9 @@
     {% include 'partials/google-analytics.njk' %}
 
     <meta charset="utf-8">
-    <title>{{ title | required }}</title>
+    <title>{{ title or pagination.items[0].title | required }}</title>
 
-    {# TODO: When eleventy supports interpolation inside of front matter, this can be removed. #}
-    {# https://github.com/11ty/11ty.io/issues/33 #}
-    {% set description %}
-      {% if r/^\/notes\/./.test(page.url) %}
-        These are my personal notes for {{ title }} by {{ authors | listify }}.
-      {% else %}
-        {{ description }}
-      {% endif %}
-    {% endset %}
-
-    <meta name="description" content="{{ description | trim | required }}">
+    <meta name="description" content="{{ description or pagination.items[0].description | trim | required }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/images/flannel.png">
 
