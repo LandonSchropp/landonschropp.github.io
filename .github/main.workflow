@@ -27,7 +27,10 @@ action "Download Content" {
   uses = "docker://node:11"
   runs = "yarn"
   args = "download-content"
-  secrets = ["CONTENTFUL_SPACE_ID", "CONTENT_ACCESS_TOKEN"]
+  secrets = [
+    "CONTENTFUL_SPACE_ID",
+    "CONTENTFUL_ACCESS_TOKEN",
+  ]
 }
 
 action "Build" {
