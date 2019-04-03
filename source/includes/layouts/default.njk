@@ -23,12 +23,13 @@
   </head>
 
   <body>
+    {% set isLandingPage = page.url == "/" %}
 
-    {% if page.url != "/" %}
+    {% if not isLandingPage %}
       {% include "partials/main-navigation.njk" %}
     {% endif %}
 
-    <main class="{{ mainClass }}">
+    <main class="{{ "landing" if isLandingPage  else "content" }}">
       {{ content | safe }}
     </main>
 
