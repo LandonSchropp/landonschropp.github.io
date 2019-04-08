@@ -1,4 +1,9 @@
-workflow "Main" {
+workflow "Contentful Publish" {
+  on = "repository_dispatch"
+  resolves = ["Publish"]
+}
+
+workflow "GitHub Push" {
   on = "push"
   resolves = ["Publish"]
 }
