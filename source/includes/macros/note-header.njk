@@ -22,7 +22,8 @@
     A {{ note.type }} by {{ note.authors | listify }} on
     <a class="header__link" href="{{ note.sourceURL | baseURL }}">{{ note.sourceName }}</a>
   {% elif note.type == "book" %}
-    A {{ note.type }} by {{ note.authors | listify }}
+    A {{ note.type }} by
+    <a class="header__link" href="{{ note.sourceURL }}">{{ note.authors | listify }}</a>
   {% endif %}
 {% endmacro %}
 
