@@ -39,6 +39,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgmin": "^2.1.0",
     "gulp-svgstore": "^7.0.1",
+    "highlight.js": "^9.15.6",
     "joi": "^14.3.1",
     "lodash": "^4.17.11",
     "marked": "^0.6.1",

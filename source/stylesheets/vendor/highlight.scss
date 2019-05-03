@@ -1,0 +1,54 @@
+// This is my own custom Highlight.scss theme based upon the ally-light theme.
+
+.hljs-comment,
+.hljs-quote {
+  color: $gray;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: $bittersweet;
+}
+
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link,
+.hljs-attribute {
+  color: $amethyst;
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: $mulberry;
+}
+
+.hljs-title,
+.hljs-section {
+  color: $cornflower-blue;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: $medium-purple;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

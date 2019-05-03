@@ -1,5 +1,14 @@
 import marked from 'marked';
 import _ from 'lodash';
+import highlight from 'highlight.js';
+
+// Set the options for the renderer
+marked.setOptions({
+  highlight(code, language) {
+    console.log("HERE!", highlight.highlightAuto(code, language).value);
+    return highlight.highlightAuto(code).value;
+  }
+});
 
 // Create an instance of the renderer and capture its old blockquote implementation
 let renderer = new marked.Renderer();
