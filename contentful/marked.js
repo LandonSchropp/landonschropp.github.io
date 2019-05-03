@@ -4,7 +4,7 @@ import highlight from 'highlight.js';
 
 // Set the options for the renderer
 marked.setOptions({
-  highlight(code, language) {
+  highlight(code) {
     return highlight.highlightAuto(code).value;
   }
 });
