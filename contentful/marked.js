@@ -5,7 +5,6 @@ import highlight from 'highlight.js';
 // Set the options for the renderer
 marked.setOptions({
   highlight(code, language) {
-    console.log("HERE!", highlight.highlightAuto(code, language).value);
     return highlight.highlightAuto(code).value;
   }
 });
