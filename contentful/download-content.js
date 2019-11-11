@@ -7,7 +7,7 @@ import transformContentfulEntry from './transform-contentful-entry';
 
 const DATA_DIRECTORY = path.join(__dirname, '../data');
 
-function enviromentVariable(name) {
+function environmentVariable(name) {
   if (!_.has(process.env, name)) {
     throw new Error(`The environment variable $${ name } is not defined.`);
   }
@@ -16,8 +16,8 @@ function enviromentVariable(name) {
 }
 
 let client = createClient({
-  space: enviromentVariable('CONTENTFUL_SPACE_ID'),
-  accessToken: enviromentVariable('CONTENTFUL_ACCESS_TOKEN')
+  space: environmentVariable('CONTENTFUL_SPACE_ID'),
+  accessToken: environmentVariable('CONTENTFUL_ACCESS_TOKEN')
 });
 
 (async () => {
