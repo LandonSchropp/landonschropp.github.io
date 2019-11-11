@@ -1,42 +1,22 @@
+# landonschropp.com
+
+This repo contains the code powering my personal website. It uses Contentful as a headless CMS to
+host the content, and uses Gulp and Webpack to power the HTML, CSS, JavaScript and images.
+
 ## Development
 
-This project uses Jekyll. Why? Because it's simple and works with GitHub Pages.
+First, make sure you have [Node.js](https://nodejs.org/en/) and Yarn installed locally. Define the
+`CONTENTFUL_SPACE_ID` and `CONTENTFUL_ACCESS_TOKEN` environment variables. Then you can use `yarn`
+to do everything else!
 
-To get started, install all the dependencies with `bundle install`. Then, run `bundle exec jekyll
-serve` to start up the server.
+* `yarn install`: Install all of the packages.
+* `yarn lint`: Run the linter.
+* `yarn build`: Build a static version of the project.
+* `yarn watch`: Run a local development server.
 
-## Design Considerations
+To see the other available commands, check the [package.json](package.json) file.
 
-Why is there so much funkiness in this repo?
+## Deployment
 
-Starting out, I had two design goals:
-
-* I want to be able to update the site when I make a change to the design. I shouldn't have to
-  manually update the content at each step.
-* I want to host the site via GitHub Pages. This means it needs to be coded in Jekyll.
-
-My first approach was to split all of the individual values into partials, and to move them around
-using CSS transformations. This *works*, but it has one glaring problem: by using CSS
-transformations, the backgrounds are no longer aligned. Bummer.
-
-After a lot of thought, I decided to take the images exported from sketch and stick them directly
-inside `<template>` elements. Then, I'll query the contents to pull out the paths and dynamically
-update the DOM. Normally I'd do the dirty work as part of the build, but in this case I can't
-because GitHub Pages won't run custom plugins. For the same reason, using a framework like Preact is
-also out.
-
-In the end, I arrivated at an imperfect solution. It's not pretty, but it works and it's easy to
-maintain. ¯\_(ツ)_/¯
-
-## Vim Cleanup Macro
-
-Rather than muck around with manually cleaning up the files, here's a quick Vim macro that does it
-for you:
-
-```
-ddjdd...dd.Gkkdd.ggVG=/width
-df ./version
-hdt .dt>
-:% s/ fill="[]€kl^"€kr*"//g
-:% s/id=/data-id=/
-```
+This project uses GitHub Actions to manage all of the deployment. This is configured to run on
+content update as well as code updates.
