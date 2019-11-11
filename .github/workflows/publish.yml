@@ -1,0 +1,59 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - master
+  repository_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v1
+      -
+        name: Set Up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.x'
+      -
+        name: Install Packages
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      -
+        name: Lint
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: lint
+      -
+        name: Download Content
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: download-content
+        env:
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+      -
+        name: Build
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
+        env:
+          NODE_ENV: production
+          PORT: "80"
+          URL: https://landonschropp.com
+      -
+        name: Update Permissions
+        run: chmod -R +rw build
+      -
+        name: Publish
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
