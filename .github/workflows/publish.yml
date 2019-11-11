@@ -15,40 +15,34 @@ jobs:
         name: Checkout
         uses: actions/checkout@v1
       -
+        name: Set Up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      -
         name: Set Up Ruby
         uses: actions/setup-ruby@v1
         with:
           ruby-version: '2.x'
       -
         name: Install Packages
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: install
+        run: yarn install
       -
         name: Lint
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: lint
+        run: yarn lint
       -
         name: Download Content
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: download-content
+        run: yarn download-content
         env:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       -
         name: Build
-        uses: borales/actions-yarn@v2.0.0
-        with:
-          cmd: build
+        run: yarn build
         env:
           NODE_ENV: production
           PORT: "80"
           URL: https://landonschropp.com
-      -
-        name: Update Permissions
-        run: chmod -R +rw build
       -
         name: Publish
         uses: crazy-max/ghaction-github-pages@v1
