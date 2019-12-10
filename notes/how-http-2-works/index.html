@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    
+
+    
+
+
+    <meta charset="utf-8">
+    <title>How HTTP/2 Works</title>
+
+    <meta name="description" content="These are my personal notes from How HTTP/2 Works by Aman Alam.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/flannel.png">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i,700,700i%7COpen+Sans:400,700"
+      rel="stylesheet"
+    >
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i"
+      rel="stylesheet"
+    >
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="/stylesheets/index.css">
+  </head>
+
+  <body>
+    
+
+    
+      <nav class="main-navigation">
+  
+
+  <div class="main-navigation__primary">
+    <a class="main-navigation__link" href="/">
+      <b class="main-navigation__title-text--long">
+        Landon Schropp
+      </b>
+      <b class="main-navigation__title-text--short">
+        Home
+      </b>
+    </a>
+
+    
+    <a
+      class="main-navigation__link main-navigation__link--selected"
+      href="/notes"
+    >
+      Notes
+    </a>
+
+    <a class="main-navigation__link" href="https://medium.com/@LandonSchropp">Blog</a>
+    <a class="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
+  </div>
+
+  <div class="main-navigation__secondary">
+    <a class="main-navigation__icon" href="https://twitter.com/LandonSchropp">
+      
+    <svg class="icon">
+      <title>Twitter</title>
+      <use xlink:href="/images/icons.svg#twitter" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://github.com/LandonSchropp">
+      
+    <svg class="icon">
+      <title>GitHub</title>
+      <use xlink:href="/images/icons.svg#github" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.goodreads.com/landonschropp">
+      
+    <svg class="icon">
+      <title>Goodreads</title>
+      <use xlink:href="/images/icons.svg#goodreads" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="mailto:schroppl@gmail.com">
+      
+    <svg class="icon">
+      <title>Email</title>
+      <use xlink:href="/images/icons.svg#email" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
+      
+    <svg class="icon">
+      <title>CodePen</title>
+      <use xlink:href="/images/icons.svg#codepen" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
+      
+    <svg class="icon">
+      <title>LinkedIn</title>
+      <use xlink:href="/images/icons.svg#linkedin" />
+    </svg>
+  
+    </a>
+  </div>
+</nav>
+
+    
+
+    <main class="content">
+      
+
+
+<article class="note" data-type="talk">
+  
+  <header class="header">
+    <p class="header__suphead">
+      My personal notes for
+    </p>
+
+    <h1 class="header__header">
+      
+  
+    <a class="header__title-link" href="https://www.developerweek.com">How HTTP/2 Works</a>
+  
+
+    </h1>
+
+    <p class="header__subhead">
+      
+  
+    A talk by Aman Alam I attended at DeveloperWeek 2019
+  
+
+    </p>
+  </header>
+
+  <p>Three Main Problems With HTTP/1.1</p>
+<ul>
+<li>Performance: Doesn&#39;t use full bandwidth</li>
+<li>Complexity: Web applications have to optimize with multiple connections due to HTTP/1.1&#39;s lack of paralyzation.</li>
+<li>Efficiency: Optimizations create device and server resource consumption</li>
+</ul>
+<h2 id="main-benefits-of-http2">Main Benefits of HTTP/2</h2>
+<ul>
+<li>Speed: Improvements in actual and perceived latency.</li>
+<li>Security: TLS is required by almost all browsers.</li>
+</ul>
+<h2 id="features-of-http2">Features of HTTP/2</h2>
+<ul>
+<li>Request multiplexing: Uses a single connection to do multiple requests simultaneously.</li>
+<li>The client can indicate priorities of requests and resources, and the servers can provide those faster.</li>
+<li>The TCP connection is maintained for multiple seconds after the last request before it&#39;s closed, so additional requests are fast.</li>
+<li>All data is binary. This means HTTP/2  is not backwards compatible.</li>
+<li>Headers are optimized. Headers between requests are diffed so they&#39;re not repeated.</li>
+<li>Servers can push objects without an explicit request. The client then caches those objects.</li>
+<li>HTTP/2 keeps the semantics of HTTP/1.1.</li>
+<li>The browses will take care of the optimizations for you with HTTP/2.</li>
+</ul>
+<h2 id="major-problems-with-http2">Major Problems With HTTP/2</h2>
+<ul>
+<li>TCP is slow.</li>
+<li>If packet loss rises above 2%, all HTTP/2 benefits are lost.</li>
+<li>HTTP/3 will solve these problems.</li>
+</ul>
+<h2 id="http2-on-backend-servers">HTTP/2 on Backend Servers</h2>
+<p>Use the latest backend server and it&#39;ll likely be available. All major servers currently support HTTP/2.</p>
+<p><em>ALPN: Application Level protocol Negotiation.</em> This is a way for the client and server to agree on a protocol.</p>
+<p>Side note: Protocol buffers are a GRPC construct that transmits data in a binary format that&#39;s an alternative to JSON. Most of the performance benefits come from this.</p>
+
+</article>
+
+    </main>
+
+    <script src="/javascript/index.js"></script>
+  </body>
+</html>

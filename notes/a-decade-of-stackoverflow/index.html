@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    
+
+    
+
+
+    <meta charset="utf-8">
+    <title>A Decade of StackOverflow</title>
+
+    <meta name="description" content="These are my personal notes from A Decade of StackOverflow by David Fullerton.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/flannel.png">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i,700,700i%7COpen+Sans:400,700"
+      rel="stylesheet"
+    >
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i"
+      rel="stylesheet"
+    >
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="/stylesheets/index.css">
+  </head>
+
+  <body>
+    
+
+    
+      <nav class="main-navigation">
+  
+
+  <div class="main-navigation__primary">
+    <a class="main-navigation__link" href="/">
+      <b class="main-navigation__title-text--long">
+        Landon Schropp
+      </b>
+      <b class="main-navigation__title-text--short">
+        Home
+      </b>
+    </a>
+
+    
+    <a
+      class="main-navigation__link main-navigation__link--selected"
+      href="/notes"
+    >
+      Notes
+    </a>
+
+    <a class="main-navigation__link" href="https://medium.com/@LandonSchropp">Blog</a>
+    <a class="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
+  </div>
+
+  <div class="main-navigation__secondary">
+    <a class="main-navigation__icon" href="https://twitter.com/LandonSchropp">
+      
+    <svg class="icon">
+      <title>Twitter</title>
+      <use xlink:href="/images/icons.svg#twitter" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://github.com/LandonSchropp">
+      
+    <svg class="icon">
+      <title>GitHub</title>
+      <use xlink:href="/images/icons.svg#github" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.goodreads.com/landonschropp">
+      
+    <svg class="icon">
+      <title>Goodreads</title>
+      <use xlink:href="/images/icons.svg#goodreads" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="mailto:schroppl@gmail.com">
+      
+    <svg class="icon">
+      <title>Email</title>
+      <use xlink:href="/images/icons.svg#email" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
+      
+    <svg class="icon">
+      <title>CodePen</title>
+      <use xlink:href="/images/icons.svg#codepen" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
+      
+    <svg class="icon">
+      <title>LinkedIn</title>
+      <use xlink:href="/images/icons.svg#linkedin" />
+    </svg>
+  
+    </a>
+  </div>
+</nav>
+
+    
+
+    <main class="content">
+      
+
+
+<article class="note" data-type="talk">
+  
+  <header class="header">
+    <p class="header__suphead">
+      My personal notes for
+    </p>
+
+    <h1 class="header__header">
+      
+  
+    <a class="header__title-link" href="https://www.developerweek.com/">A Decade of StackOverflow</a>
+  
+
+    </h1>
+
+    <p class="header__subhead">
+      
+  
+    A talk by David Fullerton I attended at DeveloperWeek 2019
+  
+
+    </p>
+  </header>
+
+  <p>One of the really interesting things about this talk was how candid it was. </p>
+<blockquote>
+<p>It&#39;s about getting something out there that isn&#39;t perfect, learning what&#39;s not working, and having the courage to go back and rebuild the parts that aren&#39;t working.</p>
+</blockquote>
+<h2 id="doing-just-enough">Doing Just Enough</h2>
+<p>All of StackOverflow runs on 9 web servers and 4 SQL Server boxes.</p>
+<p>An example is how they managed tag search. In the early days, instead of building a complicated tag management system, they simply did a <code>CONTAINS</code> statement in SQL. However, this doesn&#39;t work with special characters. Rather than complicate things, the simply substituted the special characters for word characters they weren&#39;t using (e.g. <code>c#</code> → <code>cñ</code>). This lasted a couple years, and solved the problem simply and quickly.</p>
+<p>The moral of the story: An early hack that solves a problem quickly can actually sustain you for a long time. Eventually, you may need to rebuild it, but you can do so with the full use case in mind.</p>
+<h2 id="scaling-the-community">Scaling the Community</h2>
+<p>One of StackOverflow&#39;s biggest challenges hasn&#39;t been scaling technically, it&#39;s been scaling the community.</p>
+<blockquote>
+<p>[As the community grows], the biggest thing you start to lose is a sense of empathy.</p>
+</blockquote>
+<blockquote>
+<p>StackOverflow has long has this culture of &quot;being right is more important than being helpful.&quot;</p>
+</blockquote>
+<p>This ended up being one of the biggest challenges to scaling the community. They had to change the community to drive towards helpfulness as a shared value.</p>
+<p>The motto used to be &quot;StackOverflow is for professional programmers.&quot; This exclude a lot of people who don&#39;t feel like they belong to this group. It drives people away from the industry. This also hurts people from underrepresented groups.</p>
+<p>They&#39;re working to &quot;refactor a community.&quot;</p>
+<ul>
+<li>This year, they rolled out a new code of conduct that emphasizes &quot;kindness, collaboration and mutual respect.&quot;</li>
+<li>They added a way to enforce the code of conduct by adding a new flag (unfriendly or unkind).</li>
+<li>They added a new contributor indicator to remind the community to be nice to someone who&#39;s new.</li>
+</ul>
+<p>The net change so far is new, unkind comments has dropped by a third.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>These things have a connection thread of a willing to go back and revisit old decisions. StackOverflow&#39;s success is driven by a willingness to listen to what people say and change.</p>
+<blockquote>
+<p>Ask the right questions, and be willing to listen to the answers you get.</p>
+</blockquote>
+
+</article>
+
+    </main>
+
+    <script src="/javascript/index.js"></script>
+  </body>
+</html>

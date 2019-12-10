@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    
+
+    
+
+
+    <meta charset="utf-8">
+    <title>Everything You Need to Know to Start Your First Machine Learning Project</title>
+
+    <meta name="description" content="These are my personal notes from Everything You Need to Know to Start Your First Machine Learning Project by Kirsten Westeinde.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="/images/flannel.png">
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400i,700,700i%7COpen+Sans:400,700"
+      rel="stylesheet"
+    >
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i"
+      rel="stylesheet"
+    >
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+
+    <link rel="stylesheet" href="/stylesheets/index.css">
+  </head>
+
+  <body>
+    
+
+    
+      <nav class="main-navigation">
+  
+
+  <div class="main-navigation__primary">
+    <a class="main-navigation__link" href="/">
+      <b class="main-navigation__title-text--long">
+        Landon Schropp
+      </b>
+      <b class="main-navigation__title-text--short">
+        Home
+      </b>
+    </a>
+
+    
+    <a
+      class="main-navigation__link main-navigation__link--selected"
+      href="/notes"
+    >
+      Notes
+    </a>
+
+    <a class="main-navigation__link" href="https://medium.com/@LandonSchropp">Blog</a>
+    <a class="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
+  </div>
+
+  <div class="main-navigation__secondary">
+    <a class="main-navigation__icon" href="https://twitter.com/LandonSchropp">
+      
+    <svg class="icon">
+      <title>Twitter</title>
+      <use xlink:href="/images/icons.svg#twitter" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://github.com/LandonSchropp">
+      
+    <svg class="icon">
+      <title>GitHub</title>
+      <use xlink:href="/images/icons.svg#github" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.goodreads.com/landonschropp">
+      
+    <svg class="icon">
+      <title>Goodreads</title>
+      <use xlink:href="/images/icons.svg#goodreads" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="mailto:schroppl@gmail.com">
+      
+    <svg class="icon">
+      <title>Email</title>
+      <use xlink:href="/images/icons.svg#email" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
+      
+    <svg class="icon">
+      <title>CodePen</title>
+      <use xlink:href="/images/icons.svg#codepen" />
+    </svg>
+  
+    </a>
+
+    <a class="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
+      
+    <svg class="icon">
+      <title>LinkedIn</title>
+      <use xlink:href="/images/icons.svg#linkedin" />
+    </svg>
+  
+    </a>
+  </div>
+</nav>
+
+    
+
+    <main class="content">
+      
+
+
+<article class="note" data-type="talk">
+  
+  <header class="header">
+    <p class="header__suphead">
+      My personal notes for
+    </p>
+
+    <h1 class="header__header">
+      
+  
+    <a class="header__title-link" href="https://www.developerweek.com">Everything You Need to Know to Start Your First Machine Learning Project</a>
+  
+
+    </h1>
+
+    <p class="header__subhead">
+      
+  
+    A talk by Kirsten Westeinde I attended at DeveloperWeek 2019
+  
+
+    </p>
+  </header>
+
+  <h2 id="1-identify-the-problem-you-want-to-solve">1. Identify the Problem You Want to Solve</h2>
+<p>Types of machine learning problems:</p>
+<ul>
+<li><strong>Supervised:</strong> You can use past data to derive answers to future problems.</li>
+<li><strong>Unsupervised:</strong> The data set doesn&#39;t have any answers and the object is to find some structure.</li>
+</ul>
+<p>You usually start with an unsupervised model to identify the structure, and then use supervised as the product.</p>
+<p>There are two types of supervised problems:</p>
+<ul>
+<li><strong>Classification:</strong> The answer is a discreet value.</li>
+<li><strong>Regression:</strong> The answer can be any continuous value.</li>
+</ul>
+<p>If you can frame your problem as a classification or regression problem, then it&#39;s a good candidate for machine learning.</p>
+<p>Machine learning is resource expensive, so if there&#39;s a simple heuristic system that&#39;s &quot;good enough,&quot; then use that.</p>
+<h2 id="2-frame-the-problem-as-a-machine-learning-model">2. Frame the Problem as a Machine Learning Model</h2>
+<p>It&#39;s really helpful to include a problem domain expert on the team.</p>
+<ul>
+<li><strong>Prediction target:</strong> The thing your model is trying to predict. Everyone needs to agree on this. This can be harder to determine than it seems. You should codify and unit test this.</li>
+<li><strong>Labeled data:</strong> You need a data set where you know the answers. </li>
+<li><strong>Data preprocessing:</strong> Transform the data to a format that works for your model. As an example, you can use <em>normalization</em> to get all of your data into the same range. This is important when weighing parameters.</li>
+<li><strong>Features:</strong> The parameters you want to include in your algorithm. </li>
+<li><strong>Acceptance criteria:</strong> You need to know: &quot;when will my model be good enough?&quot; This is usually in terms of accuracy.</li>
+</ul>
+<p>You also want to include data points from a wide variety of situations so you don&#39;t introduce bias in your model.  You also need to be careful that you don&#39;t encode biases that are already in the system. You can algorithmically generate data from a smaller data set in some cases (such as applying distortion to text input.)</p>
+<p>When choosing features, mix your own intuition with statistical analysis. <q>Could a human expert confidently predict the outcome given these pieces of information?</q> You need to evaluate the quality of the data for long-term consistency. This is an ongoing process.</p>
+<h2 id="3-train-the-model">3. Train the Model</h2>
+<p>Many times libraries will do this for you. The process is also usually well-documented.</p>
+<h2 id="4-productizing-the-model">4. Productizing the Model</h2>
+<p>PMML is a standardized language for expressing a machine learning model and its results. Most languages have packages that can interpret it.</p>
+<p>After training your model, you need to verify its accurate. The first step is to figure out the accuracy of your model in comparison to a test set of data.</p>
+<p>You can also release your model in &quot;shadow mode,&quot; where it&#39;s making predictions but isn&#39;t actually sharing those with the user. You need to do this every time you do an update to your model.</p>
+<p>You&#39;ll also want to have alerting set up for your algorithm&#39;s accuracy. And automate the pipeline as much as possible.</p>
+<p>More likely than not, your first model will be bad. You have to be willing to see it as a process and be willing to iterate.</p>
+<p>In the future, Tensorflow allows you to deploy a model to GKE and then make predictions in real time. If you&#39;re just starting out, Tensorflow has a low barrier to entry.</p>
+
+</article>
+
+    </main>
+
+    <script src="/javascript/index.js"></script>
+  </body>
+</html>
