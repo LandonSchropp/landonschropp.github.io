@@ -43,11 +43,10 @@ jobs:
           NODE_ENV: production
           PORT: "80"
           URL: https://landonschropp.com
-      -
-        name: Publish
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: gh-pages
-          build_dir: build
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - 
+       name: Publish
+       uses: peaceiris/actions-gh-pages@v2
+       env:
+         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+         PUBLISH_BRANCH: gh-pages
+         PUBLISH_DIR: ./build
