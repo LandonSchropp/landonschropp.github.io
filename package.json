@@ -8,8 +8,6 @@
     "build": "gulp build",
     "clean": "gulp clean",
     "lint": "eslint --max-warnings=0 .",
-    "todo": "leasot --exit-nicely --tags 'hack,bug fix,fix me' 'source/**/*.{njk,sass,js,md}'",
-    "validate-html": "bin/validate-html",
     "watch": "gulp watch",
     "download-content": "babel-node contentful/download-content.js"
   },
@@ -55,7 +53,6 @@
     "@babel/register": "^7.7.0",
     "@landonschropp/eslint-config": "^0.4.0",
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.6.0",
-    "leasot": "^9.0.0"
+    "eslint": "^6.6.0"
   }
 }
