@@ -1,14 +1,22 @@
+const globImporter = require('node-sass-glob-importer');
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://landonschropp.github.io",
     title: "Landon Schropp",
   },
   plugins: [
-    "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        icon: "src/images/icon.png",
+        importer: globImporter()
+      },
+    },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "297702848",
+        trackingId: "297702848"
       },
     },
     "gatsby-plugin-image",
