@@ -1,8 +1,12 @@
 {
-  "extends": "@landonschropp",
-  parser: "babel-eslint",
+  "parser": "@babel/eslint-parser",
+  "extends": [
+    "@landonschropp",
+    "@landonschropp/react"
+  ],
   "env": {
+    "es6": true,
     "browser": true,
-    es6: true
-  },
+    "jest": true
+  }
 }
