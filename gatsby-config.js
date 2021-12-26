@@ -1,22 +1,22 @@
-const globImporter = require('node-sass-glob-importer');
+const globImporter = require("node-sass-glob-importer");
 
 module.exports = {
   siteMetadata: {
     siteUrl: "https://landonschropp.github.io",
-    title: "Landon Schropp",
+    title: "Landon Schropp"
   },
   plugins: [
     {
       resolve: "gatsby-plugin-sass",
       options: {
         importer: globImporter()
-      },
+      }
     },
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId: "297702848"
-      },
+      }
     },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/flannel.png",
-      },
+        icon: "src/images/flannel.png"
+      }
     },
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
@@ -34,17 +34,17 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: "./src/images/",
+        path: "./src/images/"
       },
-      __key: "images",
+      __key: "images"
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: "./src/pages/",
+        path: "./src/pages/"
       },
-      __key: "pages",
+      __key: "pages"
     },
     {
       resolve: "gatsby-plugin-react-svg",
@@ -53,6 +53,6 @@ module.exports = {
           include: /landing/
         }
       }
-    },
-  ],
+    }
+  ]
 };

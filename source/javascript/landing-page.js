@@ -1,4 +1,4 @@
-import { updateViewBox, updateElements } from './dom';
+import { updateElements, updateViewBox } from "./dom";
 
 function currentTemplate() {
   return window.matchMedia("(max-aspect-ratio: 1 / 1)").matches
@@ -30,5 +30,5 @@ export default function landingPage() {
   update();
 
   // Whenever the window size changes, update the viewBox.
-  window.addEventListener('resize', update);
+  window.addEventListener("resize", update);
 }

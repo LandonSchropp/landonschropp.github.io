@@ -1,10 +1,10 @@
-import SVGO from 'svgo';
-import fs from 'fs';
+import SVGO from "svgo";
+import fs from "fs";
 
 export default function includeLandingPageSVG(path) {
 
   // Read the image from the file
-  let svg = fs.readFileSync(`${ __dirname }/../../source/images/${ path }`, 'utf8');
+  let svg = fs.readFileSync(`${ __dirname }/../../source/images/${ path }`, "utf8");
 
   // Remove the IDs from the image
   svg = svg.replace(/id="([^"]+)"/ig, (match, id) => `data-id="${ id }"`);
@@ -23,7 +23,7 @@ export default function includeLandingPageSVG(path) {
       { removeXMLNS: true },
       { removeViewBox: false },
       { removeDimensions: true },
-      { removeAttrs: { attrs: '(stroke|fill|stroke-width)' } }
+      { removeAttrs: { attrs: "(stroke|fill|stroke-width)" } }
     ]
   });
 

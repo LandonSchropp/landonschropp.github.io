@@ -1,6 +1,6 @@
-import queryString from 'query-string';
-import titleCase from 'voca/title_case';
-import isNil from 'lodash/isNil';
+import queryString from "query-string";
+import titleCase from "voca/title_case";
+import isNil from "lodash/isNil";
 
 function query() {
   return queryString.parse(window.location.search);
@@ -34,13 +34,13 @@ function isVisible(element, selectedType) {
 function toggleTagAndNoteSelections(selectedType) {
 
   // Mark the tags as selected
-  document.querySelectorAll('.tag').forEach(tag => {
-    tag.classList.toggle('tag--selected', isSelected(tag, selectedType));
+  document.querySelectorAll(".tag").forEach(tag => {
+    tag.classList.toggle("tag--selected", isSelected(tag, selectedType));
   });
 
   // Show and hide the notes
-  document.querySelectorAll('.note-summary').forEach(note => {
-    note.classList.toggle('note-summary--hidden', !isVisible(note, selectedType));
+  document.querySelectorAll(".note-summary").forEach(note => {
+    note.classList.toggle("note-summary--hidden", !isVisible(note, selectedType));
   });
 }
 
@@ -62,8 +62,8 @@ function onAnchorClick(event) {
 export default function notesPage() {
 
   // Handle anchor clicks
-  document.querySelectorAll('.tag').forEach(tag => {
-    tag.addEventListener('click', onAnchorClick);
+  document.querySelectorAll(".tag").forEach(tag => {
+    tag.addEventListener("click", onAnchorClick);
   });
 
   // Handle the initial query on page load

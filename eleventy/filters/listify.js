@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 // Converts an array of strings into a connected list of strings.
 export default function listify(items) {
