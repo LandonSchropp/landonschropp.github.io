@@ -2,11 +2,11 @@ import voca from "voca";
 
 import addAsyncShortcode from "./extensions/add-async-shortcode";
 import baseURL from "./filters/base-url";
+import listify from "./filters/listify";
+import required from "./filters/required";
 import icon from "./shortcodes/icon";
 import includeLandingPageSVG from "./shortcodes/include-landing-page-svg";
-import listify from "./filters/listify";
 import log from "./shortcodes/log";
-import required from "./filters/required";
 
 // TODO: Figure out how to move the root pages into a separate `pages` directory.
 export default function configureEleventy(eleventyConfig) {

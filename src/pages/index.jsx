@@ -1,9 +1,9 @@
 import React from "react";
-import { Layout } from "../layout/layout";
 
 import flannel from "../images/flannel.png";
-import Portrait from "../images/landing/portrait.svg";
 import Landscape from "../images/landing/landscape.svg";
+import Portrait from "../images/landing/portrait.svg";
+import { Layout } from "../layout/layout";
 
 export default function IndexPage() {
   return <Layout navigation={ false }>

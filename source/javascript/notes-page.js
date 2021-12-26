@@ -1,6 +1,6 @@
+import isNil from "lodash/isNil";
 import queryString from "query-string";
 import titleCase from "voca/title_case";
-import isNil from "lodash/isNil";
 
 function query() {
   return queryString.parse(window.location.search);

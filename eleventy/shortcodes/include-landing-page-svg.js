@@ -1,5 +1,5 @@
-import SVGO from "svgo";
 import fs from "fs";
+import SVGO from "svgo";
 
 export default function includeLandingPageSVG(path) {
 
