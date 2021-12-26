@@ -3,7 +3,7 @@
   +tag-color(border-color)
 
   display: inline-block
-  padding: calc(#{ $spacing--xxsmall } - 1px) calc(#{ $spacing--small } - 1px)
+  padding: calc(#{ $spacing * 0.125 } - 1px) calc(#{ $spacing * 0.5 } - 1px)
 
   color: $white
 
@@ -23,7 +23,7 @@
 
   @each $type, $color in $tag-colors
     &[data-type="#{ $type }"]:hover
-      box-shadow: 0 0 0 $spacing--xxsmall * 0.75 lighten($color, 10%)
+      box-shadow: 0 0 0 $spacing * 0.125 * 0.75 lighten($color, 10%)
 
   +viewport--medium
     font-size: $font-size--xxsmall
@@ -32,4 +32,4 @@
 
     @each $type, $color in $tag-colors
       &[data-type="#{ $type }"]
-        box-shadow: 0 0 0 $spacing--xxsmall * 1.5 lighten($color, 10%)
+        box-shadow: 0 0 0 $spacing * 0.125 * 1.5 lighten($color, 10%)

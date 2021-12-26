@@ -1,15 +1,15 @@
 .header
   text-align: center
 
-  // NOTE: Use $spacing--large for the bottom because the first note has
+  // NOTE: Use $spacing * 1.5 for the bottom because the first note has
   // padding on the top.
-  margin: $spacing--large 0
+  margin: $spacing * 1.5 0
 
   &__header
     margin: 0
 
   &__suphead, &__subhead
-    margin: $spacing--xsmall 0
+    margin: $spacing * 0.25 0
     font-style: italic
 
     // Slightly darken the text to compensate for the smaller font size
@@ -17,7 +17,7 @@
 
   // HACK: The extra spacing is needed to visually make the header look evenly spaced.
   &__subhead
-    margin: $spacing--small 0
+    margin: $spacing * 0.5 0
 
   &__title-link
     text-decoration: none
@@ -36,4 +36,4 @@
     display: flex
 
     *
-      margin: $spacing--small $spacing--xsmall 0
+      margin: $spacing * 0.5 $spacing * 0.25 0

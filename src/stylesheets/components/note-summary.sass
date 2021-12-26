@@ -1,5 +1,5 @@
 .note-summaries
-  margin: $spacing--xlarge 0
+  margin: $spacing * 2 0
 
 .note-summary
   +tag-color(border-color)
@@ -21,14 +21,14 @@
 
   // Compensate for the padding.
   &:first-of-type
-    margin-top: -$spacing--small
+    margin-top: -$spacing * 0.5
 
   &:last-of-type
-    margin-bottom: -$spacing--small
+    margin-bottom: -$spacing * 0.5
 
   &:hover
     background-color: darken($alabaster, 1%)
-    box-shadow: 0 0 0 $spacing--small darken($alabaster, 1%)
+    box-shadow: 0 0 0 $spacing * 0.5 darken($alabaster, 1%)
 
   &--hidden
     display: none
