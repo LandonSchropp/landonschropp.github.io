@@ -1,3 +1,5 @@
+import "../stylesheets/index.sass";
+
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
