@@ -1720,18 +1720,20 @@
     "@babel/runtime" "^7.7.2"
     regenerator-runtime "^0.13.3"
 
-"@landonschropp/eslint-config-react@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@landonschropp/eslint-config-react/-/eslint-config-react-0.10.0.tgz#e6d2d86385f5c212446c264647decd521f2b1773"
-  integrity sha512-m0/ysozrFB3hzlONIVBLmAchLWD68o15Gib0nBd6ADFtK000kp5TTYxNBRUWzyDKxzsfsJovRkJsVtOxFicpnw==
+"@landonschropp/eslint-config-react@^0.11.0":
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@landonschropp/eslint-config-react/-/eslint-config-react-0.11.0.tgz#598bb2550c0879d976a097803c605a73348358a0"
+  integrity sha512-MtDTW4bPZbJ2PxkC6yjXEf0J6LdD3q5/R+GrjiRkB5bm0x72eVvCGxviM50WiiPL84zLVCS+BQVjYm4t3bs7Yw==
   dependencies:
     eslint-plugin-react "^7.27.1"
     eslint-plugin-react-hooks "^4.3.0"
 
-"@landonschropp/eslint-config@^0.10.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@landonschropp/eslint-config/-/eslint-config-0.10.0.tgz#d8c04912511d4265327bd015287c64068c05a45b"
-  integrity sha512-Fs6gUdFbt3uOYCJnihPDi6UcUYI4X4uZ2b5+GmxQE5sM/UBrpgetL/4HvVWnpR2bQPdy/Vsj1w10nl5AbclZow==
+"@landonschropp/eslint-config@^0.11.1":
+  version "0.11.1"
+  resolved "https://registry.yarnpkg.com/@landonschropp/eslint-config/-/eslint-config-0.11.1.tgz#ce6f84d2859c3f152f366b583b1e1633603b899f"
+  integrity sha512-eX5su2MbS+z6c9aQY/JagGHCrx5OJPj4rIFGU8Dolbs9cG3fOvGd+Zs8IS4fDTfbBWO6yWkRaRfkrYHMU06o2g==
+  dependencies:
+    eslint-plugin-simple-import-sort "^7.0.0"
 
 "@mdx-js/mdx@^1.6.22":
   version "1.6.22"
@@ -4863,6 +4865,11 @@ eslint-plugin-react@^7.27.1:
     resolve "^2.0.0-next.3"
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
+
+eslint-plugin-simple-import-sort@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-7.0.0.tgz#a1dad262f46d2184a90095a60c66fef74727f0f8"
+  integrity sha512-U3vEDB5zhYPNfxT5TYR7u01dboFZp+HNpnGhkDB2g/2E4wZ/g1Q9Ton8UwCLfRV9yAKyYqDh62oHOamvkFxsvw==
 
 eslint-scope@5.1.1, eslint-scope@^5.1.1:
   version "5.1.1"
