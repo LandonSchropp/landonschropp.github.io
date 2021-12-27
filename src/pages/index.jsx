@@ -8,7 +8,7 @@ import Portrait from "../images/landing/portrait.svg";
 import { Layout } from "../layout/layout";
 import { mapToObject } from "../utilities/array";
 
-const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
+const LANDSCAPE_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 
 function fetchTemplateViewBox(templateRef) {
   return templateRef?.current?.querySelector("svg")?.getAttribute("viewBox");
@@ -36,14 +36,14 @@ function fetchTemplatePaths(templateRef) {
 
 export default function IndexPage() {
   const templateRef = useStatefulRef();
-  const isPortrait = useMediaQuery(PORTRAIT_MEDIA_QUERY);
+  const isLandscape = useMediaQuery(LANDSCAPE_MEDIA_QUERY);
 
   const TEMPLATE_PATHS = fetchTemplatePaths(templateRef);
 
   return <Layout navigation={ false }>
     <main className="index-page">
       <div className="index-page__template" ref={ templateRef }>
-        { isPortrait ? <Portrait /> : <Landscape /> }
+        { isLandscape ? <Landscape /> : <Portrait /> }
       </div>
       <svg className="index-page__svg" viewBox={ fetchTemplateViewBox(templateRef) }>
         <defs>
