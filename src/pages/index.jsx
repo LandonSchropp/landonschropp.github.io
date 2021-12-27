@@ -6,6 +6,7 @@ import flannel from "../images/flannel.png";
 import Landscape from "../images/landing/landscape.svg";
 import Portrait from "../images/landing/portrait.svg";
 import { Layout } from "../layout/layout";
+import { mapToObject } from "../utilities/array";
 
 const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 
@@ -13,26 +14,27 @@ const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 // queried at render time. However, this has proven to be very difficult inside of Gatsby. This is a
 // functional workaround for now, but in the future it should be replaced with a better
 // implementation.
-function fetchTemplateAttribute(templateRef, selector, attribute) {
+function fetchTemplatePaths(templateRef) {
 
   // Ensure the ref is populated.
   if (!templateRef.current) {
-    return null;
+    return {};
   }
 
-  // Fetch the selector.
-  let element = templateRef.current.querySelector(selector);
-
-  if (!element) {
-    throw new Error(`An element with the selector '${ selector } could not be found.'`);
-  }
-
-  return element.getAttribute(attribute);
+  // Grab all of the IDed elements.
+  return mapToObject(
+    templateRef.current.querySelectorAll("path[id], polygon[id]"),
+    element => {
+      return [ element.id, element.getAttribute("d") ?? element.getAttribute("points") ];
+    }
+  );
 }
 
 export default function IndexPage() {
   const templateRef = useStatefulRef();
   const isPortrait = useMediaQuery(PORTRAIT_MEDIA_QUERY);
+
+  const TEMPLATE_PATHS = fetchTemplatePaths(templateRef);
 
   return <Layout navigation={ false }>
     <main className="index-page">
@@ -51,17 +53,22 @@ export default function IndexPage() {
         </defs>
 
         <g aria-label="Entrepreneur, Designer & Developer">
+          <path className="index-page__item" d={ TEMPLATE_PATHS["landon"] } />
+          <path className="index-page__item" d={ TEMPLATE_PATHS["schropp"] } />
+        </g>
+
+        <g aria-label="Entrepreneur, Designer & Developer">
           <path
             className="index-page__item"
-            d={ fetchTemplateAttribute(templateRef, "#entrepreneur", "d") }
+            d={ TEMPLATE_PATHS["entrepreneur"] }
           />
           <polygon
             className="index-page__item index-page__comma"
-            points={ fetchTemplateAttribute(templateRef, "#comma", "points") }
+            points={ TEMPLATE_PATHS["comma"] }
           />
           <path
             className="index-page__item"
-            d={ fetchTemplateAttribute(templateRef, "#developer-and-designer", "d") }
+            d={ TEMPLATE_PATHS["developer-and-designer"] }
           />
         </g>
       </svg>
