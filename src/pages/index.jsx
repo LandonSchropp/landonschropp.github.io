@@ -2,6 +2,7 @@ import useStatefulRef from "@bedrock-layout/use-stateful-ref";
 import { useMediaQuery } from "@react-hook/media-query";
 import React from "react";
 
+import useIsClient from "../hooks/use-is-client";
 import flannel from "../images/flannel.png";
 import Landscape from "../images/landing/landscape.svg";
 import Portrait from "../images/landing/portrait.svg";
@@ -35,8 +36,14 @@ function fetchTemplatePaths(templateRef) {
 }
 
 export default function IndexPage() {
+  const isClient = useIsClient();
   const templateRef = useStatefulRef();
   const isLandscape = useMediaQuery(LANDSCAPE_MEDIA_QUERY);
+
+  // Don't render anything if we're not on the client to force correct hydration.
+  if (!isClient) {
+    return null;
+  }
 
   const TEMPLATE_PATHS = fetchTemplatePaths(templateRef);
 

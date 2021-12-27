@@ -33,6 +33,7 @@
     "gatsby-plugin-sitemap": "^5.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-sharp": "^4.4.0",
+    "gatsby-transformer-xml": "^4.4.0",
     "highlight.js": "^9.16.2",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
