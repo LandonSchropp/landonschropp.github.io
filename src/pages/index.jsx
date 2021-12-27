@@ -52,12 +52,14 @@ export default function IndexPage() {
           </pattern>
         </defs>
 
-        <g aria-label="Entrepreneur, Designer & Developer">
+        <g>
+          <title>Landon Schropp</title>
           <path className="index-page__item" d={ TEMPLATE_PATHS["landon"] } />
           <path className="index-page__item" d={ TEMPLATE_PATHS["schropp"] } />
         </g>
 
-        <g aria-label="Entrepreneur, Designer & Developer">
+        <g>
+          <title>Entrepreneur, Designer & Developer</title>
           <path
             className="index-page__item"
             d={ TEMPLATE_PATHS["entrepreneur"] }
