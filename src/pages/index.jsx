@@ -10,6 +10,10 @@ import { mapToObject } from "../utilities/array";
 
 const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 
+function fetchTemplateViewBox(templateRef) {
+  return templateRef?.current?.querySelector("svg")?.getAttribute("viewBox");
+}
+
 // TODO: Ideally, instead of querying the DOM for the SVG properties, the SVG object could be
 // queried at render time. However, this has proven to be very difficult inside of Gatsby. This is a
 // functional workaround for now, but in the future it should be replaced with a better
@@ -41,11 +45,7 @@ export default function IndexPage() {
       <div className="index-page__template" ref={ templateRef }>
         { isPortrait ? <Portrait /> : <Landscape /> }
       </div>
-      <svg
-        className="index-page__svg"
-        viewBox="0 0 1296 445"
-        role="main"
-      >
+      <svg className="index-page__svg" viewBox={ fetchTemplateViewBox(templateRef) }>
         <defs>
           <pattern id="flannel" patternUnits="userSpaceOnUse" width="80" height="80">
             <image xlinkHref={ flannel } x="0" y="0" width="80" height="80" />
@@ -73,6 +73,78 @@ export default function IndexPage() {
             d={ TEMPLATE_PATHS["developer-and-designer"] }
           />
         </g>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://medium.com/@LandonSchropp"
+        >
+          <title>Blog</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["blog"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://unravelingflexbox.com"
+        >
+          <title>Book</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["book"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="/notes"
+        >
+          <title>Notes</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["notes"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://twitter.com/LandonSchropp"
+        >
+          <title>Twitter</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["twitter"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://github.com/LandonSchropp"
+        >
+          <title>GitHub</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["github"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://www.goodreads.com/landonschropp"
+        >
+          <title>Goodreads</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["goodreads"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="mailto:schroppl@gmail.com"
+        >
+          <title>Email</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["email"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://codepen.io/LandonSchropp/"
+        >
+          <title>CodePen</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["codepen"] } />
+        </a>
+
+        <a
+          className="index-page__link"
+          xlinkHref="https://www.linkedin.com/in/landonschropp"
+        >
+          <title>LinkedIn</title>
+          <path className="index-page__item" d={ TEMPLATE_PATHS["linkedin"] } />
+        </a>
       </svg>
     </main>
   </Layout>;
