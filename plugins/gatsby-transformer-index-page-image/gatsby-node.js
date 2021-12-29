@@ -28,7 +28,13 @@ function extractPaths(paths) {
   return _.isArray(paths) ? paths.map(extractPath) : [ extractPath(paths) ];
 }
 
-exports.onCreateNode = async ({ node, loadNodeContent, ...parameters }) => {
+exports.onCreateNode = async ({
+  node,
+  loadNodeContent,
+  actions: { createNode, createParentChildLink },
+  createNodeId,
+  createContentDigest
+}) => {
 
   // If the file is not an index page image, ignore it.
   if (!FILES.includes(node.base)) {
@@ -40,6 +46,7 @@ exports.onCreateNode = async ({ node, loadNodeContent, ...parameters }) => {
 
   // Convert the data to a more useful format.
   let data = {
+    name: node.base.replace(/\.svg$/, ""),
     viewBox: svgData.svg.viewBox,
     shapes: [
       ...extractPaths(svgData.svg.g.path),
@@ -47,5 +54,27 @@ exports.onCreateNode = async ({ node, loadNodeContent, ...parameters }) => {
     ]
   };
 
-  console.log(data);
+  function transformObject(object, id, type) {
+    const objectNode = {
+      ...object,
+      id,
+      children: [],
+      parent: node.id,
+      internal: {
+        contentDigest: createContentDigest(object),
+        type
+      }
+    };
+    if (object.id) {
+      objectNode[`objectId`] = object.id;
+    }
+    createNode(objectNode);
+    createParentChildLink({ parent: node, child: objectNode });
+  }
+
+  transformObject(
+    data,
+    createNodeId(`${ node.id } >>> Index Page Image`),
+    "IndexPageImage"
+  );
 };
