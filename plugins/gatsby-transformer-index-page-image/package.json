@@ -1,0 +1,9 @@
+{
+  "name": "gatsby-transformer-index-page-image",
+  "description": "A local plugin that transforms the index page images into JSON data",
+  "private": true,
+  "dependencies": {
+    "fast-xml-parser": "^4.0.0-beta.8",
+    "lodash": "^4.17.21"
+  }
+}

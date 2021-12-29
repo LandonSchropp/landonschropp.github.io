@@ -1,5 +1,0 @@
-{
-  "name": "gatsby-transformer-index-page-images",
-  "description": "A local plugin that transforms the index page images into JSON data",
-  "private": true
-}
