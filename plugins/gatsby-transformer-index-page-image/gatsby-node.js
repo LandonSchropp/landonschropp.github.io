@@ -2,7 +2,7 @@ const FILES = [ "portrait.svg", "landscape.svg" ];
 const _ = require("lodash");
 const { XMLParser } = require("fast-xml-parser");
 
-const parser = new XMLParser({ ignoreAttributes : false, attributeNamePrefix : "" });
+const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "" });
 
 function extractPolygon({ id, points }) {
   return { id, points, shape: "polygon" };
@@ -45,7 +45,7 @@ exports.onCreateNode = async ({ node, loadNodeContent, ...parameters }) => {
       ...extractPaths(svgData.svg.g.path),
       ...extractPolygons(svgData.svg.g.polygon)
     ]
-  }
+  };
 
   console.log(data);
-}
+};
