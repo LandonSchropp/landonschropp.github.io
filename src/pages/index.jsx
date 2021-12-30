@@ -1,58 +1,43 @@
-import useStatefulRef from "@bedrock-layout/use-stateful-ref";
 import { useMediaQuery } from "@react-hook/media-query";
+import PropTypes from "prop-types";
 import React from "react";
 
+import { useIndexPageImages } from "../hooks/use-index-page-images";
 import useIsClient from "../hooks/use-is-client";
 import flannel from "../images/flannel.png";
-import Landscape from "../images/landing/landscape.svg";
-import Portrait from "../images/landing/portrait.svg";
 import { Layout } from "../layout/layout";
-import { mapToObject } from "../utilities/array";
 
 const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 
-function fetchTemplateViewBox(templateRef) {
-  return templateRef?.current?.querySelector("svg")?.getAttribute("viewBox");
-}
-
-// TODO: Ideally, instead of querying the DOM for the SVG properties, the SVG object could be
-// queried at render time. However, this has proven to be very difficult inside of Gatsby. This is a
-// functional workaround for now, but in the future it should be replaced with a better
-// implementation.
-function fetchTemplatePaths(templateRef) {
-
-  // Ensure the ref is populated.
-  if (!templateRef.current) {
-    return {};
+function Shape({ shape, d, points, className }) {
+  if (shape === "polygon") {
+    return <polygon className={ className } points={ points } />;
   }
 
-  // Grab all of the IDed elements.
-  return mapToObject(
-    templateRef.current.querySelectorAll("path[id], polygon[id]"),
-    element => {
-      return [ element.id, element.getAttribute("d") ?? element.getAttribute("points") ];
-    }
-  );
+  return <path className={ className } d={ d } />;
 }
+
+Shape.propTypes = {
+  className: PropTypes.string,
+  shape: PropTypes.oneOf([ "path", "polygon" ]),
+  points: PropTypes.string,
+  d: PropTypes.string
+};
 
 export default function IndexPage() {
   const isClient = useIsClient();
-  const templateRef = useStatefulRef();
   const isPortrait = useMediaQuery(PORTRAIT_MEDIA_QUERY);
+  let { portrait, landscape } = useIndexPageImages();
+  let { viewBox, shapes } = isPortrait ? portrait : landscape;
 
   // Don't render anything if we're not on the client to force correct hydration.
   if (!isClient) {
     return null;
   }
 
-  const TEMPLATE_PATHS = fetchTemplatePaths(templateRef);
-
   return <Layout navigation={ false }>
     <main className="index-page">
-      <div className="index-page__template" ref={ templateRef }>
-        { isPortrait ? <Portrait /> : <Landscape /> }
-      </div>
-      <svg className="index-page__svg" viewBox={ fetchTemplateViewBox(templateRef) }>
+      <svg className="index-page__svg" viewBox={ viewBox }>
         <defs>
           <pattern id="flannel" patternUnits="userSpaceOnUse" width="80" height="80">
             <image xlinkHref={ flannel } x="0" y="0" width="80" height="80" />
@@ -61,24 +46,15 @@ export default function IndexPage() {
 
         <g>
           <title>Landon Schropp</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["landon"] } />
-          <path className="index-page__item" d={ TEMPLATE_PATHS["schropp"] } />
+          <Shape className="index-page__item" { ...shapes.landon } />
+          <Shape className="index-page__item" { ...shapes.schropp } />
         </g>
 
         <g>
           <title>Entrepreneur, Designer & Developer</title>
-          <path
-            className="index-page__item"
-            d={ TEMPLATE_PATHS["entrepreneur"] }
-          />
-          <polygon
-            className="index-page__item index-page__comma"
-            points={ TEMPLATE_PATHS["comma"] }
-          />
-          <path
-            className="index-page__item"
-            d={ TEMPLATE_PATHS["developer-and-designer"] }
-          />
+          <Shape className="index-page__item" { ...shapes.entrepreneur } />
+          <Shape className="index-page__item index-page__comma" { ...shapes.comma } />
+          <Shape className="index-page__item" { ...shapes["developer-and-designer"] } />
         </g>
 
         <a
@@ -86,7 +62,7 @@ export default function IndexPage() {
           xlinkHref="https://medium.com/@LandonSchropp"
         >
           <title>Blog</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["blog"] } />
+          <Shape className="index-page__item" { ...shapes.blog } />
         </a>
 
         <a
@@ -94,7 +70,7 @@ export default function IndexPage() {
           xlinkHref="https://unravelingflexbox.com"
         >
           <title>Book</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["book"] } />
+          <Shape className="index-page__item" { ...shapes.book } />
         </a>
 
         <a
@@ -102,7 +78,7 @@ export default function IndexPage() {
           xlinkHref="/notes"
         >
           <title>Notes</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["notes"] } />
+          <Shape className="index-page__item" { ...shapes.notes } />
         </a>
 
         <a
@@ -110,7 +86,7 @@ export default function IndexPage() {
           xlinkHref="https://twitter.com/LandonSchropp"
         >
           <title>Twitter</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["twitter"] } />
+          <Shape className="index-page__item" { ...shapes.twitter } />
         </a>
 
         <a
@@ -118,7 +94,7 @@ export default function IndexPage() {
           xlinkHref="https://github.com/LandonSchropp"
         >
           <title>GitHub</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["github"] } />
+          <Shape className="index-page__item" { ...shapes.github } />
         </a>
 
         <a
@@ -126,7 +102,7 @@ export default function IndexPage() {
           xlinkHref="https://www.goodreads.com/landonschropp"
         >
           <title>Goodreads</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["goodreads"] } />
+          <Shape className="index-page__item" { ...shapes.goodreads } />
         </a>
 
         <a
@@ -134,7 +110,7 @@ export default function IndexPage() {
           xlinkHref="mailto:schroppl@gmail.com"
         >
           <title>Email</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["email"] } />
+          <Shape className="index-page__item" { ...shapes.email } />
         </a>
 
         <a
@@ -142,7 +118,7 @@ export default function IndexPage() {
           xlinkHref="https://codepen.io/LandonSchropp/"
         >
           <title>CodePen</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["codepen"] } />
+          <Shape className="index-page__item" { ...shapes.codepen } />
         </a>
 
         <a
@@ -150,7 +126,7 @@ export default function IndexPage() {
           xlinkHref="https://www.linkedin.com/in/landonschropp"
         >
           <title>LinkedIn</title>
-          <path className="index-page__item" d={ TEMPLATE_PATHS["linkedin"] } />
+          <Shape className="index-page__item" { ...shapes.linkedin } />
         </a>
       </svg>
     </main>
