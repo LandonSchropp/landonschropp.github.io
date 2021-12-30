@@ -1,6 +1,7 @@
 import { useMediaQuery } from "@react-hook/media-query";
 import PropTypes from "prop-types";
 import React from "react";
+import getBounds from "svg-path-bounds";
 
 import { useIndexPageImages } from "../hooks/use-index-page-images";
 import useIsClient from "../hooks/use-is-client";
@@ -14,7 +15,13 @@ function Shape({ shape, d, points, className }) {
     return <polygon className={ className } points={ points } />;
   }
 
-  return <path className={ className } d={ d } />;
+  let [ left, top, right, bottom ] = getBounds(d);
+
+  // Add an invisible box so hovers work for the full link area.
+  return <>
+    <rect x={ left } y={ top } width={ right - left } height={ bottom - top } fill="transparent" />
+    <path className={ className } d={ d } />
+  </>;
 }
 
 Shape.propTypes = {
