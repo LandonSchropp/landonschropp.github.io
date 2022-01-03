@@ -68,6 +68,7 @@ module.exports = {
         propsToFrontmatter: true,
         lowerTitleLevel: true
       }
-    }
+    },
+    "gatsby-transformer-note"
   ]
 };

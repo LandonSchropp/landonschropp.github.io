@@ -1,10 +1,28 @@
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 
-import { useNotes } from "../hooks/use-notes";
 import { Layout } from "../layout/layout";
 
-export default function NotesPage() {
-  let notes = useNotes();
+export const query = graphql`
+  query Notes {
+    allNote {
+      nodes {
+        authors
+        category
+        date
+        published
+        slug
+        source
+        title
+        url
+      }
+    }
+  }
+`;
+
+export default function NotesPage({ data }) {
+  let notes = data.allNote.nodes;
 
   return <Layout navigation={ false } className="notes-page">
     <h1>Notes</h1>
@@ -14,3 +32,7 @@ export default function NotesPage() {
     }
   </Layout>;
 }
+
+NotesPage.propTypes = {
+  data: PropTypes.object
+};

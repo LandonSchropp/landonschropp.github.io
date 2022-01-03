@@ -13,6 +13,7 @@ function createDataNode(parent, type, {
   const dataNode = {
     ...data,
     id: createNodeId(`${ parent.id } >>> ${ type }`),
+    parent: parent.id,
     internal: {
       contentDigest: createContentDigest(data),
       type

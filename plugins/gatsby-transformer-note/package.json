@@ -1,0 +1,5 @@
+{
+  "name": "gatsby-transformer-note",
+  "description": "A local plugin that transforms Notes from Notion",
+  "private": true
+}
