@@ -5977,6 +5977,15 @@ gatsby-source-filesystem@^4.4.0:
     valid-url "^1.0.9"
     xstate "^4.26.1"
 
+gatsby-source-notion-api@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-notion-api/-/gatsby-source-notion-api-0.11.0.tgz#457a61b87df3a695d10584041c13a2c7a2c4ff36"
+  integrity sha512-u+Bb+/4A1zKNCVxc6htxK17FhkpDEdO8MOiVl0hPz2nHVDxh64TTDu6uRC1z5lDI6OnR5eEXcNiOA+fUdhj3aA==
+  dependencies:
+    node-fetch "^2.6.1"
+    or-pipets "^1.0.1"
+    yaml "^1.10.2"
+
 gatsby-telemetry@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.4.0.tgz#cdb72354a8d4a79a7be8c112d039b44bff3d9a87"
@@ -8924,6 +8933,11 @@ optionator@^0.9.1:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
     word-wrap "^1.2.3"
+
+or-pipets@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/or-pipets/-/or-pipets-1.0.1.tgz#0699c99f95a535614a585cd7fb3a1a216a47b5c0"
+  integrity sha512-xgIIdB4w00pbhtNPYLF/caifwbc4KrE7jy4WqiDRzRrC2g3YVR4ypRwbKRA/bXzftQEA2SK8c+wKI2R7kqKiLQ==
 
 ordered-binary@^1.0.0:
   version "1.2.3"

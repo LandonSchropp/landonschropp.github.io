@@ -1,3 +1,6 @@
+const BLOG_NOTION_ID = "c68575f91f534048bb15c54f0f230882";
+const NOTES_NOTION_ID = "da4f9ded813b424e83e5f552b1f41a3e";
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://landonschropp.github.io",
@@ -46,6 +49,15 @@ module.exports = {
         rule: {
           include: /landing/
         }
+      }
+    },
+    {
+      resolve: "gatsby-source-notion-api",
+      options: {
+        token: process.env.NOTION_API_TOKEN,
+        databaseId: NOTES_NOTION_ID,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true
       }
     }
   ]
