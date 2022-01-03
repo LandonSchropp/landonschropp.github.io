@@ -59,6 +59,15 @@ module.exports = {
         propsToFrontmatter: true,
         lowerTitleLevel: true
       }
+    },
+    {
+      resolve: "gatsby-source-notion-api",
+      options: {
+        token: process.env.NOTION_API_TOKEN,
+        databaseId: BLOG_NOTION_ID,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true
+      }
     }
   ]
 };
