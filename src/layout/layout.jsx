@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
-export function Layout({ children, navigation }) {
+export function Layout({ children, navigation, className }) {
   return <>
     <Helmet>
       <title>Landon Schropp</title>
@@ -23,11 +23,14 @@ export function Layout({ children, navigation }) {
         rel="stylesheet"
       />
     </Helmet>
-    { children }
+    <main className={ className }>
+      { children }
+    </main>
   </>;
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  className: PropTypes.string.isRequired,
   navigation: PropTypes.bool.isRequired
 };
