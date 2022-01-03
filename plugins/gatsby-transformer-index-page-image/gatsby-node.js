@@ -1,6 +1,7 @@
 const FILES = [ "portrait.svg", "landscape.svg" ];
 const _ = require("lodash");
 const { XMLParser } = require("fast-xml-parser");
+const { createDataNode } = require("../../gatsby/data-node");
 
 const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "" });
 
@@ -26,33 +27,6 @@ function extractPaths(paths) {
   }
 
   return _.isArray(paths) ? paths.map(extractPath) : [ extractPath(paths) ];
-}
-
-/**
- * This is a helper functio that can be used to quickly create data nodes in Gatsby.
- * @param parent The parent node that will have data appended to it.
- * @param type A string representing the new node type.
- * @param gatsby The gatsby properties passed to onCreateNode.
- * @param data The data to be included in the node.
- */
-function createDataNode(parent, type, {
-  actions: { createNode, createParentChildLink },
-  createNodeId,
-  createContentDigest
-}, data) {
-  const dataNode = {
-    ...data,
-    id: createNodeId(`${ parent.id } >>> ${ type }`),
-    children: [],
-    parent: parent.id,
-    internal: {
-      contentDigest: createContentDigest(data),
-      type
-    }
-  };
-
-  createNode(dataNode);
-  createParentChildLink({ parent, child: dataNode });
 }
 
 exports.onCreateNode = async ({ node, loadNodeContent, ...gatsby }) => {
