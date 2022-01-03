@@ -28,13 +28,34 @@ function extractPaths(paths) {
   return _.isArray(paths) ? paths.map(extractPath) : [ extractPath(paths) ];
 }
 
-exports.onCreateNode = async ({
-  node,
-  loadNodeContent,
+/**
+ * This is a helper functio that can be used to quickly create data nodes in Gatsby.
+ * @param parent The parent node that will have data appended to it.
+ * @param type A string representing the new node type.
+ * @param gatsby The gatsby properties passed to onCreateNode.
+ * @param data The data to be included in the node.
+ */
+function createDataNode(parent, type, {
   actions: { createNode, createParentChildLink },
   createNodeId,
   createContentDigest
-}) => {
+}, data) {
+  const dataNode = {
+    ...data,
+    id: createNodeId(`${ parent.id } >>> ${ type }`),
+    children: [],
+    parent: parent.id,
+    internal: {
+      contentDigest: createContentDigest(data),
+      type
+    }
+  };
+
+  createNode(dataNode);
+  createParentChildLink({ parent, child: dataNode });
+}
+
+exports.onCreateNode = async ({ node, loadNodeContent, ...gatsby }) => {
 
   // If the file is not an index page image, ignore it.
   if (!FILES.includes(node.base)) {
@@ -54,27 +75,5 @@ exports.onCreateNode = async ({
     ]
   };
 
-  function transformObject(object, id, type) {
-    const objectNode = {
-      ...object,
-      id,
-      children: [],
-      parent: node.id,
-      internal: {
-        contentDigest: createContentDigest(object),
-        type
-      }
-    };
-    if (object.id) {
-      objectNode[`objectId`] = object.id;
-    }
-    createNode(objectNode);
-    createParentChildLink({ parent: node, child: objectNode });
-  }
-
-  transformObject(
-    data,
-    createNodeId(`${ node.id } >>> Index Page Image`),
-    "IndexPageImage"
-  );
+  createDataNode(node, "IndexPageImage", gatsby, data);
 };
