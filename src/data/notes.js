@@ -1,7 +1,7 @@
 import _ from "lodash";
 
 /**
- * Transforms a GraphQL node into a not object that can be used in a note component.
+ * Transforms a GraphQL node into a new object that can be used in a note component.
  */
 export function transformNote({ node }) {
   return {
