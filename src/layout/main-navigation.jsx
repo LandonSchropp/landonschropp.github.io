@@ -49,10 +49,6 @@ export function MainNavigation() {
         <Icon name="github" alt="GitHub" />
       </a>
 
-      <a className="main-navigation__icon" href="https://www.goodreads.com/landonschropp">
-        <Icon name="goodreads" alt="Goodreads" />
-      </a>
-
       <a className="main-navigation__icon" href="mailto:schroppl@gmail.com">
         <Icon name="email" alt="Email" />
       </a>
