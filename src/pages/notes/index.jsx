@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { Layout } from "../layout/layout";
+import { Layout } from "../../layout/layout";
 
 export const query = graphql`
   query Notes {
