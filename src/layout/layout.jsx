@@ -1,5 +1,6 @@
 import "../stylesheets/index.sass";
 
+import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
@@ -26,7 +27,7 @@ export function Layout({ children, className }) {
       />
     </Helmet>
     <MainNavigation />
-    <main className={ className }>
+    <main className={ classNames(className, "main") }>
       { children }
     </main>
   </>;
