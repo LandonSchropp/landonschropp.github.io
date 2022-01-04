@@ -4,6 +4,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
+import { MainNavigation } from "./main-navigation";
+
 export function Layout({ children, className }) {
   return <>
     <Helmet>
@@ -23,6 +25,7 @@ export function Layout({ children, className }) {
         rel="stylesheet"
       />
     </Helmet>
+    <MainNavigation />
     <main className={ className }>
       { children }
     </main>
