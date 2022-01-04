@@ -59,7 +59,11 @@ export default function IndexPage() {
       <g>
         <title>Entrepreneur, Designer & Developer</title>
         <Shape className="index-page__item" { ...shapes.entrepreneur } />
-        <Shape className="index-page__item index-page__comma" { ...shapes.comma } />
+        {
+          isPortrait
+            ? null
+            : <Shape className="index-page__item index-page__comma" { ...shapes.comma } />
+        }
         <Shape className="index-page__item" { ...shapes["developer-and-designer"] } />
       </g>
 
