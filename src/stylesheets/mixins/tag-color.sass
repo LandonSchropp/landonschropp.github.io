@@ -1,6 +1,6 @@
 // This allows a property to be styled with the correct tag color. It's based on the element having
-// a `data-type` attribute.
+// a `data-category` attribute.
 @mixin tag-color($property)
-  @each $type, $color in $tag-colors
-    &[data-type="#{ $type }"]
+  @each $category, $color in $tag-colors
+    &[data-category="#{ $category }"]
       #{ $property }: $color

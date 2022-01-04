@@ -21,8 +21,8 @@
 
   transition: box-shadow $transition-time--xsmall ease-in
 
-  @each $type, $color in $tag-colors
-    &[data-type="#{ $type }"]:hover
+  @each $category, $color in $tag-colors
+    &[data-category="#{ $category }"]:hover
       box-shadow: 0 0 0 $spacing * 0.125 * 0.75 lighten($color, 10%)
 
   +viewport--medium
@@ -30,6 +30,6 @@
 
   &.tag.tag--selected
 
-    @each $type, $color in $tag-colors
-      &[data-type="#{ $type }"]
+    @each $category, $color in $tag-colors
+      &[data-category="#{ $category }"]
         box-shadow: 0 0 0 $spacing * 0.125 * 1.5 lighten($color, 10%)
