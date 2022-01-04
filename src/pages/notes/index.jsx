@@ -24,7 +24,7 @@ export const query = graphql`
 export default function NotesPage({ data }) {
   let notes = data.allNote.nodes;
 
-  return <Layout navigation={ false } className="notes-page">
+  return <Layout className="notes-page">
     <h1>Notes</h1>
 
     {

@@ -42,7 +42,7 @@ export default function IndexPage() {
     return null;
   }
 
-  return <Layout navigation={ false } className="index-page">
+  return <Layout className="index-page">
     <svg className="index-page__svg" viewBox={ viewBox }>
       <defs>
         <pattern id="flannel" patternUnits="userSpaceOnUse" width="80" height="80">
