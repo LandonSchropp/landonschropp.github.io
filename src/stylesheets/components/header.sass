@@ -1,8 +1,7 @@
 .header
   text-align: center
 
-  // NOTE: Use $spacing * 1.5 for the bottom because the first note has
-  // padding on the top.
+  // NOTE: Use $spacing * 1.5 for the bottom because the first note has padding on the top.
   margin: $spacing * 1.5 0
 
   &__header
@@ -30,10 +29,13 @@
     justify-content: center
     flex-wrap: wrap
 
-  // HACK: The tag groups exist to allow the tags to wrap in a grouped fasion. This prevents one
-  // "lone tag" from sitting on the next line on standard mobile sizes.
+  // TODO: The tag groups exist to allow the tags to wrap in a grouped fashion. This prevents one
+  // "lone tag" from sitting on the next line on standard mobile sizes. This should probably be
+  // fixed via CSS.
   &__tag-group
-    display: flex
+
+    +viewport--max-medium
+      display: flex
 
     *
       margin: $spacing * 0.5 $spacing * 0.25 0
