@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-404-jsx-884cb4e39c6640b32c2b.js","mappings":"sLAEe,SAASA,IACtB,OAAO","sources":["webpack://landonschropp.com/./src/pages/404.jsx"],"sourcesContent":["import React from \"react\";\n\nexport default function NotFoundPage() {\n  return <h1>404</h1>;\n}\n"],"names":["NotFoundPage"],"sourceRoot":""}
