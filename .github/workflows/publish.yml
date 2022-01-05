@@ -3,7 +3,11 @@ on:
   push:
     branches:
       - main
-  repository_dispatch:
+  # TODO: Once the Notion API supports web hooks, this should be updated to run when the content
+  # updates.
+  schedule:
+    - cron:  '15 */4 * * *'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
