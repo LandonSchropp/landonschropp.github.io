@@ -8,13 +8,15 @@ import { Helmet } from "react-helmet";
 
 import { MainNavigation } from "./main-navigation";
 
-export function Layout({ children, className }) {
+export function Layout({ children, className, title, description }) {
   let { pathname } = useLocation();
   let includeMainClass = pathname !== "/";
 
   return <>
     <Helmet>
-      <title>Landon Schropp</title>
+      <title>{ title }</title>
+      <meta name="description" content={ description } />
+
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="shortcut icon" type="image/png" href="/images/flannel.png" />
 
@@ -39,5 +41,7 @@ export function Layout({ children, className }) {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string.isRequired
+  className: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 };

@@ -42,7 +42,12 @@ export default function IndexPage() {
     return null;
   }
 
-  return <Layout className="index-page">
+  return <Layout
+    className="index-page"
+    title="Landon Schropp"
+    description="Landon Schropp is a developer, designer and entrepreneur based in Kansas City."
+  >
+
     <svg className="index-page__svg" viewBox={ viewBox }>
       <defs>
         <pattern id="flannel" patternUnits="userSpaceOnUse" width="80" height="80">
