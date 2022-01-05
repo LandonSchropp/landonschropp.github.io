@@ -1,3 +1,4 @@
+import { Link } from "gatsby";
 import React from "react";
 
 import { Listify } from "../components/listify";
@@ -5,9 +6,9 @@ import { NotePropType } from "../data/prop-types";
 
 export function NoteSummary({ note }) {
 
-  return <a
+  return <Link
     className="note-summary"
-    href={ `/notes/${ note.slug }` }
+    to={ `/notes/${ note.slug }` }
     data-category={ note.category }
   >
     <h3 className="note-summary__title">
@@ -22,7 +23,7 @@ export function NoteSummary({ note }) {
         { note.sourceName }
       </span>
     </p>
-  </a>;
+  </Link>;
 }
 
 NoteSummary.propTypes = {

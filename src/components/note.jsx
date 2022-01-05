@@ -15,7 +15,7 @@ function NoteHeaderText({ note }) {
     return note.title;
   }
 
-  return <a className="header__title-link" href={ note.url }>{ note.title }</a>;
+  return <a className="header__title-link" to={ note.url }>{ note.title }</a>;
 }
 
 NoteHeaderText.propTypes = {
@@ -33,7 +33,7 @@ function NoteSubheadText({ note }) {
     return <>
       From
       { " " }
-      <a className="header__link" href={ baseURL(note.url) }>{ note.source }</a>,
+      <a className="header__link" to={ baseURL(note.url) }>{ note.source }</a>,
       { " " }
       a podcast by <Listify items={ note.authors } />
     </>;
@@ -42,7 +42,7 @@ function NoteSubheadText({ note }) {
   if (note.category === ARTICLE_CATEGORY) {
     return <>
       An { note.category.toLowerCase() } by <Listify items={ note.authors } /> from
-      <a className="header__link" href={ baseURL(note.url) }>{ note.source }</a>
+      <a className="header__link" to={ baseURL(note.url) }>{ note.source }</a>
     </>;
   }
 
@@ -50,14 +50,14 @@ function NoteSubheadText({ note }) {
     return <>
       A book by
       { " " }
-      <a className="header__link" href={ note.url }><Listify items={ note.authors } /></a>
+      <a className="header__link" to={ note.url }><Listify items={ note.authors } /></a>
     </>;
   }
 
   return <>
     A { note.category.toLowerCase() } by <Listify items={ note.authors } /> on
     { " " }
-    <a className="header__link" href={ baseURL(note.url) }>{ note.source }</a>
+    <a className="header__link" to={ baseURL(note.url) }>{ note.source }</a>
   </>;
 }
 

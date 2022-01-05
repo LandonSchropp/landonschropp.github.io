@@ -40,29 +40,30 @@ export function MainNavigation() {
       >
         Blog
       </Link>
-      <Link className="main-navigation__link" to="https://unravelingflexbox.com">Book</Link>
+
+      <a className="main-navigation__link" to="https://unravelingflexbox.com">Book</a>
     </div>
 
     <div className="main-navigation__secondary">
-      <Link className="main-navigation__icon" to="https://twitter.com/LandonSchropp">
+      <a className="main-navigation__icon" to="https://twitter.com/LandonSchropp">
         <Icon name="twitter" alt="Twitter" />
-      </Link>
+      </a>
 
-      <Link className="main-navigation__icon" to="https://github.com/LandonSchropp">
+      <a className="main-navigation__icon" to="https://github.com/LandonSchropp">
         <Icon name="github" alt="GitHub" />
-      </Link>
+      </a>
 
-      <Link className="main-navigation__icon" to="mailto:schroppl@gmail.com">
+      <a className="main-navigation__icon" to="mailto:schroppl@gmail.com">
         <Icon name="email" alt="Email" />
-      </Link>
+      </a>
 
-      <Link className="main-navigation__icon" to="https://codepen.io/LandonSchropp/">
+      <a className="main-navigation__icon" to="https://codepen.io/LandonSchropp/">
         <Icon name="codepen" alt="CodePen" />
-      </Link>
+      </a>
 
-      <Link className="main-navigation__icon" to="https://www.linkedin.com/in/landonschropp">
+      <a className="main-navigation__icon" to="https://www.linkedin.com/in/landonschropp">
         <Icon name="linkedin" alt="LinkedIn" />
-      </Link>
+      </a>
     </div>
   </nav>;
 }
