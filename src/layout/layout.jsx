@@ -1,5 +1,6 @@
 import "../stylesheets/index.sass";
 
+import { useLocation } from "@reach/router";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
@@ -8,6 +9,9 @@ import { Helmet } from "react-helmet";
 import { MainNavigation } from "./main-navigation";
 
 export function Layout({ children, className }) {
+  let { pathname } = useLocation();
+  let includeMainClass = pathname !== "/";
+
   return <>
     <Helmet>
       <title>Landon Schropp</title>
@@ -27,7 +31,7 @@ export function Layout({ children, className }) {
       />
     </Helmet>
     <MainNavigation />
-    <main className={ classNames(className, "main") }>
+    <main className={ classNames(className, { "main": includeMainClass }) }>
       { children }
     </main>
   </>;
