@@ -1,4 +1,4 @@
-# landonschropp.com
+# Landon Schropp's Personal Website
 
 This repo contains the code powering my personal website. It uses [Notion](https://www.notion.so/)
 as a headless CMS to host the content, and uses [Gatsby](https://www.gatsbyjs.com/) to generate
