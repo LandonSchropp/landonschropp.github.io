@@ -1,8 +1,8 @@
 import { graphql } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Note } from "../../components/note";
 import { Layout } from "../../layout/layout";
 
 // NOTE: I'm using $slug here instead of ID because the transformed note node is no longer tied to
@@ -13,6 +13,7 @@ export const query = graphql`
     }
     note(slug: {eq: $slug}) {
       authors
+      category
       date
       published
       slug
@@ -24,13 +25,8 @@ export const query = graphql`
 `;
 
 export default function NotePage({ data }) {
-  let { note } = data;
-
   return <Layout navigation={ false } className="notes-page">
-    <h1>{ note.title }</h1>
-    <MDXRenderer>
-      { data.mdx.body }
-    </MDXRenderer>
+    <Note note={ data.note } content={ data.mdx.body } />
   </Layout>;
 }
 
