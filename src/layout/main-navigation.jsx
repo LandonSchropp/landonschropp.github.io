@@ -1,15 +1,8 @@
 import { useLocation } from "@reach/router";
-import classNames from "classnames";
+import { Link } from "gatsby";
 import React from "react";
 
 import { Icon } from "../components/icon";
-
-function linkClassNames(selected) {
-  return classNames(
-    "main-navigation__link",
-    { "main-navigation__link--selected": selected }
-  );
-}
 
 export function MainNavigation() {
   let { pathname } = useLocation();
@@ -21,46 +14,55 @@ export function MainNavigation() {
   return <nav className="main-navigation">
     <div className="main-navigation__primary">
 
-      <a className="main-navigation__link" href="/">
+      <Link className="main-navigation__link" to="/">
         <span className="main-navigation__title-text--long">
           Landon Schropp
         </span>
         <span className="main-navigation__title-text--short">
           Home
         </span>
-      </a>
+      </Link>
 
-      <a className={ linkClassNames(pathname.startsWith("/notes")) } href="/notes">
+      <Link
+        className="main-navigation__link"
+        activeClassName="main-navigation__link--selected"
+        partiallyActive
+        to="/notes"
+      >
         Notes
-      </a>
+      </Link>
 
-      <a className={ linkClassNames(pathname.startsWith("/articles")) } href="/articles">
+      <Link
+        className="main-navigation__link"
+        activeClassName="main-navigation__link--selected"
+        partiallyActive
+        to="/articles"
+      >
         Blog
-      </a>
-      <a className="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
+      </Link>
+      <Link className="main-navigation__link" to="https://unravelingflexbox.com">Book</Link>
     </div>
 
     <div className="main-navigation__secondary">
-      <a className="main-navigation__icon" href="https://twitter.com/LandonSchropp">
+      <Link className="main-navigation__icon" to="https://twitter.com/LandonSchropp">
         <Icon name="twitter" alt="Twitter" />
-      </a>
+      </Link>
 
-      <a className="main-navigation__icon" href="https://github.com/LandonSchropp">
+      <Link className="main-navigation__icon" to="https://github.com/LandonSchropp">
         <Icon name="github" alt="GitHub" />
-      </a>
+      </Link>
 
-      <a className="main-navigation__icon" href="mailto:schroppl@gmail.com">
+      <Link className="main-navigation__icon" to="mailto:schroppl@gmail.com">
         <Icon name="email" alt="Email" />
-      </a>
+      </Link>
 
-      <a className="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
+      <Link className="main-navigation__icon" to="https://codepen.io/LandonSchropp/">
         <Icon name="codepen" alt="CodePen" />
-      </a>
+      </Link>
 
-      <a className="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
+      <Link className="main-navigation__icon" to="https://www.linkedin.com/in/landonschropp">
         <Icon name="linkedin" alt="LinkedIn" />
-      </a>
+      </Link>
     </div>
   </nav>;
 }
-
