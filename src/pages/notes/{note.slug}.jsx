@@ -25,7 +25,10 @@ export const query = graphql`
 `;
 
 export default function NotePage({ data }) {
-  return <Layout navigation={ false } className="notes-page">
+  return <Layout
+    title={ `Landon Schropp - Notes - ${ data.note.title }` }
+    description={ `My personal notes for ${ data.note.title }` }
+  >
     <Note note={ data.note } content={ data.mdx.body } />
   </Layout>;
 }

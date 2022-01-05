@@ -1,7 +1,6 @@
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
-import { Helmet } from "react-helmet";
 
 import { NoteSummary } from "../../components/note-summary";
 import { Tag } from "../../components/tag";
@@ -34,11 +33,10 @@ export const query = graphql`
 export default function NotesPage({ data }) {
   let notes = data.allNote.nodes;
 
-  return <Layout className="notes-page">
-    <Helmet>
-      <title>Landon Schropp - Notes</title>
-      <description>My personal notes on blog posts, talks, podcasts and books.</description>
-    </Helmet>
+  return <Layout
+    title="Landon Schropp - Notes"
+    description="My personal notes on blog posts, talks, podcasts and books."
+  >
 
     <header className="header">
       <h1 className="header__header">
