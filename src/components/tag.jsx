@@ -1,10 +1,11 @@
+import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
 export function Tag({ category }) {
-  return <a className="tag" href={ `/notes/?type=${ category }` } data-category={ category }>
+  return <Link className="tag" to={ `/notes/?category=${ category }` } data-category={ category }>
     { category }
-  </a>;
+  </Link>;
 }
 
 Tag.propTypes = {
