@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
+import flannel from "../images/flannel.png";
 import { MainNavigation } from "./main-navigation";
 
 export function Layout({ children, className, title, description }) {
@@ -18,7 +19,7 @@ export function Layout({ children, className, title, description }) {
       <meta name="description" content={ description } />
 
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="shortcut icon" type="image/png" href="/images/flannel.png" />
+      <link rel="shortcut icon" type="image/png" href={ flannel } />
 
       { /* Google Fonts */ }
       <link rel="preconnect" href="https://fonts.googleapis.com" />
