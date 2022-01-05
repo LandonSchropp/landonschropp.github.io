@@ -5,6 +5,13 @@ import { Helmet } from "react-helmet";
 
 import { NoteSummary } from "../../components/note-summary";
 import { Tag } from "../../components/tag";
+import {
+  ARTICLE_CATEGORY,
+  BOOK_CATEGORY,
+  PODCAST_CATEGORY,
+  TALK_CATEGORY,
+  VIDEO_CATEGORY
+} from "../../data/constants";
 import { Layout } from "../../layout/layout";
 
 export const query = graphql`
@@ -44,13 +51,13 @@ export default function NotesPage({ data }) {
 
       <div className="header__tags">
         <span className="header__tag-group">
-          <Tag category="Article" />
-          <Tag category="Book" />
-          <Tag category="Video" />
+          <Tag category={ ARTICLE_CATEGORY } />
+          <Tag category={ BOOK_CATEGORY } />
+          <Tag category={ VIDEO_CATEGORY } />
         </span>
         <span className="header__tag-group">
-          <Tag category="Talk" />
-          <Tag category="Podcast" />
+          <Tag category={ TALK_CATEGORY } />
+          <Tag category={ PODCAST_CATEGORY } />
         </span>
       </div>
     </header>
