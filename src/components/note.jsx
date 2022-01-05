@@ -23,8 +23,6 @@ NoteHeaderText.propTypes = {
 };
 
 function NoteSubheadText({ note }) {
-  console.log(note);
-
   if (note.category === LIVE_TALK_CATEGORY) {
     return <>
       A talk by <Listify items={ note.authors } /> I attended at { note.source }
