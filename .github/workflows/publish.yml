@@ -1,52 +1,36 @@
-name: Publish
-
+name: Deploy
 on:
   push:
     branches:
-      - master
+      - main
   repository_dispatch:
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
       -
         name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       -
         name: Set Up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      -
-        name: Set Up Ruby
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: '2.x'
+        uses: actions/setup-node@v2
       -
         name: Install Packages
         run: yarn install
       -
         name: Lint
         run: yarn lint
-      -
-        name: Download Content
-        run: yarn download-content
         env:
-          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          NODE_ENV: test
       -
         name: Build
         run: yarn build
         env:
           NODE_ENV: production
-          PORT: "80"
-          URL: https://landonschropp.com
-      - 
-       name: Publish
-       uses: peaceiris/actions-gh-pages@v2
-       env:
-         PERSONAL_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
-         PUBLISH_BRANCH: gh-pages
-         PUBLISH_DIR: ./build
+          NOTION_API_TOKEN: ${{ secrets.NOTION_API_TOKEN }}
+      -
+        name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
