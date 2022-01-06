@@ -56,7 +56,6 @@ module.exports = {
       options: {
         token: process.env.NOTION_API_TOKEN,
         databaseId: NOTES_NOTION_ID,
-        propsToFrontmatter: true,
         lowerTitleLevel: true
       }
     },
@@ -65,7 +64,6 @@ module.exports = {
       options: {
         token: process.env.NOTION_API_TOKEN,
         databaseId: BLOG_NOTION_ID,
-        propsToFrontmatter: true,
         lowerTitleLevel: true
       }
     },
