@@ -15,7 +15,7 @@ import { Layout } from "../../layout/layout";
 
 export const query = graphql`
   query Notes {
-    allNote {
+    allNote(sort: {fields: [date], order: DESC}) {
       nodes {
         authors
         category
