@@ -1,13 +1,20 @@
 import "../stylesheets/index.sass";
 
+import { MDXProvider } from "@mdx-js/react";
 import { useLocation } from "@reach/router";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
 
+import { HighlightedPre } from "../components/highlighted-pre";
 import flannel from "../images/flannel.png";
 import { MainNavigation } from "./main-navigation";
+
+// Custom components used in MDX rendering.
+const MDX_COMPONENTS = {
+  pre: HighlightedPre
+};
 
 export function Layout({ children, className, title, description }) {
   let { pathname } = useLocation();
@@ -35,7 +42,9 @@ export function Layout({ children, className, title, description }) {
     </Helmet>
     <MainNavigation />
     <main className={ classNames(className, { "main": includeMainClass }) }>
-      { children }
+      <MDXProvider components={ MDX_COMPONENTS }>
+        { children }
+      </MDXProvider>
     </main>
   </>;
 }
