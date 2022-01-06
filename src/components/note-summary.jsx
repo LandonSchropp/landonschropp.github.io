@@ -18,9 +18,11 @@ export function NoteSummary({ note }) {
       <span className="note-summary__authors">
         <Listify items={ note.authors } />
       </span>
+      { " " }
       <span className="note-summary__separator">∙</span>
+      { " " }
       <span className="note-summary__source">
-        { note.sourceName }
+        { note.source }
       </span>
     </p>
   </Link>;
