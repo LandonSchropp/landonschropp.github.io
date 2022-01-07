@@ -1,3 +1,4 @@
+import { Link } from "@reach/router";
 import { useMediaQuery } from "@react-hook/media-query";
 import PropTypes from "prop-types";
 import React from "react";
@@ -51,7 +52,7 @@ export default function IndexPage() {
     <svg className="index-page__svg" viewBox={ viewBox }>
       <defs>
         <pattern id="flannel" patternUnits="userSpaceOnUse" width="80" height="80">
-          <image xlinkHref={ flannel } x="0" y="0" width="80" height="80" />
+          <image href={ flannel } x="0" y="0" width="80" height="80" />
         </pattern>
       </defs>
 
@@ -72,74 +73,47 @@ export default function IndexPage() {
         <Shape className="index-page__item" { ...shapes["developer-and-designer"] } />
       </g>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://medium.com/@LandonSchropp"
-      >
+      <Link className="index-page__link" to="/blog">
         <title>Blog</title>
         <Shape className="index-page__item" { ...shapes.blog } />
-      </a>
+      </Link>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://unravelingflexbox.com"
-      >
+      <a className="index-page__link" href="https://unravelingflexbox.com">
         <title>Book</title>
         <Shape className="index-page__item" { ...shapes.book } />
       </a>
 
-      <a
-        className="index-page__link"
-        xlinkHref="/notes"
-      >
+      <Link className="index-page__link" to="/notes">
         <title>Notes</title>
         <Shape className="index-page__item" { ...shapes.notes } />
-      </a>
+      </Link>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://twitter.com/LandonSchropp"
-      >
+      <a className="index-page__link" href="https://twitter.com/LandonSchropp">
         <title>Twitter</title>
         <Shape className="index-page__item" { ...shapes.twitter } />
       </a>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://github.com/LandonSchropp"
-      >
+      <a className="index-page__link" href="https://github.com/LandonSchropp">
         <title>GitHub</title>
         <Shape className="index-page__item" { ...shapes.github } />
       </a>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://www.goodreads.com/landonschropp"
-      >
+      <a className="index-page__link" href="https://www.goodreads.com/landonschropp">
         <title>Goodreads</title>
         <Shape className="index-page__item" { ...shapes.goodreads } />
       </a>
 
-      <a
-        className="index-page__link"
-        xlinkHref="mailto:schroppl@gmail.com"
-      >
+      <a className="index-page__link" href="mailto:schroppl@gmail.com">
         <title>Email</title>
         <Shape className="index-page__item" { ...shapes.email } />
       </a>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://codepen.io/LandonSchropp/"
-      >
+      <a className="index-page__link" href="https://codepen.io/LandonSchropp/">
         <title>CodePen</title>
         <Shape className="index-page__item" { ...shapes.codepen } />
       </a>
 
-      <a
-        className="index-page__link"
-        xlinkHref="https://www.linkedin.com/in/landonschropp"
-      >
+      <a className="index-page__link" href="https://www.linkedin.com/in/landonschropp">
         <title>LinkedIn</title>
         <Shape className="index-page__item" { ...shapes.linkedin } />
       </a>
