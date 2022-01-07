@@ -19,7 +19,7 @@ describe("NoteHeader", () => {
     note = {
       title: "Title",
       authors: [ "Author" ],
-      category: ARTICLE_CATEGORY,
+      category: OTHER_CATEGORY,
       date: "1988-10-05",
       published: true,
       slug: "slug",
@@ -28,11 +28,120 @@ describe("NoteHeader", () => {
     };
   });
 
-  describe("when the note is for an article", () => {
-    beforeEach(() => render(<NoteHeader note={ note } content="" />));
+  describe("when the note's authors, source and title are all the same", () => {
+
+    beforeEach(() => {
+      note.category = OTHER_CATEGORY;
+      note.authors = [ note.title ];
+      note.source = note.title;
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
+    it("does not render a subheader", () => {
+      expect(screen.getByTestId("subhead").textContent).toEqual("");
+    });
+  });
+
+  describe("when the note's author and source are the same", () => {
+    beforeEach(() => {
+      note.category = OTHER_CATEGORY;
+      note.authors = [ note.source ];
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
+    it("does not render the authors", () => {
+      expect(screen.getByTestId("subhead"))
+        .toHaveTextContent("From Source");
+    });
+  });
+
+  describe("when the note's authors, source and title are all distinct", () => {
+    beforeEach(() => {
+      note.category = OTHER_CATEGORY;
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner")).toHaveTextContent("An article by Author from Source");
+      expect(screen.getByTestId("subhead"))
+        .toHaveTextContent("From Source by Author");
+    });
+  });
+
+  describe("when the note does not have any authors", () => {
+    beforeEach(() => {
+      note.authors = [ note.source ];
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
+    it("does not render the authors", () => {
+      expect(screen.getByTestId("subhead"))
+        .toHaveTextContent("From Source");
+    });
+  });
+
+  describe("when the note has two authors", () => {
+    beforeEach(() => {
+      note.authors = [ "Sylvester Stallone", "Dolph Lundgren" ];
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
+    it("renders the authors with an 'and' between then", () => {
+      expect(screen.getByTestId("subhead")).toHaveTextContent(
+        "From Source by Sylvester Stallone and Dolph Lundgren"
+      );
+    });
+  });
+
+  describe("when the note has three or more authors", () => {
+    beforeEach(() => {
+      note.authors = [ "Sylvester Stallone", "Dolph Lundgren", "Carl Weathers" ];
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
+    it("renders the authors with an 'and' between then", () => {
+      expect(screen.getByTestId("subhead")).toHaveTextContent(
+        "From Source by Sylvester Stallone, Dolph Lundgren and Carl Weathers"
+      );
+    });
+  });
+
+  describe("when the note is for an article", () => {
+    beforeEach(() => {
+      note.category = ARTICLE_CATEGORY;
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
+    it("render's the correct subheader", () => {
+      expect(screen.getByTestId("subhead"))
+        .toHaveTextContent("An article by Author from Source");
     });
   });
 
@@ -42,8 +151,13 @@ describe("NoteHeader", () => {
       render(<NoteHeader note={ note } content="" />);
     });
 
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
     it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner")).toHaveTextContent("A book by Author");
+      expect(screen.getByTestId("subhead"))
+        .toHaveTextContent("A book by Author");
     });
   });
 
@@ -53,8 +167,12 @@ describe("NoteHeader", () => {
       render(<NoteHeader note={ note } content="" />);
     });
 
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
     it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner"))
+      expect(screen.getByTestId("subhead"))
         .toHaveTextContent("A talk by Author I attended at Source");
     });
   });
@@ -65,8 +183,12 @@ describe("NoteHeader", () => {
       render(<NoteHeader note={ note } content="" />);
     });
 
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
     it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner"))
+      expect(screen.getByTestId("subhead"))
         .toHaveTextContent("A talk by Author from Source");
     });
   });
@@ -77,8 +199,12 @@ describe("NoteHeader", () => {
       render(<NoteHeader note={ note } content="" />);
     });
 
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
     it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner"))
+      expect(screen.getByTestId("subhead"))
         .toHaveTextContent("From Source, a podcast by Author");
     });
   });
@@ -89,21 +215,13 @@ describe("NoteHeader", () => {
       render(<NoteHeader note={ note } content="" />);
     });
 
+    it("sets the title", () => {
+      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+    });
+
     it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner"))
+      expect(screen.getByTestId("subhead"))
         .toHaveTextContent("A video by Author from Source");
-    });
-  });
-
-  describe("when the note is for something else", () => {
-    beforeEach(() => {
-      note.category = OTHER_CATEGORY;
-      render(<NoteHeader note={ note } content="" />);
-    });
-
-    it("render's the correct subheader", () => {
-      expect(screen.getByRole("banner"))
-        .toHaveTextContent("From Source by Author");
     });
   });
 });
