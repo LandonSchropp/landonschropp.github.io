@@ -21,8 +21,13 @@
   &__title-link
     text-decoration: none
 
-    &:not(:hover)
-      color: inherit
+    &:hover
+      text-decoration: underline
+      text-decoration-line: underline
+      text-decoration-thickness: 0.075em
+
+    // &:not(:hover)
+    //   color: inherit
 
   &__tags
     display: flex
