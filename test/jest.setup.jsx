@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 
+import { configure } from "@testing-library/dom";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
@@ -33,3 +34,6 @@ MockMDXRenderer.propTypes = {
 jest.mock("gatsby-plugin-mdx", () => {
   return { MDXRenderer: MockMDXRenderer };
 });
+
+// Configure the testing library.
+configure({ testIdAttribute: "data-test-id" });
