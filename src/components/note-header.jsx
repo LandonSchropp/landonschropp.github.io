@@ -20,8 +20,26 @@ function NoteHeaderText({ note }) {
   return <a className="header__title-link" href={ note.url }>{ note.title }</a>;
 }
 
-NoteHeaderText.propTypes = {
+NoteTitleText.propTypes = {
   note: NotePropType.isRequired
+};
+
+function NoteByline({ note, startText, middleText }) {
+  return <>
+    { startText }
+    { " " }
+    <a className="header__link" href={ baseURL(note.url) }>{ note.source }</a>
+    { middleText.startsWith(",") ? "" : " " }
+    { middleText }
+    { " " }
+    <Listify items={ note.authors } />
+  </>;
+}
+
+NoteByline.propTypes = {
+  note: NotePropType.isRequired,
+  startText: PropTypes.string.isRequired,
+  middleText: PropTypes.string.isRequired
 };
 
 function NoteSubheadText({ note }) {
@@ -83,16 +101,19 @@ NoteSubheadText.propTypes = {
 export function NoteHeader({ note }) {
 
   return <header className="header">
-    <p className="header__suphead">
-      My personal notes for
-    </p>
 
     <h1 className="header__header">
-      <NoteHeaderText note={ note } />
+      <span className="header__suphead">
+        My personal notes for
+      </span>
+
+      <span className="header__title">
+        <NoteTitleText note={ note } />
+      </span>
     </h1>
-    <p className="header__subhead">
+    <div className="header__subhead">
       <NoteSubheadText note={ note } />
-    </p>
+    </div>
   </header>;
 }
 

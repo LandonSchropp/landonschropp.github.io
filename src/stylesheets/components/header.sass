@@ -7,12 +7,19 @@
   &__header
     margin: 0
 
+  &__suphead, &__title
+    display: block
+
   &__suphead, &__subhead
     margin: $spacing * 0.25 0
-    font-style: italic
 
-    // Slightly darken the text to compensate for the smaller font size
-    color: darken($emperor, 5%)
+    // Even though the suphead is part of the header, it should still be displayed the same as the
+    // subhead.
+    font-size: $font-size--medium
+    font-weight: normal
+    font-family: $font-family--serif
+    font-style: italic
+    color: $emperor
 
   // HACK: The extra spacing is needed to visually make the header look evenly spaced.
   &__subhead
