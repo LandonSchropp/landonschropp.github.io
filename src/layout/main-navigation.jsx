@@ -15,10 +15,10 @@ export function MainNavigation() {
     <div className="main-navigation__primary">
 
       <Link className="main-navigation__link" to="/">
-        <span className="main-navigation__title-text--long">
+        <span className="main-navigation__title-text main-navigation__title-text--long">
           Landon Schropp
         </span>
-        <span className="main-navigation__title-text--short">
+        <span className="main-navigation__title-text main-navigation__title-text--short">
           Home
         </span>
       </Link>

@@ -8,6 +8,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 import { HighlightedPre } from "../components/highlighted-pre";
+import { CATEGORIES } from "../data/constants";
 import flannel from "../images/flannel.png";
 import { MainNavigation } from "./main-navigation";
 
@@ -16,7 +17,7 @@ const MDX_COMPONENTS = {
   pre: HighlightedPre
 };
 
-export function Layout({ children, className, title, description }) {
+export function Layout({ children, className, title, description, category }) {
   let { pathname } = useLocation();
   let includeMainClass = pathname !== "/";
 
@@ -39,6 +40,7 @@ export function Layout({ children, className, title, description }) {
         }
         rel="stylesheet"
       />
+      <body data-category={ category } />
     </Helmet>
     <MainNavigation />
     <main className={ classNames(className, { "main": includeMainClass }) }>
@@ -53,5 +55,6 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
+  category: PropTypes.oneOf(CATEGORIES)
 };

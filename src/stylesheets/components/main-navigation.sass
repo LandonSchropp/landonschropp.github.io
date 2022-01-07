@@ -35,23 +35,23 @@
   &__link
     font-family: $font-family--sans-serif
     text-decoration: none
-    color: $gray
+    color: $emperor
     transition: color $transition-time--xsmall ease, box-shadow $transition-time--xsmall ease-in
 
     &:hover
       color: inherit
 
     &:hover
-      box-shadow: 0 3px $cornflower-blue
+      box-shadow: 0 3px var(--theme-color)
 
     &--selected
-      box-shadow: 0 2px lighten($gray, 15%)
+      box-shadow: 0 2px $cerebral
 
   &__icon
-    color: lighten($gray, 12%)
+    color: lighten($emperor, 20%)
 
     &:hover
-      color: $cornflower-blue
+      color: var(--theme-color)
 
     svg
       transition: fill $transition-time--xsmall ease

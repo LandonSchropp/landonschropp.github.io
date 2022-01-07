@@ -28,6 +28,7 @@ export default function NotePage({ data }) {
   return <Layout
     title={ `Landon Schropp - Notes - ${ data.note.title }` }
     description={ `My personal notes for ${ data.note.title }` }
+    category={ data.note.category }
   >
     <Note note={ data.note } content={ data.mdx.body } />
   </Layout>;
