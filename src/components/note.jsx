@@ -3,12 +3,16 @@ import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { ARTICLE_CATEGORY, BOOK_CATEGORY, PODCAST_CATEGORY } from "../data/constants";
+import {
+  ARTICLE_CATEGORY,
+  BOOK_CATEGORY,
+  LIVE_TALK_CATEGORY,
+  OTHER_CATEGORY,
+  PODCAST_CATEGORY
+} from "../data/constants";
 import { NotePropType } from "../data/prop-types";
 import { baseURL } from "../utilities/url";
 import { Listify } from "./listify";
-
-const LIVE_TALK_CATEGORY = "";
 
 function NoteHeaderText({ note }) {
   if (_.isNil(note.url)) {
@@ -41,7 +45,8 @@ function NoteSubheadText({ note }) {
 
   if (note.category === ARTICLE_CATEGORY) {
     return <>
-      An { note.category.toLowerCase() } by <Listify items={ note.authors } /> from
+      An article by <Listify items={ note.authors } /> from
+      { " " }
       <a className="header__link" to={ baseURL(note.url) }>{ note.source }</a>
     </>;
   }
@@ -54,8 +59,20 @@ function NoteSubheadText({ note }) {
     </>;
   }
 
+  if (note.category === OTHER_CATEGORY) {
+    return <>
+      From
+      { " " }
+      <a className="header__link" to={ baseURL(note.url) }>{ note.source }</a>
+      { " " }
+      by
+      { " " }
+      <Listify items={ note.authors } />
+    </>;
+  }
+
   return <>
-    A { note.category.toLowerCase() } by <Listify items={ note.authors } /> on
+    A { note.category.toLowerCase() } by <Listify items={ note.authors } /> from
     { " " }
     <a className="header__link" to={ baseURL(note.url) }>{ note.source }</a>
   </>;
