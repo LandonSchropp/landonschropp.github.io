@@ -5,6 +5,7 @@ import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
+import useDarkMode from "use-dark-mode";
 
 import { HighlightedPre } from "../components/highlighted-pre";
 import { CATEGORIES } from "../data/constants";
@@ -17,6 +18,7 @@ const MDX_COMPONENTS = {
 };
 
 export function Layout({ children, className, title, description, category, navigation }) {
+  let { value: darkMode } = useDarkMode();
 
   return <>
     <Helmet>
@@ -37,7 +39,7 @@ export function Layout({ children, className, title, description, category, navi
         }
         rel="stylesheet"
       />
-      <body data-category={ category } />
+      <body data-category={ category } data-theme={ darkMode ? "dark" : "light" } />
     </Helmet>
     { navigation ? <MainNavigation /> : null }
     <main className={ classNames(className, { "main": navigation }) }>

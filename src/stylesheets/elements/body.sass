@@ -2,6 +2,26 @@ body
   --theme-color: #{ $cornflower-blue }
   +tag-color(--theme-color)
 
+  &[data-theme="dark"]
+    --theme-background-color: #{ $black-out }
+    --theme-highlight-background-color: #{ $mine-shaft }
+    --theme-header-color: #{ $white }
+    --theme-text-color: #{ $bleach }
+    --theme-light-text-color: #{ $steam }
+
+    background-color: var(--theme-background-color)
+    color: var(--theme-text-color)
+
+  &[data-theme="light"]
+    --theme-background-color: #{ $white }
+    --theme-highlight-background-color: #{ $bleach }
+    --theme-header-color: #{ $black-out }
+    --theme-text-color: #{ $mine-shaft }
+    --theme-light-text-color: #{ $emperor }
+
+    background-color: var(--theme-background-color)
+    color: var(--theme-text-color)
+
   height: 100%
 
   // HACK: This is a quick hack to prevent margins from collapsing outside of the body.

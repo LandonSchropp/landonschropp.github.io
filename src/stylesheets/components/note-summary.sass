@@ -16,7 +16,7 @@
   border-left-style: solid
 
   text-decoration: none
-  color: $mine-shaft
+  color: var(--theme-text-color)
 
   transition: background-color $transition-time--small ease-in, box-shadow $transition-time--small ease-in
 
@@ -28,8 +28,8 @@
     margin-bottom: -$spacing * 0.5
 
   &:hover
-    background-color: darken($alabaster, 1%)
-    box-shadow: 0 0 0 $spacing * 0.5 darken($alabaster, 1%)
+    background-color: var(--theme-highlight-background-color)
+    box-shadow: 0 0 0 $spacing * 0.5 var(--theme-highlight-background-color)
 
   &__title, &__about
     margin: 0

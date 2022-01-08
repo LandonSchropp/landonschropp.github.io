@@ -35,7 +35,7 @@
   &__link
     font-family: $font-family--sans-serif
     text-decoration: none
-    color: $emperor
+    color: var(--theme-light-text-color)
     transition: color $transition-time--xsmall ease, box-shadow $transition-time--xsmall ease-in
 
     &:hover
@@ -45,10 +45,10 @@
       box-shadow: 0 3px var(--theme-color)
 
     &--selected
-      box-shadow: 0 2px $cerebral
+      box-shadow: 0 1.5px var(--theme-color)
 
   &__icon
-    color: lighten($emperor, 20%)
+    color: var(--theme-light-text-color)
 
     &:hover
       color: var(--theme-color)
