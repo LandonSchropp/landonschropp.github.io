@@ -57,7 +57,7 @@ export default function IndexPage() {
         </pattern>
       </defs>
 
-      <g>
+      <g role="heading">
         <title>Landon Schropp</title>
         <Shape className="index-page__item" { ...shapes.landon } />
         <Shape className="index-page__item" { ...shapes.schropp } />
@@ -74,50 +74,52 @@ export default function IndexPage() {
         <Shape className="index-page__item" { ...shapes["developer-and-designer"] } />
       </g>
 
-      <Link className="index-page__link" to="/blog">
-        <title>Blog</title>
-        <Shape className="index-page__item" { ...shapes.blog } />
-      </Link>
+      <g role="navigation">
+        <Link className="index-page__link" to="/blog">
+          <title>Blog</title>
+          <Shape className="index-page__item" { ...shapes.blog } />
+        </Link>
 
-      <a className="index-page__link" href="https://unravelingflexbox.com">
-        <title>Book</title>
-        <Shape className="index-page__item" { ...shapes.book } />
-      </a>
+        <a className="index-page__link" href="https://unravelingflexbox.com">
+          <title>Book</title>
+          <Shape className="index-page__item" { ...shapes.book } />
+        </a>
 
-      <Link className="index-page__link" to="/notes">
-        <title>Notes</title>
-        <Shape className="index-page__item" { ...shapes.notes } />
-      </Link>
+        <Link className="index-page__link" to="/notes">
+          <title>Notes</title>
+          <Shape className="index-page__item" { ...shapes.notes } />
+        </Link>
 
-      <a className="index-page__link" href="https://twitter.com/LandonSchropp">
-        <title>Twitter</title>
-        <Shape className="index-page__item" { ...shapes.twitter } />
-      </a>
+        <a className="index-page__link" href="https://twitter.com/LandonSchropp">
+          <title>Twitter</title>
+          <Shape className="index-page__item" { ...shapes.twitter } />
+        </a>
 
-      <a className="index-page__link" href="https://github.com/LandonSchropp">
-        <title>GitHub</title>
-        <Shape className="index-page__item" { ...shapes.github } />
-      </a>
+        <a className="index-page__link" href="https://github.com/LandonSchropp">
+          <title>GitHub</title>
+          <Shape className="index-page__item" { ...shapes.github } />
+        </a>
 
-      <a className="index-page__link" href="https://www.goodreads.com/landonschropp">
-        <title>Goodreads</title>
-        <Shape className="index-page__item" { ...shapes.goodreads } />
-      </a>
+        <a className="index-page__link" href="https://www.goodreads.com/landonschropp">
+          <title>Goodreads</title>
+          <Shape className="index-page__item" { ...shapes.goodreads } />
+        </a>
 
-      <a className="index-page__link" href="mailto:schroppl@gmail.com">
-        <title>Email</title>
-        <Shape className="index-page__item" { ...shapes.email } />
-      </a>
+        <a className="index-page__link" href="mailto:schroppl@gmail.com">
+          <title>Email</title>
+          <Shape className="index-page__item" { ...shapes.email } />
+        </a>
 
-      <a className="index-page__link" href="https://codepen.io/LandonSchropp/">
-        <title>CodePen</title>
-        <Shape className="index-page__item" { ...shapes.codepen } />
-      </a>
+        <a className="index-page__link" href="https://codepen.io/LandonSchropp/">
+          <title>CodePen</title>
+          <Shape className="index-page__item" { ...shapes.codepen } />
+        </a>
 
-      <a className="index-page__link" href="https://www.linkedin.com/in/landonschropp">
-        <title>LinkedIn</title>
-        <Shape className="index-page__item" { ...shapes.linkedin } />
-      </a>
+        <a className="index-page__link" href="https://www.linkedin.com/in/landonschropp">
+          <title>LinkedIn</title>
+          <Shape className="index-page__item" { ...shapes.linkedin } />
+        </a>
+      </g>
     </svg>
   </Layout>;
 }
