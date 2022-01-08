@@ -1,7 +1,6 @@
 import "../stylesheets/index.sass";
 
 import { MDXProvider } from "@mdx-js/react";
-import { useLocation } from "@reach/router";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
@@ -18,8 +17,6 @@ const MDX_COMPONENTS = {
 };
 
 export function Layout({ children, className, title, description, category, navigation }) {
-  let { pathname } = useLocation();
-  let includeMainClass = pathname !== "/";
 
   return <>
     <Helmet>
