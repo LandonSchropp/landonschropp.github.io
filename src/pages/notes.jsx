@@ -4,8 +4,8 @@ import _ from "lodash";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
-import { NoteSummary } from "../../components/note-summary";
-import { Tag } from "../../components/tag";
+import { NoteSummary } from "../components/note-summary";
+import { Tag } from "../components/tag";
 import {
   ARTICLE_CATEGORY,
   BOOK_CATEGORY,
@@ -13,8 +13,8 @@ import {
   PODCAST_CATEGORY,
   TALK_CATEGORY,
   VIDEO_CATEGORY
-} from "../../data/constants";
-import { Layout } from "../../layout/layout";
+} from "../data/constants";
+import { Layout } from "../layout/layout";
 
 export const query = graphql`
   query Notes {
