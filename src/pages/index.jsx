@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import getBounds from "svg-path-bounds";
 
-import { useIndexPageImages } from "../hooks/use-index-page-images";
 import useIsClient from "../hooks/use-is-client";
+import { useSVGData } from "../hooks/use-svg-data";
 import flannel from "../images/flannel.png";
 import { Layout } from "../layout/layout";
 
@@ -35,7 +35,10 @@ Shape.propTypes = {
 export default function IndexPage() {
   const isClient = useIsClient();
   const isPortrait = useMediaQuery(PORTRAIT_MEDIA_QUERY);
-  let { portrait, landscape } = useIndexPageImages();
+  let portrait = useSVGData("portrait");
+  let landscape = useSVGData("landscape");
+
+  // Grab the correct image data based on the media query.
   let { viewBox, shapes } = isPortrait ? portrait : landscape;
 
   // Don't render anything if we're not on the client to force correct hydration.

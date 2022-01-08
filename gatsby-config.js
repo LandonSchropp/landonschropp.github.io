@@ -7,7 +7,6 @@ module.exports = {
     title: "Landon Schropp"
   },
   plugins: [
-    "gatsby-transformer-index-page-image",
     "gatsby-plugin-sass",
     {
       resolve: "gatsby-plugin-google-analytics",

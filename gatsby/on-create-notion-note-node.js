@@ -1,6 +1,6 @@
 const { buildOnCreateNotionNode } = require("./on-create-notion-node");
 
-function transformNodeToArticle(node) {
+function transformNodeToNote(node) {
   return {
     title: node.title,
     slug: node.properties["Slug"].value,
@@ -13,4 +13,4 @@ function transformNodeToArticle(node) {
   };
 }
 
-exports.onCreateNotionNoteNode = buildOnCreateNotionNode("Note", transformNodeToArticle);
+exports.onCreateNotionNoteNode = buildOnCreateNotionNode("Note", transformNodeToNote);

@@ -1,7 +1,9 @@
-const FILES = [ "portrait.svg", "landscape.svg", "not-found.svg" ];
 const _ = require("lodash");
 const { XMLParser } = require("fast-xml-parser");
-const { createDataNode } = require("../../gatsby/data-node");
+const { createDataNode } = require("./data-node");
+const { camelCase } = require("voca");
+
+const DATA_DIRECTORY = "src/images/data";
 
 const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: "" });
 
@@ -29,19 +31,19 @@ function extractPaths(paths) {
   return _.isArray(paths) ? paths.map(extractPath) : [ extractPath(paths) ];
 }
 
-exports.onCreateNode = async ({ node, loadNodeContent, ...gatsby }) => {
+exports.onCreateSVGDataNode = async ({ node, loadNodeContent, ...gatsby }) => {
 
-  // If the file is not an index page image, ignore it.
-  if (!FILES.includes(node.base)) {
+  // If the file is not an image we want to extract data from, ignore it.
+  if (!node.dir?.endsWith(DATA_DIRECTORY)) {
     return;
   }
 
   // Parse the data.
   let svgData = parser.parse(await loadNodeContent(node));
 
-  // Convert the data to a more useful format.
+  // Convert the SVG data to a more useful format.
   let data = {
-    name: node.base.replace(/\.svg$/, ""),
+    name: camelCase(node.base.replace(`.${ node.extension }`, "")),
     viewBox: svgData.svg.viewBox,
     shapes: [
       ...extractPaths(svgData.svg.g.path),
@@ -49,5 +51,5 @@ exports.onCreateNode = async ({ node, loadNodeContent, ...gatsby }) => {
     ]
   };
 
-  createDataNode(node, "IndexPageImage", gatsby, data);
+  createDataNode(node, "SVGData", gatsby, data);
 };
