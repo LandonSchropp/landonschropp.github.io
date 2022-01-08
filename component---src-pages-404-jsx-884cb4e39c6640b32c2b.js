@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunklandonschropp_com=self.webpackChunklandonschropp_com||[]).push([[256],{1657:function(n,e,c){c.r(e),c.d(e,{default:function(){return r}});var u=c(7294);function r(){return u.createElement("h1",null,"404")}}}]);
-//# sourceMappingURL=component---src-pages-404-jsx-884cb4e39c6640b32c2b.js.map
