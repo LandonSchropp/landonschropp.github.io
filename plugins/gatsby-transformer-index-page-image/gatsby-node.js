@@ -1,4 +1,4 @@
-const FILES = [ "portrait.svg", "landscape.svg" ];
+const FILES = [ "portrait.svg", "landscape.svg", "not-found.svg" ];
 const _ = require("lodash");
 const { XMLParser } = require("fast-xml-parser");
 const { createDataNode } = require("../../gatsby/data-node");

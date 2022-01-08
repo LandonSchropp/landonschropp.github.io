@@ -17,7 +17,7 @@ const MDX_COMPONENTS = {
   pre: HighlightedPre
 };
 
-export function Layout({ children, className, title, description, category }) {
+export function Layout({ children, className, title, description, category, navigation }) {
   let { pathname } = useLocation();
   let includeMainClass = pathname !== "/";
 
@@ -42,8 +42,8 @@ export function Layout({ children, className, title, description, category }) {
       />
       <body data-category={ category } />
     </Helmet>
-    <MainNavigation />
-    <main className={ classNames(className, { "main": includeMainClass }) }>
+    { navigation ? <MainNavigation /> : null }
+    <main className={ classNames(className, { "main": navigation }) }>
       <MDXProvider components={ MDX_COMPONENTS }>
         { children }
       </MDXProvider>
@@ -51,10 +51,15 @@ export function Layout({ children, className, title, description, category }) {
   </>;
 }
 
+Layout.defaultProps = {
+  navigation: true
+};
+
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  category: PropTypes.oneOf(CATEGORIES)
+  category: PropTypes.oneOf(CATEGORIES),
+  navigation: PropTypes.bool
 };

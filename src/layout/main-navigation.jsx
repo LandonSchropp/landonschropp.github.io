@@ -1,16 +1,9 @@
-import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
 import React from "react";
 
 import { Icon } from "../components/icon";
 
 export function MainNavigation() {
-  let { pathname } = useLocation();
-
-  if (pathname === "/") {
-    return null;
-  }
-
   return <nav className="main-navigation">
     <div className="main-navigation__primary">
 
