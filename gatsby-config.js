@@ -66,7 +66,6 @@ module.exports = {
         databaseId: BLOG_NOTION_ID,
         lowerTitleLevel: true
       }
-    },
-    "gatsby-transformer-note"
+    }
   ]
 };
