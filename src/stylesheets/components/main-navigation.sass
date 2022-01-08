@@ -38,10 +38,8 @@
     color: var(--theme-light-text-color)
     transition: color $transition-time--xsmall ease, box-shadow $transition-time--xsmall ease-in
 
-    &:hover
+    &:hover, &:focus-visible
       color: inherit
-
-    &:hover
       box-shadow: 0 3px var(--theme-color)
 
     &--selected
@@ -50,7 +48,7 @@
   &__icon
     color: var(--theme-light-text-color)
 
-    &:hover
+    &:hover, &:focus-visible
       color: var(--theme-color)
 
     svg

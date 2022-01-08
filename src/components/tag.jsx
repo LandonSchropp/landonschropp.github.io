@@ -8,6 +8,8 @@ export function Tag({ category, onClick, selected }) {
     className={ classNames("tag", { "tag--selected": selected }) }
     data-category={ category }
     onClick={ onClick }
+    role="switch"
+    aria-checked={ selected }
   >
     { category }
   </button>;

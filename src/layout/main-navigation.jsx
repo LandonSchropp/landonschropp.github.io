@@ -34,27 +34,27 @@ export function MainNavigation() {
         Blog
       </Link>
 
-      <a className="main-navigation__link" to="https://unravelingflexbox.com">Book</a>
+      <a className="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
     </div>
 
     <div className="main-navigation__secondary">
-      <a className="main-navigation__icon" to="https://twitter.com/LandonSchropp">
+      <a className="main-navigation__icon" href="https://twitter.com/LandonSchropp">
         <Icon name="twitter" alt="Twitter" />
       </a>
 
-      <a className="main-navigation__icon" to="https://github.com/LandonSchropp">
+      <a className="main-navigation__icon" href="https://github.com/LandonSchropp">
         <Icon name="github" alt="GitHub" />
       </a>
 
-      <a className="main-navigation__icon" to="mailto:schroppl@gmail.com">
+      <a className="main-navigation__icon" href="mailto:schroppl@gmail.com">
         <Icon name="email" alt="Email" />
       </a>
 
-      <a className="main-navigation__icon" to="https://codepen.io/LandonSchropp/">
+      <a className="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
         <Icon name="codepen" alt="CodePen" />
       </a>
 
-      <a className="main-navigation__icon" to="https://www.linkedin.com/in/landonschropp">
+      <a className="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
         <Icon name="linkedin" alt="LinkedIn" />
       </a>
     </div>

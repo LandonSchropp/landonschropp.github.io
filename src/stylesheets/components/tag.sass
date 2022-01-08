@@ -23,8 +23,8 @@
 
   @each $category, $color in $tag-colors
     &[data-category="#{ $category }"]
-      &:hover, &.tag--selected
-        box-shadow: 0 0 0 $spacing * 0.125 transparentize($color, 0.5)
+      &:hover, &.tag--selected, &:focus-visible
+        box-shadow: 0 0 0 $spacing * math.div(3, 16) transparentize($color, 0.5)
 
   +viewport--medium
     font-size: $font-size--xxsmall
