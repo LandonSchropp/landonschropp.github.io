@@ -38,7 +38,7 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("does not render a subheader", () => {
@@ -54,12 +54,27 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("does not render the authors", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("From Source");
+      expect(screen.getByTestId("subhead").textContent).toEqual("From Source");
+    });
+  });
+
+  describe("when the note's source and title are the same", () => {
+    beforeEach(() => {
+      note.category = OTHER_CATEGORY;
+      note.source = note.title;
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
+    });
+
+    it("does not render the source", () => {
+      expect(screen.getByTestId("subhead").textContent).toEqual("by Author");
     });
   });
 
@@ -70,12 +85,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("From Source by Author");
+      expect(screen.getByTestId("subhead").textContent).toEqual("From Source by Author");
     });
   });
 
@@ -86,12 +100,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("does not render the authors", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("From Source");
+      expect(screen.getByTestId("subhead").textContent).toEqual("From Source");
     });
   });
 
@@ -102,11 +115,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("renders the authors with an 'and' between then", () => {
-      expect(screen.getByTestId("subhead")).toHaveTextContent(
+      expect(screen.getByTestId("subhead").textContent).toEqual(
         "From Source by Sylvester Stallone and Dolph Lundgren"
       );
     });
@@ -119,11 +132,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("renders the authors with an 'and' between then", () => {
-      expect(screen.getByTestId("subhead")).toHaveTextContent(
+      expect(screen.getByTestId("subhead").textContent).toEqual(
         "From Source by Sylvester Stallone, Dolph Lundgren and Carl Weathers"
       );
     });
@@ -136,12 +149,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("An article by Author from Source");
+      expect(screen.getByTestId("subhead").textContent).toEqual("An article by Author from Source");
     });
   });
 
@@ -152,12 +164,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("A book by Author");
+      expect(screen.getByTestId("subhead").textContent).toEqual("A book by Author from Source");
     });
   });
 
@@ -168,12 +179,12 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("A talk by Author I attended at Source");
+      expect(screen.getByTestId("subhead").textContent)
+        .toEqual("A talk by Author I attended at Source");
     });
   });
 
@@ -184,12 +195,11 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("A talk by Author from Source");
+      expect(screen.getByTestId("subhead").textContent).toEqual("A talk by Author from Source");
     });
   });
 
@@ -200,12 +210,12 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("From Source, a podcast by Author");
+      expect(screen.getByTestId("subhead").textContent)
+        .toEqual("From Source, a podcast by Author");
     });
   });
 
@@ -216,12 +226,12 @@ describe("NoteHeader", () => {
     });
 
     it("sets the title", () => {
-      expect(screen.getByRole("heading")).toHaveTextContent("My personal notes for Title");
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead"))
-        .toHaveTextContent("A video by Author from Source");
+      expect(screen.getByTestId("subhead").textContent)
+        .toEqual("A video by Author from Source");
     });
   });
 });

@@ -24,7 +24,7 @@ NoteTitleText.propTypes = {
   note: NotePropType.isRequired
 };
 
-function NoteByline({ note, startText, middleText, sourceFirst }) {
+function NoteByline({ note, sourceText, authorText, sourceFirst }) {
   if (note.title === note.source && note.authors.length === 1 && note.authors[0] === note.title) {
     return null;
   }
@@ -32,12 +32,20 @@ function NoteByline({ note, startText, middleText, sourceFirst }) {
   let source = <a className="header__link" href={ baseURL(note.url) }>{ note.source }</a>;
   let authors = <Listify items={ note.authors } />;
 
+  if (note.authors.length === 1 && note.authors[0] === note.source) {
+    return <>{ sourceText } { source }</>;
+  }
+
+  if (note.title === note.source) {
+    return <>{ authorText } { authors }</>;
+  }
+
   return <>
-    { startText }
+    { sourceFirst ? sourceText : authorText }
     { " " }
     { sourceFirst ? source : authors }
-    { middleText.startsWith(",") ? "" : " " }
-    { middleText }
+    { (sourceFirst ? authorText : sourceText).startsWith(",") ? "" : " " }
+    { sourceFirst ? authorText : sourceText }
     { " " }
     { sourceFirst ? authors : source }
   </>;
@@ -49,32 +57,32 @@ NoteByline.defaultProps = {
 
 NoteByline.propTypes = {
   note: NotePropType.isRequired,
-  startText: PropTypes.node.isRequired,
-  middleText: PropTypes.node.isRequired,
+  sourceText: PropTypes.node.isRequired,
+  authorText: PropTypes.node.isRequired,
   sourceFirst: PropTypes.bool
 };
 
 function NoteSubheadText({ note }) {
   if (note.category === LIVE_TALK_CATEGORY) {
-    return <NoteByline note={ note } startText="A talk by" middleText="I attended at" />;
+    return <NoteByline note={ note } authorText="A talk by" sourceText="I attended at" />;
   }
 
   if (note.category === PODCAST_CATEGORY) {
-    return <NoteByline note={ note } startText="From" middleText=", a podcast by" sourceFirst />;
+    return <NoteByline note={ note } sourceText="From" authorText=", a podcast by" sourceFirst />;
   }
 
   if (note.category === ARTICLE_CATEGORY) {
-    return <NoteByline note={ note } startText="An article by" middleText="from" />;
+    return <NoteByline note={ note } authorText="An article by" sourceText="from" />;
   }
 
   if (note.category === OTHER_CATEGORY) {
-    return <NoteByline note={ note } startText="From" middleText="by" sourceFirst />;
+    return <NoteByline note={ note } sourceText="From" authorText="by" sourceFirst />;
   }
 
   return <NoteByline
     note={ note }
-    startText={ `A ${ note.category.toLowerCase() } by` }
-    middleText="from"
+    authorText={ `A ${ note.category.toLowerCase() } by` }
+    sourceText="from"
   />;
 }
 
