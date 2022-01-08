@@ -1,5 +1,5 @@
 /**
- * This is a helper functio that can be used to quickly create data nodes in Gatsby.
+ * This is a helper function that can be used to quickly create data nodes in Gatsby.
  * @param parent The parent node that will have data appended to it.
  * @param type A string representing the new node type.
  * @param gatsby The gatsby properties passed to onCreateNode.
