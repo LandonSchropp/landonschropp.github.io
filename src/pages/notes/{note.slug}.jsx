@@ -6,6 +6,7 @@ import { Note } from "../../components/note";
 import { Layout } from "../../layout/layout";
 
 // NOTE: I'm using $slug here instead of ID because the transformed note node is no longer tied to
+// the MDX node.
 export const query = graphql`
   query Note($slug: String) {
     mdx(frontmatter: {Slug: {eq: $slug}}) {
