@@ -1,11 +1,21 @@
+import chroma from "chroma-js";
 import { Link } from "gatsby";
+import PropTypes from "prop-types";
 import React from "react";
 
 import { ArticlePropType } from "../data/prop-types";
 
-export function ArticleSummary({ article }) {
+const CORNFLOWER_BLUE = "#627ff6";
+const BITTERSWEET = "#ff6d71";
+
+export function ArticleSummary({ article, index, numberOfArticles }) {
+
+  // Ideally this wouldn't need to be done in JavaScript. However, there's not currently a good way
+  // to do this in pure CSS, and this effect is col enough that the effort is worth it.
+  let color = chroma.mix(CORNFLOWER_BLUE, BITTERSWEET, index / (numberOfArticles - 1));
 
   return <Link
+    style={ { "--color": color } }
     className="article-summary"
     to={ `/articles/${ article.slug }` }
   >
@@ -19,14 +29,7 @@ export function ArticleSummary({ article }) {
 }
 
 ArticleSummary.propTypes = {
-  article: ArticlePropType.isRequired
+  article: ArticlePropType.isRequired,
+  index: PropTypes.number.isRequired,
+  numberOfArticles: PropTypes.number.isRequired
 };
-// <span className="article-summary__authors">
-// <Listify items={ article.authors } />
-// </span>
-// { " " }
-// <span className="article-summary__separator">∙</span>
-// { " " }
-// <span className="article-summary__source">
-// { article.source }
-// </span>

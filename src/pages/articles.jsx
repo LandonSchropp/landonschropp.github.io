@@ -40,7 +40,16 @@ export default function ArticlesPage({ data }) {
     </header>
 
     <section className="note-summaries">
-      { articles.map(article => <ArticleSummary key={ article.slug } article={ article } />) }
+      {
+        articles.map((article, index) => {
+          return <ArticleSummary
+            key={ article.slug }
+            article={ article }
+            index={ index }
+            numberOfArticles={ articles.length }
+          />;
+        })
+      }
     </section>
   </Layout>;
 }
