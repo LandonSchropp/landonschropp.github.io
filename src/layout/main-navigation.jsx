@@ -31,7 +31,7 @@ export function MainNavigation() {
         partiallyActive
         to="/articles"
       >
-        Blog
+        Writing
       </Link>
 
       <a className="main-navigation__link" href="https://unravelingflexbox.com">Book</a>

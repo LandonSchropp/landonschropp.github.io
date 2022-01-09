@@ -20,3 +20,13 @@ export const NotePropType = PropTypes.shape({
   url: PropTypes.string.isRequired,
   published: PropTypes.bool.isRequired
 });
+
+export const ArticlePropType = PropTypes.shape({
+  title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  date: validateDateString,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string,
+  publisher: PropTypes.string,
+  published: PropTypes.bool.isRequired
+});
