@@ -47,7 +47,7 @@ export async function config() {
 
 export default function ArticlePage({ data }) {
   return <Layout
-    title={ `Landon Schropp - Articles - ${ data.article.title }` }
+    title={ `Landon Schropp - ${ data.article.title }` }
     description={ data.article.description }
   >
     <Article article={ data.article } content={ data.mdx.body } />
