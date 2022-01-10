@@ -20,18 +20,18 @@ export function MainNavigation() {
         className="main-navigation__link"
         activeClassName="main-navigation__link--selected"
         partiallyActive
-        to="/notes"
+        to="/articles"
       >
-        Notes
+        Writing
       </Link>
 
       <Link
         className="main-navigation__link"
         activeClassName="main-navigation__link--selected"
         partiallyActive
-        to="/articles"
+        to="/notes"
       >
-        Writing
+        Notes
       </Link>
 
       <a className="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
