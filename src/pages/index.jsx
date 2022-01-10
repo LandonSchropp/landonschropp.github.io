@@ -78,9 +78,9 @@ export default function IndexPage() {
       </g>
 
       <g role="navigation">
-        <Link className="index-page__link" to="/blog">
-          <title>Blog</title>
-          <Shape className="index-page__item" { ...shapes.blog } />
+        <Link className="index-page__link" to="/articles">
+          <title>Writing</title>
+          <Shape className="index-page__item" { ...shapes.writing } />
         </Link>
 
         <a className="index-page__link" href="https://unravelingflexbox.com">
@@ -101,11 +101,6 @@ export default function IndexPage() {
         <a className="index-page__link" href="https://github.com/LandonSchropp">
           <title>GitHub</title>
           <Shape className="index-page__item" { ...shapes.github } />
-        </a>
-
-        <a className="index-page__link" href="https://www.goodreads.com/landonschropp">
-          <title>Goodreads</title>
-          <Shape className="index-page__item" { ...shapes.goodreads } />
         </a>
 
         <a className="index-page__link" href="mailto:schroppl@gmail.com">
