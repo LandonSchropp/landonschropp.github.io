@@ -83,11 +83,6 @@ export default function IndexPage() {
           <Shape className="index-page__item" { ...shapes.writing } />
         </Link>
 
-        <a className="index-page__link" href="https://unravelingflexbox.com">
-          <title>Book</title>
-          <Shape className="index-page__item" { ...shapes.book } />
-        </a>
-
         <Link className="index-page__link" to="/notes">
           <title>Notes</title>
           <Shape className="index-page__item" { ...shapes.notes } />
