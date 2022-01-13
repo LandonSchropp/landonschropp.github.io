@@ -7,6 +7,7 @@ function transformNodeToNote(node) {
     authors: node.properties["Authors"].value.split(",").map(author => author.trim()),
     date: node.properties["Date"].value.start,
     category: node.properties["Category"].value.name,
+    media: node.properties["Media"].value.name,
     source: node.properties["Source"].value,
     url: node.properties["URL"].value,
     published: node.properties["Published"].value

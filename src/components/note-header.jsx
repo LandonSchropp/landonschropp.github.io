@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import {
-  ARTICLE_CATEGORY,
-  LIVE_TALK_CATEGORY,
-  OTHER_CATEGORY,
-  PODCAST_CATEGORY
+  ARTICLE_MEDIA,
+  LIVE_TALK_MEDIA,
+  OTHER_MEDIA,
+  PODCAST_MEDIA
 } from "../data/constants";
 import { NotePropType } from "../data/prop-types";
 import { baseURL } from "../utilities/url";
@@ -63,19 +63,19 @@ NoteByline.propTypes = {
 };
 
 function NoteSubheadText({ note }) {
-  if (note.category === LIVE_TALK_CATEGORY) {
+  if (note.category === LIVE_TALK_MEDIA) {
     return <NoteByline note={ note } authorText="A talk by" sourceText="I attended at" />;
   }
 
-  if (note.category === PODCAST_CATEGORY) {
+  if (note.category === PODCAST_MEDIA) {
     return <NoteByline note={ note } sourceText="From" authorText=", a podcast by" sourceFirst />;
   }
 
-  if (note.category === ARTICLE_CATEGORY) {
+  if (note.category === ARTICLE_MEDIA) {
     return <NoteByline note={ note } authorText="An article by" sourceText="from" />;
   }
 
-  if (note.category === OTHER_CATEGORY) {
+  if (note.category === OTHER_MEDIA) {
     return <NoteByline note={ note } sourceText="From" authorText="by" sourceFirst />;
   }
 

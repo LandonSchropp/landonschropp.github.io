@@ -7,12 +7,11 @@ import React, { useEffect, useState } from "react";
 import { NoteSummary } from "../components/note-summary";
 import { Tag } from "../components/tag";
 import {
-  ARTICLE_CATEGORY,
-  BOOK_CATEGORY,
+  BUSINESS_CATEGORY,
+  DESIGN_CATEGORY,
+  DEVELOPMENT_CATEGORY,
   OTHER_CATEGORY,
-  PODCAST_CATEGORY,
-  TALK_CATEGORY,
-  VIDEO_CATEGORY
+  PSYCHOLOGY_CATEGORY
 } from "../data/constants";
 import { Layout } from "../layout/layout";
 
@@ -80,31 +79,26 @@ export default function NotesPage({ data }) {
       <div className="header__tags">
         <span className="header__tag-group">
           <Tag
-            category={ ARTICLE_CATEGORY }
-            onClick={ () => toggleCategory(ARTICLE_CATEGORY) }
-            selected={ category === ARTICLE_CATEGORY }
+            category={ BUSINESS_CATEGORY }
+            onClick={ () => toggleCategory(BUSINESS_CATEGORY) }
+            selected={ category === BUSINESS_CATEGORY }
           />
           <Tag
-            category={ BOOK_CATEGORY }
-            onClick={ () => toggleCategory(BOOK_CATEGORY) }
-            selected={ category === BOOK_CATEGORY }
+            category={ DEVELOPMENT_CATEGORY }
+            onClick={ () => toggleCategory(DEVELOPMENT_CATEGORY) }
+            selected={ category === DEVELOPMENT_CATEGORY }
           />
           <Tag
-            category={ VIDEO_CATEGORY }
-            onClick={ () => toggleCategory(VIDEO_CATEGORY) }
-            selected={ category === VIDEO_CATEGORY }
+            category={ DESIGN_CATEGORY }
+            onClick={ () => toggleCategory(DESIGN_CATEGORY) }
+            selected={ category === DESIGN_CATEGORY }
           />
         </span>
         <span className="header__tag-group">
           <Tag
-            category={ TALK_CATEGORY }
-            onClick={ () => toggleCategory(TALK_CATEGORY) }
-            selected={ category === TALK_CATEGORY }
-          />
-          <Tag
-            category={ PODCAST_CATEGORY }
-            onClick={ () => toggleCategory(PODCAST_CATEGORY) }
-            selected={ category === PODCAST_CATEGORY }
+            category={ PSYCHOLOGY_CATEGORY }
+            onClick={ () => toggleCategory(PSYCHOLOGY_CATEGORY) }
+            selected={ category === PSYCHOLOGY_CATEGORY }
           />
           <Tag
             category={ OTHER_CATEGORY }

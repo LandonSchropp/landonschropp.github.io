@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet";
 import useDarkMode from "use-dark-mode";
 
 import { HighlightedPre } from "../components/highlighted-pre";
-import { CATEGORIES } from "../data/constants";
+import { MEDIA } from "../data/constants";
 import flannel from "../images/flannel.png";
 import { MainNavigation } from "./main-navigation";
 
@@ -59,6 +59,6 @@ Layout.propTypes = {
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  category: PropTypes.oneOf(CATEGORIES),
+  category: PropTypes.oneOf(MEDIA),
   navigation: PropTypes.bool
 };

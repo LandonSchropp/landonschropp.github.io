@@ -1,17 +1,31 @@
-export const ARTICLE_CATEGORY = "Article";
-export const BOOK_CATEGORY = "Book";
-export const LIVE_TALK_CATEGORY = "Live Talk";
+export const ARTICLE_MEDIA = "Article";
+export const BOOK_MEDIA = "Book";
+export const LIVE_TALK_MEDIA = "Live Talk";
+export const OTHER_MEDIA = "Other";
+export const PODCAST_MEDIA = "Podcast";
+export const TALK_MEDIA = "Talk";
+export const VIDEO_MEDIA = "Video";
+
+export const MEDIA = [
+  ARTICLE_MEDIA,
+  BOOK_MEDIA,
+  LIVE_TALK_MEDIA,
+  OTHER_MEDIA,
+  PODCAST_MEDIA,
+  TALK_MEDIA,
+  VIDEO_MEDIA
+];
+
+export const BUSINESS_CATEGORY = "Business";
+export const DEVELOPMENT_CATEGORY = "Development";
+export const DESIGN_CATEGORY = "Design";
+export const PSYCHOLOGY_CATEGORY = "Psychology";
 export const OTHER_CATEGORY = "Other";
-export const PODCAST_CATEGORY = "Podcast";
-export const TALK_CATEGORY = "Talk";
-export const VIDEO_CATEGORY = "Video";
 
 export const CATEGORIES = [
-  ARTICLE_CATEGORY,
-  BOOK_CATEGORY,
-  LIVE_TALK_CATEGORY,
-  OTHER_CATEGORY,
-  PODCAST_CATEGORY,
-  TALK_CATEGORY,
-  VIDEO_CATEGORY
+  BUSINESS_CATEGORY,
+  DEVELOPMENT_CATEGORY,
+  DESIGN_CATEGORY,
+  PSYCHOLOGY_CATEGORY,
+  OTHER_CATEGORY
 ];
