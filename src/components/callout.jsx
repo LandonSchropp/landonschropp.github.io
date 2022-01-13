@@ -4,7 +4,7 @@ import React from "react";
 
 import Book from "../images/icons/book.svg";
 
-export function Callout({ className, children, header }) {
+export function Callout({ className, children }) {
   return <section className={ classNames("callout", className) }>
     <figure className="callout__figure">
       <Book className="callout__icon" />
@@ -15,6 +15,5 @@ export function Callout({ className, children, header }) {
 
 Callout.propTypes = {
   className: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  header: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired
 };
