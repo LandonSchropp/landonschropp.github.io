@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import { ArticleSummary } from "../components/article-summary";
+import { Callout } from "../components/callout";
 import { Layout } from "../layout/layout";
 
 export const query = graphql`
@@ -38,6 +39,11 @@ export default function ArticlesPage({ data }) {
         Here&apos;s my published writing from all over the web.
       </p>
     </header>
+
+    <Callout header="I Wrote a Book!">
+      Back in 2015, I wrote the book <a href="https://unravelingflexbox.com">Unraveling Flexbox</a>,
+      the definitive guide to CSS flexbox.
+    </Callout>
 
     <section className="note-summaries">
       {
