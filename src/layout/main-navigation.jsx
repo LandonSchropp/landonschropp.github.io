@@ -33,8 +33,6 @@ export function MainNavigation() {
       >
         Notes
       </Link>
-
-      <a className="main-navigation__link" href="https://unravelingflexbox.com">Book</a>
     </div>
 
     <div className="main-navigation__secondary">
