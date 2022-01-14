@@ -41,8 +41,8 @@ export default function ArticlesPage({ data }) {
     </header>
 
     <Callout header="I Wrote a Book!">
-      In 2015 I wrote the book <a href="https://unravelingflexbox.com">Unraveling Flexbox</a>:
-      The Ultimate Guide to Building Modern CSS Layouts With Flexbox.
+      In 2015 I wrote the book <a href="https://unravelingflexbox.com">Unraveling Flexbox</a>,
+      the ultimate guide to building modern CSS layouts with flexbox.
     </Callout>
 
     <section className="note-summaries">
