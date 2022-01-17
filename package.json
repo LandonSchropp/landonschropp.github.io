@@ -42,6 +42,7 @@
     "gatsby-source-notion-api": "LandonSchropp/gatsby-source-notion-api",
     "gatsby-transformer-sharp": "^4.4.0",
     "gh-pages": "^3.2.3",
+    "landon-schropp-theme": "LandonSchropp/landon-schropp-theme",
     "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.8.0",
