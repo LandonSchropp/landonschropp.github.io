@@ -1,5 +1,6 @@
 import { useLocation } from "@reach/router";
 import { graphql, navigate } from "gatsby";
+import { Header } from "landon-schropp-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
@@ -21,6 +22,7 @@ export const query = graphql`
       nodes {
         authors
         category
+        media
         date
         published
         slug
@@ -66,18 +68,12 @@ export default function NotesPage({ data }) {
     title="Landon Schropp - Notes"
     description="My personal notes on blog posts, talks, podcasts and books."
   >
-
-    <header className="header">
-      <h1 className="header__header">
-        Notes
-      </h1>
-
-      <p className="header__subhead">
-        This is my personal collection of notes on entrepreneurship, development and design.
-      </p>
-
-      <div className="header__tags">
-        <span className="header__tag-group">
+    <Header
+      title="Notes"
+      subText="This is my personal collection of notes on entrepreneurship, development and design."
+    >
+      <div className="note-header__tags">
+        <span className="note-header__tag-group">
           <Tag
             category={ BUSINESS_CATEGORY }
             onClick={ () => toggleCategory(BUSINESS_CATEGORY) }
@@ -94,7 +90,7 @@ export default function NotesPage({ data }) {
             selected={ category === DESIGN_CATEGORY }
           />
         </span>
-        <span className="header__tag-group">
+        <span className="note-header__tag-group">
           <Tag
             category={ PSYCHOLOGY_CATEGORY }
             onClick={ () => toggleCategory(PSYCHOLOGY_CATEGORY) }
@@ -107,7 +103,7 @@ export default function NotesPage({ data }) {
           />
         </span>
       </div>
-    </header>
+    </Header>
 
     <section className="note-summaries">
       { notes.map(note => <NoteSummary key={ note.slug } note={ note } />) }

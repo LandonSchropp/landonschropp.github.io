@@ -5,6 +5,7 @@ import { NoteHeader } from "../../src/components/note-header";
 import {
   ARTICLE_MEDIA,
   BOOK_MEDIA,
+  BUSINESS_CATEGORY,
   LIVE_TALK_MEDIA,
   OTHER_MEDIA,
   PODCAST_MEDIA,
@@ -19,7 +20,8 @@ describe("NoteHeader", () => {
     note = {
       title: "Title",
       authors: [ "Author" ],
-      category: OTHER_MEDIA,
+      category: BUSINESS_CATEGORY,
+      media: OTHER_MEDIA,
       date: "1988-10-05",
       published: true,
       slug: "slug",
@@ -31,7 +33,7 @@ describe("NoteHeader", () => {
   describe("when the note's authors, source and title are all the same", () => {
 
     beforeEach(() => {
-      note.category = OTHER_MEDIA;
+      note.media = OTHER_MEDIA;
       note.authors = [ note.title ];
       note.source = note.title;
       render(<NoteHeader note={ note } content="" />);
@@ -42,13 +44,13 @@ describe("NoteHeader", () => {
     });
 
     it("does not render a subheader", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("");
     });
   });
 
   describe("when the note's author and source are the same", () => {
     beforeEach(() => {
-      note.category = OTHER_MEDIA;
+      note.media = OTHER_MEDIA;
       note.authors = [ note.source ];
       render(<NoteHeader note={ note } content="" />);
     });
@@ -58,13 +60,13 @@ describe("NoteHeader", () => {
     });
 
     it("does not render the authors", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("From Source");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("From Source");
     });
   });
 
   describe("when the note's source and title are the same", () => {
     beforeEach(() => {
-      note.category = OTHER_MEDIA;
+      note.media = OTHER_MEDIA;
       note.source = note.title;
       render(<NoteHeader note={ note } content="" />);
     });
@@ -74,13 +76,13 @@ describe("NoteHeader", () => {
     });
 
     it("does not render the source", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("by Author");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("by Author");
     });
   });
 
   describe("when the note's authors, source and title are all distinct", () => {
     beforeEach(() => {
-      note.category = OTHER_MEDIA;
+      note.media = OTHER_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -89,7 +91,7 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("From Source by Author");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("From Source by Author");
     });
   });
 
@@ -104,7 +106,7 @@ describe("NoteHeader", () => {
     });
 
     it("does not render the authors", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("From Source");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("From Source");
     });
   });
 
@@ -119,7 +121,7 @@ describe("NoteHeader", () => {
     });
 
     it("renders the authors with an 'and' between then", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual(
+      expect(screen.getByTestId("sub-text").textContent).toEqual(
         "From Source by Sylvester Stallone and Dolph Lundgren"
       );
     });
@@ -136,7 +138,7 @@ describe("NoteHeader", () => {
     });
 
     it("renders the authors with an 'and' between then", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual(
+      expect(screen.getByTestId("sub-text").textContent).toEqual(
         "From Source by Sylvester Stallone, Dolph Lundgren and Carl Weathers"
       );
     });
@@ -144,7 +146,7 @@ describe("NoteHeader", () => {
 
   describe("when the note is for an article", () => {
     beforeEach(() => {
-      note.category = ARTICLE_MEDIA;
+      note.media = ARTICLE_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -153,13 +155,13 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("An article by Author from Source");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("An article by Author from Source");
     });
   });
 
   describe("when the note is for a book", () => {
     beforeEach(() => {
-      note.category = BOOK_MEDIA;
+      note.media = BOOK_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -168,13 +170,13 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("A book by Author from Source");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("A book by Author from Source");
     });
   });
 
   describe("when the note is for a live talk", () => {
     beforeEach(() => {
-      note.category = LIVE_TALK_MEDIA;
+      note.media = LIVE_TALK_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -183,14 +185,14 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent)
+      expect(screen.getByTestId("sub-text").textContent)
         .toEqual("A talk by Author I attended at Source");
     });
   });
 
   describe("when the note is for a talk", () => {
     beforeEach(() => {
-      note.category = TALK_MEDIA;
+      note.media = TALK_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -199,13 +201,13 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent).toEqual("A talk by Author from Source");
+      expect(screen.getByTestId("sub-text").textContent).toEqual("A talk by Author from Source");
     });
   });
 
   describe("when the note is for a podcast", () => {
     beforeEach(() => {
-      note.category = PODCAST_MEDIA;
+      note.media = PODCAST_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -214,14 +216,14 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent)
+      expect(screen.getByTestId("sub-text").textContent)
         .toEqual("From Source, a podcast by Author");
     });
   });
 
   describe("when the note is for a video", () => {
     beforeEach(() => {
-      note.category = VIDEO_MEDIA;
+      note.media = VIDEO_MEDIA;
       render(<NoteHeader note={ note } content="" />);
     });
 
@@ -230,7 +232,7 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("subhead").textContent)
+      expect(screen.getByTestId("sub-text").textContent)
         .toEqual("A video by Author from Source");
     });
   });

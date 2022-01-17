@@ -1,5 +1,4 @@
-import { baseURL } from "landon-schropp-theme";
-import _ from "lodash";
+import { baseURL, Header } from "landon-schropp-theme";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -11,18 +10,6 @@ import {
 } from "../data/constants";
 import { NotePropType } from "../data/prop-types";
 import { Listify } from "./listify";
-
-function NoteTitleText({ note }) {
-  if (_.isNil(note.url)) {
-    return note.title;
-  }
-
-  return <a className="header__title-link" href={ note.url }>{ note.title }</a>;
-}
-
-NoteTitleText.propTypes = {
-  note: NotePropType.isRequired
-};
 
 function NoteByline({ note, sourceText, authorText, sourceFirst }) {
   if (note.title === note.source && note.authors.length === 1 && note.authors[0] === note.title) {
@@ -63,25 +50,25 @@ NoteByline.propTypes = {
 };
 
 function NoteSubheadText({ note }) {
-  if (note.category === LIVE_TALK_MEDIA) {
+  if (note.media === LIVE_TALK_MEDIA) {
     return <NoteByline note={ note } authorText="A talk by" sourceText="I attended at" />;
   }
 
-  if (note.category === PODCAST_MEDIA) {
+  if (note.media === PODCAST_MEDIA) {
     return <NoteByline note={ note } sourceText="From" authorText=", a podcast by" sourceFirst />;
   }
 
-  if (note.category === ARTICLE_MEDIA) {
+  if (note.media === ARTICLE_MEDIA) {
     return <NoteByline note={ note } authorText="An article by" sourceText="from" />;
   }
 
-  if (note.category === OTHER_MEDIA) {
+  if (note.media === OTHER_MEDIA) {
     return <NoteByline note={ note } sourceText="From" authorText="by" sourceFirst />;
   }
 
   return <NoteByline
     note={ note }
-    authorText={ `A ${ note.category.toLowerCase() } by` }
+    authorText={ `A ${ note.media.toLowerCase() } by` }
     sourceText="from"
   />;
 }
@@ -91,22 +78,13 @@ NoteSubheadText.propTypes = {
 };
 
 export function NoteHeader({ note }) {
-
-  return <header className="header">
-
-    <h1 className="header__header">
-      <span className="header__suphead">
-        My personal notes for
-      </span>
-      { " " }
-      <span className="header__title">
-        <NoteTitleText note={ note } />
-      </span>
-    </h1>
-    <div className="header__subhead" data-test-id="subhead">
-      <NoteSubheadText note={ note } />
-    </div>
-  </header>;
+  return <Header
+    className="note-header"
+    superText="My personal notes for"
+    title={ note.title }
+    subText={ <NoteSubheadText note={ note } /> }
+    href={ note.url }
+  />;
 }
 
 NoteHeader.propTypes = {

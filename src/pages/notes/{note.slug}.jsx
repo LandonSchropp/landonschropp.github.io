@@ -15,6 +15,7 @@ export const query = graphql`
     note(slug: {eq: $slug}) {
       authors
       category
+      media
       date
       published
       slug

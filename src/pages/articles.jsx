@@ -1,4 +1,5 @@
 import { graphql } from "gatsby";
+import { Header } from "landon-schropp-theme";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -29,16 +30,10 @@ export default function ArticlesPage({ data }) {
     title="Landon Schropp - Notes"
     description="My personal notes on blog posts, talks, podcasts and books."
   >
-
-    <header className="header">
-      <h1 className="header__header">
-        Writing
-      </h1>
-
-      <p className="header__subhead">
-        Here&apos;s my published writing from all over the web.
-      </p>
-    </header>
+    <Header
+      title="Writing"
+      subText={ <>Here&apos;s my published writing from all over the web.</> }
+    />
 
     <Callout header="I Wrote a Book!">
       In 2015 I wrote the book <a href="https://unravelingflexbox.com">Unraveling Flexbox</a>,
