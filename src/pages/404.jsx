@@ -1,9 +1,9 @@
 import _ from "lodash";
 import React from "react";
 
+import { Layout } from "../components/layout";
 import { useSVGData } from "../hooks/use-svg-data";
 import flannel from "../images/flannel.png";
-import { Layout } from "../layout/layout";
 
 // TODO: Deduplciate this with IndexPage.
 export default function NotFoundPage() {

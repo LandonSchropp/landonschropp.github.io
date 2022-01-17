@@ -4,6 +4,7 @@ import _ from "lodash";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
+import { Layout } from "../components/layout";
 import { NoteSummary } from "../components/note-summary";
 import { Tag } from "../components/tag";
 import {
@@ -13,7 +14,6 @@ import {
   OTHER_CATEGORY,
   PSYCHOLOGY_CATEGORY
 } from "../data/constants";
-import { Layout } from "../layout/layout";
 
 export const query = graphql`
   query Notes {

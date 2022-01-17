@@ -4,7 +4,7 @@ import React from "react";
 
 import { ArticleSummary } from "../components/article-summary";
 import { Callout } from "../components/callout";
-import { Layout } from "../layout/layout";
+import { Layout } from "../components/layout";
 
 export const query = graphql`
   query Articles {

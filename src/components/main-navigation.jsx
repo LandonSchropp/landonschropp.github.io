@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 
-import { Icon } from "../components/icon";
+import { Icon } from "./icon";
 
 export function MainNavigation() {
   return <nav className="main-navigation">

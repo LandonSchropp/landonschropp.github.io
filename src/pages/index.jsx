@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import getBounds from "svg-path-bounds";
 
+import { Layout } from "../components/layout";
 import useIsClient from "../hooks/use-is-client";
 import { useSVGData } from "../hooks/use-svg-data";
 import flannel from "../images/flannel.png";
-import { Layout } from "../layout/layout";
 
 const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1 / 1)";
 
