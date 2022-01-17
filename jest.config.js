@@ -6,5 +6,12 @@ module.exports = {
   testEnvironment: "jsdom",
 
   // Add setup for every file.
-  "setupFilesAfterEnv": [ "<rootDir>/test/jest.setup.jsx" ]
+  "setupFilesAfterEnv": [ "<rootDir>/test/jest.setup.jsx" ],
+
+  // Tell jest to transform files from the theme.
+  // https://jestjs.io/docs/tutorial-react-native#transformignorepatterns-customization
+  "transformIgnorePatterns": [
+    "node_modules/(?!(landon-schropp-theme)/)"
+  ]
+
 };
