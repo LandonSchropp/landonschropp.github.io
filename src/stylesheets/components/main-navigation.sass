@@ -28,7 +28,7 @@
       &--short
         display: none
 
-  &__link, &__icon
+  &__link, &__icon-link
     display: block
     margin: 0 $spacing * 0.5
 
@@ -42,11 +42,11 @@
       color: inherit
       box-shadow: 0 3px var(--theme-accent-color)
 
-  &__icon
+  &__icon-link
     color: var(--theme-extra-light-text-color)
 
     &:hover, &:focus-visible
       color: var(--theme-accent-color)
 
-    svg
-      transition: fill $transition-time--xsmall ease
+  &__icon
+    transition: fill $transition-time--xsmall ease

@@ -36,24 +36,24 @@ export function MainNavigation() {
     </div>
 
     <div className="main-navigation__secondary">
-      <a className="main-navigation__icon" href="https://twitter.com/LandonSchropp">
-        <Icon name="twitter" alt="Twitter" />
+      <a className="main-navigation__icon-link" href="https://twitter.com/LandonSchropp">
+        <Icon className="main-navigation__icon" name="twitter" alt="Twitter" />
       </a>
 
-      <a className="main-navigation__icon" href="https://github.com/LandonSchropp">
-        <Icon name="github" alt="GitHub" />
+      <a className="main-navigation__icon-link" href="https://github.com/LandonSchropp">
+        <Icon className="main-navigation__icon" name="github" alt="GitHub" />
       </a>
 
-      <a className="main-navigation__icon" href="mailto:schroppl@gmail.com">
-        <Icon name="email" alt="Email" />
+      <a className="main-navigation__icon-link" href="mailto:schroppl@gmail.com">
+        <Icon className="main-navigation__icon" name="email" alt="Email" />
       </a>
 
-      <a className="main-navigation__icon" href="https://codepen.io/LandonSchropp/">
-        <Icon name="codepen" alt="CodePen" />
+      <a className="main-navigation__icon-link" href="https://codepen.io/LandonSchropp/">
+        <Icon className="main-navigation__icon" name="codepen" alt="CodePen" />
       </a>
 
-      <a className="main-navigation__icon" href="https://www.linkedin.com/in/landonschropp">
-        <Icon name="linkedin" alt="LinkedIn" />
+      <a className="main-navigation__icon-link" href="https://www.linkedin.com/in/landonschropp">
+        <Icon className="main-navigation__icon" name="linkedin" alt="LinkedIn" />
       </a>
     </div>
   </nav>;
