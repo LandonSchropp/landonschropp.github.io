@@ -1,9 +1,8 @@
 import classNames from "classnames";
+import { importHash } from "landon-schropp-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
-
-import { importHash } from "../utilities/import";
 
 const ICONS = importHash(require.context(
   "../images/icons",

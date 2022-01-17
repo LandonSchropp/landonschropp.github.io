@@ -1,36 +1,15 @@
-@import "normalize.css"
-
 // Variables
 @import "variables/colors.sass"
-@import "variables/dimensions.sass"
 @import "variables/transitions.sass"
-@import "variables/typography.sass"
+
+// Import the theme (after the variables are defined.)
+@import "landon-schropp-theme/index.sass"
 
 // Mixins
-@import "mixins/media-queries.sass"
 @import "mixins/tag-color.sass"
-
-// Elements
-@import "elements/anchors.sass"
-@import "elements/audios.sass"
-@import "elements/blockquotes.sass"
-@import "elements/body.sass"
-@import "elements/cite.sass"
-@import "elements/code.sass"
-@import "elements/headers.sass"
-@import "elements/hr.sass"
-@import "elements/html.sass"
-@import "elements/icon.sass"
-@import "elements/image.sass"
-@import "elements/lists.sass"
-@import "elements/paragraphs.sass"
-@import "elements/pre.sass"
-@import "elements/sections.sass"
-@import "elements/wildcard.sass"
 
 // Components
 @import "components/callout.sass"
-@import "components/main.sass"
 @import "components/header.sass"
 @import "components/main-navigation.sass"
 @import "components/note-summary.sass"
@@ -40,7 +19,3 @@
 
 // Pages
 @import "pages/index-page.sass"
-
-// Vendor
-@import "vendor/highlight.scss"
-@import "vendor/gatsby.sass"

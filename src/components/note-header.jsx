@@ -1,3 +1,4 @@
+import { baseURL } from "landon-schropp-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
@@ -9,7 +10,6 @@ import {
   PODCAST_MEDIA
 } from "../data/constants";
 import { NotePropType } from "../data/prop-types";
-import { baseURL } from "../utilities/url";
 import { Listify } from "./listify";
 
 function NoteTitleText({ note }) {
