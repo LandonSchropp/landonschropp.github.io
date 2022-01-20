@@ -1,9 +1,9 @@
 import { graphql } from "gatsby";
+import { Article } from "landon-schropp-gatsby-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { Article } from "../../components/article";
 import { Layout } from "../../components/layout";
 
 // NOTE: I'm using $slug here instead of ID because the transformed article node is no longer tied
@@ -25,8 +25,9 @@ export const query = graphql`
   }
 `;
 
-// HACK: This uses the deferral API to prevent articles from being statically generated. Since this
-// site is not hosted with a Gatsby server, this prevents the pages from ever being generated.
+// HACK: This uses the deferral API to prevent external articles from being statically generated.
+// Since this site is not hosted with a Gatsby server, this prevents the pages from ever being
+// generated.
 export async function config() {
   const { data } = graphql`
     query ArticleUrls {
