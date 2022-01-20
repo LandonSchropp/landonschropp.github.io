@@ -50,7 +50,7 @@ export default function IndexPage() {
     className="index-page"
     title="Landon Schropp"
     description="Landon Schropp is a developer, designer and entrepreneur based in Kansas City."
-    navigation={ false }
+    fullScreen
   >
 
     <svg className="index-page__svg" viewBox={ viewBox }>

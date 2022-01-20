@@ -16,7 +16,7 @@ export default function NotFoundPage() {
     className="index-page"
     title="Landon Schropp – 404"
     description="The page you were looking for couldn't be found."
-    navigation={ false }
+    fullScreen
   >
     <svg className="index-page__svg" viewBox={ viewBox }>
       <defs>
