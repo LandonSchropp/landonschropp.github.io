@@ -1,14 +1,7 @@
+import { validateDateString } from "landon-schropp-theme";
 import PropTypes from "prop-types";
 
 import { CATEGORIES, MEDIA } from "./constants";
-
-function validateDateString(props, propName) {
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(props[propName])) {
-    return new Error(
-      `${ propName }'s value '${ props[propName] }' is not a valid ISO date string ('YYYY-MM-DD').`
-    );
-  }
-}
 
 export const NotePropType = PropTypes.shape({
   title: PropTypes.string.isRequired,
