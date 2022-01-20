@@ -1,6 +1,6 @@
 import { useLocation } from "@reach/router";
 import { graphql, navigate } from "gatsby";
-import { Header } from "landon-schropp-theme";
+import { Header } from "landon-schropp-gatsby-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";

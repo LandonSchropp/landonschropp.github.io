@@ -1,4 +1,4 @@
-import { baseURL, Header } from "landon-schropp-theme";
+import { baseURL, Header } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 

@@ -1,4 +1,4 @@
-import { validateDateString } from "landon-schropp-theme";
+import { validateDateString } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 
 import { CATEGORIES, MEDIA } from "./constants";

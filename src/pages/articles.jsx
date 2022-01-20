@@ -1,5 +1,5 @@
 import { graphql } from "gatsby";
-import { Header } from "landon-schropp-theme";
+import { Header } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 

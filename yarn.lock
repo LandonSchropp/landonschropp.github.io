@@ -9164,9 +9164,9 @@ klona@^2.0.4:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.5.tgz#d166574d90076395d9963aa7a928fabb8d76afbc"
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
 
-landon-schropp-theme@LandonSchropp/landon-schropp-theme:
+landon-schropp-gatsby-theme@LandonSchropp/landon-schropp-gatsby-theme:
   version "0.0.0"
-  resolved "git+ssh://git@github.com/LandonSchropp/landon-schropp-theme.git#d3a8b3133481f33f66dbffdada57a0b73d882f20"
+  resolved "git+ssh://git@github.com/LandonSchropp/landon-schropp-gatsby-theme.git#d323e5cba7e39a0e5c82e223ee287bfa347e03d2"
   dependencies:
     "@babel/eslint-parser" "^7.16.5"
     "@landonschropp/eslint-config-react" "^0.11.0"

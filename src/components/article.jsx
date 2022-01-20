@@ -1,6 +1,6 @@
 import { format, parseISO } from "date-fns";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Header } from "landon-schropp-theme";
+import { Header } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 

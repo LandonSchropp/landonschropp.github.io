@@ -1,6 +1,6 @@
 import "../stylesheets/index.sass";
 
-import { Layout as ThemeLayout } from "landon-schropp-theme";
+import { Layout as ThemeLayout } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";

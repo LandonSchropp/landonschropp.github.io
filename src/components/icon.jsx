@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { importHash } from "landon-schropp-theme";
+import { importHash } from "landon-schropp-gatsby-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
