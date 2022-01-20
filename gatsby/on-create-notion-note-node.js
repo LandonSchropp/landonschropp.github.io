@@ -1,4 +1,5 @@
-const { buildOnCreateNotionNode } = require("./on-create-notion-node");
+const { buildOnCreateNotionNode }
+  = require("landon-schropp-gatsby-theme/lib/gatsby/on-create-notion-node");
 
 function transformNodeToNote(node) {
   return {
