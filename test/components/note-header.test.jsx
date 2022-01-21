@@ -155,7 +155,8 @@ describe("NoteHeader", () => {
     });
 
     it("render's the correct subheader", () => {
-      expect(screen.getByTestId("sub-text").textContent).toEqual("An article by Author from Source");
+      expect(screen.getByTestId("sub-text").textContent)
+        .toEqual("An article by Author from Source");
     });
   });
 
