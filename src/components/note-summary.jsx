@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
+import { Listify } from "landon-schropp-gatsby-theme";
 import React from "react";
 
-import { Listify } from "../components/listify";
 import { NotePropType } from "../data/prop-types";
 
 export function NoteSummary({ note }) {

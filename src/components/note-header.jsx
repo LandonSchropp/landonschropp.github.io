@@ -1,4 +1,5 @@
 import { baseURL, Header } from "landon-schropp-gatsby-theme";
+import { Listify } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -9,7 +10,6 @@ import {
   PODCAST_MEDIA
 } from "../data/constants";
 import { NotePropType } from "../data/prop-types";
-import { Listify } from "./listify";
 
 function NoteByline({ note, sourceText, authorText, sourceFirst }) {
   if (note.title === note.source && note.authors.length === 1 && note.authors[0] === note.title) {

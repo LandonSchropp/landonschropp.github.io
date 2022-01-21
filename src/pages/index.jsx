@@ -1,11 +1,11 @@
 import { Link } from "@reach/router";
 import { useMediaQuery } from "@react-hook/media-query";
+import { useIsClient } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 import getBounds from "svg-path-bounds";
 
 import { Layout } from "../components/layout";
-import useIsClient from "../hooks/use-is-client";
 import { useSVGData } from "../hooks/use-svg-data";
 import flannel from "../images/flannel.png";
 
