@@ -13,6 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Add Gatsby Theme Repository Deploy Key
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.GATSBY_THEME_REPOSITORY_PRIVATE_SSH_KEY }}
+      -
         name: Checkout
         uses: actions/checkout@v2
       -
