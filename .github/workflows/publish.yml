@@ -1,4 +1,4 @@
-name: Deploy
+name: Publish 2
 on:
   push:
     branches:
@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
         name: Add Gatsby Theme Repository Deploy Key
         uses: webfactory/ssh-agent@v0.5.4
         with:
-          ssh-private-key: ${{ secrets.GATSBY_THEME_REPOSITORY_PRIVATE_SSH_KEY }}
-      -
-        name: Checkout
-        uses: actions/checkout@v2
+          ssh-private-key: ${{ secrets.GATSBY_THEME_DEPLOY_KEY }}
       -
         name: Set Up Node.js
         uses: actions/setup-node@v2
