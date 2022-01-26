@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunklandonschropp_com=self.webpackChunklandonschropp_com||[]).push([[530],{92110:function(e,t,n){n.r(t),n.d(t,{default:function(){return i}});var c=n(41772),r=n(67294),a=n(57641);function i(e){let{data:t}=e;return r.createElement(a.A,{title:`Landon Schropp - ${t.article.title}`,description:t.article.description},r.createElement(c.Article,{article:t.article,content:t.mdx.body}))}}}]);
+//# sourceMappingURL=component---src-pages-articles-article-slug-jsx-45823d29de39f00dd638.js.map
