@@ -5717,7 +5717,7 @@ eslint-plugin-react-hooks@^4.3.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.3.0.tgz#318dbf312e06fab1c835a4abef00121751ac1172"
   integrity sha512-XslZy0LnMn+84NEG9jSGR6eGqaZB3133L8xewQo3fQagbQuGt7a63gf+P1NGKZavEYEC3UXaWEAA/AqDkuN6xA==
 
-eslint-plugin-react@^7.27.1:
+eslint-plugin-react@^7.27.1, eslint-plugin-react@^7.28.0:
   version "7.28.0"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react/-/eslint-plugin-react-7.28.0.tgz#8f3ff450677571a659ce76efc6d80b6a525adbdf"
   integrity sha512-IOlFIRHzWfEQQKcAD4iyYDndHwTQiCMcJVJjxempf203jnNLUnW34AXLrV33+nEXoifJE2ZEGmcjKPL8957eSw==
@@ -9165,8 +9165,8 @@ klona@^2.0.4:
   integrity sha512-pJiBpiXMbt7dkzXe8Ghj/u4FfXOOa98fPW+bihOJ4SjnoijweJrNThJfd3ifXpXhREjpoF2mZVH1GfS9LV3kHQ==
 
 landon-schropp-gatsby-theme@LandonSchropp/landon-schropp-gatsby-theme:
-  version "0.0.0"
-  resolved "git+ssh://git@github.com/LandonSchropp/landon-schropp-gatsby-theme.git#d323e5cba7e39a0e5c82e223ee287bfa347e03d2"
+  version "0.0.1"
+  resolved "https://codeload.github.com/LandonSchropp/landon-schropp-gatsby-theme/tar.gz/abc5a5aade06c5173f2b4ddd2809d303cdc0b7d6"
   dependencies:
     "@babel/eslint-parser" "^7.16.5"
     "@landonschropp/eslint-config-react" "^0.11.0"
@@ -9176,10 +9176,10 @@ landon-schropp-gatsby-theme@LandonSchropp/landon-schropp-gatsby-theme:
     "@react-hook/media-query" "^1.1.1"
     "@testing-library/react" "^12.1.2"
     babel-eslint "^10.1.0"
-    babel-preset-gatsby "^2.4.0"
     chroma-js "^2.1.2"
     classnames "^2.3.1"
     date-fns "^2.28.0"
+    eslint-plugin-react "^7.28.0"
     fast-xml-parser "^4.0.0-beta.8"
     gatsby "^4.4.0"
     gatsby-plugin-google-analytics "^4.4.0"
