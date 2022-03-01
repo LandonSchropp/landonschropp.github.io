@@ -1,10 +1,15 @@
-const { onCreateNotionArticleNode } = require("./gatsby/on-create-notion-article-node");
-const { onCreateNotionNoteNode } = require("./gatsby/on-create-notion-note-node");
 const { onCreateSVGDataNode } = require("./gatsby/on-create-svg-data-node");
 
-// Add custom onCreateNode callbacks to Gatsby.
+const { GRAPH_QL_ARTICLE_TYPE } = require("./gatsby/article-resolver");
+const { GRAPH_QL_NOTE_TYPE } = require("./gatsby/note-resolver");
+
 exports.onCreateNode = async (...parameters) => {
-  await onCreateNotionNoteNode(...parameters);
-  await onCreateNotionArticleNode(...parameters);
   await onCreateSVGDataNode(...parameters);
+};
+
+exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
+  createTypes(`
+    ${ GRAPH_QL_ARTICLE_TYPE }
+    ${ GRAPH_QL_NOTE_TYPE }
+  `);
 };
