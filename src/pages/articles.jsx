@@ -9,22 +9,20 @@ import { Layout } from "../components/layout";
 
 export const query = graphql`
   query Articles {
-    allArticle(sort: {fields: [date], order: DESC}) {
-      nodes {
-        title
-        slug
-        date
-        description
-        url
-        publisher
-        published
-      }
+    articles {
+      title
+      slug
+      date
+      description
+      url
+      publisher
+      published
     }
   }
 `;
 
 export default function ArticlesPage({ data }) {
-  let articles = data.allArticle.nodes;
+  let articles = data.articles;
 
   return <Layout
     title="Landon Schropp - Notes"

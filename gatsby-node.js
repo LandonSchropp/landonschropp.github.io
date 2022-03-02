@@ -1,6 +1,11 @@
 const { onCreateSVGDataNode } = require("./gatsby/on-create-svg-data-node");
 
-const { GRAPH_QL_ARTICLE_TYPE, resolveArticle } = require("./gatsby/article-resolver");
+const {
+  GRAPH_QL_ARTICLE_TYPE,
+  resolveArticle,
+  resolveArticles
+} = require("./gatsby/article-resolver");
+
 const { GRAPH_QL_NOTE_TYPE } = require("./gatsby/note-resolver");
 
 exports.onCreateNode = async (...parameters) => {
@@ -20,6 +25,10 @@ exports.createResolvers = ({ createResolvers }) => {
       article: {
         type: "Article",
         resolve: resolveArticle
+      },
+      articles: {
+        type: "[Article]",
+        resolve: resolveArticles
       }
     }
   });

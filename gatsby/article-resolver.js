@@ -39,8 +39,8 @@ exports.GRAPH_QL_ARTICLE_TYPE = `
     slug: String!
     date: Date!
     description: String!
-    url: String!
-    publisher: String!
+    url: String
+    publisher: String
     published: Boolean!
   }
 `;
@@ -60,3 +60,24 @@ exports.resolveArticle = async (source, args, context) => {
 
   return transformNotionNodeToArticle(notionNode);
 };
+
+exports.resolveArticles = async (source, args, context) => {
+  const { entries } = await context.nodeModel.findAll({
+    query: {
+      filter: {
+        properties: {
+          Type: { value: { string: { eq: ARTICLE_TYPE } } },
+          Published: { value: { eq: true } }
+        }
+      },
+      sort: {
+        fields: [ "properties.Date.value.start" ],
+        order: [ "DESC" ]
+      }
+    },
+    type: "Notion"
+  });
+
+  return entries.map(transformNotionNodeToArticle);
+};
+
