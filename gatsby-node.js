@@ -1,3 +1,4 @@
+
 const { onCreateSVGDataNode } = require("./gatsby/on-create-svg-data-node");
 
 const {
@@ -7,11 +8,14 @@ const {
 } = require("./gatsby/article-resolver");
 
 const { GRAPH_QL_NOTE_TYPE } = require("./gatsby/note-resolver");
+const { createArticlePages } = require("./gatsby/create-article-pages");
 
+// Generate the SVG data for the index page.
 exports.onCreateNode = async (...parameters) => {
   await onCreateSVGDataNode(...parameters);
 };
 
+// Add the Article and Note GraphQL types.
 exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
   createTypes(`
     ${ GRAPH_QL_ARTICLE_TYPE }
@@ -19,6 +23,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => {
   `);
 };
 
+// Create the customer resolvers.
 exports.createResolvers = ({ createResolvers }) => {
   createResolvers({
     Query: {
@@ -32,4 +37,9 @@ exports.createResolvers = ({ createResolvers }) => {
       }
     }
   });
+};
+
+// Create the dynamic pages.
+exports.createPages = async ({ graphql, actions: { createPage } }) => {
+  await createArticlePages(graphql, createPage);
 };
