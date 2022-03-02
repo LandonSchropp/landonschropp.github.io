@@ -7,8 +7,9 @@ const {
   resolveArticles
 } = require("./gatsby/article-resolver");
 
-const { GRAPH_QL_NOTE_TYPE } = require("./gatsby/note-resolver");
+const { GRAPH_QL_NOTE_TYPE, resolveNote, resolveNotes } = require("./gatsby/note-resolver");
 const { createArticlePages } = require("./gatsby/create-article-pages");
+const { createNotePages } = require("./gatsby/create-note-pages");
 
 // Generate the SVG data for the index page.
 exports.onCreateNode = async (...parameters) => {
@@ -34,6 +35,14 @@ exports.createResolvers = ({ createResolvers }) => {
       articles: {
         type: "[Article]",
         resolve: resolveArticles
+      },
+      note: {
+        type: "Note",
+        resolve: resolveNote
+      },
+      notes: {
+        type: "[Note]",
+        resolve: resolveNotes
       }
     }
   });
