@@ -18,18 +18,16 @@ import {
 
 export const query = graphql`
   query Notes {
-    allNote(sort: {fields: [date], order: DESC}) {
-      nodes {
-        authors
-        category
-        media
-        date
-        published
-        slug
-        source
-        title
-        url
-      }
+    notes {
+      authors
+      category
+      media
+      date
+      published
+      slug
+      source
+      title
+      url
     }
   }
 `;
@@ -54,8 +52,8 @@ export default function NotesPage({ data }) {
   // NOTE: I'm using includes here to accomodate the `Live Talk` category, which should be included
   // by `Talk`.
   let notes = _.isNil(category)
-    ? data.allNote.nodes
-    : data.allNote.nodes.filter(article => article.category.includes(category));
+    ? data.notes
+    : data.notes.filter(article => article.category.includes(category));
 
   // TODO: Remove this once the example post is removed.
   notes = notes.filter(note => note.title !== "Example");

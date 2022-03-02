@@ -2,8 +2,8 @@ import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { Layout } from "../../components/layout";
-import { Note } from "../../components/note";
+import { Layout } from "../components/layout";
+import { Note } from "../components/note";
 
 // NOTE: I'm using $slug here instead of ID because the transformed note node is no longer tied to
 // the MDX node.
@@ -26,7 +26,7 @@ export const query = graphql`
   }
 `;
 
-export default function NotePage({ data }) {
+export default function NoteTemplate({ data }) {
   return <Layout
     title={ `Landon Schropp - Notes - ${ data.note.title }` }
     description={ `My personal notes for ${ data.note.title }` }
@@ -36,6 +36,6 @@ export default function NotePage({ data }) {
   </Layout>;
 }
 
-NotePage.propTypes = {
+NoteTemplate.propTypes = {
   data: PropTypes.object
 };

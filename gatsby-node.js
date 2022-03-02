@@ -51,4 +51,5 @@ exports.createResolvers = ({ createResolvers }) => {
 // Create the dynamic pages.
 exports.createPages = async ({ graphql, actions: { createPage } }) => {
   await createArticlePages(graphql, createPage);
+  await createNotePages(graphql, createPage);
 };
