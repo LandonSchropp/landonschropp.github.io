@@ -1,8 +1,44 @@
 import { Link } from "gatsby";
 import { Listify } from "landon-schropp-gatsby-theme";
+import _ from "lodash";
 import React from "react";
 
 import { NotePropType } from "../data/prop-types";
+
+function NoteByline({ note }) {
+  if (_.isEmpty(note.authors) && _.isNil(note.source)) {
+    return null;
+  }
+
+  let authors = <span key="authors" className="note-summary__authors">
+    <Listify items={ note.authors } />
+  </span>;
+
+  let source = <span key="source" className="note-summary__source">
+    { note.source }
+  </span>;
+
+  if (_.isEmpty(note.authors)) {
+    return source;
+  }
+
+  if (_.isNil(note.source)) {
+    return authors;
+  }
+
+  return <>
+    { authors }
+    { " " }
+    <span className="note-summary__separator">∙</span>
+    { " " }
+    { source }
+  </>;
+
+}
+
+NoteByline.propTypes = {
+  note: NotePropType.isRequired
+};
 
 export function NoteSummary({ note }) {
 
@@ -15,15 +51,7 @@ export function NoteSummary({ note }) {
       { note.title }
     </h3>
     <p className="note-summary__about">
-      <span className="note-summary__authors">
-        <Listify items={ note.authors } />
-      </span>
-      { " " }
-      <span className="note-summary__separator">∙</span>
-      { " " }
-      <span className="note-summary__source">
-        { note.source }
-      </span>
+      <NoteByline note={ note } />
     </p>
   </Link>;
 }
