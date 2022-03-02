@@ -11,14 +11,17 @@ import {
 import { NotePropType } from "../data/prop-types";
 
 function NoteByline({ note, sourceText, authorText, sourceFirst }) {
-  if (note.title === note.source && note.authors.length === 1 && note.authors[0] === note.title) {
+  if (note.title === note.source
+    && (note.authors.length === 0
+      || note.authors.length === 1
+      && note.authors[0] === note.title)) {
     return null;
   }
 
   let source = <a className="header__link" href={ baseURL(note.url) }>{ note.source }</a>;
   let authors = <Listify items={ note.authors } />;
 
-  if (note.authors.length === 1 && note.authors[0] === note.source) {
+  if (note.authors.length === 0 || note.authors.length === 1 && note.authors[0] === note.source) {
     return <>{ sourceText } { source }</>;
   }
 

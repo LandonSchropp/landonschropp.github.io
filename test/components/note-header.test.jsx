@@ -48,10 +48,44 @@ describe("NoteHeader", () => {
     });
   });
 
+  describe("when the source and title are the same and the note does not have any authors", () => {
+
+    beforeEach(() => {
+      note.media = OTHER_MEDIA;
+      note.authors = [];
+      note.source = note.title;
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
+    });
+
+    it("does not render a subheader", () => {
+      expect(screen.getByTestId("sub-text").textContent).toEqual("");
+    });
+  });
+
   describe("when the note's author and source are the same", () => {
     beforeEach(() => {
       note.media = OTHER_MEDIA;
       note.authors = [ note.source ];
+      render(<NoteHeader note={ note } content="" />);
+    });
+
+    it("sets the title", () => {
+      expect(screen.getByRole("heading").textContent).toEqual("My personal notes for Title");
+    });
+
+    it("does not render the authors", () => {
+      expect(screen.getByTestId("sub-text").textContent).toEqual("From Source");
+    });
+  });
+
+  describe("when the note does not have any authors", () => {
+    beforeEach(() => {
+      note.media = OTHER_MEDIA;
+      note.authors = [];
       render(<NoteHeader note={ note } content="" />);
     });
 
