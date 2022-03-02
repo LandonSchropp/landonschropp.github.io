@@ -8,12 +8,12 @@
     "@LandonSchropp:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "NODE_NO_WARNINGS=1 gatsby build",
+    "build": "gatsby build",
     "clean": "gatsby clean",
-    "deploy": "NODE_NO_WARNINGS=1 gatsby build && gh-pages -d public",
-    "develop": "NODE_NO_WARNINGS=1 gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public",
+    "develop": "gatsby develop",
     "lint": "eslint --max-warnings=0 .",
-    "serve": "NODE_NO_WARNINGS=1 gatsby serve",
+    "serve": "gatsby serve",
     "test": "jest"
   },
   "dependencies": {
