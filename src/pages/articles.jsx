@@ -1,10 +1,10 @@
 import { graphql } from "gatsby";
-import { Header } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { ArticleSummary } from "../components/article-summary";
 import { Callout } from "../components/callout";
+import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 
 export const query = graphql`

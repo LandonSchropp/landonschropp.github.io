@@ -1,4 +1,3 @@
-import { baseURL, Header, Listify } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 
@@ -9,6 +8,9 @@ import {
   PODCAST_MEDIA
 } from "../data/constants";
 import { NotePropType } from "../data/prop-types";
+import { baseURL } from "../utilities/url";
+import { Header } from "./header";
+import { Listify } from "./listify";
 
 function NoteByline({ note, sourceText, authorText, sourceFirst }) {
   if (note.title === note.source

@@ -1,6 +1,6 @@
-import { validateDateString } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 
+import { validateDateString } from "../utilities/date";
 import { CATEGORIES, MEDIA } from "./constants";
 
 export const NotePropType = PropTypes.shape({
