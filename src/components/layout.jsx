@@ -1,46 +1,43 @@
-import "../stylesheets/index.sass";
-
-import { MDXProvider } from "@mdx-js/react";
-import { Layout as ThemeLayout } from "landon-schropp-gatsby-theme";
+import classNames from "classnames";
 import PropTypes from "prop-types";
 import React from "react";
 import { Helmet } from "react-helmet";
+import useDarkMode from "use-dark-mode";
 
-import { CATEGORIES } from "../data/constants";
-import flannel from "../images/flannel.png";
-import { HighlightedPreHack } from "./highlighted-pre-hack";
-import { MainNavigation } from "./main-navigation";
+export function Layout({ children, className, title, description, navigation }) {
+  let { value: darkMode } = useDarkMode();
 
-// Custom components used in MDX rendering.
-const MDX_COMPONENTS = {
-  pre: HighlightedPreHack
-};
-
-export function Layout({ children, category, fullScreen, ...props }) {
-  return <ThemeLayout
-    { ...props }
-    fullScreen={ fullScreen }
-    navigation={ fullScreen ? null : <MainNavigation /> }
-  >
+  return <>
     <Helmet>
-      <link rel="shortcut icon" type="image/png" href={ flannel } />
-      <body data-category={ category } />
-    </Helmet>
-    <MDXProvider components={ MDX_COMPONENTS }>
-      { children }
-    </MDXProvider>
-  </ThemeLayout>;
-}
+      <title>{ title }</title>
+      <meta name="description" content={ description } />
 
-Layout.defaultProps = {
-  fullScreen: false
-};
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+      { /* Google Fonts */ }
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link
+        href={
+          "https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,"
+          + "400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family="
+          + "Source+Code+Pro:ital@0;1&display=swap"
+        }
+        rel="stylesheet"
+      />
+      <body data-theme={ darkMode ? "dark" : "light" } />
+    </Helmet>
+    { navigation }
+    <main className={ classNames("layout", className, { "layout--full-screen": !navigation }) }>
+      { children }
+    </main>
+  </>;
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  category: PropTypes.oneOf(CATEGORIES),
-  fullScreen: PropTypes.bool
+  navigation: PropTypes.node
 };
