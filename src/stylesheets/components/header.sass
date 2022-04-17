@@ -1,0 +1,42 @@
+.header
+  text-align: center
+
+  // NOTE: Use $spacing * 1.5 for the bottom because the first note has padding on the top.
+  margin: $spacing * 1.5 0
+
+  &__header
+    margin: 0
+
+  &__super-text, &__title
+    display: block
+
+  &__super-text, &__sub-text
+    display: block
+    margin: $spacing * 0.25 auto
+    max-width: 50ch
+
+    // Even though the super text is part of the header, it should still be displayed the same as
+    // the sub-text.
+    font-size: $font-size--medium
+    font-weight: normal
+    font-family: $font-family--serif
+    font-style: italic
+    line-height: $line-height--medium
+
+    color: var(--theme-light-text-color)
+
+  // HACK: The extra spacing is needed to visually make the header look evenly spaced.
+  &__sub-text
+    margin-top: $spacing * 0.5
+    margin-bottom: $spacing * 0.5
+
+  a.header__title-link
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+      text-decoration-line: underline
+      text-decoration-thickness: 0.075em
+
+  a
+    text-decoration: underline
