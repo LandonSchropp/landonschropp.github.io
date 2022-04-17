@@ -11,7 +11,7 @@ module.exports = {
   // Tell jest to transform files from the theme.
   // https://jestjs.io/docs/tutorial-react-native#transformignorepatterns-customization
   "transformIgnorePatterns": [
-    "node_modules/(?!(landon-schropp-gatsby-theme|gatsby-plugin-mdx)/)"
+    "node_modules/(?!gatsby-plugin-mdx/)"
   ]
 
 };

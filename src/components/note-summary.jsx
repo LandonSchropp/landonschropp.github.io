@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
-import { Listify } from "landon-schropp-gatsby-theme";
 import _ from "lodash";
 import React from "react";
 
+import { Listify } from "../components/listify";
 import { NotePropType } from "../data/prop-types";
 
 function NoteByline({ note }) {

@@ -1,8 +1,8 @@
 import { graphql } from "gatsby";
-import { Article } from "landon-schropp-gatsby-theme";
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Article } from "../components/article";
 import { Layout } from "../components/layout";
 
 // NOTE: I'm using $slug here instead of ID because the transformed article node is no longer tied

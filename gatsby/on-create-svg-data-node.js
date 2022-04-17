@@ -1,6 +1,6 @@
 const _ = require("lodash");
 const { XMLParser } = require("fast-xml-parser");
-const { createDataNode } = require("landon-schropp-gatsby-theme/lib/gatsby/data-node");
+const { createDataNode } = require("./data-node");
 const { camelCase } = require("voca");
 
 const DATA_DIRECTORY = "src/images/data";

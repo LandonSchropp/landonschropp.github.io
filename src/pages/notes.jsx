@@ -1,10 +1,10 @@
 import { useLocation } from "@reach/router";
 import { graphql, navigate } from "gatsby";
-import { Header } from "landon-schropp-gatsby-theme";
 import _ from "lodash";
 import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 
+import { Header } from "../components/header";
 import { Layout } from "../components/layout";
 import { NoteSummary } from "../components/note-summary";
 import { Tag } from "../components/tag";
