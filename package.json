@@ -19,7 +19,6 @@
   "dependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/react": "^3.0.8",
-    "@babel/eslint-parser": "^7.17.0",
     "@landonschropp/eslint-config-react": "^0.11.2",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
@@ -62,12 +61,15 @@
     "voca": "^1.4.0"
   },
   "devDependencies": {
-    "@landonschropp/eslint-config": "^0.11.1",
     "@testing-library/jest-dom": "^5.16.4",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
     "babel-jest": "^27.5.1",
-    "eslint": "^8.13.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.0",
     "eslint_d": "^12.0.0",
     "jest": "^27.5.1",
+    "typescript": "^5.3.3",
     "typescript-language-server": "^0.9.7"
   },
   "version": "0.1.0"

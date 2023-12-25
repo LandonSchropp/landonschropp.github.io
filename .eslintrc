@@ -1,15 +1,10 @@
 {
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "requireConfigFile": false
-  },
+  "root": true,
+  "parser": "@typescript-eslint/parser",
   "extends": [
-    "@landonschropp",
-    "@landonschropp/react"
-  ],
-  "env": {
-    "es6": true,
-    "browser": true,
-    "jest": true
-  }
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:astro/recommended"
+  ]
 }
