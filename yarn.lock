@@ -6566,6 +6566,11 @@ remark-stringify@^11.0.0:
     mdast-util-to-markdown "^2.0.0"
     unified "^11.0.0"
 
+remeda@^1.33.0:
+  version "1.33.0"
+  resolved "https://registry.yarnpkg.com/remeda/-/remeda-1.33.0.tgz#3d894340f4bb02b95456c28b0394383ff4cf7435"
+  integrity sha512-GExMiOhTB0eg1Rc7hvBMBNxwlVRYIulGfIj5pkuuAfy9HB3ms4PmLvbhMMjQ2btoCit0iN7eQmHgwTaGZTVWwg==
+
 request-light@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/request-light/-/request-light-0.7.0.tgz#885628bb2f8040c26401ebf258ec51c4ae98ac2a"
