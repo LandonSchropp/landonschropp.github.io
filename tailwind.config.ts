@@ -7,9 +7,13 @@ const SPACING = 1.25;
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    spacing: mapValues(defaultTheme.spacing, (value, key) => {
-      return isNaN(Number(key)) ? value : `${Number(key) * SPACING}rem`;
-    }),
+    spacing: {
+      "0.25": `${SPACING / 16}rem`,
+      "0.75": `${(SPACING * 3) / 16}rem`,
+      ...mapValues(defaultTheme.spacing, (value, key) => {
+        return isNaN(Number(key)) ? value : `${Number(key) * SPACING}rem`;
+      }),
+    },
     screens: {
       md: "420px",
       lg: "960px",
