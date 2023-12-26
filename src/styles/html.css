@@ -1,0 +1,35 @@
+/* html */
+
+@layer base {
+  html {
+    @apply h-full font-serif font-normal;
+
+    font-size: 19px;
+
+    @screen md {
+      font-size: 21px;
+    }
+
+    @screen lg {
+      font-size: 22px;
+    }
+  }
+
+  html.dark {
+    --background-color: theme("colors.blackOut");
+    --background-highlight-color: theme("colors.mineShaft");
+    --header-color: theme("colors.white");
+    --text-color: theme("colors.bleach");
+    --light-text-color: theme("colors.steam");
+    --extra-light-text-color: theme("colors.greatFalls");
+  }
+
+  html.light {
+    --background-color: theme("colors.white");
+    --background-highlight-color: theme("colors.bleach");
+    --header-color: theme("colors.blackOut");
+    --text-color: theme("colors.mineShaft");
+    --light-text-color: theme("colors.emperor");
+    --extra-light-text-color: theme("colors.gray");
+  }
+}
