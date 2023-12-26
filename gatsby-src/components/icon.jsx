@@ -3,9 +3,7 @@ import _ from "lodash";
 import PropTypes from "prop-types";
 import React from "react";
 
-import { importHash } from "../utilities/import";
-
-const ICONS = importHash(require.context("../images/icons", false, /\.svg$/));
+const ICONS = [];
 
 export function Icon({ name, alt, className }) {
   if (!_.has(ICONS, name)) {
