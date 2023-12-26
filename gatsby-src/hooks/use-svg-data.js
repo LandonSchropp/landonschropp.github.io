@@ -21,7 +21,7 @@ const QUERY = graphql`
 function transformSVGDatum({ shapes, ...image }) {
   return {
     ...image,
-    shapes: _.keyBy(shapes, "id")
+    shapes: _.keyBy(shapes, "id"),
   };
 }
 
@@ -33,7 +33,7 @@ export function useSVGData(name) {
   let svgDatum = _.find(svgData, { name });
 
   if (_.isNil(svgDatum)) {
-    throw new Error(`An image with the name '${ name }' couldn't be found.`);
+    throw new Error(`An image with the name '${name}' couldn't be found.`);
   }
 
   return transformSVGDatum(svgDatum);

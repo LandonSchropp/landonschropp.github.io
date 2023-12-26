@@ -9,10 +9,10 @@ import { Layout } from "../components/layout";
 // to the MDX node.
 export const query = graphql`
   query Article($slug: String!) {
-    mdx(frontmatter: {Slug: {eq: $slug}}) {
+    mdx(frontmatter: { Slug: { eq: $slug } }) {
       body
     }
-    article(slug: {eq: $slug}) {
+    article(slug: { eq: $slug }) {
       title
       slug
       description
@@ -25,14 +25,13 @@ export const query = graphql`
 `;
 
 export default function ArticleTemplate({ data }) {
-  return <Layout
-    title={ `Landon Schropp - ${ data.article.title }` }
-    description={ data.article.description }
-  >
-    <Article article={ data.article } content={ data.mdx.body } />
-  </Layout>;
+  return (
+    <Layout title={`Landon Schropp - ${data.article.title}`} description={data.article.description}>
+      <Article article={data.article} content={data.mdx.body} />
+    </Layout>
+  );
 }
 
 ArticleTemplate.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 };

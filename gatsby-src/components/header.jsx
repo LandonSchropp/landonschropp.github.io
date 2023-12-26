@@ -9,31 +9,36 @@ function HeaderLink({ className, children, href }) {
   }
 
   // TODO: Use a Gatsby Link if applicable.
-  return <a className={ className } href={ href }>{ children }</a>;
+  return (
+    <a className={className} href={href}>
+      {children}
+    </a>
+  );
 }
 
 HeaderLink.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  href: PropTypes.string
+  href: PropTypes.string,
 };
 
 export function Header({ className, children, superText, title, href, subText }) {
-  return <header className={ classNames("header", className) }>
-    <h1 className="header__header">
-      <span className="header__super-text">
-        { superText }
-      </span>
-      { " " }
-      <span className="header__title">
-        <HeaderLink className="header__title-link" href={ href }>{ title }</HeaderLink>
-      </span>
-    </h1>
-    <div className="header__sub-text" data-test-id="sub-text">
-      { subText }
-    </div>
-    { children }
-  </header>;
+  return (
+    <header className={classNames("header", className)}>
+      <h1 className="header__header">
+        <span className="header__super-text">{superText}</span>{" "}
+        <span className="header__title">
+          <HeaderLink className="header__title-link" href={href}>
+            {title}
+          </HeaderLink>
+        </span>
+      </h1>
+      <div className="header__sub-text" data-test-id="sub-text">
+        {subText}
+      </div>
+      {children}
+    </header>
+  );
 }
 
 Header.propTypes = {
@@ -42,5 +47,5 @@ Header.propTypes = {
   superText: PropTypes.node,
   title: PropTypes.node.isRequired,
   subText: PropTypes.node,
-  href: PropTypes.string
+  href: PropTypes.string,
 };

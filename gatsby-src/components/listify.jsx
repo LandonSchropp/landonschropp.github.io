@@ -22,13 +22,9 @@ export function Listify({ items }) {
     return items[0];
   }
 
-  return [
-    ...intersperse(_.initial(items), ", "),
-    " and ",
-    _.last(items)
-  ];
+  return [...intersperse(_.initial(items), ", "), " and ", _.last(items)];
 }
 
 Listify.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.node).isRequired
+  items: PropTypes.arrayOf(PropTypes.node).isRequired,
 };

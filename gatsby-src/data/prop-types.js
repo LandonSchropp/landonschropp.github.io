@@ -12,7 +12,7 @@ export const NotePropType = PropTypes.shape({
   media: PropTypes.oneOf(MEDIA),
   source: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  published: PropTypes.bool.isRequired
+  published: PropTypes.bool.isRequired,
 });
 
 export const ArticlePropType = PropTypes.shape({
@@ -22,5 +22,5 @@ export const ArticlePropType = PropTypes.shape({
   description: PropTypes.string.isRequired,
   url: PropTypes.string,
   publisher: PropTypes.string,
-  published: PropTypes.bool.isRequired
+  published: PropTypes.bool.isRequired,
 });

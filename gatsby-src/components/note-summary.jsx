@@ -10,13 +10,17 @@ function NoteByline({ note }) {
     return null;
   }
 
-  let authors = <span key="authors" className="note-summary__authors">
-    <Listify items={ note.authors } />
-  </span>;
+  let authors = (
+    <span key="authors" className="note-summary__authors">
+      <Listify items={note.authors} />
+    </span>
+  );
 
-  let source = <span key="source" className="note-summary__source">
-    { note.source }
-  </span>;
+  let source = (
+    <span key="source" className="note-summary__source">
+      {note.source}
+    </span>
+  );
 
   if (_.isEmpty(note.authors)) {
     return source;
@@ -26,36 +30,28 @@ function NoteByline({ note }) {
     return authors;
   }
 
-  return <>
-    { authors }
-    { " " }
-    <span className="note-summary__separator">∙</span>
-    { " " }
-    { source }
-  </>;
-
+  return (
+    <>
+      {authors} <span className="note-summary__separator">∙</span> {source}
+    </>
+  );
 }
 
 NoteByline.propTypes = {
-  note: NotePropType.isRequired
+  note: NotePropType.isRequired,
 };
 
 export function NoteSummary({ note }) {
-
-  return <Link
-    className="note-summary"
-    to={ `/notes/${ note.slug }` }
-    data-category={ note.category }
-  >
-    <h3 className="note-summary__title">
-      { note.title }
-    </h3>
-    <p className="note-summary__about">
-      <NoteByline note={ note } />
-    </p>
-  </Link>;
+  return (
+    <Link className="note-summary" to={`/notes/${note.slug}`} data-category={note.category}>
+      <h3 className="note-summary__title">{note.title}</h3>
+      <p className="note-summary__about">
+        <NoteByline note={note} />
+      </p>
+    </Link>
+  );
 }
 
 NoteSummary.propTypes = {
-  note: NotePropType.isRequired
+  note: NotePropType.isRequired,
 };
