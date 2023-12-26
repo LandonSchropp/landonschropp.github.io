@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
  * [here](https://www.nickbaxter.dev/gatsby-rehydration/).
  */
 export const useIsClient = () => {
-  const [ isClient, setClient ] = useState(false);
+  const [isClient, setClient] = useState(false);
   useEffect(() => setClient(true), []);
   return isClient;
 };

@@ -17,10 +17,9 @@ export function basename(path) {
  * const icons = importHash(require.context("../../images/icons", false, /\.svg$/));
  */
 export function importHash(requireContext, property = "default") {
-  return _.fromPairs(requireContext.keys().map(key => {
-    return [
-      basename(key),
-      requireContext(key)[property]
-    ];
-  }));
+  return _.fromPairs(
+    requireContext.keys().map((key) => {
+      return [basename(key), requireContext(key)[property]];
+    }),
+  );
 }

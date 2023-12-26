@@ -19,16 +19,16 @@ const wrappedIt = (description, func) => {
 global.it = new Proxy(wrappedIt, {
   get: (target, prop) => {
     return it[prop];
-  }
+  },
 });
 
 // Mock the MDXRenderer to avoid compilation errors.
 function MockMDXRenderer({ children }) {
-  return <div>{ children }</div>;
+  return <div>{children}</div>;
 }
 
 MockMDXRenderer.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 jest.mock("gatsby-plugin-mdx", () => {

@@ -9,10 +9,10 @@ import { Note } from "../components/note";
 // the MDX node.
 export const query = graphql`
   query Note($slug: String) {
-    mdx(frontmatter: {Slug: {eq: $slug}}) {
+    mdx(frontmatter: { Slug: { eq: $slug } }) {
       body
     }
-    note(slug: {eq: $slug}) {
+    note(slug: { eq: $slug }) {
       authors
       category
       media
@@ -27,15 +27,17 @@ export const query = graphql`
 `;
 
 export default function NoteTemplate({ data }) {
-  return <Layout
-    title={ `Landon Schropp - Notes - ${ data.note.title }` }
-    description={ `My personal notes for ${ data.note.title }` }
-    category={ data.note.category }
-  >
-    <Note note={ data.note } content={ data.mdx.body } />
-  </Layout>;
+  return (
+    <Layout
+      title={`Landon Schropp - Notes - ${data.note.title}`}
+      description={`My personal notes for ${data.note.title}`}
+      category={data.note.category}
+    >
+      <Note note={data.note} content={data.mdx.body} />
+    </Layout>
+  );
 }
 
 NoteTemplate.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 };
