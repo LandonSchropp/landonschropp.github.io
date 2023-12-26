@@ -8,12 +8,11 @@
     "@LandonSchropp:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public",
-    "develop": "gatsby develop",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
     "lint": "eslint --max-warnings=0 .",
-    "serve": "gatsby serve",
     "test": "jest"
   },
   "dependencies": {
