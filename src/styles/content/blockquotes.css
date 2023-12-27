@@ -1,0 +1,6 @@
+blockquote {
+  @apply mx-6 border-l-[3px];
+
+  border-color: var(--theme-accent-color);
+  padding-left: calc(theme("spacing.3") - 3px);
+}

@@ -1,0 +1,3 @@
+hr {
+  @apply h-[2px] bg-[var(--theme-light-text-color)] opacity-25 border-0;
+}

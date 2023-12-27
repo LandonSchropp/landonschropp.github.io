@@ -1,0 +1,30 @@
+/* TODO: In the future, I can get rid of all of the custom bullet and number codes and use the */
+/* ::marker pseudoelement. However, that's not currently supported by all browsers. */
+
+ol,
+ul {
+  @apply pl-4;
+}
+
+ol {
+  counter-reset: ordered-list;
+}
+
+li {
+  @apply mx-2 relative;
+}
+
+li::before {
+  color: var(--theme-accent-color);
+  position: absolute;
+  left: calc(-1 * theme("spacing.4"));
+}
+
+ul li::before {
+  content: "•";
+}
+
+ol li::before {
+  content: counter(ordered-list) ". ";
+  counter-increment: ordered-list;
+}

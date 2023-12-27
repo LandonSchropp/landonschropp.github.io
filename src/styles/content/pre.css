@@ -1,0 +1,7 @@
+pre {
+  @apply mx-4 overflow-x-auto;
+}
+
+pre code {
+  @apply block px-1 py-1.5;
+}

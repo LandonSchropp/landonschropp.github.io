@@ -1,0 +1,8 @@
+cite {
+  display: block;
+  font-style: italic;
+}
+
+cite::before {
+  content: "—";
+}
