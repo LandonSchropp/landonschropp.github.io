@@ -1,11 +1,43 @@
 {
   "root": true,
-  "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
     "plugin:astro/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "overrides": [
+    {
+      "files": [
+        "*.{tsx,jsx}"
+      ],
+      "extends": [
+        "plugin:react/recommended"
+      ]
+    },
+    {
+      "files": [
+        "*.astro"
+      ],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "extraFileExtensions": [
+          ".astro"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.test.{ts,tsx,js,jsx}"
+      ],
+      "plugins": [
+        "jest"
+      ],
+      "extends": [
+        "plugin:jest/recommended"
+      ]
+    }
   ],
   "rules": {
     "react/react-in-jsx-scope": "off"
