@@ -19,6 +19,7 @@
     "@astrojs/check": "^0.3.4",
     "@astrojs/react": "^3.0.8",
     "@astrojs/tailwind": "^5.0.4",
+    "@notionhq/client": "^2.2.14",
     "@react-hook/media-query": "^1.1.1",
     "@testing-library/react": "^14.1.2",
     "@types/react": "^18.2.45",
