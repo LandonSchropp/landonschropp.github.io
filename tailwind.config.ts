@@ -12,7 +12,7 @@ export default {
       "0.25": `${SPACING / 16}rem`,
       "0.75": `${(SPACING * 3) / 16}rem`,
       ...mapValues(defaultTheme.spacing, (value, key) => {
-        return isNaN(Number(key)) ? value : `${Number(key) * SPACING}rem`;
+        return isNaN(Number(key)) ? value : `${(Number(key) * SPACING) / 4}rem`;
       }),
     },
     screens: {
