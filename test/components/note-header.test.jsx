@@ -127,7 +127,7 @@ describe("NoteHeader", () => {
     });
   });
 
-  describe("when the note does not have any authors", () => {
+  describe("when the note's author is the same as the source", () => {
     beforeEach(() => {
       note.authors = [note.source];
       render(<NoteHeader note={note} content="" />);
