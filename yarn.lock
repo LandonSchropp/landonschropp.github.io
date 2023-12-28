@@ -4936,6 +4936,13 @@ makeerror@1.0.12:
   dependencies:
     tmpl "1.0.5"
 
+markdown-table@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-2.0.0.tgz#194a90ced26d31fe753d8b9434430214c011865b"
+  integrity sha512-Ezda85ToJUBhM6WGaG6veasyym+Tbs3cMAw/ZhOPqXiYsr0jgocBV3j3nx+4lk47plLlIqjwuTm/ywVI+zjJ/A==
+  dependencies:
+    repeat-string "^1.0.0"
+
 markdown-table@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/markdown-table/-/markdown-table-3.0.3.tgz#e6331d30e493127e031dd385488b5bd326e4a6bd"
@@ -5498,7 +5505,7 @@ nlcst-to-string@^3.0.0:
   dependencies:
     "@types/nlcst" "^1.0.0"
 
-node-fetch@^2.6.1:
+node-fetch@2, node-fetch@^2.6.1:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.7.0.tgz#d0f0fa6e3e2dc1d27efcd8ad99d550bda94d187d"
   integrity sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==
@@ -5531,6 +5538,14 @@ normalize-svg-path@^1.0.0:
   integrity sha512-r9KHKG2UUeB5LoTouwDzBy2VxXlHsiM6fyLQvnJa0S5hrhzqElH/CH7TUGhT1fVvIYBIKf3OpY4YJ4CK+iaqHg==
   dependencies:
     svg-arc-to-cubic-bezier "^3.0.0"
+
+notion-to-md@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/notion-to-md/-/notion-to-md-3.1.1.tgz#4ffc08f7aa86e4a4511878f2bfe8e77ac46069bb"
+  integrity sha512-Zaa2P1B9Rx99bevFYTGuUMYbbfdHn2G1AZMsytYGDWIJjr6Ie1qp/8CorpwVUh1qrquES/V2PkEREqCuTu1zKA==
+  dependencies:
+    markdown-table "^2.0.0"
+    node-fetch "2"
 
 npm-run-path@^4.0.1:
   version "4.0.1"
@@ -6204,6 +6219,11 @@ remeda@^1.33.0:
   version "1.33.0"
   resolved "https://registry.yarnpkg.com/remeda/-/remeda-1.33.0.tgz#3d894340f4bb02b95456c28b0394383ff4cf7435"
   integrity sha512-GExMiOhTB0eg1Rc7hvBMBNxwlVRYIulGfIj5pkuuAfy9HB3ms4PmLvbhMMjQ2btoCit0iN7eQmHgwTaGZTVWwg==
+
+repeat-string@^1.0.0:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
+  integrity sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==
 
 request-light@^0.7.0:
   version "0.7.0"
