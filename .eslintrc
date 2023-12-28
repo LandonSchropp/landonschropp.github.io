@@ -8,35 +8,21 @@
   "parser": "@typescript-eslint/parser",
   "overrides": [
     {
-      "files": [
-        "*.{tsx,jsx}"
-      ],
-      "extends": [
-        "plugin:react/recommended"
-      ]
+      "files": ["*.{tsx,jsx}"],
+      "extends": ["plugin:react/recommended"]
     },
     {
-      "files": [
-        "*.astro"
-      ],
+      "files": ["*.astro"],
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "extraFileExtensions": [
-          ".astro"
-        ]
+        "extraFileExtensions": [".astro"]
       }
     },
     {
-      "files": [
-        "*.test.{ts,tsx,js,jsx}"
-      ],
-      "plugins": [
-        "jest"
-      ],
-      "extends": [
-        "plugin:jest/recommended"
-      ]
+      "files": ["*.test.{ts,tsx,js,jsx}"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"]
     }
   ],
   "rules": {
