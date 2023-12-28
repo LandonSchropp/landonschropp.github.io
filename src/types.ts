@@ -1,10 +1,14 @@
+import type { CATEGORIES } from "./constants";
+
+export type Category = (typeof CATEGORIES)[number];
+
 export type NoteSummary = {
   id: string;
   title: string;
   slug: string;
   authors: string[];
   date: Date;
-  category: string;
+  category: Category;
   media: string;
   source: string;
   url: string;
