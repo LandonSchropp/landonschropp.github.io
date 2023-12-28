@@ -1,6 +1,7 @@
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { NoteSummary } from "../types";
 import { fetchDatabasePages, optionalValue } from "./notion";
+import { isCategory } from "../type-guards";
 
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
 
@@ -22,6 +23,10 @@ function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
     if (value === undefined) {
       throw new Error(`The downloaded note '${note.id}' is missing the '${key}' property.`);
     }
+  }
+
+  if (!isCategory(note.category!)) {
+    throw new Error("Could not recognize the note's category.");
   }
 
   return note as NoteSummary;
