@@ -1,44 +1,21 @@
-import { Client, collectPaginatedAPI, isFullPage } from "@notionhq/client";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { NotionToMarkdown } from "notion-to-md";
 import type { NoteSummary } from "../types";
+import { fetchDatabasePages, optionalValue } from "./notion";
 
-const NOTION_API_TOKEN = process.env.NOTION_API_TOKEN;
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
 
-if (!NOTION_API_TOKEN) {
-  throw new Error("You must set the NOTION_API_TOKEN environment variable.");
-}
-
-const notion = new Client({ auth: NOTION_API_TOKEN });
-const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
-
-export function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
-  if (
-    page.properties.Title?.type !== "title" ||
-    page.properties.Slug?.type !== "rich_text" ||
-    page.properties.Authors?.type !== "rich_text" ||
-    page.properties.Date?.type !== "date" ||
-    page.properties.Category?.type !== "select" ||
-    page.properties.Media?.type !== "select" ||
-    page.properties.Source?.type !== "rich_text" ||
-    page.properties.URL?.type !== "url" ||
-    page.properties.Published?.type !== "checkbox"
-  ) {
-    throw new Error("The notes database schema differs from the expected schema.");
-  }
-
+function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
   const note = {
     id: page.id,
-    title: page.properties.Title.title[0]?.plain_text,
-    slug: page.properties.Slug.rich_text[0]?.plain_text,
-    authors: page.properties.Authors.rich_text[0]?.plain_text.split(/\s*,\s*/) ?? [],
-    date: page.properties.Date.date ? new Date(page.properties.Date.date.start) : undefined,
-    category: page.properties.Category.select?.name,
-    media: page.properties.Media.select?.name,
-    source: page.properties.Source.rich_text[0]?.plain_text,
-    url: page.properties.URL.url ?? undefined,
-    published: page.properties.Published.checkbox,
+    title: optionalValue(page, "Title", "title"),
+    slug: optionalValue(page, "Slug", "rich_text"),
+    authors: optionalValue(page, "Authors", "rich_text")?.split(/\s*,\s*/) ?? [],
+    date: optionalValue(page, "Date", "date"),
+    category: optionalValue(page, "Category", "select"),
+    media: optionalValue(page, "Media", "select"),
+    source: optionalValue(page, "Source", "rich_text"),
+    url: optionalValue(page, "URL", "url"),
+    published: optionalValue(page, "Published", "checkbox"),
   };
 
   for (const [key, value] of Object.entries(note)) {
@@ -51,19 +28,5 @@ export function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary 
 }
 
 export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
-  return (await collectPaginatedAPI(notion.databases.query, { database_id: NOTES_DATABASE_ID }))
-    .filter(isFullPage)
-    .map(pageObjectResponseToNote);
-}
-
-export async function fetchNoteContent(id: string): Promise<string> {
-  const content = notionToMarkdown.toMarkdownString(
-    await notionToMarkdown.pageToMarkdown(id),
-  ).parent;
-
-  if (content === undefined) {
-    throw new Error(`The downloaded note '${id}' is missing its content.`);
-  }
-
-  return content;
+  return (await fetchDatabasePages(NOTES_DATABASE_ID)).map(pageObjectResponseToNote);
 }
