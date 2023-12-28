@@ -1,11 +1,11 @@
 ---
 import ContentLayout from "../layouts/content.astro";
-import { fetchNotes } from "../data/notes";
+import { fetchNoteSummaries } from "../data/notes";
 
-let notes = await fetchNotes();
+let noteSummaries = await fetchNoteSummaries();
 ---
 
 <ContentLayout title="Content" description="Description">
   <h1>Content</h1>
-  {notes}
+  {noteSummaries}
 </ContentLayout>
