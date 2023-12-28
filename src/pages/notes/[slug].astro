@@ -1,0 +1,23 @@
+---
+import ContentLayout from "../../layouts/content.astro";
+import { fetchNoteSummaries, fetchNoteContent } from "../../data/notes";
+
+export async function getStaticPaths() {
+  let noteSummaries = await fetchNoteSummaries();
+
+  return noteSummaries.map((noteSummary) => {
+    return {
+      params: { slug: noteSummary.slug },
+      props: { noteSummary },
+    };
+  });
+}
+
+let { noteSummary } = Astro.props;
+let note: Note = { ...noteSummary, content: await fetchNoteContent(noteSummary.id) };
+---
+
+<ContentLayout title="Content" description="Description">
+  <h1>{note.title}</h1>
+  <p>{note.content}</p>
+</ContentLayout>

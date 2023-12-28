@@ -1,6 +1,7 @@
 import { Client, collectPaginatedAPI, isFullPage } from "@notionhq/client";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { NotionToMarkdown } from "notion-to-md";
+import type { NoteSummary } from "../types";
 
 const NOTION_API_TOKEN = process.env.NOTION_API_TOKEN;
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
@@ -12,24 +13,7 @@ if (!NOTION_API_TOKEN) {
 const notion = new Client({ auth: NOTION_API_TOKEN });
 const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
 
-type NoteWithoutContent = {
-  id: string;
-  title: string;
-  slug: string;
-  authors: string[];
-  date: Date;
-  category: string;
-  media: string;
-  source: string;
-  url: string;
-  published: boolean;
-};
-
-export interface NoteWithContent extends NoteWithoutContent {
-  content: string;
-}
-
-export function pageObjectResponseToNote(page: PageObjectResponse): NoteWithoutContent {
+export function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
   if (
     page.properties.Title?.type !== "title" ||
     page.properties.Slug?.type !== "rich_text" ||
@@ -63,40 +47,23 @@ export function pageObjectResponseToNote(page: PageObjectResponse): NoteWithoutC
     }
   }
 
-  return note as NoteWithoutContent;
+  return note as NoteSummary;
 }
 
-export async function fetchNotes(): Promise<NoteWithoutContent[]> {
+export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
   return (await collectPaginatedAPI(notion.databases.query, { database_id: NOTES_DATABASE_ID }))
     .filter(isFullPage)
     .map(pageObjectResponseToNote);
 }
 
-export async function fetchNote(slug: string): Promise<NoteWithContent> {
-  const response = await notion.databases.query({
-    database_id: NOTES_DATABASE_ID,
-    filter: {
-      property: "Slug",
-      rich_text: {
-        equals: slug,
-      },
-    },
-  });
-
-  const page = response.results[0]!;
-
-  if (response.results.length !== 1 || !isFullPage(page)) {
-    throw new Error(`The note with slug '${slug}' does not exist.`);
-  }
-
-  const note = pageObjectResponseToNote(page);
+export async function fetchNoteContent(id: string): Promise<string> {
   const content = notionToMarkdown.toMarkdownString(
-    await notionToMarkdown.pageToMarkdown(page.id),
+    await notionToMarkdown.pageToMarkdown(id),
   ).parent;
 
   if (content === undefined) {
-    throw new Error(`The note with slug '${slug}' does not have any content.`);
+    throw new Error(`The downloaded note '${id}' is missing its content.`);
   }
 
-  return { ...note, content };
+  return content;
 }
