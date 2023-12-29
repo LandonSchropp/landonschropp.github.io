@@ -1,5 +1,5 @@
 ---
-import ContentLayout from "../layouts/content.astro";
+import { ContentLayout } from "../layouts/content-layout";
 import { fetchNoteSummaries } from "../data/notes";
 
 let noteSummaries = await fetchNoteSummaries();
