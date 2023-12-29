@@ -2,6 +2,7 @@ import { Client, collectPaginatedAPI, isFullPage } from "@notionhq/client";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { NotionToMarkdown } from "notion-to-md";
 import NodeFetchCache, { FileSystemCache } from "node-fetch-cache";
+import { marked } from "marked";
 
 const NOTION_API_TOKEN = process.env.NOTION_API_TOKEN;
 
@@ -93,4 +94,9 @@ export async function fetchPageMarkdown(id: string): Promise<string> {
   }
 
   return content;
+}
+
+export async function fetchPageHtml(databaseID: string): Promise<string> {
+  const markdown = await fetchPageMarkdown(databaseID);
+  return marked.parse(markdown);
 }

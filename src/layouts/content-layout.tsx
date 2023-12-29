@@ -15,14 +15,13 @@ import { BaseLayout } from "./base-layout";
 type ContentLayoutProps = {
   title: string;
   description: string;
+  children: React.ReactNode;
 };
 
-export function ContentLayout({ title, description }: ContentLayoutProps) {
+export function ContentLayout({ title, description, children }: ContentLayoutProps) {
   return (
     <BaseLayout title={title} description={description}>
-      <main className="overflow-auto max-w-[70ch] mx-auto px-2 md:px-4">
-        <slot />
-      </main>
+      <main className="overflow-auto max-w-[70ch] mx-auto px-2 md:px-4">{children}</main>
     </BaseLayout>
   );
 }
