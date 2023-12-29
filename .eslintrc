@@ -9,7 +9,10 @@
   "overrides": [
     {
       "files": ["*.{tsx,jsx}"],
-      "extends": ["plugin:react/recommended"]
+      "extends": ["plugin:react/recommended"],
+      "rules": {
+        "react/react-in-jsx-scope": "off"
+      }
     },
     {
       "files": ["*.astro"],
@@ -25,9 +28,6 @@
       "extends": ["plugin:jest/recommended"]
     }
   ],
-  "rules": {
-    "react/react-in-jsx-scope": "off"
-  },
   "env": {
     "browser": true,
     "es6": true,
