@@ -1,4 +1,3 @@
 a {
-  color: inherit;
-  color: var(--theme-accent-color);
+  @apply text-inherit text-theme-accent;
 }

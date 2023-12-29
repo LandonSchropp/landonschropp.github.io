@@ -1,5 +1,3 @@
 code {
-  @apply px-0.25 py-0.75 font-mono text-sm rounded-s box-decoration-clone;
-
-  background-color: var(--theme-background-highlight-color);
+  @apply px-0.75 py-0.25 font-mono text-sm rounded-s box-decoration-clone bg-theme-backgroundHighlight;
 }
