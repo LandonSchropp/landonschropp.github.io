@@ -15,7 +15,7 @@ li {
 }
 
 li::before {
-  @apply absolute text-theme-accent left-[calc(-1 * theme("spacing.4"))];
+  @apply absolute text-theme-accent left-[calc(-1*theme("spacing.4"))];
 }
 
 ul li::before {
