@@ -1,6 +1,8 @@
 ---
+import type { Note } from "../../types";
 import ContentLayout from "../../layouts/content.astro";
-import { fetchNoteSummaries, fetchNoteContent } from "../../data/notes";
+import { fetchNoteSummaries } from "../../data/notes";
+import { fetchPageMarkdown } from "../../data/notion";
 
 export async function getStaticPaths() {
   let noteSummaries = await fetchNoteSummaries();
@@ -14,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 let { noteSummary } = Astro.props;
-let note: Note = { ...noteSummary, content: await fetchNoteContent(noteSummary.id) };
+let note: Note = { ...noteSummary, content: await fetchPageMarkdown(noteSummary.id) };
 ---
 
 <ContentLayout title="Content" description="Description">
