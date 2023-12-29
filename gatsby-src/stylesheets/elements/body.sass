@@ -3,35 +3,3 @@ body
 
   // TODO: Is this a bug? Should this have an var in it?
   +tag-color(--theme-accent-color)
-
-  height: 100%
-
-  // HACK: This is a quick hack to prevent margins from collapsing outside of the body.
-  display: flex
-  flex-direction: column
-
-  // HACK: For some reason, React Helmet doesn't seem to be able to handle data-theme being applied
-  // to the body in Layout, *and* other data attributes being applied elsewhere. Rather than fight
-  // that limitation, this uses the body classes appended by use-dark-mode.
-  &.dark-mode
-    --theme-background-color: #{ $background-color--dark-theme }
-    --theme-background-highlight-color: #{ $background-highlight-color--dark-theme }
-    --theme-header-color: #{ $header-color--dark-theme }
-    --theme-text-color: #{ $text-color--dark-theme }
-    --theme-light-text-color: #{ $light-text-color--dark-theme }
-    --theme-extra-light-text-color: #{ $extra-light-text-color--dark-theme }
-
-  // HACK: Ditto to the above hack.
-  &.light-mode
-    --theme-background-color: #{ $background-color--light-theme }
-    --theme-background-highlight-color: #{ $background-highlight-color--light-theme }
-    --theme-header-color: #{ $header-color--light-theme }
-    --theme-text-color: #{ $text-color--light-theme }
-    --theme-light-text-color: #{ $light-text-color--light-theme }
-    --theme-extra-light-text-color: #{ $extra-light-text-color--light-theme }
-
-  background-color: var(--theme-background-color)
-  color: var(--theme-text-color)
-
-  & > *
-    flex: 0 0 auto
