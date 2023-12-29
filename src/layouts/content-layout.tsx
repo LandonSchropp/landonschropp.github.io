@@ -1,4 +1,3 @@
----
 import "../styles/content/anchors.css";
 import "../styles/content/audios.css";
 import "../styles/content/blockquotes.css";
@@ -12,17 +11,18 @@ import "../styles/content/paragraphs.css";
 import "../styles/content/pre.css";
 
 import { BaseLayout } from "./base-layout";
-import type { Category } from "../types";
 
-export interface Props {
+type ContentLayoutProps = {
   title: string;
   description: string;
-  category?: Category;
+};
+
+export function ContentLayout({ title, description }: ContentLayoutProps) {
+  return (
+    <BaseLayout title={title} description={description}>
+      <main className="overflow-auto max-w-[70ch] mx-auto px-2 md:px-4">
+        <slot />
+      </main>
+    </BaseLayout>
+  );
 }
-
-const { title, description } = Astro.props;
----
-
-<BaseLayout title={title} description={description}>
-  <slot />
-</BaseLayout>
