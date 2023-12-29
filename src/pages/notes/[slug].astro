@@ -19,6 +19,6 @@ let { noteSummary } = Astro.props;
 let note: Note = { ...noteSummary, content: await fetchPageHtml(noteSummary.id) };
 ---
 
-<ContentLayout title="Content" description="Description">
+<ContentLayout title="Content" description="Description" category={note.category}>
   <article set:html={note.content} />
 </ContentLayout>

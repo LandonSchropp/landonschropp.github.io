@@ -10,18 +10,34 @@ import "../styles/content/lists.css";
 import "../styles/content/paragraphs.css";
 import "../styles/content/pre.css";
 
+import type { Category } from "../types";
 import { BaseLayout } from "./base-layout";
+import tailwindConfig from "../../tailwind.config.js";
 
 type ContentLayoutProps = {
   title: string;
   description: string;
   children: React.ReactNode;
+  category?: Category;
 };
 
-export function ContentLayout({ title, description, children }: ContentLayoutProps) {
+const COLORS = {
+  Business: tailwindConfig.theme.colors.cornflower,
+  Development: tailwindConfig.theme.colors.purple,
+  Design: tailwindConfig.theme.colors.amethyst,
+  Psychology: tailwindConfig.theme.colors.mulberry,
+  Chess: tailwindConfig.theme.colors.bittersweet,
+  Other: tailwindConfig.theme.colors.bittersweet,
+} as const;
+
+export function ContentLayout({ title, description, children, category }: ContentLayoutProps) {
+  const style = { "--accent-color": COLORS[category ?? "Business"] } as React.CSSProperties;
+
   return (
     <BaseLayout title={title} description={description}>
-      <main className="overflow-auto max-w-[70ch] mx-auto px-2 md:px-4">{children}</main>
+      <main style={style} className="overflow-auto max-w-[70ch] mx-auto px-2 md:px-4">
+        {children}
+      </main>
     </BaseLayout>
   );
 }
