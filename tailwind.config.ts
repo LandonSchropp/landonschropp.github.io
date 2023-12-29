@@ -26,6 +26,7 @@ export default {
       mono: ["Source Code Pro", "serif"],
     },
     colors: {
+      inherit: "inherit",
       blackOut: "#1b1c21",
       mineShaft: "#292b33",
       emperor: "#484a54",
