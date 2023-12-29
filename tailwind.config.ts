@@ -22,8 +22,8 @@ export default {
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
-      serif: ["Gentium Book Basic", "serif"],
-      mono: ["Source Code Pro", "serif"],
+      serif: ["Gentium Book Plus", "serif"],
+      mono: ["Source Code Pro", "monospace"],
     },
     colors: {
       inherit: "inherit",
