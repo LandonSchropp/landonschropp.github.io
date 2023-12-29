@@ -44,7 +44,7 @@ export function optionalValue(page: PageObjectResponse, name: string, type: stri
   if (property.type !== type) {
     throw new Error(
       `The page '${page.id}' has a '${name}' property of type '${property.type}' instead of the ` +
-      `expected type '${type}'.`,
+        `expected type '${type}'.`,
     );
   }
 
