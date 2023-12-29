@@ -8,6 +8,7 @@
     "@LandonSchropp:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
+    "check-types": "tsc --noEmit",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
