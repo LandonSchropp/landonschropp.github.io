@@ -47,6 +47,7 @@ export default {
         text: "var(--text-color)",
         lightText: "var(--light-text-color)",
         extraLightText: "var(--extra-light-text-color)",
+        accent: "var(--text-accent-color)",
       },
     },
   },
