@@ -1,1 +1,8 @@
-export const CATEGORIES = ["book", "article", "video", "podcast", "other"] as const;
+export const CATEGORIES = [
+  "Business",
+  "Development",
+  "Design",
+  "Psychology",
+  "Other",
+  "Chess",
+] as const;
