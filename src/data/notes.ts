@@ -1,7 +1,7 @@
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import type { NoteSummary } from "../types";
 import { fetchDatabasePages, optionalValue } from "./notion";
-import { isCategory } from "../type-guards";
+import { assertNoteSummary } from "../type-guards";
 
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
 
@@ -19,17 +19,9 @@ function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
     published: optionalValue(page, "Published", "checkbox"),
   };
 
-  for (const [key, value] of Object.entries(note)) {
-    if (value === undefined) {
-      throw new Error(`The downloaded note '${note.id}' is missing the '${key}' property.`);
-    }
-  }
+  assertNoteSummary(note);
 
-  if (!isCategory(note.category!)) {
-    throw new Error("Could not recognize the note's category.");
-  }
-
-  return note as NoteSummary;
+  return note;
 }
 
 export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
