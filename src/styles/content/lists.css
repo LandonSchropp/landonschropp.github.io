@@ -11,7 +11,7 @@ ol {
 }
 
 li {
-  @apply mx-2 relative;
+  @apply my-2 relative;
 }
 
 li::before {

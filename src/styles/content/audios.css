@@ -1,4 +1,4 @@
 audio {
   width: 100%;
-  @apply w-full mx-6;
+  @apply w-full my-6;
 }
