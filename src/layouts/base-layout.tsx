@@ -9,8 +9,10 @@ export interface BaseLayoutProps {
 
 export function BaseLayout({ title, description, children }: BaseLayoutProps) {
   return (
-    <html>
+    <html lang="en-us">
       <head>
+        <meta charSet="utf-8" />
+
         <title>{title}</title>
         <meta name="description" content={description} />
 
