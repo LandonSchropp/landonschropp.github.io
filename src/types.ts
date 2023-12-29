@@ -1,6 +1,7 @@
-import type { CATEGORIES } from "./constants";
+import type { CATEGORIES, MEDIAS } from "./constants";
 
 export type Category = (typeof CATEGORIES)[number];
+export type Media = (typeof MEDIAS)[number];
 
 export type NoteSummary = {
   id: string;
