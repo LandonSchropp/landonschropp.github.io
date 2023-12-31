@@ -13,6 +13,14 @@ import "../styles/content/pre.css";
 import type { Category } from "../types";
 import { BaseLayout } from "./base-layout";
 import tailwindConfig from "../../tailwind.config.js";
+import {
+  BUSINESS_CATEGORY,
+  DEVELOPMENT_CATEGORY,
+  DESIGN_CATEGORY,
+  PSYCHOLOGY_CATEGORY,
+  CHESS_CATEGORY,
+  OTHER_CATEGORY,
+} from "../constants";
 
 type ContentLayoutProps = {
   title: string;
@@ -22,12 +30,12 @@ type ContentLayoutProps = {
 };
 
 const COLORS = {
-  Business: tailwindConfig.theme.colors.cornflower,
-  Development: tailwindConfig.theme.colors.purple,
-  Design: tailwindConfig.theme.colors.amethyst,
-  Psychology: tailwindConfig.theme.colors.mulberry,
-  Chess: tailwindConfig.theme.colors.bittersweet,
-  Other: tailwindConfig.theme.colors.bittersweet,
+  [BUSINESS_CATEGORY]: tailwindConfig.theme.colors.cornflower,
+  [DEVELOPMENT_CATEGORY]: tailwindConfig.theme.colors.purple,
+  [DESIGN_CATEGORY]: tailwindConfig.theme.colors.amethyst,
+  [PSYCHOLOGY_CATEGORY]: tailwindConfig.theme.colors.mulberry,
+  [CHESS_CATEGORY]: tailwindConfig.theme.colors.bittersweet,
+  [OTHER_CATEGORY]: tailwindConfig.theme.colors.bittersweet,
 } as const;
 
 export function ContentLayout({ title, description, children, category }: ContentLayoutProps) {
