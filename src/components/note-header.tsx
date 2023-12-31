@@ -1,13 +1,17 @@
-import PropTypes from "prop-types";
-import React from "react";
-
-import { ARTICLE_MEDIA, LIVE_TALK_MEDIA, OTHER_MEDIA, PODCAST_MEDIA } from "../data/constants";
-import { NotePropType } from "../data/prop-types";
+import { LIVE_TALK_MEDIA, PODCAST_MEDIA, ARTICLE_MEDIA, OTHER_MEDIA } from "../constants";
 import { baseURL } from "../utilities/url";
 import { Header } from "./header";
 import { Listify } from "./listify";
+import type { Note } from "../types";
 
-function NoteByline({ note, sourceText, authorText, sourceFirst }) {
+type NoteBylineProps = {
+  note: Note;
+  sourceText: string;
+  authorText: string;
+  sourceFirst?: boolean;
+};
+
+function NoteByline({ note, sourceText, authorText, sourceFirst = false }: NoteBylineProps) {
   if (
     note.title === note.source &&
     (note.authors.length === 0 || (note.authors.length === 1 && note.authors[0] === note.title))
@@ -15,12 +19,12 @@ function NoteByline({ note, sourceText, authorText, sourceFirst }) {
     return null;
   }
 
-  let source = (
+  const source = (
     <a className="header__link" href={baseURL(note.url)}>
       {note.source}
     </a>
   );
-  let authors = <Listify items={note.authors} />;
+  const authors = <Listify items={note.authors} />;
 
   if (note.authors.length === 0 || (note.authors.length === 1 && note.authors[0] === note.source)) {
     return (
@@ -47,18 +51,11 @@ function NoteByline({ note, sourceText, authorText, sourceFirst }) {
   );
 }
 
-NoteByline.defaultProps = {
-  sourceFirst: false,
+type NoteSubheadTextProps = {
+  note: Note;
 };
 
-NoteByline.propTypes = {
-  note: NotePropType.isRequired,
-  sourceText: PropTypes.node.isRequired,
-  authorText: PropTypes.node.isRequired,
-  sourceFirst: PropTypes.bool,
-};
-
-function NoteSubheadText({ note }) {
+function NoteSubheadText({ note }: NoteSubheadTextProps) {
   if (note.media === LIVE_TALK_MEDIA) {
     return <NoteByline note={note} authorText="A talk by" sourceText="I attended at" />;
   }
@@ -80,11 +77,11 @@ function NoteSubheadText({ note }) {
   );
 }
 
-NoteSubheadText.propTypes = {
-  note: NotePropType.isRequired,
+type NoteHeaderProps = {
+  note: Note;
 };
 
-export function NoteHeader({ note }) {
+export function NoteHeader({ note }: NoteHeaderProps) {
   return (
     <Header
       className="note-header"
@@ -95,7 +92,3 @@ export function NoteHeader({ note }) {
     />
   );
 }
-
-NoteHeader.propTypes = {
-  note: NotePropType.isRequired,
-};

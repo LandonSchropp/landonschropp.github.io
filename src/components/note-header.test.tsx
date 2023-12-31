@@ -1,32 +1,34 @@
 import { render, screen } from "@testing-library/react";
-import React from "react";
 
 import { NoteHeader } from "../../src/components/note-header";
 import {
+  BUSINESS_CATEGORY,
+  OTHER_MEDIA,
   ARTICLE_MEDIA,
   BOOK_MEDIA,
-  BUSINESS_CATEGORY,
   LIVE_TALK_MEDIA,
-  OTHER_MEDIA,
-  PODCAST_MEDIA,
   TALK_MEDIA,
+  PODCAST_MEDIA,
   VIDEO_MEDIA,
-} from "../../src/data/constants";
+} from "../constants";
+import type { Note } from "../types";
 
 describe("NoteHeader", () => {
-  let note;
+  let note: Note;
 
   beforeEach(() => {
     note = {
+      id: "1234",
       title: "Title",
       authors: ["Author"],
       category: BUSINESS_CATEGORY,
       media: OTHER_MEDIA,
-      date: "1988-10-05",
+      date: new Date("1988-10-05"),
       published: true,
       slug: "slug",
       source: "Source",
       url: "https://example.com",
+      content: "",
     };
   });
 
@@ -35,7 +37,7 @@ describe("NoteHeader", () => {
       note.media = OTHER_MEDIA;
       note.authors = [note.title];
       note.source = note.title;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -52,7 +54,7 @@ describe("NoteHeader", () => {
       note.media = OTHER_MEDIA;
       note.authors = [];
       note.source = note.title;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -68,7 +70,7 @@ describe("NoteHeader", () => {
     beforeEach(() => {
       note.media = OTHER_MEDIA;
       note.authors = [note.source];
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -84,7 +86,7 @@ describe("NoteHeader", () => {
     beforeEach(() => {
       note.media = OTHER_MEDIA;
       note.authors = [];
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -100,7 +102,7 @@ describe("NoteHeader", () => {
     beforeEach(() => {
       note.media = OTHER_MEDIA;
       note.source = note.title;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -115,7 +117,7 @@ describe("NoteHeader", () => {
   describe("when the note's authors, source and title are all distinct", () => {
     beforeEach(() => {
       note.media = OTHER_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -130,7 +132,7 @@ describe("NoteHeader", () => {
   describe("when the note's author is the same as the source", () => {
     beforeEach(() => {
       note.authors = [note.source];
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -145,7 +147,7 @@ describe("NoteHeader", () => {
   describe("when the note has two authors", () => {
     beforeEach(() => {
       note.authors = ["Sylvester Stallone", "Dolph Lundgren"];
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -162,7 +164,7 @@ describe("NoteHeader", () => {
   describe("when the note has three or more authors", () => {
     beforeEach(() => {
       note.authors = ["Sylvester Stallone", "Dolph Lundgren", "Carl Weathers"];
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -179,7 +181,7 @@ describe("NoteHeader", () => {
   describe("when the note is for an article", () => {
     beforeEach(() => {
       note.media = ARTICLE_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -196,7 +198,7 @@ describe("NoteHeader", () => {
   describe("when the note is for a book", () => {
     beforeEach(() => {
       note.media = BOOK_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -211,7 +213,7 @@ describe("NoteHeader", () => {
   describe("when the note is for a live talk", () => {
     beforeEach(() => {
       note.media = LIVE_TALK_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -228,7 +230,7 @@ describe("NoteHeader", () => {
   describe("when the note is for a talk", () => {
     beforeEach(() => {
       note.media = TALK_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -243,7 +245,7 @@ describe("NoteHeader", () => {
   describe("when the note is for a podcast", () => {
     beforeEach(() => {
       note.media = PODCAST_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
@@ -260,7 +262,7 @@ describe("NoteHeader", () => {
   describe("when the note is for a video", () => {
     beforeEach(() => {
       note.media = VIDEO_MEDIA;
-      render(<NoteHeader note={note} content="" />);
+      render(<NoteHeader note={note} />);
     });
 
     it("sets the title", () => {
