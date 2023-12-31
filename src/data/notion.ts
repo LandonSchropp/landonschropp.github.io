@@ -2,7 +2,7 @@ import { Client, collectPaginatedAPI, isFullPage } from "@notionhq/client";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { NotionToMarkdown } from "notion-to-md";
 import NodeFetchCache, { FileSystemCache } from "node-fetch-cache";
-import createMarkdownIt from "markdown-it";
+import { markdownToHtml } from "../utilities/markdown";
 
 const NOTION_API_TOKEN = process.env.NOTION_API_TOKEN;
 
@@ -17,8 +17,6 @@ const fetch = NodeFetchCache.create({
     ttl: 1000 * 60 * 60 * 24,
   }),
 });
-
-const markdownIt = createMarkdownIt();
 
 const notion = new Client({ auth: NOTION_API_TOKEN, fetch });
 const notionToMarkdown = new NotionToMarkdown({ notionClient: notion });
@@ -47,7 +45,7 @@ export function optionalValue(page: PageObjectResponse, name: string, type: stri
   if (property.type !== type) {
     throw new Error(
       `The page '${page.id}' has a '${name}' property of type '${property.type}' instead of the ` +
-      `expected type '${type}'.`,
+        `expected type '${type}'.`,
     );
   }
 
@@ -99,6 +97,5 @@ export async function fetchPageMarkdown(id: string): Promise<string> {
 }
 
 export async function fetchPageHtml(databaseID: string): Promise<string> {
-  const markdown = await fetchPageMarkdown(databaseID);
-  return markdownIt.render(markdown);
+  return markdownToHtml(await fetchPageMarkdown(databaseID));
 }
