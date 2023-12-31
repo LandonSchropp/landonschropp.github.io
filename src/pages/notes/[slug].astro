@@ -1,5 +1,6 @@
 ---
-import type { Note } from "../../types";
+import type { Note as NoteType } from "../../types";
+import { Note } from "../../components/note";
 import { ContentLayout } from "../../layouts/content-layout";
 import { fetchNoteSummaries } from "../../data/notes";
 import { fetchPageHtml } from "../../data/notion";
@@ -16,9 +17,16 @@ export async function getStaticPaths() {
 }
 
 let { noteSummary } = Astro.props;
-let note: Note = { ...noteSummary, content: await fetchPageHtml(noteSummary.id) };
+let note: NoteType = { ...noteSummary, content: await fetchPageHtml(noteSummary.id) };
 ---
 
 <ContentLayout title="Content" description="Description" category={note.category}>
-  <article set:html={note.content} />
+  <Note note={note} />
+  {
+    /*
+    HACK: Astro refuses to include the styles without an extra element here. I should be able 
+    remove this as soon as I add Tailwind typography.
+    */
+  }
+  <p></p>
 </ContentLayout>
