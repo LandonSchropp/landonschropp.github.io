@@ -35,7 +35,7 @@ export function ContentLayout({ title, description, children, category }: Conten
 
   return (
     <BaseLayout title={title} description={description}>
-      <main style={style} className="overflow-auto max-w-[70ch] mx-auto px-2 md:px-4">
+      <main style={style} className="max-w-[70ch] mx-auto px-2 md:px-4">
         {children}
       </main>
     </BaseLayout>
