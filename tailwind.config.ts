@@ -1,20 +1,34 @@
 import { mapValues } from "remeda";
 import type { Config } from "tailwindcss";
 import defaultTheme from "tailwindcss/defaultTheme";
+import camelCase from "camelcase";
+
+// @ts-expect-error The tailwind-theme-swapper library is not written in TypeScript. It's not worth
+// it to define types since it's only used in this config file.
+import themeSwapper from "tailwindcss-theme-swapper";
+import {
+  BUSINESS_CATEGORY,
+  DEVELOPMENT_CATEGORY,
+  DESIGN_CATEGORY,
+  PSYCHOLOGY_CATEGORY,
+  CHESS_CATEGORY,
+  OTHER_CATEGORY,
+} from "./src/constants";
 
 const SPACING = 1.25;
 
-export default {
+const TAILWIND_CONFIG = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
-  extend: {
-    theme: {
+  theme: {
+    extend: {
       fontSize: {
         "2xs": "0.625rem",
       },
+      boxShadow: {
+        outline: `0 0 0 ${(SPACING * 3) / 16}rem`,
+      },
     },
-  },
-  theme: {
     spacing: {
       "0.25": `${SPACING / 16}rem`,
       "0.75": `${(SPACING * 3) / 16}rem`,
@@ -48,16 +62,69 @@ export default {
       amethyst: "#955fc2",
       mulberry: "#ca6399",
       bittersweet: "#ff6d71",
-      theme: {
-        background: "var(--background-color)",
-        backgroundHighlight: "var(--background-highlight-color)",
-        header: "var(--header-color)",
-        text: "var(--text-color)",
-        lightText: "var(--light-text-color)",
-        extraLightText: "var(--extra-light-text-color)",
-        accent: "var(--accent-color)",
-      },
     },
   },
-  plugins: [],
+} satisfies Config;
+
+const CATEGORY_COLORS = {
+  [BUSINESS_CATEGORY]: TAILWIND_CONFIG.theme.colors.cornflower,
+  [DEVELOPMENT_CATEGORY]: TAILWIND_CONFIG.theme.colors.purple,
+  [DESIGN_CATEGORY]: TAILWIND_CONFIG.theme.colors.amethyst,
+  [PSYCHOLOGY_CATEGORY]: TAILWIND_CONFIG.theme.colors.mulberry,
+  [CHESS_CATEGORY]: TAILWIND_CONFIG.theme.colors.bittersweet,
+  [OTHER_CATEGORY]: TAILWIND_CONFIG.theme.colors.bittersweet,
+} as const;
+
+export default {
+  ...TAILWIND_CONFIG,
+  plugins: [
+    themeSwapper({
+      themes: [
+        {
+          name: "base",
+          selectors: [":root"],
+          theme: {
+            colors: {
+              theme: {
+                accent: TAILWIND_CONFIG.theme.colors.cornflower,
+                background: TAILWIND_CONFIG.theme.colors.white,
+                backgroundHighlight: TAILWIND_CONFIG.theme.colors.bleach,
+                extraLightText: TAILWIND_CONFIG.theme.colors.gray,
+                header: TAILWIND_CONFIG.theme.colors.blackOut,
+                lightText: TAILWIND_CONFIG.theme.colors.emperor,
+                text: TAILWIND_CONFIG.theme.colors.mineShaft,
+              },
+            },
+          },
+        },
+        {
+          name: "dark",
+          mediaQuery: "@media (prefers-color-scheme: dark)",
+          theme: {
+            colors: {
+              theme: {
+                background: TAILWIND_CONFIG.theme.colors.blackOut,
+                backgroundHighlight: TAILWIND_CONFIG.theme.colors.mineShaft,
+                header: TAILWIND_CONFIG.theme.colors.white,
+                text: TAILWIND_CONFIG.theme.colors.bleach,
+                lightText: TAILWIND_CONFIG.theme.colors.steam,
+                extraLightText: TAILWIND_CONFIG.theme.colors.greatFalls,
+              },
+            },
+          },
+        },
+        ...Object.entries(CATEGORY_COLORS).map(([category, color]) => ({
+          name: camelCase(category),
+          selectors: [`[data-category="${category}"]`],
+          theme: {
+            colors: {
+              theme: {
+                accent: color,
+              },
+            },
+          },
+        })),
+      ],
+    }),
+  ],
 } satisfies Config;
