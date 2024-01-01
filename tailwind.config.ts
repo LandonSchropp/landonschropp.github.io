@@ -7,6 +7,13 @@ const SPACING = 1.25;
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
+  extend: {
+    theme: {
+      fontSize: {
+        "2xs": "0.625rem",
+      },
+    },
+  },
   theme: {
     spacing: {
       "0.25": `${SPACING / 16}rem`,
