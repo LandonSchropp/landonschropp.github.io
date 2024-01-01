@@ -14,6 +14,7 @@ import {
   CHESS_CATEGORY,
   OTHER_CATEGORY,
 } from "./src/constants";
+import plugin from "tailwindcss/plugin";
 
 const SPACING = 1.25;
 
@@ -79,6 +80,9 @@ const CATEGORY_COLORS = {
 export default {
   ...TAILWIND_CONFIG,
   plugins: [
+    plugin(({ addVariant }) => {
+      addVariant("hocus", ["&:hover", "&:focus-visible"]);
+    }),
     themeSwapper({
       themes: [
         {
