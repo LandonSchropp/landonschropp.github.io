@@ -27,6 +27,7 @@ const TAILWIND_CONFIG = {
       },
       boxShadow: {
         outline: `0 0 0 ${(SPACING * 3) / 16}rem`,
+        largeOutline: `0 0 0 ${SPACING * 0.5}rem`,
       },
     },
     spacing: {
