@@ -13,8 +13,8 @@ export function Tag({ category, onClick, selected }: TagProps) {
       className={`
         inline-block bg-theme-accent px-2 py-0.75 text-white font-sans font-normal 
         uppercase text-xs md:text-2xs tracking-wider border-none rounded-full no-underline
-        transition-shadow duration-75 ease-in [&[aria-checked="true"]]:shadow-outline 
-        [&[aria-checked="true"]]:shadow-theme-accent/50
+        transition-shadow duration-75 ease-in selected:shadow-outline 
+        selected:shadow-theme-accent/50 hocus:shadow-outline hocus:shadow-theme-accent/50 
       `}
       data-category={category}
       onClick={() => onClick(category)}

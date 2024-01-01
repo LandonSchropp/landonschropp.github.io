@@ -82,6 +82,7 @@ export default {
   plugins: [
     plugin(({ addVariant }) => {
       addVariant("hocus", ["&:hover", "&:focus-visible"]);
+      addVariant("selected", ["&[aria-checked='true']"]);
     }),
     themeSwapper({
       themes: [
