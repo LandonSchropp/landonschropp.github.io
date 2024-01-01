@@ -19,11 +19,7 @@ function NoteByline({ note, sourceText, authorText, sourceFirst = false }: NoteB
     return null;
   }
 
-  const source = (
-    <a className="header__link" href={baseURL(note.url)}>
-      {note.source}
-    </a>
-  );
+  const source = <a href={baseURL(note.url)}>{note.source}</a>;
   const authors = <Listify items={note.authors} />;
 
   if (note.authors.length === 0 || (note.authors.length === 1 && note.authors[0] === note.source)) {
@@ -84,7 +80,6 @@ type NoteHeaderProps = {
 export function NoteHeader({ note }: NoteHeaderProps) {
   return (
     <Header
-      className="note-header"
       superText="My personal notes for"
       title={note.title}
       subText={<NoteSubheadText note={note} />}
