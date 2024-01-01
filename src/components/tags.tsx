@@ -19,7 +19,7 @@ type TagGroupProps = {
 // The tag groups exist to allow the tags to wrap in a grouped fashion. This prevents one "lone tag"
 // from sitting on the next line on standard mobile sizes.
 function TagGroup({ children }: TagGroupProps) {
-  return <span className="flex gap-2 [&>*]:my-1">{children}</span>;
+  return <span className="flex gap-2">{children}</span>;
 }
 
 export function Tags() {
@@ -33,7 +33,7 @@ export function Tags() {
   );
 
   return (
-    <div className="flex flex-wrap justify-center gap-2">
+    <div className="flex flex-wrap justify-center gap-2 my-4">
       <TagGroup>
         <Tag
           category={BUSINESS_CATEGORY}
