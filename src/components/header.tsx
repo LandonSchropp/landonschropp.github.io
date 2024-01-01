@@ -3,7 +3,7 @@ import { isNil } from "remeda";
 
 type HeaderLinkProps = {
   children: ReactNode;
-  href: string;
+  href?: string | undefined;
 };
 
 function HeaderLink({ children, href }: HeaderLinkProps) {
@@ -19,12 +19,11 @@ function HeaderLink({ children, href }: HeaderLinkProps) {
 }
 
 type HeaderProps = {
-  className: string;
   children?: ReactNode;
-  superText: ReactNode;
+  superText?: ReactNode;
   title: ReactNode;
   subText: ReactNode;
-  href: string;
+  href?: string | undefined;
 };
 
 export function Header({ children, superText, title, href, subText }: HeaderProps) {
