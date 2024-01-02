@@ -1,6 +1,6 @@
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { NoteSummary } from "../types";
-import { fetchDatabasePages, optionalValue } from "./notion";
+import type { Note, NoteSummary } from "../types";
+import { fetchDatabasePages, fetchPageHtml, optionalValue } from "./notion";
 import { assertNoteSummary } from "../type-guards";
 
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
@@ -28,4 +28,17 @@ export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
   return (await fetchDatabasePages(NOTES_DATABASE_ID))
     .map(pageObjectResponseToNote)
     .filter((note) => process.env.NODE_ENV === "development" || note.published);
+}
+
+export async function fetchNote(slug: string): Promise<Note> {
+  let noteSummary = (await fetchNoteSummaries()).find((note) => note.slug === slug);
+
+  if (!noteSummary) {
+    throw new Error(`Note with slug "${slug}" not found`);
+  }
+
+  return {
+    ...noteSummary,
+    content: await fetchPageHtml(noteSummary.id),
+  };
 }
