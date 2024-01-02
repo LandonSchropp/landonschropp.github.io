@@ -10,7 +10,6 @@ export default defineConfig({
   vite: {
     plugins: [
       svgr({
-        include: "**/*.svg?react",
         svgrOptions: {
           plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
           svgoConfig: {

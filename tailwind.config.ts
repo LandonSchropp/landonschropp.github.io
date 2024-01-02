@@ -34,6 +34,7 @@ const TAILWIND_CONFIG = {
     spacing: {
       "0.25": `${SPACING / 16}rem`,
       "0.75": `${(SPACING * 3) / 16}rem`,
+      "3.6": `${SPACING * 0.9}rem`,
       ...mapValues(defaultTheme.spacing, (value, key) => {
         return isNaN(Number(key)) ? value : `${(Number(key) * SPACING) / 4}rem`;
       }),
