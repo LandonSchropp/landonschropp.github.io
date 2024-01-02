@@ -5,34 +5,30 @@ import { useLocation } from "./use-location";
 import { useStore } from "@nanostores/react";
 import { atom } from "nanostores";
 
-function hrefCategory(href: string): Category | null {
-  const url = new URL(href);
-  const category = url.searchParams.get("category");
-
-  if (!isCategory(category)) {
-    return null;
-  }
-
-  return category;
-}
-
 export const $category = atom<Category | null>(null);
 
 export function useCategory() {
-  const { href, replaceHref } = useLocation();
+  const { href, popSearchParam } = useLocation();
   const category = useStore($category);
 
+  // Use a store to house the category so it's stored globally.
   const setCategory = useCallback((category: Category | null) => $category.set(category), []);
+
+  // If the URL changes, update the state.
+  useEffect(() => {
+    if (category) {
+      document.body.dataset.category = category;
+    } else {
+      delete document.body.dataset.category;
+    }
+  }, [category]);
 
   // If the URL contains a category, remove it and store it in the state.
   useEffect(() => {
-    const url = new URL(href);
-    const category = hrefCategory(href);
+    const category = popSearchParam("category");
 
-    if (category) {
+    if (isCategory(category)) {
       setCategory(category);
-      url.searchParams.delete("category");
-      replaceHref(url.toString());
     }
   }, [href]);
 
