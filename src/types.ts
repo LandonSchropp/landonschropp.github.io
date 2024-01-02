@@ -26,7 +26,7 @@ export type ArticleSummary = {
   slug: string;
   date: Date;
   description: string;
-  url: string;
+  url: string | null;
   publisher: string | null;
   published: boolean;
 };

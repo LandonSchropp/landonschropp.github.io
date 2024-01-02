@@ -71,7 +71,7 @@ export function isArticleSummary(article: unknown): article is ArticleSummary {
     typeof article.slug === "string" &&
     article.date instanceof Date &&
     typeof article.description === "string" &&
-    typeof article.url === "string" &&
+    (typeof article.url === "string" || article.url === null) &&
     (typeof article.publisher === "string" || article.publisher === null) &&
     typeof article.published === "boolean"
   );
