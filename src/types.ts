@@ -19,3 +19,18 @@ export type NoteSummary = {
 export interface Note extends NoteSummary {
   content: string;
 }
+
+export type ArticleSummary = {
+  id: string;
+  title: string;
+  slug: string;
+  date: Date;
+  description: string;
+  url: string;
+  publisher: string | null;
+  published: boolean;
+};
+
+export interface Article extends ArticleSummary {
+  content: string;
+}

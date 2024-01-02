@@ -1,5 +1,5 @@
 import { CATEGORIES, MEDIAS } from "./constants";
-import type { Category, Media, NoteSummary } from "./types";
+import type { ArticleSummary, Category, Media, NoteSummary } from "./types";
 
 function assert(condition: unknown, message?: string): asserts condition {
   if (condition === false) throw new Error(message);
@@ -52,4 +52,34 @@ export function isNoteSummary(note: unknown): note is NoteSummary {
 
 export function assertNoteSummary(note: unknown): asserts note is NoteSummary {
   assert(isNoteSummary(note), `Expected a NoteSummary, but got '${JSON.stringify(note)}'.`);
+}
+
+export function isArticleSummary(article: unknown): article is ArticleSummary {
+  return (
+    typeof article === "object" &&
+    article !== null &&
+    "id" in article &&
+    "title" in article &&
+    "slug" in article &&
+    "date" in article &&
+    "description" in article &&
+    "url" in article &&
+    "publisher" in article &&
+    "published" in article &&
+    typeof article.id === "string" &&
+    typeof article.title === "string" &&
+    typeof article.slug === "string" &&
+    article.date instanceof Date &&
+    typeof article.description === "string" &&
+    typeof article.url === "string" &&
+    (typeof article.publisher === "string" || article.publisher === null) &&
+    typeof article.published === "boolean"
+  );
+}
+
+export function assertArticleSummary(article: unknown): asserts article is ArticleSummary {
+  assert(
+    isArticleSummary(article),
+    `Expected an ArticleSummary, but got '${JSON.stringify(article)}'.`,
+  );
 }
