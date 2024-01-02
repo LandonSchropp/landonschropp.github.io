@@ -78,12 +78,16 @@ const CATEGORY_COLORS = {
   [OTHER_CATEGORY]: TAILWIND_CONFIG.theme.colors.bittersweet,
 } as const;
 
+const HOCUS_SELECTORS = ["&:hover", "&:focus-visible"];
+const SELECTED_SELECTORS = ["&[aria-checked='true']", "&[aria-current='page']"];
+
 export default {
   ...TAILWIND_CONFIG,
   plugins: [
     plugin(({ addVariant }) => {
-      addVariant("hocus", ["&:hover", "&:focus-visible"]);
-      addVariant("selected", ["&[aria-checked='true']"]);
+      addVariant("hocus", HOCUS_SELECTORS);
+      addVariant("selected", SELECTED_SELECTORS);
+      addVariant("shocus", [...HOCUS_SELECTORS, ...SELECTED_SELECTORS]);
     }),
     themeSwapper({
       themes: [
