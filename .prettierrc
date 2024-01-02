@@ -1,4 +1,4 @@
 {
-  "plugins": ["prettier-plugin-astro"],
+  "plugins": [],
   "printWidth": 100
 }
