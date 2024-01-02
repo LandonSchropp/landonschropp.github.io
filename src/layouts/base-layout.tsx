@@ -1,13 +1,15 @@
 import "../styles/root.css";
 import flannel from "../images/flannel.png";
+import type { Category } from "../types";
 
 export interface BaseLayoutProps {
   title: string;
   description: string;
   children: React.ReactNode;
+  category?: Category | undefined;
 }
 
-export function BaseLayout({ title, description, children }: BaseLayoutProps) {
+export function BaseLayout({ title, description, children, category }: BaseLayoutProps) {
   return (
     <html lang="en-us">
       <head>
@@ -32,7 +34,10 @@ export function BaseLayout({ title, description, children }: BaseLayoutProps) {
 
         <link rel="shortcut icon" type="image/png" href={flannel.src} />
       </head>
-      <body className="bg-theme-background text-theme-text flex flex-col h-full *:flex-auto">
+      <body
+        className="bg-theme-background text-theme-text flex flex-col h-full *:flex-auto"
+        data-category={category}
+      >
         {children}
       </body>
     </html>
