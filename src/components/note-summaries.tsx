@@ -22,11 +22,11 @@ export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
   const filteredNotes = isNil(category)
     ? noteSummaries
     : noteSummaries.filter((note) => {
-      return (
-        (category === OTHER_CATEGORY && note.category === CHESS_CATEGORY) ||
-        note.category.includes(category)
-      );
-    });
+        return (
+          (category === OTHER_CATEGORY && note.category === CHESS_CATEGORY) ||
+          note.category.includes(category)
+        );
+      });
 
   return (
     <>
