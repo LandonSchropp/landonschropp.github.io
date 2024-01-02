@@ -1,3 +1,4 @@
+import { MainNavigation } from "@/components/main-navigation";
 import "../../styles/content/anchors.css";
 import "../../styles/content/audios.css";
 import "../../styles/content/blockquotes.css";
@@ -15,5 +16,10 @@ type ContentLayoutProps = {
 };
 
 export default function NotesLayout({ children }: ContentLayoutProps) {
-  return <main className="max-w-[70ch] mx-auto px-2 md:px-4">{children}</main>;
+  return (
+    <>
+      <MainNavigation />
+      <main className="max-w-[70ch] mx-auto px-2 md:px-4">{children}</main>
+    </>
+  );
 }
