@@ -1,3 +1,5 @@
+"use client";
+
 import type { NoteSummary as NoteSummaryType } from "../types";
 
 import { Header } from "../components/header";

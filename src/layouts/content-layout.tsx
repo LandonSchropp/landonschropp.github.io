@@ -1,4 +1,3 @@
-import { MainNavigation } from "../components/main-navigation";
 import "../styles/content/anchors.css";
 import "../styles/content/audios.css";
 import "../styles/content/blockquotes.css";
@@ -24,7 +23,6 @@ type ContentLayoutProps = {
 export function ContentLayout({ title, description, children, category }: ContentLayoutProps) {
   return (
     <BaseLayout title={title} description={description} category={category}>
-      <MainNavigation />
       <main className="max-w-[70ch] mx-auto px-2 md:px-4">{children}</main>
     </BaseLayout>
   );

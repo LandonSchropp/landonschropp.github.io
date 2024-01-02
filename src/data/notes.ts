@@ -27,5 +27,5 @@ function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
 export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
   return (await fetchDatabasePages(NOTES_DATABASE_ID))
     .map(pageObjectResponseToNote)
-    .filter((note) => import.meta.env.MODE === "development" || note.published);
+    .filter((note) => process.env.NODE_ENV === "development" || note.published);
 }
