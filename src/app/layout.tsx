@@ -1,17 +1,11 @@
 import "../styles/root.css";
 import flannel from "../images/flannel.png";
-import type { Category } from "../types";
-import { BUSINESS_CATEGORY } from "@/constants";
 
 export interface BaseLayoutProps {
   children: React.ReactNode;
-  category?: Category | undefined;
 }
 
 export default function Layout({ children }: BaseLayoutProps) {
-  // TODO: Dynamically set the page layout.
-  let category = BUSINESS_CATEGORY;
-
   return (
     <html lang="en-us">
       <head>
@@ -29,10 +23,7 @@ export default function Layout({ children }: BaseLayoutProps) {
 
         <link rel="shortcut icon" type="image/png" href={flannel.src} />
       </head>
-      <body
-        className="bg-theme-background text-theme-text flex flex-col h-full *:flex-auto"
-        data-category={category}
-      >
+      <body className="bg-theme-background text-theme-text flex flex-col h-full *:flex-auto">
         {children}
       </body>
     </html>
