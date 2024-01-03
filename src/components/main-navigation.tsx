@@ -30,7 +30,7 @@ function Link({ href, children, icon = false }: LinkProps) {
 
 export function MainNavigation() {
   return (
-    <nav className="my-3 px-2 text-sm text-theme-extraLightText lg:flex lg:justify-center">
+    <nav className="my-3 flex gap-3 px-2 text-sm text-theme-extraLightText lg:justify-between max-lg:flex-col">
       <div className="flex justify-center">
         <Link href="/">
           <span className="max-md:hidden">Landon Schropp</span>
@@ -40,7 +40,7 @@ export function MainNavigation() {
         <Link href="/articles">Writing</Link>
         <Link href="/notes">Notes</Link>
       </div>
-      <div className="max-lg:my-3 flex justify-center lg:ml-auto">
+      <div className="flex justify-center">
         <Link href="https://github.com/LandonSchropp" icon>
           <Icon className="main-navigation__icon" name="github" alt="GitHub" />
         </Link>
