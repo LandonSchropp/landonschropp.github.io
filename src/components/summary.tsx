@@ -14,9 +14,9 @@ export function Summary({ title, url, category, children, style }: SummaryProps)
   return (
     <a
       className={`
-        my-4 pl-[calc(theme('spacing.3')-3px)] border-l-[3px] block text-theme-text 
-        border-theme-accent hocus:bg-theme-backgroundHighlight hocus:shadow-largeOutline 
-        hocus:shadow-theme-backgroundHighlight outline-none transition-all duration-75 ease-in 
+        my-4 block border-l-[3px] border-theme-accent pl-[calc(theme('spacing.3')-3px)] 
+        text-theme-text outline-none transition-all 
+        duration-75 ease-in hocus:bg-theme-backgroundHighlight hocus:shadow-largeOutline hocus:shadow-theme-backgroundHighlight 
       `}
       href={url}
       style={style}

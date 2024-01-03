@@ -1,3 +1,3 @@
 hr {
-  @apply h-[2px] bg-theme-lightText opacity-25 border-0;
+  @apply h-[2px] border-0 bg-theme-lightText opacity-25;
 }

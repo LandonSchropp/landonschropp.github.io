@@ -19,7 +19,7 @@ function SvgDataShapeLink({ shape, href, title }: SvgDataShapeLinkProps) {
   return (
     // BUGFIX: A pointer cursor is not the default in Safari. 😕
     <a
-      className="pointer-events-[bounding-box] cursor-pointer hocus:fill-cornflower [&:hover>path]:fill-inherit [&:focus-visible>path]:fill-inherit"
+      className="pointer-events-[bounding-box] cursor-pointer hocus:fill-cornflower [&:focus-visible>path]:fill-inherit [&:hover>path]:fill-inherit"
       href={href}
     >
       <title>{title}</title>

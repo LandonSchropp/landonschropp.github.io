@@ -11,10 +11,10 @@ export function Tag({ category, onClick, selected }: TagProps) {
     <button
       type="button"
       className={`
-        inline-block bg-theme-accent px-2 py-0.75 text-white font-sans font-normal 
-        uppercase text-xs md:text-2xs tracking-wider border-none rounded-full no-underline
-        transition-shadow duration-75 ease-in selected:shadow-outline 
-        selected:shadow-theme-accent/50 hocus:shadow-outline hocus:shadow-theme-accent/50 
+        inline-block rounded-full border-none bg-theme-accent px-2 py-0.75 font-sans 
+        text-xs font-normal uppercase tracking-wider text-white no-underline transition-shadow
+        duration-75 ease-in hocus:shadow-outline hocus:shadow-theme-accent/50 
+        selected:shadow-outline selected:shadow-theme-accent/50 md:text-2xs 
       `}
       data-category={category}
       onClick={() => onClick(category)}

@@ -24,7 +24,7 @@ export default function Layout({ children }: BaseLayoutProps) {
         <link rel="shortcut icon" type="image/png" href={flannel.src} />
       </head>
       <body
-        className="bg-theme-background text-theme-text flex flex-col h-full *:flex-auto"
+        className="flex h-full flex-col bg-theme-background text-theme-text *:flex-auto"
         suppressHydrationWarning
       >
         {children}

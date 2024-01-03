@@ -12,7 +12,7 @@ function HeaderLink({ children, href }: HeaderLinkProps) {
   }
 
   return (
-    <a className="no-underline hover:underline decoration-[0..075em]" href={href}>
+    <a className="no-underline decoration-[0..075em] hover:underline" href={href}>
       {children}
     </a>
   );
@@ -31,14 +31,14 @@ export function Header({ children, superText, title, href, subText }: HeaderProp
     "mx-auto my-1 m-width[50ch] text-base font-normal font-serif italic text-theme-lightText [&_a]:underline";
 
   return (
-    <header className="text-center my-6">
+    <header className="my-6 text-center">
       <h1 className="my-0">
         <span className={`block ${superSubClassName}`}>{superText}</span>{" "}
         <span className="block">
           <HeaderLink href={href}>{title}</HeaderLink>
         </span>
       </h1>
-      <div className={`block my-2 ${superSubClassName}`} data-test-id="sub-text">
+      <div className={`my-2 block ${superSubClassName}`} data-test-id="sub-text">
         {subText}
       </div>
       {children}

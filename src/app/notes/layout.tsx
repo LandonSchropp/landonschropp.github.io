@@ -19,7 +19,7 @@ export default function NotesLayout({ children }: ContentLayoutProps) {
   return (
     <>
       <MainNavigation />
-      <main className="max-w-[70ch] mx-auto px-2 md:px-4">{children}</main>
+      <main className="mx-auto max-w-[70ch] px-2 md:px-4">{children}</main>
     </>
   );
 }

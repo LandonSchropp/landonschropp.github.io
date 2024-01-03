@@ -11,11 +11,11 @@ ol {
 }
 
 li {
-  @apply my-2 relative;
+  @apply relative my-2;
 }
 
 li::before {
-  @apply absolute text-theme-accent left-[calc(-1*theme("spacing.4"))];
+  @apply absolute left-[calc(-1*theme("spacing.4"))] text-theme-accent;
 }
 
 ul li::before {

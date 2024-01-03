@@ -21,7 +21,7 @@ export function Icon({ name, alt, className }: IconProps) {
 
   return (
     <IconComponent
-      className={`inline-block fill-[currentColor] align-middle w-3.6 h-3.6 ${className}`}
+      className={`inline-block h-3.6 w-3.6 fill-[currentColor] align-middle ${className}`}
       title={alt}
     />
   );

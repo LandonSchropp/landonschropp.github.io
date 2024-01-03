@@ -11,9 +11,9 @@ type SvgDataContainerProps = {
 
 export default function SvgDataContainer({ viewBox, children, title }: SvgDataContainerProps) {
   return (
-    <main className="flex items-center justify-center w-full h-full">
+    <main className="flex h-full w-full items-center justify-center">
       <svg
-        className="block w-[calc(100%-6vw)] h-[calc(100%-6vw)] portrait:w-[calc(100%-8vh)] portrait:h-[calc(100%-8vh)]"
+        className="block h-[calc(100%-6vw)] w-[calc(100%-6vw)] portrait:h-[calc(100%-8vh)] portrait:w-[calc(100%-8vh)]"
         viewBox={viewBox}
       >
         <defs>
