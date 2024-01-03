@@ -2,6 +2,7 @@ import type { NoteSummary as NoteSummaryType } from "../types";
 
 import { Listify } from "../components/listify";
 import { isEmpty, isNil } from "remeda";
+import { Summary } from "./summary";
 
 type NoteBylineProps = {
   note: NoteSummaryType;
@@ -45,20 +46,8 @@ type NoteSummaryProps = {
 
 export function NoteSummary({ note }: NoteSummaryProps) {
   return (
-    <a
-      className={`
-        my-4 pl-[calc(theme('spacing.3')-3px)] border-l-[3px] block text-theme-text 
-        border-theme-accent hocus:bg-theme-backgroundHighlight hocus:shadow-largeOutline 
-        hocus:shadow-theme-backgroundHighlight outline-none transition-all duration-75 ease-in 
-        max-md:
-      `}
-      href={`/notes/${note.slug}`}
-      data-category={note.category}
-    >
-      <h3 className="my-0 text-base">{note.title}</h3>
-      <p className="my-0">
-        <NoteByline note={note} />
-      </p>
-    </a>
+    <Summary url={`/notes/${note.slug}`} title={note.title} category={note.category}>
+      <NoteByline note={note} />
+    </Summary>
   );
 }
