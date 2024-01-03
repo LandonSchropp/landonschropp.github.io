@@ -14,6 +14,12 @@ export default {
       use: ["@svgr/webpack"],
     });
 
+    config.module.rules.push({
+      test: /\.svg$/i,
+      resourceQuery: /raw/,
+      type: "asset/source",
+    });
+
     return config;
   },
 };
