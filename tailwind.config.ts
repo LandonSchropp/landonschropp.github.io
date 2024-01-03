@@ -18,6 +18,8 @@ import plugin from "tailwindcss/plugin";
 
 const SPACING = 1.25;
 
+export const PORTRAIT_MEDIA_QUERY = "(max-aspect-ratio: 1/1)";
+
 const TAILWIND_CONFIG = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
@@ -43,7 +45,7 @@ const TAILWIND_CONFIG = {
       md: "420px",
       lg: "960px",
       xl: "1280px",
-      portrait: { raw: "(max-aspect-ratio: 1/1)" },
+      portrait: { raw: PORTRAIT_MEDIA_QUERY },
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
