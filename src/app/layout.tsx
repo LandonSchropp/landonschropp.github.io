@@ -1,5 +1,5 @@
 import flannel from "../images/flannel.png";
-import "../styles/root.css";
+import "../styles/index.css";
 
 export interface BaseLayoutProps {
   children: React.ReactNode;
@@ -7,7 +7,7 @@ export interface BaseLayoutProps {
 
 export default function Layout({ children }: BaseLayoutProps) {
   return (
-    <html lang="en-us">
+    <html lang="en-us" className="h-full text-[19px] md:text-[21px] lg:text-[22px]">
       <head>
         {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,7 +24,10 @@ export default function Layout({ children }: BaseLayoutProps) {
         <link rel="shortcut icon" type="image/png" href={flannel.src} />
       </head>
       <body
-        className="flex h-full flex-col bg-theme-background text-theme-text *:flex-[0_0_auto]"
+        className={
+          "flex h-full flex-col bg-theme-background font-serif font-normal " +
+          "text-theme-text *:flex-[0_0_auto]"
+        }
         suppressHydrationWarning
       >
         {children}
