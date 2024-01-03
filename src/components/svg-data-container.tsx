@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import flannel from "../images/flannel.png";
 
@@ -7,11 +9,7 @@ type SvgDataContainerProps = {
   title: string;
 };
 
-export default async function SvgDataContainer({
-  viewBox,
-  children,
-  title,
-}: SvgDataContainerProps) {
+export default function SvgDataContainer({ viewBox, children, title }: SvgDataContainerProps) {
   return (
     <main className="flex items-center justify-center w-full h-full">
       <svg
@@ -19,7 +17,7 @@ export default async function SvgDataContainer({
         viewBox={viewBox}
       >
         <defs>
-          <pattern id="flannel" patternUnits="userSpaceOnUse" width={80} height={80}>
+          <pattern id="svg-data-background" patternUnits="userSpaceOnUse" width={80} height={80}>
             <image href={flannel.src} x={0} y={0} width={80} height={80} />
           </pattern>
         </defs>
