@@ -45,6 +45,9 @@ const TAILWIND_CONFIG = {
       md: "420px",
       lg: "960px",
       xl: "1280px",
+      "max-md": { max: "419px" },
+      "max-lg": { max: "959px" },
+      "max-xl": { max: "1279px" },
       portrait: { raw: PORTRAIT_MEDIA_QUERY },
     },
     fontFamily: {
