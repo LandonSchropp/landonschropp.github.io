@@ -43,6 +43,7 @@ const TAILWIND_CONFIG = {
       md: "420px",
       lg: "960px",
       xl: "1280px",
+      portrait: { raw: "(max-aspect-ratio: 1/1)" },
     },
     fontFamily: {
       sans: ["Open Sans", "sans-serif"],
