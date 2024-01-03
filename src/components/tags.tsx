@@ -31,7 +31,7 @@ export function Tags() {
   );
 
   return (
-    <div className="my-4 flex flex-wrap justify-center gap-2">
+    <div className="mb-4 mt-3.5 flex flex-wrap justify-center gap-2">
       <TagGroup>
         <Tag
           category={BUSINESS_CATEGORY}
