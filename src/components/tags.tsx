@@ -1,5 +1,3 @@
-// TODO: Add missing chess category.
-
 import { useCallback } from "react";
 import {
   BUSINESS_CATEGORY,
@@ -8,7 +6,7 @@ import {
   PSYCHOLOGY_CATEGORY,
   OTHER_CATEGORY,
 } from "../constants";
-import { useCategory } from "../hooks/use-category";
+import { useCategoryFilter } from "../hooks/use-category-filter";
 import type { Category } from "../types";
 import { Tag } from "./tag";
 
@@ -23,7 +21,7 @@ function TagGroup({ children }: TagGroupProps) {
 }
 
 export function Tags() {
-  const [category, setCategory] = useCategory();
+  const [category, setCategory] = useCategoryFilter();
 
   const toggleCategory = useCallback(
     (updatedCategory: Category | null) => {

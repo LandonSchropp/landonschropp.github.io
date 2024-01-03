@@ -1,9 +1,9 @@
 "use client";
 
-import { useCategory } from "@/hooks/use-category";
 import { useEffect } from "react";
 import type { Note as NoteType } from "../types";
 import { NoteHeader } from "./note-header";
+import { useCategory } from "@/hooks/use-category";
 
 type NoteProps = {
   note: NoteType;

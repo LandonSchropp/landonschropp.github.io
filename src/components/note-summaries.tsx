@@ -5,7 +5,7 @@ import type { NoteSummary as NoteSummaryType } from "../types";
 import { Header } from "../components/header";
 import { isNil } from "remeda";
 import { Tags } from "./tags";
-import { useCategory } from "../hooks/use-category";
+import { useCategoryFilter } from "../hooks/use-category-filter";
 import { NoteSummary } from "./note-summary";
 import { CHESS_CATEGORY, OTHER_CATEGORY } from "../constants";
 
@@ -14,7 +14,7 @@ type NoteSummariesProps = {
 };
 
 export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
-  const [category] = useCategory();
+  const [category] = useCategoryFilter();
 
   // Filter the notes if a category is selected.
   // NOTE: I'm using includes here to accommodate the `Live Talk` category, which should be included
