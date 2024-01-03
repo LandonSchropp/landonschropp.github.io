@@ -9,10 +9,18 @@ type LinkProps = {
   icon?: boolean;
 };
 
+function isCurrent(pathname: string | null, href: string) {
+  if (pathname === null) return false;
+
+  if (href === "/") {
+    return href === pathname;
+  }
+
+  return pathname.startsWith(href);
+}
+
 function Link({ href, children, icon = false }: LinkProps) {
   const pathname = usePathname();
-  const isCurrent = pathname !== null && href.startsWith(pathname);
-
   const className = icon
     ? "hocus:text-theme-accent"
     : "font-sans text-theme-lightText shocus:shadow-[0_3px] shadow-theme-accent shocus:text-theme-accent";
@@ -21,7 +29,7 @@ function Link({ href, children, icon = false }: LinkProps) {
     <a
       className={`mx-2 block text-inherit transition-all duration-75 ease-in ${className}`}
       href={href}
-      {...(isCurrent && { "aria-current": "page" })}
+      {...(isCurrent(pathname, href) && { "aria-current": "page" })}
     >
       {children}
     </a>
