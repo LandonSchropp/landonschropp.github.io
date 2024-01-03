@@ -3,13 +3,7 @@ import { XmlDocument, XmlElement, parseXml } from "@rgrove/parse-xml";
 import notFoundData from "@/images/data/not-found.svg?raw";
 import landscapeData from "@/images/data/landscape.svg?raw";
 import portraitData from "@/images/data/portrait.svg?raw";
-import { SVGData, SvgDataShape } from "@/types";
-
-const SVGS = {
-  notFound: notFoundData,
-  landscape: landscapeData,
-  portrait: portraitData,
-} as const;
+import { SvgData, SvgDataShape } from "@/types";
 
 function isXmlElement(value: unknown): value is XmlElement {
   return value instanceof XmlElement;
@@ -40,10 +34,10 @@ export function findXmlElement(element: XmlDocument | XmlElement, name: string):
 /**
  * Extracts the data from an SVG.
  */
-export function parseSvgData(name: keyof typeof SVGS): SVGData {
-  let svg = findXmlElement(parseXml(SVGS[name]), "svg");
+export function parseSvgData(svg: string): SvgData {
+  let svgElement = findXmlElement(parseXml(svg), "svg");
 
-  let paths = findXmlElements(svg, "path").map((element) => {
+  let paths = findXmlElements(svgElement, "path").map((element) => {
     return {
       type: "path" as const,
       id: element.attributes.id,
@@ -51,7 +45,7 @@ export function parseSvgData(name: keyof typeof SVGS): SVGData {
     };
   });
 
-  let polygons = findXmlElements(svg, "path").map((element) => {
+  let polygons = findXmlElements(svgElement, "path").map((element) => {
     return {
       type: "polygon" as const,
       id: element.attributes.id,
@@ -59,15 +53,13 @@ export function parseSvgData(name: keyof typeof SVGS): SVGData {
     };
   });
 
-  return { viewBox: svg.attributes.viewBox, shapes: [...paths, ...polygons] };
+  return { viewBox: svgElement.attributes.viewBox, shapes: [...paths, ...polygons] };
 }
 
-export function findShape(shapes: SvgDataShape[], id: string): SvgDataShape {
-  let shape = shapes.find((shape) => shape.id === id);
+export const NOT_FOUND_SVG_DATA = parseSvgData(notFoundData);
+export const PORTRAIT_SVG_DATA = parseSvgData(portraitData);
+export const LANDSCAPE_SVG_DATA = parseSvgData(landscapeData);
 
-  if (!shape) {
-    throw new Error(`Could not find shape with id '${id}'`);
-  }
-
-  return shape;
+export function findShape(shapes: SvgDataShape[], id: string): SvgDataShape | null {
+  return shapes.find((shape) => shape.id === id) ?? null;
 }

@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { findShape, parseSvgData } from "@/data/svg";
+import { NOT_FOUND_SVG_DATA, findShape } from "@/data/svg";
 import { SvgDataShape } from "@/components/svg-data-shape";
 import SvgDataContainer from "@/components/svg-data-container";
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function NotFoundPage() {
-  let { viewBox, shapes } = parseSvgData("notFound");
+  let { viewBox, shapes } = NOT_FOUND_SVG_DATA;
   let shape = findShape(shapes, "not-found");
 
   return (
