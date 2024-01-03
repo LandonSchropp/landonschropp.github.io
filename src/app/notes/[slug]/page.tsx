@@ -3,8 +3,7 @@ import { fetchNoteSummaries, fetchNote } from "@/data/notes";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
-  let noteSummaries = await fetchNoteSummaries();
-  return noteSummaries.map(({ slug }) => ({ slug }));
+  return (await fetchNoteSummaries()).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params: { slug } }: NotePageProps): Promise<Metadata> {
