@@ -22,7 +22,7 @@ export function ArticleSummaries({ articleSummaries }: ArticleSummariesProps) {
         ultimate guide to building modern CSS layouts with flexbox.
       </Callout>
 
-      <section className="note-summaries">
+      <section>
         {articleSummaries.map((articleSummary, index) => {
           return (
             <ArticleSummary

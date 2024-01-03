@@ -50,15 +50,15 @@ export function MainNavigation() {
       </div>
       <div className="flex justify-center">
         <Link href="https://github.com/LandonSchropp" icon>
-          <Icon className="main-navigation__icon" name="github" alt="GitHub" />
+          <Icon name="github" alt="GitHub" />
         </Link>
 
         <Link href="mailto:schroppl@gmail.com" icon>
-          <Icon className="main-navigation__icon" name="email" alt="Email" />
+          <Icon name="email" alt="Email" />
         </Link>
 
         <Link href="https://www.linkedin.com/in/landonschropp" icon>
-          <Icon className="main-navigation__icon" name="linkedin" alt="LinkedIn" />
+          <Icon name="linkedin" alt="LinkedIn" />
         </Link>
       </div>
     </nav>
