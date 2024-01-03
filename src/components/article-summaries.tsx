@@ -15,7 +15,7 @@ export function ArticleSummaries({ articleSummaries }: ArticleSummariesProps) {
     <>
       <Header
         title="Writing"
-        subText={<>Here&apos;s my published writing from all over the web.</>}
+        subText={<>Here are my published articles from all over the web.</>}
       />
 
       <Callout>
