@@ -20,3 +20,6 @@ yarn-error.log*
 
 # Cache
 /cache
+
+# Ignore incremental build files
+tsconfig.tsbuildinfo
