@@ -3,7 +3,8 @@ import { XmlDocument, XmlElement, parseXml } from "@rgrove/parse-xml";
 import notFoundData from "@/images/data/not-found.svg?raw";
 import landscapeData from "@/images/data/landscape.svg?raw";
 import portraitData from "@/images/data/portrait.svg?raw";
-import { SvgData, SvgDataShape } from "@/types";
+import { SvgData, SvgDataPathShape, SvgDataPolygonShape, SvgDataShape } from "@/types";
+import getBounds from "svg-path-bounds";
 
 function isXmlElement(value: unknown): value is XmlElement {
   return value instanceof XmlElement;
@@ -37,15 +38,18 @@ export function findXmlElement(element: XmlDocument | XmlElement, name: string):
 export function parseSvgData(svg: string): SvgData {
   let svgElement = findXmlElement(parseXml(svg), "svg");
 
-  let paths = findXmlElements(svgElement, "path").map((element) => {
+  let paths = findXmlElements(svgElement, "path").map((element): SvgDataPathShape => {
+    let bounds = getBounds(element.attributes.d);
+
     return {
       type: "path" as const,
       id: element.attributes.id,
       d: element.attributes.d,
+      bounds: [bounds[0], bounds[1], bounds[2] - bounds[0], bounds[3] - bounds[1]],
     };
   });
 
-  let polygons = findXmlElements(svgElement, "path").map((element) => {
+  let polygons = findXmlElements(svgElement, "path").map((element): SvgDataPolygonShape => {
     return {
       type: "polygon" as const,
       id: element.attributes.id,

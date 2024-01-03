@@ -39,6 +39,7 @@ export type SvgDataPathShape = {
   id: string;
   type: "path";
   d: string;
+  bounds: [number, number, number, number];
 };
 
 export type SvgDataPolygonShape = {
