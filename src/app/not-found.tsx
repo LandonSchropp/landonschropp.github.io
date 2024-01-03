@@ -14,7 +14,7 @@ export default async function NotFoundPage() {
 
   return (
     <SvgDataContainer viewBox={viewBox} title="404">
-      <SvgDataShape className="fill-[url('#flannel')]" shape={shape} />
+      <SvgDataShape shape={shape} />
     </SvgDataContainer>
   );
 }

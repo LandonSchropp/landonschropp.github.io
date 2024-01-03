@@ -1,11 +1,15 @@
 import type { SvgDataShape as SvgDataShapeType } from "../types";
 
 type SvgDataShapeProps = {
-  className?: string;
-  shape: SvgDataShapeType;
+  shape: SvgDataShapeType | null;
 };
 
-export function SvgDataShape({ className, shape: { type, ...props } }: SvgDataShapeProps) {
+export function SvgDataShape({ shape }: SvgDataShapeProps) {
+  if (!shape) return null;
+
+  let { type, ...props } = shape;
+
+  let className = "fill-[url('#svg-data-background')]";
   switch (type) {
     case "path":
       return <path className={className} {...props} />;
