@@ -1,11 +1,3 @@
-import { mapValues } from "remeda";
-import type { Config } from "tailwindcss";
-import defaultTheme from "tailwindcss/defaultTheme";
-import camelCase from "camelcase";
-
-// @ts-expect-error The tailwind-theme-swapper library is not written in TypeScript. It's not worth
-// it to define types since it's only used in this config file.
-import themeSwapper from "tailwindcss-theme-swapper";
 import {
   BUSINESS_CATEGORY,
   DEVELOPMENT_CATEGORY,
@@ -14,6 +6,13 @@ import {
   CHESS_CATEGORY,
   OTHER_CATEGORY,
 } from "./src/constants";
+import camelCase from "camelcase";
+import { mapValues } from "remeda";
+import type { Config } from "tailwindcss";
+// @ts-expect-error The tailwind-theme-swapper library is not written in TypeScript. It's not worth
+// it to define types since it's only used in this config file.
+import themeSwapper from "tailwindcss-theme-swapper";
+import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
 
 const SPACING = 1.25;

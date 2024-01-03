@@ -1,5 +1,5 @@
-import { Metadata } from "next";
 import { IndexPageSvgData } from "@/components/index-page-svg-data";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Landon Schropp",

@@ -1,5 +1,5 @@
-import "../styles/root.css";
 import flannel from "../images/flannel.png";
+import "../styles/root.css";
 
 export interface BaseLayoutProps {
   children: React.ReactNode;

@@ -1,8 +1,8 @@
-import React, { CSSProperties } from "react";
-import type { ArticleSummary as ArticleSummaryType } from "../types";
-import { isNil } from "remeda";
 import tailwindConfig from "../../tailwind.config";
+import type { ArticleSummary as ArticleSummaryType } from "../types";
 import { Summary } from "./summary";
+import React, { CSSProperties } from "react";
+import { isNil } from "remeda";
 
 const CORNFLOWER = tailwindConfig.theme.colors.cornflower;
 const BITTERSWEET = tailwindConfig.theme.colors.bittersweet;

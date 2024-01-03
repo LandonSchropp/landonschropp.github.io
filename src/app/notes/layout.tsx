@@ -1,4 +1,3 @@
-import { MainNavigation } from "@/components/main-navigation";
 import "../../styles/content/anchors.css";
 import "../../styles/content/audios.css";
 import "../../styles/content/blockquotes.css";
@@ -10,6 +9,7 @@ import "../../styles/content/image.css";
 import "../../styles/content/lists.css";
 import "../../styles/content/paragraphs.css";
 import "../../styles/content/pre.css";
+import { MainNavigation } from "@/components/main-navigation";
 
 type ContentLayoutProps = {
   children: React.ReactNode;

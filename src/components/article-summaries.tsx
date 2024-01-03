@@ -1,8 +1,7 @@
 "use client";
 
-import type { ArticleSummary as ArticleSummaryType } from "../types";
-
 import { Header } from "../components/header";
+import type { ArticleSummary as ArticleSummaryType } from "../types";
 import { ArticleSummary } from "./article-summary";
 import { Callout } from "./callout";
 

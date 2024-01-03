@@ -1,7 +1,7 @@
-import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { assertNoteSummary } from "../type-guards";
 import type { Note, NoteSummary } from "../types";
 import { fetchDatabasePages, fetchPageHtml, optionalValue } from "./notion";
-import { assertNoteSummary } from "../type-guards";
+import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
 

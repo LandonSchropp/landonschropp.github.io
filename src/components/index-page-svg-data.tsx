@@ -1,11 +1,11 @@
 "use client";
 
-import { PORTRAIT_SVG_DATA, findShape, LANDSCAPE_SVG_DATA } from "@/data/svg";
+import { PORTRAIT_MEDIA_QUERY } from "../../tailwind.config";
 import SvgDataContainer from "./svg-data-container";
 import { SvgDataShape } from "./svg-data-shape";
-import { PORTRAIT_MEDIA_QUERY } from "../../tailwind.config";
-import { useMediaQuery } from "@react-hook/media-query";
+import { PORTRAIT_SVG_DATA, findShape, LANDSCAPE_SVG_DATA } from "@/data/svg";
 import type { SvgDataShape as SvgDataShapeType } from "@/types";
+import { useMediaQuery } from "@react-hook/media-query";
 
 type SvgDataShapeLinkProps = {
   shape: SvgDataShapeType | null;

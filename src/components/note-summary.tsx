@@ -1,8 +1,7 @@
-import type { NoteSummary as NoteSummaryType } from "../types";
-
 import { Listify } from "../components/listify";
-import { isEmpty, isNil } from "remeda";
+import type { NoteSummary as NoteSummaryType } from "../types";
 import { Summary } from "./summary";
+import { isEmpty, isNil } from "remeda";
 
 type NoteBylineProps = {
   note: NoteSummaryType;

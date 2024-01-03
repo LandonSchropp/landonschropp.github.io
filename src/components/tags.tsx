@@ -1,4 +1,3 @@
-import { useCallback } from "react";
 import {
   BUSINESS_CATEGORY,
   DEVELOPMENT_CATEGORY,
@@ -9,6 +8,7 @@ import {
 import { useCategoryFilter } from "../hooks/use-category-filter";
 import type { Category } from "../types";
 import { Tag } from "./tag";
+import { useCallback } from "react";
 
 type TagGroupProps = {
   children: React.ReactNode;

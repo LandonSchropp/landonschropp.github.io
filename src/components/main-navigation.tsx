@@ -1,7 +1,7 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { Icon } from "./icon";
+import { usePathname } from "next/navigation";
 
 type LinkProps = {
   href: string;

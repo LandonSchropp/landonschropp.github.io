@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
-
 import { validateDateString } from "../utilities/date";
 import { CATEGORIES, MEDIA } from "./constants";
+import PropTypes from "prop-types";
 
 export const NotePropType = PropTypes.shape({
   title: PropTypes.string.isRequired,

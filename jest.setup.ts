@@ -1,5 +1,5 @@
-import { configure } from "@testing-library/dom";
 import { it } from "@jest/globals";
+import { configure } from "@testing-library/dom";
 
 // Monkey patch Jest so that tests written without a function implementation are marked as `todo`.
 type FunctionParameter = (() => void | undefined) | (() => Promise<unknown>);

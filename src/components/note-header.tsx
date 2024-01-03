@@ -1,8 +1,8 @@
 import { LIVE_TALK_MEDIA, PODCAST_MEDIA, ARTICLE_MEDIA, OTHER_MEDIA } from "../constants";
+import type { Note } from "../types";
 import { baseURL } from "../utilities/url";
 import { Header } from "./header";
 import { Listify } from "./listify";
-import type { Note } from "../types";
 
 type NoteBylineProps = {
   note: Note;

@@ -1,9 +1,8 @@
-import { XmlDocument, XmlElement, parseXml } from "@rgrove/parse-xml";
-
-import notFoundData from "@/images/data/not-found.svg?raw";
 import landscapeData from "@/images/data/landscape.svg?raw";
+import notFoundData from "@/images/data/not-found.svg?raw";
 import portraitData from "@/images/data/portrait.svg?raw";
 import { SvgData, SvgDataPathShape, SvgDataPolygonShape, SvgDataShape } from "@/types";
+import { XmlDocument, XmlElement, parseXml } from "@rgrove/parse-xml";
 import getBounds from "svg-path-bounds";
 
 function isXmlElement(value: unknown): value is XmlElement {

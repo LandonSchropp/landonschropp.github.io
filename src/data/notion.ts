@@ -1,8 +1,8 @@
+import { markdownToHtml } from "../utilities/markdown";
 import { Client, collectPaginatedAPI, isFullPage } from "@notionhq/client";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { NotionToMarkdown } from "notion-to-md";
 import NodeFetchCache, { FileSystemCache } from "node-fetch-cache";
-import { markdownToHtml } from "../utilities/markdown";
+import { NotionToMarkdown } from "notion-to-md";
 
 const NOTION_API_TOKEN = process.env.NOTION_API_TOKEN;
 

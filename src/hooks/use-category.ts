@@ -1,7 +1,7 @@
-import { useCallback, useEffect } from "react";
 import type { Category } from "../types";
 import { useStore } from "@nanostores/react";
 import { atom } from "nanostores";
+import { useCallback, useEffect } from "react";
 
 export const $category = atom<Category | null>(null);
 

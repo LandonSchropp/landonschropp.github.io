@@ -1,5 +1,5 @@
-import { CSSProperties } from "react";
 import type { Category } from "../types";
+import { CSSProperties } from "react";
 
 type SummaryProps = {
   title: string;

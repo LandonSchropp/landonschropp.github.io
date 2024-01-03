@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
 import Book from "../images/icons/book.svg?react";
+import { ReactNode } from "react";
 
 type CalloutProps = {
   children: ReactNode;
@@ -9,7 +9,7 @@ export function Callout({ children }: CalloutProps) {
   return (
     <section
       className={
-        "max-md:grid-rows-[auto_auto] grid items-center gap-3 p-3 md:grid-cols-[auto_1fr] " +
+        "grid items-center gap-3 p-3 md:grid-cols-[auto_1fr] max-md:grid-rows-[auto_auto] " +
         "mx-6 bg-theme-backgroundHighlight md:my-4"
       }
     >
