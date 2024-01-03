@@ -34,3 +34,22 @@ export type ArticleSummary = {
 export interface Article extends ArticleSummary {
   content: string;
 }
+
+export type SvgDataPathShape = {
+  id: string;
+  type: "path";
+  d: string;
+};
+
+export type SvgDataPolygonShape = {
+  id: string;
+  type: "polygon";
+  points: string;
+};
+
+export type SvgDataShape = SvgDataPathShape | SvgDataPolygonShape;
+
+export type SVGData = {
+  viewBox: string;
+  shapes: SvgDataShape[];
+};

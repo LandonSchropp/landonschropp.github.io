@@ -19,6 +19,7 @@
     "@nanostores/react": "^0.7.1",
     "@notionhq/client": "^2.2.14",
     "@react-hook/media-query": "^1.1.1",
+    "@rgrove/parse-xml": "^4.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
