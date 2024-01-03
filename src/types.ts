@@ -49,7 +49,7 @@ export type SvgDataPolygonShape = {
 
 export type SvgDataShape = SvgDataPathShape | SvgDataPolygonShape;
 
-export type SVGData = {
+export type SvgData = {
   viewBox: string;
   shapes: SvgDataShape[];
 };
