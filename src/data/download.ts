@@ -2,14 +2,27 @@ import { fileTypeFromBuffer } from "file-type";
 import { createWriteStream } from "fs";
 import { mkdirp } from "fs-extra";
 import { join } from "path";
+import { last } from "remeda";
 import { finished } from "stream/promises";
-import { v4 as uuid } from "uuid";
+import { v4 as uuidV4 } from "uuid";
 
 // HACK: It's difficult to determine the project root directory in Next.js because the project is
 // run out of a build directory. Using `process.cwd()` assumes that the project is run from the
 // root. However, that's probably fine for the scope of this project.
 const PUBLIC_DIRECTORY = join(process.cwd(), "public");
 const DOWNLOADS_DIRECTORY = join(PUBLIC_DIRECTORY, "downloads");
+
+const UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gi;
+
+/**
+ * Generates a file name for the provided URL. If the URL contains a UUID, that's used for the file
+ * name. If not, a random UUID is generated.
+ */
+function generateFileName(url: string, extension: string): string {
+  const { pathname } = new URL(url);
+  const uuid = last([...pathname.matchAll(UUID_REGEX)]) ?? uuidV4();
+  return `${uuid}.${extension}`;
+}
 
 /**
  * Downloads a file to the public directory. Returns the path inside of the newly downloaded file
@@ -40,7 +53,7 @@ export async function downloadFile(url: string) {
   }
 
   // Determine the paths for the image.
-  const fileName = `${uuid()}.${fileType.ext}`;
+  const fileName = generateFileName(url, fileType.ext);
   const fileUrl = join("/downloads", fileName);
   const filePath = join(DOWNLOADS_DIRECTORY, fileName);
 
