@@ -4,6 +4,7 @@ import "../../styles/content/blockquotes.css";
 import "../../styles/content/cite.css";
 import "../../styles/content/code.css";
 import "../../styles/content/headers.css";
+import "../../styles/content/highlight-js.css";
 import "../../styles/content/hr.css";
 import "../../styles/content/image.css";
 import "../../styles/content/lists.css";

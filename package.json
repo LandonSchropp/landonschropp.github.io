@@ -30,6 +30,7 @@
     "autoprefixer": "^10.0.1",
     "camelcase": "^8.0.0",
     "date-fns": "^3.0.6",
+    "highlight.js": "^11.9.0",
     "markdown-it": "^14.0.0",
     "nanostores": "^0.9.5",
     "next": "14.0.4",

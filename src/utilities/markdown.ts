@@ -1,7 +1,12 @@
+import highlightJs from "highlight.js/lib/common";
 import createMarkdownIt from "markdown-it";
 import * as R from "remeda";
 
-const markdownIt = createMarkdownIt();
+const markdownIt = createMarkdownIt({
+  highlight: (code, language) => {
+    return highlightJs.highlight(code, { language }).value;
+  },
+});
 
 function fixNewlies(markdown: string) {
   return markdown.replaceAll(/\n[\n]+/g, "\n\n");
