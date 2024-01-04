@@ -1,18 +1,23 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
   "parser": "@typescript-eslint/parser",
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "overrides": [
     {
       "files": ["*.{tsx,jsx}"],
-      "extends": ["plugin:react/recommended"],
+      "extends": ["plugin:react/recommended", "prettier"],
       "rules": {
         "react/react-in-jsx-scope": "off"
       }
     },
     {
       "files": ["*.test.{ts,tsx,js,jsx}"],
-      "plugins": ["jest"],
+      "plugins": ["jest", "prettier"],
       "extends": ["plugin:jest/recommended"]
     }
   ],
