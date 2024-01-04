@@ -17,6 +17,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@jest/globals": "^29.7.0",
     "@nanostores/react": "^0.7.1",
     "@notionhq/client": "^2.2.14",
     "@react-hook/media-query": "^1.1.1",
@@ -25,6 +26,7 @@
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
+    "@testing-library/dom": "^9.3.3",
     "autoprefixer": "^10.0.1",
     "camelcase": "^8.0.0",
     "date-fns": "^3.0.6",
