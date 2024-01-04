@@ -10,7 +10,7 @@ type NoteProps = {
 };
 
 export function Note({ note }: NoteProps) {
-  let [, setCategory] = useCategory();
+  const [, setCategory] = useCategory();
   useEffect(() => setCategory(note.category), [note.category]);
 
   return (

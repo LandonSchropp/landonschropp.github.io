@@ -7,7 +7,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { slug } }: NotePageProps): Promise<Metadata> {
-  let note = await fetchNote(slug);
+  const note = await fetchNote(slug);
 
   return {
     title: `Landon Schropp -  ${note.title}`,

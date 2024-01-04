@@ -29,7 +29,7 @@ export async function fetchArticleSummaries(): Promise<ArticleSummary[]> {
 }
 
 export async function fetchArticle(slug: string): Promise<Article> {
-  let articleSummary = (await fetchArticleSummaries()).find((article) => article.slug === slug);
+  const articleSummary = (await fetchArticleSummaries()).find((article) => article.slug === slug);
 
   if (!articleSummary) {
     throw new Error(`Article with slug "${slug}" not found`);

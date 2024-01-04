@@ -1,7 +1,7 @@
 import tailwindConfig from "../../tailwind.config";
 import type { ArticleSummary as ArticleSummaryType } from "../types";
 import { Summary } from "./summary";
-import React, { CSSProperties } from "react";
+import React from "react";
 import { isNil } from "remeda";
 
 const CORNFLOWER = tailwindConfig.theme.colors.cornflower;
@@ -14,10 +14,10 @@ type ArticleSummaryProps = {
 };
 
 export function ArticleSummary({ articleSummary, index, numberOfArticles }: ArticleSummaryProps) {
-  let href = isNil(articleSummary.url) ? `/articles/${articleSummary.slug}` : articleSummary.url;
+  const href = isNil(articleSummary.url) ? `/articles/${articleSummary.slug}` : articleSummary.url;
 
-  let percent = `${(index / (numberOfArticles - 1)) * 100}%`;
-  let style = { borderColor: `color-mix(in oklab, ${BITTERSWEET} ${percent}, ${CORNFLOWER})` };
+  const percent = `${(index / (numberOfArticles - 1)) * 100}%`;
+  const style = { borderColor: `color-mix(in oklab, ${BITTERSWEET} ${percent}, ${CORNFLOWER})` };
 
   return (
     <Summary title={articleSummary.title} url={href} style={style}>

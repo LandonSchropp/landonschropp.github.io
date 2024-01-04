@@ -35,10 +35,10 @@ export function findXmlElement(element: XmlDocument | XmlElement, name: string):
  * Extracts the data from an SVG.
  */
 export function parseSvgData(svg: string): SvgData {
-  let svgElement = findXmlElement(parseXml(svg), "svg");
+  const svgElement = findXmlElement(parseXml(svg), "svg");
 
-  let paths = findXmlElements(svgElement, "path").map((element): SvgDataPathShape => {
-    let bounds = getBounds(element.attributes.d);
+  const paths = findXmlElements(svgElement, "path").map((element): SvgDataPathShape => {
+    const bounds = getBounds(element.attributes.d);
 
     return {
       type: "path" as const,
@@ -48,7 +48,7 @@ export function parseSvgData(svg: string): SvgData {
     };
   });
 
-  let polygons = findXmlElements(svgElement, "path").map((element): SvgDataPolygonShape => {
+  const polygons = findXmlElements(svgElement, "path").map((element): SvgDataPolygonShape => {
     return {
       type: "polygon" as const,
       id: element.attributes.id,

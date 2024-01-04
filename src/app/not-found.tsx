@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 };
 
 export default async function NotFoundPage() {
-  let { viewBox, shapes } = NOT_FOUND_SVG_DATA;
-  let shape = findShape(shapes, "not-found");
+  const { viewBox, shapes } = NOT_FOUND_SVG_DATA;
+  const shape = findShape(shapes, "not-found");
 
   return (
     <SvgDataContainer viewBox={viewBox} title="404">

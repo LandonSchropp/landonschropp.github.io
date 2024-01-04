@@ -34,20 +34,20 @@ function SvgDataShapeLink({ shape, href, title }: SvgDataShapeLinkProps) {
 export function IndexPageSvgData() {
   const isPortrait = useMediaQuery(PORTRAIT_MEDIA_QUERY);
 
-  let { viewBox, shapes } = isPortrait ? PORTRAIT_SVG_DATA : LANDSCAPE_SVG_DATA;
+  const { viewBox, shapes } = isPortrait ? PORTRAIT_SVG_DATA : LANDSCAPE_SVG_DATA;
 
-  let landonShape = findShape(shapes, "landon");
-  let schroppShape = findShape(shapes, "schropp");
-  let entrepreneurShape = findShape(shapes, "entrepreneur");
-  let commaShape = findShape(shapes, "comma");
-  let developerAndDesignerShape = findShape(shapes, "developer-and-designer");
-  let writingShape = findShape(shapes, "writing");
-  let notesShape = findShape(shapes, "notes");
-  let twitterShape = findShape(shapes, "twitter");
-  let gitHubShape = findShape(shapes, "github");
-  let emailShape = findShape(shapes, "email");
-  let codepenShape = findShape(shapes, "codepen");
-  let linkedInShape = findShape(shapes, "linkedin");
+  const landonShape = findShape(shapes, "landon");
+  const schroppShape = findShape(shapes, "schropp");
+  const entrepreneurShape = findShape(shapes, "entrepreneur");
+  const commaShape = findShape(shapes, "comma");
+  const developerAndDesignerShape = findShape(shapes, "developer-and-designer");
+  const writingShape = findShape(shapes, "writing");
+  const notesShape = findShape(shapes, "notes");
+  const twitterShape = findShape(shapes, "twitter");
+  const gitHubShape = findShape(shapes, "github");
+  const emailShape = findShape(shapes, "email");
+  const codepenShape = findShape(shapes, "codepen");
+  const linkedInShape = findShape(shapes, "linkedin");
 
   return (
     <SvgDataContainer viewBox={viewBox} title="Landon Schropp">

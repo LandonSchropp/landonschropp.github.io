@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default async function NotesPage() {
-  let noteSummaries = await fetchNoteSummaries();
+  const noteSummaries = await fetchNoteSummaries();
   return <NoteSummaries noteSummaries={noteSummaries} />;
 }

@@ -31,7 +31,7 @@ export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
 }
 
 export async function fetchNote(slug: string): Promise<Note> {
-  let noteSummary = (await fetchNoteSummaries()).find((note) => note.slug === slug);
+  const noteSummary = (await fetchNoteSummaries()).find((note) => note.slug === slug);
 
   if (!noteSummary) {
     throw new Error(`Note with slug "${slug}" not found`);

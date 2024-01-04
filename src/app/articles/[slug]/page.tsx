@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { slug } }: ArticlePageProps): Promise<Metadata> {
-  let article = await fetchArticle(slug);
+  const article = await fetchArticle(slug);
 
   return {
     title: `Landon Schropp -  ${article.title}`,

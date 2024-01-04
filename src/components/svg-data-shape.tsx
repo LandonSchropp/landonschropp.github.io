@@ -1,4 +1,5 @@
 import type { SvgDataShape as SvgDataShapeType } from "../types";
+import { omit } from "remeda";
 
 type SvgDataShapeProps = {
   shape: SvgDataShapeType | null;
@@ -10,15 +11,12 @@ export function SvgDataShape({ shape }: SvgDataShapeProps) {
   if (!shape) return null;
 
   if (shape.type === "polygon") {
-    let { type, ...props } = shape;
+    const props = omit(shape, ["type"]);
     return <polygon className={SVG_DATA_SHAPE_CLASS_NAME} {...props} />;
   }
 
-  let {
-    type,
-    bounds: [x, y, width, height],
-    ...props
-  } = shape;
+  const [x, y, width, height] = shape.bounds;
+  const props = omit(shape, ["type", "bounds"]);
 
   return (
     <>
