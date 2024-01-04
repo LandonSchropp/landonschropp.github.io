@@ -1,4 +1,5 @@
 {
-  "*": ["prettier --ignore-unknown --write"],
-  "**/*.{ts,tsx}": "tsc-files --noEmit"
+  "*": "prettier --ignore-unknown --write",
+  "**/*.{ts,tsx}": "tsc-files --noEmit",
+  "*.{js,jsx,ts,tsx,cjs,mjs}": "eslint"
 }
