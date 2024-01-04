@@ -11,7 +11,7 @@ type NoteProps = {
 
 export function Note({ note }: NoteProps) {
   const [, setCategory] = useCategory();
-  useEffect(() => setCategory(note.category), [note.category]);
+  useEffect(() => setCategory(note.category), [note.category, setCategory]);
 
   return (
     <article className="my-6" data-category={note.category}>

@@ -22,7 +22,7 @@ export default function SvgDataContainer({ viewBox, children, title }: SvgDataCo
           </pattern>
         </defs>
 
-        <title role="heading">{title}</title>
+        <title>{title}</title>
         {children}
       </svg>
     </main>
