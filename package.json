@@ -32,6 +32,8 @@
     "autoprefixer": "^10.0.1",
     "camelcase": "^8.0.0",
     "date-fns": "^3.0.6",
+    "file-type": "^18.7.0",
+    "fs-extra": "^11.2.0",
     "highlight.js": "^11.9.0",
     "markdown-it": "^14.0.0",
     "nanostores": "^0.9.5",
@@ -50,6 +52,7 @@
   "devDependencies": {
     "@testing-library/react": "^14.1.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/fs-extra": "^11.0.4",
     "@types/jest": "^29.5.11",
     "@types/markdown-it": "^13.0.7",
     "@types/node": "^20",

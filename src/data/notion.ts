@@ -1,8 +1,10 @@
 import { markdownToHtml } from "../utilities/markdown";
+import { downloadFile } from "./download";
 import { Client, collectPaginatedAPI, isFullPage } from "@notionhq/client";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import NodeFetchCache, { FileSystemCache } from "node-fetch-cache";
 import { NotionToMarkdown } from "notion-to-md";
+import { fromPairs } from "remeda";
 
 const NOTION_API_TOKEN = process.env.NOTION_API_TOKEN;
 
@@ -96,6 +98,32 @@ export async function fetchPageMarkdown(id: string): Promise<string> {
   return content;
 }
 
+const IMAGE_REGEX = /(?<=!\[.*?\]\().*?(?=\))/g;
+
+/**
+ * Downloads all the images in the markdown and stores them in the `public` folder.
+ */
+export async function downloadImages(markdown: string): Promise<string> {
+  // Download the images and generate a map of the URLs to the image names.
+  const filePaths = fromPairs(
+    await Promise.all(
+      Array.from(markdown.matchAll(IMAGE_REGEX)).map(async ([url]) => {
+        return [url, await downloadFile(url)];
+      }),
+    ),
+  );
+
+  // Replace the URLs in the markdown file with their new file paths.
+  return markdown.replaceAll(IMAGE_REGEX, (url) => filePaths[url]);
+}
+
+/**
+ * Fetches the HTML for a Notion page, downloading any references images along the way.
+ */
 export async function fetchPageHtml(databaseID: string): Promise<string> {
-  return markdownToHtml(await fetchPageMarkdown(databaseID));
+  const markdown = await downloadImages(await fetchPageMarkdown(databaseID));
+
+  const html = markdownToHtml(markdown);
+
+  return html;
 }
