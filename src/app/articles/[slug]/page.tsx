@@ -14,6 +14,7 @@ export async function generateMetadata({ params: { slug } }: ArticlePageProps): 
   return {
     title: article.title,
     description: article.description,
+    authors: [{ name: "Landon Schropp" }],
   };
 }
 

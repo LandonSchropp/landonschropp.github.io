@@ -12,6 +12,7 @@ export async function generateMetadata({ params: { slug } }: NotePageProps): Pro
   return {
     title: note.title,
     description: `Landon Schropp's notes about ${note.title}`,
+    authors: [{ name: "Landon Schropp" }],
   };
 }
 
