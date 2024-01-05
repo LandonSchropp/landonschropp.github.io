@@ -12,7 +12,7 @@ export async function generateMetadata({ params: { slug } }: ArticlePageProps): 
   const article = await fetchArticle(slug);
 
   return {
-    title: `Landon Schropp -  ${article.title}`,
+    title: article.title,
     description: article.description,
   };
 }

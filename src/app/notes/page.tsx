@@ -3,7 +3,7 @@ import { fetchNoteSummaries } from "@/data/notes";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Landon Schropp - Notes",
+  title: "Notes",
   description: "My personal notes on books, articles, talks, podcasts and more.",
 };
 

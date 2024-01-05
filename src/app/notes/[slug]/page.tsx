@@ -10,7 +10,7 @@ export async function generateMetadata({ params: { slug } }: NotePageProps): Pro
   const note = await fetchNote(slug);
 
   return {
-    title: `Landon Schropp -  ${note.title}`,
+    title: note.title,
     description: `Landon Schropp's notes about ${note.title}`,
   };
 }

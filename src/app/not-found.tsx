@@ -4,7 +4,7 @@ import { NOT_FOUND_SVG_DATA, findShape } from "@/data/svg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Landon Schropp – 404",
+  title: "404",
   description: "The page you were looking for couldn't be found.",
 };
 

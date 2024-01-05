@@ -1,5 +1,14 @@
 import flannel from "../images/flannel.png";
 import "../styles/index.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Landon Schropp",
+    template: "Landon Schropp – %s",
+  },
+  description: "Landon Schropp is a developer, designer and entrepreneur based in Portland, OR.",
+};
 
 export interface BaseLayoutProps {
   children: React.ReactNode;
