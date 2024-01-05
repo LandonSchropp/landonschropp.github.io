@@ -11,7 +11,18 @@ export default {
     config.module.rules.push({
       test: /\.svg$/i,
       resourceQuery: /react/,
-      use: ["@svgr/webpack"],
+      use: {
+        loader: "@svgr/webpack",
+        options: {
+          svgoConfig: {
+            plugins: [
+              { name: "cleanupIds" },
+              { name: "removeDimensions" },
+              { name: "removeAttrs", params: { attrs: "(stroke|fill|stroke-width)" } },
+            ],
+          },
+        },
+      },
     });
 
     config.module.rules.push({
