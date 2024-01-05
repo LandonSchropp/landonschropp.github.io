@@ -43,11 +43,10 @@ export function IndexPageSvgData() {
   const developerAndDesignerShape = findShape(shapes, "developer-and-designer");
   const writingShape = findShape(shapes, "writing");
   const notesShape = findShape(shapes, "notes");
-  const twitterShape = findShape(shapes, "twitter");
   const gitHubShape = findShape(shapes, "github");
-  const emailShape = findShape(shapes, "email");
-  const codepenShape = findShape(shapes, "codepen");
+  const chessComShape = findShape(shapes, "chess-com");
   const linkedInShape = findShape(shapes, "linkedin");
+  const emailShape = findShape(shapes, "email");
 
   return (
     <SvgDataContainer viewBox={viewBox} title="Landon Schropp">
@@ -70,23 +69,15 @@ export function IndexPageSvgData() {
         <SvgDataShapeLink href="/notes" title="Notes" shape={notesShape} />
 
         <SvgDataShapeLink
-          href="https://twitter.com/LandonSchropp"
-          title="Twitter"
-          shape={twitterShape}
-        />
-
-        <SvgDataShapeLink
           href="https://github.com/LandonSchropp"
           title="GitHub"
           shape={gitHubShape}
         />
 
-        <SvgDataShapeLink href="mailto:schroppl@gmail.com" title="Email" shape={emailShape} />
-
         <SvgDataShapeLink
-          href="https://codepen.io/LandonSchropp/"
-          title="CodePen"
-          shape={codepenShape}
+          href="https://www.chess.com/member/landon"
+          title="Chess.com"
+          shape={chessComShape}
         />
 
         <SvgDataShapeLink
@@ -94,6 +85,8 @@ export function IndexPageSvgData() {
           title="LinkedIn"
           shape={linkedInShape}
         />
+
+        <SvgDataShapeLink href="mailto:schroppl@gmail.com" title="Email" shape={emailShape} />
       </g>
     </SvgDataContainer>
   );
