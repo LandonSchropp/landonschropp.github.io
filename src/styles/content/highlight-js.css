@@ -13,7 +13,10 @@
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-regexp,
-.hljs-deletion {
+.hljs-deletion .hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
   color: theme("colors.bittersweet");
 }
 
@@ -29,21 +32,11 @@
   color: theme("colors.amethyst");
 }
 
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: theme("colors.mulberry");
-}
-
 .hljs-title,
-.hljs-section {
-  color: theme("colors.cornflower");
-}
-
+.hljs-section,
 .hljs-keyword,
 .hljs-selector-tag {
-  color: theme("colors.purple");
+  color: theme("colors.cornflower");
 }
 
 .hljs-emphasis {
