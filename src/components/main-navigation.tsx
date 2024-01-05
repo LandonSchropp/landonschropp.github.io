@@ -10,7 +10,7 @@ type LinkProps = {
   icon?: boolean;
 };
 
-function isCurrent(pathname: string | null, href: string, isClient: boolean) {
+function isCurrent(pathname: string | null, href: string, client: boolean) {
   if (pathname === null) return false;
 
   // HACK: Next.js does not allow us to pass static data from a child page to a root template or
@@ -18,7 +18,7 @@ function isCurrent(pathname: string | null, href: string, isClient: boolean) {
   // this is fine, but on note pages it causes an issue where the category "flashes" the wrong
   // color, which is noticeable to the user. To make this less prominant, we'll never set current on
   // the server.
-  if (!isClient) return false;
+  if (!client) return false;
 
   if (href === "/") {
     return href === pathname;
@@ -29,18 +29,18 @@ function isCurrent(pathname: string | null, href: string, isClient: boolean) {
 
 function Link({ href, children, icon = false }: LinkProps) {
   const pathname = usePathname();
-  const isClient = useIsClient();
+  const client = useIsClient();
 
   const className = icon ? "hocus:text-theme-accent" : "font-sans text-theme-lightText ";
-  const shocusClassName = isClient
-    ? "shocus:shadow-[0_3px] shadow-theme-accent shocus:text-theme-accent"
-    : "";
+
+  const shocusClassName =
+    client && !icon ? "shocus:shadow-[0_3px] shadow-theme-accent shocus:text-theme-accent" : "";
 
   return (
     <a
       className={`mx-2 block text-inherit transition-all duration-75 ease-in ${className} ${shocusClassName}`}
       href={href}
-      {...(isCurrent(pathname, href, isClient) && { "aria-current": "page" })}
+      {...(isCurrent(pathname, href, client) && { "aria-current": "page" })}
     >
       {children}
     </a>
