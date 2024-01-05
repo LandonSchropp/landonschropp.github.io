@@ -64,12 +64,16 @@ export function MainNavigation() {
           <Icon name="github" alt="GitHub" />
         </Link>
 
-        <Link href="mailto:schroppl@gmail.com" icon>
-          <Icon name="email" alt="Email" />
+        <Link href="https://www.chess.com/member/landon" icon>
+          <Icon name="chessCom" alt="Chess.com" />
         </Link>
 
         <Link href="https://www.linkedin.com/in/landonschropp" icon>
           <Icon name="linkedin" alt="LinkedIn" />
+        </Link>
+
+        <Link href="mailto:schroppl@gmail.com" icon>
+          <Icon name="email" alt="Email" />
         </Link>
       </div>
     </nav>
