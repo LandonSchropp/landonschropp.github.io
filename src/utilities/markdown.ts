@@ -16,14 +16,9 @@ function fixNewlies(markdown: string) {
  * This fixes a bug in markdownToHtml where blockquotes are not properly formatted.
  */
 function fixBlockauotes(markdown: string) {
-  return markdown.replaceAll(/>[\s\S]+?(?=(\n\w|$))/g, (match) => {
-    return (
-      match
-        .replaceAll("\t", "> ")
-        .trim()
-        .replaceAll(/\n(?=\n)/g, "\n>") + "\n\n"
-    );
-  });
+  return markdown.replaceAll(/>[\s\S]+?(?=(\n\w|$))/g, (match) =>
+    match.replaceAll("\n\n\t", "\n>\n> "),
+  );
 }
 
 /**
