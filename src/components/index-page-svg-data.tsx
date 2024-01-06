@@ -4,6 +4,7 @@ import { PORTRAIT_MEDIA_QUERY } from "../../tailwind.config";
 import SvgDataContainer from "./svg-data-container";
 import { SvgDataShape } from "./svg-data-shape";
 import { PORTRAIT_SVG_DATA, findShape, LANDSCAPE_SVG_DATA } from "@/data/svg";
+import { useIsClient } from "@/hooks/use-is-client";
 import type { SvgDataShape as SvgDataShapeType } from "@/types";
 import { useMediaQuery } from "@react-hook/media-query";
 
@@ -33,6 +34,7 @@ function SvgDataShapeLink({ shape, href, title }: SvgDataShapeLinkProps) {
  */
 export function IndexPageSvgData() {
   const isPortrait = useMediaQuery(PORTRAIT_MEDIA_QUERY);
+  const isClient = useIsClient();
 
   const { viewBox, shapes } = isPortrait ? PORTRAIT_SVG_DATA : LANDSCAPE_SVG_DATA;
 
@@ -47,6 +49,8 @@ export function IndexPageSvgData() {
   const chessComShape = findShape(shapes, "chess-com");
   const linkedInShape = findShape(shapes, "linkedin");
   const emailShape = findShape(shapes, "email");
+
+  if (!isClient) return null;
 
   return (
     <SvgDataContainer viewBox={viewBox} title="Landon Schropp">
