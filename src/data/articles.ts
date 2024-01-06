@@ -2,6 +2,7 @@ import { assertArticleSummary } from "../type-guards";
 import type { Article, ArticleSummary } from "../types";
 import { fetchDatabasePages, fetchPageHtml, optionalValue } from "./notion";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { sortBy } from "remeda";
 
 const articleS_DATABASE_ID = "c68575f91f534048bb15c54f0f230882";
 
@@ -23,9 +24,11 @@ function pageObjectResponseToArticle(page: PageObjectResponse): ArticleSummary {
 }
 
 export async function fetchArticleSummaries(): Promise<ArticleSummary[]> {
-  return (await fetchDatabasePages(articleS_DATABASE_ID))
+  const articles = (await fetchDatabasePages(articleS_DATABASE_ID))
     .map(pageObjectResponseToArticle)
     .filter((article) => process.env.NODE_ENV === "development" || article.published);
+
+  return sortBy(articles, (note) => -note.date.getTime());
 }
 
 export async function fetchArticle(slug: string): Promise<Article> {

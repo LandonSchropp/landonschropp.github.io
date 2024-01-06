@@ -2,6 +2,7 @@ import { assertNoteSummary } from "../type-guards";
 import type { Note, NoteSummary } from "../types";
 import { fetchDatabasePages, fetchPageHtml, optionalValue } from "./notion";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { sortBy } from "remeda";
 
 const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
 
@@ -25,9 +26,11 @@ function pageObjectResponseToNote(page: PageObjectResponse): NoteSummary {
 }
 
 export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
-  return (await fetchDatabasePages(NOTES_DATABASE_ID))
+  const notes = (await fetchDatabasePages(NOTES_DATABASE_ID))
     .map(pageObjectResponseToNote)
     .filter((note) => process.env.NODE_ENV === "development" || note.published);
+
+  return sortBy(notes, (note) => -note.date.getTime());
 }
 
 export async function fetchNote(slug: string): Promise<Note> {
