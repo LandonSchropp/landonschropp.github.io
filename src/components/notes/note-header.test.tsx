@@ -1,4 +1,4 @@
-import { NoteHeader } from "../../src/components/note-header";
+import { NoteHeader } from "./note-header";
 import {
   BUSINESS_CATEGORY,
   OTHER_MEDIA,
@@ -8,8 +8,8 @@ import {
   TALK_MEDIA,
   PODCAST_MEDIA,
   VIDEO_MEDIA,
-} from "../constants";
-import type { Note } from "../types";
+} from "@/constants";
+import { Note } from "@/types";
 import { render, screen } from "@testing-library/react";
 
 describe("NoteHeader", () => {

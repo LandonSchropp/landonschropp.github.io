@@ -1,4 +1,4 @@
-import { Note } from "@/components/note";
+import { Note } from "@/components/notes/note";
 import { fetchNoteSummaries, fetchNote } from "@/data/notes";
 import { Metadata } from "next";
 

@@ -23,6 +23,7 @@ export function Article({ article }: AticleProps) {
         }
       />
 
+      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Using markdown compiled to HTML. */}
       <section dangerouslySetInnerHTML={{ __html: article.content }} />
     </article>
   );

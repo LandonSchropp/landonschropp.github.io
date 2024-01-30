@@ -1,11 +1,11 @@
 "use client";
 
-import { Header } from "../components/header";
-import { CHESS_CATEGORY, OTHER_CATEGORY } from "../constants";
-import { useCategoryFilter } from "../hooks/use-category-filter";
-import type { NoteSummary as NoteSummaryType } from "../types";
 import { NoteSummary } from "./note-summary";
-import { Tags } from "./tags";
+import { Header } from "@/components/header";
+import { Tags } from "@/components/tags";
+import { OTHER_CATEGORY, CHESS_CATEGORY } from "@/constants";
+import { useCategoryFilter } from "@/hooks/use-category-filter";
+import type { NoteSummary as NoteSummaryType } from "@/types";
 import { isNil } from "remeda";
 
 type NoteSummariesProps = {
