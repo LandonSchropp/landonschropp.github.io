@@ -1,6 +1,6 @@
-import tailwindConfig from "../../tailwind.config";
-import type { ArticleSummary as ArticleSummaryType } from "../types";
-import { Summary } from "./summary";
+import tailwindConfig from "../../../tailwind.config";
+import { Summary } from "../summary";
+import type { ArticleSummary as ArticleSummaryType } from "@/types";
 import React from "react";
 import { isNil } from "remeda";
 
@@ -17,7 +17,9 @@ export function ArticleSummary({ articleSummary, index, numberOfArticles }: Arti
   const href = isNil(articleSummary.url) ? `/articles/${articleSummary.slug}` : articleSummary.url;
 
   const percent = `${(index / (numberOfArticles - 1)) * 100}%`;
-  const style = { borderColor: `color-mix(in oklab, ${BITTERSWEET} ${percent}, ${CORNFLOWER})` };
+  const style = {
+    borderColor: `color-mix(in oklab, ${BITTERSWEET} ${percent}, ${CORNFLOWER})`,
+  };
 
   return (
     <Summary title={articleSummary.title} url={href} style={style}>

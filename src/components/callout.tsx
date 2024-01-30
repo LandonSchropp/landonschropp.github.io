@@ -1,4 +1,4 @@
-import Book from "../images/icons/book.svg?react";
+import Book from "@/images/icons/book.svg?react";
 import { ReactNode } from "react";
 
 type CalloutProps = {

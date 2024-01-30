@@ -1,5 +1,5 @@
-import type { Article as ArticleType } from "../types";
-import { Header } from "./header";
+import { Header } from "../header";
+import type { Article as ArticleType } from "@/types";
 import { format, formatISO } from "date-fns";
 import React from "react";
 

@@ -1,4 +1,4 @@
-import { ArticleSummaries } from "@/components/article-summaries";
+import { ArticleSummaries } from "@/components/articles/article-summaries";
 import { fetchArticleSummaries } from "@/data/articles";
 import { Metadata } from "next";
 
