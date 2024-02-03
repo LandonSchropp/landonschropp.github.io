@@ -1,8 +1,8 @@
 "use client";
 
 import { NoteSummary } from "./note-summary";
-import { Header } from "@/components/header";
-import { Tags } from "@/components/tags";
+import { Header } from "@/components/content/header";
+import { Tags } from "@/components/content/tags";
 import { OTHER_CATEGORY, CHESS_CATEGORY } from "@/constants";
 import { useCategoryFilter } from "@/hooks/use-category-filter";
 import type { NoteSummary as NoteSummaryType } from "@/types";

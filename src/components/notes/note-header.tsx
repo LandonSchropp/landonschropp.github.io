@@ -1,5 +1,5 @@
-import { Header } from "../header";
-import { Listify } from "../listify";
+import { Listify } from "../base/listify";
+import { Header } from "../content/header";
 import { LIVE_TALK_MEDIA, PODCAST_MEDIA, ARTICLE_MEDIA, OTHER_MEDIA } from "@/constants";
 import { Note } from "@/types";
 import { baseURL } from "@/utilities/url";

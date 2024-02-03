@@ -1,4 +1,4 @@
-import type { Category } from "../types";
+import type { Category } from "@/types";
 import { CSSProperties } from "react";
 
 type SummaryProps = {

@@ -1,5 +1,5 @@
 import tailwindConfig from "../../../tailwind.config";
-import { Summary } from "../summary";
+import { Summary } from "../content/summary";
 import type { ArticleSummary as ArticleSummaryType } from "@/types";
 import React from "react";
 import { isNil } from "remeda";

@@ -1,21 +1,23 @@
+import { Tag } from "./tag";
 import {
   BUSINESS_CATEGORY,
   DEVELOPMENT_CATEGORY,
   DESIGN_CATEGORY,
   PSYCHOLOGY_CATEGORY,
   OTHER_CATEGORY,
-} from "../constants";
-import { useCategoryFilter } from "../hooks/use-category-filter";
-import type { Category } from "../types";
-import { Tag } from "./tag";
+} from "@/constants";
+import { useCategoryFilter } from "@/hooks/use-category-filter";
+import type { Category } from "@/types";
 import { useCallback } from "react";
 
 type TagGroupProps = {
   children: React.ReactNode;
 };
 
-// The tag groups exist to allow the tags to wrap in a grouped fashion. This prevents one "lone tag"
-// from sitting on the next line on standard mobile sizes.
+/*
+ * The tag groups exist to allow the tags to wrap in a grouped fashion. This prevents one "lone tag"
+ * from sitting on the next line on standard mobile sizes.
+ */
 function TagGroup({ children }: TagGroupProps) {
   return <span className="flex gap-2">{children}</span>;
 }

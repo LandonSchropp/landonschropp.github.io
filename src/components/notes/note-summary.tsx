@@ -1,5 +1,5 @@
-import { Listify } from "@/components/listify";
-import { Summary } from "@/components/summary";
+import { Listify } from "@/components/base/listify";
+import { Summary } from "@/components/content/summary";
 import type { NoteSummary as NoteSummaryType } from "@/types";
 import { isEmpty, isNil } from "remeda";
 

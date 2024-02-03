@@ -1,8 +1,8 @@
-import BookIcon from "../images/icons/book.svg?react";
-import ChessComIcon from "../images/icons/chess-com.svg?react";
-import EmailIcon from "../images/icons/email.svg?react";
-import GitHubIcon from "../images/icons/github.svg?react";
-import LinkedInIcon from "../images/icons/linked-in.svg?react";
+import BookIcon from "@/images/icons/book.svg?react";
+import ChessComIcon from "@/images/icons/chess-com.svg?react";
+import EmailIcon from "@/images/icons/email.svg?react";
+import GitHubIcon from "@/images/icons/github.svg?react";
+import LinkedInIcon from "@/images/icons/linked-in.svg?react";
 
 const ICONS = {
   book: BookIcon,

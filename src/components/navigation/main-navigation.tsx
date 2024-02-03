@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon } from "../icon";
+import { Icon } from "../base/icon";
 import { useIsClient } from "@/hooks/use-is-client";
 import { usePathname } from "next/navigation";
 
