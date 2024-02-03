@@ -1,6 +1,6 @@
 "use client";
 
-import flannel from "../images/flannel.png";
+import flannel from "@/images/flannel.png";
 import type { ReactNode } from "react";
 
 type SvgDataContainerProps = {

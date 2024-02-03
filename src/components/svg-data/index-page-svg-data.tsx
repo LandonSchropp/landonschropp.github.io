@@ -1,6 +1,6 @@
 "use client";
 
-import { PORTRAIT_MEDIA_QUERY } from "../../tailwind.config";
+import { PORTRAIT_MEDIA_QUERY } from "../../../tailwind.config";
 import SvgDataContainer from "./svg-data-container";
 import { SvgDataShape } from "./svg-data-shape";
 import { PORTRAIT_SVG_DATA, findShape, LANDSCAPE_SVG_DATA } from "@/data/svg";

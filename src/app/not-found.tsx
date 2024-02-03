@@ -1,5 +1,5 @@
-import SvgDataContainer from "@/components/svg-data-container";
-import { SvgDataShape } from "@/components/svg-data-shape";
+import SvgDataContainer from "@/components/svg-data/svg-data-container";
+import { SvgDataShape } from "@/components/svg-data/svg-data-shape";
 import { NOT_FOUND_SVG_DATA, findShape } from "@/data/svg";
 import { Metadata } from "next";
 

@@ -1,4 +1,4 @@
-import { IndexPageSvgData } from "@/components/index-page-svg-data";
+import { IndexPageSvgData } from "@/components/svg-data/index-page-svg-data";
 
 export default function IndexPage() {
   return <IndexPageSvgData />;

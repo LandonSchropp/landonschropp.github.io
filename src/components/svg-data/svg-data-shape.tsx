@@ -1,4 +1,4 @@
-import type { SvgDataShape as SvgDataShapeType } from "../types";
+import type { SvgDataShape as SvgDataShapeType } from "@/types";
 import { omit } from "remeda";
 
 type SvgDataShapeProps = {
