@@ -1,68 +1,43 @@
 import { Tag } from "./tag";
-import {
-  BUSINESS_CATEGORY,
-  DEVELOPMENT_CATEGORY,
-  DESIGN_CATEGORY,
-  PSYCHOLOGY_CATEGORY,
-  OTHER_CATEGORY,
-} from "@/constants";
-import { useCurrentCategory } from "@/hooks/use-current-category";
-import type { Category } from "@/types";
+import { useCurrentTag } from "@/hooks/use-current-tag";
 import { useCallback } from "react";
 
-type TagGroupProps = {
-  children: React.ReactNode;
+// type TagGroupProps = {
+//   children: React.ReactNode;
+// };
+//
+// /*
+//  * The tag groups exist to allow the tags to wrap in a grouped fashion. This prevents one "lone tag"
+//  * from sitting on the next line on standard mobile sizes.
+//  */
+// function TagGroup({ children }: TagGroupProps) {
+//   return <span className="flex gap-2">{children}</span>;
+// }
+
+type TagsProps<T extends string> = {
+  type: string;
+  values: readonly T[];
 };
 
-/*
- * The tag groups exist to allow the tags to wrap in a grouped fashion. This prevents one "lone tag"
- * from sitting on the next line on standard mobile sizes.
- */
-function TagGroup({ children }: TagGroupProps) {
-  return <span className="flex gap-2">{children}</span>;
-}
+export function Tags<T extends string>({ values, type }: TagsProps<T>) {
+  const [currentTag, setCurrentTag] = useCurrentTag(type, values);
 
-export function Tags() {
-  const [category, setCategory] = useCurrentCategory();
-
-  const toggleCategory = useCallback(
-    (updatedCategory: Category | null) => {
-      setCategory(category === updatedCategory ? null : updatedCategory);
-    },
-    [category, setCategory],
+  const toggleTag = useCallback(
+    (tag: T | null) => setCurrentTag(currentTag === tag ? null : tag),
+    [currentTag, setCurrentTag],
   );
 
   return (
     <div className="mb-4 mt-3.5 flex flex-wrap justify-center gap-2">
-      <TagGroup>
+      {values.map((tag) => (
         <Tag
-          category={BUSINESS_CATEGORY}
-          onClick={toggleCategory}
-          selected={category === BUSINESS_CATEGORY}
+          key={tag}
+          value={tag}
+          onClick={toggleTag}
+          selected={currentTag === tag}
+          attribute={type}
         />
-        <Tag
-          category={DEVELOPMENT_CATEGORY}
-          onClick={toggleCategory}
-          selected={category === DEVELOPMENT_CATEGORY}
-        />
-        <Tag
-          category={DESIGN_CATEGORY}
-          onClick={toggleCategory}
-          selected={category === DESIGN_CATEGORY}
-        />
-      </TagGroup>
-      <TagGroup>
-        <Tag
-          category={PSYCHOLOGY_CATEGORY}
-          onClick={toggleCategory}
-          selected={category === PSYCHOLOGY_CATEGORY}
-        />
-        <Tag
-          category={OTHER_CATEGORY}
-          onClick={toggleCategory}
-          selected={category === OTHER_CATEGORY}
-        />
-      </TagGroup>
+      ))}
     </div>
   );
 }

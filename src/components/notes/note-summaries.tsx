@@ -3,9 +3,11 @@
 import { NoteSummary } from "./note-summary";
 import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
-import { OTHER_CATEGORY, CHESS_CATEGORY } from "@/constants";
-import { useCurrentCategory } from "@/hooks/use-current-category";
+import { OTHER_CATEGORY, CHESS_CATEGORY, CATEGORIES } from "@/constants";
+import { useCurrentTag } from "@/hooks/use-current-tag";
 import type { NoteSummary as NoteSummaryType } from "@/types";
+
+const CATEGORIES_WITHOUT_CHESS = CATEGORIES.filter((category) => category !== CHESS_CATEGORY);
 
 function noteSummaryMatchesCategory(noteSummary: NoteSummaryType, category: string | null) {
   // NOTE: I'm using includes here to accommodate the `Live Talk` category, which should be included
@@ -22,11 +24,11 @@ type NoteSummariesProps = {
 };
 
 export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
-  const [category] = useCurrentCategory();
+  const [category] = useCurrentTag("category", CATEGORIES_WITHOUT_CHESS);
 
-  const filteredNotes = noteSummaries.filter((noteSummary) =>
-    noteSummaryMatchesCategory(noteSummary, category),
-  );
+  const filteredNoteSummaries = noteSummaries
+    .filter((noteSummary) => noteSummaryMatchesCategory(noteSummary, category))
+    .map((noteSummary) => <NoteSummary key={noteSummary.slug} note={noteSummary} />);
 
   return (
     <>
@@ -34,13 +36,9 @@ export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
         title="Notes"
         subText="My personal notes on books, articles, talks, podcasts and more."
       >
-        <Tags />
+        <Tags type="category" values={CATEGORIES_WITHOUT_CHESS} />
       </Header>
-      <section className="my-8">
-        {filteredNotes.map((note) => (
-          <NoteSummary key={note.slug} note={note} />
-        ))}
-      </section>
+      <section className="my-8">{filteredNoteSummaries}</section>
     </>
   );
 }

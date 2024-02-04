@@ -1,12 +1,13 @@
-import type { Category } from "@/types";
-
-type TagProps = {
-  category: Category;
-  onClick: (category: Category) => void;
+type TagProps<T extends string> = {
+  value: T;
+  onClick: (tag: T) => void;
   selected: boolean;
+  attribute: string;
 };
 
-export function Tag({ category, onClick, selected }: TagProps) {
+export function Tag<T extends string>({ value, onClick, selected, attribute }: TagProps<T>) {
+  const dataParams = { [`data-${attribute}`]: value };
+
   return (
     <button
       type="button"
@@ -16,12 +17,12 @@ export function Tag({ category, onClick, selected }: TagProps) {
         duration-75 ease-in hocus:shadow-outline hocus:shadow-theme-accent/50 
         selected:shadow-outline selected:shadow-theme-accent/50 md:text-2xs 
       `}
-      data-category={category}
-      onClick={() => onClick(category)}
+      {...dataParams}
+      onClick={() => onClick(value)}
       role="switch"
       aria-checked={selected}
     >
-      {category}
+      {value}
     </button>
   );
 }
