@@ -31,3 +31,8 @@ export const CATEGORIES = [
   CHESS_CATEGORY,
   OTHER_CATEGORY,
 ] as const;
+
+export const RUBY_TECHNOLOGY = "Ruby";
+export const TYPESCRIPT_TECHNOLOGY = "TypeScript";
+
+export const TECHNOLOGIES = [RUBY_TECHNOLOGY, TYPESCRIPT_TECHNOLOGY] as const;

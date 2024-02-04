@@ -1,5 +1,12 @@
-import { CATEGORIES, MEDIAS } from "./constants";
-import type { ArticleSummary, Category, Media, NoteSummary } from "./types";
+import { CATEGORIES, MEDIAS, TECHNOLOGIES } from "./constants";
+import type {
+  ArticleSummary,
+  Category,
+  Media,
+  NoteSummary,
+  Technology,
+  TodayILearnedSummary,
+} from "./types";
 
 function assert(condition: unknown, message?: string): asserts condition {
   if (condition === false) throw new Error(message);
@@ -11,6 +18,14 @@ export function isCategory(category: unknown): category is Category {
 
 export function assertCategory(category: unknown): asserts category is Category {
   assert(isCategory(category));
+}
+
+export function isTechnology(technology: unknown): technology is Technology {
+  return TECHNOLOGIES.includes(technology as Technology);
+}
+
+export function assertTechnology(technology: unknown): asserts technology is Technology {
+  assert(isTechnology(technology));
 }
 
 export function isMedia(media: unknown): media is Media {
@@ -81,5 +96,32 @@ export function assertArticleSummary(article: unknown): asserts article is Artic
   assert(
     isArticleSummary(article),
     `Expected an ArticleSummary, but got '${JSON.stringify(article)}'.`,
+  );
+}
+
+export function isTodayILearnedSummary(note: unknown): note is TodayILearnedSummary {
+  return (
+    typeof note === "object" &&
+    note !== null &&
+    "id" in note &&
+    "title" in note &&
+    "slug" in note &&
+    "date" in note &&
+    "technology" in note &&
+    "published" in note &&
+    typeof note.id === "string" &&
+    typeof note.title === "string" &&
+    typeof note.slug === "string" &&
+    note.date instanceof Date &&
+    typeof note.technology === "string" &&
+    isTechnology(note.technology) &&
+    typeof note.published === "boolean"
+  );
+}
+
+export function assertTodayILearnedSummary(note: unknown): asserts note is TodayILearnedSummary {
+  assert(
+    isTodayILearnedSummary(note),
+    `Expected a TodayILearnedSummary, but got '${JSON.stringify(note)}'.`,
   );
 }

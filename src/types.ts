@@ -1,7 +1,8 @@
-import type { CATEGORIES, MEDIAS } from "./constants";
+import type { CATEGORIES, MEDIAS, TECHNOLOGIES } from "./constants";
 
 export type Category = (typeof CATEGORIES)[number];
 export type Media = (typeof MEDIAS)[number];
+export type Technology = (typeof TECHNOLOGIES)[number];
 
 export type NoteSummary = {
   id: string;
@@ -32,6 +33,20 @@ export type ArticleSummary = {
 };
 
 export interface Article extends ArticleSummary {
+  content: string;
+}
+
+export type TodayILearnedSummary = {
+  id: string;
+  title: string;
+  slug: string;
+  date: Date;
+  description: string;
+  technology: Technology;
+  published: boolean;
+};
+
+export interface TodayILearned extends TodayILearnedSummary {
   content: string;
 }
 
