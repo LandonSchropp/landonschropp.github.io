@@ -24,7 +24,7 @@ export function TodayILearnedSummaries({ todayILearnedSummaries }: TodayILearned
     <>
       <Header
         title="Today I Learned"
-        subText="Quick tips and tricks I've learned from day-to-day coding"
+        subText="Langague and framework tips and tricks I've learned while coding"
       >
         <Tags type="technology" values={TECHNOLOGIES} />
       </Header>
