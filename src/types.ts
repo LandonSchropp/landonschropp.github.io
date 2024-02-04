@@ -4,51 +4,47 @@ export type Category = (typeof CATEGORIES)[number];
 export type Media = (typeof MEDIAS)[number];
 export type Technology = (typeof TECHNOLOGIES)[number];
 
-export type NoteSummary = {
+/**
+ * The shared properties of all content summaries.
+ */
+export type ContentSummary = {
   id: string;
   title: string;
   slug: string;
-  authors: string[];
   date: Date;
+  published: boolean;
+};
+
+/**
+ * The shared properties of all content.
+ */
+export interface Content extends ContentSummary {
+  content: string;
+}
+
+export interface NoteSummary extends ContentSummary {
+  authors: string[];
   category: Category;
   media: string;
   source: string;
   url: string;
-  published: boolean;
-};
-
-export interface Note extends NoteSummary {
-  content: string;
 }
 
-export type ArticleSummary = {
-  id: string;
-  title: string;
-  slug: string;
-  date: Date;
+export type Note = NoteSummary & Content;
+
+export interface ArticleSummary extends ContentSummary {
   description: string;
   url: string | null;
   publisher: string | null;
-  published: boolean;
-};
-
-export interface Article extends ArticleSummary {
-  content: string;
 }
 
-export type TodayILearnedSummary = {
-  id: string;
-  title: string;
-  slug: string;
-  date: Date;
-  description: string;
+export type Article = ArticleSummary & Content;
+
+export interface TodayILearnedSummary extends ContentSummary {
   technology: Technology;
-  published: boolean;
-};
-
-export interface TodayILearned extends TodayILearnedSummary {
-  content: string;
 }
+
+export type TodayILearned = TodayILearnedSummary & Content;
 
 export type SvgDataPathShape = {
   id: string;

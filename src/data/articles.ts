@@ -1,12 +1,12 @@
 import { assertArticleSummary } from "../type-guards";
 import type { Article, ArticleSummary } from "../types";
-import { fetchDatabasePages, fetchPageHtml, optionalValue } from "./notion";
+import { fetchContentSummaries, fetchContent } from "./content";
+import { optionalValue } from "./notion";
 import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { sortBy } from "remeda";
 
-const articleS_DATABASE_ID = "c68575f91f534048bb15c54f0f230882";
+const ARTICLES_DATABASE_ID = "c68575f91f534048bb15c54f0f230882";
 
-function pageObjectResponseToArticle(page: PageObjectResponse): ArticleSummary {
+function pageObjectResponseToArticleSummary(page: PageObjectResponse): ArticleSummary {
   const article = {
     id: page.id,
     title: optionalValue(page, "Title", "title"),
@@ -24,22 +24,9 @@ function pageObjectResponseToArticle(page: PageObjectResponse): ArticleSummary {
 }
 
 export async function fetchArticleSummaries(): Promise<ArticleSummary[]> {
-  const articles = (await fetchDatabasePages(articleS_DATABASE_ID))
-    .map(pageObjectResponseToArticle)
-    .filter((article) => process.env.NODE_ENV === "development" || article.published);
-
-  return sortBy(articles, (note) => -note.date.getTime());
+  return await fetchContentSummaries(ARTICLES_DATABASE_ID, pageObjectResponseToArticleSummary);
 }
 
 export async function fetchArticle(slug: string): Promise<Article> {
-  const articleSummary = (await fetchArticleSummaries()).find((article) => article.slug === slug);
-
-  if (!articleSummary) {
-    throw new Error(`Article with slug "${slug}" not found`);
-  }
-
-  return {
-    ...articleSummary,
-    content: await fetchPageHtml(articleSummary.id),
-  };
+  return await fetchContent(ARTICLES_DATABASE_ID, pageObjectResponseToArticleSummary, slug);
 }
