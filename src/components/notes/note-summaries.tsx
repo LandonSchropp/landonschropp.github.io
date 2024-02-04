@@ -4,28 +4,29 @@ import { NoteSummary } from "./note-summary";
 import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
 import { OTHER_CATEGORY, CHESS_CATEGORY } from "@/constants";
-import { useCategoryFilter } from "@/hooks/use-category-filter";
+import { useCurrentCategory } from "@/hooks/use-current-category";
 import type { NoteSummary as NoteSummaryType } from "@/types";
-import { isNil } from "remeda";
+
+function noteSummaryMatchesCategory(noteSummary: NoteSummaryType, category: string | null) {
+  // NOTE: I'm using includes here to accommodate the `Live Talk` category, which should be included
+  // by `Talk`.
+  return (
+    category === null ||
+    (category === OTHER_CATEGORY && noteSummary.category === CHESS_CATEGORY) ||
+    noteSummary.category.includes(category)
+  );
+}
 
 type NoteSummariesProps = {
   noteSummaries: NoteSummaryType[];
 };
 
 export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
-  const [category] = useCategoryFilter();
+  const [category] = useCurrentCategory();
 
-  // Filter the notes if a category is selected.
-  // NOTE: I'm using includes here to accommodate the `Live Talk` category, which should be included
-  // by `Talk`.
-  const filteredNotes = isNil(category)
-    ? noteSummaries
-    : noteSummaries.filter((note) => {
-        return (
-          (category === OTHER_CATEGORY && note.category === CHESS_CATEGORY) ||
-          note.category.includes(category)
-        );
-      });
+  const filteredNotes = noteSummaries.filter((noteSummary) =>
+    noteSummaryMatchesCategory(noteSummary, category),
+  );
 
   return (
     <>

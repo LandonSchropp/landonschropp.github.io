@@ -6,7 +6,7 @@ import {
   PSYCHOLOGY_CATEGORY,
   OTHER_CATEGORY,
 } from "@/constants";
-import { useCategoryFilter } from "@/hooks/use-category-filter";
+import { useCurrentCategory } from "@/hooks/use-current-category";
 import type { Category } from "@/types";
 import { useCallback } from "react";
 
@@ -23,7 +23,7 @@ function TagGroup({ children }: TagGroupProps) {
 }
 
 export function Tags() {
-  const [category, setCategory] = useCategoryFilter();
+  const [category, setCategory] = useCurrentCategory();
 
   const toggleCategory = useCallback(
     (updatedCategory: Category | null) => {
