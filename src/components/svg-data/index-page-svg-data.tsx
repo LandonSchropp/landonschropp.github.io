@@ -45,6 +45,7 @@ export function IndexPageSvgData() {
   const developerAndDesignerShape = findShape(shapes, "developer-and-designer");
   const writingShape = findShape(shapes, "writing");
   const notesShape = findShape(shapes, "notes");
+  const tilShape = findShape(shapes, "til");
   const gitHubShape = findShape(shapes, "github");
   const chessComShape = findShape(shapes, "chess-com");
   const linkedInShape = findShape(shapes, "linkedin");
@@ -71,6 +72,8 @@ export function IndexPageSvgData() {
         <SvgDataShapeLink href="/articles" title="Writing" shape={writingShape} />
 
         <SvgDataShapeLink href="/notes" title="Notes" shape={notesShape} />
+
+        <SvgDataShapeLink href="/today-i-learned" title="Today I Learned" shape={tilShape} />
 
         <SvgDataShapeLink
           href="https://github.com/LandonSchropp"
