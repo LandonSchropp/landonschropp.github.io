@@ -1,5 +1,6 @@
 import { Listify } from "@/components/base/listify";
 import { Summary } from "@/components/content/summary";
+import { BOOK_MEDIA } from "@/constants";
 import type { NoteSummary as NoteSummaryType } from "@/types";
 import { isEmpty, isNil } from "remeda";
 
@@ -28,7 +29,7 @@ function NoteByline({ note }: NoteBylineProps) {
     return source;
   }
 
-  if (isNil(note.source)) {
+  if (isNil(note.source) || note.media === BOOK_MEDIA) {
     return authors;
   }
 
