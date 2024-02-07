@@ -2,8 +2,7 @@
 
 .hljs-comment,
 .hljs-quote {
-  color: theme("colors.gray");
-  font-style: italic;
+  @apply italic text-gray;
 }
 
 .hljs-variable,
@@ -17,10 +16,7 @@
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
-.hljs-addition {
-  color: theme("colors.bittersweet");
-}
-
+.hljs-addition,
 .hljs-number,
 .hljs-built_in,
 .hljs-builtin-name,
@@ -29,15 +25,12 @@
 .hljs-params,
 .hljs-meta,
 .hljs-link,
-.hljs-attribute {
-  color: theme("colors.amethyst");
-}
-
+.hljs-attribute,
 .hljs-title,
 .hljs-section,
 .hljs-keyword,
 .hljs-selector-tag {
-  color: theme("colors.cornflower");
+  @apply text-cornflower text-theme-accent;
 }
 
 .hljs-emphasis {
