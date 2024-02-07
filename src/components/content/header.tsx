@@ -1,3 +1,4 @@
+import { Tag } from "./tag";
 import type { ReactNode } from "react";
 import { isNil } from "remeda";
 
@@ -18,15 +19,34 @@ function HeaderLink({ children, href }: HeaderLinkProps) {
   );
 }
 
+type HeaderTagProps = {
+  tag?: string | undefined;
+  href?: string | undefined;
+};
+
+function HeaderTag({ tag, href }: HeaderTagProps) {
+  if (!tag || !href) {
+    return null;
+  }
+
+  return (
+    <div className="mb-2 mt-3 text-sm text-theme-accent">
+      <Tag value={tag} attribute="technology" href={href} />
+    </div>
+  );
+}
+
 type HeaderProps = {
   children?: ReactNode;
   superText?: ReactNode;
   title: ReactNode;
   subText: ReactNode;
   href?: string | undefined;
+  tag?: string | undefined;
+  tagHref?: string | undefined;
 };
 
-export function Header({ children, superText, title, href, subText }: HeaderProps) {
+export function Header({ children, superText, title, href, subText, tag, tagHref }: HeaderProps) {
   const superSubClassName =
     "mx-auto my-1 m-width[50ch] text-base font-normal font-serif italic text-theme-lightText [&_a]:underline";
 
@@ -41,6 +61,8 @@ export function Header({ children, superText, title, href, subText }: HeaderProp
       <div className={`my-2 block ${superSubClassName}`} data-test-id="sub-text">
         {subText}
       </div>
+      <HeaderTag tag={tag} href={tagHref} />
+
       {children}
     </header>
   );

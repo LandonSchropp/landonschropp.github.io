@@ -17,6 +17,8 @@ export function TodayILearnedHeader({ todayILearned }: TodayILearnedHeaderProps)
           <span rel="author">Landon Schropp</span> • <FormattedDate date={todayILearned.date} />
         </>
       }
+      tag={todayILearned.technology}
+      tagHref={`/today-i-learned?technology=${todayILearned.technology}`}
     />
   );
 }
