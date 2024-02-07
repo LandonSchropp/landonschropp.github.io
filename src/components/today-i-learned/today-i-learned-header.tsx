@@ -11,6 +11,7 @@ export function TodayILearnedHeader({ todayILearned }: TodayILearnedHeaderProps)
     <Header
       superText="Today I Learned"
       title={todayILearned.title}
+      href={`/today-i-learned/${todayILearned.slug}`}
       subText={
         <>
           <span rel="author">Landon Schropp</span> • <FormattedDate date={todayILearned.date} />
