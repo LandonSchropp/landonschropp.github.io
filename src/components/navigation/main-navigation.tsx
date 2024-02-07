@@ -58,6 +58,12 @@ export function MainNavigation() {
 
         <Link href="/articles">Writing</Link>
         <Link href="/notes">Notes</Link>
+        <Link href="/today-i-learned">
+          <abbr className="no-underline lg:hidden" title="Today I Learned">
+            TIL
+          </abbr>
+          <span className="max-lg:hidden">Today I Learned</span>
+        </Link>
       </div>
       <div className="flex justify-center">
         <Link href="https://github.com/LandonSchropp" icon>
