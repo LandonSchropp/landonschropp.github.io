@@ -6,19 +6,19 @@ import { Tags } from "@/components/content/tags";
 import { TECHNOLOGIES } from "@/constants";
 import { useCurrentTag } from "@/hooks/use-current-tag";
 import type { TodayILearnedSummary as TodayILearnedSummaryType } from "@/types";
-import { equals, isNil } from "remeda";
+import { isNil } from "remeda";
 
 type TodayILearnedSummariesProps = {
   todayILearnedSummaries: TodayILearnedSummaryType[];
 };
 
 export function TodayILearnedSummaries({ todayILearnedSummaries }: TodayILearnedSummariesProps) {
-  const [technology] = useCurrentTag("technology", TECHNOLOGIES);
+  const [currentTechnology] = useCurrentTag("technology", TECHNOLOGIES);
 
   // Filter the todayILearneds if a technology is selected.
-  const filteredTodayILearneds = isNil(technology)
+  const filteredTodayILearneds = isNil(currentTechnology)
     ? todayILearnedSummaries
-    : todayILearnedSummaries.filter(equals(technology));
+    : todayILearnedSummaries.filter(({ technology }) => technology === currentTechnology);
 
   return (
     <>
