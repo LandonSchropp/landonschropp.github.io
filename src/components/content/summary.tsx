@@ -1,16 +1,16 @@
-import type { Category } from "@/types";
 import { CSSProperties } from "react";
 
 type SummaryProps = {
   title: string;
   url: string;
-  category?: Category;
   children?: React.ReactNode;
   className?: string;
   style?: CSSProperties;
+  tag?: string;
+  tagAttribute?: string;
 };
 
-export function Summary({ title, url, category, children, style }: SummaryProps) {
+export function Summary({ title, url, children, style, tag, tagAttribute }: SummaryProps) {
   return (
     <a
       className={`
@@ -20,7 +20,7 @@ export function Summary({ title, url, category, children, style }: SummaryProps)
       `}
       href={url}
       style={style}
-      {...(category && { "data-category": category })}
+      {...(tag && tagAttribute && { [`data-${tagAttribute}`]: tag })}
     >
       <h3 className="my-0 text-base">{title}</h3>
       <p className="my-0 italic">{children}</p>

@@ -38,7 +38,7 @@ function Link({ href, children, icon = false }: LinkProps) {
 
   return (
     <a
-      className={`mx-2 block text-inherit transition-all duration-75 ease-in ${className} ${shocusClassName} hover:no-underline`}
+      className={`mx-2 block text-inherit transition-all duration-75 ease-in ${className} ${shocusClassName}`}
       href={href}
       {...(isCurrent(pathname, href, client) && { "aria-current": "page" })}
     >

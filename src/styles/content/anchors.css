@@ -1,3 +1,3 @@
 a {
-  @apply text-inherit text-theme-accent hover:underline;
+  @apply text-inherit text-theme-accent;
 }

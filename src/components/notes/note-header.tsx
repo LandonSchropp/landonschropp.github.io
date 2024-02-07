@@ -84,6 +84,8 @@ export function NoteHeader({ note }: NoteHeaderProps) {
       title={note.title}
       subText={<NoteSubheadText note={note} />}
       href={note.url}
+      tag={note.category}
+      tagHref={`/notes?category=${note.category}`}
     />
   );
 }
