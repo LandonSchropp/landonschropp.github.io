@@ -13,7 +13,8 @@
 .hljs-selector-id,
 .hljs-selector-class,
 .hljs-regexp,
-.hljs-deletion .hljs-string,
+.hljs-deletion,
+.hljs-string,
 .hljs-symbol,
 .hljs-bullet,
 .hljs-addition {
