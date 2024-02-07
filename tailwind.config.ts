@@ -5,6 +5,9 @@ import {
   PSYCHOLOGY_CATEGORY,
   CHESS_CATEGORY,
   OTHER_CATEGORY,
+  RUBY_TECHNOLOGY,
+  TYPESCRIPT_TECHNOLOGY,
+  GIT_TECHNOLOGY,
 } from "./src/constants";
 import camelCase from "camelcase";
 import { mapValues } from "remeda";
@@ -82,6 +85,12 @@ const CATEGORY_COLORS = {
   [OTHER_CATEGORY]: TAILWIND_CONFIG.theme.colors.bittersweet,
 } as const;
 
+const TECHNOLOGY_COLORS = {
+  [TYPESCRIPT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.cornflower,
+  [GIT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.amethyst,
+  [RUBY_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.bittersweet,
+} as const;
+
 const HOCUS_SELECTORS = ["&:hover", "&:focus-visible"];
 const SELECTED_SELECTORS = ["&[aria-checked='true']", "&[aria-current='page']"];
 
@@ -131,6 +140,17 @@ export default {
         ...Object.entries(CATEGORY_COLORS).map(([category, color]) => ({
           name: camelCase(category),
           selectors: [`[data-category="${category}"]`],
+          theme: {
+            colors: {
+              theme: {
+                accent: color,
+              },
+            },
+          },
+        })),
+        ...Object.entries(TECHNOLOGY_COLORS).map(([technology, color]) => ({
+          name: camelCase(technology),
+          selectors: [`[data-technology="${technology}"]`],
           theme: {
             colors: {
               theme: {
