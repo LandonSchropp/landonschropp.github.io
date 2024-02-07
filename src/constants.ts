@@ -34,5 +34,6 @@ export const CATEGORIES = [
 
 export const RUBY_TECHNOLOGY = "Ruby";
 export const TYPESCRIPT_TECHNOLOGY = "TypeScript";
+export const GIT_TECHNOLOGY = "Git";
 
-export const TECHNOLOGIES = [RUBY_TECHNOLOGY, TYPESCRIPT_TECHNOLOGY] as const;
+export const TECHNOLOGIES = [RUBY_TECHNOLOGY, GIT_TECHNOLOGY, TYPESCRIPT_TECHNOLOGY] as const;
