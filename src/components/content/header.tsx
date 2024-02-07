@@ -12,7 +12,7 @@ function HeaderLink({ children, href }: HeaderLinkProps) {
   }
 
   return (
-    <a className="no-underline decoration-[0..075em] hover:underline" href={href}>
+    <a className="no-underline hover:underline" href={href}>
       {children}
     </a>
   );
