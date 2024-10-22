@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+import type { NextConfig } from "next";
+
 export default {
   output: "export",
   distDir: "dist",
@@ -33,4 +34,4 @@ export default {
 
     return config;
   },
-};
+} satisfies NextConfig;
