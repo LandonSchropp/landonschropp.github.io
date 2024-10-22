@@ -8,7 +8,11 @@ export async function generateStaticParams() {
     .map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({ params: { slug } }: ArticlePageProps): Promise<Metadata> {
+export async function generateMetadata(props: ArticlePageProps): Promise<Metadata> {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const article = await fetchArticle(slug);
 
   return {
@@ -19,11 +23,15 @@ export async function generateMetadata({ params: { slug } }: ArticlePageProps): 
 }
 
 type ArticlePageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default async function ArticlePage({ params: { slug } }: ArticlePageProps) {
+export default async function ArticlePage(props: ArticlePageProps) {
+  const params = await props.params;
+
+  const { slug } = params;
+
   return <Article article={await fetchArticle(slug)} />;
 }

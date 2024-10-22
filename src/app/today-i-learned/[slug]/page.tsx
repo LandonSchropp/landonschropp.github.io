@@ -6,9 +6,11 @@ export async function generateStaticParams() {
   return (await fetchTodayILearnedSummaries()).map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params: { slug },
-}: TodayILearnedPageProps): Promise<Metadata> {
+export async function generateMetadata(props: TodayILearnedPageProps): Promise<Metadata> {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const todayILearned = await fetchTodayILearned(slug);
 
   return {
@@ -19,11 +21,15 @@ export async function generateMetadata({
 }
 
 type TodayILearnedPageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default async function TodayILearnedPage({ params: { slug } }: TodayILearnedPageProps) {
+export default async function TodayILearnedPage(props: TodayILearnedPageProps) {
+  const params = await props.params;
+
+  const { slug } = params;
+
   return <TodayILearned todayILearned={await fetchTodayILearned(slug)} />;
 }

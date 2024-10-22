@@ -6,7 +6,11 @@ export async function generateStaticParams() {
   return (await fetchNoteSummaries()).map(({ slug }) => ({ slug }));
 }
 
-export async function generateMetadata({ params: { slug } }: NotePageProps): Promise<Metadata> {
+export async function generateMetadata(props: NotePageProps): Promise<Metadata> {
+  const params = await props.params;
+
+  const { slug } = params;
+
   const note = await fetchNote(slug);
 
   return {
@@ -17,11 +21,15 @@ export async function generateMetadata({ params: { slug } }: NotePageProps): Pro
 }
 
 type NotePageProps = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default async function NotePage({ params: { slug } }: NotePageProps) {
+export default async function NotePage(props: NotePageProps) {
+  const params = await props.params;
+
+  const { slug } = params;
+
   return <Note note={await fetchNote(slug)} />;
 }
