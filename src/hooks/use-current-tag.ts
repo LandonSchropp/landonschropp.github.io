@@ -6,7 +6,7 @@ import { useCallback } from "react";
  * filter is stored in the URL search parameters so it can easily be shared with others.
  * @typeParam T The type of the tag.
  * @param type The name of the search parameter to use for the current tag.
- * @param isTag A type guard that checks if a value is of type `T`.
+ * @param values The possible values to choose from for the tag.
  * @returns A tuple containing the current tag and a function to set the current tag.
  */
 export function useCurrentTag<T extends string>(type: string, values: readonly T[]) {
