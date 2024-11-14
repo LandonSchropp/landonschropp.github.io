@@ -1,37 +1,67 @@
-import { fetchDatabasePages, fetchPageHtml } from "./notion";
-import { Content, ContentSummary } from "@/types";
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
-import { sortBy } from "remeda";
+import { assertContent, Content } from "@/schema";
+import { parseFrontmatter } from "@/utilities/frontmatter";
+import { readFile } from "fs/promises";
+import { glob } from "glob";
+import { basename, join, relative } from "path";
 
-export async function fetchContentSummaries<T extends ContentSummary>(
-  databaseId: string,
-  pageObjectResponseToContentSummary: (page: PageObjectResponse) => T,
-): Promise<T[]> {
-  const objects = (await fetchDatabasePages(databaseId))
-    .map(pageObjectResponseToContentSummary)
-    .filter((object) => process.env.NODE_ENV === "development" || object.published);
+/**
+ * Fetches the content of a file and parses it.
+ * @param contentPath The directory containing the content files.
+ * @param filePath The path to the file to fetch.
+ */
+async function fetchAndParseContent(contentPath: string, filePath: string): Promise<Content> {
+  const relativePath = relative(contentPath, filePath);
+  const fileContent = await readFile(filePath, "utf8");
+  const pathParts = relativePath.split("/");
 
-  return sortBy(objects, (object) => -object.date.getTime());
-}
+  const [frontMatter, markdown] = parseFrontmatter(fileContent);
+  const title = basename(filePath, ".md");
 
-export async function fetchContent<T extends ContentSummary>(
-  databaseId: string,
-  pageObjectResponseToContentSummary: (page: PageObjectResponse) => T,
-  slug: string,
-): Promise<T & Content> {
-  const contentSummaries = await fetchContentSummaries(
-    databaseId,
-    pageObjectResponseToContentSummary,
-  );
+  const content = {
+    ...frontMatter,
+    markdown: markdown.trim(),
+    category: pathParts.length > 1 ? pathParts[0] : undefined,
+    title,
+  };
 
-  const contentSummary = contentSummaries.find((contentSummary) => contentSummary.slug === slug);
-
-  if (!contentSummary) {
-    throw new Error(`Page with slug "${slug}" not found`);
+  try {
+    assertContent(content);
+  } catch (error) {
+    console.error(`Error parsing content from file '${filePath}'.`);
+    throw error;
   }
 
-  return {
-    ...contentSummary,
-    content: await fetchPageHtml(contentSummary.id),
-  };
+  return content;
+}
+
+/**
+ * Fetches all of the contents from the local Obsidian vault in the vault's relative path.
+ * @param path The path from which the content files should be fetched.
+ * @returns An array of contents.
+ */
+export async function fetchContents(path: string): Promise<Content[]> {
+  const files = await glob(join(path, "**/*.md"));
+
+  return Promise.all(
+    files.map((filePath) => {
+      return fetchAndParseContent(path, filePath);
+    }),
+  );
+}
+
+/**
+ * Fetches a single content based on its slug.
+ * @param slug The slug of the note.
+ * @param path The path from which the content files should be fetched.
+ * @returns The content with the provided slug.
+ * @throws An error if the content could not be fetched.
+ */
+export async function fetchContent(path: string, slug: string): Promise<Content> {
+  const content = (await fetchContents(path)).find((content) => content.slug === slug);
+
+  if (!content) {
+    throw new Error(`Content with slug '${slug}' not found.`);
+  }
+
+  return content;
 }

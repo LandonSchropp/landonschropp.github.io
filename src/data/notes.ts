@@ -1,34 +1,34 @@
-import { assertNoteSummary } from "../type-guards";
-import type { Note, NoteSummary } from "../types";
-import { fetchContent, fetchContentSummaries } from "./content";
-import { optionalValue } from "./notion";
-import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { fetchContent, fetchContents } from "./content";
+import { assertNote, Note } from "@/schema";
+import { join } from "path";
 
-const NOTES_DATABASE_ID = "da4f9ded813b424e83e5f552b1f41a3e";
-
-function pageObjectResponseToNoteSummary(page: PageObjectResponse): NoteSummary {
-  const note = {
-    id: page.id,
-    title: optionalValue(page, "Title", "title"),
-    slug: optionalValue(page, "Slug", "rich_text"),
-    authors: optionalValue(page, "Authors", "rich_text")?.split(/\s*,\s*/) ?? [],
-    date: optionalValue(page, "Date", "date"),
-    category: optionalValue(page, "Category", "select"),
-    media: optionalValue(page, "Media", "select"),
-    source: optionalValue(page, "Source", "rich_text"),
-    url: optionalValue(page, "URL", "url"),
-    published: optionalValue(page, "Published", "checkbox"),
-  };
-
-  assertNoteSummary(note);
-
-  return note;
+if (!process.env.OBSIDIAN_VAULT) {
+  throw new Error("You must set the $OBSIDIAN_VAULT environment variable!");
 }
 
-export async function fetchNoteSummaries(): Promise<NoteSummary[]> {
-  return await fetchContentSummaries(NOTES_DATABASE_ID, pageObjectResponseToNoteSummary);
+const NOTES_PATH = join(process.env.OBSIDIAN_VAULT, "Resources/Notes");
+
+/**
+ * Fetches all notes from the local Obsidian vault.
+ * @returns An array of notes.
+ */
+export async function fetchNotes(): Promise<Note[]> {
+  const notes = await fetchContents(NOTES_PATH);
+
+  for (const note of notes) {
+    assertNote(note);
+  }
+
+  return notes as Note[];
 }
 
+/**
+ * Fetches a single note from the local Obsidian vault.
+ * @param slug The slug of the note.
+ * @returns The note with the provided slug.
+ */
 export async function fetchNote(slug: string): Promise<Note> {
-  return await fetchContent(NOTES_DATABASE_ID, pageObjectResponseToNoteSummary, slug);
+  const note = await fetchContent(NOTES_PATH, slug);
+  assertNote(note);
+  return note;
 }
