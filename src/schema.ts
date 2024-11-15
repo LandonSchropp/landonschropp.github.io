@@ -3,9 +3,10 @@ import {
   BOOK_MEDIA,
   CATEGORIES,
   COURSE_MEDIA,
+  LIVE_TALK_MEDIA,
   MEDIAS,
   PODCAST_MEDIA,
-  TALK_MEDIA,
+  RECORDED_TALK_MEDIA,
   TECHNOLOGIES,
   VIDEO_MEDIA,
 } from "./constants";
@@ -53,33 +54,30 @@ const CourseNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(COURSE_MEDIA),
 });
 
+const LiveTalkNoteSchema = NoteSchemaBase.extend({
+  media: z.literal(LIVE_TALK_MEDIA),
+  event: z.string(),
+});
+
 const PodcastNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(PODCAST_MEDIA),
 });
 
-const TalkNoteSchema = z.discriminatedUnion("live", [
-  NoteSchemaBase.extend({
-    media: z.literal(TALK_MEDIA),
-    live: z.literal(true),
-    location: z.string(),
-  }),
-  NoteSchemaBase.extend({
-    media: z.literal(TALK_MEDIA),
-    live: z.literal(false),
-    source: z.string(),
-  }),
-]);
+const RecordedTalkNoteSchema = ArticleNoteSchema.extend({
+  media: z.literal(RECORDED_TALK_MEDIA),
+});
 
 const VideoNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(VIDEO_MEDIA),
 });
 
-export const NoteSchema = z.union([
+export const NoteSchema = z.discriminatedUnion("media", [
   ArticleNoteSchema,
   BookNoteSchema,
   CourseNoteSchema,
+  LiveTalkNoteSchema,
   PodcastNoteSchema,
-  TalkNoteSchema,
+  RecordedTalkNoteSchema,
   VideoNoteSchema,
 ]);
 
