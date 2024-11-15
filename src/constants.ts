@@ -20,17 +20,19 @@ export const MEDIAS = [
 
 export const BUSINESS_CATEGORY = "Business";
 export const DEVELOPMENT_CATEGORY = "Development";
-export const DESIGN_CATEGORY = "Design";
-export const PSYCHOLOGY_CATEGORY = "Psychology";
 export const CHESS_CATEGORY = "Chess";
+export const DESIGN_CATEGORY = "Design";
+export const PRODUCTIVITY_CATEGORY = "Productivity";
+export const PSYCHOLOGY_CATEGORY = "Psychology";
 export const OTHER_CATEGORY = "Other";
 
 export const CATEGORIES = [
   BUSINESS_CATEGORY,
   DEVELOPMENT_CATEGORY,
-  DESIGN_CATEGORY,
-  PSYCHOLOGY_CATEGORY,
   CHESS_CATEGORY,
+  DESIGN_CATEGORY,
+  PRODUCTIVITY_CATEGORY,
+  PSYCHOLOGY_CATEGORY,
   OTHER_CATEGORY,
 ] as const;
 
