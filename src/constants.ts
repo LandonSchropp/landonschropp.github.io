@@ -22,6 +22,7 @@ export const BUSINESS_CATEGORY = "Business";
 export const DEVELOPMENT_CATEGORY = "Development";
 export const CHESS_CATEGORY = "Chess";
 export const DESIGN_CATEGORY = "Design";
+export const HEALTH_CATEGORY = "Health";
 export const PRODUCTIVITY_CATEGORY = "Productivity";
 export const PSYCHOLOGY_CATEGORY = "Psychology";
 export const OTHER_CATEGORY = "Other";
@@ -31,6 +32,7 @@ export const CATEGORIES = [
   DEVELOPMENT_CATEGORY,
   CHESS_CATEGORY,
   DESIGN_CATEGORY,
+  HEALTH_CATEGORY,
   PRODUCTIVITY_CATEGORY,
   PSYCHOLOGY_CATEGORY,
   OTHER_CATEGORY,
