@@ -4,7 +4,7 @@ export const COURSE_MEDIA = "Course";
 export const LIVE_TALK_MEDIA = "Live Talk";
 export const OTHER_MEDIA = "Other";
 export const PODCAST_MEDIA = "Podcast";
-export const TALK_MEDIA = "Talk";
+export const RECORDED_TALK_MEDIA = "Recorded Talk";
 export const VIDEO_MEDIA = "Video";
 
 export const MEDIAS = [
@@ -14,7 +14,7 @@ export const MEDIAS = [
   LIVE_TALK_MEDIA,
   OTHER_MEDIA,
   PODCAST_MEDIA,
-  TALK_MEDIA,
+  RECORDED_TALK_MEDIA,
   VIDEO_MEDIA,
 ] as const;
 

@@ -5,7 +5,7 @@ import {
   ARTICLE_MEDIA,
   BOOK_MEDIA,
   LIVE_TALK_MEDIA,
-  TALK_MEDIA,
+  RECORDED_TALK_MEDIA,
   PODCAST_MEDIA,
   VIDEO_MEDIA,
 } from "@/constants";
@@ -228,7 +228,7 @@ describe("NoteHeader", () => {
 
   describe("when the note is for a talk", () => {
     beforeEach(() => {
-      note.media = TALK_MEDIA;
+      note.media = RECORDED_TALK_MEDIA;
       render(<NoteHeader note={note} />);
     });
 
