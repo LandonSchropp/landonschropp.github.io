@@ -44,11 +44,15 @@ async function fetchAndParseContent(
 export async function fetchContents(path: string): Promise<Record<string, any>[]> {
   const files = await glob(join(path, "**/*.md"));
 
-  return Promise.all(
+  const contents = await Promise.all(
     files.map((filePath) => {
       return fetchAndParseContent(path, filePath);
     }),
   );
+
+  return contents.filter((content) => {
+    return "published" in content && typeof content.published === "boolean" && content.published;
+  });
 }
 
 /**
