@@ -1,51 +1,36 @@
-import type { CATEGORIES, MEDIAS, TECHNOLOGIES } from "./constants";
+import {
+  ArticleSchema,
+  CategorySchema,
+  ContentSchema,
+  MediaSchema,
+  NoteSchema,
+  TechnologySchema,
+  TodayILearnedSchema,
+} from "./schema";
+import { z } from "zod";
 
-export type Category = (typeof CATEGORIES)[number];
-export type Media = (typeof MEDIAS)[number];
-export type Technology = (typeof TECHNOLOGIES)[number];
+/** A topical category of content. */
+export type Category = z.infer<typeof CategorySchema>;
 
-/**
- * The shared properties of all content summaries.
- */
-export type ContentSummary = {
-  id: string;
-  title: string;
-  slug: string;
-  date: Date;
-  published: boolean;
-};
+/** A type of media. */
+export type Media = z.infer<typeof MediaSchema>;
 
-/**
- * The shared properties of all content.
- */
-export interface Content extends ContentSummary {
-  content: string;
-}
+/** A category of technology, such as a programming language or framework. */
+export type Technology = z.infer<typeof TechnologySchema>;
 
-export interface NoteSummary extends ContentSummary {
-  authors: string[];
-  category: Category;
-  media: string;
-  source: string;
-  url: string;
-}
+/** The shared properties of all content types, including `Note`, `Article` and `TodayILearned`. */
+export type Content = z.infer<typeof ContentSchema>;
 
-export type Note = NoteSummary & Content;
+/** An object containing the metadata and content of a note. */
+export type Note = z.infer<typeof NoteSchema>;
 
-export interface ArticleSummary extends ContentSummary {
-  description: string;
-  url: string | null;
-  publisher: string | null;
-}
+/** An object containing the metadata and content of an article. */
+export type Article = z.infer<typeof ArticleSchema>;
 
-export type Article = ArticleSummary & Content;
+/** An object containing the metadata and content of a today I Learned (TIL). */
+export type TodayILearned = z.infer<typeof TodayILearnedSchema>;
 
-export interface TodayILearnedSummary extends ContentSummary {
-  technology: Technology;
-}
-
-export type TodayILearned = TodayILearnedSummary & Content;
-
+/** A subset of the properties of the SVG `path` element. */
 export type SvgDataPathShape = {
   id: string;
   type: "path";
@@ -53,14 +38,17 @@ export type SvgDataPathShape = {
   bounds: [number, number, number, number];
 };
 
+/** A subset of the properties of the SVG `polygon` element. */
 export type SvgDataPolygonShape = {
   id: string;
   type: "polygon";
   points: string;
 };
 
+/** The accepted SVG shape subsets. */
 export type SvgDataShape = SvgDataPathShape | SvgDataPolygonShape;
 
+/** An object containing parsed data from an SVG. */
 export type SvgData = {
   viewBox: string;
   shapes: SvgDataShape[];

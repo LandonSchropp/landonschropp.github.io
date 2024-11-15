@@ -9,107 +9,95 @@ import {
   TECHNOLOGIES,
   VIDEO_MEDIA,
 } from "./constants";
+import { Content, Note, Article, TodayILearned } from "./types";
 import { Temporal } from "@js-temporal/polyfill";
 import { z } from "zod";
 
-const categoryEnum = z.enum(CATEGORIES);
-export type Category = z.infer<typeof categoryEnum>;
+export const CategorySchema = z.enum(CATEGORIES);
+export const TechnologySchema = z.enum(TECHNOLOGIES);
+export const MediaSchema = z.enum(MEDIAS);
 
-const technologyEnum = z.enum(TECHNOLOGIES);
-export type Technology = z.infer<typeof technologyEnum>;
-
-const mediaEnum = z.enum(MEDIAS);
-export type Media = z.infer<typeof mediaEnum>;
-
-const slugSchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-
-const contentSchema = z.object({
+export const ContentSchema = z.object({
   title: z.string(),
-  slug: slugSchema,
+  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   date: z.string().transform((date) => Temporal.PlainDate.from(date)),
   published: z.boolean(),
   markdown: z.string(),
 });
-
-/** Contains the basic properties that are universally represented in all types of content. */
-export type Content = z.infer<typeof contentSchema>;
 
 /**
  * Asserts that the provided value is a content.
  * @param value The value to check.
  */
 export function assertContent(value: unknown): asserts value is Content {
-  contentSchema.parse(value);
+  ContentSchema.parse(value);
 }
 
-const noteSchemaBase = contentSchema.extend({
+const NoteSchemaBase = ContentSchema.extend({
   authors: z.array(z.string()),
-  category: categoryEnum,
-  media: mediaEnum,
+  category: CategorySchema,
+  media: MediaSchema,
   url: z.string().url(),
 });
 
-const articleNoteSchema = noteSchemaBase.extend({
+const ArticleNoteSchema = NoteSchemaBase.extend({
   media: z.literal(ARTICLE_MEDIA),
   source: z.string(),
 });
 
-const bookNoteSchema = noteSchemaBase.extend({
+const BookNoteSchema = NoteSchemaBase.extend({
   media: z.literal(BOOK_MEDIA),
 });
 
-const courseNoteSchema = articleNoteSchema.extend({
+const CourseNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(COURSE_MEDIA),
 });
 
-const podcastNoteSchema = articleNoteSchema.extend({
+const PodcastNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(PODCAST_MEDIA),
 });
 
-const talkNoteSchema = z.discriminatedUnion("live", [
-  noteSchemaBase.extend({
+const TalkNoteSchema = z.discriminatedUnion("live", [
+  NoteSchemaBase.extend({
     media: z.literal(TALK_MEDIA),
     live: z.literal(true),
     location: z.string(),
   }),
-  noteSchemaBase.extend({
+  NoteSchemaBase.extend({
     media: z.literal(TALK_MEDIA),
     live: z.literal(false),
     source: z.string(),
   }),
 ]);
 
-const videoNoteSchema = articleNoteSchema.extend({
+const VideoNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(VIDEO_MEDIA),
 });
 
-export const noteSchema = z.union([
-  articleNoteSchema,
-  bookNoteSchema,
-  courseNoteSchema,
-  podcastNoteSchema,
-  talkNoteSchema,
-  videoNoteSchema,
+export const NoteSchema = z.union([
+  ArticleNoteSchema,
+  BookNoteSchema,
+  CourseNoteSchema,
+  PodcastNoteSchema,
+  TalkNoteSchema,
+  VideoNoteSchema,
 ]);
-
-/** An object containing the metadata and content of a note. */
-export type Note = z.infer<typeof noteSchema>;
 
 /**
  * Asserts that the provided value is a note.
  * @param value The value to check.
  */
 export function assertNote(value: unknown): asserts value is Note {
-  noteSchema.parse(value);
+  NoteSchema.parse(value);
 }
 
-const articleSchema = z.union([
-  contentSchema.extend({
+export const ArticleSchema = z.union([
+  ContentSchema.extend({
     description: z.string(),
     publisher: z.never(),
     url: z.never(),
   }),
-  contentSchema.extend({
+  ContentSchema.extend({
     description: z.string(),
     publisher: z.string(),
     url: z.string().url(),
@@ -117,28 +105,22 @@ const articleSchema = z.union([
   }),
 ]);
 
-/** An object containing the metadata and content of an article. */
-export type Article = z.infer<typeof articleSchema>;
-
 /**
  * Asserts that the provided value is an article.
  * @param value The value to check.
  */
 export function assertArticle(value: unknown): asserts value is Article {
-  articleSchema.parse(value);
+  ArticleSchema.parse(value);
 }
 
-export const todayILearnedSchema = contentSchema.extend({
-  technology: technologyEnum,
+export const TodayILearnedSchema = ContentSchema.extend({
+  technology: TechnologySchema,
 });
-
-/** An object containing the metadata and content of a today I Learned (TIL). */
-export type TodayILearned = z.infer<typeof todayILearnedSchema>;
 
 /**
  * Asserts that the provided value is a today I learned (TIL).
  * @param value The value to check.
  */
 export function assertTodayILearned(value: unknown): asserts value is TodayILearned {
-  todayILearnedSchema.parse(value);
+  TodayILearnedSchema.parse(value);
 }
