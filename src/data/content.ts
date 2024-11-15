@@ -1,4 +1,3 @@
-import { assertContent, Content } from "@/schema";
 import { parseFrontmatter } from "@/utilities/frontmatter";
 import { readFile } from "fs/promises";
 import { glob } from "glob";
@@ -9,7 +8,10 @@ import { basename, join, relative } from "path";
  * @param contentPath The directory containing the content files.
  * @param filePath The path to the file to fetch.
  */
-async function fetchAndParseContent(contentPath: string, filePath: string): Promise<Content> {
+async function fetchAndParseContent(
+  contentPath: string,
+  filePath: string,
+): Promise<Record<string, any>> {
   const relativePath = relative(contentPath, filePath);
   const fileContent = await readFile(filePath, "utf8");
   const pathParts = relativePath.split("/");
@@ -26,21 +28,12 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
 
   const title = basename(filePath, ".md");
 
-  const content = {
+  return {
     ...frontMatter,
     markdown: markdown.trim(),
     category: pathParts.length > 1 ? pathParts[0] : undefined,
     title,
   };
-
-  try {
-    assertContent(content);
-  } catch (error) {
-    console.error(`Error parsing content from file '${filePath}'.`);
-    throw error;
-  }
-
-  return content;
 }
 
 /**
@@ -48,7 +41,7 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
  * @param path The path from which the content files should be fetched.
  * @returns An array of contents.
  */
-export async function fetchContents(path: string): Promise<Content[]> {
+export async function fetchContents(path: string): Promise<Record<string, any>[]> {
   const files = await glob(join(path, "**/*.md"));
 
   return Promise.all(
@@ -65,7 +58,7 @@ export async function fetchContents(path: string): Promise<Content[]> {
  * @returns The content with the provided slug.
  * @throws An error if the content could not be fetched.
  */
-export async function fetchContent(path: string, slug: string): Promise<Content> {
+export async function fetchContent(path: string, slug: string): Promise<Record<string, any>> {
   const content = (await fetchContents(path)).find((content) => content.slug === slug);
 
   if (!content) {
