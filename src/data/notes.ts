@@ -1,5 +1,6 @@
 import { fetchContent, fetchContents } from "./content";
-import { assertNote, Note } from "@/schema";
+import { assertNote } from "@/assertions";
+import { Note } from "@/types";
 import { join } from "path";
 
 if (!process.env.OBSIDIAN_VAULT) {

@@ -10,7 +10,6 @@ import {
   TECHNOLOGIES,
   VIDEO_MEDIA,
 } from "./constants";
-import { Content, Note, Article, TodayILearned } from "./types";
 import { Temporal } from "@js-temporal/polyfill";
 import { z } from "zod";
 
@@ -25,14 +24,6 @@ export const ContentSchema = z.object({
   published: z.boolean(),
   markdown: z.string(),
 });
-
-/**
- * Asserts that the provided value is a content.
- * @param value The value to check.
- */
-export function assertContent(value: unknown): asserts value is Content {
-  ContentSchema.parse(value);
-}
 
 const NoteSchemaBase = ContentSchema.extend({
   authors: z.array(z.string()),
@@ -81,14 +72,6 @@ export const NoteSchema = z.discriminatedUnion("media", [
   VideoNoteSchema,
 ]);
 
-/**
- * Asserts that the provided value is a note.
- * @param value The value to check.
- */
-export function assertNote(value: unknown): asserts value is Note {
-  NoteSchema.parse(value);
-}
-
 export const ArticleSchema = z.union([
   ContentSchema.extend({
     description: z.string(),
@@ -103,22 +86,6 @@ export const ArticleSchema = z.union([
   }),
 ]);
 
-/**
- * Asserts that the provided value is an article.
- * @param value The value to check.
- */
-export function assertArticle(value: unknown): asserts value is Article {
-  ArticleSchema.parse(value);
-}
-
 export const TodayILearnedSchema = ContentSchema.extend({
   technology: TechnologySchema,
 });
-
-/**
- * Asserts that the provided value is a today I learned (TIL).
- * @param value The value to check.
- */
-export function assertTodayILearned(value: unknown): asserts value is TodayILearned {
-  TodayILearnedSchema.parse(value);
-}
