@@ -1,13 +1,7 @@
 import { fetchContent, fetchContents } from "./content";
 import { assertNote } from "@/assertions";
+import { NOTES_PATH } from "@/env";
 import { Note } from "@/types";
-import { join } from "path";
-
-if (!process.env.OBSIDIAN_VAULT) {
-  throw new Error("You must set the $OBSIDIAN_VAULT environment variable!");
-}
-
-const NOTES_PATH = join(process.env.OBSIDIAN_VAULT, "Resources/Notes");
 
 /**
  * Fetches all notes from the local Obsidian vault.
