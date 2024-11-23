@@ -39,9 +39,19 @@ export const CATEGORIES = [
 ] as const;
 
 export const RUBY_TECHNOLOGY = "Ruby";
+export const JAVASCRIPT_TECHNOLOGY = "JavaScript";
 export const TYPESCRIPT_TECHNOLOGY = "TypeScript";
 export const GIT_TECHNOLOGY = "Git";
+export const SHELL_TECHNOLOGY = "Shell";
+export const NEOVIM_TECHNOLOGY = "Neovim";
 
-export const TECHNOLOGIES = [RUBY_TECHNOLOGY, GIT_TECHNOLOGY, TYPESCRIPT_TECHNOLOGY] as const;
+export const TECHNOLOGIES = [
+  GIT_TECHNOLOGY,
+  JAVASCRIPT_TECHNOLOGY,
+  NEOVIM_TECHNOLOGY,
+  RUBY_TECHNOLOGY,
+  SHELL_TECHNOLOGY,
+  TYPESCRIPT_TECHNOLOGY,
+] as const;
 
 export const NAME = "Landon Schropp";
