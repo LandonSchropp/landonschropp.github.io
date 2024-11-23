@@ -1,37 +1,25 @@
-import { assertTodayILearnedSummary } from "../type-guards";
-import type { TodayILearned, TodayILearnedSummary } from "../types";
-import { fetchContentSummaries, fetchContent } from "./content";
-import { optionalValue } from "./notion";
-import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { fetchContent, fetchContents } from "./content";
+import { assertTodayILearned, assertTodayILearneds } from "@/assertions";
+import { TODAY_I_LEARNED_PATH } from "@/env";
+import { TodayILearned } from "@/types";
 
-const TODAY_I_LEARNED_DATABASE_ID = "894540b841aa4b279b2f47c4879c9622";
-
-function pageObjectResponseToTodayILearnedSummary(page: PageObjectResponse): TodayILearnedSummary {
-  const todayILearned = {
-    id: page.id,
-    title: optionalValue(page, "Title", "title"),
-    slug: optionalValue(page, "Slug", "rich_text"),
-    date: optionalValue(page, "Date", "date"),
-    technology: optionalValue(page, "Technology", "select"),
-    published: optionalValue(page, "Published", "checkbox"),
-  };
-
-  assertTodayILearnedSummary(todayILearned);
-
-  return todayILearned;
+/**
+ * Fetches all today I learneds (TILs) from the local Obsidian vault.
+ * @returns An array of today I learneds (TILs).
+ */
+export async function fetchTodayILearneds(): Promise<TodayILearned[]> {
+  const todayILearneds = await fetchContents(TODAY_I_LEARNED_PATH);
+  assertTodayILearneds(todayILearneds);
+  return todayILearneds as TodayILearned[];
 }
 
-export async function fetchTodayILearnedSummaries(): Promise<TodayILearnedSummary[]> {
-  return await fetchContentSummaries(
-    TODAY_I_LEARNED_DATABASE_ID,
-    pageObjectResponseToTodayILearnedSummary,
-  );
-}
-
+/**
+ * Fetches a single today I learned (TIL) from the local Obsidian vault.
+ * @param slug The slug of the today I learned (TIL).
+ * @returns The today I learned (TIL) with the provided slug.
+ */
 export async function fetchTodayILearned(slug: string): Promise<TodayILearned> {
-  return await fetchContent(
-    TODAY_I_LEARNED_DATABASE_ID,
-    pageObjectResponseToTodayILearnedSummary,
-    slug,
-  );
+  const todayILearned = await fetchContent(TODAY_I_LEARNED_PATH, slug);
+  assertTodayILearned(todayILearned);
+  return todayILearned;
 }
