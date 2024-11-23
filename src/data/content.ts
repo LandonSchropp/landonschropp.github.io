@@ -62,7 +62,7 @@ export async function fetchContents(path: string): Promise<Content[]> {
   // Sort the contents by date (if present). This is a bit tricky, because we haven't actually
   // parsed the dates yet. However, we can still rely on a sorting the date strings.
   return contents.toSorted((first, second) => {
-    return first.date.localeCompare(second.date);
+    return second.date.localeCompare(first.date);
   });
 }
 
