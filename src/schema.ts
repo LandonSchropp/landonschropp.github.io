@@ -10,7 +10,6 @@ import {
   TECHNOLOGIES,
   VIDEO_MEDIA,
 } from "./constants";
-import { Temporal } from "@js-temporal/polyfill";
 import { z } from "zod";
 
 export const CategorySchema = z.enum(CATEGORIES);
@@ -20,7 +19,7 @@ export const MediaSchema = z.enum(MEDIAS);
 export const ContentSchema = z.object({
   title: z.string(),
   slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
-  date: z.string().transform((date) => Temporal.PlainDate.from(date)),
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   published: z.boolean(),
   markdown: z.string(),
 });
