@@ -1,4 +1,5 @@
 import { Note } from "@/components/notes/note";
+import { NAME } from "@/constants";
 import { fetchNotes, fetchNote } from "@/data/notes";
 import { Metadata } from "next";
 
@@ -15,8 +16,8 @@ export async function generateMetadata(props: NotePageProps): Promise<Metadata> 
 
   return {
     title: note.title,
-    description: `Landon Schropp's notes about ${note.title}`,
-    authors: [{ name: "Landon Schropp" }],
+    description: `${NAME}'s notes about ${note.title}`,
+    authors: [{ name: NAME }],
   };
 }
 

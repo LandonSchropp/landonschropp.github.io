@@ -1,4 +1,5 @@
 import { TodayILearned } from "@/components/today-i-learned/today-i-learned";
+import { NAME } from "@/constants";
 import { fetchTodayILearnedSummaries, fetchTodayILearned } from "@/data/today-i-learned";
 import { Metadata } from "next";
 
@@ -15,8 +16,8 @@ export async function generateMetadata(props: TodayILearnedPageProps): Promise<M
 
   return {
     title: todayILearned.title,
-    description: `Landon Schropp's TIL on ${todayILearned.title}`,
-    authors: [{ name: "Landon Schropp" }],
+    description: `${NAME}'s TIL on ${todayILearned.title}`,
+    authors: [{ name: NAME }],
   };
 }
 

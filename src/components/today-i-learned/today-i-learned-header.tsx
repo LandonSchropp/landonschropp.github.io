@@ -1,5 +1,6 @@
 import { FormattedDate } from "../base/formatted-date";
 import { Header } from "../content/header";
+import { NAME } from "@/constants";
 import { TodayILearned } from "@/types";
 
 type TodayILearnedHeaderProps = {
@@ -14,7 +15,7 @@ export function TodayILearnedHeader({ todayILearned }: TodayILearnedHeaderProps)
       href={`/today-i-learned/${todayILearned.slug}`}
       subText={
         <>
-          <span rel="author">Landon Schropp</span> • <FormattedDate date={todayILearned.date} />
+          <span rel="author">{NAME}</span> • <FormattedDate date={todayILearned.date} />
         </>
       }
       tag={todayILearned.technology}

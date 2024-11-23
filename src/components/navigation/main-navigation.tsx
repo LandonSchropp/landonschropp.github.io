@@ -1,6 +1,7 @@
 "use client";
 
 import { Icon } from "../base/icon";
+import { NAME } from "@/constants";
 import { useIsClient } from "@/hooks/use-is-client";
 import { usePathname } from "next/navigation";
 
@@ -52,7 +53,7 @@ export function MainNavigation() {
     <nav className="my-3 flex gap-3 px-2 text-sm text-theme-extraLightText lg:justify-between max-lg:flex-col">
       <div className="flex justify-center">
         <Link href="/">
-          <span className="max-md:hidden">Landon Schropp</span>
+          <span className="max-md:hidden">{NAME}</span>
           <span className="md:hidden">Home</span>
         </Link>
 

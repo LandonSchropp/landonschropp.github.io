@@ -1,13 +1,14 @@
 import flannel from "../images/flannel.png";
 import "../styles/index.css";
+import { NAME } from "@/constants";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Landon Schropp",
-    template: "Landon Schropp – %s",
+    absolute: NAME,
+    template: `${NAME} – %s`,
   },
-  description: "Landon Schropp is a developer, designer and entrepreneur based in Portland, OR.",
+  description: `${NAME} is a developer, designer and entrepreneur based in Portland, OR.`,
 };
 
 export interface BaseLayoutProps {

@@ -1,6 +1,7 @@
 import { FormattedDate } from "../base/formatted-date";
 import { Header } from "../content/header";
 import { Markdown } from "../content/markdown";
+import { NAME } from "@/constants";
 import type { Article as ArticleType } from "@/types";
 import React from "react";
 
@@ -16,7 +17,7 @@ export function Article({ article }: AticleProps) {
         href={`/articles/${article.slug}`}
         subText={
           <>
-            <span rel="author">Landon Schropp</span> • <FormattedDate date={article.date} />
+            <span rel="author">{NAME}</span> • <FormattedDate date={article.date} />
           </>
         }
       />

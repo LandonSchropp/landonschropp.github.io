@@ -3,6 +3,7 @@
 import { PORTRAIT_MEDIA_QUERY } from "../../../tailwind.config";
 import SvgDataContainer from "./svg-data-container";
 import { SvgDataShape } from "./svg-data-shape";
+import { NAME } from "@/constants";
 import { PORTRAIT_SVG_DATA, findShape, LANDSCAPE_SVG_DATA } from "@/data/svg";
 import { useIsClient } from "@/hooks/use-is-client";
 import type { SvgDataShape as SvgDataShapeType } from "@/types";
@@ -56,7 +57,7 @@ export function IndexPageSvgData() {
   return (
     <SvgDataContainer viewBox={viewBox} title="Landon Schropp">
       <g role="heading">
-        <title>Landon Schropp</title>
+        <title>{NAME}</title>
         <SvgDataShape shape={landonShape} />
         <SvgDataShape shape={schroppShape} />
       </g>
