@@ -1,36 +1,45 @@
 import { Listify } from "@/components/base/listify";
 import { Summary } from "@/components/content/summary";
-import { BOOK_MEDIA } from "@/constants";
-import type { NoteSummary as NoteSummaryType } from "@/types";
-import { isEmpty, isNil } from "remeda";
+import type { Note } from "@/types";
 
 type NoteBylineProps = {
-  note: NoteSummaryType;
+  note: Note;
 };
 
-function NoteByline({ note }: NoteBylineProps) {
-  if (isEmpty(note.authors) && isNil(note.source)) {
-    return null;
-  }
+function shouldIncludeAuthors(note: Note) {
+  return note.authors.length !== 0;
+}
 
-  const authors = (
+function shouldIncludeSource(note: Note) {
+  return "source" in note && !(note.authors.length === 1 && note.authors[0] === note.source);
+}
+
+function NoteBylineAuthors({ note }: NoteBylineProps) {
+  return (
     <span key="authors" className="max-md:block">
       <Listify items={note.authors} />
     </span>
   );
+}
 
-  const source = (
+function NoteBylineSource({ note }: NoteBylineProps) {
+  return (
     <span key="source" className="max-md:italic">
-      {note.source}
+      {"source" in note && note.source}
     </span>
   );
+}
 
-  if (isEmpty(note.authors)) {
-    return source;
+function NoteByline({ note }: NoteBylineProps) {
+  const authors = <NoteBylineAuthors note={note} />;
+  const source = <NoteBylineSource note={note} />;
+
+  if (!shouldIncludeSource(note)) {
+    return authors;
   }
 
-  if (isNil(note.source) || note.media === BOOK_MEDIA) {
-    return authors;
+  if (!shouldIncludeAuthors(note)) {
+    return source;
   }
 
   return (
@@ -41,7 +50,7 @@ function NoteByline({ note }: NoteBylineProps) {
 }
 
 type NoteSummaryProps = {
-  note: NoteSummaryType;
+  note: Note;
 };
 
 export function NoteSummary({ note }: NoteSummaryProps) {
