@@ -32,7 +32,7 @@
     "@types/uuid": "^9.0.7",
     "autoprefixer": "^10.0.1",
     "camelcase": "^8.0.0",
-    "date-fns": "^3.0.6",
+    "date-fns": "^4.1.0",
     "file-type": "^18.7.0",
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
