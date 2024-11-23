@@ -13,8 +13,31 @@ function assertSchema<T extends z.ZodType>(schema: T, value: unknown): asserts v
   try {
     schema.parse(value);
   } catch (error) {
-    console.error(`Failed to assert value: `, value);
+    if (typeof value === "object" && value !== null && "title" in value) {
+      console.error(`Failed to assert '${value.title}'`);
+    }
+
     throw error;
+  }
+}
+
+/**
+ * Asserts that the provided value is an array of the given schema.
+ * @param schema The schema to check.
+ * @param value The value to check.
+ * @template T The type of the schema.
+ * @throws If the value is not an array or does not match the schema.
+ */
+function assertSchemaArray<T extends z.ZodType>(
+  schema: T,
+  value: unknown,
+): asserts value is z.infer<T>[] {
+  if (!Array.isArray(value)) {
+    throw new Error(`Expected an array, but received: ${value}`);
+  }
+
+  for (const item of value) {
+    assertSchema(schema, item);
   }
 }
 
@@ -31,7 +54,7 @@ export function assertContent(value: unknown): asserts value is Content {
  * @param value The value to check.
  */
 export function assertContents(value: unknown): asserts value is Content[] {
-  assertSchema(z.array(ContentSchema), value);
+  assertSchemaArray(ContentSchema, value);
 }
 
 /**
@@ -47,7 +70,7 @@ export function assertNote(value: unknown): asserts value is Note {
  * @param value The value to check.
  */
 export function assertNotes(value: unknown): asserts value is Note[] {
-  assertSchema(z.array(NoteSchema), value);
+  assertSchemaArray(NoteSchema, value);
 }
 
 /**
@@ -63,7 +86,7 @@ export function assertArticle(value: unknown): asserts value is Article {
  * @param value The value to check.
  */
 export function assertArticles(value: unknown): asserts value is Article[] {
-  assertSchema(z.array(ArticleSchema), value);
+  assertSchemaArray(ArticleSchema, value);
 }
 
 /**
@@ -79,5 +102,5 @@ export function assertTodayILearned(value: unknown): asserts value is TodayILear
  * @param value The value to check.
  */
 export function assertTodayILearneds(value: unknown): asserts value is TodayILearned[] {
-  assertSchema(z.array(TodayILearnedSchema), value);
+  assertSchemaArray(TodayILearnedSchema, value);
 }
