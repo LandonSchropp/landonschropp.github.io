@@ -34,31 +34,43 @@ const NoteSchemaBase = ContentSchema.extend({
 const ArticleNoteSchema = NoteSchemaBase.extend({
   media: z.literal(ARTICLE_MEDIA),
   source: z.string(),
+  event: z.undefined(),
 });
 
 const BookNoteSchema = NoteSchemaBase.extend({
   media: z.literal(BOOK_MEDIA),
+  source: z.undefined(),
+  event: z.undefined(),
 });
 
 const CourseNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(COURSE_MEDIA),
+  source: z.string(),
+  event: z.undefined(),
 });
 
 const LiveTalkNoteSchema = NoteSchemaBase.extend({
   media: z.literal(LIVE_TALK_MEDIA),
+  source: z.undefined(),
   event: z.string(),
 });
 
 const PodcastNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(PODCAST_MEDIA),
+  source: z.string(),
+  event: z.undefined(),
 });
 
 const RecordedTalkNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(RECORDED_TALK_MEDIA),
+  source: z.string(),
+  event: z.undefined(),
 });
 
 const VideoNoteSchema = ArticleNoteSchema.extend({
   media: z.literal(VIDEO_MEDIA),
+  source: z.string(),
+  event: z.undefined(),
 });
 
 export const NoteSchema = z.discriminatedUnion("media", [
