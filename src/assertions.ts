@@ -27,11 +27,27 @@ export function assertContent(value: unknown): asserts value is Content {
 }
 
 /**
+ * Asserts that the provided value is an array of contents.
+ * @param value The value to check.
+ */
+export function assertContents(value: unknown): asserts value is Content[] {
+  assertSchema(z.array(ContentSchema), value);
+}
+
+/**
  * Asserts that the provided value is a note.
  * @param value The value to check.
  */
 export function assertNote(value: unknown): asserts value is Note {
   assertSchema(NoteSchema, value);
+}
+
+/**
+ * Asserts that the provided value is an array of notes.
+ * @param value The value to check.
+ */
+export function assertNotes(value: unknown): asserts value is Note[] {
+  assertSchema(z.array(NoteSchema), value);
 }
 
 /**
@@ -43,9 +59,25 @@ export function assertArticle(value: unknown): asserts value is Article {
 }
 
 /**
+ * Asserts that the provided value is an array of articles.
+ * @param value The value to check.
+ */
+export function assertArticles(value: unknown): asserts value is Article[] {
+  assertSchema(z.array(ArticleSchema), value);
+}
+
+/**
  * Asserts that the provided value is a today I learned (TIL).
  * @param value The value to check.
  */
 export function assertTodayILearned(value: unknown): asserts value is TodayILearned {
   assertSchema(TodayILearnedSchema, value);
+}
+
+/**
+ * Asserts that the provided value is an array of today I learneds (TILs).
+ * @param value The value to check.
+ */
+export function assertTodayILearneds(value: unknown): asserts value is TodayILearned[] {
+  assertSchema(z.array(TodayILearnedSchema), value);
 }

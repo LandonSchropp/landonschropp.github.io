@@ -1,5 +1,5 @@
 import { fetchContent, fetchContents } from "./content";
-import { assertNote } from "@/assertions";
+import { assertNote, assertNotes } from "@/assertions";
 import { NOTES_PATH } from "@/env";
 import { Note } from "@/types";
 
@@ -8,7 +8,9 @@ import { Note } from "@/types";
  * @returns An array of notes.
  */
 export async function fetchNotes(): Promise<Note[]> {
-  return (await fetchContents(NOTES_PATH)).map(assertNote);
+  const notes = await fetchContents(NOTES_PATH);
+  assertNotes(notes);
+  return notes as Note[];
 }
 
 /**
@@ -17,5 +19,7 @@ export async function fetchNotes(): Promise<Note[]> {
  * @returns The note with the provided slug.
  */
 export async function fetchNote(slug: string): Promise<Note> {
-  return assertNote(await fetchContent(NOTES_PATH, slug));
+  const note = await fetchContent(NOTES_PATH, slug);
+  assertNote(note);
+  return note;
 }
