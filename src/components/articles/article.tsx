@@ -21,7 +21,6 @@ export function Article({ article }: AticleProps) {
         }
       />
 
-      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Using markdown compiled to HTML. */}
       <Markdown markdown={article.markdown} />
     </article>
   );

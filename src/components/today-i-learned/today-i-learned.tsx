@@ -19,7 +19,6 @@ export function TodayILearned({ todayILearned }: TodayILearnedProps) {
   return (
     <article className="my-6" data-technology={todayILearned.technology}>
       <TodayILearnedHeader todayILearned={todayILearned} />
-      {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Using markdown compiled to HTML. */}
       <section dangerouslySetInnerHTML={{ __html: todayILearned.content }} />
     </article>
   );
