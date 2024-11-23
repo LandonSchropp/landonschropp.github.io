@@ -1,5 +1,6 @@
 "use client";
 
+import { Markdown } from "../content/markdown";
 import { TodayILearnedHeader } from "@/components/today-i-learned/today-i-learned-header";
 import { useTechnology } from "@/hooks/use-technology";
 import type { TodayILearned as TodayILearnedType } from "@/types";
@@ -19,7 +20,7 @@ export function TodayILearned({ todayILearned }: TodayILearnedProps) {
   return (
     <article className="my-6" data-technology={todayILearned.technology}>
       <TodayILearnedHeader todayILearned={todayILearned} />
-      <section dangerouslySetInnerHTML={{ __html: todayILearned.content }} />
+      <Markdown markdown={todayILearned.markdown} />
     </article>
   );
 }

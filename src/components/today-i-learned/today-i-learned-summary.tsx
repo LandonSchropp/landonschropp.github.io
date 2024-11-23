@@ -1,9 +1,9 @@
 import { FormattedDate } from "../base/formatted-date";
 import { Summary } from "@/components/content/summary";
-import type { TodayILearnedSummary as TodayILearnedSummaryType } from "@/types";
+import type { TodayILearned } from "@/types";
 
 type TodayILearnedSummaryProps = {
-  todayILearned: TodayILearnedSummaryType;
+  todayILearned: TodayILearned;
 };
 
 export function TodayILearnedSummary({ todayILearned }: TodayILearnedSummaryProps) {

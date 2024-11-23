@@ -1,10 +1,10 @@
 import { TodayILearned } from "@/components/today-i-learned/today-i-learned";
 import { NAME } from "@/constants";
-import { fetchTodayILearnedSummaries, fetchTodayILearned } from "@/data/today-i-learned";
+import { fetchTodayILearneds, fetchTodayILearned } from "@/data/today-i-learned";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
-  return (await fetchTodayILearnedSummaries()).map(({ slug }) => ({ slug }));
+  return (await fetchTodayILearneds()).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata(props: TodayILearnedPageProps): Promise<Metadata> {

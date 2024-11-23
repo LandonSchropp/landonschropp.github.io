@@ -1,5 +1,5 @@
 import { TodayILearnedSummaries } from "@/components/today-i-learned/today-i-learned-summaries";
-import { fetchTodayILearnedSummaries } from "@/data/today-i-learned";
+import { fetchTodayILearneds } from "@/data/today-i-learned";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default async function TodayILearnedsPage() {
-  const todayILearnedSummaries = await fetchTodayILearnedSummaries();
+  const todayILearnedSummaries = await fetchTodayILearneds();
   return <TodayILearnedSummaries todayILearnedSummaries={todayILearnedSummaries} />;
 }

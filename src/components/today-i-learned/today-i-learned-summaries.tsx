@@ -5,11 +5,11 @@ import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
 import { TECHNOLOGIES } from "@/constants";
 import { useCurrentTag } from "@/hooks/use-current-tag";
-import type { TodayILearnedSummary as TodayILearnedSummaryType } from "@/types";
+import type { TodayILearned } from "@/types";
 import { isNil } from "remeda";
 
 type TodayILearnedSummariesProps = {
-  todayILearnedSummaries: TodayILearnedSummaryType[];
+  todayILearnedSummaries: TodayILearned[];
 };
 
 export function TodayILearnedSummaries({ todayILearnedSummaries }: TodayILearnedSummariesProps) {
