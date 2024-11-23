@@ -1,28 +1,16 @@
+import { assertContent } from "@/assertions";
+import { Content } from "@/types";
 import { parseFrontmatter } from "@/utilities/frontmatter";
 import { readFile } from "fs/promises";
 import { glob } from "glob";
 import { basename, join, relative } from "path";
-
-type ParsedContent = Record<string, any>;
-
-function compareDateStrings(first: unknown, second: unknown): number {
-  if (typeof first !== "string") {
-    return -1;
-  }
-
-  if (typeof second !== "string") {
-    return 1;
-  }
-
-  return first.localeCompare(second);
-}
 
 /**
  * Fetches the content of a file and parses it.
  * @param contentPath The directory containing the content files.
  * @param filePath The path to the file to fetch.
  */
-async function fetchAndParseContent(contentPath: string, filePath: string): Promise<ParsedContent> {
+async function fetchAndParseContent(contentPath: string, filePath: string): Promise<Content> {
   const relativePath = relative(contentPath, filePath);
   const fileContent = await readFile(filePath, "utf8");
   const pathParts = relativePath.split("/");
@@ -33,18 +21,21 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
   try {
     [frontMatter, markdown] = parseFrontmatter(fileContent);
   } catch (error) {
-    console.error(`Error parsing frontmatter from file '${filePath}'.`);
-    throw error;
+    throw new Error(`Error parsing frontmatter from file '${filePath}'.\n\n${error}`);
   }
 
   const title = basename(filePath, ".md");
 
-  return {
+  const content = {
     ...frontMatter,
     markdown: markdown.trim(),
     category: pathParts.length > 1 ? pathParts[0] : undefined,
     title,
   };
+
+  assertContent(content);
+
+  return content;
 }
 
 /**
@@ -52,7 +43,7 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
  * @param path The path from which the content files should be fetched.
  * @returns An array of contents.
  */
-export async function fetchContents(path: string): Promise<ParsedContent[]> {
+export async function fetchContents(path: string): Promise<Content[]> {
   // Find all of the markdown files in the provided path.
   const files = await glob(join(path, "**/*.md"));
 
@@ -70,7 +61,9 @@ export async function fetchContents(path: string): Promise<ParsedContent[]> {
 
   // Sort the contents by date (if present). This is a bit tricky, because we haven't actually
   // parsed the dates yet. However, we can still rely on a sorting the date strings.
-  return contents.toSorted(compareDateStrings);
+  return contents.toSorted((first, second) => {
+    return first.date.localeCompare(second.date);
+  });
 }
 
 /**
@@ -80,7 +73,7 @@ export async function fetchContents(path: string): Promise<ParsedContent[]> {
  * @returns The content with the provided slug.
  * @throws An error if the content could not be fetched.
  */
-export async function fetchContent(path: string, slug: string): Promise<ParsedContent> {
+export async function fetchContent(path: string, slug: string): Promise<Content> {
   const content = (await fetchContents(path)).find((content) => content.slug === slug);
 
   if (!content) {
