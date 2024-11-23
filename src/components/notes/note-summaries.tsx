@@ -5,11 +5,11 @@ import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
 import { OTHER_CATEGORY, CHESS_CATEGORY, CATEGORIES } from "@/constants";
 import { useCurrentTag } from "@/hooks/use-current-tag";
-import type { NoteSummary as NoteSummaryType } from "@/types";
+import type { Note } from "@/types";
 
 const CATEGORIES_WITHOUT_CHESS = CATEGORIES.filter((category) => category !== CHESS_CATEGORY);
 
-function noteSummaryMatchesCategory(noteSummary: NoteSummaryType, category: string | null) {
+function noteSummaryMatchesCategory(noteSummary: Note, category: string | null) {
   // NOTE: I'm using includes here to accommodate the `Live Talk` category, which should be included
   // by `Talk`.
   return (
@@ -20,7 +20,7 @@ function noteSummaryMatchesCategory(noteSummary: NoteSummaryType, category: stri
 }
 
 type NoteSummariesProps = {
-  noteSummaries: NoteSummaryType[];
+  noteSummaries: Note[];
 };
 
 export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {

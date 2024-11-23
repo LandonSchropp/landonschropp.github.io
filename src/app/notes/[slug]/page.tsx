@@ -1,9 +1,9 @@
 import { Note } from "@/components/notes/note";
-import { fetchNoteSummaries, fetchNote } from "@/data/notes";
+import { fetchNotes, fetchNote } from "@/data/notes";
 import { Metadata } from "next";
 
 export async function generateStaticParams() {
-  return (await fetchNoteSummaries()).map(({ slug }) => ({ slug }));
+  return (await fetchNotes()).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata(props: NotePageProps): Promise<Metadata> {

@@ -1,5 +1,5 @@
 import { NoteSummaries } from "@/components/notes/note-summaries";
-import { fetchNoteSummaries } from "@/data/notes";
+import { fetchNotes } from "@/data/notes";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,6 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default async function NotesPage() {
-  const noteSummaries = await fetchNoteSummaries();
-  return <NoteSummaries noteSummaries={noteSummaries} />;
+  const notes = await fetchNotes();
+
+  console.log(notes);
+
+  return <NoteSummaries noteSummaries={notes} />;
 }
