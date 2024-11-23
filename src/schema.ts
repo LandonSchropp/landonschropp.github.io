@@ -74,14 +74,14 @@ export const NoteSchema = z.discriminatedUnion("media", [
 export const ArticleSchema = z.union([
   ContentSchema.extend({
     description: z.string(),
-    publisher: z.never(),
-    url: z.never(),
+    publisher: z.undefined(),
+    url: z.undefined(),
   }),
   ContentSchema.extend({
     description: z.string(),
     publisher: z.string(),
     url: z.string().url(),
-    markdown: z.string().max(0, { message: "Markdown must be empty when published elsewhere" }),
+    markdown: z.string().max(0),
   }),
 ]);
 
