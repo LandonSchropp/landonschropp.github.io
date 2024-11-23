@@ -1,32 +1,25 @@
-import { assertArticleSummary } from "../type-guards";
-import type { Article, ArticleSummary } from "../types";
-import { fetchContentSummaries, fetchContent } from "./content";
-import { optionalValue } from "./notion";
-import type { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import { fetchContent, fetchContents } from "./content";
+import { assertArticle, assertArticles } from "@/assertions";
+import { ARTICLES_PATH } from "@/env";
+import { Article } from "@/types";
 
-const ARTICLES_DATABASE_ID = "c68575f91f534048bb15c54f0f230882";
-
-function pageObjectResponseToArticleSummary(page: PageObjectResponse): ArticleSummary {
-  const article = {
-    id: page.id,
-    title: optionalValue(page, "Title", "title"),
-    slug: optionalValue(page, "Slug", "rich_text"),
-    date: optionalValue(page, "Date", "date"),
-    description: optionalValue(page, "Description", "rich_text"),
-    url: optionalValue(page, "URL", "url") ?? null,
-    publisher: optionalValue(page, "Publisher", "select") ?? null,
-    published: optionalValue(page, "Published", "checkbox"),
-  };
-
-  assertArticleSummary(article);
-
-  return article;
+/**
+ * Fetches all articles from the local Obsidian vault.
+ * @returns An array of articles.
+ */
+export async function fetchArticles(): Promise<Article[]> {
+  const articles = await fetchContents(ARTICLES_PATH);
+  assertArticles(articles);
+  return articles as Article[];
 }
 
-export async function fetchArticleSummaries(): Promise<ArticleSummary[]> {
-  return await fetchContentSummaries(ARTICLES_DATABASE_ID, pageObjectResponseToArticleSummary);
-}
-
+/**
+ * Fetches a single article from the local Obsidian vault.
+ * @param slug The slug of the article.
+ * @returns The article with the provided slug.
+ */
 export async function fetchArticle(slug: string): Promise<Article> {
-  return await fetchContent(ARTICLES_DATABASE_ID, pageObjectResponseToArticleSummary, slug);
+  const article = await fetchContent(ARTICLES_PATH, slug);
+  assertArticle(article);
+  return article;
 }

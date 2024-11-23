@@ -1,5 +1,5 @@
 import { ArticleSummaries } from "@/components/articles/article-summaries";
-import { fetchArticleSummaries } from "@/data/articles";
+import { fetchArticles } from "@/data/articles";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default async function ArticlesPage() {
-  const articleSummaries = await fetchArticleSummaries();
+  const articleSummaries = await fetchArticles();
   return <ArticleSummaries articleSummaries={articleSummaries} />;
 }

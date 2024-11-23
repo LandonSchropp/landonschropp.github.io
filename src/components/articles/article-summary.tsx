@@ -1,6 +1,6 @@
 import tailwindConfig from "../../../tailwind.config";
 import { Summary } from "../content/summary";
-import type { ArticleSummary as ArticleSummaryType } from "@/types";
+import type { Article } from "@/types";
 import React from "react";
 import { isNil } from "remeda";
 
@@ -8,7 +8,7 @@ const CORNFLOWER = tailwindConfig.theme.colors.cornflower;
 const BITTERSWEET = tailwindConfig.theme.colors.bittersweet;
 
 type ArticleSummaryProps = {
-  articleSummary: ArticleSummaryType;
+  articleSummary: Article;
   index: number;
   numberOfArticles: number;
 };

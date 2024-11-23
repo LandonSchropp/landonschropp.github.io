@@ -1,5 +1,6 @@
 import { FormattedDate } from "../base/formatted-date";
 import { Header } from "../content/header";
+import { Markdown } from "../content/markdown";
 import type { Article as ArticleType } from "@/types";
 import React from "react";
 
@@ -21,7 +22,7 @@ export function Article({ article }: AticleProps) {
       />
 
       {/* biome-ignore lint/security/noDangerouslySetInnerHtml: Using markdown compiled to HTML. */}
-      <section dangerouslySetInnerHTML={{ __html: article.content }} />
+      <Markdown markdown={article.markdown} />
     </article>
   );
 }

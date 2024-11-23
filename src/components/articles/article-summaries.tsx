@@ -3,10 +3,10 @@
 import { ArticleSummary } from "@/components/articles/article-summary";
 import { Callout } from "@/components/articles/callout";
 import { Header } from "@/components/content/header";
-import type { ArticleSummary as ArticleSummaryType } from "@/types";
+import type { Article } from "@/types";
 
 type ArticleSummariesProps = {
-  articleSummaries: ArticleSummaryType[];
+  articleSummaries: Article[];
 };
 
 export function ArticleSummaries({ articleSummaries }: ArticleSummariesProps) {
