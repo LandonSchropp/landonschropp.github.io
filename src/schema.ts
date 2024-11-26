@@ -38,6 +38,7 @@ const ArticleNoteSchema = NoteSchemaBase.extend({
 });
 
 const BookNoteSchema = NoteSchemaBase.extend({
+  authors: NoteSchemaBase.shape.authors.min(1),
   media: z.literal(BOOK_MEDIA),
   source: z.undefined(),
   event: z.undefined(),
@@ -50,6 +51,7 @@ const CourseNoteSchema = ArticleNoteSchema.extend({
 });
 
 const LiveTalkNoteSchema = NoteSchemaBase.extend({
+  authors: NoteSchemaBase.shape.authors.min(1),
   media: z.literal(LIVE_TALK_MEDIA),
   source: z.undefined(),
   event: z.string(),
