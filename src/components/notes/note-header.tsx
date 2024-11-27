@@ -8,9 +8,11 @@ import {
   COURSE_MEDIA,
   RECORDED_TALK_MEDIA,
   VIDEO_MEDIA,
+  APP_MEDIA,
 } from "@/constants";
 import { Note } from "@/types";
 import { baseURL } from "@/utilities/url";
+import { ReactElement } from "react";
 
 // NOTE: It turns out it's _really_ hard to represent all of the possible nuances of a byline in a
 // readable way. This approach is more verbose, but the goal is that the code is more readable and
@@ -44,6 +46,18 @@ function ArticleNoteSubheadText({ note }: ArticleNoteSubheadProps) {
 
   // prettier-ignore
   return <>An article by <NoteAuthors note={note} /> from <NoteSource note={note} /></>;
+}
+
+type AppNoteSubheadProps = { note: Extract<Note, { media: typeof APP_MEDIA }> };
+
+function AppNoteSubheadText({ note }: AppNoteSubheadProps) {
+  if (shouldSkipAuthors(note)) {
+    // prettier-ignore
+    return <>From the app <NoteSource note={note} /></>;
+  }
+
+  // prettier-ignore
+  return <>By <NoteAuthors note={note} /> from the app <NoteSource note={note} /></>;
 }
 
 type BookNoteSubheadProps = { note: Extract<Note, { media: typeof BOOK_MEDIA }> };
@@ -116,7 +130,7 @@ function VideoNoteSubheadText({ note }: VideoNoteSubheadProps) {
   return <>A video by <NoteAuthors note={note} /> from <NoteSource note={note} /></>;
 }
 
-function NoteSubheadText({ note }: NoteProps) {
+function NoteSubheadText({ note }: NoteProps): ReactElement | null {
   // If the note's title is the same as the source (indicating they're one and the same), then don't
   // return a subhead.
   if (note.title === note.source) {
@@ -126,6 +140,8 @@ function NoteSubheadText({ note }: NoteProps) {
   switch (note.media) {
     case ARTICLE_MEDIA:
       return <ArticleNoteSubheadText note={note} />;
+    case APP_MEDIA:
+      return <AppNoteSubheadText note={note} />;
     case BOOK_MEDIA:
       return <BookNoteSubheadText note={note} />;
     case COURSE_MEDIA:

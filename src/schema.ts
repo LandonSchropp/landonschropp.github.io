@@ -1,4 +1,5 @@
 import {
+  APP_MEDIA,
   ARTICLE_MEDIA,
   BOOK_MEDIA,
   CATEGORIES,
@@ -33,6 +34,12 @@ const NoteSchemaBase = ContentSchema.extend({
 
 const ArticleNoteSchema = NoteSchemaBase.extend({
   media: z.literal(ARTICLE_MEDIA),
+  source: z.string(),
+  event: z.undefined(),
+});
+
+const AppNoteSchema = ArticleNoteSchema.extend({
+  media: z.literal(APP_MEDIA),
   source: z.string(),
   event: z.undefined(),
 });
@@ -77,6 +84,7 @@ const VideoNoteSchema = ArticleNoteSchema.extend({
 
 export const NoteSchema = z.discriminatedUnion("media", [
   ArticleNoteSchema,
+  AppNoteSchema,
   BookNoteSchema,
   CourseNoteSchema,
   LiveTalkNoteSchema,

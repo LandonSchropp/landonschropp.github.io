@@ -1,4 +1,5 @@
 export const ARTICLE_MEDIA = "Article";
+export const APP_MEDIA = "App";
 export const BOOK_MEDIA = "Book";
 export const COURSE_MEDIA = "Course";
 export const LIVE_TALK_MEDIA = "Live Talk";
@@ -9,6 +10,7 @@ export const VIDEO_MEDIA = "Video";
 
 export const MEDIAS = [
   ARTICLE_MEDIA,
+  APP_MEDIA,
   BOOK_MEDIA,
   COURSE_MEDIA,
   LIVE_TALK_MEDIA,

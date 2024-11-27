@@ -8,6 +8,7 @@ import {
   PODCAST_MEDIA,
   VIDEO_MEDIA,
   COURSE_MEDIA,
+  APP_MEDIA,
 } from "@/constants";
 import { Note } from "@/types";
 import { render, screen } from "@testing-library/react";
@@ -78,6 +79,51 @@ describe("NoteHeader", () => {
         expect(screen.getByTestId("sub-text")).toHaveTextContent(
           "An article by Author from Source",
         );
+      });
+    });
+  });
+
+  describe("when the note's media is 'App'", () => {
+    beforeEach(() => (note.media = APP_MEDIA));
+
+    describe("when the note's source and title are the same", () => {
+      beforeEach(() => {
+        note.source = note.title;
+        render(<NoteHeader note={note} />);
+      });
+
+      it("does not render a subheader", () => {
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("");
+      });
+    });
+
+    describe("when the note does not have any authors", () => {
+      beforeEach(() => {
+        note.authors = [];
+        render(<NoteHeader note={note} />);
+      });
+
+      it("renders the source", () => {
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("From the app Source");
+      });
+    });
+
+    describe("when the note's source and author are the same", () => {
+      beforeEach(() => {
+        note.authors = [note.source!];
+        render(<NoteHeader note={note} />);
+      });
+
+      it("renders the source", () => {
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("From the app Source");
+      });
+    });
+
+    describe("when the note's source and authors are different", () => {
+      beforeEach(() => render(<NoteHeader note={note} />));
+
+      it("renders the media, authors and the source", () => {
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("By Author from the app Source");
       });
     });
   });
