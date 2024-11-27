@@ -23,7 +23,7 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
     ...frontMatter,
     markdown: markdown.trim(),
     category: pathParts.length > 1 ? pathParts[0] : undefined,
-    title,
+    title: "title" in frontMatter ? frontMatter.title : title,
   };
 
   assertContent(content);
