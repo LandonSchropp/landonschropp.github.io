@@ -2,7 +2,7 @@ import tailwindConfig from "../../../tailwind.config";
 import { Summary } from "../content/summary";
 import type { Article } from "@/types";
 import React from "react";
-import { isNil } from "remeda";
+import { isNullish } from "remeda";
 
 const CORNFLOWER = tailwindConfig.theme.colors.cornflower;
 const BITTERSWEET = tailwindConfig.theme.colors.bittersweet;
@@ -14,7 +14,7 @@ type ArticleSummaryProps = {
 };
 
 export function ArticleSummary({ articleSummary, index, numberOfArticles }: ArticleSummaryProps) {
-  const href = isNil(articleSummary.url) ? `/articles/${articleSummary.slug}` : articleSummary.url;
+  const href = isNullish(articleSummary.url) ? `/articles/${articleSummary.slug}` : articleSummary.url;
 
   const percent = `${(index / (numberOfArticles - 1)) * 100}%`;
   const style = {

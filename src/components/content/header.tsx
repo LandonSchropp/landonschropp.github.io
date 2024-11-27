@@ -1,6 +1,6 @@
 import { Tag } from "./tag";
 import type { ReactNode } from "react";
-import { isNil } from "remeda";
+import { isNullish } from "remeda";
 
 type HeaderLinkProps = {
   children: ReactNode;
@@ -8,7 +8,7 @@ type HeaderLinkProps = {
 };
 
 function HeaderLink({ children, href }: HeaderLinkProps) {
-  if (isNil(href)) {
+  if (isNullish(href)) {
     return children;
   }
 
