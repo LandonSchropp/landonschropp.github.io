@@ -41,7 +41,7 @@ type ArticleNoteSubheadProps = { note: Extract<Note, { media: typeof ARTICLE_MED
 function ArticleNoteSubheadText({ note }: ArticleNoteSubheadProps) {
   if (shouldSkipAuthors(note)) {
     // prettier-ignore
-    return <>From <NoteSource note={note} /></>;
+    return <>An article from <NoteSource note={note} /></>;
   }
 
   // prettier-ignore
@@ -76,7 +76,7 @@ type CourseNoteSubheadProps = { note: Extract<Note, { media: typeof COURSE_MEDIA
 function CourseNoteSubheadText({ note }: CourseNoteSubheadProps) {
   if (shouldSkipAuthors(note)) {
     // prettier-ignore
-    return <>From <NoteSource note={note} /></>;
+    return <>A course from <NoteSource note={note} /></>;
   }
 
   // prettier-ignore
@@ -87,7 +87,7 @@ type LiveTalkNoteSubheadProps = { note: Extract<Note, { media: typeof LIVE_TALK_
 
 function LiveTalkNoteSubheadText({ note }: LiveTalkNoteSubheadProps) {
   if (note.authors.length === 0) {
-    return <>From {note.event}</>;
+    return <>A talk I attended at {note.event}</>;
   }
 
   // prettier-ignore
@@ -99,7 +99,7 @@ type PodcastNoteSubheadProps = { note: Extract<Note, { media: typeof PODCAST_MED
 function PodcastNoteSubheadText({ note }: PodcastNoteSubheadProps) {
   if (shouldSkipAuthors(note)) {
     // prettier-ignore
-    return <>From <NoteSource note={note} /></>;
+    return <>From the podcast <NoteSource note={note} /></>;
   }
 
   // prettier-ignore
@@ -111,7 +111,7 @@ type RecordedTalkNoteSubheadProps = { note: Extract<Note, { media: typeof RECORD
 function RecordedTalkNoteSubheadText({ note }: RecordedTalkNoteSubheadProps) {
   if (shouldSkipAuthors(note)) {
     // prettier-ignore
-    return <>From <NoteSource note={note} /></>;
+    return <>A talk from <NoteSource note={note} /></>;
   }
 
   // prettier-ignore

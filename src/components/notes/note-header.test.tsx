@@ -57,7 +57,7 @@ describe("NoteHeader", () => {
       });
 
       it("renders the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("An article from Source");
       });
     });
 
@@ -68,7 +68,7 @@ describe("NoteHeader", () => {
       });
 
       it("reners the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("An article from Source");
       });
     });
 
@@ -172,7 +172,7 @@ describe("NoteHeader", () => {
       });
 
       it("renders the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("A course from Source");
       });
     });
 
@@ -183,7 +183,7 @@ describe("NoteHeader", () => {
       });
 
       it("renders the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("A course from Source");
       });
     });
 
@@ -220,7 +220,7 @@ describe("NoteHeader", () => {
       });
 
       it("renders the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Event");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("A talk I attended at Event");
       });
     });
 
@@ -256,7 +256,7 @@ describe("NoteHeader", () => {
       });
 
       it("renders the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("From the podcast Source");
       });
     });
 
@@ -267,7 +267,7 @@ describe("NoteHeader", () => {
       });
 
       it("reners the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("From the podcast Source");
       });
     });
 
@@ -303,7 +303,7 @@ describe("NoteHeader", () => {
       });
 
       it("renders the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("A talk from Source");
       });
     });
 
@@ -314,7 +314,7 @@ describe("NoteHeader", () => {
       });
 
       it("reners the source", () => {
-        expect(screen.getByTestId("sub-text")).toHaveTextContent("From Source");
+        expect(screen.getByTestId("sub-text")).toHaveTextContent("A talk from Source");
       });
     });
 
