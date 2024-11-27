@@ -1,6 +1,12 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "next", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "prettier",
+    "plugin:jest-dom/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "settings": {
     "react": {
