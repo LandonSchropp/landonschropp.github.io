@@ -1,83 +1,147 @@
 import { Listify } from "../base/listify";
 import { Header } from "../content/header";
-import { LIVE_TALK_MEDIA, PODCAST_MEDIA, ARTICLE_MEDIA, OTHER_MEDIA } from "@/constants";
+import {
+  LIVE_TALK_MEDIA,
+  PODCAST_MEDIA,
+  ARTICLE_MEDIA,
+  BOOK_MEDIA,
+  COURSE_MEDIA,
+  RECORDED_TALK_MEDIA,
+  VIDEO_MEDIA,
+} from "@/constants";
 import { Note } from "@/types";
 import { baseURL } from "@/utilities/url";
 
-type NoteBylineProps = {
+// NOTE: It turns out it's _really_ hard to represent all of the possible nuances of a byline in a
+// readable way. This approach is more verbose, but the goal is that the code is more readable and
+// easy to extend.
+
+type NoteProps = {
   note: Note;
-  sourceText: string;
-  authorText: string;
-  sourceFirst?: boolean;
 };
 
-function NoteByline({ note, sourceText, authorText, sourceFirst = false }: NoteBylineProps) {
-  if (
-    note.title === note.source &&
-    (note.authors.length === 0 || (note.authors.length === 1 && note.authors[0] === note.title))
-  ) {
+function shouldSkipAuthors(note: Note) {
+  return (
+    note.authors.length === 0 || (note.authors.length === 1 && note.authors[0] === note.source)
+  );
+}
+
+function NoteAuthors({ note }: NoteProps) {
+  return <Listify items={note.authors} />;
+}
+
+function NoteSource({ note }: NoteProps) {
+  return <a href={baseURL(note.url)}>{note.source}</a>;
+}
+
+type ArticleNoteSubheadProps = { note: Extract<Note, { media: typeof ARTICLE_MEDIA }> };
+
+function ArticleNoteSubheadText({ note }: ArticleNoteSubheadProps) {
+  if (shouldSkipAuthors(note)) {
+    // prettier-ignore
+    return <>From <NoteSource note={note} /></>;
+  }
+
+  // prettier-ignore
+  return <>An article by <NoteAuthors note={note} /> from <NoteSource note={note} /></>;
+}
+
+type BookNoteSubheadProps = { note: Extract<Note, { media: typeof BOOK_MEDIA }> };
+
+function BookNoteSubheadText({ note }: BookNoteSubheadProps) {
+  if (note.authors.length === 0) {
     return null;
   }
 
-  const source = <a href={baseURL(note.url)}>{note.source}</a>;
-  const authors = <Listify items={note.authors} />;
+  // prettier-ignore
+  return <>A book by <NoteAuthors note={note} /></>;
+}
 
-  if (note.authors.length === 0 || (note.authors.length === 1 && note.authors[0] === note.source)) {
-    return (
-      <>
-        {sourceText} {source}
-      </>
-    );
+type CourseNoteSubheadProps = { note: Extract<Note, { media: typeof COURSE_MEDIA }> };
+
+function CourseNoteSubheadText({ note }: CourseNoteSubheadProps) {
+  if (shouldSkipAuthors(note)) {
+    // prettier-ignore
+    return <>From <NoteSource note={note} /></>;
   }
 
+  // prettier-ignore
+  return <>A course by <NoteAuthors note={note} /> from <NoteSource note={note} /></>;
+}
+
+type LiveTalkNoteSubheadProps = { note: Extract<Note, { media: typeof LIVE_TALK_MEDIA }> };
+
+function LiveTalkNoteSubheadText({ note }: LiveTalkNoteSubheadProps) {
+  if (note.authors.length === 0) {
+    return <>From {note.event}</>;
+  }
+
+  // prettier-ignore
+  return <>A talk by <NoteAuthors note={note} /> I attended at {note.event}</>;
+}
+
+type PodcastNoteSubheadProps = { note: Extract<Note, { media: typeof PODCAST_MEDIA }> };
+
+function PodcastNoteSubheadText({ note }: PodcastNoteSubheadProps) {
+  if (shouldSkipAuthors(note)) {
+    // prettier-ignore
+    return <>From <NoteSource note={note} /></>;
+  }
+
+  // prettier-ignore
+  return <>From <NoteSource note={note} />, a podcast by <NoteAuthors note={note} /></>;
+}
+
+type RecordedTalkNoteSubheadProps = { note: Extract<Note, { media: typeof RECORDED_TALK_MEDIA }> };
+
+function RecordedTalkNoteSubheadText({ note }: RecordedTalkNoteSubheadProps) {
+  if (shouldSkipAuthors(note)) {
+    // prettier-ignore
+    return <>From <NoteSource note={note} /></>;
+  }
+
+  // prettier-ignore
+  return <>A talk by <NoteAuthors note={note} /> from {note.source}</>;
+}
+
+type VideoNoteSubheadProps = { note: Extract<Note, { media: typeof VIDEO_MEDIA }> };
+
+function VideoNoteSubheadText({ note }: VideoNoteSubheadProps) {
+  if (shouldSkipAuthors(note)) {
+    // prettier-ignore
+    return <>A video by <NoteSource note={note} /></>;
+  }
+
+  // prettier-ignore
+  return <>A video by <NoteAuthors note={note} /> from <NoteSource note={note} /></>;
+}
+
+function NoteSubheadText({ note }: NoteProps) {
+  // If the note's title is the same as the source (indicating they're one and the same), then don't
+  // return a subhead.
   if (note.title === note.source) {
-    return (
-      <>
-        {authorText} {authors}
-      </>
-    );
+    return null;
   }
 
-  return (
-    <>
-      {sourceFirst ? sourceText : authorText} {sourceFirst ? source : authors}
-      {(sourceFirst ? authorText : sourceText).startsWith(",") ? "" : " "}
-      {sourceFirst ? authorText : sourceText} {sourceFirst ? authors : source}
-    </>
-  );
+  switch (note.media) {
+    case ARTICLE_MEDIA:
+      return <ArticleNoteSubheadText note={note} />;
+    case BOOK_MEDIA:
+      return <BookNoteSubheadText note={note} />;
+    case COURSE_MEDIA:
+      return <CourseNoteSubheadText note={note} />;
+    case LIVE_TALK_MEDIA:
+      return <LiveTalkNoteSubheadText note={note} />;
+    case PODCAST_MEDIA:
+      return <PodcastNoteSubheadText note={note} />;
+    case RECORDED_TALK_MEDIA:
+      return <RecordedTalkNoteSubheadText note={note} />;
+    case VIDEO_MEDIA:
+      return <VideoNoteSubheadText note={note} />;
+  }
 }
 
-type NoteSubheadTextProps = {
-  note: Note;
-};
-
-function NoteSubheadText({ note }: NoteSubheadTextProps) {
-  if (note.media === LIVE_TALK_MEDIA) {
-    return <NoteByline note={note} authorText="A talk by" sourceText="I attended at" />;
-  }
-
-  if (note.media === PODCAST_MEDIA) {
-    return <NoteByline note={note} sourceText="From" authorText=", a podcast by" sourceFirst />;
-  }
-
-  if (note.media === ARTICLE_MEDIA) {
-    return <NoteByline note={note} authorText="An article by" sourceText="from" />;
-  }
-
-  if (note.media === OTHER_MEDIA) {
-    return <NoteByline note={note} sourceText="From" authorText="by" sourceFirst />;
-  }
-
-  return (
-    <NoteByline note={note} authorText={`A ${note.media.toLowerCase()} by`} sourceText="from" />
-  );
-}
-
-type NoteHeaderProps = {
-  note: Note;
-};
-
-export function NoteHeader({ note }: NoteHeaderProps) {
+export function NoteHeader({ note }: NoteProps) {
   return (
     <Header
       superText="My personal notes for"
