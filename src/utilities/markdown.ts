@@ -3,6 +3,10 @@ import createMarkdownIt from "markdown-it";
 
 const markdownIt = createMarkdownIt({
   highlight: (code, language) => {
+    if (language === "") {
+      return code;
+    }
+
     return highlightJs.highlight(code, { language }).value;
   },
 });
