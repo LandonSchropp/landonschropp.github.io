@@ -16,6 +16,7 @@ import type { Config } from "tailwindcss";
 import themeSwapper from "tailwindcss-theme-swapper";
 import defaultTheme from "tailwindcss/defaultTheme";
 import plugin from "tailwindcss/plugin";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const SPACING = 1.25;
 
@@ -97,11 +98,12 @@ const SELECTED_SELECTORS = ["&[aria-checked='true']", "&[aria-current='page']"];
 export default {
   ...TAILWIND_CONFIG,
   plugins: [
-    plugin(({ addVariant }) => {
+    plugin(({ addVariant }: PluginAPI) => {
       addVariant("hocus", HOCUS_SELECTORS);
       addVariant("selected", SELECTED_SELECTORS);
       addVariant("shocus", [...HOCUS_SELECTORS, ...SELECTED_SELECTORS]);
     }),
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     themeSwapper({
       themes: [
         {

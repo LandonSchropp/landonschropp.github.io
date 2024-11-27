@@ -13,7 +13,12 @@ function assertSchema<T extends z.ZodType>(schema: T, value: unknown): asserts v
   try {
     schema.parse(value);
   } catch (error) {
-    if (typeof value === "object" && value !== null && "title" in value) {
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      "title" in value &&
+      typeof value.title === "string"
+    ) {
       console.error(`Failed to assert '${value.title}'`);
     }
 
@@ -33,7 +38,7 @@ function assertSchemaArray<T extends z.ZodType>(
   value: unknown,
 ): asserts value is z.infer<T>[] {
   if (!Array.isArray(value)) {
-    throw new Error(`Expected an array, but received: ${value}`);
+    throw new Error(`Expected an array, but received: ${value as any}`);
   }
 
   for (const item of value) {

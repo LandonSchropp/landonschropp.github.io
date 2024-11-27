@@ -10,7 +10,7 @@ import { Note } from "@/types";
 export async function fetchNotes(): Promise<Note[]> {
   const notes = await fetchContents(NOTES_PATH);
   assertNotes(notes);
-  return notes as Note[];
+  return notes;
 }
 
 /**

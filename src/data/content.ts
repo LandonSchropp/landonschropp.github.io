@@ -15,14 +15,7 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
   const fileContent = await readFile(filePath, "utf8");
   const pathParts = relativePath.split("/");
 
-  let frontMatter: ReturnType<typeof parseFrontmatter>[0];
-  let markdown: ReturnType<typeof parseFrontmatter>[1];
-
-  try {
-    [frontMatter, markdown] = parseFrontmatter(fileContent);
-  } catch (error) {
-    throw new Error(`Error parsing frontmatter from file '${filePath}'.\n\n${error}`);
-  }
+  const [frontMatter, markdown] = parseFrontmatter(filePath, fileContent);
 
   const title = basename(filePath, ".md");
 

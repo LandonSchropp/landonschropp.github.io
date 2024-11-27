@@ -20,7 +20,7 @@ const UUID_REGEX = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
  */
 function generateFileName(url: string, extension: string): string {
   const { pathname } = new URL(url);
-  const uuid = last([...pathname.matchAll(UUID_REGEX)]) ?? uuidV4();
+  const uuid = last([...pathname.matchAll(UUID_REGEX)])?.[0] ?? uuidV4();
   return `${uuid}.${extension}`;
 }
 

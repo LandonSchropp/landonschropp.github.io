@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "The page you were looking for couldn't be found.",
 };
 
-export default async function NotFoundPage() {
+export default function NotFoundPage() {
   const { viewBox, shapes } = NOT_FOUND_SVG_DATA;
   const shape = findShape(shapes, "not-found");
 

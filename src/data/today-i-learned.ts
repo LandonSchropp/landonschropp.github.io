@@ -10,7 +10,7 @@ import { TodayILearned } from "@/types";
 export async function fetchTodayILearneds(): Promise<TodayILearned[]> {
   const todayILearneds = await fetchContents(TODAY_I_LEARNED_PATH);
   assertTodayILearneds(todayILearneds);
-  return todayILearneds as TodayILearned[];
+  return todayILearneds;
 }
 
 /**

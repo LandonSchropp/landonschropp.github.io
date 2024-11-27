@@ -10,7 +10,7 @@ import { Article } from "@/types";
 export async function fetchArticles(): Promise<Article[]> {
   const articles = await fetchContents(ARTICLES_PATH);
   assertArticles(articles);
-  return articles as Article[];
+  return articles;
 }
 
 /**
