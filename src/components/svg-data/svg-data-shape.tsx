@@ -22,7 +22,7 @@ export function SvgDataShape({ shape }: SvgDataShapeProps) {
     <>
       {/* Add an invisible box so hovers work for the full link area. */}
       <rect x={x} y={y} width={width} height={height} fill="transparent" />
-      <path className={SVG_DATA_SHAPE_CLASS_NAME} {...props} />;
+      <path className={SVG_DATA_SHAPE_CLASS_NAME} {...props} />
     </>
   );
 }
