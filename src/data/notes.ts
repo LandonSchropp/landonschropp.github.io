@@ -4,7 +4,7 @@ import { NOTES_PATH } from "@/env";
 import { Note } from "@/types";
 
 /**
- * Fetches all notes from the local Obsidian vault.
+ * Fetches all notes.
  * @returns An array of notes.
  */
 export async function fetchNotes(): Promise<Note[]> {
@@ -14,7 +14,7 @@ export async function fetchNotes(): Promise<Note[]> {
 }
 
 /**
- * Fetches a single note from the local Obsidian vault.
+ * Fetches a single note.
  * @param slug The slug of the note.
  * @returns The note with the provided slug.
  */

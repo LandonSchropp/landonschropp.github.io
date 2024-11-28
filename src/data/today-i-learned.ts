@@ -4,7 +4,7 @@ import { TODAY_I_LEARNED_PATH } from "@/env";
 import { TodayILearned } from "@/types";
 
 /**
- * Fetches all today I learneds (TILs) from the local Obsidian vault.
+ * Fetches all today I learneds (TILs).
  * @returns An array of today I learneds (TILs).
  */
 export async function fetchTodayILearneds(): Promise<TodayILearned[]> {
@@ -14,7 +14,7 @@ export async function fetchTodayILearneds(): Promise<TodayILearned[]> {
 }
 
 /**
- * Fetches a single today I learned (TIL) from the local Obsidian vault.
+ * Fetches a single today I learned (TIL).
  * @param slug The slug of the today I learned (TIL).
  * @returns The today I learned (TIL) with the provided slug.
  */

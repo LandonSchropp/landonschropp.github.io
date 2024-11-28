@@ -32,7 +32,7 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
 }
 
 /**
- * Fetches all of the contents from the local Obsidian vault in the vault's relative path.
+ * Fetches all of the content files.
  * @param path The path from which the content files should be fetched.
  * @returns An array of contents.
  */

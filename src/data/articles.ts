@@ -4,7 +4,7 @@ import { ARTICLES_PATH } from "@/env";
 import { Article } from "@/types";
 
 /**
- * Fetches all articles from the local Obsidian vault.
+ * Fetches all articles.
  * @returns An array of articles.
  */
 export async function fetchArticles(): Promise<Article[]> {
@@ -14,7 +14,7 @@ export async function fetchArticles(): Promise<Article[]> {
 }
 
 /**
- * Fetches a single article from the local Obsidian vault.
+ * Fetches a single article.
  * @param slug The slug of the article.
  * @returns The article with the provided slug.
  */
