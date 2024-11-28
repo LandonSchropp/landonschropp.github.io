@@ -2,6 +2,7 @@ import highlightJs from "highlight.js/lib/common";
 import createMarkdownIt from "markdown-it";
 
 const markdownIt = createMarkdownIt({
+  html: true,
   highlight: (code, language) => {
     if (language === "") {
       return code;
