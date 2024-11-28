@@ -48,7 +48,7 @@ export function parseSvgData(svg: string): SvgData {
     };
   });
 
-  const polygons = findXmlElements(svgElement, "path").map((element): SvgDataPolygonShape => {
+  const polygons = findXmlElements(svgElement, "polygon").map((element): SvgDataPolygonShape => {
     return {
       type: "polygon" as const,
       id: element.attributes.id,
