@@ -6,6 +6,7 @@ export const ArticleSchema = z.union([
     description: z.string(),
     publisher: z.undefined(),
     url: z.undefined(),
+    markdown: z.string().min(1),
   }),
   ContentSchema.extend({
     description: z.string(),
@@ -14,3 +15,13 @@ export const ArticleSchema = z.union([
     markdown: z.string().max(0),
   }),
 ]);
+
+/**
+ * Parses the provided value as a note.
+ * @param value The value to parse.
+ * @returns The parsed note.
+ * @throws If the value does not match the schema.
+ */
+export function parseArticle(value: unknown): z.infer<typeof ArticleSchema> {
+  return ArticleSchema.parse(value);
+}

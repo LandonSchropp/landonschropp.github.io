@@ -22,38 +22,30 @@ export const MEDIAS = [
 
 export const BUSINESS_CATEGORY = "Business";
 export const DEVELOPMENT_CATEGORY = "Development";
-export const CHESS_CATEGORY = "Chess";
-export const DESIGN_CATEGORY = "Design";
-export const HEALTH_CATEGORY = "Health";
-export const PRODUCTIVITY_CATEGORY = "Productivity";
 export const PSYCHOLOGY_CATEGORY = "Psychology";
+export const HEALTH_CATEGORY = "Health";
 export const OTHER_CATEGORY = "Other";
 
 export const CATEGORIES = [
   BUSINESS_CATEGORY,
   DEVELOPMENT_CATEGORY,
-  CHESS_CATEGORY,
-  DESIGN_CATEGORY,
-  HEALTH_CATEGORY,
-  PRODUCTIVITY_CATEGORY,
   PSYCHOLOGY_CATEGORY,
+  HEALTH_CATEGORY,
   OTHER_CATEGORY,
 ] as const;
 
+export const TYPESCRIPT_JAVASCRIPT_TECHNOLOGY = "TypeScript / JavaScript";
 export const RUBY_TECHNOLOGY = "Ruby";
-export const JAVASCRIPT_TECHNOLOGY = "JavaScript";
-export const TYPESCRIPT_TECHNOLOGY = "TypeScript";
 export const GIT_TECHNOLOGY = "Git";
-export const SHELL_TECHNOLOGY = "Shell";
 export const NEOVIM_TECHNOLOGY = "Neovim";
+export const SHELL_TECHNOLOGY = "Shell";
 
 export const TECHNOLOGIES = [
-  GIT_TECHNOLOGY,
-  JAVASCRIPT_TECHNOLOGY,
-  NEOVIM_TECHNOLOGY,
+  TYPESCRIPT_JAVASCRIPT_TECHNOLOGY,
   RUBY_TECHNOLOGY,
+  GIT_TECHNOLOGY,
+  NEOVIM_TECHNOLOGY,
   SHELL_TECHNOLOGY,
-  TYPESCRIPT_TECHNOLOGY,
 ] as const;
 
 export const NAME = "Landon Schropp";

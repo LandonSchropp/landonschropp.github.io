@@ -6,15 +6,33 @@ import {
   BOOK_MEDIA,
   COURSE_MEDIA,
   LIVE_TALK_MEDIA,
+  OTHER_CATEGORY,
   PODCAST_MEDIA,
+  PSYCHOLOGY_CATEGORY,
   RECORDED_TALK_MEDIA,
   VIDEO_MEDIA,
 } from "@/constants";
 import { z } from "zod";
 
+function preprocessCategory(category: unknown) {
+  if (typeof category !== "string") {
+    return category;
+  }
+
+  switch (category) {
+    case "Productivity":
+      return PSYCHOLOGY_CATEGORY;
+    case "Chess":
+    case "Design":
+      return OTHER_CATEGORY;
+    default:
+      return category;
+  }
+}
+
 const NoteSchemaBase = ContentSchema.extend({
   authors: z.array(z.string()),
-  category: CategorySchema,
+  category: z.preprocess(preprocessCategory, CategorySchema),
   media: MediaSchema,
   url: z.string().url(),
 });
@@ -79,3 +97,13 @@ export const NoteSchema = z.discriminatedUnion("media", [
   RecordedTalkNoteSchema,
   VideoNoteSchema,
 ]);
+
+/**
+ * Parses the provided value as a note.
+ * @param value The value to parse.
+ * @returns The parsed note.
+ * @throws If the value does not match the schema.
+ */
+export function parseNote(value: unknown): z.infer<typeof NoteSchema> {
+  return NoteSchema.parse(value);
+}
