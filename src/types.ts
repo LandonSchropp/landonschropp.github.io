@@ -1,7 +1,6 @@
 import {
   ArticleSchema,
   CategorySchema,
-  ContentSchema,
   MediaSchema,
   NoteSchema,
   TechnologySchema,
@@ -17,9 +16,6 @@ export type Media = z.infer<typeof MediaSchema>;
 
 /** A category of technology, such as a programming language or framework. */
 export type Technology = z.infer<typeof TechnologySchema>;
-
-/** The shared properties of all content types, including `Note`, `Article` and `TodayILearned`. */
-export type Content = z.infer<typeof ContentSchema>;
 
 /** An object containing the metadata and content of a note. */
 export type Note = z.infer<typeof NoteSchema>;

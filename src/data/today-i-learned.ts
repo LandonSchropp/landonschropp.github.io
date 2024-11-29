@@ -1,6 +1,6 @@
 import { fetchContent, fetchContents } from "./content";
-import { assertTodayILearned, assertTodayILearneds } from "@/assertions";
 import { TODAY_I_LEARNED_PATH } from "@/env";
+import { parseTodayILearned } from "@/schema";
 import { TodayILearned } from "@/types";
 
 /**
@@ -8,9 +8,7 @@ import { TodayILearned } from "@/types";
  * @returns An array of today I learneds (TILs).
  */
 export async function fetchTodayILearneds(): Promise<TodayILearned[]> {
-  const todayILearneds = await fetchContents(TODAY_I_LEARNED_PATH);
-  assertTodayILearneds(todayILearneds);
-  return todayILearneds;
+  return (await fetchContents(TODAY_I_LEARNED_PATH)).map(parseTodayILearned);
 }
 
 /**
@@ -19,7 +17,5 @@ export async function fetchTodayILearneds(): Promise<TodayILearned[]> {
  * @returns The today I learned (TIL) with the provided slug.
  */
 export async function fetchTodayILearned(slug: string): Promise<TodayILearned> {
-  const todayILearned = await fetchContent(TODAY_I_LEARNED_PATH, slug);
-  assertTodayILearned(todayILearned);
-  return todayILearned;
+  return parseTodayILearned(await fetchContent(TODAY_I_LEARNED_PATH, slug));
 }

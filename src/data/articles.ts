@@ -1,6 +1,6 @@
 import { fetchContent, fetchContents } from "./content";
-import { assertArticle, assertArticles } from "@/assertions";
 import { ARTICLES_PATH } from "@/env";
+import { parseArticle } from "@/schema";
 import { Article } from "@/types";
 
 /**
@@ -8,9 +8,7 @@ import { Article } from "@/types";
  * @returns An array of articles.
  */
 export async function fetchArticles(): Promise<Article[]> {
-  const articles = await fetchContents(ARTICLES_PATH);
-  assertArticles(articles);
-  return articles;
+  return (await fetchContents(ARTICLES_PATH)).map(parseArticle);
 }
 
 /**
@@ -19,7 +17,5 @@ export async function fetchArticles(): Promise<Article[]> {
  * @returns The article with the provided slug.
  */
 export async function fetchArticle(slug: string): Promise<Article> {
-  const article = await fetchContent(ARTICLES_PATH, slug);
-  assertArticle(article);
-  return article;
+  return parseArticle(await fetchContent(ARTICLES_PATH, slug));
 }

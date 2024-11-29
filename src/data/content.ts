@@ -1,9 +1,10 @@
-import { assertContent } from "@/assertions";
-import { Content } from "@/types";
 import { parseFrontmatter } from "@/utilities/frontmatter";
 import { readFile } from "fs/promises";
 import { glob } from "glob";
 import { basename, join, relative } from "path";
+
+/** An object containing the raw metadata and markdown of a parsed content file. */
+export type Content = Record<string, unknown>;
 
 /**
  * Fetches the content of a file and parses it.
@@ -17,18 +18,12 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
 
   const [frontMatter, markdown] = parseFrontmatter(filePath, fileContent);
 
-  const title = basename(filePath, ".md");
-
-  const content = {
+  return {
     ...frontMatter,
     markdown: markdown.trim(),
-    category: pathParts.length > 1 ? pathParts[0] : undefined,
-    title: "title" in frontMatter ? frontMatter.title : title,
+    category: pathParts.length > 1 ? pathParts[0] : frontMatter.category,
+    title: "title" in frontMatter ? frontMatter.title : basename(filePath, ".md"),
   };
-
-  assertContent(content);
-
-  return content;
 }
 
 /**
@@ -55,6 +50,18 @@ export async function fetchContents(path: string): Promise<Content[]> {
   // Sort the contents by date (if present). This is a bit tricky, because we haven't actually
   // parsed the dates yet. However, we can still rely on a sorting the date strings.
   return contents.toSorted((first, second) => {
+    // If the date property is not present, the content will fail validation down the line so the
+    // sorting doesn't matter.
+    if (
+      !("date" in first) ||
+      !("date" in second) ||
+      typeof first.date !== "string" ||
+      typeof second.date !== "string"
+    ) {
+      return 0;
+    }
+
+    // Sort the dates in descending order.
     return second.date.localeCompare(first.date);
   });
 }
