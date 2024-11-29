@@ -3,32 +3,51 @@
 import { NoteSummary } from "./note-summary";
 import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
-import { OTHER_CATEGORY, CHESS_CATEGORY, CATEGORIES } from "@/constants";
+import {
+  OTHER_CATEGORY,
+  BUSINESS_CATEGORY,
+  DESIGN_CATEGORY,
+  DEVELOPMENT_CATEGORY,
+  PSYCHOLOGY_CATEGORY,
+  PRODUCTIVITY_CATEGORY,
+} from "@/constants";
+import { determineTags, filterByTag } from "@/data/tags";
 import { useCurrentTag } from "@/hooks/use-current-tag";
 import type { Note } from "@/types";
-
-const CATEGORIES_WITHOUT_CHESS = CATEGORIES.filter((category) => category !== CHESS_CATEGORY);
-
-function noteSummaryMatchesCategory(noteSummary: Note, category: string | null) {
-  // NOTE: I'm using includes here to accommodate the `Live Talk` category, which should be included
-  // by `Talk`.
-  return (
-    category === null ||
-    (category === OTHER_CATEGORY && noteSummary.category === CHESS_CATEGORY) ||
-    noteSummary.category.includes(category)
-  );
-}
+import { useMemo } from "react";
 
 type NoteSummariesProps = {
-  noteSummaries: Note[];
+  notes: Note[];
 };
 
-export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
-  const [category] = useCurrentTag("category", CATEGORIES_WITHOUT_CHESS);
+const PRIMARY_CATEGORIES = [
+  BUSINESS_CATEGORY,
+  DEVELOPMENT_CATEGORY,
+  DESIGN_CATEGORY,
+  PSYCHOLOGY_CATEGORY,
+];
 
-  const filteredNoteSummaries = noteSummaries
-    .filter((noteSummary) => noteSummaryMatchesCategory(noteSummary, category))
-    .map((noteSummary) => <NoteSummary key={noteSummary.slug} note={noteSummary} />);
+function transformNoteTag({ category }: Note) {
+  if (category === PRODUCTIVITY_CATEGORY) {
+    return PSYCHOLOGY_CATEGORY;
+  }
+
+  return PRIMARY_CATEGORIES.includes(category) ? category : OTHER_CATEGORY;
+}
+
+export function NoteSummaries({ notes }: NoteSummariesProps) {
+  const categories = useMemo(() => determineTags(notes, transformNoteTag), [notes]);
+
+  const [currentCategory] = useCurrentTag("category", categories);
+
+  const filteredNotes = useMemo(
+    () => filterByTag(notes, transformNoteTag, currentCategory),
+    [notes, currentCategory],
+  );
+
+  const noteSummaries = filteredNotes.map((noteSummary) => (
+    <NoteSummary key={noteSummary.slug} note={noteSummary} />
+  ));
 
   return (
     <>
@@ -36,9 +55,9 @@ export function NoteSummaries({ noteSummaries }: NoteSummariesProps) {
         title="Notes"
         subText="My personal notes on books, articles, talks, podcasts and more."
       >
-        <Tags type="category" values={CATEGORIES_WITHOUT_CHESS} />
+        <Tags type="category" values={categories} />
       </Header>
-      <section className="my-8">{filteredNoteSummaries}</section>
+      <section className="my-8">{noteSummaries}</section>
     </>
   );
 }
