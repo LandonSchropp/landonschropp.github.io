@@ -1,29 +1,16 @@
+import { ContentSchema } from "./content";
+import { CategorySchema, MediaSchema } from "./enums";
 import {
   APP_MEDIA,
   ARTICLE_MEDIA,
   BOOK_MEDIA,
-  CATEGORIES,
   COURSE_MEDIA,
   LIVE_TALK_MEDIA,
-  MEDIAS,
   PODCAST_MEDIA,
   RECORDED_TALK_MEDIA,
-  TECHNOLOGIES,
   VIDEO_MEDIA,
-} from "./constants";
+} from "@/constants";
 import { z } from "zod";
-
-export const CategorySchema = z.enum(CATEGORIES);
-export const TechnologySchema = z.enum(TECHNOLOGIES);
-export const MediaSchema = z.enum(MEDIAS);
-
-export const ContentSchema = z.object({
-  title: z.string(),
-  slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
-  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
-  published: z.boolean(),
-  markdown: z.string(),
-});
 
 const NoteSchemaBase = ContentSchema.extend({
   authors: z.array(z.string()),
@@ -92,21 +79,3 @@ export const NoteSchema = z.discriminatedUnion("media", [
   RecordedTalkNoteSchema,
   VideoNoteSchema,
 ]);
-
-export const ArticleSchema = z.union([
-  ContentSchema.extend({
-    description: z.string(),
-    publisher: z.undefined(),
-    url: z.undefined(),
-  }),
-  ContentSchema.extend({
-    description: z.string(),
-    publisher: z.string(),
-    url: z.string().url(),
-    markdown: z.string().max(0),
-  }),
-]);
-
-export const TodayILearnedSchema = ContentSchema.extend({
-  technology: TechnologySchema,
-});
