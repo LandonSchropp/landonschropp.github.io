@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default async function TodayILearnedsPage() {
-  const todayILearnedSummaries = await fetchTodayILearneds();
-  return <TodayILearnedSummaries todayILearnedSummaries={todayILearnedSummaries} />;
+  const todayILearneds = await fetchTodayILearneds();
+  return <TodayILearnedSummaries todayILearneds={todayILearneds} />;
 }

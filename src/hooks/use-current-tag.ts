@@ -3,7 +3,7 @@ import { useCallback } from "react";
 
 /**
  * A hook that provides a simple way to set and retrieve a generic tag filter. The value of the
- * filter is stored in the URL search parameters so it can easily be shared with others.
+ * filter is stored in the URL search parameters.
  * @typeParam T The type of the tag.
  * @param type The name of the search parameter to use for the current tag.
  * @param values The possible values to choose from for the tag.
