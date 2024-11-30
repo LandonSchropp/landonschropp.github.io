@@ -12,6 +12,7 @@ import "@/styles/content/image.css";
 import "@/styles/content/lists.css";
 import "@/styles/content/paragraphs.css";
 import "@/styles/content/pre.css";
+import "@/styles/content/tables.css";
 
 type ContentLayoutProps = {
   children: React.ReactNode;
