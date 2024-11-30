@@ -3,7 +3,8 @@
 import { TodayILearnedSummary } from "./today-i-learned-summary";
 import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
-import { determineTags, filterByTag } from "@/data/tags";
+import { TECHNOLOGIES } from "@/constants";
+import { filterByTag } from "@/data/tags";
 import { useCurrentTag } from "@/hooks/use-current-tag";
 import type { TodayILearned } from "@/types";
 import { useMemo } from "react";
@@ -13,8 +14,7 @@ type TodayILearnedSummariesProps = {
 };
 
 export function TodayILearnedSummaries({ todayILearneds }: TodayILearnedSummariesProps) {
-  const technologies = useMemo(() => determineTags(todayILearneds, "technology"), [todayILearneds]);
-  const [currentTechnology] = useCurrentTag("technology", technologies);
+  const [currentTechnology] = useCurrentTag("technology", TECHNOLOGIES);
   const filteredTodayILearneds = useMemo(
     () => filterByTag(todayILearneds, "technology", currentTechnology),
     [todayILearneds, currentTechnology],
@@ -26,7 +26,7 @@ export function TodayILearnedSummaries({ todayILearneds }: TodayILearnedSummarie
         title="Today I Learned"
         subText="Langague and framework tips and tricks I've learned while coding"
       >
-        <Tags type="technology" values={technologies} />
+        <Tags type="technology" values={TECHNOLOGIES} />
       </Header>
       <section className="my-8">
         {filteredTodayILearneds.map((todayILearned) => (

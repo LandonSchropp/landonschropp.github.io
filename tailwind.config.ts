@@ -1,13 +1,14 @@
 import {
   BUSINESS_CATEGORY,
   DEVELOPMENT_CATEGORY,
-  DESIGN_CATEGORY,
   PSYCHOLOGY_CATEGORY,
-  CHESS_CATEGORY,
   OTHER_CATEGORY,
   RUBY_TECHNOLOGY,
-  TYPESCRIPT_TECHNOLOGY,
   GIT_TECHNOLOGY,
+  HEALTH_CATEGORY,
+  NEOVIM_TECHNOLOGY,
+  SHELL_TECHNOLOGY,
+  TYPESCRIPT_JAVASCRIPT_TECHNOLOGY,
 } from "./src/constants";
 import camelCase from "camelcase";
 import { mapValues } from "remeda";
@@ -80,16 +81,17 @@ const TAILWIND_CONFIG = {
 const CATEGORY_COLORS = {
   [BUSINESS_CATEGORY]: TAILWIND_CONFIG.theme.colors.cornflower,
   [DEVELOPMENT_CATEGORY]: TAILWIND_CONFIG.theme.colors.purple,
-  [DESIGN_CATEGORY]: TAILWIND_CONFIG.theme.colors.amethyst,
-  [PSYCHOLOGY_CATEGORY]: TAILWIND_CONFIG.theme.colors.mulberry,
-  [CHESS_CATEGORY]: TAILWIND_CONFIG.theme.colors.bittersweet,
+  [PSYCHOLOGY_CATEGORY]: TAILWIND_CONFIG.theme.colors.amethyst,
+  [HEALTH_CATEGORY]: TAILWIND_CONFIG.theme.colors.mulberry,
   [OTHER_CATEGORY]: TAILWIND_CONFIG.theme.colors.bittersweet,
 } as const;
 
 const TECHNOLOGY_COLORS = {
-  [TYPESCRIPT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.cornflower,
+  [TYPESCRIPT_JAVASCRIPT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.cornflower,
+  [RUBY_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.purple,
   [GIT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.amethyst,
-  [RUBY_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.bittersweet,
+  [NEOVIM_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.mulberry,
+  [SHELL_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.bittersweet,
 } as const;
 
 const HOCUS_SELECTORS = ["&:hover", "&:focus-visible"];
