@@ -14,7 +14,9 @@ type ArticleSummaryProps = {
 };
 
 export function ArticleSummary({ articleSummary, index, numberOfArticles }: ArticleSummaryProps) {
-  const href = isNullish(articleSummary.url) ? `/articles/${articleSummary.slug}` : articleSummary.url;
+  const href = isNullish(articleSummary.url)
+    ? `/articles/${articleSummary.slug}`
+    : articleSummary.url;
 
   const percent = `${(index / (numberOfArticles - 1)) * 100}%`;
   const style = {

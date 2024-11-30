@@ -1,4 +1,3 @@
 code {
-  @apply min-w-fit rounded-s bg-theme-backgroundHighlight box-decoration-clone px-0.75 py-0.25 
-    font-mono text-sm;
+  @apply min-w-fit rounded-s bg-theme-backgroundHighlight box-decoration-clone px-0.75 py-0.25 font-mono text-sm;
 }
