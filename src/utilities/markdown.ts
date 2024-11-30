@@ -1,5 +1,6 @@
 import highlightJs from "highlight.js/lib/common";
 import createMarkdownIt from "markdown-it";
+import markdownItCallouts from "markdown-it-callouts";
 
 /**
  * A markdown-it plugin that wraps tables in a responsive container.
@@ -26,8 +27,9 @@ const markdownIt = createMarkdownIt({
   },
 });
 
-// Load the custom table wrapper plugin
+// Load the plugin
 markdownIt.use(tableWrapper);
+markdownIt.use(markdownItCallouts, { defaultElementType: "aside", calloutTitleElementType: "p" });
 
 /**
  * Converts markdown to html.

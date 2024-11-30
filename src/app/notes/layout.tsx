@@ -2,6 +2,7 @@ import { MainNavigation } from "@/components/navigation/main-navigation";
 import "@/styles/content/anchors.css";
 import "@/styles/content/audios.css";
 import "@/styles/content/blockquotes.css";
+import "@/styles/content/callouts.css";
 import "@/styles/content/cite.css";
 import "@/styles/content/code.css";
 import "@/styles/content/headers.css";

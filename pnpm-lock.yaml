@@ -77,6 +77,9 @@ importers:
       markdown-it:
         specifier: ^14.1.0
         version: 14.1.0
+      markdown-it-callouts:
+        specifier: ^1.0.3
+        version: 1.0.3
       nanostores:
         specifier: ^0.11.3
         version: 0.11.3
@@ -3155,6 +3158,9 @@ packages:
 
   makeerror@1.0.12:
     resolution: {integrity: sha512-JmqCvUhmt43madlpFzG4BQzG2Z3m6tvQDNKdClZnO3VbIudJYmxsT0FNJMeiB2+JTSlTQTSbU8QdesVmwJcmLg==}
+
+  markdown-it-callouts@1.0.3:
+    resolution: {integrity: sha512-DkWzoK3mDZpdkkBSS6dTiTXRdauUeCqEVoH/wPIaB+62pSgcRq2bWB7FHTrzH5kHUSrQ2IjjoelBsWenQBXdig==}
 
   markdown-it@14.1.0:
     resolution: {integrity: sha512-a54IwgWPaeBCAAsv13YgmALOF1elABB08FxO9i+r4VFk5Vl4pKokRPeX8u5TCgSsPi6ec1otfLjdOpVcgbpshg==}
@@ -8013,6 +8019,8 @@ snapshots:
   makeerror@1.0.12:
     dependencies:
       tmpl: 1.0.5
+
+  markdown-it-callouts@1.0.3: {}
 
   markdown-it@14.1.0:
     dependencies:

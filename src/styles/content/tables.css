@@ -10,7 +10,7 @@ th {
 
 th,
 td {
-  @apply px-1;
+  @apply px-1 leading-8;
 }
 
 thead tr th,
