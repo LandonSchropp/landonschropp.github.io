@@ -9,7 +9,7 @@ import { useCallback, useEffect } from "react";
  * @typeParam T The type of the tag.
  * @param attribute The name of the data attribute to set on the body element. This should not
  * include the `data-` prefix.
- * @param typeGuard A type guard that checks if a value is of type `T`.
+ * @param $store The store that contains the value of the current tag.
  * @returns A tuple containing the current tag and a function to set the tag.
  */
 export function useTag<T extends string>(attribute: string, $store: WritableAtom<T | null>) {
