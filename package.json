@@ -15,7 +15,7 @@
     "start": "next start",
     "test": "jest",
     "preinstall": "npx only-allow pnpm",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@eslint/compat": "^1.2.4",
