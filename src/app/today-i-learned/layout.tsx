@@ -11,6 +11,7 @@ import "@/styles/content/image.css";
 import "@/styles/content/lists.css";
 import "@/styles/content/paragraphs.css";
 import "@/styles/content/pre.css";
+import { Suspense } from "react";
 
 type ContentLayoutProps = {
   children: React.ReactNode;
@@ -20,7 +21,9 @@ export default function NotesLayout({ children }: ContentLayoutProps) {
   return (
     <>
       <MainNavigation />
-      <main className="mx-auto w-[70ch] max-w-full px-2 md:px-4">{children}</main>
+      <main className="mx-auto w-[70ch] max-w-full px-2 md:px-4">
+        <Suspense>{children}</Suspense>
+      </main>
     </>
   );
 }
