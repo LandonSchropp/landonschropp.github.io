@@ -1,4 +1,5 @@
 import { parseFrontmatter } from "@/utilities/frontmatter";
+import { prefixMarkdownImageSourcePaths } from "@/utilities/markdown";
 import { readFile } from "fs/promises";
 import { glob } from "glob";
 import { basename, join, relative } from "path";
@@ -20,7 +21,7 @@ async function fetchAndParseContent(contentPath: string, filePath: string): Prom
 
   return {
     ...frontMatter,
-    markdown: markdown.trim(),
+    markdown: prefixMarkdownImageSourcePaths(markdown, frontMatter.slug ?? null).trim(),
     category: pathParts.length > 1 ? pathParts[0] : frontMatter.category,
     title: "title" in frontMatter ? frontMatter.title : basename(filePath, ".md"),
   };

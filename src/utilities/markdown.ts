@@ -2,6 +2,8 @@ import highlightJs from "highlight.js/lib/common";
 import createMarkdownIt from "markdown-it";
 import markdownItCallouts from "markdown-it-callouts";
 
+const MARKDOWN_IMAGE_REGEX = /!\[([^\]]*)\]\(([^)]+)\)/g;
+
 /**
  * A markdown-it plugin that wraps tables in a responsive container.
  */
@@ -34,6 +36,22 @@ markdownIt.use(markdownItCallouts, { defaultElementType: "aside", calloutTitleEl
 /**
  * Converts markdown to html.
  */
-export function convertMarkdownToHtml(markdown: string) {
+export function convertMarkdownToHtml(markdown: string): string {
   return markdownIt.render(markdown);
+}
+
+/**
+ * Prepend a prefix to all image source paths in the provided markdown.
+ * @param markdown The markdown to process.
+ * @param prefix The prefix to add to the image source paths.
+ * @returns The markdown with the image source paths prepended with the provided prefix.
+ */
+export function prefixMarkdownImageSourcePaths(markdown: string, prefix: string | null): string {
+  if (prefix === null) {
+    return markdown;
+  }
+
+  return markdown.replace(MARKDOWN_IMAGE_REGEX, (_match, alt, src) => {
+    return `![${alt}](${prefix}/${src})`;
+  });
 }
