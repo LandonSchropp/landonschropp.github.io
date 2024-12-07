@@ -55,3 +55,11 @@ export function prefixMarkdownImageSourcePaths(markdown: string, prefix: string 
     return `![${alt}](${prefix}/${src})`;
   });
 }
+
+/**
+ * @param markdown The markdown to search.
+ * @returns The image source paths in the provided markdown.
+ */
+export function getMarkdownImageSourcePaths(markdown: string): string[] {
+  return Array.from(markdown.matchAll(MARKDOWN_IMAGE_REGEX)).map((match) => match[2]);
+}

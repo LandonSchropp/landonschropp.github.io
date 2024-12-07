@@ -17,7 +17,7 @@ export function Note({ note }: NoteProps) {
   return (
     <article className="my-6" data-category={note.category}>
       <NoteHeader note={note} />
-      <Markdown markdown={note.markdown} />
+      <Markdown markdown={note.markdown} slug={note.slug} />
     </article>
   );
 }

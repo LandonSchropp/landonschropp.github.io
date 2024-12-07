@@ -22,7 +22,7 @@ export function Article({ article }: AticleProps) {
         }
       />
 
-      <Markdown markdown={article.markdown} />
+      <Markdown markdown={article.markdown} slug={article.slug} />
     </article>
   );
 }
