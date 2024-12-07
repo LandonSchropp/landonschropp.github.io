@@ -1,7 +1,8 @@
 import { Content } from "@/types";
 import { getMarkdownImageSourcePaths } from "@/utilities/markdown";
 import { readFile } from "fs/promises";
-import { join, dirname } from "path";
+import mime from "mime";
+import { join, dirname, extname } from "path";
 
 /**
  * Downloads the image relative to the provided content.
@@ -15,12 +16,17 @@ export async function downloadImage(content: Content, image: string): Promise<Re
   // Read the image file
   // TODO: Figure out if the file can be streamed to avoid loading it into memory first.
   const buffer = await readFile(path);
+  const contentType = mime.getType(extname(image));
+
+  if (!contentType) {
+    throw new Error(`Could not determine content type for image '${image}' at '${path}'.`);
+  }
 
   // Create the response and set the appropriate headers for the image
   return new Response(buffer, {
     status: 200,
     headers: {
-      "Content-Type": "image/png",
+      "Content-Type": contentType,
     },
   });
 }
