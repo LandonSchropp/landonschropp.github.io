@@ -1,4 +1,4 @@
-# Landon Schropp's Personal Website
+# landonschropp.com
 
 This repo contains the code powering my personal website. It uses [Notion](https://www.notion.so/)
 as a headless CMS to host the content, and uses [Astro](https://astro.build/) to generate
