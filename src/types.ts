@@ -1,6 +1,7 @@
 import {
   ArticleSchema,
   CategorySchema,
+  ContentSchema,
   MediaSchema,
   NoteSchema,
   TechnologySchema,
@@ -17,13 +18,16 @@ export type Media = z.infer<typeof MediaSchema>;
 /** A category of technology, such as a programming language or framework. */
 export type Technology = z.infer<typeof TechnologySchema>;
 
-/** An object containing the metadata and content of a note. */
+/** An object containing the metadata and markdown of some form of content. */
+export type Content = z.infer<typeof ContentSchema>;
+
+/** An object containing the metadata and markdown of a note. */
 export type Note = z.infer<typeof NoteSchema>;
 
-/** An object containing the metadata and content of an article. */
+/** An object containing the metadata and markdown of an article. */
 export type Article = z.infer<typeof ArticleSchema>;
 
-/** An object containing the metadata and content of a today I Learned (TIL). */
+/** An object containing the metadata and markdown of a today I Learned (TIL). */
 export type TodayILearned = z.infer<typeof TodayILearnedSchema>;
 
 /** A subset of the properties of the SVG `path` element. */

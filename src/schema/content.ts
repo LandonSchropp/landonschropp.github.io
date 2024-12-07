@@ -10,4 +10,5 @@ export const ContentSchema = z.object({
   date: z.string().date(),
   published: z.boolean(),
   markdown: MarkdownSchema,
+  filePath: z.string(),
 });
