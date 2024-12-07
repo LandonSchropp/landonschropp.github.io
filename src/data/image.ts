@@ -14,7 +14,6 @@ export async function downloadImage(content: Content, image: string): Promise<Re
   const path = join(dirname(content.filePath), image);
 
   // Read the image file
-  // TODO: Figure out if the file can be streamed to avoid loading it into memory first.
   const buffer = await readFile(path);
   const contentType = mime.getType(extname(image));
 
