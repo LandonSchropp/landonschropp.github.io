@@ -1,0 +1,305 @@
+6:"$Sreact.fragment"
+7:I[7556,[],""]
+8:I[8418,[],""]
+9:I[9306,["345","static/chunks/app/not-found-5003099408b5305e.js"],"default"]
+b:I[1406,["282","static/chunks/282-75966d77867c0c4f.js","763","static/chunks/app/notes/layout-f54590ebbe28fa9b.js"],"MainNavigation"]
+c:"$Sreact.suspense"
+e:I[5277,[],"OutletBoundary"]
+10:I[5277,[],"MetadataBoundary"]
+12:I[5277,[],"ViewportBoundary"]
+14:I[6379,[],""]
+1:HL["/_next/static/css/052c8b13a035a85d.css","style"]
+2:HL["/_next/static/css/5aabacac4a7bcbc4.css","style"]
+3:HL["/_next/static/css/b7bdc2d4d4aa6554.css","style"]
+4:HL["/_next/static/css/9cad1c3a621a47c7.css","style"]
+5:HL["/_next/static/css/34f92507e61baad2.css","style"]
+a:T5e1,M219.572308,442 L219.572308,372.487514 L243,372.487514 L243,299.237798 L219.572308,299.237798 L219.572308,3 L82.9938462,3 L0,303.971623 L0,372.487514 L130.098462,372.487514 L130.098462,442 L219.572308,442 Z M130,300 L78,300 L130,79 L130,300 Z M373,446 C410.173104,446 438.799714,435.629836 458.879828,414.889509 C478.959943,394.149182 489,364.28311 489,325.291295 L489,325.291295 L489,127.677455 C489,86.5286458 479.457797,54.9618676 460.373391,32.9771205 C441.288984,10.9923735 412.164521,0 373,0 C334.001431,0 304.918455,10.9923735 285.751073,32.9771205 C266.583691,54.9618676 257,86.5286458 257,127.677455 L257,127.677455 L257,325.291295 C257,364.28311 267.081545,394.149182 287.244635,414.889509 C307.407725,435.629836 335.992847,446 373,446 Z M372.5,365 C365.909962,365 360.679119,361.927448 356.807471,355.782343 C352.935824,349.637238 351,342.744755 351,335.104895 L351,335.104895 L351,118.61451 C351,108.317308 352.112069,99.3072552 354.336207,91.5843531 C356.560345,83.861451 362.614943,80 372.5,80 C382.385057,80 388.439655,83.861451 390.663793,91.5843531 C392.887931,99.3072552 394,108.317308 394,118.61451 L394,118.61451 L394,335.104895 C394,342.744755 392.105364,349.637238 388.316092,355.782343 C384.52682,361.927448 379.254789,365 372.5,365 Z M722.572308,442 L722.572308,372.487514 L746,372.487514 L746,299.237798 L722.572308,299.237798 L722.572308,3 L585.993846,3 L503,303.971623 L503,372.487514 L633.098462,372.487514 L633.098462,442 L722.572308,442 Z M633,300 L581,300 L633,79 L633,300 Z0:{"P":null,"b":"9o4yyEdiX745V4Xa0Y3xJ","p":"","c":["","notes","building-a-second-brain"],"i":false,"f":[[["",{"children":["notes",{"children":[["slug","building-a-second-brain","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/052c8b13a035a85d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en-us","className":"h-full text-[19px] md:text-[21px] lg:text-[22px]","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","type":"image/png","href":"/_next/static/media/flannel.5168cfc2.png"}]]}],["$","body",null,{"className":"flex h-full flex-col bg-theme-background font-serif font-normal text-theme-text *:flex-[0_0_auto]","suppressHydrationWarning":true,"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L9",null,{"viewBox":"0 0 746 446","title":"404","children":[["$","rect",null,{"x":0,"y":0,"width":746,"height":446,"fill":"transparent"}],["$","path",null,{"className":"fill-[url('#svg-data-background')]","id":"not-found","d":"$a"}]]}],"notFoundStyles":[]}]}]]}]]}],{"children":["notes",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5aabacac4a7bcbc4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/b7bdc2d4d4aa6554.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/9cad1c3a621a47c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/34f92507e61baad2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],[["$","$Lb",null,{}],["$","main",null,{"className":"mx-auto w-[70ch] max-w-full px-2 md:px-4","children":["$","$c",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","notes","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]}]]]}],{"children":[["slug","building-a-second-brain","d"],["$","$6","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","notes","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]]}],{"children":["__PAGE__",["$","$6","c",{"children":["$Ld",null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},null]},null]},null],["$","$6","h",{"children":[null,["$","$6","j3dMppb4Eb0eUuuKrKeNn",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],null]}]]}]]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:I[5677,["867","static/chunks/867-34944a4304bcfa99.js","740","static/chunks/app/notes/%5Bslug%5D/page-a7e184241ba85e81.js"],"Note"]
+16:T44d5,## Introduction
+
+The goal of a second brain is to package up our ideas in a way that preserves them and makes them actionable for our future selves. It allows you to save your best thinking so you don’t have to do it again.
+
+Note taking is an incredibly powerful tool for organizing and clarifying our thoughts. It allows us to relax and let go knowing that the information is stored away and can be retrieved later on.
+
+## What Is a Second Brain?
+
+A _second brain_ is a personal repository of saved notes. It can contain notes, journals, sketches, ideas, todos, photos, and anything else that can be easily transcribed. It lets you store your thoughts and refine your ideas.
+
+A second brain helps to stem the tide of overwhelming information and let us actually make use of it. It's not about letting us consume more—it's about letting us make use of what we already have.
+
+### Digital Notes
+
+Digital notes have several key advantages over paper notes:
+
+- Digital notes are endlessly malleable, allowing us to continuously update and rewrite them.
+- Digital notes can be indexed and searched, making it easy to find information later.
+- Digital notes can be linked, allowing you to create a graph of notes to interconnect ideas and maintain references to ideas.
+- Digital notes are with you at all times. They're synced across all devices, including your phone.
+- It’s much faster to write town notes with a keyboard or dictate them with the phone that it is to write them out by hand in a notebook.
+- Digital notes can be as long or as short as needed for given situation. There’s no need to have to come up with the system to make them fit in a specific form factor.
+- Digital notes can be read and interpreted by an LLM.
+
+## How a Second Brain Works
+
+The first key to using a second brain is to capture your thoughts. This helps offload the ideas from the ephemeral ghost house of our minds and crystalize them into something concrete.
+
+> Only when we declutter our brain of complex ideas can we think clearly and start to work with those ideas effectively.
+
+A second brain also helps us incubate our ideas and grow them over time, and make connections between different ideas.
+
+### Perfection
+
+It's important to not get caught up in trying to create the _perfect_ note-taking system. Thinking and note-taking are inherently messy, so no system is ever going to be able to perfectly organize it without taking an exorbitant amount of time.
+
+> It's not about having the perfect tools—it's about having a _reliable_ set of tools you can depend on, knowing you can always change them later.
+
+### The CODE Method
+
+There are four parts to creating a second brain:
+
+- **Capture:** Keep what resonates
+- **Organize:** Save for actionability
+- **Distill:** Find the essence
+- **Express:** Show your work
+
+### Divergence and Convergence
+
+Creative processes tend to follow a repeating pattern of _divergence_ and _convergence_. When you diverge, you open yourself up to new possibilities and ideas. When you converge, you eliminate possibilities and decide what's truly essential.
+
+Both steps are critical—diverge opens us to many create possibilities and convergence focuses our efforts. When working, it's helpful to decide which mindset you'd like to occupy at any given time.
+
+With CODE, we can view the capture and organize steps as a part of divergence and distill and express as part of convergence.
+
+## Capture
+
+If we try to capture _everything_, we'll quickly become overwhelmed. Instead, the idea is to only keep the content that resonates. There are a few questions you can ask yourself:
+
+- **"Does it inspire me?"** You can create a bank of motivation that you can later draw on at any time.
+- **"Is it useful?"** It's okay if it's not useful _now_—you can still save information that you suspect might be helpful later on.
+- **"Is it personal?"** Keeping your own thoughts and reflections helps you to better understand who you are. By writing these down, you organize and crystalize your thoughts. It's also good for your mental health.
+- **"Is it surprising?"** "If you're not surprised, then you already knew it at some level, so why take note of it?"
+
+It's also best to be picky about what you keep. If the goal is to provide information to our future selves, then storing information only creates overwhelm later on.
+
+## Organize
+
+It's important to treat our digital notes as an _environment_, and how we organize that environment dictates how useful it'll be to us.
+
+> The best way to organize your notes is to _organize for action_ according to the active projects you are working on right now. Consider new information in terms of its _utility_, asking "How is this going to help me move forward one of my current projects?"
+
+When you organize content for action, you ensure that it actually has a purpose and is working you. It avoid information hoarding, and lets you self-organize.
+
+### PARA
+
+Tiago Forte has created an _incredibly_ useful system for organizing information called PARA: Projects, Areas, Resources and Archives.
+
+The key idea isn't to organize information by subject, but instead by use case. Digital notes can easily be moved later, so it's better to store them where they can be put to practical use.
+
+> The promise of PARA is that it changes "getting organized" from a herculean, never-ending endeavor into a straightforward task to get over with so you can move on to more important work.
+
+#### Projects
+
+Projects are "short-term efforts in your work or life that you're working on now." Projects are always time-bound—they have a beginning and an end. They also need to have a clear outcome or goal that has to be completed in order to consider them done.
+
+> [!note]
+> I've found the idea of projects in PARA to be so _freeing_. When using projects, I don't have to worry about creating a perfect organization system that works for all of my content and continuously maintaining it—I can scope my organization efforts to the project, and when it's done I archive it and I move on.
+
+#### Areas
+
+Areas are "long-term responsibilities you want to manage over time." Unlike projects, areas are continuous and ongoing.
+
+It's important to manage areas and set a standard to uphold for each one of them.
+
+#### Resources
+
+Resources are where you store information you might want to reference in the future. This information _could_ be useful, but isn't immediately attached to a specific project.
+
+#### Archive
+
+The archive section contains information that is not longer currently relevant. The archive is key because it keeps the rest of the notes from getting cluttered.
+
+The archive contains content from the other three areas:
+
+- Completed or cancelled projects
+- Areas of responsibility that you're no longer committed to
+- Resources that are no longer relevant
+
+### Organization
+
+The organization system should be _geared toward action._ Focus on what the note will be used for, not where it comes from.
+
+Striving for perfection is pointless.
+
+> It's no use trying to find the "perfect place" where a note or file belongs. There isn't one. The whole system is constantly shifting and changing in syne with your constantly changing life.
+
+The goal is to use the system to _complete projects_. It doesn't matter how organized a set of notes are if you can't do anything with them. Finishing projects infuses you with energy and excitement, feeding into the value of the system.
+
+## Distill
+
+> To attain knowledge, add things every day. To attain wisdom, remove things every day.
+> —Lao Tzu
+
+One of the most valuable things we can do with ideas is to form _associations_ between them. Creativity peaks when we can create new connections between ideas that others haven't yet discovered.
+
+To facilitate this, it's best to distill notes down to their essence. We have to deemphasize and remove what doesn't matter so what does shines through.
+
+> Every time you take a note, ask yourself, "How can I make this as useful as possible for my future self?"
+
+### Progressive Summarization
+
+The technique is simple: you highlight the main points of a note, and then highlight the main points of those highlights, and so on, distilling the essence of a note in several "layers."
+
+Forte recommends doing this in four stages for progressive summarization: capture, highlight, bold an executive summary. (I've swapped the second and third.)
+
+1. **Capture notes**: Copy passages into your notes. You don't have to do all of them, only the most important pieces.
+2. **Highlight:** Highlight the key points in the content. This helps the important passages stand out.
+3. **Bold:** The most interesting or surprising fragments of your highlights.
+4. **Executive summary:** Finally, you can create a new section at the top of your know with a few bullet points summarizing the note.
+
+The key is **you don't need to do all of these steps.** Only go as far as you need to to make it easy for your future self to find the most interesting and relevant parts of the content.
+
+Tiago also recommends only doing Progressive Summarization when you "touch" a note—that way you'll naturally avoid wasting effort on notes that you don't ever reference later.
+
+## Express
+
+In order for us to truly _grasp_ our knowledge, we must put it to use.
+
+> Information becomes knowledge—personal, embodied, verified—only when we put it to use. You gain confidence in what you know only when you know that it works. Until you do, it's just theory.
+>
+> That is why I recommend you shift as much of your time and effort as possible from consuming to creating.
+
+The last stage, express, is about putting this knowledge to use _now_ rather than later.
+
+### Intermediate Packets
+
+An _intermediate packet_ is a small piece of work that you do as part of a larger project. These small pieces can be rearranged and assembled to form larger deliverables.
+
+It's best to make intermediate packs as _small_ as possible, and create a lot of them.
+
+Viewing work in this way has several advantages:
+
+- **Focus:** Because the scope if intermediate packets is small, it's easy to devote your full attention to them and complete them in a timely manner.
+- **Time:** You can make progress on intermediate packets in small chunks of time. For people with busy lives (like parents of small children), this can be a wonderful way to "squeeze in" meaningful work during relatively small gaps of time, like a child napping for an hour.
+- **Composability:** When you have enough intermediate packets, you can easily combine them into full deliverables.
+- **Reusability:** When work is small and granular in this yoway, it's easy to reuse it in other contexts. Even rejected packets can find a new life in separate projects.
+- **Sharable:** Smaller chunks of work are easier to share and get incremental feedback.
+
+> Reframing your productivity in terms of Intermediate Packets is a major step toward this turning point. Instead of thinking of you job in terms of tasks, which always require you to be there, personally, doing everything yourself, you will start to think in terms of assets and building blocks that you can assemble.
+
+## Creative Execution
+
+When you're ready to sit down and make progress on something, it's best to have _already_ gathered all of the source material and organized it.
+
+### Archipelago of Ideas
+
+An _archipelago of ideas_ is a collection of disparate source material whose concepts will form the backbone of your deliverable. You can think of it as an _outline_ composed of snippets and ideas from your existing content.
+
+The goal of an archipelago of ideas is to avoid the "blank page"—you start with a collection of ideas to work off of and go from there.
+
+### Hemingway Bridge
+
+The idea behind a _Hemingway Bridge_ is to stop working when the next steps are crystal clear. The idea is that you can start work the next day carrying the moment from your previous day forward.
+
+To achieve this, there are a few tips you can apply:
+
+- When stopping, write down your ideas for the next steps.
+- Write down your current status.
+- Write down the details that you're likely to forget.
+- Write out your plan for your next work session.
+- Send out a draft of your work for feedback.
+
+### Reduce Scope
+
+The last technique is to _reduce the scope of what you're working on._ The goal is to **ship something small and concrete.**
+
+> The problem isn't a lack of time. It is that we forget that we have control over the scope of the project. We can "dial it down" to a more manageable size, and we must if we ever want to see it finished.
+>
+> Waiting until you have everything ready before getting started is like sitting in your car and waiting to leave your driveway until all de traffic lights across town are green at the same time. You can't wait until everything is perfect. There will always be something missing or something else that you need.
+
+You don't have to be afraid to cut work, because _nothing is ever truly lost_. The things that you cut are intermediate packets that can be reused later on.
+
+> Whatever you are building, there is a smaller, simpler version of it that would deliver much of the value in a fraction of the time.
+
+### Sharing Your Work
+
+Finally, it's important to share what you're creating _before you feel ready_. You can always release a fix or update later, but you need the feedback _now_.
+
+> How can you know which direction to take your thinking without feedback from customers, colleagues, collaborators or friends? And how can you collect that feedback without showing them something concrete?
+>
+> This is the chicken-and-egg problem of creativity: you don't know what you should create, but you can't discover what people want until you create something. Dialing Down the Scope is a way of short-circuiting that paradox and testing the waters with something small and concrete, while still protecting the fragile and tentative edges of your work.
+
+## Tagging
+
+It's tempting to try to create the perfect tagging taxonomy, but that is an exercise in futile pain. People have been working at categorizing and organizing information for centuries, and nobody has fully succeeded so far.
+
+Instead, Forte recommends focuses on using tags to improve the _actionability_ of your notes.
+
+### Personalized Tags
+
+You can create tags that are _personal_ to you and your use cases. A couple of examples might be the kind of information the note contains, or its format.
+
+Creating tags that have personal meaning to you is an interactive process. It's okay for is to not be perfect, as well as for it to change over time.
+
+### Progress
+
+You can use tags to track of your progress on note. For example, you could tag something based upon its role in a project, or it's current status.
+
+> These kinds of tags aren’t about the _contents_ of a note. They are about its _context_—specifically, the context in which it is being used.
+
+### Retroactive Tagging
+
+It's not always clear what tags you'll need in advance. Instead, you can retroactively tag notes as natural grouping emerge.
+
+## Habits
+
+There are a few habits that can aid in keeping your second brain clean and useful.
+
+### Project Checklists
+
+Tiago recommends starting our projects with a _project kickoff checklist_. This helps us to get our projects off to an organized and productive start.
+
+He also recommends deliberately _ending_ a project with a checklist.
+
+> Part of what makes modern work so challenging is that nothing ever seems to finish. It's exhausting, isn't it?
+
+By ending with a checklist, we get to celebrate our work and make sure we've maximized our gains from the project.
+
+> [!note]
+> Forte included a ton of great content in the book on what project kickoff and project completion checklists should include. Instead of including it here, I've created a template for it that I can apply to all new projects.
+
+### Suspending and Cancelling Projects
+
+Forte points out a very liberating idea: at any time, we can suspend or cancel a project. If we're feeling worn out or overwhelmed, this can be a great way to reduce what's currently on our plates.
+
+In either case, be sure to write up a status note dictating where the project has left off so you can pick it back up later if you want.
+
+### Weekly and Monthly Reviews
+
+It can be very helpful to take a little time periodically to review your current work and ensure that it's carrying you closer to your goals.
+
+## Self-Expression
+
+The core idea is to place less of a burden on your biological brain.
+
+> The more time your brain spends striving to achieve and overcome and solve problems, the less time you have left over for imagining, creating and simply enjoying the life you're living.
+
+### Tacit Knowledge
+
+There's a form of knowledge that we possess that's easy for us to do, but hard for us to describe. This is know as _tacit knowledge_, and it's composed of the thousands of tiny details we do automatically in the tasks we know well, like driving or recognizing faces.
+
+> The jobs and endeavors that rely on tacit knowledge will be the last ones to be automated.
+
+### Self-Expression
+
+Self-expression is a fundamental human need.
+
+> We must be able to share the stories of our lives—from the small moments of what happened today at school to our grandest theories of what life is about.
+
+Putting yourself out there is _hard_.
+
+> It takes courage and vulnerability to stand up and deliver your message… Who are you to speak up? Who says you have anything to offer? Who are you to demand people's attention and take up their time?
+>
+> The only way to discover the answer to these questions is by speaking and seeing what comes out.d:["$","$L15",null,{"note":{"title":"Building a Second Brain","slug":"building-a-second-brain","date":"2024-11-03","published":true,"markdown":"$16","filePath":"/Users/landon/Notes/Resources/Notes/Productivity/Building a Second Brain/Building a Second Brain.md","authors":["Tiago Forte"],"category":"Psychology","media":"Book","url":"https://www.buildingasecondbrain.com/"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Landon Schropp – Building a Second Brain"}],["$","meta","2",{"name":"description","content":"Landon Schropp's notes about Building a Second Brain"}],["$","meta","3",{"name":"author","content":"Landon Schropp"}]]
+f:null

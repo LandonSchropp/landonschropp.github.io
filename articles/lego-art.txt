@@ -1,0 +1,637 @@
+6:"$Sreact.fragment"
+7:I[7556,[],""]
+8:I[8418,[],""]
+9:I[9306,["345","static/chunks/app/not-found-5003099408b5305e.js"],"default"]
+b:I[1406,["282","static/chunks/282-75966d77867c0c4f.js","447","static/chunks/app/articles/layout-3926676d596858a8.js"],"MainNavigation"]
+c:"$Sreact.suspense"
+e:I[5277,[],"OutletBoundary"]
+10:I[5277,[],"MetadataBoundary"]
+12:I[5277,[],"ViewportBoundary"]
+14:I[6379,[],""]
+1:HL["/_next/static/css/052c8b13a035a85d.css","style"]
+2:HL["/_next/static/css/5aabacac4a7bcbc4.css","style"]
+3:HL["/_next/static/css/b7bdc2d4d4aa6554.css","style"]
+4:HL["/_next/static/css/9cad1c3a621a47c7.css","style"]
+5:HL["/_next/static/css/34f92507e61baad2.css","style"]
+a:T5e1,M219.572308,442 L219.572308,372.487514 L243,372.487514 L243,299.237798 L219.572308,299.237798 L219.572308,3 L82.9938462,3 L0,303.971623 L0,372.487514 L130.098462,372.487514 L130.098462,442 L219.572308,442 Z M130,300 L78,300 L130,79 L130,300 Z M373,446 C410.173104,446 438.799714,435.629836 458.879828,414.889509 C478.959943,394.149182 489,364.28311 489,325.291295 L489,325.291295 L489,127.677455 C489,86.5286458 479.457797,54.9618676 460.373391,32.9771205 C441.288984,10.9923735 412.164521,0 373,0 C334.001431,0 304.918455,10.9923735 285.751073,32.9771205 C266.583691,54.9618676 257,86.5286458 257,127.677455 L257,127.677455 L257,325.291295 C257,364.28311 267.081545,394.149182 287.244635,414.889509 C307.407725,435.629836 335.992847,446 373,446 Z M372.5,365 C365.909962,365 360.679119,361.927448 356.807471,355.782343 C352.935824,349.637238 351,342.744755 351,335.104895 L351,335.104895 L351,118.61451 C351,108.317308 352.112069,99.3072552 354.336207,91.5843531 C356.560345,83.861451 362.614943,80 372.5,80 C382.385057,80 388.439655,83.861451 390.663793,91.5843531 C392.887931,99.3072552 394,108.317308 394,118.61451 L394,118.61451 L394,335.104895 C394,342.744755 392.105364,349.637238 388.316092,355.782343 C384.52682,361.927448 379.254789,365 372.5,365 Z M722.572308,442 L722.572308,372.487514 L746,372.487514 L746,299.237798 L722.572308,299.237798 L722.572308,3 L585.993846,3 L503,303.971623 L503,372.487514 L633.098462,372.487514 L633.098462,442 L722.572308,442 Z M633,300 L581,300 L633,79 L633,300 Z0:{"P":null,"b":"9o4yyEdiX745V4Xa0Y3xJ","p":"","c":["","articles","lego-art"],"i":false,"f":[[["",{"children":["articles",{"children":[["slug","lego-art","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/052c8b13a035a85d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en-us","className":"h-full text-[19px] md:text-[21px] lg:text-[22px]","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","type":"image/png","href":"/_next/static/media/flannel.5168cfc2.png"}]]}],["$","body",null,{"className":"flex h-full flex-col bg-theme-background font-serif font-normal text-theme-text *:flex-[0_0_auto]","suppressHydrationWarning":true,"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L9",null,{"viewBox":"0 0 746 446","title":"404","children":[["$","rect",null,{"x":0,"y":0,"width":746,"height":446,"fill":"transparent"}],["$","path",null,{"className":"fill-[url('#svg-data-background')]","id":"not-found","d":"$a"}]]}],"notFoundStyles":[]}]}]]}]]}],{"children":["articles",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5aabacac4a7bcbc4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/b7bdc2d4d4aa6554.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/9cad1c3a621a47c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/34f92507e61baad2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],[["$","$Lb",null,{}],["$","main",null,{"className":"mx-auto w-[70ch] max-w-full px-2 md:px-4","children":["$","$c",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","articles","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]}]]]}],{"children":[["slug","lego-art","d"],["$","$6","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","articles","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]]}],{"children":["__PAGE__",["$","$6","c",{"children":["$Ld",null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},null]},null]},null],["$","$6","h",{"children":[null,["$","$6","BfAFQRdt2dFndSfCqIKHe",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],null]}]]}]]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:T7bdd,<p>A few months ago, I stumbled across <a href="https://medium.com/@sailorhg/a-career-retrospective-10-years-working-in-tech-ea0bf2a29696">A Career Retrospective</a> by <a href="https://twitter.com/sailorhg">Sailor Mercury</a>. In this article, Sailor Mercury wrote about several unique and interesting projects she’s done, including automated knitting, working on the ASIMO robot and starting a computer science publication.</p>
+<p>One of those projects really stuck out to me — a script she wrote with <a href="https://twitter.com/reissbaker">Matt Baker</a> and <a href="https://twitter.com/frank0lin">Frank Lin</a> that converted an image into Legos. I loved the idea so much I decided to build my own Lego art!</p>
+<p><img src="lego-art/1*2sjzfMlXgGzhlTGohrGMRw.gif" alt="Sailor Mercury et al’s Lego rendition of Van Gogh’s Starry Night"></p>
+<h2>The Legoizer Script</h2>
+<p>First things first — I needed to write a script that turns an image into Legos. Sailor mercury published a <a href="http://sailorhg.github.io/legoizer/">tool</a> that does exactly this, but coding it myself sounded more fun.</p>
+<p><img src="lego-art/1*nrnTOjdAYRq5RwA6j6HHwg.png" alt="My approach to Legoizing an image"></p>
+<p>After a bit of thought, I landed on this approach:</p>
+<ol>
+<li>
+<p>Load the image. For the purposes of this script, I decided to take the simplest approach possible, ignoring performance.</p>
+</li>
+<li>
+<p>Scale the image <em>with distortion</em>. According to <a href="http://lego.wikia.com/wiki/Brick#Sizes">Brickopedia</a>, a 1×1 lego brick is 8mm wide by 9.6mm tall. By distorting the image, I can use a single pixel to represent one Lego brick.</p>
+</li>
+<li>
+<p>Map each pixel in the image to its closest Lego color.</p>
+</li>
+<li>
+<p>Convert the pixels back to an undistorted size and save the image.</p>
+</li>
+</ol>
+<h3>Script Interface</h3>
+<p>I settled on this for my script’s interface:</p>
+<pre><code class="language-sh">ruby legoizer.rb &lt;path-to-image&gt; &lt;blueprint-width&gt;
+</code></pre>
+<ul>
+<li>
+<p>path-to-image: The path of the image to load.</p>
+</li>
+<li>
+<p>blueprint-width: The width of the final blueprint in 1×1 Lego bricks.</p>
+</li>
+</ul>
+<p>First, I parsed the arguments and validated them. If any one of the arguments was bad or missing, the script printed out its usage and exits.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">def</span> <span class="hljs-title function_">exit_with_error</span>
+  puts <span class="hljs-string">&quot;Usage: ruby legoizer.rb &lt;path-to-image&gt; &lt;blueprint-width&gt;&quot;</span>
+  exit <span class="hljs-number">1</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">is_int?</span>(<span class="hljs-params">string</span>)
+  <span class="hljs-literal">true</span> <span class="hljs-keyword">if</span> <span class="hljs-title class_">Integer</span>(string) <span class="hljs-keyword">rescue</span> <span class="hljs-literal">false</span>
+<span class="hljs-keyword">end</span>
+
+exit_with_error <span class="hljs-keyword">unless</span> <span class="hljs-variable constant_">ARGV</span>.length == <span class="hljs-number">2</span>
+exit_with_error <span class="hljs-keyword">unless</span> <span class="hljs-title class_">File</span>.exist?(<span class="hljs-variable constant_">ARGV</span>[<span class="hljs-number">0</span>]) &amp;&amp; <span class="hljs-title class_">File</span>.file?(<span class="hljs-variable constant_">ARGV</span>[<span class="hljs-number">0</span>])
+exit_with_error <span class="hljs-keyword">unless</span> is_int? <span class="hljs-variable constant_">ARGV</span>[<span class="hljs-number">1</span>]
+
+image_path = <span class="hljs-variable constant_">ARGV</span>[<span class="hljs-number">0</span>]
+blueprint_width = <span class="hljs-variable constant_">ARGV</span>[<span class="hljs-number">1</span>].to_i
+</code></pre>
+<h3>Reading in the Image</h3>
+<p>Next, I wrote a small class to read the image. I used <a href="https://github.com/minimagick/minimagick">MiniMagick</a>, which is a wrapper for <a href="https://www.imagemagick.org/script/index.php">ImageMagick</a>.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Image</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">initialize</span>(<span class="hljs-params">minimagick_image</span>)
+    <span class="hljs-variable">@minimagick_image</span> = minimagick_image
+    minimagick_image.format <span class="hljs-string">&quot;png&quot;</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">self</span>.read(path)
+    <span class="hljs-title class_">Image</span>.send(<span class="hljs-symbol">:new</span>, <span class="hljs-title class_">MiniMagick</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:Image</span>.open(path))
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">width</span>
+    <span class="hljs-variable">@minimagick_image</span>.width
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">height</span>
+    <span class="hljs-variable">@minimagick_image</span>.height
+  <span class="hljs-keyword">end</span>
+
+  private_class_method <span class="hljs-symbol">:new</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Then, I added an Image.read call to my main script.</p>
+<pre><code class="language-ruby">image = <span class="hljs-title class_">Image</span>.read(image_path)
+</code></pre>
+<h3>Resizing the Image</h3>
+<p>When resizing my image, I needed to <em>distort</em> it. To that end, I added a scale method to my Image class.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">def</span> <span class="hljs-title function_">scale</span>(<span class="hljs-params">width, height</span>)
+  <span class="hljs-variable">@minimagick_image</span>.scale <span class="hljs-string">&quot;<span class="hljs-subst">#{ width }</span>x<span class="hljs-subst">#{ height }</span>!&quot;</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>The ! tells ImageMagick to ignore the aspect ratio of the image.</p>
+<p>Next, I needed to determine the height of the image in Lego bricks.</p>
+<p><em>blueprint height = blueprint width × brick aspect ratio ÷ image aspect ratio</em></p>
+<pre><code class="language-ruby">brick_apsect_ratio = <span class="hljs-number">1.0</span> * <span class="hljs-title class_">LegoBlueprint</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:BRICK_PIXEL_WIDTH</span>
+  / <span class="hljs-title class_">LegoBlueprint</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:BRICK_PIXEL_HEIGHT</span>
+
+image_aspect_ratio = <span class="hljs-number">1.0</span> * image.width / image.height
+
+blueprint_height = (<span class="hljs-number">1.0</span> * blueprint_width * brick_apsect_ratio
+  / image_aspect_ratio).round
+</code></pre>
+<p>Finally, I called scale from my main script.</p>
+<pre><code class="language-ruby">image.scale(blueprint_width, blueprint_height)
+</code></pre>
+<h3>Lego Colors</h3>
+<p><a href="https://brickset.com/colours/chart">Brickset</a> publishes a list of all of the available Lego colors and their hex codes. I copied the names, IDs and color values into a YAML file.</p>
+<pre><code class="language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-string">:name:</span> <span class="hljs-string">White</span>
+  <span class="hljs-string">:id:</span> <span class="hljs-number">1</span>
+  <span class="hljs-string">:red:</span> <span class="hljs-number">0xff</span>
+  <span class="hljs-string">:green:</span> <span class="hljs-number">0xff</span>
+  <span class="hljs-string">:blue:</span> <span class="hljs-number">0xff</span>
+<span class="hljs-bullet">-</span> <span class="hljs-string">:name:</span> <span class="hljs-string">Brick</span> <span class="hljs-string">Yellow</span>
+  <span class="hljs-string">:id:</span> <span class="hljs-number">5</span>
+  <span class="hljs-string">:red:</span> <span class="hljs-number">0xd9</span>
+  <span class="hljs-string">:green:</span> <span class="hljs-number">0xbb</span>
+  <span class="hljs-string">:blue:</span> <span class="hljs-number">0x7b</span>
+<span class="hljs-comment"># ...</span>
+</code></pre>
+<p>Next, I added a Color class I could use to manipulate the color data.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Color</span>
+
+  <span class="hljs-built_in">attr_reader</span> <span class="hljs-symbol">:name</span>, <span class="hljs-symbol">:id</span>, <span class="hljs-symbol">:red</span>, <span class="hljs-symbol">:green</span>, <span class="hljs-symbol">:blue</span>, <span class="hljs-symbol">:alpha</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">initialize</span>(<span class="hljs-params"><span class="hljs-symbol">name:</span> <span class="hljs-literal">nil</span>, <span class="hljs-symbol">id:</span> <span class="hljs-literal">nil</span>, <span class="hljs-symbol">red:</span>, <span class="hljs-symbol">green:</span>, <span class="hljs-symbol">blue:</span>,
+    <span class="hljs-symbol">alpha:</span> <span class="hljs-number">0xff</span></span>)
+
+    <span class="hljs-variable">@name</span> = name
+    <span class="hljs-variable">@id</span> = id
+    <span class="hljs-variable">@red</span> = red
+    <span class="hljs-variable">@green</span> = green
+    <span class="hljs-variable">@blue</span> = blue
+    <span class="hljs-variable">@alpha</span> = alpha
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">to_s</span>
+    <span class="hljs-string">&quot;#<span class="hljs-subst">#{ to_a.map { |<span class="hljs-params">n</span>| n.to_s(<span class="hljs-number">16</span>).rjust(<span class="hljs-number">2</span>, <span class="hljs-string">&quot;0&quot;</span>) }</span>.join }&quot;</span>
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">to_h</span>
+    { <span class="hljs-symbol">r:</span> red, <span class="hljs-symbol">g:</span> green, <span class="hljs-symbol">b:</span> blue, <span class="hljs-symbol">a:</span> alpha }
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">to_a</span>
+    [red, green, blue, alpha]
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>The to_h and to_h methods are handy methods that I needed later on. The to_s method was a helpful while debugging.</p>
+<p>I needed a way to export the image data from Image as a 2D array of Color objects. Unfortunately, MiniMagick doesn’t include an easy way to get the raw data inside an image. To work around this, I added another library, <a href="https://github.com/wvanbergen/chunky_png">ChunkyPNG</a>, and use that read the raw data.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_a</span>
+  <span class="hljs-variable">@minimagick_image</span>.format <span class="hljs-string">&quot;png&quot;</span>
+
+  chunky_image = <span class="hljs-title class_">Chunky</span>PNG::<span class="hljs-title class_">Image</span>.from_io(
+    <span class="hljs-title class_">StringIO</span>.new(<span class="hljs-variable">@minimagick_image</span>.to_blob)
+  )
+
+  (<span class="hljs-number">0</span>...chunky_image.width).map <span class="hljs-keyword">do</span> |<span class="hljs-params">x</span>|
+    (<span class="hljs-number">0</span>...chunky_image.height).map <span class="hljs-keyword">do</span> |<span class="hljs-params">y</span>|
+
+      red = (chunky_image[x, y] &amp; <span class="hljs-number">0xff000000</span>) &gt;&gt; <span class="hljs-number">24</span>
+      green = (chunky_image[x, y] &amp; <span class="hljs-number">0x00ff0000</span>) &gt;&gt; <span class="hljs-number">16</span>
+      blue = (chunky_image[x, y] &amp; <span class="hljs-number">0x0000ff00</span>) &gt;&gt; <span class="hljs-number">8</span>
+      alpha = (chunky_image[x, y] &amp; <span class="hljs-number">0x000000ff</span>)
+
+      <span class="hljs-title class_">Color</span>.new(<span class="hljs-symbol">red:</span> red, <span class="hljs-symbol">green:</span> green, <span class="hljs-symbol">blue:</span> blue, <span class="hljs-symbol">alpha:</span> alpha)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Each color in the ChunkyPNG data is an integer, so I used bitwise operators to separate them.</p>
+<p>The next step was to take the 2D array of colors and feed it into into a class that generates the blueprint.</p>
+<pre><code class="language-ruby">    <span class="hljs-title class_">LegoBlueprint</span>.new(blueprint_width, blueprint_height, image.to_a)
+</code></pre>
+<p>Of course, this class also needed to be added.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">class</span> <span class="hljs-title class_">LegoBlueprint</span>
+
+  <span class="hljs-comment"># Lego constants</span>
+  <span class="hljs-variable constant_">BRICK_PIXEL_WIDTH</span> = <span class="hljs-number">10</span>
+  <span class="hljs-variable constant_">BRICK_PIXEL_HEIGHT</span> = <span class="hljs-number">12</span>
+
+  <span class="hljs-comment"># Load the Lego brick colors into a constant.</span>
+  <span class="hljs-variable constant_">BRICK_COLORS</span> = <span class="hljs-variable constant_">YAML</span>.load(<span class="hljs-variable constant_">IO</span>.read(<span class="hljs-title class_">File</span>.join(<span class="hljs-title class_">File</span>.dirname(<span class="hljs-variable constant_">__FILE__</span>), <span class="hljs-string">&#x27;colors.yml&#x27;</span>))).map <span class="hljs-keyword">do</span> |<span class="hljs-params">hash</span>|
+    <span class="hljs-title class_">Color</span>.new(**hash)
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-built_in">attr_reader</span> <span class="hljs-symbol">:width</span>, <span class="hljs-symbol">:height</span>, <span class="hljs-symbol">:colors</span>
+
+  <span class="hljs-keyword">def</span> <span class="hljs-title function_">initialize</span>(<span class="hljs-params">width, height, colors</span>)
+    <span class="hljs-variable">@width</span> = width
+    <span class="hljs-variable">@height</span> = height
+    <span class="hljs-variable">@colors</span> = colors
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>The <code>BRICK_PIXEL_WIDTH</code> and <code>BRICK_PIXEL_HEIGHT</code> constants are exactly what they sound like. My Lego color data is read into the <code>BRICK_COLORS</code> constant from my YAML file.</p>
+<p>I needed a way to determine the closest Lego color. The simplest way to do this is to use the <a href="https://en.wikipedia.org/wiki/Color_difference#Euclidean">Euclidean distance</a> between two colors. However, the problem is the mathematical difference between two colors is different than what the human eye perceives. Instead, I used the <a href="https://github.com/mmozuras/color_difference">color_difference</a> gem, which uses the <a href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">CIEDE2000</a> color difference formula under the hood. This formula is much closer to what our eyes tell us.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">def</span> <span class="hljs-title function_">difference</span>(<span class="hljs-params">color</span>)
+  <span class="hljs-title class_">ColorDifference</span>.cie2000(to_h, color.to_h)
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Finally, I added a method that takes an array of colors and selects the one closest to the current color. It also contains a special case for transparent colors.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">def</span> <span class="hljs-title function_">closest</span>(<span class="hljs-params">colors</span>)
+  <span class="hljs-keyword">return</span> <span class="hljs-variable constant_">TRANSPARENT</span> <span class="hljs-keyword">if</span> alpha == <span class="hljs-number">0</span>
+  colors.min_by { |<span class="hljs-params">color</span>| color.difference(<span class="hljs-variable language_">self</span>) }
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-variable constant_">TRANSPARENT</span> = <span class="hljs-title class_">Color</span>.new(
+  <span class="hljs-symbol">red:</span> <span class="hljs-number">0xff</span>,
+  <span class="hljs-symbol">green:</span> <span class="hljs-number">0xff</span>,
+  <span class="hljs-symbol">blue:</span> <span class="hljs-number">0xff</span>,
+  <span class="hljs-symbol">alpha:</span> <span class="hljs-number">0</span>
+)
+</code></pre>
+<p>With that, all I needed to do was use this method in the LegoBlueprint constructor to select the closest color!</p>
+<pre><code class="language-ruby"><span class="hljs-variable">@colors</span> = colors.map <span class="hljs-keyword">do</span> |<span class="hljs-params">row</span>|
+  row.map <span class="hljs-keyword">do</span> |<span class="hljs-params">color</span>|
+    color.closest(<span class="hljs-variable constant_">BRICK_COLORS</span>)
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</code></pre>
+<h3>Saving the Blueprint</h3>
+<p>The last step was to generate a new image and save it. Since I already have the ChunkyPNG library available, the quickest approach was to convert my LegoBlueprint to a ChunkyPNG::Image.</p>
+<pre><code class="language-ruby"><span class="hljs-keyword">def</span> <span class="hljs-title function_">to_chunky_png</span>
+  image_width = colors.length * <span class="hljs-variable constant_">BRICK_PIXEL_WIDTH</span>
+  image_height = colors.first.length * <span class="hljs-variable constant_">BRICK_PIXEL_HEIGHT</span>
+
+  blueprint = <span class="hljs-title class_">ChunkyPNG::Image</span>.new(
+    image_width,
+    image_height,
+    <span class="hljs-title class_">Chunky</span>PNG::<span class="hljs-title class_">Color</span><span class="hljs-symbol">:</span><span class="hljs-symbol">:TRANSPARENT</span>
+  )
+
+  image_width.times <span class="hljs-keyword">do</span> |<span class="hljs-params">x</span>|
+    image_height.times <span class="hljs-keyword">do</span> |<span class="hljs-params">y</span>|
+      color = colors[x / <span class="hljs-variable constant_">BRICK_PIXEL_WIDTH</span>][y / <span class="hljs-variable constant_">BRICK_PIXEL_HEIGHT</span>]
+      blueprint[x, y] = <span class="hljs-title class_">Chunky</span>PNG::<span class="hljs-title class_">Color</span>.rgba(*color.to_a)
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+
+  blueprint
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>Finally, I saved the image.</p>
+<pre><code class="language-ruby"><span class="hljs-title class_">LegoBlueprint</span>
+  .new(blueprint_width, blueprint_height, colors)
+  .to_chunky_png
+  .save(<span class="hljs-string">&#x27;lego.png&#x27;</span>, <span class="hljs-symbol">interlace:</span> <span class="hljs-literal">true</span>)
+</code></pre>
+<p>And that’s it! With all of that in place, I can create Lego art from any image!</p>
+<p><img src="lego-art/1*lVyh0Vf-fFNrhlbc58ekjA.png" alt="An example of generated Lego art"></p>
+<p>The code in my script my not be tidy (or efficient), but it gets the job done. In a project like this, the script only has to run once, so it doesn’t really matter how well-factored it is.</p>
+<p>If you’d like to take a look at the full source, it’s published on <a href="https://github.com/LandonSchropp/legoizer">GitHub</a>.</p>
+<h2>The Art Part</h2>
+<p>Now that I had my script working, it was time to make some art! I had an inkling that I wanted to do something with my dog, Dexter, so I searched through my photos until I found one I liked.</p>
+<p><img src="lego-art/1*afj3a16B44ir-QRjo49A-A.jpeg" alt="My lab/corgi mix Dexter"><em>My lab/corgi mix Dexter</em></p>
+<h3>Creating the Image</h3>
+<p>First, I popped open Photoshop and masked out the background.</p>
+<p><img src="lego-art/1*YAc4RSmIUQHFvHfnfatmpA.jpeg" alt=""></p>
+<p><img src="lego-art/1*18ovd2CmfhvOuk3mc9ApOQ.png" alt=""></p>
+<p>When I ran this through my script, I lost a lot of detail in the face, but I loved how the tongue looked, so I decided to keep that pink.</p>
+<p>I started to play with filters and effects in Photoshop. I managed to create a really cool rainbow effect, but it didn’t pan out when converted to Legos.</p>
+<p><img src="lego-art/1*_GbRmB-R0RajroD3G9CUbw.png" alt=""></p>
+<p><img src="lego-art/1*a5pP4CaBZiZIm-ZBL-KZJw.png" alt="The image on the left is awesome, but I didn’t like the result in Legos."><em>The image on the left is awesome, but I didn’t like the result in Legos.</em></p>
+<p>After tinkering around, I settled on a blue color palette. I felt like it would complement the pink in the tongue. It also resulted in a cool combination of blue and purple tones.</p>
+<p><img src="lego-art/1*yWoEALSCSIl-usvJKyS3qA.png" alt=""></p>
+<p><img src="lego-art/1*cMV89e_T9UBneubCwM_3bQ.png" alt=""></p>
+<p>Next, I turned the tongue pink and tweaked the color until I was happy with the shape.</p>
+<p><img src="lego-art/1*IU_bUSAeSnmF7_yPIjKvhg.png" alt=""></p>
+<p><img src="lego-art/1*68K_t8WnK5wMCPXkyDJbTQ.png" alt=""></p>
+<p>Then, I colored the eyes.</p>
+<p><img src="lego-art/1*RgYMyPx-2Cf0nVTeB8Rlrg.png" alt=""></p>
+<p><img src="lego-art/1*cX93wUXzeXJ0ic936dBLow.png" alt=""></p>
+<p>Finally, I drew on the image until I was happy with the resulting shapes.</p>
+<p><img src="lego-art/1*MHknaJqfLpTHelzINJMP4A.png" alt=""></p>
+<p><img src="lego-art/1*3YgiT2Oq9zk9JE2BRZwkHQ.png" alt=""></p>
+<h3>Deciding on a Size</h3>
+<p>Before going any further, I needed to determine the final size of the image. The bigger I made the image, the more detail I could fit in. The tradeoff was it would be more expensive to build and would take up more space in my apartment.</p>
+<p><img src="lego-art/1*jEVg04uy2odSJY_6BVlH3Q.png" alt=""></p>
+<p><img src="lego-art/1*BP-N_Z05Z1PobnJmKofzEg.png" alt=""></p>
+<p><img src="lego-art/1*_Jx4kIENZAVdw5CI-aADBQ.png" alt="My artwork at 352 mm (13.9 in), 400 mm (15.7 in) and 448 mm (17.6 in) wide."><em>My artwork at 352 mm (13.9 in), 400 mm (15.7 in) and 448 mm (17.6 in) wide.</em></p>
+<p>After playing around with a few different values, I decided to make it 50 1×1 bricks wide, 58 1×1 brick tall and 2 1×1 bricks deep. To get an upper bound on the cost, I looked up the price of 2×1 bricks on <a href="https://shop.lego.com/en-US/Pick-a-Brick">Pick A Brick</a> and did some back of the envelope math.</p>
+<p><em>50 bricks wide × 58 bricks tall × 10¢ per brick = $290</em></p>
+<p>That seemed reasonable for an upper bound, so I decided to move forward.</p>
+<h3>Cleaning It Up</h3>
+<p>To finish off the design, I pulled my Lego art into Photoshop, cleaned up the edges and reshaped the face.</p>
+<p><img src="lego-art/1*XOPpvLjoGs3suSahKkMdOg.png" alt=""></p>
+<p><img src="lego-art/1*lQLt9oZfAsY-j63bSYBOaA.png" alt=""></p>
+<p>Finally, I redrew the eyes and tried a few different colors.</p>
+<p><img src="lego-art/1*fKLlF2wsDzx2W6EK74ykpw.jpeg" alt=""></p>
+<p><img src="lego-art/1*UMUCrZBrHSn5TyAMXvqzZQ.jpeg" alt=""></p>
+<p><img src="lego-art/1*zH8o8XKkfsIp1LEMZzuCtw.jpeg" alt=""></p>
+<p><img src="lego-art/1*wUBTAx0lhaUgj1Sh2cI76A.jpeg" alt=""></p>
+<p>I couldn’t pick which one I liked best, so I decided to order them all!</p>
+<h3>Creating the Blueprint</h3>
+<p>With my design in hand, the next step was to create a blueprint. I needed to arrange the bricks in a staggered, interlocking fashion. I could have written a script to do this, but I figured it would take less time to do it by hand.</p>
+<p>First, I printed out an outline of the colors. In order to get an idea of what the whole thing would actually look like when it was done, I printed the image at scale by combining six 8½&quot; × 11&quot; sheets of paper with tape.</p>
+<p>Next, I checked on Pick a Brick to see what parts were available. Not every length was available in every color, and many of the lengths that were available in depths of 1 weren’t available in depths of 2.</p>
+<p><img src="lego-art/1*wue_CHl5RdEq59xjrs2E0w.png" alt="The blue bricks on Pick A Brick"></p>
+<p>I made a list of all of the available sizes for each color in my design. Next, I shaded in the areas and manually drew outlines for each piece. I started from the bottom up, and did my best to make sure as many bricks as possible were overlapping.</p>
+<p><img src="lego-art/1*dJvKuhsKfXhPtyR-DOpXJQ.jpeg" alt=""></p>
+<p><img src="lego-art/1*7ATcROFmjjqaYoK51c-HdA.jpeg" alt=""></p>
+<h2>Ordering the Parts</h2>
+<p>With my blueprint in hand, I counted each piece and copied the prices from Pick A Brick. Because a few of the pieces were only 1 brick wide, I had to order two of them. The <em>Number to Order</em> column includes the needed pieces, as well as a few extra for each piece.</p>
+<div class="overflow-x-auto my-4"><table><thead>
+<tr>
+<th>Color</th>
+<th>Size</th>
+<th>Price</th>
+<th>Depth Multiplier</th>
+<th>Quantity</th>
+<th>Number to Order</th>
+<th>Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Black</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>8</td>
+<td>9</td>
+<td>$0.90</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>13</td>
+<td>15</td>
+<td>$2.10</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>2×3</td>
+<td>$0.17</td>
+<td>1</td>
+<td>5</td>
+<td>6</td>
+<td>$1.02</td>
+</tr>
+<tr>
+<td>Black</td>
+<td>2×4</td>
+<td>$0.20</td>
+<td>1</td>
+<td>7</td>
+<td>8</td>
+<td>$1.60</td>
+</tr>
+<tr>
+<td>Earth Blue</td>
+<td>1×4</td>
+<td>$0.15</td>
+<td>2</td>
+<td>85</td>
+<td>204</td>
+<td>$30.60</td>
+</tr>
+<tr>
+<td>Earth Blue</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>70</td>
+<td>84</td>
+<td>$8.40</td>
+</tr>
+<tr>
+<td>Earth Blue</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>56</td>
+<td>68</td>
+<td>$9.52</td>
+</tr>
+<tr>
+<td>Medium Lilac</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>64</td>
+<td>71</td>
+<td>$7.10</td>
+</tr>
+<tr>
+<td>Medium Lilac</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>66</td>
+<td>73</td>
+<td>$10.22</td>
+</tr>
+<tr>
+<td>Medium Lilac</td>
+<td>2×4</td>
+<td>$0.20</td>
+<td>1</td>
+<td>100</td>
+<td>110</td>
+<td>$22.00</td>
+</tr>
+<tr>
+<td>Bright Blue</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>9</td>
+<td>10</td>
+<td>$1.00</td>
+</tr>
+<tr>
+<td>Bright Blue</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>11</td>
+<td>13</td>
+<td>$1.82</td>
+</tr>
+<tr>
+<td>Bright Blue</td>
+<td>2×3</td>
+<td>$0.17</td>
+<td>1</td>
+<td>15</td>
+<td>17</td>
+<td>$2.89</td>
+</tr>
+<tr>
+<td>Bright Blue</td>
+<td>2×4</td>
+<td>$0.20</td>
+<td>1</td>
+<td>10</td>
+<td>11</td>
+<td>$2.20</td>
+</tr>
+<tr>
+<td>Bright Blue</td>
+<td>2×6</td>
+<td>$0.27</td>
+<td>1</td>
+<td>18</td>
+<td>20</td>
+<td>$5.40</td>
+</tr>
+<tr>
+<td>Bright Purple</td>
+<td>1×3</td>
+<td>$0.14</td>
+<td>2</td>
+<td>13</td>
+<td>29</td>
+<td>$4.06</td>
+</tr>
+<tr>
+<td>Bright Purple</td>
+<td>1×4</td>
+<td>$0.15</td>
+<td>2</td>
+<td>12</td>
+<td>27</td>
+<td>$4.05</td>
+</tr>
+<tr>
+<td>Bright Purple</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>13</td>
+<td>15</td>
+<td>$1.50</td>
+</tr>
+<tr>
+<td>Bright Purple</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>9</td>
+<td>10</td>
+<td>$1.40</td>
+</tr>
+<tr>
+<td>Light Purple</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>11</td>
+<td>13</td>
+<td>$1.30</td>
+</tr>
+<tr>
+<td>Light Purple</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>21</td>
+<td>24</td>
+<td>$3.36</td>
+</tr>
+<tr>
+<td>Light Purple</td>
+<td>2×4</td>
+<td>$0.20</td>
+<td>1</td>
+<td>14</td>
+<td>16</td>
+<td>$3.20</td>
+</tr>
+<tr>
+<td>Medium Blue</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>6</td>
+<td>7</td>
+<td>$0.70</td>
+</tr>
+<tr>
+<td>Medium Blue</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>$0.42</td>
+</tr>
+<tr>
+<td>Light Royal Blue</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>$0.30</td>
+</tr>
+<tr>
+<td>Light Royal Blue</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>$0.42</td>
+</tr>
+<tr>
+<td>Bright Orange</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>6</td>
+<td>7</td>
+<td>$0.70</td>
+</tr>
+<tr>
+<td>Bright Orange</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>$0.42</td>
+</tr>
+<tr>
+<td>Flame Yellowish Orange</td>
+<td>2×1</td>
+<td>$0.10</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>$0.30</td>
+</tr>
+<tr>
+<td>Flame Yellowish Orange</td>
+<td>2×2</td>
+<td>$0.14</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>$0.42</td>
+</tr>
+<tr>
+<td><strong>Totals</strong></td>
+<td>–</td>
+<td>–</td>
+<td>–</td>
+<td><strong>654</strong></td>
+<td><strong>885</strong></td>
+<td><strong>$129.32</strong></td>
+</tr>
+</tbody>
+</table></div><p>I entered everything into Pick A Brick and added a few extra bricks. With tax, the total cost was $147.85. Not bad! Lego also sent me a nifty little helicopter with my purchase.</p>
+<p><img src="lego-art/1*KAg30ItlnZzxyxy09AaEwg.jpeg" alt="The free helicopter Lego sent me"></p>
+<h2>Assembly</h2>
+<p>Two weeks later the Legos showed up at my doorstep.</p>
+<p><img src="lego-art/1*I9nwxtQdukGVOHMfpyqpwg.jpeg" alt=""></p>
+<p><img src="lego-art/1*NzdyXdZTCrkfQfUDmsKXAA.jpeg" alt=""></p>
+<p>After doing a bit of research, it seems like the best way to glue Legos together is with acetone, which melts the plastic and welds the bricks together. After some consideration, I decided not to go this route for a few reasons:</p>
+<ul>
+<li>I hate the smell of acetone. It gives me a headache.</li>
+<li>If I messed up while assembling the bricks, there’s nothing I could do to fix them.</li>
+<li>If I spilled some acetone on the front of the bricks, it would screw up the surface.</li>
+<li>The final build will be hanging on my wall, where it likely won’t be disturbed, so welding the bricks would probably be overkill.</li>
+</ul>
+<p>In the end, I used good old Elmer’s Glue. It seemed strong enough, and my worst case scenario was that I’d have to redo the assembly. With the help of my wife, we glued and assembled the whole thing in a couple hours.</p>
+<p><img src="lego-art/1*MqaiYWFSblFBWc2XlMb-Og.jpeg" alt=""></p>
+<p><img src="lego-art/1*ASivfbIxmJHSt2kJXPE0gQ.jpeg" alt=""></p>
+<p><img src="lego-art/1*OLkl8bfnsW1vZXKoJ_PiFA.jpeg" alt=""></p>
+<p><img src="lego-art/1*4-sK0hX5dkLnYNvnqaTRcQ.jpeg" alt=""></p>
+<p>After gluing the big sections together, we hung it on the wall and that’s it!</p>
+<p><img src="lego-art/1*3cwJk3nEngGZb_8Hyo5qZA.jpeg" alt=""></p>
+<h2>Final Thoughts</h2>
+<p>In reflection, a few things about this process stick out to me.</p>
+<ul>
+<li>It would have been much faster to use a Photoshop action instead of writing a script. Unfortunately, I didn’t think about that until after the script was written. Oh well.</li>
+<li>There’s a whole secondary market for Lego parts. Buying my bricks this way would have saved me money, but I would have had to order parts from several sellers, and the time that would have taken wasn’t worth it to me.</li>
+<li>Using Elmer’s Glue was a great idea. I made a few mistakes along the way, and they were easy to fix.</li>
+<li>Ordering extra parts also turned out to be a great decision. I miscounted a few pieces, and having the extras made that a non-issue.</li>
+</ul>
+<p>All things considered, this was a great project. It was a fun challenge to integrate code with art, and I’m happy with the final result!</p>
+d:["$","article",null,{"children":[["$","header",null,{"className":"my-6 text-center","children":[["$","h1",null,{"className":"my-0","children":[["$","span",null,{"className":"block mx-auto my-1 m-width[50ch] text-base font-normal font-serif italic text-theme-lightText [&_a]:underline","children":"$undefined"}]," ",["$","span",null,{"className":"block","children":["$","a",null,{"className":"no-underline hover:underline","href":"/articles/lego-art","children":"I Made Lego Art!"}]}]]}],["$","div",null,{"className":"my-2 block mx-auto my-1 m-width[50ch] text-base font-normal font-serif italic text-theme-lightText [&_a]:underline","data-test-id":"sub-text","children":[["$","span",null,{"rel":"author","children":"Landon Schropp"}]," • ",["$","time",null,{"dateTime":"2017-09-05","children":"September 4th, 2017"}]]}],null,"$undefined"]}],["$","section",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]]}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Landon Schropp – I Made Lego Art!"}],["$","meta","2",{"name":"description","content":"I decided to make art out of Legos. Here’s how I did it."}],["$","meta","3",{"name":"author","content":"Landon Schropp"}]]
+f:null

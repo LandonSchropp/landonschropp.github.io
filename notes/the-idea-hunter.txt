@@ -1,0 +1,151 @@
+6:"$Sreact.fragment"
+7:I[7556,[],""]
+8:I[8418,[],""]
+9:I[9306,["345","static/chunks/app/not-found-5003099408b5305e.js"],"default"]
+b:I[1406,["282","static/chunks/282-75966d77867c0c4f.js","763","static/chunks/app/notes/layout-f54590ebbe28fa9b.js"],"MainNavigation"]
+c:"$Sreact.suspense"
+e:I[5277,[],"OutletBoundary"]
+10:I[5277,[],"MetadataBoundary"]
+12:I[5277,[],"ViewportBoundary"]
+14:I[6379,[],""]
+1:HL["/_next/static/css/052c8b13a035a85d.css","style"]
+2:HL["/_next/static/css/5aabacac4a7bcbc4.css","style"]
+3:HL["/_next/static/css/b7bdc2d4d4aa6554.css","style"]
+4:HL["/_next/static/css/9cad1c3a621a47c7.css","style"]
+5:HL["/_next/static/css/34f92507e61baad2.css","style"]
+a:T5e1,M219.572308,442 L219.572308,372.487514 L243,372.487514 L243,299.237798 L219.572308,299.237798 L219.572308,3 L82.9938462,3 L0,303.971623 L0,372.487514 L130.098462,372.487514 L130.098462,442 L219.572308,442 Z M130,300 L78,300 L130,79 L130,300 Z M373,446 C410.173104,446 438.799714,435.629836 458.879828,414.889509 C478.959943,394.149182 489,364.28311 489,325.291295 L489,325.291295 L489,127.677455 C489,86.5286458 479.457797,54.9618676 460.373391,32.9771205 C441.288984,10.9923735 412.164521,0 373,0 C334.001431,0 304.918455,10.9923735 285.751073,32.9771205 C266.583691,54.9618676 257,86.5286458 257,127.677455 L257,127.677455 L257,325.291295 C257,364.28311 267.081545,394.149182 287.244635,414.889509 C307.407725,435.629836 335.992847,446 373,446 Z M372.5,365 C365.909962,365 360.679119,361.927448 356.807471,355.782343 C352.935824,349.637238 351,342.744755 351,335.104895 L351,335.104895 L351,118.61451 C351,108.317308 352.112069,99.3072552 354.336207,91.5843531 C356.560345,83.861451 362.614943,80 372.5,80 C382.385057,80 388.439655,83.861451 390.663793,91.5843531 C392.887931,99.3072552 394,108.317308 394,118.61451 L394,118.61451 L394,335.104895 C394,342.744755 392.105364,349.637238 388.316092,355.782343 C384.52682,361.927448 379.254789,365 372.5,365 Z M722.572308,442 L722.572308,372.487514 L746,372.487514 L746,299.237798 L722.572308,299.237798 L722.572308,3 L585.993846,3 L503,303.971623 L503,372.487514 L633.098462,372.487514 L633.098462,442 L722.572308,442 Z M633,300 L581,300 L633,79 L633,300 Z0:{"P":null,"b":"9o4yyEdiX745V4Xa0Y3xJ","p":"","c":["","notes","the-idea-hunter"],"i":false,"f":[[["",{"children":["notes",{"children":[["slug","the-idea-hunter","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/052c8b13a035a85d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en-us","className":"h-full text-[19px] md:text-[21px] lg:text-[22px]","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","type":"image/png","href":"/_next/static/media/flannel.5168cfc2.png"}]]}],["$","body",null,{"className":"flex h-full flex-col bg-theme-background font-serif font-normal text-theme-text *:flex-[0_0_auto]","suppressHydrationWarning":true,"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L9",null,{"viewBox":"0 0 746 446","title":"404","children":[["$","rect",null,{"x":0,"y":0,"width":746,"height":446,"fill":"transparent"}],["$","path",null,{"className":"fill-[url('#svg-data-background')]","id":"not-found","d":"$a"}]]}],"notFoundStyles":[]}]}]]}]]}],{"children":["notes",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5aabacac4a7bcbc4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/b7bdc2d4d4aa6554.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/9cad1c3a621a47c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/34f92507e61baad2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],[["$","$Lb",null,{}],["$","main",null,{"className":"mx-auto w-[70ch] max-w-full px-2 md:px-4","children":["$","$c",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","notes","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]}]]]}],{"children":[["slug","the-idea-hunter","d"],["$","$6","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","notes","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]]}],{"children":["__PAGE__",["$","$6","c",{"children":["$Ld",null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},null]},null]},null],["$","$6","h",{"children":[null,["$","$6","GGa_juo-M2EDzOKthomte",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],null]}]]}]]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:I[5677,["867","static/chunks/867-34944a4304bcfa99.js","740","static/chunks/app/notes/%5Bslug%5D/page-a7e184241ba85e81.js"],"Note"]
+16:T200e,## Introduction
+
+Finding the right idea is all about being in the habit of looking for them.
+
+> Ideas aren’t generated so much as they’re found and then something useful is done with them.
+
+### I-D-E-A
+
+- **Interested:** Do I want to be _interested_ or merely _interesting_? _“Curiosity will take you further toward your goals than cleverness or even brilliance.”_
+- **Diverse:** Finding the right idea is about combining a collection of _diverse_ idea sources. _“This is how to avoid the plague of ‘me too’ ideas that come from traveling the same narrow paths as everyone else if your group or field. You don’t want to be where the competition is—browsing the same publications, going to the same web sites, comparing notes with the same people, and winding up with variations (at best) of the same tried ideas. You want to bring in thoughts that are different but applicable, seemingly unrelated but potentially valuable-whiter the source is a member of your team at work or the guy who coaches your daughter’s softball team.”_
+- **Exercised:** You need to _exercise_ your idea muscles all the time, not just when brainstorming at work.
+- **Agile:** You need to be _agile_ in your handling of ideas. You can’t glob on to an idea, or you block all the other ideas you could have. _“Wild ideas are encouraged, bad ideas are not a deal breaker, and quantity is preferred over quality.”_
+
+## Know Your Gig
+
+They’re talking about your gig in life. It’s that fundamental thing that you do. It’s the essence of the problem you’re solving, not the specific solution. Think about Marcus Lemonis from The Profit. His gig is stepping into failing business, fixing the broken parts and then making money off of them.
+
+_Gigs give focus and direction to learning and idea seeking._
+
+Once you have a gig, you can keep doing that thing at larger and larger scales.
+
+### The Discernment
+
+Questions to help you discern your gig:
+
+### Tom Peters
+
+- What do I want to be?
+- What do I want to stand for?
+- Does my work matter?
+- Am I making a difference?
+- Who are you?
+- What is your product?
+- How is it special?
+- How is it different from other such offerings?
+- How can I demonstrate its trustworthiness?
+- How can I demonstrate I’m “with it/contemporary?”
+
+### Michael Himes
+
+- Is this a source of joy?
+- Is this something that taps into your talents and gifts—engages all of your abilities—and uses them in the fullest way possible?
+- Is this role a genuine service to the people around you, to society at large?
+- Do you get a kick out of it?
+- Are you any good at it?
+- Does anyone want you to do it?
+
+Reworded:
+
+- What is it that constantly grabs my interest and sparks my curiosity?
+- What am I good at? And what do I want to be great at?
+- And where’s the market for this?
+
+Answering these questions isn’t about reinventing yourself, it’s about reflecting on what you’re already doing.
+
+A gig is not static. You’ll need to continuously self-reflect and revise.
+
+### The Circle of Competence
+
+Stay within the area that you know well and you excel at.
+
+> …Ted Williams, the famed Red Sox slugger who revealed the secret to his success in his book The Science of Hitting. Nicknamed the ‘Splendid Splinter,’ his approach was to carve the strike zone into seventy-seven cells, each one the size of a baseball. We swung at the balls that landed in his best cells, and let the other whizz by, even if it meant being called out on strikes once in a while.
+
+With this approach, humility is a useful and valuable skill. When you don’t know something, humility can save you from burning resources on it.
+
+The authors believe the emphasis should be on widening the circle through constant learning and deep interest in matters related to your gig (or your next gig).
+
+### Gigs Matter
+
+> The gig is a general filter. It screens out some of the information and ideas that cascade your way, making it easier to repel the demons of information overload.
+
+A person can have more than one gig. There are entire categories of gigs, such as creating new things or improving existing things.
+
+Be Interested, Not Just Interesting
+
+> Something happens to a curious, fully engaged mind. Strange little sparks are set off, connections made, insights triggered. The results: an exponentially increased ability to tune up/reinvent/wow-ize today’s project at work. —Tom Peters
+
+Interest gives rise to learning, and learning leads to ideas.
+
+> One of the most reliable ways of coming up with ideas is to make sure the people around us are coming up with ideas. Lots of them.
+
+I should be carving out time every day for learning. Reading and conversations are the basic building blocks. Dabble time is not wasted time.
+
+## Diversifying the Hunt
+
+> My sense was that once I started looking for business ideas, they were everywhere. It’s sort of like a radio frequency. You’re surrounded by radio waves, but if you’re not tuning into them, you’re not going to receive them. —Jim Koch
+
+If you want to find ideas, you have to travel down lots of paths. You have to be different in some positive way.
+
+> The most valuable information comes from outside a person’s usual network of contacts, through weak ties.
+
+I shouldn’t be trying to come up with thoroughly original ideas all the time. Instead, I should be searching for existing ideas that could be reworked into new ones. That’s how most innovation is done. It’s not the same as original thinking.
+
+## Mastering the Habits of the Hunt
+
+You have to spend time mentally working out your idea muscles.
+
+> Accomplished people don’t bulk up their brains with intellectual calisthenics; the immerse themselves in their fields. Novelists read lost of novels, scientists read lots of science.” —Steven Pinker
+
+Like Sam Walton, go shopping in other peoples’ stores.
+
+We learn by doing. We also learn by reflecting on what we’ve been doing.
+
+> Chance favors the prepared mind.” —tLouis Pasteur
+
+When having conversations, ask questions with the intent of finding new ideas. And engage with customers and clients. Try to set a goal of learning three new things about your customers each week.
+
+It’s important to write down ideas. The process of writing helps to crystalize and clarify them.
+
+Observation can be greatly enhanced by _prototyping_. Try to get one out as early as possible in the process.
+
+### Idea Flow Is Critical
+
+The goal isn’t to have a lightbulb moment. The goal is to set an idea in motion, let is percolate and the result will evolve naturally. _Idea flow_ is critical because ideas take time to develop, and you can’t stop them in their tracks before they get the chance.
+
+It’s important to capture ideas as they appear. _Write them down_.
+
+The more ideas, the better. Go for quantity over quality. You can always filter them out later. Our desire to make sure our work is “good” gets in the way of good ideas.
+
+Your idea has to be compatible with the world around it. Try to structure the idea in such as way that it forces as little change as possible.
+
+Aim for “hot button” ideas. What keeps people up at night? What are their fondest dreams and worst nightmares?
+
+### Create Great Conversations
+
+- To have successful conversations, you must send the right signals. Try to use _continuers_ rather than _terminators._ “Continuers invite honest discussion; the build ideas. Terminators pour cold water on conversations; they kill off ideas.”
+- All ideas should be welcomed. That’s not to say every idea should be acted upon, but it’s important to keep the flow moving.
+- Have a stupid stick. A stupid stick lets the holder say anything that comes to mind without any ridicule. Every idea meeting needs a stupid stick.
+- Ask opened-ended questions. They should flow out of genuine interest and curiosity. Great questions will surprise people.
+- _“Never underestimate the value of what might be called a ‘niece expert.’ This is someone who asks the right questions not despite his or her lack of formal expertise and experience but because of it.”_
+- When you’re thinking about terminating a conversation, ask yourself: “What if he/she is right?”d:["$","$L15",null,{"note":{"title":"The Idea Hunter","slug":"the-idea-hunter","date":"2016-08-29","published":true,"markdown":"$16","filePath":"/Users/landon/Notes/Resources/Notes/Business/The Idea Hunter.md","authors":["Andy Boynton"],"category":"Business","media":"Book","url":"https://www.amazon.com/Idea-Hunter-Find-Ideas-Happen/dp/0470767766"}}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Landon Schropp – The Idea Hunter"}],["$","meta","2",{"name":"description","content":"Landon Schropp's notes about The Idea Hunter"}],["$","meta","3",{"name":"author","content":"Landon Schropp"}]]
+f:null

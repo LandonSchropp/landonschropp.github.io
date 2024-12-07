@@ -1,0 +1,307 @@
+6:"$Sreact.fragment"
+7:I[7556,[],""]
+8:I[8418,[],""]
+9:I[9306,["345","static/chunks/app/not-found-5003099408b5305e.js"],"default"]
+b:I[1406,["282","static/chunks/282-75966d77867c0c4f.js","763","static/chunks/app/notes/layout-f54590ebbe28fa9b.js"],"MainNavigation"]
+c:"$Sreact.suspense"
+e:I[5277,[],"OutletBoundary"]
+10:I[5277,[],"MetadataBoundary"]
+12:I[5277,[],"ViewportBoundary"]
+14:I[6379,[],""]
+1:HL["/_next/static/css/052c8b13a035a85d.css","style"]
+2:HL["/_next/static/css/5aabacac4a7bcbc4.css","style"]
+3:HL["/_next/static/css/b7bdc2d4d4aa6554.css","style"]
+4:HL["/_next/static/css/9cad1c3a621a47c7.css","style"]
+5:HL["/_next/static/css/34f92507e61baad2.css","style"]
+a:T5e1,M219.572308,442 L219.572308,372.487514 L243,372.487514 L243,299.237798 L219.572308,299.237798 L219.572308,3 L82.9938462,3 L0,303.971623 L0,372.487514 L130.098462,372.487514 L130.098462,442 L219.572308,442 Z M130,300 L78,300 L130,79 L130,300 Z M373,446 C410.173104,446 438.799714,435.629836 458.879828,414.889509 C478.959943,394.149182 489,364.28311 489,325.291295 L489,325.291295 L489,127.677455 C489,86.5286458 479.457797,54.9618676 460.373391,32.9771205 C441.288984,10.9923735 412.164521,0 373,0 C334.001431,0 304.918455,10.9923735 285.751073,32.9771205 C266.583691,54.9618676 257,86.5286458 257,127.677455 L257,127.677455 L257,325.291295 C257,364.28311 267.081545,394.149182 287.244635,414.889509 C307.407725,435.629836 335.992847,446 373,446 Z M372.5,365 C365.909962,365 360.679119,361.927448 356.807471,355.782343 C352.935824,349.637238 351,342.744755 351,335.104895 L351,335.104895 L351,118.61451 C351,108.317308 352.112069,99.3072552 354.336207,91.5843531 C356.560345,83.861451 362.614943,80 372.5,80 C382.385057,80 388.439655,83.861451 390.663793,91.5843531 C392.887931,99.3072552 394,108.317308 394,118.61451 L394,118.61451 L394,335.104895 C394,342.744755 392.105364,349.637238 388.316092,355.782343 C384.52682,361.927448 379.254789,365 372.5,365 Z M722.572308,442 L722.572308,372.487514 L746,372.487514 L746,299.237798 L722.572308,299.237798 L722.572308,3 L585.993846,3 L503,303.971623 L503,372.487514 L633.098462,372.487514 L633.098462,442 L722.572308,442 Z M633,300 L581,300 L633,79 L633,300 Z0:{"P":null,"b":"9o4yyEdiX745V4Xa0Y3xJ","p":"","c":["","notes","atomic-haits"],"i":false,"f":[[["",{"children":["notes",{"children":[["slug","atomic-haits","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/052c8b13a035a85d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en-us","className":"h-full text-[19px] md:text-[21px] lg:text-[22px]","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","type":"image/png","href":"/_next/static/media/flannel.5168cfc2.png"}]]}],["$","body",null,{"className":"flex h-full flex-col bg-theme-background font-serif font-normal text-theme-text *:flex-[0_0_auto]","suppressHydrationWarning":true,"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L9",null,{"viewBox":"0 0 746 446","title":"404","children":[["$","rect",null,{"x":0,"y":0,"width":746,"height":446,"fill":"transparent"}],["$","path",null,{"className":"fill-[url('#svg-data-background')]","id":"not-found","d":"$a"}]]}],"notFoundStyles":[]}]}]]}]]}],{"children":["notes",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5aabacac4a7bcbc4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/b7bdc2d4d4aa6554.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/9cad1c3a621a47c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/34f92507e61baad2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],[["$","$Lb",null,{}],["$","main",null,{"className":"mx-auto w-[70ch] max-w-full px-2 md:px-4","children":["$","$c",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","notes","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]}]]]}],{"children":[["slug","atomic-haits","d"],["$","$6","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","notes","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]]}],{"children":["__PAGE__",["$","$6","c",{"children":["$Ld",null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},null]},null]},null],["$","$6","h",{"children":[null,["$","$6","JrY0Tua25daNGoCWf1nuN",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],null]}]]}]]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:I[5677,["867","static/chunks/867-34944a4304bcfa99.js","740","static/chunks/app/notes/%5Bslug%5D/page-a7e184241ba85e81.js"],"Note"]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Landon Schropp – Atomic Habits"}],["$","meta","2",{"name":"description","content":"Landon Schropp's notes about Atomic Habits"}],["$","meta","3",{"name":"author","content":"Landon Schropp"}]]
+f:null
+16:T422d,## The Fundamentals
+
+A _habit_ is a routine that’s performed regularly, and often automatically.
+
+### Principle of Marginal Gains
+
+Habits compound, combining small improvements into large changes. This is known as the _principle of marginal gains_. These changes are multiplicative, so even 1% improvements can add up to a large effect.
+
+The opposite is also true. The accumulation of many small missteps aggregates to a large decline.
+
+> Small changes often appear to make no difference until you cross a critical threshold. The most powerful outcomes of any compounding process are delayed. You need to be patient.
+
+![1% Better Every Day](one-percent-better-every-day.png)
+
+### Goals vs. Systems
+
+The problem with outcomes is they’re a lagging measure of habits. In order to achieve a positive result, you have to consistently apply effort over time.
+
+Goals have a few problems:
+
+- **Goals aren’t effective.** People who fail at their New Year's resolutions had goals, but that didn’t change the outcome.
+- **A goal only represents a single moment.** Even if you achieve a goal, once the moment has passed, it’s done.
+- **Goals interfere with happiness.** By delaying good feelings until after you achieved your goals, you deny yourself satisfaction with progress along the way.
+- **Goals create yo-yo effects.** Most people who reach their weight goal through dieting regain the weight later on. Focusing on an outcome doesn’t lead to long-term success.
+
+Forget about setting goals and focus on creating systems instead.
+
+### Three Layers of Behavior Change
+
+There are three levels at which any behavior change can occur.
+
+1. **Outcomes:** Changing your results.
+2. **Process:** Changing your habits and systems.
+3. **Identity:** Changing your beliefs—your worldview, self-image, or judgements.
+
+You can either build _outcome-based habits_, which attempt to start backwards, or _identity-based habits_, which focus on who you wish to become.
+
+> What you do is an indication of the type of person you believe that you are—either consciously or unconsciously… Whne your behavior and your identity are fully aligned, you are no longer pursuing behavior change. You are simply acting like the type of person you already believe yourself to be.
+
+The opposite is to walk around in a _cognitive slumber_, blindly following the norms attached to your existing identity.
+
+### Changing Your Identity
+
+> Your habits are how you _embody_ your identity… Every action you take is a vote for the type of person you wish to become.
+
+The trick is to first decide the person you want to be, and then prove it to yourself by applying your habits over and over.
+
+### How Habits Work
+
+A habit is formed through four simple steps:
+
+1. **Cue:** This is what _triggers_ your brain to perform a behavior.
+2. **Craving:** This is the motivation force that compels you to perform a habit.
+3. **Response:** This is the action you perform as part of the habit.
+4. **Reward:** The reward is the end goal of the habit. Rewards _satisfy_ us and _teach_ us.
+
+These steps occur in a loop, and over time reinforce the behavior.
+
+### Four Laws of Behavior Change
+
+The four laws correspond to the four steps of how a habit works.
+
+#### Create a Good Habit
+
+1. Make it obvious
+2. Make it attractive
+3. Make it easy
+4. Make it satisfying
+
+#### Break a Bad Habit
+
+1. Make it invisible
+2. Make it unattractive
+3. Make it difficult
+4. Make it unsatisfying
+
+## Make it Obvious
+
+### Habit Strategies
+
+Sometimes, it can be difficult to start a new habit because we lack _clarity_. To help, there are a few strategies we can apply.
+
+The first is by forming an _implementation intention_, which is a plan you make beforehand about when and where to act for a particular habit. The formula for an implementation intention is: _I will \[behavior\] at \[time\] in \[location\]._
+
+The other is _habit stacking_, which is to identify a habit you already do every day, and then include a new behavior with it. The formula for this is: _After I \[current habit\], I will \[new habit\]._
+
+### Environment
+
+> Environment is the invisible hand that shapes human behavior. Despite our unique personalities, certain behaviors tend to arise again and again under certain environmental conditions.
+
+You can _design_ your environment for your own success by _making the best choice the obvious one._
+
+> Be the designer of your world, and not merely the consumer of it.
+
+When it comes to your environment, there are several things that can help install a habit.
+
+- **Find a new environment.** “When you step outside your normal environment, you leave your behavioral biases behind. You aren’t battling old environmental queues, which allows new habits to form without interruption.”
+- **Redefine our rearrange your current environment.** Rearrange your current environment into several spaces. “One space, one use.”
+- **Separate habits.** Whenever possible, don’t mix the context of one habit with another.
+
+### Self-Control
+
+Unhealthy behavior is _not_ a moral weakness.
+
+> When scientists analyze people who appear to have tremendous self-control, it turns out those individuals aren’t all that different from those who are struggling. Instead, “disciplined” people are better at structuring their lives in a way that _does not require_ herioc willpower and self-control. In other words, they spend less time in tempting situations.
+>
+> The people with the best self-control are typically the ones who need to use it the least.
+
+### Autocatalysis
+
+Bad habits are _autocatalytic_—the process feeds itself. A bad habit will continue to reinforce itself the more you do it.
+
+This means that resisting temptation is a bad strategy in an environment that continues to reinforce it. Instead, it’s best to cut off habits at the source. Instead of making it obvious, make it invisible.
+
+## Make it Attractive
+
+### Supernormal Stimuli
+
+Some stimuli, known as _supernormal stimuli_, are especially fine-tuned to make our brains “light up like a Christmas tree.” The perfect example is _junk food_, which is _engineered_ to be incredibly compelling.
+
+> Society is filled with highly engineered version of reality that are more attractive than the world our ancestors evolved in.
+>
+> …
+>
+> These are the supernormal stimuli of our modern world. They eaggerate features that are naturally attractive to us, and our instincts go wild as a result, driving us into excessive shopping habits, social media habits, porn habits, eating habits and many others.
+
+### Dopamine
+
+Habits are driven by _dopamine_. Scientists used to think dopamine was only released when _experiencing_ pleasure, but we now know that dopamine is also released in _anticipation_ of pleasure.
+
+> It is the anticipation of a reward—not the fulfillment of it—that gets us to take action.
+>
+> Your brain has far more neural circuitry allocated for _wanting_ rewards than for _liking_ them.
+
+### Temptation Bundling
+
+You can make a behavior more attractive if you combine it with one of your favorite things at the same time. This is known as _temptation bundling_, and like habit stacking, it also has a formula: After I \[habit I need\], I will \[habit I want\].
+
+### Social Influence
+
+There are three groups we imitate when it comes to habits:
+
+- **The close:** These are the people nearest you. One of the best ways to build a healthy habit is to join a culture where that behavior is the norm, and you already have something in common with the group.
+- The many: It’s easy to fall into the same habit as the group. You can override this, but it’s difficult.
+- The powerful: “We are drawn to behaviors that earn us respect, approval, admiration and status.”
+
+### Motives
+
+> Our behavior is heavily dependent on how we interpret the events that happen to us, not necessarily the objective reality of the events themselves.
+
+The same cue can spark a good habit or a bad habit, depending on how we interpret it.
+
+> The specific cravings you feel and the habits you perform are really an attempt to address your fundamental underlying motives. When a habit successfully addresses a motive, you develop a craving to do it again.
+
+You can flip your mindset with a simple trick: “You don’t ‘have’ to. You ‘get’ to.” It’s all about how you frame it.
+
+### Planning vs. Action
+
+Planning is important, but doesn’t produce a result. _Action_ produces results. While planning is important, it’s easy to fall into the trap of endlessly planning and never actually _doing_ anything. Planing _feels good_, but after a certain point it can turn into procrastination.
+
+$$
+Quantity > Quality
+$$
+
+When it comes to actions, you need to _get your reps in_. It’s better to do something imperfectly, but do it more. It’s only through practice that the habit will become _automatic_, allowing you to perform it without thinking.
+
+Often, people focus on _how long_ it takes to form a habit, but instead they should be asking _how many_ it takes. “Your current habits have been internalized over the course of hundreds, if not thousands, of repetitions.”
+
+### Law of Least Effort
+
+> It is human nature to follow the _Law of Least Effort_, which states that when deciding between two similar options, people will naturally gravitate toward the option that requires the least amount of work.
+
+In other words, people are motivated to do what’s easy. If you want to increase adoption of a habit, _make it easy_.
+
+> On the tough days, it’s crucial to have as many things working in your favor as possible so you can overcome the challenges that life naturally throws your way.
+
+Trying to pump up your motivation to tackle difficult habits is a losing strategy. Instead, focusing on _reducing_ friction for habits that you want to increase and _increasing_ friction for habits you want to decrease.
+
+One way to make habits easier is to prime your environment. This means completing the “preparation” steps of a habit ahead of time, so when it’s time to practice the habit, there are no barriers. Examples including setting out your workout clothes ahead of time, or prepping fruits and vegetables to make eating healthy easy.
+
+### Decisive Moments
+
+> Habits are like the entrance ramp to a highway. They lead you down a path and, before you know it, you’re speeding towards the next behavior.
+>
+> Every day, there are a handful of moments that deliver an outsized impact. I refer to these little choices as _decisive moments_.
+
+![Decisive Moments](decisive-moments.png)
+
+> The difference between a good and a bad day is often a few healthy and product choices made at decisive moments. Each one is like a fork in the road, and these choices stack up throughout the day and can ultimately lead to very different outcomes.
+
+### Two-Minute Rule
+
+Almost any habit can be scaled down to a two-minute version. The can let you transform any habit to “very easy”.
+
+The point is not to “trick” yourself into doing more than you intended, it’s to _master the habit of showing up_. You can always scale up later, but only after _showing up has become automatic_.
+
+> Instead of trying to engineer a perfect habit from the start, do the easy thing on a more consistent basis.
+
+### Commitment Devices
+
+> Sometimes success is less about making good habits easy and more about making bad habits hard.
+
+One way of doing this is by employing a _commitment device_, which is a choice you can make in the present that will “lock” in your future behavior. This can allow you to take advantage of good intentions _in the moment_ before you can fall victim to temptation.
+
+Often, there are one-time actions that make a good habit easier or a bad habit harder. These are powerful, because they allow you to spend a little effort to get a long-term benefit. Often, these can be implemented with technology. Always look for opportunities to make one-time choices.
+
+## Make It Satisfying
+
+If you want to make a behavior stick, make it satisfying to perform.
+
+### Immediate vs. Delayed Rewards
+
+The way our brains evaluate rewards is inconsistent across time. We prioritize _immediate_ rewards. However, many healthy habits are unpleasant in the short term with long-term benefits, while many unhealthy habits are rewarding in the short-term with unpleasant consequences in the long-term.
+
+**Instant gratification usually wins.** Our brains prioritize it.
+
+> What is _immediately_ rewarded is repeated. What is _immediately_ punished is avoided.
+
+The best way to accomplish this is to add a little bit of immediate gratification to the habits we want to build, even if it’s just in a small way. Over time, the habit may be its own reward, but in the short term.
+
+### Habit Tracking
+
+> Research has shown that people who track their progress on habits like losing weight, quitting smoking and lowering blood pressure are more likely to improve than those who don’t. … The mere act of tracking a behavior can spark the urge to change it.
+
+Habit tracking is obvious, attractive and satisfying. When possible, making tracking automatic (usually via technology). Manual tracking should be limited to your most important habits.
+
+One approach to tacking habits is the _Paper Clip Strategy_. In this highly visible method, you take a jar and add something small to it, like a paper clip, penny or marble, every time you complete your habit. This simple approach can be highly effective, and can become its own reward.
+
+There is one trap with habit tracking: it’s easy to fall into the trap of treating the _measurement_ as the goal.
+
+> When a measure becomes a target, it ceases to be a good measure.
+
+### Recovery
+
+It’s not usually possible to be perfectly consistent with a habit. Life is too chaotic and unpredictable.
+
+It’s easy to fall into an all-or-none mentality with habits, but that doesn’t necessarily reflect reality. Missing one day doesn’t create a large impact, but missing many does. “The problem is not slipping up; the problem is thinking if you can’t do something perfectly, then you shouldn’t do it at all.
+
+This leads to a simple rule: **never miss twice**. The miss is much less important than the _day after the miss_, which you can use to get back on track.
+
+Another key is that doing _something_ is better than doing _nothing_. If you don’t feel up to doing a working, doing two minutes of work still maintains the habits. With a system, we’re focusing on the long-term, not the day-to-day ups and downs.
+
+### Consequences
+
+Pain is an effective teacher. If you can make a bad habit painful, you’re less likely to do it.
+
+> The best way I know to overcome [bad habits] is to increase the speed of the punishment associated with the behavior.
+
+One effective strategy is to create a _habit contract_, which is an agreement in which you state your commitment to a particular habit and the punishment that will occur if you don’t follow through.
+
+Another effective approach is to recruit an accountability partner. This is a person you know is watching if you slip up.
+
+## Tactics
+
+### Goldilocks Rule
+
+> The _Goldilocks Rule_ states that humans experience peak motivation when working on tasks that are right on the edge of their current abilities. Not too hard. Not too easy. Just right.
+
+The human brain loves a good challenge. Your want the difficulty level to be _just manageable_ to maximize growth. If you hit this just right, you can achieve _flow state_.
+
+![Goldilocks Rule](goldilocks-rule.png)
+
+### Motivation
+
+When it comes to training, the people at the top experience the same lack of motivation as the rest of us.
+
+> At some point, it comes down to who can handle the boredom of training every day, doing the same lifts over and over.
+
+> Professionals stick to the schedule; amateurs let life get in the way. Professions know what is important to them and work towards it with purpose; amateurs get pulled off course by the urgencies of life.
+>
+> …
+>
+> When a habit is truly important to you, you have to be willing to stick to it in any mood. Professionals take action even when the modd isn’t right. They might not enjoy it, but they find a way to put the reps in.
+
+### Mastery
+
+> Mastery is the process of narrowing your focus to a tiny element of success, repeating it until you have internalized the skill, and then using this new habit as the foundation to advance to the next frontier of your development.
+
+In order to get there, it’s important to establish a system for reflection. Only by examining your mistakes can you consider new paths for improvement.
+
+### Success
+
+> Success is not a goal to reach or a finish line to cross. It is a system to improve, an endless process to refine.
+>
+> …
+>
+> This is a continuous process. There is not finish line. There is no permanent solution. Whenever you’re looking to improve, you can rotate through the four laws of behavior change until you find the next bottleneck.d:["$","$L15",null,{"note":{"title":"Atomic Habits","slug":"atomic-haits","date":"2024-11-19","published":true,"markdown":"$16","filePath":"/Users/landon/Notes/Resources/Notes/Psychology/Atomic Habits/Atomic Habits.md","authors":["James Clear"],"category":"Psychology","media":"Book","url":"https://jamesclear.com/atomic-habits"}}]

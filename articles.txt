@@ -1,0 +1,1071 @@
+6:"$Sreact.fragment"
+7:I[7556,[],""]
+8:I[8418,[],""]
+9:I[9306,["345","static/chunks/app/not-found-5003099408b5305e.js"],"default"]
+b:I[1406,["282","static/chunks/282-75966d77867c0c4f.js","447","static/chunks/app/articles/layout-3926676d596858a8.js"],"MainNavigation"]
+c:"$Sreact.suspense"
+e:I[5277,[],"OutletBoundary"]
+10:I[5277,[],"MetadataBoundary"]
+12:I[5277,[],"ViewportBoundary"]
+14:I[6379,[],""]
+1:HL["/_next/static/css/052c8b13a035a85d.css","style"]
+2:HL["/_next/static/css/5aabacac4a7bcbc4.css","style"]
+3:HL["/_next/static/css/b7bdc2d4d4aa6554.css","style"]
+4:HL["/_next/static/css/9cad1c3a621a47c7.css","style"]
+5:HL["/_next/static/css/34f92507e61baad2.css","style"]
+a:T5e1,M219.572308,442 L219.572308,372.487514 L243,372.487514 L243,299.237798 L219.572308,299.237798 L219.572308,3 L82.9938462,3 L0,303.971623 L0,372.487514 L130.098462,372.487514 L130.098462,442 L219.572308,442 Z M130,300 L78,300 L130,79 L130,300 Z M373,446 C410.173104,446 438.799714,435.629836 458.879828,414.889509 C478.959943,394.149182 489,364.28311 489,325.291295 L489,325.291295 L489,127.677455 C489,86.5286458 479.457797,54.9618676 460.373391,32.9771205 C441.288984,10.9923735 412.164521,0 373,0 C334.001431,0 304.918455,10.9923735 285.751073,32.9771205 C266.583691,54.9618676 257,86.5286458 257,127.677455 L257,127.677455 L257,325.291295 C257,364.28311 267.081545,394.149182 287.244635,414.889509 C307.407725,435.629836 335.992847,446 373,446 Z M372.5,365 C365.909962,365 360.679119,361.927448 356.807471,355.782343 C352.935824,349.637238 351,342.744755 351,335.104895 L351,335.104895 L351,118.61451 C351,108.317308 352.112069,99.3072552 354.336207,91.5843531 C356.560345,83.861451 362.614943,80 372.5,80 C382.385057,80 388.439655,83.861451 390.663793,91.5843531 C392.887931,99.3072552 394,108.317308 394,118.61451 L394,118.61451 L394,335.104895 C394,342.744755 392.105364,349.637238 388.316092,355.782343 C384.52682,361.927448 379.254789,365 372.5,365 Z M722.572308,442 L722.572308,372.487514 L746,372.487514 L746,299.237798 L722.572308,299.237798 L722.572308,3 L585.993846,3 L503,303.971623 L503,372.487514 L633.098462,372.487514 L633.098462,442 L722.572308,442 Z M633,300 L581,300 L633,79 L633,300 Z0:{"P":null,"b":"9o4yyEdiX745V4Xa0Y3xJ","p":"","c":["","articles"],"i":false,"f":[[["",{"children":["articles",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],["",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/052c8b13a035a85d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en-us","className":"h-full text-[19px] md:text-[21px] lg:text-[22px]","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","type":"image/png","href":"/_next/static/media/flannel.5168cfc2.png"}]]}],["$","body",null,{"className":"flex h-full flex-col bg-theme-background font-serif font-normal text-theme-text *:flex-[0_0_auto]","suppressHydrationWarning":true,"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L9",null,{"viewBox":"0 0 746 446","title":"404","children":[["$","rect",null,{"x":0,"y":0,"width":746,"height":446,"fill":"transparent"}],["$","path",null,{"className":"fill-[url('#svg-data-background')]","id":"not-found","d":"$a"}]]}],"notFoundStyles":[]}]}]]}]]}],{"children":["articles",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5aabacac4a7bcbc4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/b7bdc2d4d4aa6554.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/9cad1c3a621a47c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/34f92507e61baad2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],[["$","$Lb",null,{}],["$","main",null,{"className":"mx-auto w-[70ch] max-w-full px-2 md:px-4","children":["$","$c",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","articles","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]}]]]}],{"children":["__PAGE__",["$","$6","c",{"children":["$Ld",null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},null]},null],["$","$6","h",{"children":[null,["$","$6","ggVxzNJAt0ui5nMjWcC8M",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],null]}]]}]]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Landon Schropp – Writing"}],["$","meta","2",{"name":"description","content":"My published writing from all over the web."}]]
+f:null
+15:I[8983,["733","static/chunks/733-a8948be6db79c29c.js","292","static/chunks/app/articles/page-87aecc08870b7287.js"],"ArticleSummaries"]
+16:T11e6,Two days ago, Brad Frost published a [blog post](http://bradfrost.com/blog/post/full-stack-developers/) outlining his skepticism of the term “full-stack developer.”
+
+> In my experience, “full-stack developers” always translates to “programmers who can do frontend code because they have to and it’s ‘easy’.” It’s never the other way around. The term “full-stack developer” implies that a developer is equally adept at both frontend code and backend code, but I’ve never in my personal experience witnessed anyone who truly fits that description.
+
+I’ve followed Brad on Twitter for years and I respect his ideas and opinions. However, I have to disagree with him on this point. There’s a strong case to be made for someone who spends time on all parts of an application.
+
+## Is Front-End Development Easy?
+
+No. Designing a modular, scalable and performant UI is extremely difficult. When developers think otherwise, they usually lack a clear understanding of what good HTML and CSS look like.
+
+However, I don’t think a person’s opinion on this point has anything to do with whether they consider themselves a full-stack developer or not. It’s usually an indicator of how much experience they have writing front-end code.
+
+## Breadth vs. Depth
+
+The core difference between a full-stack developer and a front-end or back-end developer is how specialized they are. A full-stack developer isn’t going to be able to dive as deep into both domains. However, there’s an advantage to doing both.
+
+Full-stack developers can help to bridge the two sides. They can help these two groups communicate better. A well-informed front-end perspective leads to good API design, and solid back-end chops yields code that correctly communicates with servers.
+
+## End to End
+
+The best part about being a full-stack developer is understanding how everything fits together. You can write an API knowing it’s exactly what you need. The front-end and back-end form a cohesive whole, and it’s easier to connect the two when you’re involved in both codebases.
+
+## Interest
+
+Let’s be honest, doing them same thing day in and day out can get a little tedious. As a full-stack developer, I balance this by switching back and forth between the parts of an application I’m working on. When I get a little drained on HTML and CSS, I take a break and bust out some API endpoints. And when I can’t stand the sight of SQL, I dive into layout and usability.
+
+The ability to switch helps me stay fresh and excited about my work.
+
+## Boundaries
+
+We shouldn’t create artificial boundaries between the back-end and front-end. At the end of they day, both are skills and knowledge. Why limit what you learn because of your job description?
+
+According to [The Pragmatic Programmer](http://a.co/9dGK4fo):
+
+> The more *different* things you know, the more valuable you are.… The more technologies you are comfortable with, the better you will be able to adjust to change.
+
+## Self-Efficacy
+
+As a full-stack engineer, I can make changes to any part of the application. If I need a quick fix, I don’t have to bug another engineer to implement it for me, and I don’t have to wait for their schedule to free up. This helps me remove roadblocks, which lets me move faster.
+
+## Company Size
+
+Large companies like Google and Amazon *need* specialized developers. They need front-end engineers who can produce solutions for the detailed edge-cases they’re supporting, and they need backend engineers who can produce finely-tuned systems at massive scales.
+
+Startups have the opposite need. They didn’t have the resources to hire specialists for every position, and they couldn’t always guarantee that the work would be spread evenly.
+
+The skills you develop depend on the types of companies you work for.
+
+## Closing Thoughts
+
+Brad wrapped up his article with a couple more ideas.
+
+> I don’t think “full-stack developer” is necessarily a bad word, and there’s nothing wrong for individual developers to define their role in that way. But organizationally, when I encounter “we only hire full-stack developers” orgs I’ve only seen issues with their process and UI code.
+
+I would agree with both points. But I don’t think this means we should toss out full-stackers.
+
+At the end of the day, the front end and back end are a spectrum. Maybe you devote one-hundred percent of your time to the front-end camp. Or maybe you’re fifty-fifty. Where you fall doesn’t matter. It’s about what makes you happy, and if you enjoy doing both, then do both.17:T4be8,A few months ago, I stumbled across [A Career Retrospective](https://medium.com/@sailorhg/a-career-retrospective-10-years-working-in-tech-ea0bf2a29696) by [Sailor Mercury](https://twitter.com/sailorhg). In this article, Sailor Mercury wrote about several unique and interesting projects she’s done, including automated knitting, working on the ASIMO robot and starting a computer science publication.
+
+One of those projects really stuck out to me — a script she wrote with [Matt Baker](https://twitter.com/reissbaker) and [Frank Lin](https://twitter.com/frank0lin) that converted an image into Legos. I loved the idea so much I decided to build my own Lego art!
+
+![Sailor Mercury et al’s Lego rendition of Van Gogh’s Starry Night](1*2sjzfMlXgGzhlTGohrGMRw.gif)
+
+## The Legoizer Script
+
+First things first — I needed to write a script that turns an image into Legos. Sailor mercury published a [tool](http://sailorhg.github.io/legoizer/) that does exactly this, but coding it myself sounded more fun.
+
+![My approach to Legoizing an image](1*nrnTOjdAYRq5RwA6j6HHwg.png)
+
+After a bit of thought, I landed on this approach:
+
+1. Load the image. For the purposes of this script, I decided to take the simplest approach possible, ignoring performance.
+
+1. Scale the image _with distortion_. According to [Brickopedia](http://lego.wikia.com/wiki/Brick#Sizes), a 1×1 lego brick is 8mm wide by 9.6mm tall. By distorting the image, I can use a single pixel to represent one Lego brick.
+
+1. Map each pixel in the image to its closest Lego color.
+
+1. Convert the pixels back to an undistorted size and save the image.
+
+### Script Interface
+
+I settled on this for my script’s interface:
+
+```sh
+ruby legoizer.rb <path-to-image> <blueprint-width>
+```
+
+- path-to-image: The path of the image to load.
+
+- blueprint-width: The width of the final blueprint in 1×1 Lego bricks.
+
+First, I parsed the arguments and validated them. If any one of the arguments was bad or missing, the script printed out its usage and exits.
+
+```ruby
+def exit_with_error
+  puts "Usage: ruby legoizer.rb <path-to-image> <blueprint-width>"
+  exit 1
+end
+
+def is_int?(string)
+  true if Integer(string) rescue false
+end
+
+exit_with_error unless ARGV.length == 2
+exit_with_error unless File.exist?(ARGV[0]) && File.file?(ARGV[0])
+exit_with_error unless is_int? ARGV[1]
+
+image_path = ARGV[0]
+blueprint_width = ARGV[1].to_i
+```
+
+### Reading in the Image
+
+Next, I wrote a small class to read the image. I used [MiniMagick](https://github.com/minimagick/minimagick), which is a wrapper for [ImageMagick](https://www.imagemagick.org/script/index.php).
+
+```ruby
+class Image
+
+  def initialize(minimagick_image)
+    @minimagick_image = minimagick_image
+    minimagick_image.format "png"
+  end
+
+  def self.read(path)
+    Image.send(:new, MiniMagick::Image.open(path))
+  end
+
+  def width
+    @minimagick_image.width
+  end
+
+  def height
+    @minimagick_image.height
+  end
+
+  private_class_method :new
+end
+```
+
+Then, I added an Image.read call to my main script.
+
+```ruby
+image = Image.read(image_path)
+```
+
+### Resizing the Image
+
+When resizing my image, I needed to _distort_ it. To that end, I added a scale method to my Image class.
+
+```ruby
+def scale(width, height)
+  @minimagick_image.scale "#{ width }x#{ height }!"
+end
+```
+
+The ! tells ImageMagick to ignore the aspect ratio of the image.
+
+Next, I needed to determine the height of the image in Lego bricks.
+
+_blueprint height = blueprint width × brick aspect ratio ÷ image aspect ratio_
+
+```ruby
+brick_apsect_ratio = 1.0 * LegoBlueprint::BRICK_PIXEL_WIDTH
+  / LegoBlueprint::BRICK_PIXEL_HEIGHT
+
+image_aspect_ratio = 1.0 * image.width / image.height
+
+blueprint_height = (1.0 * blueprint_width * brick_apsect_ratio
+  / image_aspect_ratio).round
+```
+
+Finally, I called scale from my main script.
+
+```ruby
+image.scale(blueprint_width, blueprint_height)
+```
+
+### Lego Colors
+
+[Brickset](https://brickset.com/colours/chart) publishes a list of all of the available Lego colors and their hex codes. I copied the names, IDs and color values into a YAML file.
+
+```yaml
+- :name: White
+  :id: 1
+  :red: 0xff
+  :green: 0xff
+  :blue: 0xff
+- :name: Brick Yellow
+  :id: 5
+  :red: 0xd9
+  :green: 0xbb
+  :blue: 0x7b
+# ...
+```
+
+Next, I added a Color class I could use to manipulate the color data.
+
+```ruby
+class Color
+
+  attr_reader :name, :id, :red, :green, :blue, :alpha
+
+  def initialize(name: nil, id: nil, red:, green:, blue:,
+    alpha: 0xff)
+
+    @name = name
+    @id = id
+    @red = red
+    @green = green
+    @blue = blue
+    @alpha = alpha
+  end
+
+  def to_s
+    "##{ to_a.map { |n| n.to_s(16).rjust(2, "0") }.join }"
+  end
+
+  def to_h
+    { r: red, g: green, b: blue, a: alpha }
+  end
+
+  def to_a
+    [red, green, blue, alpha]
+  end
+end
+```
+
+The to_h and to_h methods are handy methods that I needed later on. The to_s method was a helpful while debugging.
+
+I needed a way to export the image data from Image as a 2D array of Color objects. Unfortunately, MiniMagick doesn’t include an easy way to get the raw data inside an image. To work around this, I added another library, [ChunkyPNG](https://github.com/wvanbergen/chunky_png), and use that read the raw data.
+
+```ruby
+def to_a
+  @minimagick_image.format "png"
+
+  chunky_image = ChunkyPNG::Image.from_io(
+    StringIO.new(@minimagick_image.to_blob)
+  )
+
+  (0...chunky_image.width).map do |x|
+    (0...chunky_image.height).map do |y|
+
+      red = (chunky_image[x, y] & 0xff000000) >> 24
+      green = (chunky_image[x, y] & 0x00ff0000) >> 16
+      blue = (chunky_image[x, y] & 0x0000ff00) >> 8
+      alpha = (chunky_image[x, y] & 0x000000ff)
+
+      Color.new(red: red, green: green, blue: blue, alpha: alpha)
+    end
+  end
+end
+```
+
+Each color in the ChunkyPNG data is an integer, so I used bitwise operators to separate them.
+
+The next step was to take the 2D array of colors and feed it into into a class that generates the blueprint.
+
+```ruby
+    LegoBlueprint.new(blueprint_width, blueprint_height, image.to_a)
+```
+
+Of course, this class also needed to be added.
+
+```ruby
+class LegoBlueprint
+
+  # Lego constants
+  BRICK_PIXEL_WIDTH = 10
+  BRICK_PIXEL_HEIGHT = 12
+
+  # Load the Lego brick colors into a constant.
+  BRICK_COLORS = YAML.load(IO.read(File.join(File.dirname(__FILE__), 'colors.yml'))).map do |hash|
+    Color.new(**hash)
+  end
+
+  attr_reader :width, :height, :colors
+
+  def initialize(width, height, colors)
+    @width = width
+    @height = height
+    @colors = colors
+  end
+end
+```
+
+The `BRICK_PIXEL_WIDTH` and `BRICK_PIXEL_HEIGHT` constants are exactly what they sound like. My Lego color data is read into the `BRICK_COLORS` constant from my YAML file.
+
+I needed a way to determine the closest Lego color. The simplest way to do this is to use the [Euclidean distance](https://en.wikipedia.org/wiki/Color_difference#Euclidean) between two colors. However, the problem is the mathematical difference between two colors is different than what the human eye perceives. Instead, I used the [color_difference](https://github.com/mmozuras/color_difference) gem, which uses the [CIEDE2000](http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf) color difference formula under the hood. This formula is much closer to what our eyes tell us.
+
+```ruby
+def difference(color)
+  ColorDifference.cie2000(to_h, color.to_h)
+end
+```
+
+Finally, I added a method that takes an array of colors and selects the one closest to the current color. It also contains a special case for transparent colors.
+
+```ruby
+def closest(colors)
+  return TRANSPARENT if alpha == 0
+  colors.min_by { |color| color.difference(self) }
+end
+
+TRANSPARENT = Color.new(
+  red: 0xff,
+  green: 0xff,
+  blue: 0xff,
+  alpha: 0
+)
+```
+
+With that, all I needed to do was use this method in the LegoBlueprint constructor to select the closest color!
+
+```ruby
+@colors = colors.map do |row|
+  row.map do |color|
+    color.closest(BRICK_COLORS)
+  end
+end
+```
+
+### Saving the Blueprint
+
+The last step was to generate a new image and save it. Since I already have the ChunkyPNG library available, the quickest approach was to convert my LegoBlueprint to a ChunkyPNG::Image.
+
+```ruby
+def to_chunky_png
+  image_width = colors.length * BRICK_PIXEL_WIDTH
+  image_height = colors.first.length * BRICK_PIXEL_HEIGHT
+
+  blueprint = ChunkyPNG::Image.new(
+    image_width,
+    image_height,
+    ChunkyPNG::Color::TRANSPARENT
+  )
+
+  image_width.times do |x|
+    image_height.times do |y|
+      color = colors[x / BRICK_PIXEL_WIDTH][y / BRICK_PIXEL_HEIGHT]
+      blueprint[x, y] = ChunkyPNG::Color.rgba(*color.to_a)
+    end
+  end
+
+  blueprint
+end
+```
+
+Finally, I saved the image.
+
+```ruby
+LegoBlueprint
+  .new(blueprint_width, blueprint_height, colors)
+  .to_chunky_png
+  .save('lego.png', interlace: true)
+```
+
+And that’s it! With all of that in place, I can create Lego art from any image!
+
+![An example of generated Lego art](1*lVyh0Vf-fFNrhlbc58ekjA.png)
+
+The code in my script my not be tidy (or efficient), but it gets the job done. In a project like this, the script only has to run once, so it doesn’t really matter how well-factored it is.
+
+If you’d like to take a look at the full source, it’s published on [GitHub](https://github.com/LandonSchropp/legoizer).
+
+## The Art Part
+
+Now that I had my script working, it was time to make some art! I had an inkling that I wanted to do something with my dog, Dexter, so I searched through my photos until I found one I liked.
+
+![My lab/corgi mix Dexter](1*afj3a16B44ir-QRjo49A-A.jpeg)_My lab/corgi mix Dexter_
+
+### Creating the Image
+
+First, I popped open Photoshop and masked out the background.
+
+![](1*YAc4RSmIUQHFvHfnfatmpA.jpeg)
+
+![](1*18ovd2CmfhvOuk3mc9ApOQ.png)
+
+When I ran this through my script, I lost a lot of detail in the face, but I loved how the tongue looked, so I decided to keep that pink.
+
+I started to play with filters and effects in Photoshop. I managed to create a really cool rainbow effect, but it didn’t pan out when converted to Legos.
+
+![](1*_GbRmB-R0RajroD3G9CUbw.png)
+
+![The image on the left is awesome, but I didn’t like the result in Legos.](1*a5pP4CaBZiZIm-ZBL-KZJw.png)_The image on the left is awesome, but I didn’t like the result in Legos._
+
+After tinkering around, I settled on a blue color palette. I felt like it would complement the pink in the tongue. It also resulted in a cool combination of blue and purple tones.
+
+![](1*yWoEALSCSIl-usvJKyS3qA.png)
+
+![](1*cMV89e_T9UBneubCwM_3bQ.png)
+
+Next, I turned the tongue pink and tweaked the color until I was happy with the shape.
+
+![](1*IU_bUSAeSnmF7_yPIjKvhg.png)
+
+![](1*68K_t8WnK5wMCPXkyDJbTQ.png)
+
+Then, I colored the eyes.
+
+![](1*RgYMyPx-2Cf0nVTeB8Rlrg.png)
+
+![](1*cX93wUXzeXJ0ic936dBLow.png)
+
+Finally, I drew on the image until I was happy with the resulting shapes.
+
+![](1*MHknaJqfLpTHelzINJMP4A.png)
+
+![](1*3YgiT2Oq9zk9JE2BRZwkHQ.png)
+
+### Deciding on a Size
+
+Before going any further, I needed to determine the final size of the image. The bigger I made the image, the more detail I could fit in. The tradeoff was it would be more expensive to build and would take up more space in my apartment.
+
+![](1*jEVg04uy2odSJY_6BVlH3Q.png)
+
+![](1*BP-N_Z05Z1PobnJmKofzEg.png)
+
+![My artwork at 352 mm (13.9 in), 400 mm (15.7 in) and 448 mm (17.6 in) wide.](1*_Jx4kIENZAVdw5CI-aADBQ.png)_My artwork at 352 mm (13.9 in), 400 mm (15.7 in) and 448 mm (17.6 in) wide._
+
+After playing around with a few different values, I decided to make it 50 1×1 bricks wide, 58 1×1 brick tall and 2 1×1 bricks deep. To get an upper bound on the cost, I looked up the price of 2×1 bricks on [Pick A Brick](https://shop.lego.com/en-US/Pick-a-Brick) and did some back of the envelope math.
+
+_50 bricks wide × 58 bricks tall × 10¢ per brick = $290_
+
+That seemed reasonable for an upper bound, so I decided to move forward.
+
+### Cleaning It Up
+
+To finish off the design, I pulled my Lego art into Photoshop, cleaned up the edges and reshaped the face.
+
+![](1*XOPpvLjoGs3suSahKkMdOg.png)
+
+![](1*lQLt9oZfAsY-j63bSYBOaA.png)
+
+Finally, I redrew the eyes and tried a few different colors.
+
+![](1*fKLlF2wsDzx2W6EK74ykpw.jpeg)
+
+![](1*UMUCrZBrHSn5TyAMXvqzZQ.jpeg)
+
+![](1*zH8o8XKkfsIp1LEMZzuCtw.jpeg)
+
+![](1*wUBTAx0lhaUgj1Sh2cI76A.jpeg)
+
+I couldn’t pick which one I liked best, so I decided to order them all!
+
+### Creating the Blueprint
+
+With my design in hand, the next step was to create a blueprint. I needed to arrange the bricks in a staggered, interlocking fashion. I could have written a script to do this, but I figured it would take less time to do it by hand.
+
+First, I printed out an outline of the colors. In order to get an idea of what the whole thing would actually look like when it was done, I printed the image at scale by combining six 8½" × 11" sheets of paper with tape.
+
+Next, I checked on Pick a Brick to see what parts were available. Not every length was available in every color, and many of the lengths that were available in depths of 1 weren’t available in depths of 2.
+
+![The blue bricks on Pick A Brick](1*wue_CHl5RdEq59xjrs2E0w.png)
+
+I made a list of all of the available sizes for each color in my design. Next, I shaded in the areas and manually drew outlines for each piece. I started from the bottom up, and did my best to make sure as many bricks as possible were overlapping.
+
+![](1*dJvKuhsKfXhPtyR-DOpXJQ.jpeg)
+
+![](1*7ATcROFmjjqaYoK51c-HdA.jpeg)
+
+## Ordering the Parts
+
+With my blueprint in hand, I counted each piece and copied the prices from Pick A Brick. Because a few of the pieces were only 1 brick wide, I had to order two of them. The _Number to Order_ column includes the needed pieces, as well as a few extra for each piece.
+
+| Color                  | Size | Price | Depth Multiplier | Quantity | Number to Order | Total       |
+| ---------------------- | ---- | ----- | ---------------- | -------- | --------------- | ----------- |
+| Black                  | 2×1  | $0.10 | 1                | 8        | 9               | $0.90       |
+| Black                  | 2×2  | $0.14 | 1                | 13       | 15              | $2.10       |
+| Black                  | 2×3  | $0.17 | 1                | 5        | 6               | $1.02       |
+| Black                  | 2×4  | $0.20 | 1                | 7        | 8               | $1.60       |
+| Earth Blue             | 1×4  | $0.15 | 2                | 85       | 204             | $30.60      |
+| Earth Blue             | 2×1  | $0.10 | 1                | 70       | 84              | $8.40       |
+| Earth Blue             | 2×2  | $0.14 | 1                | 56       | 68              | $9.52       |
+| Medium Lilac           | 2×1  | $0.10 | 1                | 64       | 71              | $7.10       |
+| Medium Lilac           | 2×2  | $0.14 | 1                | 66       | 73              | $10.22      |
+| Medium Lilac           | 2×4  | $0.20 | 1                | 100      | 110             | $22.00      |
+| Bright Blue            | 2×1  | $0.10 | 1                | 9        | 10              | $1.00       |
+| Bright Blue            | 2×2  | $0.14 | 1                | 11       | 13              | $1.82       |
+| Bright Blue            | 2×3  | $0.17 | 1                | 15       | 17              | $2.89       |
+| Bright Blue            | 2×4  | $0.20 | 1                | 10       | 11              | $2.20       |
+| Bright Blue            | 2×6  | $0.27 | 1                | 18       | 20              | $5.40       |
+| Bright Purple          | 1×3  | $0.14 | 2                | 13       | 29              | $4.06       |
+| Bright Purple          | 1×4  | $0.15 | 2                | 12       | 27              | $4.05       |
+| Bright Purple          | 2×1  | $0.10 | 1                | 13       | 15              | $1.50       |
+| Bright Purple          | 2×2  | $0.14 | 1                | 9        | 10              | $1.40       |
+| Light Purple           | 2×1  | $0.10 | 1                | 11       | 13              | $1.30       |
+| Light Purple           | 2×2  | $0.14 | 1                | 21       | 24              | $3.36       |
+| Light Purple           | 2×4  | $0.20 | 1                | 14       | 16              | $3.20       |
+| Medium Blue            | 2×1  | $0.10 | 1                | 6        | 7               | $0.70       |
+| Medium Blue            | 2×2  | $0.14 | 1                | 2        | 3               | $0.42       |
+| Light Royal Blue       | 2×1  | $0.10 | 1                | 2        | 3               | $0.30       |
+| Light Royal Blue       | 2×2  | $0.14 | 1                | 2        | 3               | $0.42       |
+| Bright Orange          | 2×1  | $0.10 | 1                | 6        | 7               | $0.70       |
+| Bright Orange          | 2×2  | $0.14 | 1                | 2        | 3               | $0.42       |
+| Flame Yellowish Orange | 2×1  | $0.10 | 1                | 2        | 3               | $0.30       |
+| Flame Yellowish Orange | 2×2  | $0.14 | 1                | 2        | 3               | $0.42       |
+| **Totals**             | –    | –     | –                | **654**  | **885**         | **$129.32** |
+
+I entered everything into Pick A Brick and added a few extra bricks. With tax, the total cost was $147.85. Not bad! Lego also sent me a nifty little helicopter with my purchase.
+
+![The free helicopter Lego sent me](1*KAg30ItlnZzxyxy09AaEwg.jpeg)
+
+## Assembly
+
+Two weeks later the Legos showed up at my doorstep.
+
+![](1*I9nwxtQdukGVOHMfpyqpwg.jpeg)
+
+![](1*NzdyXdZTCrkfQfUDmsKXAA.jpeg)
+
+After doing a bit of research, it seems like the best way to glue Legos together is with acetone, which melts the plastic and welds the bricks together. After some consideration, I decided not to go this route for a few reasons:
+
+- I hate the smell of acetone. It gives me a headache.
+- If I messed up while assembling the bricks, there’s nothing I could do to fix them.
+- If I spilled some acetone on the front of the bricks, it would screw up the surface.
+- The final build will be hanging on my wall, where it likely won’t be disturbed, so welding the bricks would probably be overkill.
+
+In the end, I used good old Elmer’s Glue. It seemed strong enough, and my worst case scenario was that I’d have to redo the assembly. With the help of my wife, we glued and assembled the whole thing in a couple hours.
+
+![](1*MqaiYWFSblFBWc2XlMb-Og.jpeg)
+
+![](1*ASivfbIxmJHSt2kJXPE0gQ.jpeg)
+
+![](1*OLkl8bfnsW1vZXKoJ_PiFA.jpeg)
+
+![](1*4-sK0hX5dkLnYNvnqaTRcQ.jpeg)
+
+After gluing the big sections together, we hung it on the wall and that’s it!
+
+![](1*3cwJk3nEngGZb_8Hyo5qZA.jpeg)
+
+## Final Thoughts
+
+In reflection, a few things about this process stick out to me.
+
+- It would have been much faster to use a Photoshop action instead of writing a script. Unfortunately, I didn’t think about that until after the script was written. Oh well.
+- There’s a whole secondary market for Lego parts. Buying my bricks this way would have saved me money, but I would have had to order parts from several sellers, and the time that would have taken wasn’t worth it to me.
+- Using Elmer’s Glue was a great idea. I made a few mistakes along the way, and they were easy to fix.
+- Ordering extra parts also turned out to be a great decision. I miscounted a few pieces, and having the extras made that a non-issue.
+
+All things considered, this was a great project. It was a fun challenge to integrate code with art, and I’m happy with the final result!18:Te9e,Lately I’ve had a few people ask me the same thing: *“How can I become a good developer?”* Unfortunately, that’s the wrong question to ask.
+
+The problem is the fallacy of arrival. You’re never going to hit a point when you’re “there” with development. There’s no magic checklist of criteria, and nobody’s going to give you a stamp of approval once you’ve done everything on it. Development is a continuous process of learning. There’s always going to be something new to tackle, and somebody who’s better at that thing than you are.
+
+Also, what constitutes a good developer is completely arbitrary. I know brilliant front-end developers who couldn’t write an algorithm to save their lives. Conversely, I’ve worked with amazing back-end developers who shy away from UI code like it’s an infectious disease. The funny thing is, I’ve seen both types work together and value each others’ expertise. So who’s to say one skill set is better or worse than the other?
+
+At best, the notion of a “good” developer makes some people feel inadequate. At worst, it excludes individuals from our community who might be strong contributors. There are plenty of people who are afraid to even call themselves a developer, because they feel like they haven’t *earned* the title yet. (Do you write code? Yes? Then you’re a developer!)
+
+## The Secret Sauce
+
+Fortunately, there’s a much better question you can ask yourself: *“How can I become a better developer?”*
+
+The beautiful thing about this is it applies to *all* developers. If you’re brand new to coding, it gives you permission to ask questions. If you’re at the top of your game, there’s always something new to discover. When you ignore artificial criteria, you free yourself to grow. It’s okay for you not to know something, because it means you have an opportunity to learn.
+
+So *how* can you become a better developer? Here are a few ideas:
+
+- **Read and learn:** The more you read, watch talks and try out new platforms, the better off you’ll be. Technology is relentlessly marching forward — if you’re not moving with it, you’re falling behind.
+- **Focus on the Fundamentals:** Even if you’re an expert, it’s always good to get back to the basics. Regularly review core topics.
+- **Improve your soft skills:** We don’t write code for computers; computers think in zeros and ones. We write code for other people to read. Improving your ability to express yourself is one of the most overlooked ways to become a better developer.
+- **Start a side project:** Build something fun for yourself. Side projects are a great way to try out frameworks and learn new skills. If you’re new, they’re also good resume builders, and give you something to talk about in interviews.
+- **Test your code:** Testing is the easiest way to increase the quality of your code. Plus, it helps you spend less time tracking down bugs.
+- **Don’t worry about technology choice:** It really doesn’t matter what stack you choose to learn. Pick something that you like and something that’s popular (it helps to have a big community of people who can help you).
+- **Expand your outlook:** If you can have a conversation with a non-developer, empathize with their perspective and work with them to solve a problem, you’ll be miles ahead of many other developers. Design, business and marketing are all good areas to dig into.
+- **Talk to people:** Find other people who write code and say hello. Check out your local meet ups. There are vibrant development communities, and they can be a great source of inspiration and guidance.
+
+Focus on the process instead of the result, and you’ll improve your skill set in no time.19:T24a4,![](1*sp2wyyrIRpJryGhfD2_tbA.gif)
+
+It’s a permanent fixture in your pocket. Its bluish glow is the first thing you look at in the morning and the last thing you see before you go to bed. It connects you with friends and family. You use it to play games, read news and keep up with everything else in your life.
+
+So what is it? Your phone! And in this article, we’re going to be taking a look at how to build the awesome iPhone layout you see above with HTML and CSS. We’ll be digging into some advanced topics in CSS, such as flexbox, the `vh` unit, CSS animations and Sass’s `random` to make this layout happen!
+
+### Unboxing
+
+Let’s start with the iPhone’s markup. You’ll use a `<div>` container for the iPhone, and anther `<div>` for the screen. Inside of that, you’ll add 28 `<button>` elements for the icons.
+
+```html
+<div class="iphone">
+  <div class="screen">
+    <button class="icon"></button>
+    <!-- ... -->
+    <button class="icon"></button>
+  </div>
+</div>
+```
+
+Since we’re using Sass for this layout, let’s define the variables for the colors. (If you’re curious how I came up with these names, check out [this](https://davidwalsh.name/sass-color-variables-dont-suck) article.)
+
+```scss
+$white: #fff;
+$athens-gray: #f7f8fa;
+$shuttle-gray: #525c6b;
+$indigo: #3f74ca;
+```
+
+Next, let’s stretch the `<html>` and `<body>` elements so they fill the height of the viewport. We’ll also center the iPhone horizontally and vertically inside the `<body>` element with flexbox.
+
+```scss
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+```
+
+Finally, let’s dump those default button styles so we can build something more streamlined and make the `<span>` elements border boxes.
+
+```scss
+button {
+  border: none;
+  padding: 0;
+  outline: none;
+  background-color: transparent;
+  user-select: none;
+}
+
+span {
+  box-sizing: border-box;
+}
+```
+
+### The Retina Display
+
+In order to size the iPhone, we’ll be using the `vh` unit. The `vh` unit is a way specifying the size of something in terms of the viewport’s height. If we were to set an element’s height to `50vh`, then it would take up half of the viewport.
+
+So why bother with `vh`? As long as we size everything correctly, we can ensure the iPhone layout never gets smaller than the viewport’s height.
+
+Let’s set `6vh` for the width and height of the icons. We’ll also add background colors to the screen and icons so we can see them.
+
+```scss
+.screen {
+  background-color: $indigo;
+}
+
+.icon {
+  width: 6vh;
+  height: 6vh;
+  border-radius: 1.5vh;
+  background-color: $athens-gray;
+}
+
+.icon:active {
+  opacity: 0.75;
+}
+```
+
+![](1*or19jDeeJHwDBmvGtxakpA.png)
+
+Next, let’s add a little space around the icons.
+
+```scss
+.icon {
+  /* ... */
+  margin: 1.5vh;
+}
+```
+
+![](1*R0YjdVx2eJL0T84LsujKyw.png)
+
+In order to create rows of icons, let’s make the screen a flex container and set its flex-wrap property to wrap. We’ll also restrict the width of the screen so the icons will wrap to the next line.
+
+```scss
+.screen {
+  /* ... */
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1.5vh;
+  width: 36vh;
+}
+```
+
+![](1*7FEJeXWSXF1UZscU_ei6Hg.png)
+
+### The Dock
+
+If you look closely at the finished iPhone, you’ll notice the space between the icons in the last row and the one above it is larger than `3vh` to accommodate the dock. We can add it by targeting the last four icons and making their margin top a little bigger.
+
+```scss
+.icon:nth-last-of-type(-n + 4) {
+  margin-top: 3vh;
+}
+```
+
+![](1*r3YRdstwyVQXzbAEsItUcA.png)
+
+To get that light bar at the bottom, we’ll use a linear gradient. Since the gradient is pointing to the top, we can use a color stop of `11.5vh` to create the line. We’ll also use Sass’s lighten function to lighten up the `$indigo` color.
+
+```scss
+.screen {
+  background: linear-gradient(
+    to top,
+    lighten($indigo, 8%) 11.5vh,
+    $indigo 11.5vh
+  );
+  /* ... */
+}
+```
+
+![](1*9qlWPN2YnHYgOswqpzc_AA.png)
+
+Woohoo! It’s starting to look like an iPhone!
+
+### The Body
+
+Creating the shape of the iPhone is pretty simple. We’ll add padding to the container and add borders to the screen and the container. We’ll also round the corners of the iPhone.
+
+```scss
+.iphone,
+.screen {
+  border: 0.5vh solid $shuttle-gray;
+}
+
+.iphone {
+  padding: 10vh 1.5vh;
+  border-radius: 6vh;
+}
+```
+
+![](1*OjOt3zT7mhULN0qjMAEohw.png)
+
+We also need to add all of the little buttons and doohickeys on the iPhone. First, let’s add them to the HTML as `<button>` and `<span>` elements.
+
+```html
+<div class="iphone">
+  <!-- ... -->
+
+  <button class="home" title="Home"></button>
+  <span class="speaker" title="Speaker"></span>
+  <span class="camera" title="Camera"></span>
+  <span class="proximity" title="Proximity Sensor"></span>
+
+  <button class="silence" title="Silence Switch"></button>
+  <button class="volume-up" title="Volume Up"></button>
+  <button class="volume-down" title="Volume Down"></button>
+  <button class="sleep" title="Sleep"></button>
+</div>
+```
+
+Styling these is pretty straight-forward — we’ll use good old absolute positioning. Let’s set the position of the iPhone container to relative so the other elements can be positioned off of it.
+
+```scss
+.iphone {
+  /* ... */
+  position: relative;
+}
+```
+
+Next, we’ll size and position all the buttons and spans. There’s no magic here — just a whole lot of styles.
+
+```scss
+.home,
+.camera,
+.proximity,
+.speaker,
+.silence,
+.volume-up,
+.volume-down,
+.sleep {
+  position: absolute;
+}
+
+.home,
+.camera,
+.proximity {
+  border-radius: 50%;
+}
+
+.speaker,
+.silence,
+.volume-up,
+.volume-down,
+.sleep,
+.proximity {
+  background-color: $shuttle-gray;
+}
+
+.home,
+.speaker,
+.camera,
+.proximity {
+  left: 50%;
+}
+
+.home,
+.speaker {
+  margin-left: -3vh;
+  width: 6vh;
+}
+
+.home,
+.camera {
+  border: 0.5vh solid $shuttle-gray;
+}
+
+.home {
+  height: 6vh;
+  bottom: 2vh;
+}
+
+.speaker {
+  top: 4.75vh;
+  height: 0.5vh;
+  border-radius: 0.5vh;
+}
+
+.camera {
+  width: 1.5vh;
+  height: 1.5vh;
+  top: 4.25vh;
+  margin-left: -6.5vh;
+}
+
+.proximity {
+  width: 1vh;
+  height: 1vh;
+  top: 2vh;
+  margin-left: -0.5vh;
+}
+
+.silence,
+.volume-up,
+.volume-down,
+.sleep {
+  width: 0.5vh;
+}
+
+.volume-up,
+.volume-down,
+.sleep {
+  height: 5vh;
+}
+
+.silence,
+.volume-up,
+.volume-down {
+  left: -0.75vh;
+}
+
+.silence {
+  height: 3vh;
+  top: 10vh;
+}
+
+.volume-up,
+.sleep {
+  top: 17vh;
+}
+
+.volume-down {
+  top: 24vh;
+}
+
+.sleep {
+  right: -0.75vh;
+}
+```
+
+![](1*Vl64Wb1NRBXFT56Ch1Agdw.png)
+
+### One More Thing
+
+Our iPhone layout is done, but there’s one more thing we can add to make it really special. Let’s make the buttons wiggle when we hold down an icon.
+
+```javascript
+$(function () {
+  var timeout;
+
+  $(".icon")
+    .on("mousedown touchstart", function () {
+      timeout = setTimeout(function () {
+        $(".iphone").addClass("wiggle");
+      }, 1000);
+    })
+    .on("mouseup touchend", function () {
+      clearTimeout(timeout);
+    });
+
+  $(".home").click(function () {
+    $(".iphone").removeClass("wiggle");
+  });
+});
+```
+
+Let’s break this down step by step. First, we have a function contained inside of `$`, which tells jQuery to run the function after the document is ready. Next, we bind to the `mousedown` and `touchstart` events on the icons and set a timeout for one second. If a `mouseup` or `touchend` event occurs before that second is up, then we cancel the timeout and nothing happens. Otherwise, we’ll add a wiggle class to the iPhone container. When the user clicks on the home button, the wiggle class is removed and the animation is stopped.
+
+Next, let’s add that wiggle animation.
+
+```scss
+@keyframes wiggle {
+  25% {
+    transform: rotate(3.5deg);
+  }
+
+  75% {
+    transform: rotate(-3.5deg);
+  }
+}
+
+.wiggle .icon {
+  animation: wiggle 0.25s linear infinite;
+}
+```
+
+![](1*xB-7DTg-rqwr6OWz2NjC2g.gif)
+
+Well, that’s something! Of course, the icons don’t synchronize like that on an actual iPhone. We can make it more true to life by using Sass’s random function. This function returns a random value greater than or equal to `0` and less than `1`. We’ll use it to change the animation’s delay for each icon. We’ll also use a Sass for loop and the nth-of-type selector to style each icon individually.
+
+```scss
+@for $i from 1 through 28 {
+  .wiggle .icon:nth-of-type(#{$i}) {
+    animation: wiggle 0.25s linear infinite 0.25s * random();
+  }
+}
+```
+
+![](1*QM6-868QYFPLsI-aEgdnQQ.gif)
+
+We can make it even nicer by randomizing the rotation animation’s origin.
+
+```scss
+@for $i from 1 through 28 {
+  .wiggle .icon:nth-of-type(#{$i}) {
+    animation: wiggle (0.2s + 0.1s * random()) linear infinite 0.25s * random();
+    transform-origin: (25% + random() * 50%) (25% + random() * 50%);
+  }
+}
+```
+
+![](1*sp2wyyrIRpJryGhfD2_tbA.gif)
+
+### That’s It!
+
+You’ve seen everything you need to build an iPhone layout from scratch. You’ve learned several techniques, including wrapping with flexbox, making use of the `vh` unit and some nifty animation techniques with Sass. Hopefully, you can take what you’ve learned and apply it to some new layouts. Let me know what you come up with!
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Responsive Flexbox iPhone" src="https://codepen.io/LandonSchropp/embed/vLmbNo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>1a:Tf75,“Make a list of everything you can do with a brick.”
+
+I frantically start to scribble in my notebook. Rows of unusual ideas materialize as my hand flies across the page. A smear of black ink streaks as my finger brushes the wet ink of the previous line. I lightly chew the inside of my cheek. My hand starts to cramp, so I stop writing to shake it out. I catch a glimpse of my neighbor’s notebook — perfectly penned rows of text with evenly-spaced bullets — and continue to jot down thoughts in my sloppy, uneven handwriting.
+
+“Okay everybody, let’s go around the room and introduce ourselves. Tell us your name, what you do and the last item on your lists.”
+
+I twist around in my chair and listen as people introduce themselves, chuckling at ideas such as “throw it through a window” and “hit somebody in the head.” When it’s my turn, I clear my throat.
+
+“My name is Landon Schropp and I’m a developer and entrepreneur. My last idea is cruise control.”
+
+Yesterday, I attended [UX Launchpad](http://uxlaunchpad.com/), a day long user experience workshop taught by Jon Bell and William Van Hecke. These talented fellows guided me and ten other people to becoming better designers. We did hands-on activities, received insightful instruction and ate delicious bacon during lunch.
+
+By the end of the workshop, I was doing mental gymnastics from all the great information I had learned. Here are a few of my favorite lessons from Jon and William.
+
+- *“Everyone is a designer.”* It’s not as if every person is an all-star designer who will create the next iPhone. Instead, design is a skill and we all practice it in our daily lives. Like other skills, it can be taught and improved.
+- *“Your first ideas are vital, but not good.”* It’s important not to get stuck on the early ideas, but to allow them to flow freely so they lead to something better. It sounds obvious, but this is definitely something I haven’t been doing in my own work.
+- *“You can never interview users enough.”* This struck a chord on my lean startup guitar. It reminded me of Steve Blank’s mantra: get out of the building. Jon suggests using casual meetings to better understand the problems people endure in their daily lives. Ask questions such as “What’s something the average person wouldn’t know about what you do?” or “If you could wave a magic wand, what would you change?”
+- *“It’s not about the color, it’s about how it interacts.”* William noted how well-designed sites use strong contrasts in hue, saturation, and value as a way to draw attention to elements in a design. He blew my mind when he suggested doing the opposite to deemphasize what I don’t want to stand out.
+- *“The more you sketch, the better you think.”* The tactile experience of writing and sketching helps people think better than they would by keeping ideas in their heads. Jon and William have convinced me to carry around a notebook and liberally sketch.
+- *“Novelty and surprise help you uncover better ideas.”* Every person in the workshop was assigned a random product to design by the end of the day. Mine was a washing machine for doctors. After our first hour of design, Jon introduced a technique called [lateral thinking](http://en.wikipedia.org/wiki/Lateral_thinking), which is a way of getting around blocks by adding absurd constraints. Suddenly, my doctors were washing their clothes during a zombie apocalypse. While this might seem ridiculous, it forced me to consider several new factors, such as the doctor’s safety, morale and exposure to contaminants.
+
+If you’re hungry for more, the [UX Launchpad Notes](http://uxlaunchpad.com/notes/) are a treasure trove of valuable information. I’d also highly recommend reaching out to Jon and William and taking the workshop. There’s just no substitute for hands on instruction. I know I’ll be first in line if they decide to offer another course!1b:Tde4,The other day my phone dinged with that familiar new email tone. The email was from an entrepreneur interested in teaming up. He wanted to meet for coffee and discuss his company. After setting a time and place, he casually dropped this into the conversation:
+
+> I’m not sure how much info you will need to determine if you are a solid fit for this venture, but I generally have a personal rule that I don’t share any extended details without the execution of our NDA… I understand that some developers don’t like signing NDA’s, but mine doesn’t restrict your ability to work on projects in the future.
+
+This is something I hear *all the time* when people pitch their startup ideas. At this point, I politely cancelled the meeting and moved on. Here’s why.
+
+## An NDA is a Restrictive Document
+
+Let’s get this out of the way. An NDA, by definition, restricts my ability to disclose what we talk about. If, tomorrow, I decide to start a company that does the same thing as yours, you can sue me. With most NDAs, if my product is in the same market as yours, you have grounds to sue.
+
+I don’t sign NDAs lightly.
+
+## You Probably Haven’t Validated Your Idea
+
+The biggest risk in building a startup is *building the wrong thing.* Most startups fail because they build a product nobody will buy. The best way to determine if there’s a demand is to get somebody to pay you for it *before* you build it. Talking with potential customers about their problems and your ideas helps validate your concept without burning money on development. If you won’t even give me your elevator pitch, then it seems likely you haven’t taken these steps.
+
+## Your Idea is Not Original
+
+Everyone and their mom has a startup idea. You’re probably not the first person to think of Snapchat for snails or Pinterest for picklers. Very few ideas are truly revolutionary, and that’s okay. Apple didn’t invent the computer, Google didn’t invent the search engine and Facebook didn’t invent the social network. They all made these products better.
+
+A startup is 1% idea and 99% execution. Instead of keeping your idea a secret, figure out how you’re going to do it better than anyone else.
+
+## One of Your Biggest Challenges is Getting Attention
+
+Let’s say you’ve designed a revolutionary fitness product. Nike is not hiding in the bushes outside your window writing down everything you say. They already have a well-established, profitable business model.
+
+If you don’t have a drove of loyal customers knocking down your door to buy your product, your problem isn’t too much attention, it’s too little. Stop worrying about someone stealing your ideas and start worrying about finding people who will pay for them.
+
+## Being First to Market Shouldn’t Be Your Goal
+
+If you’re first to market with a product that nobody wants to buy, you’re going to fail. Even if your idea is great, it doesn’t mean the market is receptive. What you should be doing is iterating and pivoting until you’ve reached a product/market fit. You lose more than you gain by keeping your idea a secret.
+
+## You’re Asking a Lot and Not Offering Much in Return
+
+The hard truth is there’s a hell of a lot more business people than there are software developers. If you haven’t asked for feedback, don’t have paying customers, don’t have proven marketing channels and aren’t willing to talk about your product, then you’re really not offering more than an idea. Then again, that’s probably why you want me to sign an NDA in the first place.1c:T58c,Have you ever wanted to create a border in CSS that only extends across part of an element? It's possible by applying margins, but that can get messy when you want your content to extend beyond its border. Here's a handy technique that uses box shadows to achieve the same result.
+
+![Completed example of using box shadows as separators](example-1.png)
+
+## How It's Done
+
+Typically, when using a border to separate elements in a list, you would do something like this:
+
+```scss
+li {
+  border-bottom: 1px solid #ddd;
+}
+
+li:last-of-type {
+  border-bottom-width: 0;
+}
+```
+
+You can achieve the same effect by using box shadows instead.
+
+```scss
+li {
+  box-shadow: inset 0 -1px 0 0 #ddd;
+}
+
+li:last-of-type {
+  box-shadow: none;
+}
+```
+
+![Full-width box shadows](example-2.png)
+
+One nifty aspect of box shadows is that CSS allows you to use more than one of them. You can take advantage of this by stacking two shadows on top of your content.
+
+```scss
+li {
+  box-shadow:
+    inset 20px 0 0 0 #ee003e,
+    inset -20px 0 0 0 #ee003e,
+    inset 0 -1px 0 0 #ddd;
+}
+```
+
+![Box shadows with highlighted stacked borders](example-3.png)
+
+Finally, all you have to do is set the top shadows to be the same color as the background and you're done!
+
+```scss
+li {
+  box-shadow:
+    inset 20px 0 0 0 white,
+    inset -20px 0 0 0 white,
+    inset 0 -1px 0 0 #ddd;
+}
+```
+
+![Completed example of using box shadows as separators](example-1.png)d:["$","$L15",null,{"articleSummaries":[{"title":"Awesome Git Aliases","slug":"awesome-git-aliases","date":"2021-03-15","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Awesome Git Aliases.md","description":"Wouldn't it be awesome if Git could do more? What if you could customize it with your own commands, making it do anything you can imagine?","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/awesome-git-aliases"},{"title":"Are You a Developer?","slug":"are-you-a-developer","date":"2020-05-27","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Are You a Developer?.md","description":"If you’ve ever felt uneasy using the label “developer” to talk about yourself, this article is for you.","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/are-you-a-developer"},{"title":"Stop Installing Packages Globally","slug":"stop-installing-packages-globally","date":"2019-09-09","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Stop Installing Packages Globally.md","description":"I’m going to show you three different approaches you can use to run NPM package binaries without installing them globally.","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/stop-installing-packages-globally"},{"title":"In Defense of Full-Stack Developers","slug":"full-stack-developers","date":"2017-09-15","published":true,"markdown":"$16","filePath":"/Users/landon/Notes/Resources/Articles/In Defense of Full-Stack Developers.md","description":"There’s a strong case to be made for someone who works on all parts of an application."},{"title":"I Made Lego Art!","slug":"lego-art","date":"2017-09-05","published":true,"markdown":"$17","filePath":"/Users/landon/Notes/Resources/Articles/I Made Lego Art!/I Made Lego Art!.md","description":"I decided to make art out of Legos. Here’s how I did it."},{"title":"How to Be a Better Developer","slug":"better-developer","date":"2016-05-14","published":true,"markdown":"$18","filePath":"/Users/landon/Notes/Resources/Articles/How to Be a Better Developer.md","description":"Lately I’ve had a few people ask me the same thing: “How can I become a good developer?” Unfortunately, that’s the wrong question to ask."},{"title":"Building a Killer iPhone Layout With CSS","slug":"killer-iphone-layout","date":"2016-01-18","published":true,"markdown":"$19","filePath":"/Users/landon/Notes/Resources/Articles/Building a Killer iPhone Layout With CSS/Building a Killer iPhone Layout With CSS.md","description":"How to build an awesome iPhone layout with HTML and CSS."},{"title":"Crafting Twelve-Column Layouts with Flexbox","slug":"twelve-column-layouts","date":"2015-12-08","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Crafting Twelve-Column Layouts with Flexbox.md","description":"I'll show you how to use flexbox to build twelve-column layouts, without the need for a library!","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/flexbox-layouts"},{"title":"Say Goodbye to Vendor Prefixes","slug":"goodbye-vendor-prefixes","date":"2015-07-20","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Say Goodbye to Vendor Prefixes.md","description":"What if there were no vendor prefixes or browser inconsistencies, no external libraries and no compilers to deal with?","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/goodbye-vendor-prefixes"},{"title":"Getting Dicey With Flexbox","slug":"dice","date":"2015-05-18","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Getting Dicey With Flexbox.md","description":"I'll walk you through the basics of flexbox by showing you how to build the faces of dice.","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/flexbox-dice"},{"title":"Regular Expressions for the Rest of Us","slug":"regular-expressions","date":"2015-03-16","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Regular Expressions for the Rest of Us.md","description":"Here’s why you should take a second look at regular expressions, and how you can use them in the real world.","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/regular-expressions-rest"},{"title":"Apocalyptic Zombies and Washing Machines Lessons Learned From UX Launchpad","slug":"apocalyptic-zombies-and-washing-machines","date":"2014-09-20","published":true,"markdown":"$1a","filePath":"/Users/landon/Notes/Resources/Articles/Apocalyptic Zombies and Washing Machines Lessons Learned From UX Launchpad.md","description":"Here are a few of my favorite lessons from UX Launchpad."},{"title":"The Difference Between Anchors, Inputs and Buttons","slug":"html5-buttons-done-right","date":"2014-07-10","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/The Difference Between Anchors, Inputs and Buttons.md","description":"I explain the difference between anchors, inputs and buttons and when and how to use each one.","publisher":"The David Walsh Blog","url":"http://davidwalsh.name/html5-buttons"},{"title":"Why I Won't Sign Your NDA","slug":"why-i-wont-sign-your-nda","date":"2014-06-23","published":true,"markdown":"$1b","filePath":"/Users/landon/Notes/Resources/Articles/Why I Won't Sign Your NDA.md","description":"People often ask me to sign an NDA before they pitch me their start up ideas. I always say no. Here's why."},{"title":"Let's Write a RubyMotion App Part 2","slug":"lets-write-a-rubymotion-app-part-2","date":"2014-06-11","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Let's Write a RubyMotion App Part 2.md","description":"In this tutorial, you'll build a painting application from scratch using RubyMotion. (Part 2)","publisher":"Mobile Tuts+","url":"http://code.tutsplus.com/tutorials/lets-write-a-rubymotion-app-part-2--cms-20961"},{"title":"Let's Write a RubyMotion App Part 1","slug":"lets-write-a-rubymotion-app-part-1","date":"2014-06-02","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Let's Write a RubyMotion App Part 1.md","description":"In this tutorial, you'll build a painting application from scratch using RubyMotion. (Part 1)","publisher":"Mobile Tuts+","url":"http://code.tutsplus.com/tutorials/lets-write-a-rubymotion-app-part-1--cms-20612"},{"title":"Sass Color Variables That Don’t Suck","slug":"sass-color-variables-that-dont-suck","date":"2014-05-12","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Sass Color Variables That Don’t Suck.md","description":"I’ll show you a quick, easy method to wrangle your Sass color variables.","publisher":"The David Walsh Blog","url":"http://davidwalsh.name/sass-color-variables-dont-suck"},{"title":"Write Better JavaScript with Promises","slug":"write-better-javascript-with-promises","date":"2014-04-14","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Write Better JavaScript with Promises.md","description":"JavaScript promises—all the cool kids are using them. Let’s look at what promises are and how you can use them to write better code.","publisher":"The David Walsh Blog","url":"http://davidwalsh.name/write-javascript-promises"},{"title":"8 HTML Elements You're Not Using (and Should Be)","slug":"8-html-elements-youre-not-using-and-should-be","date":"2013-11-25","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/8 HTML Elements You're Not Using (and Should Be).md","description":"Semantic markup helps people and machines understand content and its context. Let's take a look at eight HTML elements you can use today.","publisher":"The David Walsh Blog","url":"http://davidwalsh.name/8-html-elements"},{"title":"Writing Better Media Queries with Sass","slug":"writing-better-media-queries-with-sass","date":"2013-11-03","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Writing Better Media Queries with Sass.md","description":"Media queries are a pain, but they don't have to be. This article will show you a few Sass tricks you can use to simplify them.","publisher":"The David Walsh Blog","url":"https://davidwalsh.name/write-media-queries-sass"},{"title":"Writing an Awesome Build Script with Grunt","slug":"writing-an-awesome-build-script-with-grunt","date":"2013-10-02","published":true,"markdown":"","filePath":"/Users/landon/Notes/Resources/Articles/Writing an Awesome Build Script with Grunt.md","description":"In this guide, you'll learn to configure Grunt to build a modern web project.","publisher":"SitePoint","url":"http://www.sitepoint.com/writing-awesome-build-script-grunt/"},{"title":"Partial Borders in CSS","slug":"partial-borders-in-css","date":"2013-09-25","published":true,"markdown":"$1c","filePath":"/Users/landon/Notes/Resources/Articles/Partial Borders in CSS/Partial Borders in CSS.md","description":"Have you ever wanted to create a border in CSS that only extends across part of an element? Here's a handy technique to achieve this effect using box shadows."},{"title":"Styling Autocompleted Inputs in Webkit","slug":"styling-autocompleted-inputs-in-webkit","date":"2013-08-22","published":true,"markdown":"![The Heroku sign in screen with autocompleted inputs](1*MF87jojJgG0Y0tcjaA8WOw.png)\n\nYou know you hate it: that ugly yellow background color in Chrome and Safari’s autocompleted fields. This color is set in the user agent stylesheet, s0 unfortunately there’s no way to override it.\n\nBut there’s hope! I found a neat little trick in this [Stack Overflow answer](http://stackoverflow.com/a/13860010/262125). Instead of styling the background color, use an inner box shadow that covers the background and use -webkit-text-fill-color to set the text color.\n\n```css\ninput:-webkit-autofill,\ninput:-webkit-autofill:focus {\n  box-shadow: 0 0 0 1000px white inset;\n  -webkit-text-fill-color: #333;\n}\n```\n\nNow you can style these inputs however you want! However, the background color is yellow for a reason—it lets people know an input has been filled in by the browser. Instead of getting rid of it, consider choosing a different color that more closely matches your site’s design.","filePath":"/Users/landon/Notes/Resources/Articles/Styling Autocompleted Inputs in Webkit/Styling Autocompleted Inputs in Webkit.md","description":"You know you hate it—that ugly yellow background color in Webkit's autocompleted fields. Here's a nifty little trick you can use to change it in CSS."}]}]

@@ -1,0 +1,318 @@
+6:"$Sreact.fragment"
+7:I[7556,[],""]
+8:I[8418,[],""]
+9:I[9306,["345","static/chunks/app/not-found-5003099408b5305e.js"],"default"]
+b:I[1406,["282","static/chunks/282-75966d77867c0c4f.js","447","static/chunks/app/articles/layout-3926676d596858a8.js"],"MainNavigation"]
+c:"$Sreact.suspense"
+e:I[5277,[],"OutletBoundary"]
+10:I[5277,[],"MetadataBoundary"]
+12:I[5277,[],"ViewportBoundary"]
+14:I[6379,[],""]
+1:HL["/_next/static/css/052c8b13a035a85d.css","style"]
+2:HL["/_next/static/css/5aabacac4a7bcbc4.css","style"]
+3:HL["/_next/static/css/b7bdc2d4d4aa6554.css","style"]
+4:HL["/_next/static/css/9cad1c3a621a47c7.css","style"]
+5:HL["/_next/static/css/34f92507e61baad2.css","style"]
+a:T5e1,M219.572308,442 L219.572308,372.487514 L243,372.487514 L243,299.237798 L219.572308,299.237798 L219.572308,3 L82.9938462,3 L0,303.971623 L0,372.487514 L130.098462,372.487514 L130.098462,442 L219.572308,442 Z M130,300 L78,300 L130,79 L130,300 Z M373,446 C410.173104,446 438.799714,435.629836 458.879828,414.889509 C478.959943,394.149182 489,364.28311 489,325.291295 L489,325.291295 L489,127.677455 C489,86.5286458 479.457797,54.9618676 460.373391,32.9771205 C441.288984,10.9923735 412.164521,0 373,0 C334.001431,0 304.918455,10.9923735 285.751073,32.9771205 C266.583691,54.9618676 257,86.5286458 257,127.677455 L257,127.677455 L257,325.291295 C257,364.28311 267.081545,394.149182 287.244635,414.889509 C307.407725,435.629836 335.992847,446 373,446 Z M372.5,365 C365.909962,365 360.679119,361.927448 356.807471,355.782343 C352.935824,349.637238 351,342.744755 351,335.104895 L351,335.104895 L351,118.61451 C351,108.317308 352.112069,99.3072552 354.336207,91.5843531 C356.560345,83.861451 362.614943,80 372.5,80 C382.385057,80 388.439655,83.861451 390.663793,91.5843531 C392.887931,99.3072552 394,108.317308 394,118.61451 L394,118.61451 L394,335.104895 C394,342.744755 392.105364,349.637238 388.316092,355.782343 C384.52682,361.927448 379.254789,365 372.5,365 Z M722.572308,442 L722.572308,372.487514 L746,372.487514 L746,299.237798 L722.572308,299.237798 L722.572308,3 L585.993846,3 L503,303.971623 L503,372.487514 L633.098462,372.487514 L633.098462,442 L722.572308,442 Z M633,300 L581,300 L633,79 L633,300 Z0:{"P":null,"b":"9o4yyEdiX745V4Xa0Y3xJ","p":"","c":["","articles","killer-iphone-layout"],"i":false,"f":[[["",{"children":["articles",{"children":[["slug","killer-iphone-layout","d"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/052c8b13a035a85d.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en-us","className":"h-full text-[19px] md:text-[21px] lg:text-[22px]","children":[["$","head",null,{"children":[["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":"anonymous"}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400;1,700;1,800&family=Source+Code+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap","rel":"stylesheet"}],["$","link",null,{"rel":"shortcut icon","type":"image/png","href":"/_next/static/media/flannel.5168cfc2.png"}]]}],["$","body",null,{"className":"flex h-full flex-col bg-theme-background font-serif font-normal text-theme-text *:flex-[0_0_auto]","suppressHydrationWarning":true,"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":["$","$L9",null,{"viewBox":"0 0 746 446","title":"404","children":[["$","rect",null,{"x":0,"y":0,"width":746,"height":446,"fill":"transparent"}],["$","path",null,{"className":"fill-[url('#svg-data-background')]","id":"not-found","d":"$a"}]]}],"notFoundStyles":[]}]}]]}]]}],{"children":["articles",["$","$6","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/5aabacac4a7bcbc4.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","1",{"rel":"stylesheet","href":"/_next/static/css/b7bdc2d4d4aa6554.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","2",{"rel":"stylesheet","href":"/_next/static/css/9cad1c3a621a47c7.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}],["$","link","3",{"rel":"stylesheet","href":"/_next/static/css/34f92507e61baad2.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],[["$","$Lb",null,{}],["$","main",null,{"className":"mx-auto w-[70ch] max-w-full px-2 md:px-4","children":["$","$c",null,{"children":["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","articles","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]}]}]]]}],{"children":[["slug","killer-iphone-layout","d"],["$","$6","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","segmentPath":["children","articles","children","$0:f:0:1:2:children:2:children:0","children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L8",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined"}]]}],{"children":["__PAGE__",["$","$6","c",{"children":["$Ld",null,["$","$Le",null,{"children":"$Lf"}]]}],{},null]},null]},null]},null],["$","$6","h",{"children":[null,["$","$6","CdQK3aRdqc2QFmcbzfTUl",{"children":[["$","$L10",null,{"children":"$L11"}],["$","$L12",null,{"children":"$L13"}],null]}]]}]]],"m":"$undefined","G":["$14","$undefined"],"s":false,"S":true}
+13:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+15:T5c26,<p><img src="killer-iphone-layout/1*sp2wyyrIRpJryGhfD2_tbA.gif" alt=""></p>
+<p>It’s a permanent fixture in your pocket. Its bluish glow is the first thing you look at in the morning and the last thing you see before you go to bed. It connects you with friends and family. You use it to play games, read news and keep up with everything else in your life.</p>
+<p>So what is it? Your phone! And in this article, we’re going to be taking a look at how to build the awesome iPhone layout you see above with HTML and CSS. We’ll be digging into some advanced topics in CSS, such as flexbox, the <code>vh</code> unit, CSS animations and Sass’s <code>random</code> to make this layout happen!</p>
+<h3>Unboxing</h3>
+<p>Let’s start with the iPhone’s markup. You’ll use a <code>&lt;div&gt;</code> container for the iPhone, and anther <code>&lt;div&gt;</code> for the screen. Inside of that, you’ll add 28 <code>&lt;button&gt;</code> elements for the icons.</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iphone&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;screen&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;icon&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Since we’re using Sass for this layout, let’s define the variables for the colors. (If you’re curious how I came up with these names, check out <a href="https://davidwalsh.name/sass-color-variables-dont-suck">this</a> article.)</p>
+<pre><code class="language-scss"><span class="hljs-variable">$white</span>: <span class="hljs-number">#fff</span>;
+<span class="hljs-variable">$athens-gray</span>: <span class="hljs-number">#f7f8fa</span>;
+<span class="hljs-variable">$shuttle-gray</span>: <span class="hljs-number">#525c6b</span>;
+<span class="hljs-variable">$indigo</span>: <span class="hljs-number">#3f74ca</span>;
+</code></pre>
+<p>Next, let’s stretch the <code>&lt;html&gt;</code> and <code>&lt;body&gt;</code> elements so they fill the height of the viewport. We’ll also center the iPhone horizontally and vertically inside the <code>&lt;body&gt;</code> element with flexbox.</p>
+<pre><code class="language-scss"><span class="hljs-selector-tag">html</span>,
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+
+<span class="hljs-selector-tag">body</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">justify-content</span>: center;
+}
+</code></pre>
+<p>Finally, let’s dump those default button styles so we can build something more streamlined and make the <code>&lt;span&gt;</code> elements border boxes.</p>
+<pre><code class="language-scss"><span class="hljs-selector-tag">button</span> {
+  <span class="hljs-attribute">border</span>: none;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">outline</span>: none;
+  <span class="hljs-attribute">background-color</span>: transparent;
+  user-<span class="hljs-selector-tag">select</span>: none;
+}
+
+<span class="hljs-selector-tag">span</span> {
+  <span class="hljs-attribute">box-sizing</span>: border-box;
+}
+</code></pre>
+<h3>The Retina Display</h3>
+<p>In order to size the iPhone, we’ll be using the <code>vh</code> unit. The <code>vh</code> unit is a way specifying the size of something in terms of the viewport’s height. If we were to set an element’s height to <code>50vh</code>, then it would take up half of the viewport.</p>
+<p>So why bother with <code>vh</code>? As long as we size everything correctly, we can ensure the iPhone layout never gets smaller than the viewport’s height.</p>
+<p>Let’s set <code>6vh</code> for the width and height of the icons. We’ll also add background colors to the screen and icons so we can see them.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.screen</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$indigo</span>;
+}
+
+<span class="hljs-selector-class">.icon</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">6vh</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">6vh</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">1.5vh</span>;
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$athens-gray</span>;
+}
+
+<span class="hljs-selector-class">.icon</span><span class="hljs-selector-pseudo">:active</span> {
+  <span class="hljs-attribute">opacity</span>: <span class="hljs-number">0.75</span>;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*or19jDeeJHwDBmvGtxakpA.png" alt=""></p>
+<p>Next, let’s add a little space around the icons.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.icon</span> {
+  <span class="hljs-comment">/* ... */</span>
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">1.5vh</span>;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*R0YjdVx2eJL0T84LsujKyw.png" alt=""></p>
+<p>In order to create rows of icons, let’s make the screen a flex container and set its flex-wrap property to wrap. We’ll also restrict the width of the screen so the icons will wrap to the next line.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.screen</span> {
+  <span class="hljs-comment">/* ... */</span>
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-wrap</span>: wrap;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">1.5vh</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">36vh</span>;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*7FEJeXWSXF1UZscU_ei6Hg.png" alt=""></p>
+<h3>The Dock</h3>
+<p>If you look closely at the finished iPhone, you’ll notice the space between the icons in the last row and the one above it is larger than <code>3vh</code> to accommodate the dock. We can add it by targeting the last four icons and making their margin top a little bigger.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.icon</span><span class="hljs-selector-pseudo">:nth-last-of-type</span>(-n + <span class="hljs-number">4</span>) {
+  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">3vh</span>;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*r3YRdstwyVQXzbAEsItUcA.png" alt=""></p>
+<p>To get that light bar at the bottom, we’ll use a linear gradient. Since the gradient is pointing to the top, we can use a color stop of <code>11.5vh</code> to create the line. We’ll also use Sass’s lighten function to lighten up the <code>$indigo</code> color.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.screen</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(
+    to top,
+    <span class="hljs-built_in">lighten</span>(<span class="hljs-variable">$indigo</span>, <span class="hljs-number">8%</span>) <span class="hljs-number">11.5vh</span>,
+    <span class="hljs-variable">$indigo</span> <span class="hljs-number">11.5vh</span>
+  );
+  <span class="hljs-comment">/* ... */</span>
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*9qlWPN2YnHYgOswqpzc_AA.png" alt=""></p>
+<p>Woohoo! It’s starting to look like an iPhone!</p>
+<h3>The Body</h3>
+<p>Creating the shape of the iPhone is pretty simple. We’ll add padding to the container and add borders to the screen and the container. We’ll also round the corners of the iPhone.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.iphone</span>,
+<span class="hljs-selector-class">.screen</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0.5vh</span> solid <span class="hljs-variable">$shuttle-gray</span>;
+}
+
+<span class="hljs-selector-class">.iphone</span> {
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10vh</span> <span class="hljs-number">1.5vh</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">6vh</span>;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*OjOt3zT7mhULN0qjMAEohw.png" alt=""></p>
+<p>We also need to add all of the little buttons and doohickeys on the iPhone. First, let’s add them to the HTML as <code>&lt;button&gt;</code> and <code>&lt;span&gt;</code> elements.</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;iphone&quot;</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- ... --&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;home&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Home&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;speaker&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Speaker&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;camera&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Camera&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;proximity&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Proximity Sensor&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;silence&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Silence Switch&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;volume-up&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Volume Up&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;volume-down&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Volume Down&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;sleep&quot;</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Sleep&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<p>Styling these is pretty straight-forward — we’ll use good old absolute positioning. Let’s set the position of the iPhone container to relative so the other elements can be positioned off of it.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.iphone</span> {
+  <span class="hljs-comment">/* ... */</span>
+  <span class="hljs-attribute">position</span>: relative;
+}
+</code></pre>
+<p>Next, we’ll size and position all the buttons and spans. There’s no magic here — just a whole lot of styles.</p>
+<pre><code class="language-scss"><span class="hljs-selector-class">.home</span>,
+<span class="hljs-selector-class">.camera</span>,
+<span class="hljs-selector-class">.proximity</span>,
+<span class="hljs-selector-class">.speaker</span>,
+<span class="hljs-selector-class">.silence</span>,
+<span class="hljs-selector-class">.volume-up</span>,
+<span class="hljs-selector-class">.volume-down</span>,
+<span class="hljs-selector-class">.sleep</span> {
+  <span class="hljs-attribute">position</span>: absolute;
+}
+
+<span class="hljs-selector-class">.home</span>,
+<span class="hljs-selector-class">.camera</span>,
+<span class="hljs-selector-class">.proximity</span> {
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.speaker</span>,
+<span class="hljs-selector-class">.silence</span>,
+<span class="hljs-selector-class">.volume-up</span>,
+<span class="hljs-selector-class">.volume-down</span>,
+<span class="hljs-selector-class">.sleep</span>,
+<span class="hljs-selector-class">.proximity</span> {
+  <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$shuttle-gray</span>;
+}
+
+<span class="hljs-selector-class">.home</span>,
+<span class="hljs-selector-class">.speaker</span>,
+<span class="hljs-selector-class">.camera</span>,
+<span class="hljs-selector-class">.proximity</span> {
+  <span class="hljs-attribute">left</span>: <span class="hljs-number">50%</span>;
+}
+
+<span class="hljs-selector-class">.home</span>,
+<span class="hljs-selector-class">.speaker</span> {
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">3vh</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">6vh</span>;
+}
+
+<span class="hljs-selector-class">.home</span>,
+<span class="hljs-selector-class">.camera</span> {
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">0.5vh</span> solid <span class="hljs-variable">$shuttle-gray</span>;
+}
+
+<span class="hljs-selector-class">.home</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">6vh</span>;
+  <span class="hljs-attribute">bottom</span>: <span class="hljs-number">2vh</span>;
+}
+
+<span class="hljs-selector-class">.speaker</span> {
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">4.75vh</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">0.5vh</span>;
+  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">0.5vh</span>;
+}
+
+<span class="hljs-selector-class">.camera</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">1.5vh</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">1.5vh</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">4.25vh</span>;
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">6.5vh</span>;
+}
+
+<span class="hljs-selector-class">.proximity</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">1vh</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">1vh</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">2vh</span>;
+  <span class="hljs-attribute">margin-left</span>: -<span class="hljs-number">0.5vh</span>;
+}
+
+<span class="hljs-selector-class">.silence</span>,
+<span class="hljs-selector-class">.volume-up</span>,
+<span class="hljs-selector-class">.volume-down</span>,
+<span class="hljs-selector-class">.sleep</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">0.5vh</span>;
+}
+
+<span class="hljs-selector-class">.volume-up</span>,
+<span class="hljs-selector-class">.volume-down</span>,
+<span class="hljs-selector-class">.sleep</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">5vh</span>;
+}
+
+<span class="hljs-selector-class">.silence</span>,
+<span class="hljs-selector-class">.volume-up</span>,
+<span class="hljs-selector-class">.volume-down</span> {
+  <span class="hljs-attribute">left</span>: -<span class="hljs-number">0.75vh</span>;
+}
+
+<span class="hljs-selector-class">.silence</span> {
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">3vh</span>;
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">10vh</span>;
+}
+
+<span class="hljs-selector-class">.volume-up</span>,
+<span class="hljs-selector-class">.sleep</span> {
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">17vh</span>;
+}
+
+<span class="hljs-selector-class">.volume-down</span> {
+  <span class="hljs-attribute">top</span>: <span class="hljs-number">24vh</span>;
+}
+
+<span class="hljs-selector-class">.sleep</span> {
+  <span class="hljs-attribute">right</span>: -<span class="hljs-number">0.75vh</span>;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*Vl64Wb1NRBXFT56Ch1Agdw.png" alt=""></p>
+<h3>One More Thing</h3>
+<p>Our iPhone layout is done, but there’s one more thing we can add to make it really special. Let’s make the buttons wiggle when we hold down an icon.</p>
+<pre><code class="language-javascript">$(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+  <span class="hljs-keyword">var</span> timeout;
+
+  $(<span class="hljs-string">&quot;.icon&quot;</span>)
+    .<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;mousedown touchstart&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      timeout = <span class="hljs-built_in">setTimeout</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+        $(<span class="hljs-string">&quot;.iphone&quot;</span>).<span class="hljs-title function_">addClass</span>(<span class="hljs-string">&quot;wiggle&quot;</span>);
+      }, <span class="hljs-number">1000</span>);
+    })
+    .<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;mouseup touchend&quot;</span>, <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+      <span class="hljs-built_in">clearTimeout</span>(timeout);
+    });
+
+  $(<span class="hljs-string">&quot;.home&quot;</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+    $(<span class="hljs-string">&quot;.iphone&quot;</span>).<span class="hljs-title function_">removeClass</span>(<span class="hljs-string">&quot;wiggle&quot;</span>);
+  });
+});
+</code></pre>
+<p>Let’s break this down step by step. First, we have a function contained inside of <code>$</code>, which tells jQuery to run the function after the document is ready. Next, we bind to the <code>mousedown</code> and <code>touchstart</code> events on the icons and set a timeout for one second. If a <code>mouseup</code> or <code>touchend</code> event occurs before that second is up, then we cancel the timeout and nothing happens. Otherwise, we’ll add a wiggle class to the iPhone container. When the user clicks on the home button, the wiggle class is removed and the animation is stopped.</p>
+<p>Next, let’s add that wiggle animation.</p>
+<pre><code class="language-scss"><span class="hljs-keyword">@keyframes</span> wiggle {
+  <span class="hljs-number">25%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(<span class="hljs-number">3.5deg</span>);
+  }
+
+  <span class="hljs-number">75%</span> {
+    <span class="hljs-attribute">transform</span>: <span class="hljs-built_in">rotate</span>(-<span class="hljs-number">3.5deg</span>);
+  }
+}
+
+<span class="hljs-selector-class">.wiggle</span> <span class="hljs-selector-class">.icon</span> {
+  <span class="hljs-attribute">animation</span>: wiggle <span class="hljs-number">0.25s</span> linear infinite;
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*xB-7DTg-rqwr6OWz2NjC2g.gif" alt=""></p>
+<p>Well, that’s something! Of course, the icons don’t synchronize like that on an actual iPhone. We can make it more true to life by using Sass’s random function. This function returns a random value greater than or equal to <code>0</code> and less than <code>1</code>. We’ll use it to change the animation’s delay for each icon. We’ll also use a Sass for loop and the nth-of-type selector to style each icon individually.</p>
+<pre><code class="language-scss"><span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through <span class="hljs-number">28</span> {
+  <span class="hljs-selector-class">.wiggle</span> <span class="hljs-selector-class">.icon</span><span class="hljs-selector-pseudo">:nth-of-type</span>(#{$i}) {
+    <span class="hljs-attribute">animation</span>: wiggle <span class="hljs-number">0.25s</span> linear infinite <span class="hljs-number">0.25s</span> * <span class="hljs-built_in">random</span>();
+  }
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*QM6-868QYFPLsI-aEgdnQQ.gif" alt=""></p>
+<p>We can make it even nicer by randomizing the rotation animation’s origin.</p>
+<pre><code class="language-scss"><span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through <span class="hljs-number">28</span> {
+  <span class="hljs-selector-class">.wiggle</span> <span class="hljs-selector-class">.icon</span><span class="hljs-selector-pseudo">:nth-of-type</span>(#{$i}) {
+    <span class="hljs-attribute">animation</span>: wiggle (<span class="hljs-number">0.2s</span> + <span class="hljs-number">0.1s</span> * <span class="hljs-built_in">random</span>()) linear infinite <span class="hljs-number">0.25s</span> * <span class="hljs-built_in">random</span>();
+    <span class="hljs-attribute">transform-origin</span>: (<span class="hljs-number">25%</span> + <span class="hljs-built_in">random</span>() * <span class="hljs-number">50%</span>) (<span class="hljs-number">25%</span> + <span class="hljs-built_in">random</span>() * <span class="hljs-number">50%</span>);
+  }
+}
+</code></pre>
+<p><img src="killer-iphone-layout/1*sp2wyyrIRpJryGhfD2_tbA.gif" alt=""></p>
+<h3>That’s It!</h3>
+<p>You’ve seen everything you need to build an iPhone layout from scratch. You’ve learned several techniques, including wrapping with flexbox, making use of the <code>vh</code> unit and some nifty animation techniques with Sass. Hopefully, you can take what you’ve learned and apply it to some new layouts. Let me know what you come up with!</p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Responsive Flexbox iPhone" src="https://codepen.io/LandonSchropp/embed/vLmbNo?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>d:["$","article",null,{"children":[["$","header",null,{"className":"my-6 text-center","children":[["$","h1",null,{"className":"my-0","children":[["$","span",null,{"className":"block mx-auto my-1 m-width[50ch] text-base font-normal font-serif italic text-theme-lightText [&_a]:underline","children":"$undefined"}]," ",["$","span",null,{"className":"block","children":["$","a",null,{"className":"no-underline hover:underline","href":"/articles/killer-iphone-layout","children":"Building a Killer iPhone Layout With CSS"}]}]]}],["$","div",null,{"className":"my-2 block mx-auto my-1 m-width[50ch] text-base font-normal font-serif italic text-theme-lightText [&_a]:underline","data-test-id":"sub-text","children":[["$","span",null,{"rel":"author","children":"Landon Schropp"}]," • ",["$","time",null,{"dateTime":"2016-01-18","children":"January 17th, 2016"}]]}],null,"$undefined"]}],["$","section",null,{"dangerouslySetInnerHTML":{"__html":"$15"}}]]}]
+11:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Landon Schropp – Building a Killer iPhone Layout With CSS"}],["$","meta","2",{"name":"description","content":"How to build an awesome iPhone layout with HTML and CSS."}],["$","meta","3",{"name":"author","content":"Landon Schropp"}]]
+f:null
