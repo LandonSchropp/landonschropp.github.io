@@ -21,8 +21,8 @@
       <integer>00</integer>
     </dict>
     <key>StandardErrorPath</key>
-    <string>/tmp/com.landonschropp.stderr.txt</string>
+    <string>/tmp/com.landonschropp.stderr.log</string>
     <key>StandardOutPath</key>
-    <string>/tmp/com.landonschropp.stdout.txt</string>
+    <string>/tmp/com.landonschropp.stdout.log</string>
   </dict>
 </plist>
