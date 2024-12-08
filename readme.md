@@ -1,20 +1,21 @@
 # landonschropp.com
 
-This repo contains the code powering my personal website. It uses [Notion](https://www.notion.so/)
-as a headless CMS to host the content, and uses [Astro](https://astro.build/) to generate
-static HTML pages.
+This repo contains the code powering my personal website. Is uses markdown files written with
+[Obsidian](https://obsidian.md/) stored on the local file system along with
+[Next.js](https://nextjs.org/) to generate a static React site.
 
-## Commands
+## Development
 
-First, make sure you have [Node.js](https://nodejs.org/en/) and pnpm installed locally. Define the
-`NOTION_API_TOKEN` environment variable. Then you can use `pnpm` to do everything else!
+Make sure you have [pnpm](https://pnpm.io/) and the [Node.js](https://nodejs.org/en/) version
+listed in the [.node-version](.node-version) file installed locally. Then, you can use `pnpm` to do
+everything else!
 
-| Command          | Action                                           |
-| :--------------- | :----------------------------------------------- |
-| `pnpm dev`       | Starts local dev server at `localhost:4321`      |
-| `pnpm build`     | Build your production site to `./dist/`          |
-| `pnpm preview`   | Preview your build locally, before deploying     |
-| `pnpm astro ...` | Run CLI commands like `astro add`, `astro check` |
+| Command      | Action                                        |
+| :----------- | :-------------------------------------------- |
+| `pnpm dev`   | Starts a local dev server at `localhost:3000` |
+| `pnpm build` | Build the production site to `dist`           |
+| `pnpm lint`  | Run the linter                                |
+| `pnpm test`  | Run the tests                                 |
 
 To see the other available commands, check the [package.json](package.json) file.
 
@@ -44,4 +45,14 @@ in order for the deployment to work correctly.
 
 To manually deploy, run `bin/deploy`.
 
-To set up `launchd` to automatically deploy, run `launchctl load -w deploy.plist`.
+To set up `launchd` to automatically deploy, run:
+
+```sh
+launchctl load -w deploy.plist
+```
+
+If the plist has been previously loaded, you'll first need to unload it.
+
+```sh
+launchctl unload -w deploy.plist
+```
