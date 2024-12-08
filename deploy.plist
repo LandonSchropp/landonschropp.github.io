@@ -7,6 +7,7 @@
     <key>KeepAlive</key>
     <false/>
     <key>ProgramArguments</key>
+    <!-- TODO: Find a way to eliminate the hardcoded directory path. -->
     <array>
       <string>bash</string>
       <string>-c</string>
