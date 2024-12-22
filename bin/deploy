@@ -39,8 +39,6 @@ if [ -f "$SHA_PATH" ] && [ "$SHA" = "$(cat "$SHA_PATH")" ]; then
   exit 0
 fi
 
-echo "$SHA" >"$SHA_PATH"
-
 # Set up pnpm and node
 eval "$($FNM env --corepack-enabled)"
 $FNM use --install-if-missing
@@ -54,6 +52,9 @@ pnpm build
 
 # Deploy the build
 pnpm gh-pages --dist dist
+
+# Write the SHA after a successful deployment.
+echo "$SHA" >"$SHA_PATH"
 
 # Display a notification if the deployment succeeds.
 osascript -e 'display notification "🥳 Deployed successfully!" with title "landonschropp.com"'
