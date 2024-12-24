@@ -22,6 +22,14 @@ export default [
     ...jest.configs["flat/recommended"],
   },
   reactPlugin.configs.flat.recommended,
+  reactPlugin.configs.flat["jsx-runtime"],
+  {
+    settings: {
+      react: {
+        version: "detect",
+      },
+    },
+  },
   {
     plugins: {
       "react-hooks": reactHooksPlugin,
