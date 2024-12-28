@@ -1,3 +1,4 @@
+import ampersandRaw from "@/images/data/ampersand.svg?raw";
 import chessComRaw from "@/images/data/chess-com.svg?raw";
 import designerRaw from "@/images/data/designer.svg?raw";
 import developerRaw from "@/images/data/developer.svg?raw";
@@ -12,44 +13,47 @@ import notesRaw from "@/images/data/notes.svg?raw";
 import schroppRaw from "@/images/data/schropp.svg?raw";
 import tilRaw from "@/images/data/til.svg?raw";
 import writingRaw from "@/images/data/writing.svg?raw";
+import { DynamicSVGShape } from "@/types";
 
-type DynamicSVGShapeData = {
-  width: number;
-  height: number;
-  content: string;
-};
+const SVG_TAG_REGEX = /<svg([^>]*)>\s*([\s\S]*)\s*<\/svg>/i;
+const WIDTH_REGEX = /width="(\d+)"/i;
+const HEIGHT_REGEX = /height="(\d+)"/i;
 
-function extractSVGData(svg: string): DynamicSVGShapeData {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(svg, "image/svg+xml");
+function extractSVGData(id: string, svg: string): DynamicSVGShape {
+  const match = SVG_TAG_REGEX.exec(svg);
 
-  const svgElement = doc.querySelector("svg");
-
-  if (svgElement === null) {
-    throw new Error(`No SVG element found in: ${svg}`);
+  if (match === null) {
+    throw new Error(`Invalid SVG data: ${svg}`);
   }
 
-  const { width, height } = svgElement.viewBox.baseVal;
+  const [, attributes, content] = match;
 
-  return {
-    width,
-    height,
-    content: svgElement.innerHTML.trim().replaceAll("black", "currentColor"),
-  };
+  const widthMatch = WIDTH_REGEX.exec(attributes)?.[1];
+  const heightMatch = HEIGHT_REGEX.exec(attributes)?.[1];
+
+  if (widthMatch === undefined || heightMatch === undefined) {
+    throw new Error(`Invalid SVG dimensions: ${attributes}`);
+  }
+
+  const width = Number(widthMatch);
+  const height = Number(heightMatch);
+
+  return { id, width, height, content };
 }
 
 // TODO: Move this data into a server function to ensure that the data is loaded at build time.
-export const chessCom = extractSVGData(chessComRaw);
-export const designer = extractSVGData(designerRaw);
-export const developer = extractSVGData(developerRaw);
-export const email = extractSVGData(emailRaw);
-export const entrepreneurComma = extractSVGData(entrepreneurCommaRaw);
-export const entrepreneur = extractSVGData(entrepreneurRaw);
-export const github = extractSVGData(githubRaw);
-export const landon = extractSVGData(landonRaw);
-export const linkedIn = extractSVGData(linkedInRaw);
-export const notFound = extractSVGData(notFoundRaw);
-export const notes = extractSVGData(notesRaw);
-export const schropp = extractSVGData(schroppRaw);
-export const til = extractSVGData(tilRaw);
-export const writing = extractSVGData(writingRaw);
+export const ampersand = extractSVGData("ampersand", ampersandRaw);
+export const chessCom = extractSVGData("chess-com", chessComRaw);
+export const designer = extractSVGData("designer", designerRaw);
+export const developer = extractSVGData("developer", developerRaw);
+export const email = extractSVGData("email", emailRaw);
+export const entrepreneurComma = extractSVGData("entrepreneur-comma", entrepreneurCommaRaw);
+export const entrepreneur = extractSVGData("entrepreneur", entrepreneurRaw);
+export const github = extractSVGData("github", githubRaw);
+export const landon = extractSVGData("landon", landonRaw);
+export const linkedIn = extractSVGData("linked-in", linkedInRaw);
+export const notFound = extractSVGData("not-found", notFoundRaw);
+export const notes = extractSVGData("notes", notesRaw);
+export const schropp = extractSVGData("schropp", schroppRaw);
+export const til = extractSVGData("til", tilRaw);
+export const writing = extractSVGData("writing", writingRaw);

@@ -64,9 +64,3 @@ export type DynamicSVGShape = {
   /** The inner HTML of the shape to render. */
   content: string;
 };
-
-export type DynamicSVGExtendedShape = DynamicSVGShape & {
-  x: number;
-  y: number;
-  scale: number;
-};
