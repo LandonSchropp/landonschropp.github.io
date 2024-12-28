@@ -1,7 +1,11 @@
 "use client";
 
 import { Shape } from "./shape";
-import { scaleRowToWidth, distributeShapesHorizontally } from "./shape-calculations";
+import {
+  scaleRowToWidth,
+  distributeShapesHorizontally,
+  distributeRowsVertically,
+} from "./shape-calculations";
 import { useSize } from "@/hooks/use-size";
 import { DynamicSVGRow } from "@/types";
 import { useRef } from "react";
@@ -9,6 +13,18 @@ import { useRef } from "react";
 export type DynamicSVGProps = {
   /** The shapes contained in the SVG. */
   rows: DynamicSVGRow[];
+
+  /**
+   * The minimum spacing between the shapes, expressed as a percentage of the width of the
+   * container.
+   */
+  minSpacing: number;
+
+  /**
+   * The maximum spacing between the shapes, expressed as a percentage of the width of the
+   * container.
+   */
+  maxSpacing: number;
 };
 
 /**
@@ -18,7 +34,7 @@ export type DynamicSVGProps = {
  *
  * This component uses the child component pattern to provide all of its API.
  */
-export function DynamicSVG({ rows }: DynamicSVGProps) {
+export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
 
@@ -26,12 +42,12 @@ export function DynamicSVG({ rows }: DynamicSVGProps) {
     return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
   });
 
-  const shapeComponents = scaledRows.flatMap((shapes) => {
-    return shapes.map((shape) => {
-      // TODO: Does the scale need to account for the vertical size as well?
-      const scale = shape.bounds.width / shape.shape.width;
-      return <Shape key={shape.shape.id} {...shape.shape} {...shape.bounds} scale={scale} />;
-    });
+  const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
+
+  const shapeComponents = shapes.map((shape) => {
+    // TODO: Does the scale need to account for the vertical size as well?
+    const scale = shape.bounds.width / shape.shape.width;
+    return <Shape key={shape.shape.id} {...shape.shape} {...shape.bounds} scale={scale} />;
   });
 
   return (

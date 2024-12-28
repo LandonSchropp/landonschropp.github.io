@@ -1,6 +1,7 @@
 import { getMaxHeight } from "./bounds";
-import { DynamicSVGShape, BoundedDynamicSVGShape } from "@/types";
+import { DynamicSVGShape, BoundedDynamicSVGShape, Size } from "@/types";
 import { sum } from "@/utilities/array";
+import { clamp } from "@/utilities/number";
 
 // TODO: Do I need some kind of row object to keep track of the row data, such as the bounds of the
 // row or the element to contain the row?
@@ -60,5 +61,38 @@ export function scaleRowToWidth(
         height: bounds.height * scale,
       },
     };
+  });
+}
+
+/**
+ * Given an array of rows, this function distributes them vertically across the given height using the provided spacing.
+ * @param rows The rows to distribute.
+ * @param size The size of the container.
+ * @param minSpacing The minimum spacing between each row. The spacing is expressed as a percentage
+ * of the width of the container.
+ * @param maxSpacing The maximum spacing between each row. The spacing is expressed as a percentage
+ * of the width of the container.
+ * @returns The transformed shapes distributed into rows.
+ */
+export function distributeRowsVertically(
+  rows: BoundedDynamicSVGShape[][],
+  size: Size,
+  minSpacing: number,
+  maxSpacing: number,
+): BoundedDynamicSVGShape[] {
+  const rowHeights = rows.map((row) => getMaxHeight(row.map(({ bounds }) => bounds)));
+
+  const minSpacingHeight = size.width * minSpacing;
+  const maxSpacingHeight = size.width * maxSpacing;
+
+  const calculatedSpacingHeight = (size.height - sum(rowHeights)) / (rows.length - 1);
+  const spacingHeight = clamp(calculatedSpacingHeight, minSpacingHeight, maxSpacingHeight);
+
+  return rows.flatMap((row, index) => {
+    const baseY = sum(rowHeights.slice(0, index), (height) => height + spacingHeight);
+
+    return row.map(({ shape, bounds }) => {
+      return { shape, bounds: { ...bounds, y: baseY + bounds.y } };
+    });
   });
 }
