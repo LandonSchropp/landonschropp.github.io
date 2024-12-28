@@ -27,8 +27,7 @@ export function distributeShapesHorizontally(
         width: shape.width,
         height: shape.height,
         x: sum(accumulator, ({ bounds: { width } }) => width + spacingWidth),
-        // TODO: Distribute each shape within the rows.
-        y: 0,
+        y: (rowHeight - shape.height) / 2,
       },
     });
 
