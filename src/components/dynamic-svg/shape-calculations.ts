@@ -92,3 +92,11 @@ export function distributeRowsVertically(
     });
   });
 }
+
+/**
+ * @param boundedShapes The shapes to calculate the maximum height of.
+ * @returns The maximum height of the given shapes' container.
+ */
+export function calculateHeight(boundedShapes: BoundedDynamicSVGShape[]): number {
+  return Math.max(...boundedShapes.map(({ bounds }) => bounds.y + bounds.height));
+}

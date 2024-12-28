@@ -5,6 +5,7 @@ import {
   scaleRowToWidth,
   distributeShapesHorizontally,
   distributeRowsVertically,
+  calculateHeight,
 } from "./shape-calculations";
 import { useSize } from "@/hooks/use-size";
 import { DynamicSVGRow } from "@/types";
@@ -45,16 +46,17 @@ export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
   const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
 
   const shapeComponents = shapes.map((shape) => {
-    // TODO: Does the scale need to account for the vertical size as well?
     const scale = shape.bounds.width / shape.shape.width;
     return <Shape key={shape.shape.id} {...shape.shape} {...shape.bounds} scale={scale} />;
   });
+
+  const viewBoxHeight = calculateHeight(shapes);
 
   return (
     <svg
       className="h-full w-full"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox={`0 0 ${size.width} ${size.height}`}
+      viewBox={`0 0 ${size.width} ${viewBoxHeight}`}
       ref={svgRef}
     >
       {shapeComponents}

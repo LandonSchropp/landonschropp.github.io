@@ -38,3 +38,16 @@ export function scale<T extends Bounds>(object: T, scale: number): T {
     height: object.height * scale,
   };
 }
+
+/**
+ * @param objects The objects to get the boundary of.
+ * @returns the boundary rectangle containing all of the objects.
+ */
+export function getBoundary<T extends Bounds>(objects: T[]): Bounds {
+  const x = Math.min(...objects.map(({ x }) => x));
+  const y = Math.min(...objects.map(({ y }) => y));
+  const width = Math.max(...objects.map(({ x, width }) => x + width)) - x;
+  const height = Math.max(...objects.map(({ y, height }) => y + height)) - y;
+
+  return { x, y, width, height };
+}
