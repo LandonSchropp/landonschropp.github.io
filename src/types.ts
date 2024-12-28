@@ -29,3 +29,12 @@ export type Article = z.infer<typeof ArticleSchema>;
 
 /** An object containing the metadata and markdown of a today I Learned (TIL). */
 export type TodayILearned = z.infer<typeof TodayILearnedSchema>;
+
+/** Represents the size of a rectangle. */
+export type Size = {
+  /** The width of the rectangle. */
+  width: number;
+
+  /** The height of the rectangle. */
+  height: number;
+};
