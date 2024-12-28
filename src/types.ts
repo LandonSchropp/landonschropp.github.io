@@ -64,3 +64,22 @@ export type DynamicSVGShape = {
   /** The inner HTML of the shape to render. */
   content: string;
 };
+
+export type DynamicSVGRow = {
+  /** The space between each shape in the row, represented as a percentage of the row. */
+  spacing: number;
+
+  /** The shapes contained in the row. */
+  shapes: DynamicSVGShape[];
+};
+
+/**
+ * A shape that has been transformed by scaling and translating it.
+ */
+export type BoundedDynamicSVGShape = {
+  /** The target bounds of the shape. */
+  bounds: Bounds;
+
+  /** The shape that was transformed. */
+  shape: DynamicSVGShape;
+};
