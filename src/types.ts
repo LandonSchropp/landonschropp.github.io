@@ -30,6 +30,15 @@ export type Article = z.infer<typeof ArticleSchema>;
 /** An object containing the metadata and markdown of a today I Learned (TIL). */
 export type TodayILearned = z.infer<typeof TodayILearnedSchema>;
 
+/** The coordinates of an object. */
+export type Coordinates = {
+  /** The x-coordinate of the object. */
+  x: number;
+
+  /** The y-coordinate of the object. */
+  y: number;
+};
+
 /** Represents the size of a rectangle. */
 export type Size = {
   /** The width of the rectangle. */
@@ -37,4 +46,27 @@ export type Size = {
 
   /** The height of the rectangle. */
   height: number;
+};
+
+/** The bounds of an object. */
+export type Bounds = Coordinates & Size;
+
+export type DynamicSVGShape = {
+  /** The unique identifier of the shape. */
+  id: string;
+
+  /** The untransformed width of the shape. */
+  width: number;
+
+  /** The untransformed height of the shape. */
+  height: number;
+
+  /** The inner HTML of the shape to render. */
+  content: string;
+};
+
+export type DynamicSVGExtendedShape = DynamicSVGShape & {
+  x: number;
+  y: number;
+  scale: number;
 };
