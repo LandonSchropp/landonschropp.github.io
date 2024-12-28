@@ -38,7 +38,6 @@ export default function Layout({ children }: BaseLayoutProps) {
           "flex h-full flex-col bg-theme-background font-serif font-normal " +
           "text-theme-text *:flex-[0_0_auto]"
         }
-        suppressHydrationWarning
       >
         {children}
       </body>
