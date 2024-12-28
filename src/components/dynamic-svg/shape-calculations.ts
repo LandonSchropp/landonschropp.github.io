@@ -3,9 +3,6 @@ import { DynamicSVGShape, BoundedDynamicSVGShape, Size } from "@/types";
 import { sum } from "@/utilities/array";
 import { clamp } from "@/utilities/number";
 
-// TODO: Do I need some kind of row object to keep track of the row data, such as the bounds of the
-// row or the element to contain the row?
-
 /**
  * Given an array of shapes, this function distributes them in a horizontal row.
  * @param shapes The shapes to scale and distribute.
