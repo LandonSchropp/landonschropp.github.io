@@ -1,15 +1,15 @@
 import { BoundedDynamicSVGShape } from "@/types";
 
-type ShapeProps = {
+type BoundedShapeProps = {
   /** The bounded shape to display. */
   boundedShape: BoundedDynamicSVGShape;
 };
 
 /**
- * This component contains includes the shape that's actually rendered to the dynamic SVG. This
- * component is not meant to be used directly—instead, pass the `rows` property to `DynamicSVG`.
+ * This component includes the shape that's actually rendered to the dynamic SVG. It is not meant to
+ * be used directly—instead, use `DynamicSVG.Row` and `DynamicSVG.Shape`.
  */
-export function Shape({ boundedShape: { bounds, shape } }: ShapeProps) {
+export function BoundedShape({ boundedShape: { bounds, shape } }: BoundedShapeProps) {
   const maskId = `${shape.id}-mask`;
 
   // Determine the scale by comparing the original shape's width to the bounded shape's width.

@@ -1,6 +1,6 @@
 "use client";
 
-import { Shape } from "./shape";
+import { BoundedShape } from "./bounded-shape";
 import {
   scaleRowToWidth,
   distributeShapesHorizontally,
@@ -49,7 +49,7 @@ export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
   const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
 
   const shapeComponents = shapes.map((boundedShape) => {
-    return <Shape key={boundedShape.shape.id} boundedShape={boundedShape} />;
+    return <BoundedShape key={boundedShape.shape.id} boundedShape={boundedShape} />;
   });
 
   const viewBoxHeight = calculateHeight(shapes);
