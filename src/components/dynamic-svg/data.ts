@@ -26,17 +26,19 @@ function extractSVGData(id: string, svg: string): DynamicSVGShape {
     throw new Error(`Invalid SVG data: ${svg}`);
   }
 
-  const [, attributes, content] = match;
-
-  const widthMatch = WIDTH_REGEX.exec(attributes)?.[1];
-  const heightMatch = HEIGHT_REGEX.exec(attributes)?.[1];
+  const widthMatch = WIDTH_REGEX.exec(match[1])?.[1];
+  const heightMatch = HEIGHT_REGEX.exec(match[1])?.[1];
 
   if (widthMatch === undefined || heightMatch === undefined) {
-    throw new Error(`Invalid SVG dimensions: ${attributes}`);
+    throw new Error(`Invalid SVG dimensions: ${match[1]}`);
   }
 
   const width = Number(widthMatch);
   const height = Number(heightMatch);
+
+  // SVG masks are black by default and use white to show what parts of the mask are visible, so we
+  // need to invert the colors of the content.
+  const content = match[2].replaceAll("black", "white");
 
   return { id, width, height, content };
 }

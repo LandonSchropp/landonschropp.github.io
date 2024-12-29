@@ -8,6 +8,7 @@ import {
   calculateHeight,
 } from "./shape-calculations";
 import { useSize } from "@/hooks/use-size";
+import flannel from "@/images/flannel.png";
 import { DynamicSVGRow } from "@/types";
 import { useRef } from "react";
 
@@ -47,9 +48,8 @@ export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
 
   const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
 
-  const shapeComponents = shapes.map((shape) => {
-    const scale = shape.bounds.width / shape.shape.width;
-    return <Shape key={shape.shape.id} {...shape.shape} {...shape.bounds} scale={scale} />;
+  const shapeComponents = shapes.map((boundedShape) => {
+    return <Shape key={boundedShape.shape.id} boundedShape={boundedShape} />;
   });
 
   const viewBoxHeight = calculateHeight(shapes);
@@ -62,6 +62,12 @@ export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
         viewBox={`0 0 ${size.width} ${viewBoxHeight}`}
         ref={svgRef}
       >
+        <defs>
+          <pattern id="dynamic-svg-background" patternUnits="userSpaceOnUse" width={80} height={80}>
+            <image href={flannel.src} x={0} y={0} width={80} height={80} />
+          </pattern>
+        </defs>
+
         {shapeComponents}
       </svg>
     </main>
