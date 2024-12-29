@@ -11,6 +11,8 @@ import { useSize } from "@/hooks/use-size";
 import { DynamicSVGRow } from "@/types";
 import { useRef } from "react";
 
+// TODO: Rename this to something like MainSVG or ShapePage or something.
+
 export type DynamicSVGProps = {
   /** The shapes contained in the SVG. */
   rows: DynamicSVGRow[];
@@ -53,13 +55,15 @@ export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
   const viewBoxHeight = calculateHeight(shapes);
 
   return (
-    <svg
-      className="h-full w-full"
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox={`0 0 ${size.width} ${viewBoxHeight}`}
-      ref={svgRef}
-    >
-      {shapeComponents}
-    </svg>
+    <main className={"flex h-full p-[3vw] *:flex-[0_0_auto]"}>
+      <svg
+        className="h-full w-full"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox={`0 0 ${size.width} ${viewBoxHeight}`}
+        ref={svgRef}
+      >
+        {shapeComponents}
+      </svg>
+    </main>
   );
 }
