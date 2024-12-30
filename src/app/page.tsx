@@ -1,3 +1,5 @@
+"use client";
+
 import { DynamicSVG } from "@/components/dynamic-svg";
 import * as DATA from "@/components/dynamic-svg/data";
 
@@ -8,31 +10,26 @@ const MAX_VERTICAL_SPACING = 0.06;
 
 export default function IndexPage() {
   return (
-    <DynamicSVG
-      minSpacing={MIN_VERTICAL_SPACING}
-      maxSpacing={MAX_VERTICAL_SPACING}
-      rows={[
-        {
-          spacing: DEFAULT_SPACING,
-          shapes: [DATA.landon, DATA.schropp],
-        },
-        {
-          spacing: DEFAULT_SPACING,
-          shapes: [DATA.developer, DATA.designer, DATA.ampersand, DATA.entrepreneur],
-        },
-        {
-          spacing: WIDE_SPACING,
-          shapes: [
-            DATA.writing,
-            DATA.notes,
-            DATA.til,
-            DATA.github,
-            DATA.chessCom,
-            DATA.linkedIn,
-            DATA.email,
-          ],
-        },
-      ]}
-    />
+    <DynamicSVG minSpacing={MIN_VERTICAL_SPACING} maxSpacing={MAX_VERTICAL_SPACING}>
+      <DynamicSVG.Row spacing={DEFAULT_SPACING}>
+        <DynamicSVG.Shape shape={DATA.landon} />
+        <DynamicSVG.Shape shape={DATA.schropp} />
+      </DynamicSVG.Row>
+      <DynamicSVG.Row spacing={DEFAULT_SPACING}>
+        <DynamicSVG.Shape shape={DATA.developer} />
+        <DynamicSVG.Shape shape={DATA.designer} />
+        <DynamicSVG.Shape shape={DATA.ampersand} />
+        <DynamicSVG.Shape shape={DATA.entrepreneur} />
+      </DynamicSVG.Row>
+      <DynamicSVG.Row spacing={WIDE_SPACING}>
+        <DynamicSVG.Shape shape={DATA.writing} />
+        <DynamicSVG.Shape shape={DATA.notes} />
+        <DynamicSVG.Shape shape={DATA.til} />
+        <DynamicSVG.Shape shape={DATA.github} />
+        <DynamicSVG.Shape shape={DATA.chessCom} />
+        <DynamicSVG.Shape shape={DATA.linkedIn} />
+        <DynamicSVG.Shape shape={DATA.email} />
+      </DynamicSVG.Row>
+    </DynamicSVG>
   );
 }

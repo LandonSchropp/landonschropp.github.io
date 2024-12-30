@@ -1,6 +1,9 @@
 "use client";
 
 import { BoundedShape } from "./bounded-shape";
+import { extractRows } from "./introspection";
+import { Row } from "./row";
+import { Shape } from "./shape";
 import {
   scaleRowToWidth,
   distributeShapesHorizontally,
@@ -9,15 +12,9 @@ import {
 } from "./shape-calculations";
 import { useSize } from "@/hooks/use-size";
 import flannel from "@/images/flannel.png";
-import { DynamicSVGRow } from "@/types";
 import { useRef } from "react";
 
-// TODO: Rename this to something like MainSVG or ShapePage or something.
-
 export type DynamicSVGProps = {
-  /** The shapes contained in the SVG. */
-  rows: DynamicSVGRow[];
-
   /**
    * The minimum spacing between the shapes, expressed as a percentage of the width of the
    * container.
@@ -29,25 +26,58 @@ export type DynamicSVGProps = {
    * container.
    */
   maxSpacing: number;
+
+  /**
+   * The content of the dynamic SVG. In order to use the dynamic layout mechanism, you must include
+   * `DynamicSVG.Shape` components wrapped in `DynamicSVG.Row`'s.
+   */
+  children: React.ReactNode;
+};
+
+const convertChildrenToScaledRows = (
+  children: React.ReactNode,
+  size: { width: number; height: number },
+) => {
+  const rows = extractRows(children);
+
+  return rows.map((row) => {
+    return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
+  });
 };
 
 /**
- * This is a special SVG component that dynamically spaces its children based on its available size.
- * It transforms imported SVG data from files into React that can freely resize to fit their
- * available space.
+ * This component combines several SVG shapes with a specialized, dynamic layout. It organizes the
+ * shapes into rows with the provided spacing, automatically resizing them so that each row takes up
+ * the full width of the container. The rows are then distributed vertically to take up as much
+ * space as possible within the constraints of the provided space.
  *
- * This component uses the child component pattern to provide all of its API.
+ * The goal is to enable you to intuitively add content to a SVG, surrounding it by markup, and let
+ * the component decide exactly how the shapes should be positioned. To achieve this, this component
+ * uses React's `Children` API to introspect the contents of the rows. This leaves you free to wrap
+ * the shapes in whatever SVG markup you'd like, and that markup will be preserved when the shape is
+ * rendered.
  */
-export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
+export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps) {
+  // NOTE: The overall design of this component ended up getting somewhat complex. Using nested
+  // components to define the layout of the component's content necessitated the use of the `Children`
+  // API. However, I believe the extra complexity is worth it for the flexibility it provides. With
+  // this approach, I can easily define the structure of the rendered SVG with other components,
+  // including things like additional markup, aria-attributes and links with little trouble.
+
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
 
-  const scaledRows = rows.map((row) => {
-    return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
-  });
+  // Calculate the positions of the shapes.
+  const shapes = distributeRowsVertically(
+    extractRows(children).map((row) => {
+      return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
+    }),
+    size,
+    minSpacing,
+    maxSpacing,
+  );
 
-  const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
-
+  // Render the shapes into components.
   const shapeComponents = shapes.map((boundedShape) => {
     return <BoundedShape key={boundedShape.shape.id} boundedShape={boundedShape} />;
   });
@@ -73,3 +103,6 @@ export function DynamicSVG({ rows, minSpacing, maxSpacing }: DynamicSVGProps) {
     </main>
   );
 }
+
+DynamicSVG.Row = Row;
+DynamicSVG.Shape = Shape;

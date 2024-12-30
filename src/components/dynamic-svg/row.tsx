@@ -9,4 +9,8 @@ type DynamicSVGRowProps = {
 /**
  * A row contained in the SVG.
  */
-export function Row({ children }: DynamicSVGRowProps) {}
+export function Row({ children }: DynamicSVGRowProps) {
+  // NOTE: This component isn't actually used to render anything. Rather, it's used by introspection
+  // of `DynamicSVG` to extract the rows and their metadata.
+  return children;
+}
