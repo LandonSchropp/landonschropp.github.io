@@ -1,15 +1,15 @@
 "use client";
 
 import { BoundedShape } from "./bounded-shape";
-import { extractRows } from "./introspection";
-import { Row } from "./row";
-import { Shape } from "./shape";
 import {
   scaleRowToWidth,
   distributeShapesHorizontally,
   distributeRowsVertically,
   calculateHeight,
-} from "./shape-calculations";
+} from "./calculations";
+import { extractRows } from "./introspection";
+import { Row } from "./row";
+import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
 import flannel from "@/images/flannel.png";
 import { useRef } from "react";
