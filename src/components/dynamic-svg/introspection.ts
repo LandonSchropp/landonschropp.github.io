@@ -1,7 +1,6 @@
 import { Row } from "./row";
 import { Shape } from "./shape";
 import { DynamicSVGRow, DynamicSVGShape } from "@/types";
-import { isStringRecord } from "@/utilities/type-guards";
 import { Children, ReactNode } from "react";
 
 /**
