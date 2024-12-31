@@ -6,8 +6,8 @@ import {
   distributeShapesHorizontally,
   distributeRowsVertically,
   calculateHeight,
+  extractRows,
 } from "./calculations";
-import { extractRows } from "./introspection";
 import { Row } from "./row";
 import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
@@ -34,17 +34,6 @@ export type DynamicSVGProps = {
   children: React.ReactNode;
 };
 
-const convertChildrenToScaledRows = (
-  children: React.ReactNode,
-  size: { width: number; height: number },
-) => {
-  const rows = extractRows(children);
-
-  return rows.map((row) => {
-    return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
-  });
-};
-
 /**
  * This component combines several SVG shapes with a specialized, dynamic layout. It organizes the
  * shapes into rows with the provided spacing, automatically resizing them so that each row takes up
@@ -67,17 +56,12 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
 
-  // Calculate the positions of the shapes.
-  const shapes = distributeRowsVertically(
-    extractRows(children).map((row) => {
-      return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
-    }),
-    size,
-    minSpacing,
-    maxSpacing,
-  );
+  const scaledRows = extractRows(children).map((row) => {
+    return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
+  });
 
-  // Render the shapes into components.
+  const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
+
   const shapeComponents = shapes.map((boundedShape) => {
     return <BoundedShape key={boundedShape.shape.id} boundedShape={boundedShape} />;
   });

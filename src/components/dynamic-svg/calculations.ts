@@ -1,7 +1,24 @@
 import { getMaxHeight } from "./bounds";
-import { DynamicSVGShape, BoundedDynamicSVGShape, Size } from "@/types";
+import { Row } from "./row";
+import { Shape } from "./shape";
+import { DynamicSVGShape, BoundedDynamicSVGShape, Size, DynamicSVGRow } from "@/types";
 import { sum } from "@/utilities/array";
+import { recursivelyExtractType } from "@/utilities/introspection";
 import { clamp } from "@/utilities/number";
+import { ReactNode } from "react";
+
+/**
+ * Given a React node, this function extracts the rows and their metadata from the
+ * child components.
+ * @param node The react node to extract the rows from.
+ * @returns An array of rows and their metadata.
+ */
+export function extractRows(node: ReactNode): DynamicSVGRow[] {
+  return recursivelyExtractType(node, Row, ({ props: { children, spacing } }) => {
+    const shapes = recursivelyExtractType(children, Shape, ({ props: { shape } }) => shape);
+    return { spacing: spacing, shapes };
+  });
+}
 
 /**
  * Given an array of shapes, this function distributes them in a horizontal row.
