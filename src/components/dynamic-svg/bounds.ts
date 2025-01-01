@@ -1,12 +1,4 @@
-import { Size, Coordinates, Bounds } from "@/types";
-
-/**
- * @param objects The objects to get the maximum height of.
- * @returns The maximum height of the objects.
- */
-export function getMaxHeight<T extends Size>(objects: T[]): number {
-  return Math.max(...objects.map(({ height }) => height));
-}
+import { Bounds, BoundedObject } from "@/types";
 
 /**
  * Translates the object by the given amount.
@@ -15,11 +7,14 @@ export function getMaxHeight<T extends Size>(objects: T[]): number {
  * @param dy The amount to translate the object in the y-direction.
  * @returns The object with the translated coordinates.
  */
-export function translate<T extends Coordinates>(object: T, dx: number, dy: number): T {
+export function translate<T extends BoundedObject>(object: T, dx: number, dy: number): T {
   return {
     ...object,
-    x: object.x + dx,
-    y: object.y + dy,
+    bounds: {
+      ...object.bounds,
+      x: object.bounds.x + dx,
+      y: object.bounds.y + dy,
+    },
   };
 }
 
@@ -29,25 +24,29 @@ export function translate<T extends Coordinates>(object: T, dx: number, dy: numb
  * @param scale The amount to scale the object.
  * @returns The object with the scaled size.
  */
-export function scale<T extends Bounds>(object: T, scale: number): T {
+export function scale<T extends BoundedObject>(object: T, scale: number): T {
   return {
     ...object,
-    x: object.x * scale,
-    y: object.y * scale,
-    width: object.width * scale,
-    height: object.height * scale,
+    bounds: {
+      // TODO: We probably shouldn't scale x and y here.
+      x: object.bounds.x * scale,
+      y: object.bounds.y * scale,
+      width: object.bounds.width * scale,
+      height: object.bounds.height * scale,
+    },
   };
 }
 
 /**
- * @param objects The objects to get the boundary of.
- * @returns the boundary rectangle containing all of the objects.
+ * Determines the boundary rectangle containing all of the provided objects.
+ * @param objects The bounded objects to get the boundaries of.
+ * @returns The boundary rectangle containing all of the objects.
  */
-export function getBoundary<T extends Bounds>(objects: T[]): Bounds {
-  const x = Math.min(...objects.map(({ x }) => x));
-  const y = Math.min(...objects.map(({ y }) => y));
-  const width = Math.max(...objects.map(({ x, width }) => x + width)) - x;
-  const height = Math.max(...objects.map(({ y, height }) => y + height)) - y;
+export function calculateBounds(objects: BoundedObject[]): Bounds {
+  const x = Math.min(...objects.map(({ bounds: { x } }) => x));
+  const y = Math.min(...objects.map(({ bounds: { y } }) => y));
+  const width = Math.max(...objects.map(({ bounds: { x, width } }) => x + width)) - x;
+  const height = Math.max(...objects.map(({ bounds: { y, height } }) => y + height)) - y;
 
   return { x, y, width, height };
 }

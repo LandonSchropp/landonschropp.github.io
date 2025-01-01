@@ -76,17 +76,20 @@ export type DynamicSVGRow = {
   shapes: DynamicSVGShape[];
 };
 
+/** An object that has bounds. */
+export type BoundedObject = {
+  /** The bounds of the object. */
+  bounds: Bounds;
+};
+
 /**
  * This is similar to a `DynamicSVGRow`, except that it includes the bounds of the row. These bounds
  * are a memoization feature that prevents the resizing algorithms from doing redundant work. It
  * also includes an identifier that can be used as the row's key.
  */
-export type BoundedDynamicSVGRow = {
+export type BoundedDynamicSVGRow = BoundedObject & {
   /** The unique identifier of the row. */
   key: string;
-
-  /** The target bounds of the row. */
-  bounds: Bounds;
 
   /** The bounded shapes contained in the row. */
   boundedShapes: BoundedDynamicSVGShape[];
@@ -95,7 +98,4 @@ export type BoundedDynamicSVGRow = {
 /**
  * A shape that has been transformed by scaling and translating it.
  */
-export type BoundedDynamicSVGShape = DynamicSVGShape & {
-  /** The target bounds of the shape. */
-  bounds: Bounds;
-};
+export type BoundedDynamicSVGShape = DynamicSVGShape & BoundedObject;
