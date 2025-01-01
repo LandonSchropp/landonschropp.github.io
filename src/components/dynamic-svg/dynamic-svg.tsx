@@ -12,7 +12,49 @@ import { Row } from "./row";
 import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
 import flannel from "@/images/flannel.png";
-import { useRef } from "react";
+import { BoundedDynamicSVGShape, Size } from "@/types";
+import { recursivelyReplaceType } from "@/utilities/introspection";
+import { ReactNode, useRef } from "react";
+import { indexBy } from "remeda";
+
+// TODO: Fix the error caused by the missing key
+
+/**
+ * Helper function that extracts the row and shape data from the provided node, applies the layout
+ * math, and returns the bounded shapes.
+ */
+function calculateBoundedShapes(
+  node: ReactNode,
+  size: Size,
+  minSpacing: number,
+  maxSpacing: number,
+): BoundedDynamicSVGShape[] {
+  const scaledRows = extractRows(node).map((row) => {
+    const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
+    return scaleRowToWidth(distributedShapes, size.width);
+  });
+
+  return distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
+}
+
+/**
+ * This is a helper function that replaces the `Shape` component in the provided node with
+ * `BoundedShape` components.
+ * @param node The node to replace the shapes in.
+ * @param boundedShapes The bounded shapes to replace the shapes with.
+ * @returns The node with the shapes replaced.
+ */
+function replaceShapesWithBoundedShaped(
+  node: ReactNode,
+  boundedShapes: BoundedDynamicSVGShape[],
+): ReactNode {
+  const indexedBoundedShapes = indexBy(boundedShapes, ({ shape: { id } }) => id);
+
+  return recursivelyReplaceType(node, Shape, (shapeElement) => {
+    const id = shapeElement.props.shape.id;
+    return <BoundedShape key={id} boundedShape={indexedBoundedShapes[id]} />;
+  });
+}
 
 export type DynamicSVGProps = {
   /**
@@ -56,20 +98,13 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
 
-  const scaledRows = extractRows(children).map((row) => {
-    return scaleRowToWidth(distributeShapesHorizontally(row.shapes, row.spacing), size.width);
-  });
+  const boundedShapes = calculateBoundedShapes(children, size, minSpacing, maxSpacing);
+  const viewBoxHeight = calculateHeight(boundedShapes);
 
-  const shapes = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
-
-  const shapeComponents = shapes.map((boundedShape) => {
-    return <BoundedShape key={boundedShape.shape.id} boundedShape={boundedShape} />;
-  });
-
-  const viewBoxHeight = calculateHeight(shapes);
+  const boundedChildren = replaceShapesWithBoundedShaped(children, boundedShapes);
 
   return (
-    <main className={"flex h-full p-[3vw] *:flex-[0_0_auto]"}>
+    <main className="flex h-full p-[3vw] *:flex-[0_0_auto]">
       <svg
         className="h-full w-full"
         xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +117,7 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
           </pattern>
         </defs>
 
-        {shapeComponents}
+        {boundedChildren}
       </svg>
     </main>
   );
