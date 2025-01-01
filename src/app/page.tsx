@@ -16,10 +16,10 @@ export default function IndexPage() {
         <DynamicSVG.Shape shape={DATA.schropp} />
       </DynamicSVG.Row>
       <DynamicSVG.Row spacing={DEFAULT_SPACING}>
+        <DynamicSVG.Shape shape={DATA.entrepreneurComma} />
         <DynamicSVG.Shape shape={DATA.developer} />
-        <DynamicSVG.Shape shape={DATA.designer} />
         <DynamicSVG.Shape shape={DATA.ampersand} />
-        <DynamicSVG.Shape shape={DATA.entrepreneur} />
+        <DynamicSVG.Shape shape={DATA.designer} />
       </DynamicSVG.Row>
       <DynamicSVG.Row spacing={WIDE_SPACING}>
         <DynamicSVG.Shape shape={DATA.writing} />
