@@ -11,24 +11,24 @@ const MAX_VERTICAL_SPACING = 0.06;
 export default function IndexPage() {
   return (
     <DynamicSVG minSpacing={MIN_VERTICAL_SPACING} maxSpacing={MAX_VERTICAL_SPACING}>
-      <DynamicSVG.Row spacing={DEFAULT_SPACING}>
-        <DynamicSVG.Shape shape={DATA.landon} />
-        <DynamicSVG.Shape shape={DATA.schropp} />
+      <DynamicSVG.Row spacing={DEFAULT_SPACING} key="first">
+        <DynamicSVG.Shape {...DATA.landon} />
+        <DynamicSVG.Shape {...DATA.schropp} />
       </DynamicSVG.Row>
-      <DynamicSVG.Row spacing={DEFAULT_SPACING}>
-        <DynamicSVG.Shape shape={DATA.entrepreneurComma} />
-        <DynamicSVG.Shape shape={DATA.developer} />
-        <DynamicSVG.Shape shape={DATA.ampersand} />
-        <DynamicSVG.Shape shape={DATA.designer} />
+      <DynamicSVG.Row spacing={DEFAULT_SPACING} key="second">
+        <DynamicSVG.Shape {...DATA.entrepreneurComma} />
+        <DynamicSVG.Shape {...DATA.developer} />
+        <DynamicSVG.Shape {...DATA.ampersand} />
+        <DynamicSVG.Shape {...DATA.designer} />
       </DynamicSVG.Row>
-      <DynamicSVG.Row spacing={WIDE_SPACING}>
-        <DynamicSVG.Shape shape={DATA.writing} />
-        <DynamicSVG.Shape shape={DATA.notes} />
-        <DynamicSVG.Shape shape={DATA.til} />
-        <DynamicSVG.Shape shape={DATA.github} />
-        <DynamicSVG.Shape shape={DATA.chessCom} />
-        <DynamicSVG.Shape shape={DATA.linkedIn} />
-        <DynamicSVG.Shape shape={DATA.email} />
+      <DynamicSVG.Row spacing={WIDE_SPACING} key="third">
+        <DynamicSVG.Shape {...DATA.writing} />
+        <DynamicSVG.Shape {...DATA.notes} />
+        <DynamicSVG.Shape {...DATA.til} />
+        <DynamicSVG.Shape {...DATA.github} />
+        <DynamicSVG.Shape {...DATA.chessCom} />
+        <DynamicSVG.Shape {...DATA.linkedIn} />
+        <DynamicSVG.Shape {...DATA.email} />
       </DynamicSVG.Row>
     </DynamicSVG>
   );

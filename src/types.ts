@@ -53,19 +53,22 @@ export type Bounds = Coordinates & Size;
 
 export type DynamicSVGShape = {
   /** The unique identifier of the shape. */
-  id: string;
+  key: string;
 
   /** The untransformed width of the shape. */
-  width: number;
+  originalWidth: number;
 
   /** The untransformed height of the shape. */
-  height: number;
+  originalHeight: number;
 
   /** The inner HTML of the shape to render. */
   content: string;
 };
 
 export type DynamicSVGRow = {
+  /** The unique identifier of the row. */
+  key: string;
+
   /** The space between each shape in the row, represented as a percentage of the row. */
   spacing: number;
 
@@ -74,12 +77,25 @@ export type DynamicSVGRow = {
 };
 
 /**
- * A shape that has been transformed by scaling and translating it.
+ * This is similar to a `DynamicSVGRow`, except that it includes the bounds of the row. These bounds
+ * are a memoization feature that prevents the resizing algorithms from doing redundant work. It
+ * also includes an identifier that can be used as the row's key.
  */
-export type BoundedDynamicSVGShape = {
-  /** The target bounds of the shape. */
+export type BoundedDynamicSVGRow = {
+  /** The unique identifier of the row. */
+  key: string;
+
+  /** The target bounds of the row. */
   bounds: Bounds;
 
-  /** The shape that was transformed. */
-  shape: DynamicSVGShape;
+  /** The bounded shapes contained in the row. */
+  boundedShapes: BoundedDynamicSVGShape[];
+};
+
+/**
+ * A shape that has been transformed by scaling and translating it.
+ */
+export type BoundedDynamicSVGShape = DynamicSVGShape & {
+  /** The target bounds of the shape. */
+  bounds: Bounds;
 };

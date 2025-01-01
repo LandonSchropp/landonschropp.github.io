@@ -1,13 +1,10 @@
 import { DynamicSVGShape } from "@/types";
 
-type DynamicSVGShapeProps = {
-  /** The shapes contained in the row. This may only contain `DynamicSVG.Shape` elements. */
-  shape: DynamicSVGShape;
-};
-
 /**
  * A row contained in the SVG.
  */
-export function Shape(_: DynamicSVGShapeProps) {
+export function Shape(_: DynamicSVGShape) {
+  // NOTE: This component isn't actually used to render anything. Rather, it's used when
+  // introspecting the content provided to `DynamicSVG` to extract the rows and their metadata.
   return null;
 }
