@@ -9,11 +9,11 @@ type BoundedShapeProps = {
  * This component includes the shape that's actually rendered to the dynamic SVG. It is not meant to
  * be used directly—instead, use `DynamicSVG.Row` and `DynamicSVG.Shape`.
  */
-export function BoundedShape({ boundedShape: { bounds, shape } }: BoundedShapeProps) {
-  const maskId = `${shape.id}-mask`;
+export function BoundedShape({ boundedShape: { bounds, ...shape } }: BoundedShapeProps) {
+  const maskId = `${shape.key}-mask`;
 
   // Determine the scale by comparing the original shape's width to the bounded shape's width.
-  const scale = bounds.width / shape.width;
+  const scale = bounds.width / shape.originalWidth;
 
   // NOTE: In the SVG spec, the transforms are applied _right-to-left_, so the translation must be
   // listed before the scale.

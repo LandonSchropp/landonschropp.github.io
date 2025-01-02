@@ -1,7 +1,12 @@
-import { getMaxHeight } from "./bounds";
 import { Row } from "./row";
 import { Shape } from "./shape";
-import { DynamicSVGShape, BoundedDynamicSVGShape, Size, DynamicSVGRow } from "@/types";
+import {
+  DynamicSVGShape,
+  BoundedDynamicSVGShape,
+  Size,
+  DynamicSVGRow,
+  BoundedDynamicSVGRow,
+} from "@/types";
 import { sum } from "@/utilities/array";
 import { recursivelyExtractType } from "@/utilities/introspection";
 import { clamp } from "@/utilities/number";
@@ -14,9 +19,20 @@ import { ReactNode } from "react";
  * @returns An array of rows and their metadata.
  */
 export function extractRows(node: ReactNode): DynamicSVGRow[] {
-  return recursivelyExtractType(node, Row, ({ props: { children, spacing } }) => {
-    const shapes = recursivelyExtractType(children, Shape, ({ props: { shape } }) => shape);
-    return { spacing: spacing, shapes };
+  return recursivelyExtractType(node, Row, ({ key: rowKey, props: { children, spacing } }) => {
+    if (!rowKey) {
+      throw new Error("A key is required for each row.");
+    }
+
+    const shapes = recursivelyExtractType(children, Shape, ({ key: shapeKey, props }) => {
+      if (!shapeKey) {
+        throw new Error("A key is required for each shape.");
+      }
+
+      return { ...props, key: shapeKey };
+    });
+
+    return { key: rowKey, spacing: spacing, shapes };
   });
 }
 
@@ -31,17 +47,17 @@ export function distributeShapesHorizontally(
   shapes: DynamicSVGShape[],
   spacing: number,
 ): BoundedDynamicSVGShape[] {
-  const rowHeight = getMaxHeight(shapes);
+  const rowHeight = Math.max(...shapes.map(({ originalHeight }) => originalHeight));
   const spacingWidth = rowHeight * spacing;
 
   return shapes.reduce((accumulator, shape) => {
     accumulator.push({
-      shape,
+      ...shape,
       bounds: {
-        width: shape.width,
-        height: shape.height,
+        width: shape.originalWidth,
+        height: shape.originalHeight,
         x: sum(accumulator, ({ bounds: { width } }) => width + spacingWidth),
-        y: (rowHeight - shape.height) / 2,
+        y: (rowHeight - shape.originalHeight) / 2,
       },
     });
 
@@ -55,7 +71,7 @@ export function distributeShapesHorizontally(
  * @param width The width to fit the shapes within.
  * @returns The transformed shapes.
  */
-export function scaleRowToWidth(
+export function scaleShapesToWidth(
   boundedShapes: BoundedDynamicSVGShape[],
   width: number,
 ): BoundedDynamicSVGShape[] {
@@ -64,9 +80,9 @@ export function scaleRowToWidth(
   const rowWidth = maxX - minX;
   const scale = width / rowWidth;
 
-  return boundedShapes.map(({ shape, bounds }) => {
+  return boundedShapes.map(({ bounds, ...shape }) => {
     return {
-      shape,
+      ...shape,
       bounds: {
         x: bounds.x * scale,
         y: bounds.y,
@@ -88,32 +104,30 @@ export function scaleRowToWidth(
  * @returns The transformed shapes distributed into rows.
  */
 export function distributeRowsVertically(
-  rows: BoundedDynamicSVGShape[][],
+  rows: BoundedDynamicSVGRow[],
   size: Size,
   minSpacing: number,
   maxSpacing: number,
-): BoundedDynamicSVGShape[] {
-  const rowHeights = rows.map((row) => getMaxHeight(row.map(({ bounds }) => bounds)));
+): BoundedDynamicSVGRow[] {
+  const rowsHeight = sum(rows.map(({ bounds: { height } }) => height));
 
   const minSpacingHeight = size.width * minSpacing;
   const maxSpacingHeight = size.width * maxSpacing;
 
-  const calculatedSpacingHeight = (size.height - sum(rowHeights)) / (rows.length - 1);
+  const calculatedSpacingHeight = (size.height - rowsHeight) / (rows.length - 1);
   const spacingHeight = clamp(calculatedSpacingHeight, minSpacingHeight, maxSpacingHeight);
 
-  return rows.flatMap((row, index) => {
-    const baseY = sum(rowHeights.slice(0, index), (height) => height + spacingHeight);
+  return rows.map((row, index) => {
+    const baseY = sum(rows.slice(0, index), (row) => row.bounds.height + spacingHeight);
 
-    return row.map(({ shape, bounds }) => {
-      return { shape, bounds: { ...bounds, y: baseY + bounds.y } };
+    const boundedShapes = row.boundedShapes.map(({ bounds, ...shape }) => {
+      return { ...shape, bounds: { ...bounds, y: baseY + bounds.y } };
     });
-  });
-}
 
-/**
- * @param boundedShapes The shapes to calculate the maximum height of.
- * @returns The maximum height of the given shapes' container.
- */
-export function calculateHeight(boundedShapes: BoundedDynamicSVGShape[]): number {
-  return Math.max(...boundedShapes.map(({ bounds }) => bounds.y + bounds.height));
+    return {
+      ...row,
+      bounds: { ...row.bounds, y: baseY },
+      boundedShapes,
+    };
+  });
 }

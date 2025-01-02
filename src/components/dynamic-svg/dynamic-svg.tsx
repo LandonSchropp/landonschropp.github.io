@@ -1,23 +1,19 @@
-"use client";
-
-import { BoundedShape } from "./bounded-shape";
+import { BoundedRow } from "./bounded-row";
+import { calculateBounds } from "./bounds";
 import {
-  scaleRowToWidth,
+  scaleShapesToWidth,
   distributeShapesHorizontally,
   distributeRowsVertically,
-  calculateHeight,
   extractRows,
 } from "./calculations";
 import { Row } from "./row";
 import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
 import flannel from "@/images/flannel.png";
-import { BoundedDynamicSVGShape, Size } from "@/types";
+import { BoundedDynamicSVGRow, Size } from "@/types";
 import { recursivelyReplaceType } from "@/utilities/introspection";
 import { ReactNode, useRef } from "react";
 import { indexBy } from "remeda";
-
-// TODO: Fix the error caused by the missing key
 
 /**
  * Helper function that extracts the row and shape data from the provided node, applies the layout
@@ -28,31 +24,44 @@ function calculateBoundedShapes(
   size: Size,
   minSpacing: number,
   maxSpacing: number,
-): BoundedDynamicSVGShape[] {
+): BoundedDynamicSVGRow[] {
   const scaledRows = extractRows(node).map((row) => {
     const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
-    return scaleRowToWidth(distributedShapes, size.width);
+    const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
+
+    return {
+      key: row.key,
+      bounds: calculateBounds(scaledShapes),
+      boundedShapes: scaledShapes,
+    } satisfies BoundedDynamicSVGRow;
   });
 
   return distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
 }
 
 /**
- * This is a helper function that replaces the `Shape` component in the provided node with
- * `BoundedShape` components.
- * @param node The node to replace the shapes in.
- * @param boundedShapes The bounded shapes to replace the shapes with.
- * @returns The node with the shapes replaced.
+ * This is a helper function that replaces the `Row` components in the provided node with
+ * `BoundedRow` components.
+ * @param node The node to replace the rows in.
+ * @param boundedRows The bounded rows to replace the rows with.
+ * @returns The node with the rows replaced.
  */
-function replaceShapesWithBoundedShaped(
+function replaceRowsWithBoundedRowd(
   node: ReactNode,
-  boundedShapes: BoundedDynamicSVGShape[],
+  boundedRows: BoundedDynamicSVGRow[],
 ): ReactNode {
-  const indexedBoundedShapes = indexBy(boundedShapes, ({ shape: { id } }) => id);
+  const indexedBoundedRows = indexBy(boundedRows, ({ key }) => key);
 
-  return recursivelyReplaceType(node, Shape, (shapeElement) => {
-    const id = shapeElement.props.shape.id;
-    return <BoundedShape key={id} boundedShape={indexedBoundedShapes[id]} />;
+  return recursivelyReplaceType(node, Row, ({ key, props }) => {
+    if (!key) {
+      throw new Error("A key is required for each row.");
+    }
+
+    return (
+      <BoundedRow key={key} boundedRow={indexedBoundedRows[key]}>
+        {props.children}
+      </BoundedRow>
+    );
   });
 }
 
@@ -98,10 +107,10 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
 
-  const boundedShapes = calculateBoundedShapes(children, size, minSpacing, maxSpacing);
-  const viewBoxHeight = calculateHeight(boundedShapes);
+  const boundedRows = calculateBoundedShapes(children, size, minSpacing, maxSpacing);
+  const viewBoxHeight = calculateBounds(boundedRows).height;
 
-  const boundedChildren = replaceShapesWithBoundedShaped(children, boundedShapes);
+  const boundedChildren = replaceRowsWithBoundedRowd(children, boundedRows);
 
   return (
     <main className="flex h-full p-[3vw] *:flex-[0_0_auto]">
