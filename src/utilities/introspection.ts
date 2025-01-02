@@ -101,7 +101,7 @@ export function recursivelyReplaceType<T>(
   }
 
   const children = extractChildren(element).flatMap((child) => {
-    return recursivelyExtractType(child, type, transform);
+    return recursivelyReplaceType(child, type, transform);
   });
 
   return cloneElement(element, {}, ...children);
