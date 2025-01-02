@@ -3,8 +3,6 @@
 import { DynamicSVG } from "@/components/dynamic-svg";
 import { NAME } from "@/constants";
 import * as DATA from "@/data/svg";
-import { DynamicSVGShape } from "@/types";
-import { ReactNode } from "react";
 
 const DEFAULT_SPACING = 0.3;
 const WIDE_SPACING = 0.5;
@@ -19,72 +17,72 @@ const DEVELOPER = <DynamicSVG.Shape key="developer" {...DATA.developer} />;
 const AMPERSAND = <DynamicSVG.Shape key="ampersand" {...DATA.ampersand} />;
 const DESIGNER = <DynamicSVG.Shape key="designer" {...DATA.designer} />;
 
-const WRITING = shapeLink("writing", DATA.writing, "/articles", "Writing");
-const NOTES = shapeLink("notes", DATA.notes, "/notes", "Notes");
-const TIL = shapeLink("til", DATA.til, "/today-i-learned", "Today I Learned");
-const GITHUB = shapeLink("github", DATA.github, "http://github.com/LandonSchropp", "GitHub");
-
-const CHESS_COM = shapeLink(
-  "chess-com",
-  DATA.chessCom,
-  "https://www.chess.com/member/landon",
-  "Chess.com",
+const WRITING = (
+  <DynamicSVG.Link href="/articles" title="Writing" key="writing">
+    <DynamicSVG.Shape key="writing" {...DATA.writing} />
+  </DynamicSVG.Link>
 );
 
-const LINKED_IN = shapeLink(
-  "linked-in",
-  DATA.linkedIn,
-  "https://linkedin.com/in/landonschropp",
-  "LinkedIn",
+const NOTES = (
+  <DynamicSVG.Link href="/notes" title="Notes" key="notes">
+    <DynamicSVG.Shape key="notes" {...DATA.notes} />
+  </DynamicSVG.Link>
 );
 
-const EMAIL = shapeLink("email", DATA.email, "mailto:schroppl@gmail.com", "Email");
+const TIL = (
+  <DynamicSVG.Link href="/today-i-learned" title="Today I Learned" key="til">
+    <DynamicSVG.Shape key="til" {...DATA.til} />
+  </DynamicSVG.Link>
+);
 
-/**
- * Generates a shape link. This can't be a component because we need the full component tree present
- * in order for `DynamicSVG` to correctly extract the shapes.
- */
-function shapeLink(
-  key: string,
-  shape: Omit<DynamicSVGShape, "key">,
-  href: string,
-  title: string,
-): ReactNode {
-  return (
-    // FIX: A pointer cursor is not the default in Safari. 😕
-    <a
-      className="pointer-events-[bounding-box] cursor-pointer hocus:fill-cornflower [&:focus-visible>path]:fill-inherit [&:hover>path]:fill-inherit"
-      href={href}
-      key={`link-${key}`}
-    >
-      <title>{title}</title>
-      <DynamicSVG.Shape key={key} {...shape} />
-    </a>
-  );
-}
+const GITHUB = (
+  <DynamicSVG.Link href="https://github.com/LandonSchropp" title="GitHub" key="github">
+    <DynamicSVG.Shape key="github" {...DATA.github} />
+  </DynamicSVG.Link>
+);
+
+const CHESS_COM = (
+  <DynamicSVG.Link href="https://www.chess.com/member/landon" title="Chess.com" key="chess-com">
+    <DynamicSVG.Shape key="chess-com" {...DATA.chessCom} />
+  </DynamicSVG.Link>
+);
+
+const LINKED_IN = (
+  <DynamicSVG.Link href="https://linkedin.com/in/landonschropp" title="LinkedIn" key="linked-in">
+    <DynamicSVG.Shape key="linked-in" {...DATA.linkedIn} />
+  </DynamicSVG.Link>
+);
+
+const EMAIL = (
+  <DynamicSVG.Link href="mailto:schroppl@gmail.com" title="Email" key="email">
+    <DynamicSVG.Shape key="email" {...DATA.email} />
+  </DynamicSVG.Link>
+);
 
 export default function IndexPage() {
   return (
     <DynamicSVG minSpacing={MIN_VERTICAL_SPACING} maxSpacing={MAX_VERTICAL_SPACING}>
-      <g key="heading" role="heading">
-        <title>{NAME}</title>
+      <DynamicSVG.Group title={NAME} key="heading" role="heading">
         <DynamicSVG.Row key="name" spacing={DEFAULT_SPACING}>
           {LANDON}
           {SCHROPP}
         </DynamicSVG.Row>
-      </g>
+      </DynamicSVG.Group>
 
-      <g key="subheading" role="doc-subititle">
-        <title>Entrepreneur, Designer & Developer</title>
+      <DynamicSVG.Group
+        title="Entrepreneur, Designer & Developer"
+        key="subheading"
+        role="doc-subititle"
+      >
         <DynamicSVG.Row key="description" spacing={DEFAULT_SPACING}>
           {ENTREPRENEUR}
           {DEVELOPER}
           {AMPERSAND}
           {DESIGNER}
         </DynamicSVG.Row>
-      </g>
+      </DynamicSVG.Group>
 
-      <g key="navigation" role="navigation">
+      <DynamicSVG.Group key="navigation" role="navigation">
         <DynamicSVG.Row key="navigation" spacing={WIDE_SPACING}>
           {WRITING}
           {NOTES}
@@ -94,7 +92,7 @@ export default function IndexPage() {
           {LINKED_IN}
           {EMAIL}
         </DynamicSVG.Row>
-      </g>
+      </DynamicSVG.Group>
     </DynamicSVG>
   );
 }

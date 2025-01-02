@@ -29,7 +29,7 @@ export function BoundedShape({ boundedShape: { bounds, ...shape } }: BoundedShap
       */}
       <rect
         {...bounds}
-        className="cursor-pointer fill-[url('#dynamic-svg-background')] hover:fill-cornflower"
+        className="fill-[url('#dynamic-svg-background')] [a:focus-visible_&]:fill-cornflower [a:hover_&]:fill-cornflower"
         fill="url('#dynamic-svg-background')"
         mask={`url(#${maskId})`}
       />

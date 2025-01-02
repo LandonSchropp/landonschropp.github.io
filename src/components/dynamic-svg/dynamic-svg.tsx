@@ -6,6 +6,8 @@ import {
   distributeRowsVertically,
   extractRows,
 } from "./calculations";
+import { Group } from "./group";
+import { Link } from "./link";
 import { Row } from "./row";
 import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
@@ -134,3 +136,5 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
 
 DynamicSVG.Row = Row;
 DynamicSVG.Shape = Shape;
+DynamicSVG.Link = Link;
+DynamicSVG.Group = Group;
