@@ -11,24 +11,24 @@ const MAX_VERTICAL_SPACING = 0.06;
 export default function IndexPage() {
   return (
     <DynamicSVG minSpacing={MIN_VERTICAL_SPACING} maxSpacing={MAX_VERTICAL_SPACING}>
-      <DynamicSVG.Row spacing={DEFAULT_SPACING} key="first">
-        <DynamicSVG.Shape {...DATA.landon} />
-        <DynamicSVG.Shape {...DATA.schropp} />
+      <DynamicSVG.Row key="name" spacing={DEFAULT_SPACING}>
+        <DynamicSVG.Shape key="landon" {...DATA.landon} />
+        <DynamicSVG.Shape key="schropp" {...DATA.schropp} />
       </DynamicSVG.Row>
-      <DynamicSVG.Row spacing={DEFAULT_SPACING} key="second">
-        <DynamicSVG.Shape {...DATA.entrepreneurComma} />
-        <DynamicSVG.Shape {...DATA.developer} />
-        <DynamicSVG.Shape {...DATA.ampersand} />
-        <DynamicSVG.Shape {...DATA.designer} />
+      <DynamicSVG.Row key="description" spacing={DEFAULT_SPACING}>
+        <DynamicSVG.Shape key="entrepreneur" {...DATA.entrepreneurComma} />
+        <DynamicSVG.Shape key="developer" {...DATA.developer} />
+        <DynamicSVG.Shape key="ampersand" {...DATA.ampersand} />
+        <DynamicSVG.Shape key="designer" {...DATA.designer} />
       </DynamicSVG.Row>
-      <DynamicSVG.Row spacing={WIDE_SPACING} key="third">
-        <DynamicSVG.Shape {...DATA.writing} />
-        <DynamicSVG.Shape {...DATA.notes} />
-        <DynamicSVG.Shape {...DATA.til} />
-        <DynamicSVG.Shape {...DATA.github} />
-        <DynamicSVG.Shape {...DATA.chessCom} />
-        <DynamicSVG.Shape {...DATA.linkedIn} />
-        <DynamicSVG.Shape {...DATA.email} />
+      <DynamicSVG.Row key="navigation-and-links" spacing={WIDE_SPACING}>
+        <DynamicSVG.Shape key="writing" {...DATA.writing} />
+        <DynamicSVG.Shape key="notes" {...DATA.notes} />
+        <DynamicSVG.Shape key="til" {...DATA.til} />
+        <DynamicSVG.Shape key="github" {...DATA.github} />
+        <DynamicSVG.Shape key="chessCom" {...DATA.chessCom} />
+        <DynamicSVG.Shape key="linkedIn" {...DATA.linkedIn} />
+        <DynamicSVG.Shape key="email" {...DATA.email} />
       </DynamicSVG.Row>
     </DynamicSVG>
   );

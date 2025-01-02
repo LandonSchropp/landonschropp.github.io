@@ -19,7 +19,7 @@ const SVG_TAG_REGEX = /<svg([^>]*)>\s*([\s\S]*)\s*<\/svg>/i;
 const WIDTH_REGEX = /width="(\d+)"/i;
 const HEIGHT_REGEX = /height="(\d+)"/i;
 
-function extractSVGData(id: string, svg: string): DynamicSVGShape {
+function extractSVGData(svg: string): Omit<DynamicSVGShape, "key"> {
   const match = SVG_TAG_REGEX.exec(svg);
 
   if (match === null) {
@@ -33,29 +33,29 @@ function extractSVGData(id: string, svg: string): DynamicSVGShape {
     throw new Error(`Invalid SVG dimensions: ${match[1]}`);
   }
 
-  const width = Number(widthMatch);
-  const height = Number(heightMatch);
+  const originalWidth = Number(widthMatch);
+  const originalHeight = Number(heightMatch);
 
   // SVG masks are black by default and use white to show what parts of the mask are visible, so we
   // need to invert the colors of the content.
   const content = match[2].replaceAll("black", "white");
 
-  return { id, width, height, content };
+  return { originalWidth, originalHeight, content };
 }
 
 // TODO: Move this data into a server function to ensure that the data is loaded at build time.
-export const ampersand = extractSVGData("ampersand", ampersandRaw);
-export const chessCom = extractSVGData("chess-com", chessComRaw);
-export const designer = extractSVGData("designer", designerRaw);
-export const developer = extractSVGData("developer", developerRaw);
-export const email = extractSVGData("email", emailRaw);
-export const entrepreneurComma = extractSVGData("entrepreneur-comma", entrepreneurCommaRaw);
-export const entrepreneur = extractSVGData("entrepreneur", entrepreneurRaw);
-export const github = extractSVGData("github", githubRaw);
-export const landon = extractSVGData("landon", landonRaw);
-export const linkedIn = extractSVGData("linked-in", linkedInRaw);
-export const notFound = extractSVGData("not-found", notFoundRaw);
-export const notes = extractSVGData("notes", notesRaw);
-export const schropp = extractSVGData("schropp", schroppRaw);
-export const til = extractSVGData("til", tilRaw);
-export const writing = extractSVGData("writing", writingRaw);
+export const ampersand = extractSVGData(ampersandRaw);
+export const chessCom = extractSVGData(chessComRaw);
+export const designer = extractSVGData(designerRaw);
+export const developer = extractSVGData(developerRaw);
+export const email = extractSVGData(emailRaw);
+export const entrepreneurComma = extractSVGData(entrepreneurCommaRaw);
+export const entrepreneur = extractSVGData(entrepreneurRaw);
+export const github = extractSVGData(githubRaw);
+export const landon = extractSVGData(landonRaw);
+export const linkedIn = extractSVGData(linkedInRaw);
+export const notFound = extractSVGData(notFoundRaw);
+export const notes = extractSVGData(notesRaw);
+export const schropp = extractSVGData(schroppRaw);
+export const til = extractSVGData(tilRaw);
+export const writing = extractSVGData(writingRaw);
