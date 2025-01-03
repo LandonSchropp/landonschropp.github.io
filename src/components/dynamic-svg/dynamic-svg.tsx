@@ -1,44 +1,64 @@
+import { Aspect } from "./aspect";
 import { BoundedRow } from "./bounded-row";
 import { calculateBounds } from "./bounds";
 import {
   scaleShapesToWidth,
   distributeShapesHorizontally,
   distributeRowsVertically,
-  extractRows,
+  calculateAspectAreaConsumption,
 } from "./calculations";
+import { extractAspects } from "./extraction";
 import { Group } from "./group";
 import { Link } from "./link";
 import { Row } from "./row";
 import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
 import flannel from "@/images/flannel.png";
-import { BoundedDynamicSVGRow, Size } from "@/types";
+import {
+  BoundedDynamicSVGAspect,
+  BoundedDynamicSVGRow,
+  DynamicSVGAspect,
+  DynamicSVGRow,
+  Size,
+} from "@/types";
 import { recursivelyReplaceType } from "@/utilities/introspection";
 import { ReactNode, useRef } from "react";
-import { indexBy } from "remeda";
+import { indexBy, firstBy } from "remeda";
 
-/**
- * Helper function that extracts the row and shape data from the provided node, applies the layout
- * math, and returns the bounded shapes.
- */
-function calculateBoundedShapes(
-  node: ReactNode,
+function calculateBoundedRow(row: DynamicSVGRow, size: Size): BoundedDynamicSVGRow {
+  const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
+  const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
+
+  return {
+    key: row.key,
+    bounds: calculateBounds(scaledShapes),
+    boundedShapes: scaledShapes,
+  };
+}
+
+function calculateBoundedAspect(
+  { key, rows, minSpacing, maxSpacing }: DynamicSVGAspect,
   size: Size,
-  minSpacing: number,
-  maxSpacing: number,
-): BoundedDynamicSVGRow[] {
-  const scaledRows = extractRows(node).map((row) => {
-    const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
-    const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
+): BoundedDynamicSVGAspect {
+  const scaledRows = rows.map((row) => calculateBoundedRow(row, size));
+  const boundedRows = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
 
-    return {
-      key: row.key,
-      bounds: calculateBounds(scaledShapes),
-      boundedShapes: scaledShapes,
-    } satisfies BoundedDynamicSVGRow;
-  });
+  return {
+    key,
+    bounds: calculateBounds(boundedRows),
+    boundedRows,
+  };
+}
 
-  return distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
+function calculateAndSelectAspect(node: ReactNode, size: Size): BoundedDynamicSVGAspect {
+  const boundedAspects = extractAspects(node).map((aspect) => calculateBoundedAspect(aspect, size));
+  const aspect = firstBy(boundedAspects, (aspect) => calculateAspectAreaConsumption(aspect, size));
+
+  if (!aspect) {
+    throw new Error("No aspects were provided.");
+  }
+
+  return aspect;
 }
 
 /**
@@ -48,7 +68,7 @@ function calculateBoundedShapes(
  * @param boundedRows The bounded rows to replace the rows with.
  * @returns The node with the rows replaced.
  */
-function replaceRowsWithBoundedRowd(
+function replaceRowsWithBoundedRows(
   node: ReactNode,
   boundedRows: BoundedDynamicSVGRow[],
 ): ReactNode {
@@ -69,18 +89,6 @@ function replaceRowsWithBoundedRowd(
 
 export type DynamicSVGProps = {
   /**
-   * The minimum spacing between the shapes, expressed as a percentage of the width of the
-   * container.
-   */
-  minSpacing: number;
-
-  /**
-   * The maximum spacing between the shapes, expressed as a percentage of the width of the
-   * container.
-   */
-  maxSpacing: number;
-
-  /**
    * The content of the dynamic SVG. In order to use the dynamic layout mechanism, you must include
    * `DynamicSVG.Shape` components wrapped in `DynamicSVG.Row`'s.
    */
@@ -99,7 +107,7 @@ export type DynamicSVGProps = {
  * the shapes in whatever SVG markup you'd like, and that markup will be preserved when the shape is
  * rendered.
  */
-export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps) {
+export function DynamicSVG({ children }: DynamicSVGProps) {
   // NOTE: The overall design of this component ended up getting somewhat complex. Using nested
   // components to define the layout of the component's content necessitated the use of the `Children`
   // API. However, I believe the extra complexity is worth it for the flexibility it provides. With
@@ -109,10 +117,10 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
 
-  const boundedRows = calculateBoundedShapes(children, size, minSpacing, maxSpacing);
-  const viewBoxHeight = calculateBounds(boundedRows).height;
+  const aspect = calculateAndSelectAspect(children, size);
+  const viewBoxHeight = calculateBounds(aspect.boundedRows).height;
 
-  const boundedChildren = replaceRowsWithBoundedRowd(children, boundedRows);
+  const boundedChildren = replaceRowsWithBoundedRows(children, aspect.boundedRows);
 
   return (
     <main className="flex h-full p-[3vw] *:flex-[0_0_auto]">
@@ -134,7 +142,8 @@ export function DynamicSVG({ children, minSpacing, maxSpacing }: DynamicSVGProps
   );
 }
 
+DynamicSVG.Aspect = Aspect;
+DynamicSVG.Group = Group;
+DynamicSVG.Link = Link;
 DynamicSVG.Row = Row;
 DynamicSVG.Shape = Shape;
-DynamicSVG.Link = Link;
-DynamicSVG.Group = Group;

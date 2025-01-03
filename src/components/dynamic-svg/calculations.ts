@@ -1,40 +1,12 @@
-import { Row } from "./row";
-import { Shape } from "./shape";
 import {
   DynamicSVGShape,
   BoundedDynamicSVGShape,
   Size,
-  DynamicSVGRow,
   BoundedDynamicSVGRow,
+  BoundedDynamicSVGAspect,
 } from "@/types";
 import { sum } from "@/utilities/array";
-import { recursivelyExtractType } from "@/utilities/introspection";
 import { clamp } from "@/utilities/number";
-import { ReactNode } from "react";
-
-/**
- * Given a React node, this function extracts the rows and their metadata from the
- * child components.
- * @param node The react node to extract the rows from.
- * @returns An array of rows and their metadata.
- */
-export function extractRows(node: ReactNode): DynamicSVGRow[] {
-  return recursivelyExtractType(node, Row, ({ key: rowKey, props: { children, spacing } }) => {
-    if (!rowKey) {
-      throw new Error("A key is required for each row.");
-    }
-
-    const shapes = recursivelyExtractType(children, Shape, ({ key: shapeKey, props }) => {
-      if (!shapeKey) {
-        throw new Error("A key is required for each shape.");
-      }
-
-      return { ...props, key: shapeKey };
-    });
-
-    return { key: rowKey, spacing: spacing, shapes };
-  });
-}
 
 /**
  * Given an array of shapes, this function distributes them in a horizontal row.
@@ -130,4 +102,17 @@ export function distributeRowsVertically(
       boundedShapes,
     };
   });
+}
+
+/**
+ * Given an aspect and a size, this function calculates the percentage of the area of the size
+ * that's consumed by the aspect. This calculation takes into account that the content might be
+ * further scaled inside the actual container.
+ */
+export function calculateAspectAreaConsumption(
+  aspect: BoundedDynamicSVGAspect,
+  size: Size,
+): number {
+  const scale = size.height / aspect.bounds.height;
+  return (aspect.bounds.width * scale * aspect.bounds.height * scale) / (size.width * size.height);
 }
