@@ -85,6 +85,16 @@ export type DynamicSVGAspect = {
 
   /** The shapes contained in the aspect. */
   rows: DynamicSVGRow[];
+
+  /**
+   * The minimum spacing between the shapes, expressed as a percentage of the width of the aspect.
+   */
+  minSpacing: number;
+
+  /**
+   * The maximum spacing between the shapes, expressed as a percentage of the width of the aspect.
+   */
+  maxSpacing: number;
 };
 
 /** An object that has bounds. */
