@@ -51,6 +51,7 @@ export type Size = {
 /** The bounds of an object. */
 export type Bounds = Coordinates & Size;
 
+/** Represents a raw SVG shape's data. */
 export type DynamicSVGShape = {
   /** The unique identifier of the shape. */
   key: string;
@@ -65,6 +66,7 @@ export type DynamicSVGShape = {
   content: string;
 };
 
+/** Represents a row of shapes in an aspect. */
 export type DynamicSVGRow = {
   /** The unique identifier of the row. */
   key: string;
@@ -76,17 +78,25 @@ export type DynamicSVGRow = {
   shapes: DynamicSVGShape[];
 };
 
+/** One possible layout of shapes in the SVG. */
+export type DynamicSVGAspect = {
+  /** The unique identifier of the aspect. */
+  key: string;
+
+  /** The shapes contained in the aspect. */
+  rows: DynamicSVGRow[];
+};
+
 /** An object that has bounds. */
 export type BoundedObject = {
   /** The bounds of the object. */
   bounds: Bounds;
 };
 
-/**
- * This is similar to a `DynamicSVGRow`, except that it includes the bounds of the row. These bounds
- * are a memoization feature that prevents the resizing algorithms from doing redundant work. It
- * also includes an identifier that can be used as the row's key.
- */
+/** A shape that has been transformed by scaling and translating it. */
+export type BoundedDynamicSVGShape = DynamicSVGShape & BoundedObject;
+
+/** A row that contains transformed shapes and bounds. */
 export type BoundedDynamicSVGRow = BoundedObject & {
   /** The unique identifier of the row. */
   key: string;
@@ -95,7 +105,11 @@ export type BoundedDynamicSVGRow = BoundedObject & {
   boundedShapes: BoundedDynamicSVGShape[];
 };
 
-/**
- * A shape that has been transformed by scaling and translating it.
- */
-export type BoundedDynamicSVGShape = DynamicSVGShape & BoundedObject;
+/** An aspect that contains transformed rows and bounds. */
+export type BoundedDynamicSVGAspect = BoundedObject & {
+  /** The unique identifier of the aspect. */
+  key: string;
+
+  /** The bounded rows contained in the aspect. */
+  boundedRows: BoundedDynamicSVGRow[];
+};
