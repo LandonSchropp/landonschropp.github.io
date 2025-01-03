@@ -61,8 +61,12 @@ export default function IndexPage() {
   );
 
   return (
-    <DynamicSVG minSpacing={MIN_VERTICAL_SPACING} maxSpacing={MAX_VERTICAL_SPACING}>
-      <DynamicSVG.Aspect key="landscape">
+    <DynamicSVG>
+      <DynamicSVG.Aspect
+        key="landscape"
+        minSpacing={MIN_VERTICAL_SPACING}
+        maxSpacing={MAX_VERTICAL_SPACING}
+      >
         <DynamicSVG.Group title={NAME} key="heading" role="heading">
           <DynamicSVG.Row key="name" spacing={DEFAULT_SPACING}>
             {landon}
