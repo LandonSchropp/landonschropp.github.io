@@ -1,5 +1,6 @@
 import tailwindConfig from "../../../tailwind.config";
 import { Summary } from "../content/summary";
+import { Icon } from "@/components/base/icon";
 import type { Article } from "@/types";
 import { isNullish } from "remeda";
 
@@ -20,8 +21,24 @@ export function ArticleSummary({ article, index, numberOfArticles }: ArticleSumm
     borderColor: `color-mix(in oklab, ${BITTERSWEET} ${percent}, ${CORNFLOWER})`,
   };
 
+  const linkIcon = article.publisher ? (
+    <Icon
+      className="relative top-[-0.1em] h-[0.85em] w-[0.85em] align-baseline"
+      name="externalLink"
+      alt={`Published on ${article.publisher}`}
+    />
+  ) : null;
+
   return (
-    <Summary title={article.title} url={href} style={style}>
+    <Summary
+      title={
+        <>
+          {article.title} {linkIcon}
+        </>
+      }
+      url={href}
+      style={style}
+    >
       {article.description}
     </Summary>
   );

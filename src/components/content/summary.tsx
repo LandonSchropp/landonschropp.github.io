@@ -1,7 +1,7 @@
-import { CSSProperties } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 type SummaryProps = {
-  title: string;
+  title: ReactNode;
   url: string;
   children?: React.ReactNode;
   className?: string;
