@@ -1,5 +1,5 @@
 import { Aspect } from "./aspect";
-import { BoundedRow } from "./bounded-row";
+import { BoundedAspect } from "./bounded-aspect";
 import { calculateBounds } from "./bounds";
 import {
   scaleShapesToWidth,
@@ -22,9 +22,7 @@ import {
   Size,
 } from "@/types";
 import { maxBy } from "@/utilities/array";
-import { recursivelyReplaceType } from "@/utilities/introspection";
 import { ReactNode, useRef } from "react";
-import { indexBy } from "remeda";
 
 const PATTERN_SIZE_MULTIPLIER = 0.1;
 
@@ -64,46 +62,6 @@ function calculateAndSelectAspect(node: ReactNode, size: Size): BoundedDynamicSV
   return aspect;
 }
 
-/**
- * This is a helper function that replaces the `Row` components in the provided node with
- * `BoundedRow` components.
- * @param node The node to replace the rows in.
- * @param boundedRows The bounded rows to replace the rows with.
- * @returns The node with the rows replaced.
- */
-function replaceRowsWithBoundedRows(
-  node: ReactNode,
-  boundedRows: BoundedDynamicSVGRow[],
-): ReactNode {
-  const indexedBoundedRows = indexBy(boundedRows, ({ key }) => key);
-
-  return recursivelyReplaceType(node, Row, ({ key, props }) => {
-    if (!key) {
-      throw new Error("A key is required for each row.");
-    }
-
-    return (
-      <BoundedRow key={key} boundedRow={indexedBoundedRows[key]}>
-        {props.children}
-      </BoundedRow>
-    );
-  });
-}
-
-function replaceAspectWithBoundedAspect(
-  node: ReactNode,
-  boundedAspect: BoundedDynamicSVGAspect,
-): ReactNode {
-  return recursivelyReplaceType(node, Aspect, ({ key, props }) => {
-    // If the aspect is not the selected aspect, remove it.
-    if (boundedAspect.key !== key) {
-      return null;
-    }
-
-    return replaceRowsWithBoundedRows(props.children, boundedAspect.boundedRows);
-  });
-}
-
 export type DynamicSVGProps = {
   /**
    * The content of the dynamic SVG. In order to use the dynamic layout mechanism, you must include
@@ -133,13 +91,10 @@ export function DynamicSVG({ children }: DynamicSVGProps) {
 
   const svgRef = useRef<SVGSVGElement>(null);
   const size = useSize(svgRef);
+  const patternSize = Math.sqrt(size.width * size.height) * PATTERN_SIZE_MULTIPLIER;
 
   const aspect = calculateAndSelectAspect(children, size);
   const viewBoxHeight = calculateBounds(aspect.boundedRows).height;
-
-  const boundedChildren = replaceAspectWithBoundedAspect(children, aspect);
-
-  const patternSize = Math.sqrt(size.width * size.height) * PATTERN_SIZE_MULTIPLIER;
 
   return (
     <main className="flex h-full p-[3vw] *:flex-[0_0_auto]">
@@ -160,7 +115,7 @@ export function DynamicSVG({ children }: DynamicSVGProps) {
           </pattern>
         </defs>
 
-        {boundedChildren}
+        <BoundedAspect boundedAspect={aspect}>{children}</BoundedAspect>
       </svg>
     </main>
   );
