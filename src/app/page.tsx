@@ -99,6 +99,49 @@ export default function IndexPage() {
           </DynamicSVG.Row>
         </DynamicSVG.Group>
       </DynamicSVG.Aspect>
+      <DynamicSVG.Aspect
+        key="portrait"
+        minSpacing={MIN_VERTICAL_SPACING}
+        maxSpacing={MAX_VERTICAL_SPACING}
+      >
+        <DynamicSVG.Group title={NAME} key="heading" role="heading">
+          <DynamicSVG.Row key="first-name" spacing={DEFAULT_SPACING}>
+            {landon}
+          </DynamicSVG.Row>
+          <DynamicSVG.Row key="last-name" spacing={DEFAULT_SPACING}>
+            {schropp}
+          </DynamicSVG.Row>
+        </DynamicSVG.Group>
+
+        <DynamicSVG.Group
+          title="Entrepreneur, Designer & Developer"
+          key="subheading"
+          role="doc-subititle"
+        >
+          <DynamicSVG.Row key="entrepreneur" spacing={DEFAULT_SPACING}>
+            {entrepreneur}
+          </DynamicSVG.Row>
+          <DynamicSVG.Row key="developer-and-designer" spacing={DEFAULT_SPACING}>
+            {developer}
+            {ampersand}
+            {designer}
+          </DynamicSVG.Row>
+        </DynamicSVG.Group>
+
+        <DynamicSVG.Group key="navigation" role="navigation">
+          <DynamicSVG.Row key="internal-navigation" spacing={WIDE_SPACING}>
+            {writing}
+            {notes}
+            {til}
+          </DynamicSVG.Row>
+          <DynamicSVG.Row key="external-navigation" spacing={WIDE_SPACING}>
+            {gitHub}
+            {chessCom}
+            {linkedIn}
+            {email}
+          </DynamicSVG.Row>
+        </DynamicSVG.Group>
+      </DynamicSVG.Aspect>
     </DynamicSVG>
   );
 }
