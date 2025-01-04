@@ -5,22 +5,22 @@ import { Header } from "@/components/content/header";
 import type { Article } from "@/types";
 
 type ArticleSummariesProps = {
-  articleSummaries: Article[];
+  articles: Article[];
 };
 
-export function ArticleSummaries({ articleSummaries }: ArticleSummariesProps) {
+export function ArticleSummaries({ articles }: ArticleSummariesProps) {
   return (
     <>
       <Header title="Writing" subText="My published articles from all over the web." />
 
       <section>
-        {articleSummaries.map((articleSummary, index) => {
+        {articles.map((article, index) => {
           return (
             <ArticleSummary
-              key={articleSummary.slug}
-              articleSummary={articleSummary}
+              key={article.slug}
+              article={article}
               index={index}
-              numberOfArticles={articleSummaries.length}
+              numberOfArticles={articles.length}
             />
           );
         })}

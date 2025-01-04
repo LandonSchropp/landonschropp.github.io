@@ -7,15 +7,13 @@ const CORNFLOWER = tailwindConfig.theme.colors.cornflower;
 const BITTERSWEET = tailwindConfig.theme.colors.bittersweet;
 
 type ArticleSummaryProps = {
-  articleSummary: Article;
+  article: Article;
   index: number;
   numberOfArticles: number;
 };
 
-export function ArticleSummary({ articleSummary, index, numberOfArticles }: ArticleSummaryProps) {
-  const href = isNullish(articleSummary.url)
-    ? `/articles/${articleSummary.slug}`
-    : articleSummary.url;
+export function ArticleSummary({ article, index, numberOfArticles }: ArticleSummaryProps) {
+  const href = isNullish(article.url) ? `/articles/${article.slug}` : article.url;
 
   const percent = `${(index / (numberOfArticles - 1)) * 100}%`;
   const style = {
@@ -23,8 +21,8 @@ export function ArticleSummary({ articleSummary, index, numberOfArticles }: Arti
   };
 
   return (
-    <Summary title={articleSummary.title} url={href} style={style}>
-      {articleSummary.description}
+    <Summary title={article.title} url={href} style={style}>
+      {article.description}
     </Summary>
   );
 }

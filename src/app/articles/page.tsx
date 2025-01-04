@@ -8,6 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default async function ArticlesPage() {
-  const articleSummaries = await fetchArticles();
-  return <ArticleSummaries articleSummaries={articleSummaries} />;
+  const articles = await fetchArticles();
+  return <ArticleSummaries articles={articles} />;
 }
