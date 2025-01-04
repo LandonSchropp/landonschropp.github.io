@@ -5,7 +5,7 @@ import {
   scaleShapesToWidth,
   distributeShapesHorizontally,
   distributeRowsVertically,
-  calculateAspectAreaConsumption,
+  calculateAspectAreaPercentage,
 } from "./calculations";
 import { extractAspects } from "./extraction";
 import { Group } from "./group";
@@ -21,9 +21,10 @@ import {
   DynamicSVGRow,
   Size,
 } from "@/types";
+import { maxBy } from "@/utilities/array";
 import { recursivelyReplaceType } from "@/utilities/introspection";
 import { ReactNode, useRef } from "react";
-import { indexBy, firstBy } from "remeda";
+import { indexBy } from "remeda";
 
 function calculateBoundedRow(row: DynamicSVGRow, size: Size): BoundedDynamicSVGRow {
   const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
@@ -51,8 +52,8 @@ function calculateBoundedAspect(
 }
 
 function calculateAndSelectAspect(node: ReactNode, size: Size): BoundedDynamicSVGAspect {
-  const boundedAspects = extractAspects(node).map((aspect) => calculateBoundedAspect(aspect, size));
-  const aspect = firstBy(boundedAspects, (aspect) => calculateAspectAreaConsumption(aspect, size));
+  const aspects = extractAspects(node).map((aspect) => calculateBoundedAspect(aspect, size));
+  const aspect = maxBy(aspects, (aspect) => calculateAspectAreaPercentage(aspect, size));
 
   if (!aspect) {
     throw new Error("No aspects were provided.");
@@ -84,6 +85,20 @@ function replaceRowsWithBoundedRows(
         {props.children}
       </BoundedRow>
     );
+  });
+}
+
+function replaceAspectWithBoundedAspect(
+  node: ReactNode,
+  boundedAspect: BoundedDynamicSVGAspect,
+): ReactNode {
+  return recursivelyReplaceType(node, Aspect, ({ key, props }) => {
+    // If the aspect is not the selected aspect, remove it.
+    if (boundedAspect.key !== key) {
+      return null;
+    }
+
+    return replaceRowsWithBoundedRows(props.children, boundedAspect.boundedRows);
   });
 }
 
@@ -120,7 +135,7 @@ export function DynamicSVG({ children }: DynamicSVGProps) {
   const aspect = calculateAndSelectAspect(children, size);
   const viewBoxHeight = calculateBounds(aspect.boundedRows).height;
 
-  const boundedChildren = replaceRowsWithBoundedRows(children, aspect.boundedRows);
+  const boundedChildren = replaceAspectWithBoundedAspect(children, aspect);
 
   return (
     <main className="flex h-full p-[3vw] *:flex-[0_0_auto]">

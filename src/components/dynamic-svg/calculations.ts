@@ -105,14 +105,13 @@ export function distributeRowsVertically(
 }
 
 /**
- * Given an aspect and a size, this function calculates the percentage of the area of the size
- * that's consumed by the aspect. This calculation takes into account that the content might be
- * further scaled inside the actual container.
+ * Returns the portion of the provided size that the aspect consumes. If the aspect is taller than
+ * the size, the aspect is scaled down to fit within the size.
+ * @param aspect The aspect to calculate the area percentage for.
+ * @param size The size that contains the aspect.
+ * @returns The percentage of the size that the aspect consumes.
  */
-export function calculateAspectAreaConsumption(
-  aspect: BoundedDynamicSVGAspect,
-  size: Size,
-): number {
-  const scale = size.height / aspect.bounds.height;
+export function calculateAspectAreaPercentage(aspect: BoundedDynamicSVGAspect, size: Size): number {
+  const scale = size.height < aspect.bounds.height ? size.height / aspect.bounds.height : 1;
   return (aspect.bounds.width * scale * aspect.bounds.height * scale) / (size.width * size.height);
 }
