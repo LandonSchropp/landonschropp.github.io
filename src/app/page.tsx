@@ -6,14 +6,19 @@ import * as DATA from "@/data/svg";
 
 const DEFAULT_SPACING = 0.3;
 const WIDE_SPACING = 0.5;
-const MIN_VERTICAL_SPACING = 0.02;
-const MAX_VERTICAL_SPACING = 0.06;
+const EXTRA_WIDE_SPACING = 1.0;
+
+const LANDSCAPE_MIN_SPACING = 0.02;
+const LANDSCAPE_MAX_SPACING = 0.06;
+const PORTRAIT_MIN_SPACING = 0.05;
+const PORTRAIT_MAX_SPACING = 0.12;
 
 export default function IndexPage() {
   const landon = <DynamicSVG.Shape key="landon" {...DATA.landon} />;
   const schropp = <DynamicSVG.Shape key="schropp" {...DATA.schropp} />;
 
-  const entrepreneur = <DynamicSVG.Shape key="entrepreneur" {...DATA.entrepreneurComma} />;
+  const entrepreneur = <DynamicSVG.Shape key="entrepreneur" {...DATA.entrepreneur} />;
+  const entrepreneurComma = <DynamicSVG.Shape key="entrepreneur" {...DATA.entrepreneurComma} />;
   const developer = <DynamicSVG.Shape key="developer" {...DATA.developer} />;
   const ampersand = <DynamicSVG.Shape key="ampersand" {...DATA.ampersand} />;
   const designer = <DynamicSVG.Shape key="designer" {...DATA.designer} />;
@@ -63,9 +68,9 @@ export default function IndexPage() {
   return (
     <DynamicSVG>
       <DynamicSVG.Aspect
-        key="landscape"
-        minSpacing={MIN_VERTICAL_SPACING}
-        maxSpacing={MAX_VERTICAL_SPACING}
+        key="landscale"
+        minSpacing={LANDSCAPE_MIN_SPACING}
+        maxSpacing={LANDSCAPE_MAX_SPACING}
       >
         <DynamicSVG.Group title={NAME} key="heading" role="heading">
           <DynamicSVG.Row key="name" spacing={DEFAULT_SPACING}>
@@ -80,7 +85,7 @@ export default function IndexPage() {
           role="doc-subititle"
         >
           <DynamicSVG.Row key="description" spacing={DEFAULT_SPACING}>
-            {entrepreneur}
+            {entrepreneurComma}
             {developer}
             {ampersand}
             {designer}
@@ -101,8 +106,8 @@ export default function IndexPage() {
       </DynamicSVG.Aspect>
       <DynamicSVG.Aspect
         key="portrait"
-        minSpacing={MIN_VERTICAL_SPACING}
-        maxSpacing={MAX_VERTICAL_SPACING}
+        minSpacing={PORTRAIT_MIN_SPACING}
+        maxSpacing={PORTRAIT_MAX_SPACING}
       >
         <DynamicSVG.Group title={NAME} key="heading" role="heading">
           <DynamicSVG.Row key="first-name" spacing={DEFAULT_SPACING}>
@@ -134,7 +139,7 @@ export default function IndexPage() {
             {notes}
             {til}
           </DynamicSVG.Row>
-          <DynamicSVG.Row key="external-navigation" spacing={WIDE_SPACING}>
+          <DynamicSVG.Row key="external-navigation" spacing={EXTRA_WIDE_SPACING}>
             {gitHub}
             {chessCom}
             {linkedIn}
