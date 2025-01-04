@@ -65,88 +65,96 @@ export default function IndexPage() {
     </DynamicSVG.Link>
   );
 
+  const landscape = (
+    <DynamicSVG.Aspect
+      key="landscape"
+      minSpacing={LANDSCAPE_MIN_SPACING}
+      maxSpacing={LANDSCAPE_MAX_SPACING}
+    >
+      <DynamicSVG.Group title={NAME} key="heading" role="heading">
+        <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
+          {landon}
+          {schropp}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+
+      <DynamicSVG.Group
+        title="Entrepreneur, Designer & Developer"
+        key="subheading"
+        role="doc-subititle"
+      >
+        <DynamicSVG.Row key="description" align="top" spacing={DEFAULT_SPACING}>
+          {entrepreneurComma}
+          {developer}
+          {ampersand}
+          {designer}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+
+      <DynamicSVG.Group key="navigation" role="navigation">
+        <DynamicSVG.Row key="navigation" align="middle" spacing={WIDE_SPACING}>
+          {writing}
+          {notes}
+          {til}
+          {gitHub}
+          {chessCom}
+          {linkedIn}
+          {email}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+    </DynamicSVG.Aspect>
+  );
+
+  const portrait = (
+    <DynamicSVG.Aspect
+      key="portrait"
+      minSpacing={PORTRAIT_MIN_SPACING}
+      maxSpacing={PORTRAIT_MAX_SPACING}
+    >
+      <DynamicSVG.Group title={NAME} key="heading" role="heading">
+        <DynamicSVG.Row key="first-name" align="top" spacing={DEFAULT_SPACING}>
+          {landon}
+        </DynamicSVG.Row>
+        <DynamicSVG.Row key="last-name" align="top" spacing={DEFAULT_SPACING}>
+          {schropp}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+
+      <DynamicSVG.Group
+        title="Entrepreneur, Designer & Developer"
+        key="subheading"
+        role="doc-subititle"
+      >
+        <DynamicSVG.Row key="entrepreneur" align="top" spacing={DEFAULT_SPACING}>
+          {entrepreneur}
+        </DynamicSVG.Row>
+        <DynamicSVG.Row key="developer-and-designer" align="top" spacing={DEFAULT_SPACING}>
+          {developer}
+          {ampersand}
+          {designer}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+
+      <DynamicSVG.Group key="navigation" role="navigation">
+        <DynamicSVG.Row key="internal-navigation" align="top" spacing={WIDE_SPACING}>
+          {writing}
+          {notes}
+          {til}
+        </DynamicSVG.Row>
+        <DynamicSVG.Row key="external-navigation" align="top" spacing={EXTRA_WIDE_SPACING}>
+          {gitHub}
+          {chessCom}
+          {linkedIn}
+          {email}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+    </DynamicSVG.Aspect>
+  );
+
   return (
     <DynamicSVG>
-      <DynamicSVG.Aspect
-        key="landscale"
-        minSpacing={LANDSCAPE_MIN_SPACING}
-        maxSpacing={LANDSCAPE_MAX_SPACING}
-      >
-        <DynamicSVG.Group title={NAME} key="heading" role="heading">
-          <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
-            {landon}
-            {schropp}
-          </DynamicSVG.Row>
-        </DynamicSVG.Group>
-
-        <DynamicSVG.Group
-          title="Entrepreneur, Designer & Developer"
-          key="subheading"
-          role="doc-subititle"
-        >
-          <DynamicSVG.Row key="description" align="top" spacing={DEFAULT_SPACING}>
-            {entrepreneurComma}
-            {developer}
-            {ampersand}
-            {designer}
-          </DynamicSVG.Row>
-        </DynamicSVG.Group>
-
-        <DynamicSVG.Group key="navigation" role="navigation">
-          <DynamicSVG.Row key="navigation" align="middle" spacing={WIDE_SPACING}>
-            {writing}
-            {notes}
-            {til}
-            {gitHub}
-            {chessCom}
-            {linkedIn}
-            {email}
-          </DynamicSVG.Row>
-        </DynamicSVG.Group>
-      </DynamicSVG.Aspect>
-      <DynamicSVG.Aspect
-        key="portrait"
-        minSpacing={PORTRAIT_MIN_SPACING}
-        maxSpacing={PORTRAIT_MAX_SPACING}
-      >
-        <DynamicSVG.Group title={NAME} key="heading" role="heading">
-          <DynamicSVG.Row key="first-name" align="top" spacing={DEFAULT_SPACING}>
-            {landon}
-          </DynamicSVG.Row>
-          <DynamicSVG.Row key="last-name" align="top" spacing={DEFAULT_SPACING}>
-            {schropp}
-          </DynamicSVG.Row>
-        </DynamicSVG.Group>
-
-        <DynamicSVG.Group
-          title="Entrepreneur, Designer & Developer"
-          key="subheading"
-          role="doc-subititle"
-        >
-          <DynamicSVG.Row key="entrepreneur" align="top" spacing={DEFAULT_SPACING}>
-            {entrepreneur}
-          </DynamicSVG.Row>
-          <DynamicSVG.Row key="developer-and-designer" align="top" spacing={DEFAULT_SPACING}>
-            {developer}
-            {ampersand}
-            {designer}
-          </DynamicSVG.Row>
-        </DynamicSVG.Group>
-
-        <DynamicSVG.Group key="navigation" role="navigation">
-          <DynamicSVG.Row key="internal-navigation" align="top" spacing={WIDE_SPACING}>
-            {writing}
-            {notes}
-            {til}
-          </DynamicSVG.Row>
-          <DynamicSVG.Row key="external-navigation" align="top" spacing={EXTRA_WIDE_SPACING}>
-            {gitHub}
-            {chessCom}
-            {linkedIn}
-            {email}
-          </DynamicSVG.Row>
-        </DynamicSVG.Group>
-      </DynamicSVG.Aspect>
+      {landscape}
+      {portrait}
     </DynamicSVG>
   );
 }
