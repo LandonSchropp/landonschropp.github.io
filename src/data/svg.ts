@@ -1,5 +1,6 @@
 import ampersandRaw from "@/images/data/ampersand.svg?raw";
 import chessComRaw from "@/images/data/chess-com.svg?raw";
+import dashRaw from "@/images/data/dash.svg?raw";
 import designerRaw from "@/images/data/designer.svg?raw";
 import developerRaw from "@/images/data/developer.svg?raw";
 import emailRaw from "@/images/data/email.svg?raw";
@@ -45,6 +46,7 @@ function extractSVGData(svg: string): Omit<DynamicSVGShape, "key"> {
 
 export const ampersand = extractSVGData(ampersandRaw);
 export const chessCom = extractSVGData(chessComRaw);
+export const dash = extractSVGData(dashRaw);
 export const designer = extractSVGData(designerRaw);
 export const developer = extractSVGData(developerRaw);
 export const email = extractSVGData(emailRaw);
