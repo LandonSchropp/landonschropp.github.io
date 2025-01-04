@@ -28,9 +28,8 @@ export function scale<T extends BoundedObject>(object: T, scale: number): T {
   return {
     ...object,
     bounds: {
-      // TODO: We probably shouldn't scale x and y here.
-      x: object.bounds.x * scale,
-      y: object.bounds.y * scale,
+      x: object.bounds.x,
+      y: object.bounds.y,
       width: object.bounds.width * scale,
       height: object.bounds.height * scale,
     },
