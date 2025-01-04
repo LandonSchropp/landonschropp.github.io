@@ -1,11 +1,14 @@
+import { calculateBounds } from "./bounds";
 import {
   DynamicSVGShape,
   BoundedDynamicSVGShape,
   Size,
   BoundedDynamicSVGRow,
   BoundedDynamicSVGAspect,
+  DynamicSVGAspect,
+  DynamicSVGRow,
 } from "@/types";
-import { sum } from "@/utilities/array";
+import { maxBy, sum } from "@/utilities/array";
 import { clamp } from "@/utilities/number";
 
 /**
@@ -15,7 +18,7 @@ import { clamp } from "@/utilities/number";
  * the shapes.
  * @returns The transformed shapes.
  */
-export function distributeShapesHorizontally(
+function distributeShapesHorizontally(
   shapes: DynamicSVGShape[],
   spacing: number,
 ): BoundedDynamicSVGShape[] {
@@ -43,7 +46,7 @@ export function distributeShapesHorizontally(
  * @param width The width to fit the shapes within.
  * @returns The transformed shapes.
  */
-export function scaleShapesToWidth(
+function scaleShapesToWidth(
   boundedShapes: BoundedDynamicSVGShape[],
   width: number,
 ): BoundedDynamicSVGShape[] {
@@ -75,7 +78,7 @@ export function scaleShapesToWidth(
  * of the width of the container.
  * @returns The transformed shapes distributed into rows.
  */
-export function distributeRowsVertically(
+function distributeRowsVertically(
   rows: BoundedDynamicSVGRow[],
   size: Size,
   minSpacing: number,
@@ -111,7 +114,68 @@ export function distributeRowsVertically(
  * @param size The size that contains the aspect.
  * @returns The percentage of the size that the aspect consumes.
  */
-export function calculateAspectAreaPercentage(aspect: BoundedDynamicSVGAspect, size: Size): number {
+function calculateAspectAreaPercentage(aspect: BoundedDynamicSVGAspect, size: Size): number {
   const scale = size.height < aspect.bounds.height ? size.height / aspect.bounds.height : 1;
   return (aspect.bounds.width * scale * aspect.bounds.height * scale) / (size.width * size.height);
+}
+
+/**
+ * Given a row and the size of the container, this function calculates the layout of the row.
+ * @param row The row to calculate the layout for.
+ * @param size The size of the container.
+ * @returns The bounded layout of the row.
+ */
+function calculateBoundedRow(row: DynamicSVGRow, size: Size): BoundedDynamicSVGRow {
+  const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
+  const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
+
+  return {
+    key: row.key,
+    bounds: calculateBounds(scaledShapes),
+    boundedShapes: scaledShapes,
+  };
+}
+
+/**
+ * Given an aspect and the size of the container, this function calculates the layout of the aspect.
+ * @param aspect The aspect to calculate the layout for.
+ * @param size The size of the container.
+ * @returns The bounded layout of the aspect.
+ */
+function calculateBoundedAspect(
+  { key, rows, minSpacing, maxSpacing }: DynamicSVGAspect,
+  size: Size,
+): BoundedDynamicSVGAspect {
+  const scaledRows = rows.map((row) => calculateBoundedRow(row, size));
+  const boundedRows = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
+
+  return {
+    key,
+    bounds: calculateBounds(boundedRows),
+    boundedRows,
+  };
+}
+
+/**
+ * Given an array of aspects and the size of the container, this function calculates the layout of
+ * each aspect, and then selects the aspect that takes up the most space within the container.
+ * @param aspects The aspects to calculate and select from.
+ * @param size The size of the container.
+ * @returns The aspect that takes up the most space within the container.
+ */
+export function calculateAndSelectAspect(
+  aspects: DynamicSVGAspect[],
+  size: Size,
+): BoundedDynamicSVGAspect {
+  const boundedAspects = aspects.map((aspect) => calculateBoundedAspect(aspect, size));
+
+  const aspect = maxBy(boundedAspects, (boundedAspect) =>
+    calculateAspectAreaPercentage(boundedAspect, size),
+  );
+
+  if (!aspect) {
+    throw new Error("No aspects were provided.");
+  }
+
+  return aspect;
 }

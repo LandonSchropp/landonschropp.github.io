@@ -1,12 +1,7 @@
 import { Aspect } from "./aspect";
 import { BoundedAspect } from "./bounded-aspect";
 import { calculateBounds } from "./bounds";
-import {
-  scaleShapesToWidth,
-  distributeShapesHorizontally,
-  distributeRowsVertically,
-  calculateAspectAreaPercentage,
-} from "./calculations";
+import { calculateAndSelectAspect } from "./calculations";
 import { extractAspects } from "./extraction";
 import { Group } from "./group";
 import { Link } from "./link";
@@ -14,53 +9,9 @@ import { Row } from "./row";
 import { Shape } from "./shape";
 import { useSize } from "@/hooks/use-size";
 import flannel from "@/images/flannel.png";
-import {
-  BoundedDynamicSVGAspect,
-  BoundedDynamicSVGRow,
-  DynamicSVGAspect,
-  DynamicSVGRow,
-  Size,
-} from "@/types";
-import { maxBy } from "@/utilities/array";
-import { ReactNode, useRef } from "react";
+import { useRef } from "react";
 
 const PATTERN_SIZE_MULTIPLIER = 0.1;
-
-function calculateBoundedRow(row: DynamicSVGRow, size: Size): BoundedDynamicSVGRow {
-  const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
-  const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
-
-  return {
-    key: row.key,
-    bounds: calculateBounds(scaledShapes),
-    boundedShapes: scaledShapes,
-  };
-}
-
-function calculateBoundedAspect(
-  { key, rows, minSpacing, maxSpacing }: DynamicSVGAspect,
-  size: Size,
-): BoundedDynamicSVGAspect {
-  const scaledRows = rows.map((row) => calculateBoundedRow(row, size));
-  const boundedRows = distributeRowsVertically(scaledRows, size, minSpacing, maxSpacing);
-
-  return {
-    key,
-    bounds: calculateBounds(boundedRows),
-    boundedRows,
-  };
-}
-
-function calculateAndSelectAspect(node: ReactNode, size: Size): BoundedDynamicSVGAspect {
-  const aspects = extractAspects(node).map((aspect) => calculateBoundedAspect(aspect, size));
-  const aspect = maxBy(aspects, (aspect) => calculateAspectAreaPercentage(aspect, size));
-
-  if (!aspect) {
-    throw new Error("No aspects were provided.");
-  }
-
-  return aspect;
-}
 
 export type DynamicSVGProps = {
   /**
@@ -93,7 +44,8 @@ export function DynamicSVG({ children }: DynamicSVGProps) {
   const size = useSize(svgRef);
   const patternSize = Math.sqrt(size.width * size.height) * PATTERN_SIZE_MULTIPLIER;
 
-  const aspect = calculateAndSelectAspect(children, size);
+  const aspects = extractAspects(children);
+  const aspect = calculateAndSelectAspect(aspects, size);
   const viewBoxHeight = calculateBounds(aspect.boundedRows).height;
 
   return (
