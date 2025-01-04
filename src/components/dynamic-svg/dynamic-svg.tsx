@@ -26,6 +26,8 @@ import { recursivelyReplaceType } from "@/utilities/introspection";
 import { ReactNode, useRef } from "react";
 import { indexBy } from "remeda";
 
+const PATTERN_SIZE_MULTIPLIER = 0.1;
+
 function calculateBoundedRow(row: DynamicSVGRow, size: Size): BoundedDynamicSVGRow {
   const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
   const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
@@ -137,6 +139,8 @@ export function DynamicSVG({ children }: DynamicSVGProps) {
 
   const boundedChildren = replaceAspectWithBoundedAspect(children, aspect);
 
+  const patternSize = Math.sqrt(size.width * size.height) * PATTERN_SIZE_MULTIPLIER;
+
   return (
     <main className="flex h-full p-[3vw] *:flex-[0_0_auto]">
       <svg
@@ -146,8 +150,13 @@ export function DynamicSVG({ children }: DynamicSVGProps) {
         ref={svgRef}
       >
         <defs>
-          <pattern id="dynamic-svg-background" patternUnits="userSpaceOnUse" width={80} height={80}>
-            <image href={flannel.src} x={0} y={0} width={80} height={80} />
+          <pattern
+            id="dynamic-svg-background"
+            patternUnits="userSpaceOnUse"
+            width={patternSize}
+            height={patternSize}
+          >
+            <image href={flannel.src} x={0} y={0} width={patternSize} height={patternSize} />
           </pattern>
         </defs>
 
