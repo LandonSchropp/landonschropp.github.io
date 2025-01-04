@@ -39,6 +39,7 @@
     "fs-extra": "^11.2.0",
     "glob": "^11.0.0",
     "highlight.js": "^11.11.0",
+    "lucide-react": "^0.469.0",
     "markdown-it": "^14.1.0",
     "markdown-it-callouts": "^1.0.3",
     "mime": "^4.0.6",
