@@ -8,15 +8,6 @@ const DEFAULT_SPACING = 0.3;
 const WIDE_SPACING = 0.5;
 const EXTRA_WIDE_SPACING = 1.0;
 
-const LANDSCAPE_MIN_SPACING = 0.02;
-const LANDSCAPE_MAX_SPACING = 0.08;
-
-const SQUARE_MIN_SPACING = 0.04;
-const SQUARE_MAX_SPACING = 0.1;
-
-const PORTRAIT_MIN_SPACING = 0.05;
-const PORTRAIT_MAX_SPACING = 0.12;
-
 export default function IndexPage() {
   const landon = <DynamicSVG.Shape key="landon" {...DATA.landon} />;
   const schropp = <DynamicSVG.Shape key="schropp" {...DATA.schropp} />;
@@ -72,11 +63,7 @@ export default function IndexPage() {
   );
 
   const landscape = (
-    <DynamicSVG.Aspect
-      key="landscape"
-      minSpacing={LANDSCAPE_MIN_SPACING}
-      maxSpacing={LANDSCAPE_MAX_SPACING}
-    >
+    <DynamicSVG.Aspect key="landscape" minSpacing={0.02} maxSpacing={0.06}>
       <DynamicSVG.Group title={NAME} key="heading" role="heading">
         <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
           {landon}
@@ -111,12 +98,48 @@ export default function IndexPage() {
     </DynamicSVG.Aspect>
   );
 
-  const semiLandscape = (
-    <DynamicSVG.Aspect
-      key="semi-landscape"
-      minSpacing={SQUARE_MIN_SPACING}
-      maxSpacing={SQUARE_MAX_SPACING}
-    >
+  const narrowLandscape = (
+    <DynamicSVG.Aspect key="narrow-landscape" minSpacing={0.02} maxSpacing={0.06}>
+      <DynamicSVG.Group title={NAME} key="heading" role="heading">
+        <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
+          {landon}
+          {schropp}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+
+      <DynamicSVG.Group
+        title="Entrepreneur, Designer & Developer"
+        key="subheading"
+        role="doc-subititle"
+      >
+        <DynamicSVG.Row key="entrepreneur" align="top" spacing={WIDE_SPACING}>
+          {dashLeft}
+          {entrepreneur}
+          {dashRight}
+        </DynamicSVG.Row>
+        <DynamicSVG.Row key="developer-and-designer" align="top" spacing={DEFAULT_SPACING}>
+          {developer}
+          {ampersand}
+          {designer}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+
+      <DynamicSVG.Group key="navigation" role="navigation">
+        <DynamicSVG.Row key="navigation" align="middle" spacing={WIDE_SPACING}>
+          {writing}
+          {notes}
+          {til}
+          {gitHub}
+          {chessCom}
+          {linkedIn}
+          {email}
+        </DynamicSVG.Row>
+      </DynamicSVG.Group>
+    </DynamicSVG.Aspect>
+  );
+
+  const square = (
+    <DynamicSVG.Aspect key="square" minSpacing={0.04} maxSpacing={0.1}>
       <DynamicSVG.Group title={NAME} key="heading" role="heading">
         <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
           {landon}
@@ -155,8 +178,8 @@ export default function IndexPage() {
     </DynamicSVG.Aspect>
   );
 
-  const square = (
-    <DynamicSVG.Aspect key="square" minSpacing={SQUARE_MIN_SPACING} maxSpacing={SQUARE_MAX_SPACING}>
+  const portrait = (
+    <DynamicSVG.Aspect key="portrait" minSpacing={0.04} maxSpacing={0.1}>
       <DynamicSVG.Group title={NAME} key="heading" role="heading">
         <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
           {landon}
@@ -193,12 +216,8 @@ export default function IndexPage() {
     </DynamicSVG.Aspect>
   );
 
-  const portrait = (
-    <DynamicSVG.Aspect
-      key="portrait"
-      minSpacing={PORTRAIT_MIN_SPACING}
-      maxSpacing={PORTRAIT_MAX_SPACING}
-    >
+  const tallPortrait = (
+    <DynamicSVG.Aspect key="tall-portrait" minSpacing={0.05} maxSpacing={0.12}>
       <DynamicSVG.Group title={NAME} key="heading" role="heading">
         <DynamicSVG.Row key="first-name" align="top" spacing={DEFAULT_SPACING}>
           {landon}
@@ -242,9 +261,10 @@ export default function IndexPage() {
   return (
     <DynamicSVG>
       {landscape}
-      {semiLandscape}
+      {narrowLandscape}
       {square}
       {portrait}
+      {tallPortrait}
     </DynamicSVG>
   );
 }
