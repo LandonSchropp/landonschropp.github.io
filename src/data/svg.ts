@@ -43,7 +43,6 @@ function extractSVGData(svg: string): Omit<DynamicSVGShape, "key"> {
   return { originalWidth, originalHeight, content };
 }
 
-// TODO: Move this data into a server function to ensure that the data is loaded at build time.
 export const ampersand = extractSVGData(ampersandRaw);
 export const chessCom = extractSVGData(chessComRaw);
 export const designer = extractSVGData(designerRaw);
