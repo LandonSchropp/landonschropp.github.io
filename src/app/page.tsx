@@ -73,7 +73,7 @@ export default function IndexPage() {
         maxSpacing={LANDSCAPE_MAX_SPACING}
       >
         <DynamicSVG.Group title={NAME} key="heading" role="heading">
-          <DynamicSVG.Row key="name" spacing={DEFAULT_SPACING}>
+          <DynamicSVG.Row key="name" align="top" spacing={DEFAULT_SPACING}>
             {landon}
             {schropp}
           </DynamicSVG.Row>
@@ -84,7 +84,7 @@ export default function IndexPage() {
           key="subheading"
           role="doc-subititle"
         >
-          <DynamicSVG.Row key="description" spacing={DEFAULT_SPACING}>
+          <DynamicSVG.Row key="description" align="top" spacing={DEFAULT_SPACING}>
             {entrepreneurComma}
             {developer}
             {ampersand}
@@ -93,7 +93,7 @@ export default function IndexPage() {
         </DynamicSVG.Group>
 
         <DynamicSVG.Group key="navigation" role="navigation">
-          <DynamicSVG.Row key="navigation" spacing={WIDE_SPACING}>
+          <DynamicSVG.Row key="navigation" align="middle" spacing={WIDE_SPACING}>
             {writing}
             {notes}
             {til}
@@ -110,10 +110,10 @@ export default function IndexPage() {
         maxSpacing={PORTRAIT_MAX_SPACING}
       >
         <DynamicSVG.Group title={NAME} key="heading" role="heading">
-          <DynamicSVG.Row key="first-name" spacing={DEFAULT_SPACING}>
+          <DynamicSVG.Row key="first-name" align="top" spacing={DEFAULT_SPACING}>
             {landon}
           </DynamicSVG.Row>
-          <DynamicSVG.Row key="last-name" spacing={DEFAULT_SPACING}>
+          <DynamicSVG.Row key="last-name" align="top" spacing={DEFAULT_SPACING}>
             {schropp}
           </DynamicSVG.Row>
         </DynamicSVG.Group>
@@ -123,10 +123,10 @@ export default function IndexPage() {
           key="subheading"
           role="doc-subititle"
         >
-          <DynamicSVG.Row key="entrepreneur" spacing={DEFAULT_SPACING}>
+          <DynamicSVG.Row key="entrepreneur" align="top" spacing={DEFAULT_SPACING}>
             {entrepreneur}
           </DynamicSVG.Row>
-          <DynamicSVG.Row key="developer-and-designer" spacing={DEFAULT_SPACING}>
+          <DynamicSVG.Row key="developer-and-designer" align="top" spacing={DEFAULT_SPACING}>
             {developer}
             {ampersand}
             {designer}
@@ -134,12 +134,12 @@ export default function IndexPage() {
         </DynamicSVG.Group>
 
         <DynamicSVG.Group key="navigation" role="navigation">
-          <DynamicSVG.Row key="internal-navigation" spacing={WIDE_SPACING}>
+          <DynamicSVG.Row key="internal-navigation" align="top" spacing={WIDE_SPACING}>
             {writing}
             {notes}
             {til}
           </DynamicSVG.Row>
-          <DynamicSVG.Row key="external-navigation" spacing={EXTRA_WIDE_SPACING}>
+          <DynamicSVG.Row key="external-navigation" align="top" spacing={EXTRA_WIDE_SPACING}>
             {gitHub}
             {chessCom}
             {linkedIn}

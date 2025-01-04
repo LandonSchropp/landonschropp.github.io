@@ -21,6 +21,7 @@ import { clamp } from "@/utilities/number";
 function distributeShapesHorizontally(
   shapes: DynamicSVGShape[],
   spacing: number,
+  align: DynamicSVGRow["align"],
 ): BoundedDynamicSVGShape[] {
   const rowHeight = Math.max(...shapes.map(({ originalHeight }) => originalHeight));
   const spacingWidth = rowHeight * spacing;
@@ -32,7 +33,7 @@ function distributeShapesHorizontally(
         width: shape.originalWidth,
         height: shape.originalHeight,
         x: sum(accumulator, ({ bounds: { width } }) => width + spacingWidth),
-        y: (rowHeight - shape.originalHeight) / 2,
+        y: align === "top" ? 0 : (rowHeight - shape.originalHeight) / 2,
       },
     });
 
@@ -126,7 +127,7 @@ function calculateAspectAreaPercentage(aspect: BoundedDynamicSVGAspect, size: Si
  * @returns The bounded layout of the row.
  */
 function calculateBoundedRow(row: DynamicSVGRow, size: Size): BoundedDynamicSVGRow {
-  const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing);
+  const distributedShapes = distributeShapesHorizontally(row.shapes, row.spacing, row.align);
   const scaledShapes = scaleShapesToWidth(distributedShapes, size.width);
 
   return {

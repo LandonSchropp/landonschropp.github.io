@@ -28,12 +28,12 @@ export function extractShapes(node: ReactNode): DynamicSVGShape[] {
  * @returns An array of rows and their metadata.
  */
 export function extractRows(node: ReactNode): DynamicSVGRow[] {
-  return recursivelyExtractType(node, Row, ({ key, props: { children, spacing } }) => {
+  return recursivelyExtractType(node, Row, ({ key, props: { children, ...props } }) => {
     if (!key) {
       throw new Error("A key is required for each row.");
     }
 
-    return { key, spacing, shapes: extractShapes(children) };
+    return { ...props, key, shapes: extractShapes(children) };
   });
 }
 

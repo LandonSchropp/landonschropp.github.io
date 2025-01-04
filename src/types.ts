@@ -74,6 +74,9 @@ export type DynamicSVGRow = {
   /** The space between each shape in the row, represented as a percentage of the row. */
   spacing: number;
 
+  /** The way that shapes are aligned within the row. */
+  align: "top" | "middle";
+
   /** The shapes contained in the row. */
   shapes: DynamicSVGShape[];
 };
