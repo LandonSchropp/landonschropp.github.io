@@ -170,10 +170,6 @@ export function calculateAndSelectAspect(
 ): BoundedDynamicSVGAspect {
   const boundedAspects = aspects.map((aspect) => calculateBoundedAspect(aspect, size));
 
-  for (const boundedAspect of boundedAspects) {
-    console.log(boundedAspect.key, calculateAspectAreaPercentage(boundedAspect, size));
-  }
-
   const aspect = maxBy(boundedAspects, (boundedAspect) =>
     calculateAspectAreaPercentage(boundedAspect, size),
   );

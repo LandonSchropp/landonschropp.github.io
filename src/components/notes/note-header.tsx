@@ -1,5 +1,6 @@
 import { Listify } from "../base/listify";
 import { Header } from "../content/header";
+import { NoteTag } from "./note-tag";
 import {
   LIVE_TALK_MEDIA,
   PODCAST_MEDIA,
@@ -166,6 +167,7 @@ export function NoteHeader({ note }: NoteProps) {
       href={note.url}
       tag={note.category}
       tagHref={`/notes?category=${note.category}`}
+      tagComponent={NoteTag}
     />
   );
 }

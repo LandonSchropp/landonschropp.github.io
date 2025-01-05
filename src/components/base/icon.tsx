@@ -2,7 +2,7 @@ import ChessComIcon from "@/images/data/chess-com.svg?react";
 import EmailIcon from "@/images/data/email.svg?react";
 import GitHubIcon from "@/images/data/github.svg?react";
 import LinkedInIcon from "@/images/data/linkedin.svg?react";
-import { ExternalLink } from "lucide-react";
+import { Briefcase, Brain, ExternalLink, Activity, Code, Star } from "lucide-react";
 
 const SVG_ICONS = {
   email: EmailIcon,
@@ -13,24 +13,41 @@ const SVG_ICONS = {
 
 const LUCIDE_ICONS = {
   externalLink: ExternalLink,
+  brain: Brain,
+  briefcase: Briefcase,
+  activity: Activity,
+  code: Code,
+  star: Star,
 };
 
 const ICONS = { ...SVG_ICONS, ...LUCIDE_ICONS } as const;
 
-type IconProps = {
+type BaseIconProps = {
   name: keyof typeof SVG_ICONS | keyof typeof LUCIDE_ICONS;
-  alt: string;
   className?: string;
 };
 
-export function Icon({ name, alt, className }: IconProps) {
+type HiddenIconProps = BaseIconProps & {
+  hidden: true;
+  alt?: never;
+};
+
+type AltIconProps = BaseIconProps & {
+  hidden?: false;
+  alt: string;
+};
+
+type IconProps = HiddenIconProps | AltIconProps;
+
+export function Icon({ name, hidden, alt, className }: IconProps) {
   const isLucideIcon = name in LUCIDE_ICONS;
   const IconComponent = ICONS[name];
+  const props = hidden ? { "aria-hidden": true } : {};
 
   if (isLucideIcon) {
     return (
-      <IconComponent className={`inline-block align-middle ${className}`}>
-        <title>{alt}</title>
+      <IconComponent className={`inline-block align-middle ${className}`} {...props}>
+        {alt && <title>{alt}</title>}
       </IconComponent>
     );
   }
@@ -39,6 +56,7 @@ export function Icon({ name, alt, className }: IconProps) {
     <IconComponent
       className={`inline-block h-3.6 w-3.6 fill-[currentColor] align-middle ${className}`}
       title={alt}
+      {...props}
     />
   );
 }
