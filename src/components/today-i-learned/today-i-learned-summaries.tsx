@@ -1,6 +1,7 @@
 "use client";
 
 import { TodayILearnedSummary } from "./today-i-learned-summary";
+import { TodayILearnedTag } from "./today-i-learned-tag";
 import { Header } from "@/components/content/header";
 import { Tags } from "@/components/content/tags";
 import { TECHNOLOGIES } from "@/constants";
@@ -26,7 +27,7 @@ export function TodayILearnedSummaries({ todayILearneds }: TodayILearnedSummarie
         title="Today I Learned"
         subText="Langague and framework tips and tricks I've learned while coding"
       >
-        <Tags type="technology" values={TECHNOLOGIES} />
+        <Tags type="technology" values={TECHNOLOGIES} component={TodayILearnedTag} />
       </Header>
       <section className="my-8">
         {filteredTodayILearneds.map((todayILearned) => (

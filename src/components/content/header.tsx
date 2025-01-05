@@ -22,11 +22,11 @@ function HeaderLink({ children, href }: HeaderLinkProps) {
 type HeaderTagProps<T extends string> = {
   tag?: T | undefined;
   href?: string | undefined;
-  component: GenericTagComponent<T>;
+  component?: GenericTagComponent<T>;
 };
 
 function HeaderTag<T extends string>({ tag, href, component: TagComponent }: HeaderTagProps<T>) {
-  if (!tag || !href) {
+  if (!tag || !href || !TagComponent) {
     return null;
   }
 
@@ -45,7 +45,7 @@ type HeaderProps<T extends string> = {
   href?: string | undefined;
   tag?: T | undefined;
   tagHref?: string | undefined;
-  tagComponent: GenericTagComponent<T>;
+  tagComponent?: GenericTagComponent<T>;
 };
 
 export function Header<T extends string>({

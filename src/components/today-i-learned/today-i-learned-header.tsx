@@ -1,5 +1,6 @@
 import { FormattedDate } from "../base/formatted-date";
 import { Header } from "../content/header";
+import { TodayILearnedTag } from "./today-i-learned-tag";
 import { NAME } from "@/constants";
 import { TodayILearned } from "@/types";
 
@@ -20,6 +21,7 @@ export function TodayILearnedHeader({ todayILearned }: TodayILearnedHeaderProps)
       }
       tag={todayILearned.technology}
       tagHref={`/today-i-learned?technology=${todayILearned.technology}`}
+      tagComponent={TodayILearnedTag}
     />
   );
 }
