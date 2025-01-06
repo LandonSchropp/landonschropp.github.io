@@ -6,7 +6,7 @@ import BashIcon from "@/images/icons/bash.svg?react";
 import NeovimIcon from "@/images/icons/neovim.svg?react";
 import RubyIcon from "@/images/icons/ruby.svg?react";
 import { SiGit, SiTypescript } from "@icons-pack/react-simple-icons";
-import { Briefcase, Brain, ExternalLink, Activity, Code, Star } from "lucide-react";
+import { Layers, Briefcase, Brain, ExternalLink, Activity, Code } from "lucide-react";
 
 const SVG_ICONS = {
   bash: BashIcon,
@@ -24,7 +24,7 @@ const LUCIDE_ICONS = {
   briefcase: Briefcase,
   code: Code,
   externalLink: ExternalLink,
-  star: Star,
+  layers: Layers,
 };
 
 const SIMPLE_ICONS = {

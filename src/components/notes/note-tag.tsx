@@ -14,7 +14,7 @@ const ICONS = {
   [DEVELOPMENT_CATEGORY]: "code",
   [PSYCHOLOGY_CATEGORY]: "brain",
   [HEALTH_CATEGORY]: "activity",
-  [OTHER_CATEGORY]: "star",
+  [OTHER_CATEGORY]: "layers",
 } satisfies Record<Category, ComponentProps<typeof Tag>["icon"]>;
 
 type NoteTagComponent = GenericTagComponent<Category>;
