@@ -1,6 +1,7 @@
 "use client";
 
 import { Markdown } from "../content/markdown";
+import { NoteEmbed } from "./note-embed";
 import { NoteHeader } from "@/components/notes/note-header";
 import { useCategory } from "@/hooks/use-category";
 import type { Note as NoteType } from "@/types";
@@ -17,6 +18,7 @@ export function Note({ note }: NoteProps) {
   return (
     <article className="my-6" data-category={note.category}>
       <NoteHeader note={note} />
+      <NoteEmbed note={note} />
       <Markdown markdown={note.markdown} slug={note.slug} />
     </article>
   );
