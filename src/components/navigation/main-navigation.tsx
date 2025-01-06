@@ -68,19 +68,19 @@ export function MainNavigation() {
       </div>
       <div className="flex justify-center">
         <Link href="https://github.com/LandonSchropp" icon>
-          <Icon name="github" alt="GitHub" />
+          <Icon className="h-3.6" name="github" alt="GitHub" />
         </Link>
 
         <Link href="https://www.chess.com/member/landon" icon>
-          <Icon name="chessCom" alt="Chess.com" />
+          <Icon className="h-3.6" name="chessCom" alt="Chess.com" />
         </Link>
 
         <Link href="https://www.linkedin.com/in/landonschropp" icon>
-          <Icon name="linkedin" alt="LinkedIn" />
+          <Icon className="h-3.6" name="linkedin" alt="LinkedIn" />
         </Link>
 
         <Link href="mailto:schroppl@gmail.com" icon>
-          <Icon name="email" alt="Email" />
+          <Icon className="h-3.6" name="email" alt="Email" />
         </Link>
       </div>
     </nav>

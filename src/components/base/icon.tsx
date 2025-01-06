@@ -69,11 +69,5 @@ export function Icon({ name, hidden, alt, className }: IconProps) {
     return <IconComponent className={className} title={alt} {...props} />;
   }
 
-  return (
-    <IconComponent
-      className={`h-3.6 w-3.6 fill-[currentColor] ${className}`}
-      title={alt}
-      {...props}
-    />
-  );
+  return <IconComponent className={`fill-[currentColor] ${className}`} title={alt} {...props} />;
 }
