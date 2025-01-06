@@ -1,6 +1,6 @@
 import { ContentSchema } from "./content";
 import { TechnologySchema } from "./enums";
-import { TYPESCRIPT_JAVASCRIPT_TECHNOLOGY } from "@/constants";
+import { TYPESCRIPT_TECHNOLOGY } from "@/constants";
 import { z } from "zod";
 
 function preprocessTechnology(technology: unknown) {
@@ -10,8 +10,7 @@ function preprocessTechnology(technology: unknown) {
 
   switch (technology) {
     case "JavaScript":
-    case "TypeScript":
-      return TYPESCRIPT_JAVASCRIPT_TECHNOLOGY;
+      return TYPESCRIPT_TECHNOLOGY;
     default:
       return technology;
   }

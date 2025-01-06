@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@eslint/compat": "^1.2.4",
+    "@icons-pack/react-simple-icons": "^10.2.0",
     "@jest/globals": "^29.7.0",
     "@js-temporal/polyfill": "^0.4.4",
     "@nanostores/react": "^0.8.4",

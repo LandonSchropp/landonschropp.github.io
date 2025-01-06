@@ -8,7 +8,7 @@ import {
   HEALTH_CATEGORY,
   NEOVIM_TECHNOLOGY,
   SHELL_TECHNOLOGY,
-  TYPESCRIPT_JAVASCRIPT_TECHNOLOGY,
+  TYPESCRIPT_TECHNOLOGY,
 } from "./src/constants";
 import camelCase from "camelcase";
 import { mapValues } from "remeda";
@@ -87,7 +87,7 @@ const CATEGORY_COLORS = {
 } as const;
 
 const TECHNOLOGY_COLORS = {
-  [TYPESCRIPT_JAVASCRIPT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.cornflower,
+  [TYPESCRIPT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.cornflower,
   [RUBY_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.purple,
   [GIT_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.amethyst,
   [NEOVIM_TECHNOLOGY]: TAILWIND_CONFIG.theme.colors.mulberry,

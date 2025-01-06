@@ -34,14 +34,14 @@ export const CATEGORIES = [
   OTHER_CATEGORY,
 ] as const;
 
-export const TYPESCRIPT_JAVASCRIPT_TECHNOLOGY = "TypeScript / JavaScript";
+export const TYPESCRIPT_TECHNOLOGY = "TypeScript";
 export const RUBY_TECHNOLOGY = "Ruby";
 export const GIT_TECHNOLOGY = "Git";
 export const NEOVIM_TECHNOLOGY = "Neovim";
 export const SHELL_TECHNOLOGY = "Shell";
 
 export const TECHNOLOGIES = [
-  TYPESCRIPT_JAVASCRIPT_TECHNOLOGY,
+  TYPESCRIPT_TECHNOLOGY,
   RUBY_TECHNOLOGY,
   GIT_TECHNOLOGY,
   NEOVIM_TECHNOLOGY,

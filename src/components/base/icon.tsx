@@ -3,22 +3,19 @@ import EmailIcon from "@/images/data/email.svg?react";
 import GitHubIcon from "@/images/data/github.svg?react";
 import LinkedInIcon from "@/images/data/linkedin.svg?react";
 import BashIcon from "@/images/icons/bash.svg?react";
-import GitIcon from "@/images/icons/git.svg?react";
 import NeovimIcon from "@/images/icons/neovim.svg?react";
 import RubyIcon from "@/images/icons/ruby.svg?react";
-import TypeScriptIcon from "@/images/icons/typescript.svg?react";
-import { Gem, Briefcase, Brain, ExternalLink, Activity, Code, Star, Terminal } from "lucide-react";
+import { SiGit, SiTypescript } from "@icons-pack/react-simple-icons";
+import { Briefcase, Brain, ExternalLink, Activity, Code, Star } from "lucide-react";
 
 const SVG_ICONS = {
   bash: BashIcon,
   chessCom: ChessComIcon,
   email: EmailIcon,
-  git: GitIcon,
   github: GitHubIcon,
   linkedin: LinkedInIcon,
   neovim: NeovimIcon,
   ruby: RubyIcon,
-  typescript: TypeScriptIcon,
 } as const;
 
 const LUCIDE_ICONS = {
@@ -30,7 +27,12 @@ const LUCIDE_ICONS = {
   star: Star,
 };
 
-const ICONS = { ...SVG_ICONS, ...LUCIDE_ICONS } as const;
+const SIMPLE_ICONS = {
+  git: SiGit,
+  typescript: SiTypescript,
+};
+
+const ICONS = { ...SVG_ICONS, ...LUCIDE_ICONS, ...SIMPLE_ICONS } as const;
 
 type BaseIconProps = {
   name: keyof typeof ICONS;
@@ -53,17 +55,23 @@ export function Icon({ name, hidden, alt, className }: IconProps) {
   const IconComponent = ICONS[name];
   const props = hidden ? { "aria-hidden": true } : {};
 
+  className = `inline-block align-middle ${className}`;
+
   if (name in LUCIDE_ICONS) {
     return (
-      <IconComponent className={`inline-block align-middle ${className}`} {...props}>
+      <IconComponent className={className} {...props}>
         {alt && <title>{alt}</title>}
       </IconComponent>
     );
   }
 
+  if (name in SIMPLE_ICONS) {
+    return <IconComponent className={className} title={alt} {...props} />;
+  }
+
   return (
     <IconComponent
-      className={`inline-block h-3.6 w-3.6 fill-[currentColor] align-middle ${className}`}
+      className={`h-3.6 w-3.6 fill-[currentColor] ${className}`}
       title={alt}
       {...props}
     />

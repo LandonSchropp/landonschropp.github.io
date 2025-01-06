@@ -1,6 +1,6 @@
 import { Tag, GenericTagComponent } from "@/components/content/tag";
 import {
-  TYPESCRIPT_JAVASCRIPT_TECHNOLOGY,
+  TYPESCRIPT_TECHNOLOGY,
   RUBY_TECHNOLOGY,
   GIT_TECHNOLOGY,
   NEOVIM_TECHNOLOGY,
@@ -10,7 +10,7 @@ import { Technology } from "@/types";
 import { ComponentProps } from "react";
 
 const ICONS = {
-  [TYPESCRIPT_JAVASCRIPT_TECHNOLOGY]: "typescript",
+  [TYPESCRIPT_TECHNOLOGY]: "typescript",
   [RUBY_TECHNOLOGY]: "ruby",
   [GIT_TECHNOLOGY]: "git",
   [NEOVIM_TECHNOLOGY]: "neovim",
