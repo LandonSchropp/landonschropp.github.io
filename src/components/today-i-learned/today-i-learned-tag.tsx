@@ -10,11 +10,11 @@ import { Technology } from "@/types";
 import { ComponentProps } from "react";
 
 const ICONS = {
-  [TYPESCRIPT_JAVASCRIPT_TECHNOLOGY]: "star",
-  [RUBY_TECHNOLOGY]: "star",
-  [GIT_TECHNOLOGY]: "star",
-  [NEOVIM_TECHNOLOGY]: "star",
-  [SHELL_TECHNOLOGY]: "star",
+  [TYPESCRIPT_JAVASCRIPT_TECHNOLOGY]: "typescript",
+  [RUBY_TECHNOLOGY]: "ruby",
+  [GIT_TECHNOLOGY]: "git",
+  [NEOVIM_TECHNOLOGY]: "neovim",
+  [SHELL_TECHNOLOGY]: "bash",
 } satisfies Record<Technology, ComponentProps<typeof Tag>["icon"]>;
 
 type TodayILearnedTagComponent = GenericTagComponent<Technology>;
