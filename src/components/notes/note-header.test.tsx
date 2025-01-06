@@ -28,6 +28,7 @@ describe("NoteHeader", () => {
       source: "Source",
       url: "https://example.com",
       markdown: "",
+      filePath: "note.md",
     };
   });
 
