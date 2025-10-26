@@ -11,7 +11,7 @@
     "build": "next build",
     "check-types": "tsc --noEmit",
     "dev": "next dev",
-    "deploy": "bin/deploy",
+    "deploy": "pnpm build && pnpm gh-pages",
     "lint": "eslint --max-warnings=0 .",
     "start": "next start",
     "test": "jest",
