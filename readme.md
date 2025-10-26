@@ -4,6 +4,14 @@ This repo contains the code powering my personal website. Is uses markdown files
 [Obsidian](https://obsidian.md/), which are stored on the local file system, along with
 [Next.js](https://nextjs.org/) to generate a static React site.
 
+## Environment Variables
+
+This project requires specific environment variables to locate content files.
+
+- `NOTES_PATH`: The directory containing learning notes.
+- `TODAY_I_LEARNED_PATH`: The directory containing Today I Learned (TIL) notes.
+- `ARTICLES_PATH`: The directory containing articles.
+
 ## Development
 
 Make sure you have [pnpm](https://pnpm.io/) and the [Node.js](https://nodejs.org/en/) version
