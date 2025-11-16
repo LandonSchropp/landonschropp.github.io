@@ -2,7 +2,7 @@ import flannel from "../images/flannel.png";
 import "../styles/index.css";
 import appCss from "../styles/index.css?url";
 import { NAME } from "@/constants";
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
+import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -65,6 +65,7 @@ function RootLayout() {
           "text-theme-text *:flex-[0_0_auto]"
         }
       >
+        <Outlet />
         <Scripts />
       </body>
     </html>
