@@ -4,6 +4,7 @@
   "repository": "https://github.com/LandonSchropp/landonschropp.com",
   "author": "Landon Schropp <schroppl@gmail.com>",
   "license": "UNLICENSED",
+  "type": "module",
   "publishConfig": {
     "@LandonSchropp:registry": "https://npm.pkg.github.com"
   },
