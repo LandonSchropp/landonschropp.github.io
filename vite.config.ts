@@ -11,12 +11,12 @@ export default defineConfig({
     viteTsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
-    tailwindcss(),
     tanstackStart({
       prerender: {
         enabled: true,
       },
     }),
     viteReact(),
+    tailwindcss(),
   ],
 });

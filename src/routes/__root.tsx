@@ -1,6 +1,5 @@
 import flannel from "../images/flannel.png";
-import "../styles/index.css";
-import appCss from "../styles/index.css?url";
+import stylesheetsIndex from "../styles/index.css?url";
 import { NAME } from "@/constants";
 import { HeadContent, Outlet, Scripts, createRootRoute } from "@tanstack/react-router";
 
@@ -46,7 +45,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: stylesheetsIndex,
       },
     ],
   }),
