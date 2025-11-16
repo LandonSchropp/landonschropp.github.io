@@ -8,12 +8,12 @@
     "@LandonSchropp:registry": "https://npm.pkg.github.com"
   },
   "scripts": {
-    "build": "next build",
+    "build": "vite build",
     "check-types": "tsc --noEmit",
-    "dev": "next dev",
+    "dev": "vite dev",
     "deploy": "pnpm build && pnpm gh-pages",
     "lint": "eslint --max-warnings=0 .",
-    "start": "next start",
+    "preview": "vite preview",
     "test": "jest",
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky"
