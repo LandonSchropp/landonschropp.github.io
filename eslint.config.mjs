@@ -16,7 +16,7 @@ const gitignorePath = path.resolve(__dirname, ".gitignore");
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    ignores: ["src/app/**"], // Ignore old Next.js files during migration
+    ignores: ["src/app/**", "src/routeTree.gen.ts"], // Ignore old Next.js files during migration
   },
   includeIgnoreFile(gitignorePath),
   javascript.configs.recommended,
