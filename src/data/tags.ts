@@ -8,9 +8,9 @@
 export function filterByTag<O extends Record<P, T>, P extends string, T extends string>(
   objects: O[],
   property: P,
-  currentTag: T | null,
+  currentTag: T | null | undefined,
 ): O[] {
-  if (currentTag === null) {
+  if (currentTag === null || currentTag === undefined) {
     return objects;
   }
 
