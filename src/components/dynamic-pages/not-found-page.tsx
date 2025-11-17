@@ -2,7 +2,6 @@
 
 import { DynamicSVG } from "../dynamic-svg";
 import * as DATA from "@/data/svg";
-import React from "react";
 
 export function NotFoundPage() {
   return (

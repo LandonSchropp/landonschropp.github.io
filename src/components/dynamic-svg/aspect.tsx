@@ -1,5 +1,4 @@
 import { DynamicSVGAspect } from "@/types";
-import React from "react";
 
 type DynamicSVGAspectProps = Omit<DynamicSVGAspect, "rows"> & {
   /** The shapes contained in the aspect, as well as their surrounding markup. */

@@ -1,8 +1,7 @@
 "use client";
 
 import { Size } from "@/types";
-import React from "react";
-import { RefObject, useLayoutEffect } from "react";
+import { RefObject, useLayoutEffect, useState } from "react";
 
 /**
  * Returns the size of the element contained in the ref. This implementation uses a `ResizeObserver`
@@ -11,7 +10,7 @@ import { RefObject, useLayoutEffect } from "react";
  * @returns The size of the ref's element.
  */
 export function useSize(ref: RefObject<Element | null>): Size {
-  const [size, setSize] = React.useState<Size>({ width: 0, height: 0 });
+  const [size, setSize] = useState<Size>({ width: 0, height: 0 });
 
   // This uses `useLayoutEffect` to ensure that the size of the component is returned _before_ the
   // screen is painted, allowing the size to be used during rendering calculations.

@@ -1,5 +1,4 @@
 import { DynamicSVGRow } from "@/types";
-import React from "react";
 
 type DynamicSVGRowProps = Omit<DynamicSVGRow, "shapes"> & {
   /** The shapes contained in the row, as well as their surrounding markup. */
