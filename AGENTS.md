@@ -1,4 +1,4 @@
-Provides guidance to AI agents when working with code in this repository. First, read @readme.md.
+Provides guidance to AI agents when working with code in this repository. First, read @README.md.
 
 ## Guidelines
 
